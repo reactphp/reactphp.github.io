@@ -1,16 +1,3 @@
-
-
-
-
-
-/*
-     FILE ARCHIVED ON 2:09:12 Apr 17, 2016 AND RETRIEVED FROM THE
-     INTERNET ARCHIVE ON 12:46:22 Jul 22, 2016.
-     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
-
-     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
-     SECTION 108(a)(3)).
-*/
 body {
     background: #444B3D;
     color: #eee;
@@ -199,7 +186,7 @@ div#download:target {
 }
 
 #download-close {
-    background: url(/web/20160417020912/http://nodejs.org/images/close-downloads.png) no-repeat top right;
+    background: url(https://nodejs.org/static/legacy/images/close-downloads.png) no-repeat top right;
     width: 64px;
     height: 64px;
     position: absolute;
@@ -213,7 +200,7 @@ div#download ul#installers {
     width: 550px;
     text-align: center;
     margin: 0 auto;
-    background: url(/web/20160417020912/http://nodejs.org/images/platform-icons.png) no-repeat top center;
+    background: url(https://nodejs.org/static/legacy/images/platform-icons.png) no-repeat top center;
     padding-top: 65px;
     padding-bottom: 50px;
 }

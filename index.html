@@ -1,131 +1,26 @@
 <!DOCTYPE html>
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-
-<script type="text/javascript" src="./React_files/analytics.js"></script>
-<script type="text/javascript">archive_analytics.values.server_name="wwwb-app13.us.archive.org";archive_analytics.values.server_ms=94;</script>
-<link type="text/css" rel="stylesheet" href="./React_files/banner-styles.css">
-
-
-    
     <title>React</title>
     <link rel="stylesheet" href="./React_files/main.css">
 </head>
-<body><div id="wm-ipp" lang="en" style="display: none;">
-
-<script type="text/javascript" src="./React_files/disclaim-element.js"></script>
-<script type="text/javascript" src="./React_files/graph-calc.js"></script>
-<script type="text/javascript">//<![CDATA[
-var __wm = (function(imgWidth,imgHeight,yearImgWidth,monthImgWidth){
-var wbPrefix = "/web/";
-var wbCurrentUrl = "http://reactphp.org/";
-
-var firstYear = 1996;
-var displayDay = "17";
-var displayMonth = "Apr";
-var displayYear = "2016";
-var prettyMonths = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
-var $D=document,$=function(n){return document.getElementById(n)};
-var trackerVal,curYear = -1,curMonth = -1;
-var yearTracker,monthTracker;
-function showTrackers(val) {
-  if (val===trackerVal) return;
-  var $ipp=$("wm-ipp");
-  var $y=$("displayYearEl"),$m=$("displayMonthEl"),$d=$("displayDayEl");
-  if (val) {
-    $ipp.className="hi";
-  } else {
-    $ipp.className="";
-    $y.innerHTML=displayYear;$m.innerHTML=displayMonth;$d.innerHTML=displayDay;
-  }
-  yearTracker.style.display=val?"inline":"none";
-  monthTracker.style.display=val?"inline":"none";
-  trackerVal = val;
-}
-function trackMouseMove(event,element) {
-  var eventX = getEventX(event);
-  var elementX = getElementX(element);
-  var xOff = Math.min(Math.max(0, eventX - elementX),imgWidth);
-  var monthOff = xOff % yearImgWidth;
-
-  var year = Math.floor(xOff / yearImgWidth);
-  var monthOfYear = Math.min(11,Math.floor(monthOff / monthImgWidth));
-  // 1 extra border pixel at the left edge of the year:
-  var month = (year * 12) + monthOfYear;
-  var day = monthOff % 2==1?15:1;
-  var dateString = zeroPad(year + firstYear) + zeroPad(monthOfYear+1,2) +
-    zeroPad(day,2) + "000000";
-
-  $("displayYearEl").innerHTML=year+firstYear;
-  $("displayMonthEl").innerHTML=prettyMonths[monthOfYear];
-  // looks too jarring when it changes..
-  //$("displayDayEl").innerHTML=zeroPad(day,2);
-  var url = wbPrefix + dateString + '/' +  wbCurrentUrl;
-  $("wm-graph-anchor").href=url;
-
-  if(curYear != year) {
-    var yrOff = year * yearImgWidth;
-    yearTracker.style.left = yrOff + "px";
-    curYear = year;
-  }
-  if(curMonth != month) {
-    var mtOff = year + (month * monthImgWidth) + 1;
-    monthTracker.style.left = mtOff + "px";
-    curMonth = month;
-  }
-}
-function hideToolbar() {
-  $("wm-ipp").style.display="none";
-}
-function bootstrap() {
-  var $spk=$("wm-ipp-sparkline");
-  yearTracker=$D.createElement('div');
-  yearTracker.className='yt';
-  with(yearTracker.style){
-    display='none';width=yearImgWidth+"px";height=imgHeight+"px";
-  }
-  monthTracker=$D.createElement('div');
-  monthTracker.className='mt';
-  with(monthTracker.style){
-    display='none';width=monthImgWidth+"px";height=imgHeight+"px";
-  }
-  $spk.appendChild(yearTracker);
-  $spk.appendChild(monthTracker);
-
-  var $ipp=$("wm-ipp");
-  $ipp&&disclaimElement($ipp);
-}
-return{st:showTrackers,mv:trackMouseMove,h:hideToolbar,bt:bootstrap};
-})(525, 27, 25, 2);//]]>
-</script>
-<style type="text/css">
-body {
-  margin-top:0 !important;
-  padding-top:0 !important;
-  min-width:800px !important;
-}
-</style>
-
-<script type="text/javascript">__wm.bt();</script>
-
-
+<body>
 
 <div id="intro">
     <img src="./React_files/logo.png" alt="React" height="66">
 
     <p>Event-driven, non-blocking I/O with PHP.
         <br><br>
-        Version: <a href="https://web.archive.org/web/20160417020912/https://github.com/reactphp/react/releases/tag/v0.4.1">v0.4.1</a></p>
+        Version: <a href="https://github.com/reactphp/react/releases/tag/v0.4.1">v0.4.1</a></p>
 
-        <a href="https://web.archive.org/web/20160417020912/https://github.com/reactphp/react" class="button" id="downloadbutton">GitHub</a>
-        <a href="https://web.archive.org/web/20160417020912/https://twitter.com/reactphp" class="button">Twitter</a>
-        <a href="https://web.archive.org/web/20160417020912/https://vimeo.com/channels/407317" class="button">Vimeo</a>
+        <a href="https://github.com/reactphp/react" class="button" id="downloadbutton">GitHub</a>
+        <a href="https://twitter.com/reactphp" class="button">Twitter</a>
+        <a href="https://vimeo.com/channels/407317" class="button">Vimeo</a>
 
         <div class="video-links">
             TALKS:
-            <a href="https://web.archive.org/web/20160417020912/https://www.youtube.com/watch?v=6E074UCJgvA" class="button">PHPNW12</a>
-            <a href="https://web.archive.org/web/20160417020912/https://www.youtube.com/watch?v=MWNcItWuKpI" class="button">TakeOff</a>
-            <a href="https://web.archive.org/web/20160417020912/https://www.youtube.com/watch?v=s6xrnYae1FU" class="button">Laracon</a>
+            <a href="https://www.youtube.com/watch?v=6E074UCJgvA" class="button">PHPNW12</a>
+            <a href="https://www.youtube.com/watch?v=MWNcItWuKpI" class="button">TakeOff</a>
+            <a href="https://www.youtube.com/watch?v=s6xrnYae1FU" class="button">Laracon</a>
         </div>
 </div>
 
@@ -133,7 +28,7 @@ body {
     <h2>React in the industry</h2>
 
     <ul>
-        <li><a href="https://web.archive.org/web/20160417020912/https://github.com/jolicode/php-ar-drone">
+        <li><a href="https://github.com/jolicode/php-ar-drone">
             <div><img src="./React_files/ar-drone.png" alt="AR-Drone" height="100"></div>
             PHP-AR-Drone</a>
             <br>Drone Remote Control</li>
@@ -143,19 +38,19 @@ body {
     <br>
 
     <ul>
-        <li><a href="https://web.archive.org/web/20160417020912/http://socketo.me/">
+        <li><a href="http://socketo.me/">
             <div><img src="./React_files/ratchet.png" alt="Ratchet" height="100"></div>
             Ratchet</a>
             <br>WebSocket Server</li>
-        <li><a href="https://web.archive.org/web/20160417020912/https://github.com/nrk/predis-async">
+        <li><a href="https://github.com/nrk/predis-async">
             <div style="padding-top: 14px;"><img src="./React_files/redis.png" alt="Redis" height="86"></div>
             Predis/Async</a>
             <br>Redis Client</li>
-        <li><a href="https://web.archive.org/web/20160417020912/https://github.com/bergie/dnode-php">
+        <li><a href="https://github.com/bergie/dnode-php">
             <div style="padding-top: 36px; padding-bottom: 25px;"><img src="./React_files/dnode.png" alt="DNode" height="39"></div>
             DNode-PHP</a>
             <br>DNode Bindings</li>
-        <li><a href="https://web.archive.org/web/20160417020912/https://github.com/umpirsky/wisdom">
+        <li><a href="https://github.com/umpirsky/wisdom">
             <div style="padding-top: 8px; padding-bottom: 0px;"><img src="./React_files/wisdom.png" alt="Wisdom" height="92"></div>
             Wisdom</a>
             <br>Domain Checker</li>
@@ -165,15 +60,15 @@ body {
     <br>
 
     <ul>
-        <li><a href="https://web.archive.org/web/20160417020912/https://github.com/reactphp/zmq">
+        <li><a href="https://github.com/reactphp/zmq">
             <div style="padding-top: 39px; padding-bottom: 30px;"><img src="./React_files/zmq.png" alt="ZeroMQ" height="31"></div>
             React/ZMQ</a>
             <br>ZeroMQ Bindings</li>
-        <li><a href="https://web.archive.org/web/20160417020912/https://github.com/reactphp/stomp">
+        <li><a href="https://github.com/reactphp/stomp">
             <div style="padding-top: 23px; padding-bottom: 15px;"><img src="./React_files/stomp.png" alt="STOMP" height="62"></div>
             React/STOMP</a>
             <br>STOMP Bindings</li>
-        <li><a href="https://web.archive.org/web/20160417020912/https://github.com/reactphp/promise">
+        <li><a href="https://github.com/reactphp/promise">
             <div style="padding-top: 22px; padding-bottom: 6px;"><img src="./React_files/promise.png" alt="Promise" height="72"></div>
             React/Promise</a>
             <br>Callback Heaven</li>
@@ -183,19 +78,19 @@ body {
     <br>
 
     <ul>
-        <li><a href="https://web.archive.org/web/20160417020912/https://github.com/reactphp/partial">
+        <li><a href="https://github.com/reactphp/partial">
             <div style="padding-top: 20px; padding-bottom: 5px;"><img src="./React_files/partial.png" alt="Partial" height="75"></div>
             React/Partial</a>
             <br>Partial Application</li>
-        <li><a href="https://web.archive.org/web/20160417020912/https://github.com/reactphp/whois">
+        <li><a href="https://github.com/reactphp/whois">
             <div style="padding-top: 15px; padding-bottom: 10px;"><img src="./React_files/whois.png" alt="Whois" height="75"></div>
             React/Whois</a>
             <br>Whois Client</li>
-        <li><a href="https://web.archive.org/web/20160417020912/https://github.com/reactphp/chatroulette">
+        <li><a href="https://github.com/reactphp/chatroulette">
             <div style="padding-top: 20px; padding-bottom: 5px;"><img src="./React_files/chatroulette.png" alt="Chatroulette" height="75"></div>
             React/Chatroulette</a>
             <br>Sample app</li>
-        <li><a href="https://web.archive.org/web/20160417020912/https://github.com/reactphp/gifsocket">
+        <li><a href="https://github.com/reactphp/gifsocket">
             <div style="padding-top: 10px;"><img src="./React_files/gifsocket.png" alt="Gifsocket" height="90"></div>
             React/Gifsocket</a>
             <br>Real Time Animated Gif</li>
@@ -231,13 +126,5 @@ $loop-&gt;run();</pre>
 Server running at http://127.0.0.1:1337</pre>
 
 </div>
-
-
-
-
-
-
-
-
 
 </body></html>
