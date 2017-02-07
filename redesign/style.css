@@ -1,3 +1,11 @@
+:root {
+    --color-base: #333;
+    --color-highlight: #8892bf;
+    --color-highlight-dark: #4f5b93;
+    --color-highlight-light: #c4c9df;
+    --color-highlight-lighter: #e2e4ef;
+}
+
 html {
     box-sizing: border-box;
 }
@@ -30,7 +38,7 @@ h2 {
 }
 
 h3 {
-    color:var(--color-highlight);
+    color:var(--color-highlight-dark);
     text-shadow: 1px 1px 0 rgba(255, 255, 255, .5);
 }
 
@@ -79,12 +87,12 @@ code {
     background: var(--color-base);
     padding: 40px;
     text-align: center;
-    color: rgba(255, 255, 255, .85);
+    color: var(--color-highlight-lighter);
     text-shadow: 1px 1px 0 rgba(0, 0, 0, .125);
 }
 
 .hero2 h2 {
-    color: var(--color-highlight);
+    color: var(--color-highlight-light);
 }
 
 .hero3 {

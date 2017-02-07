@@ -5,13 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ReactPHP</title>
 
-    <style id="css-config">
-        :root {
-            --color-base: #2b3e51;
-            --color-highlight: #fc4349;
-        }
-    </style>
-
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,700|Source+Sans+Pro:400,400i,700,700i|Roboto Mono" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
@@ -235,103 +228,5 @@ $loop-&gt;run();</code></pre>
 
 <script>hljs.configure({classPrefix: ''});hljs.initHighlightingOnLoad();</script>
 
-<style>
-#color-picker {
-    position: fixed;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 5px;
-    background: #fff;
-    box-shadow: 0 0 5px rgba(0, 0, 0, .5);
-}
-
-#color-picker fieldset {
-    display: inline-block;
-    white-space: nowrap;
-    border: 0;
-    padding: 5px;
-}
-</style>
-<form id="color-picker">
-    <fieldset>
-        <label>Base</label>
-        <input type="color" value="#2B3E51" id="base">
-    </fieldset>
-
-    <fieldset>
-        <label>Highlight</label>
-        <input type="color" value="#FC4349" id="highlight">
-    </fieldset>
-</form>
-
-<script>
-    function parseQueryParams(query){
-        if (query.indexOf('?') === 0) {
-            query = query.substr(1);
-        }
-        if (query.indexOf('#') === 0) {
-            query = query.substr(1);
-        }
-
-        if (!query) {
-            return {};
-        }
-
-        var pairs = query.split('&');
-        var obj = {}, p;
-
-        for (var i = 0, n = pairs.length; i < n; i++) {
-            if (!pairs[i]) {
-                continue;
-            }
-
-            p = pairs[i].split('=');
-            obj[p[0]] = decodeURIComponent(p[1]);
-        }
-
-        return obj;
-    }
-
-    function getColors() {
-        var query = parseQueryParams(location.hash);
-
-        query.base = query.base || '#2b3e51';
-        query.highlight = query.highlight || '#fc4349';
-
-        return query;
-    }
-
-    function setColors() {
-        var colors = getColors();
-
-        document.getElementById('css-config').innerHTML = ':root { --color-base: ' + colors.base + '; --color-highlight: ' + colors.highlight + '; }';
-    }
-
-    function changeColor(type, color) {
-        var colors = getColors();
-
-        colors[type] = color;
-        location.hash = 'base=' + encodeURIComponent(colors.base) + '&highlight=' + encodeURIComponent(colors.highlight);
-    }
-
-    var base = document.getElementById('base');
-    var highlight = document.getElementById('highlight');
-
-    var colors = getColors();
-
-    base.setAttribute('value', colors.base);
-    base.addEventListener('change', function(e) {
-        changeColor('base', e.target.value);
-    }, false);
-
-    highlight.setAttribute('value', colors.highlight);
-    highlight.addEventListener('change', function(e) {
-        changeColor('highlight', e.target.value);
-    }, false);
-
-    setColors();
-    window.onhashchange = setColors;
-</script>
 </body>
 </html>
