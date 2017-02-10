@@ -1,232 +1,255 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>ReactPHP</title>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link href="https://fonts.googleapis.com/css?family=Raleway:300,700|Source+Sans+Pro:400,400i,700,700i|Roboto Mono" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css" rel="stylesheet">
-    <link href="style.css" rel="stylesheet">
+        <title>Event-driven, non-blocking I/O with PHP - ReactPHP</title>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.5.0/highlight.min.js"></script>
-</head>
+        <meta name="description" content="Event-driven, non-blocking I/O with PHP.">
 
-<body>
-<div class="hero">
-    <div class="wrapper">
-        <p>
-            <svg class="logo" xmlns="http://www.w3.org/2000/svg" width="114.801" height="142" viewBox="0 0 114.801 142">
-                <path class="logo-base" d="M0 142V0h62.8c6.532 0 12.565 1.37 18.1 4.1 5.532 2.734 10.3 6.334 14.3 10.8 4 4.47 7.133 9.535 9.4 15.2 2.266 5.668 3.4 11.37 3.4 17.1 0 9.2-2.3 17.568-6.9 25.1-4.6 7.534-10.834 12.97-18.7 16.3l32.4 53.4h-31l-29-47.6H27.6V142H0zm27.6-71.8h34.6c2.53 0 4.9-.6 7.1-1.8 2.2-1.2 4.1-2.83 5.7-4.9 1.6-2.065 2.865-4.5 3.8-7.3.932-2.8 1.4-5.8 1.4-9 0-3.332-.534-6.4-1.6-9.2-1.07-2.8-2.5-5.23-4.3-7.3-1.8-2.066-3.87-3.666-6.2-4.8-2.335-1.13-4.7-1.7-7.1-1.7H27.6v46z"></path>
-                <path class="logo-highlight" d="M93.518 33.603c-1.7-4.36-4.052-8.27-7.052-11.726-3.003-3.454-6.6-6.23-10.79-8.327-4.193-2.095-8.726-3.144-13.596-3.144H11.97v120.65h3.398V13.807H62.08c4.19 0 8.157.935 11.896 2.804 3.74 1.87 6.993 4.333 9.77 7.392 2.776 3.06 4.956 6.57 6.544 10.536 1.585 3.967 2.38 8.1 2.38 12.405 0 4.192-.68 8.27-2.04 12.235-1.36 3.967-3.313 7.506-5.863 10.62-2.55 3.12-5.637 5.638-9.26 7.563-3.628 1.93-7.706 2.89-12.236 2.89H36.45v-3.315l-8.834 5.1 8.834 5.1V83.65h28.86c4.53-.34 8.693-1.556 12.49-3.653 3.795-2.095 7.053-4.814 9.77-8.157 2.72-3.34 4.814-7.164 6.288-11.47 1.47-4.304 2.21-8.778 2.21-13.425 0-4.532-.85-8.98-2.548-13.342z"></path>
+        <script>window.__assets = 'assets/';</script>
+        <script async src="assets/main.js"></script>
+    </head>
+
+    <body>
+        <header class="hero hero--pattern">
+        <div class="wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" width="213.779" height="199.603" viewBox="64.144 0 213.779 199.603">
+                <path fill="#333" d="M112.1 142V0h62.8c6.53 0 12.564 1.37 18.1 4.1 5.53 2.734 10.3 6.335 14.3 10.8 4 4.47 7.134 9.536 9.4 15.2 2.267 5.67 3.4 11.37 3.4 17.1 0 9.2-2.302 17.57-6.9 25.1-4.6 7.534-10.834 12.97-18.7 16.3l32.4 53.4h-31l-29-47.6h-27.2V142h-27.6zm27.6-71.8h34.6c2.53 0 4.9-.6 7.1-1.8 2.2-1.2 4.102-2.83 5.7-4.9 1.6-2.064 2.865-4.5 3.8-7.3.934-2.8 1.4-5.8 1.4-9 0-3.332-.534-6.4-1.6-9.2-1.07-2.8-2.5-5.23-4.302-7.3-1.8-2.066-3.87-3.666-6.2-4.8-2.333-1.13-4.698-1.7-7.1-1.7H139.7v46z"/>
+                <path fill="#8892BF" d="M205.618 33.603c-1.7-4.36-4.052-8.27-7.052-11.727-3.004-3.454-6.6-6.23-10.79-8.327-4.193-2.096-8.726-3.145-13.597-3.145h-50.11v120.65h3.397V13.808h46.712c4.188 0 8.155.935 11.895 2.804 3.738 1.87 6.992 4.334 9.77 7.393 2.775 3.06 4.957 6.57 6.545 10.536 1.584 3.966 2.38 8.1 2.38 12.404 0 4.192-.68 8.27-2.04 12.235-1.36 3.966-3.313 7.505-5.862 10.618-2.552 3.12-5.638 5.64-9.26 7.562-3.63 1.93-7.708 2.89-12.236 2.89H148.55V76.94l-8.834 5.1 8.834 5.1V83.65h28.86c4.53-.34 8.69-1.557 12.488-3.653 3.797-2.095 7.055-4.812 9.77-8.157 2.722-3.34 4.813-7.163 6.288-11.47 1.47-4.304 2.21-8.778 2.21-13.425.002-4.532-.85-8.98-2.548-13.342z"/>
+                <g>
+                    <path fill="#333" d="M64.144 199.35v-29.82h13.188c1.372 0 2.64.287 3.8.86 1.163.575 2.164 1.33 3.004 2.27.84.937 1.498 2 1.974 3.19s.714 2.39.714 3.592c0 1.932-.483 3.69-1.45 5.27-.965 1.584-2.274 2.725-3.926 3.424l6.804 11.215h-6.51l-6.09-9.995H69.94v9.996h-5.796zm5.795-15.078h7.265c.532 0 1.03-.126 1.49-.378s.862-.595 1.198-1.03.602-.944.798-1.532.295-1.218.295-1.89c0-.7-.112-1.344-.336-1.932-.225-.588-.526-1.1-.904-1.533-.378-.434-.812-.77-1.302-1.008-.49-.24-.987-.358-1.49-.358h-7.015v9.66zM112.78 194.268v5.082H92.072v-29.82H112.4v5.082H97.87v7.182h12.557v4.705H97.87v7.77h14.91zM125.8 169.53h5.123l11.34 29.82H136.3l-2.773-7.434H123.11l-2.73 7.434h-5.963l11.382-29.82zm6.677 18.313l-4.116-11.72-4.283 11.72h8.4zM142.642 184.23c0-1.82.33-3.62.987-5.397.657-1.778 1.616-3.367 2.876-4.767 1.26-1.4 2.8-2.534 4.62-3.402 1.82-.868 3.892-1.302 6.216-1.302 2.744 0 5.117.602 7.12 1.806 2 1.205 3.492 2.772 4.472 4.704l-4.452 3.066c-.393-.84-.868-1.547-1.428-2.12-.56-.574-1.162-1.03-1.806-1.366-.645-.336-1.316-.58-2.016-.735-.7-.154-1.386-.23-2.058-.23-1.456 0-2.724.293-3.8.88-1.08.59-1.975 1.352-2.69 2.29-.713.938-1.252 2.002-1.616 3.192-.364 1.19-.546 2.372-.546 3.548 0 1.316.21 2.583.63 3.8.42 1.22 1.015 2.29 1.785 3.213.77.927 1.694 1.67 2.772 2.228 1.077.56 2.26.84 3.548.84.672 0 1.372-.084 2.1-.252.728-.168 1.42-.434 2.08-.797.656-.364 1.266-.835 1.826-1.41.56-.57 1.008-1.265 1.344-2.077l4.746 2.73c-.477 1.12-1.155 2.107-2.037 2.96s-1.876 1.575-2.982 2.163c-1.106.588-2.29 1.037-3.55 1.344-1.26.31-2.49.463-3.695.463-2.128 0-4.074-.447-5.838-1.344-1.764-.897-3.283-2.065-4.557-3.51-1.274-1.44-2.268-3.08-2.982-4.913s-1.07-3.703-1.07-5.607zM195.27 174.612h-9.535v24.738h-5.754v-24.738h-9.533v-5.082h24.822v5.082z"/>
+                    <path fill="#8892BF" d="M199.594 199.35v-29.82h12.348c1.288 0 2.47.273 3.55.82s2.008 1.26 2.793 2.14c.783.883 1.4 1.884 1.848 3.004.447 1.12.672 2.254.672 3.402 0 1.232-.21 2.415-.63 3.55-.42 1.133-1.008 2.134-1.764 3.002-.756.868-1.658 1.568-2.708 2.1-1.05.533-2.22.8-3.508.8h-9.66v11.003h-2.94zm2.94-13.608h9.533c.868 0 1.66-.19 2.373-.567.714-.378 1.323-.882 1.827-1.512s.896-1.358 1.176-2.184c.28-.827.42-1.688.42-2.584 0-.924-.16-1.8-.482-2.625-.32-.825-.755-1.546-1.3-2.162-.548-.615-1.19-1.098-1.934-1.45-.742-.35-1.52-.524-2.33-.524h-9.282v13.608zM249.237 169.53v29.82h-2.898v-13.944h-17.683v13.944h-2.94v-29.82h2.94v13.272h17.682V169.53h2.897zM256.713 199.35v-29.82h12.348c1.29 0 2.472.273 3.55.82s2.01 1.26 2.794 2.14c.783.883 1.4 1.884 1.848 3.004.447 1.12.672 2.254.672 3.402 0 1.232-.21 2.415-.63 3.55-.42 1.133-1.008 2.134-1.764 3.002-.757.868-1.66 1.568-2.71 2.1-1.05.533-2.22.8-3.507.8h-9.66v11.003h-2.94zm2.94-13.608h9.533c.868 0 1.66-.19 2.373-.567.713-.378 1.322-.882 1.826-1.512s.896-1.358 1.176-2.184c.28-.827.42-1.688.42-2.584 0-.924-.16-1.8-.482-2.625-.322-.825-.756-1.546-1.302-2.162-.547-.615-1.19-1.098-1.933-1.45-.742-.35-1.52-.524-2.33-.524h-9.282v13.608z"/>
+                </g>
             </svg>
-        </p>
-
-        <h1 class="name"><strong>React</strong>PHP</h1>
-    </div>
-</div>
-<div class="hero2">
-    <div class="wrapper">
-        <h2>Event-driven, non-blocking I/O with PHP.</h2>
-
-        <p>
-            React is a low-level library for event-driven programming in
-            <a href="http://php.net">PHP</a>. At its core is an event loop, on
-            top of which it provides low-level utilities, such as: Streams
-            abstraction, async dns resolver, network client/server, http
-            client/server, interaction with processes. Third-party libraries can
-            use these components to create async network clients/servers and
-            more.
-        </p>
-    </div>
-</div>
-<div class="hero3">
-    <div class="wrapper wrapper--wider">
-        <h2>Core Components</h2>
-
-        <div class="gee-gutter-grid">
-            <div class="gee-gutter-unit-4">
-                <a href="https://github.com/reactphp/event-loop" class="box">
-                    <h3>Event Loop</h3>
-
-                    <p>React's core reactor event-loop.</p>
-                </a>
-            </div>
-            <div class="gee-gutter-unit-4">
-                <a href="https://github.com/reactphp/stream" class="box">
-                    <h3>Stream</h3>
-
-                    <p>Asynchronous OO stream wrapper.</p>
-                </a>
-            </div>
-            <div class="gee-gutter-unit-4">
-                <a href="https://github.com/reactphp/promise" class="box">
-                    <h3>Promise</h3>
-
-                    <p>A lightweight implementation of CommonJS Promises/A for PHP.</p>
-                </a>
-            </div>
         </div>
+    </header>
 
-        <h2>Network Components</h2>
+        <main class="hero hero--highlight">
+        <div class="wrapper">
+            <h1>
+<a id="event-driven-non-blocking-io-with-php" class="anchor" href="#event-driven-non-blocking-io-with-php" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Event-driven, non-blocking I/O with PHP</h1>
 
-        <div class="gee-gutter-grid">
-            <div class="gee-gutter-unit-4">
-                <a href="https://github.com/reactphp/socket" class="box">
-                    <h3>Socket</h3>
+<p>React is a low-level library for event-driven programming in
+<a href="http://php.net">PHP</a>. At its core is an event loop, on
+top of which it provides low-level utilities, such as: Streams
+abstraction, async dns resolver, network client/server, http
+client/server, interaction with processes. Third-party libraries can
+use these components to create async network clients/servers and
+more.</p>
 
-                    <p>Asynchronous socket server.</p>
-                </a>
-            </div>
-            <div class="gee-gutter-unit-4">
-                <a href="https://github.com/reactphp/socket-client" class="box">
-                    <h3>Socket Client</h3>
-
-                    <p>Asynchronous socket client.</p>
-                </a>
-            </div>
-            <div class="gee-gutter-unit-4">
-                <a href="https://github.com/reactphp/datagram" class="box">
-                    <h3>Datagram</h3>
-
-                    <p>UDP datagram socket client and server.</p>
-                </a>
-            </div>
         </div>
+    </main>
 
-        <h2>Protocol Components</h2>
+    <div class="hero">
+        <div class="wrapper wrapper--wider">
+            <h2>Core Components</h2>
 
-        <div class="gee-gutter-grid">
-            <div class="gee-gutter-unit-4">
-                <a href="https://github.com/reactphp/http" class="box">
-                    <h3>HTTP</h3>
+            <div class="grid">
+                <div class="grid-unit-4">
+                    <a href="https://github.com/reactphp/event-loop" class="box">
+                        <h3>Event Loop</h3>
 
-                    <p>Asynchronous HTTP server.</p>
-                </a>
-            </div>
-            <div class="gee-gutter-unit-4">
-                <a href="https://github.com/reactphp/http-client" class="box">
-                    <h3>HTTP Client</h3>
+                        <p>React's core reactor event-loop.</p>
+                    </a>
+                </div>
+                <div class="grid-unit-4">
+                    <a href="https://github.com/reactphp/stream" class="box">
+                        <h3>Stream</h3>
 
-                    <p>Asynchronous HTTP client.</p>
-                </a>
-            </div>
-            <div class="gee-gutter-unit-4">
-                <a href="https://github.com/reactphp/dns" class="box">
-                    <h3>DNS</h3>
+                        <p>Asynchronous OO stream wrapper.</p>
+                    </a>
+                </div>
+                <div class="grid-unit-4">
+                    <a href="https://github.com/reactphp/promise" class="box">
+                        <h3>Promise</h3>
 
-                    <p>Asynchronous DNS resolver.</p>
-                </a>
-            </div>
-        </div>
-
-        <h2>Utility Components</h2>
-
-        <div class="gee-gutter-grid">
-            <div class="gee-gutter-unit-4">
-                <a href="https://github.com/reactphp/cache" class="box">
-                    <h3>Cache</h3>
-
-                    <p>Asynchronous cache.</p>
-                </a>
-            </div>
-            <div class="gee-gutter-unit-4">
-                <a href="https://github.com/reactphp/promise-timer" class="box">
-                    <h3>Promise Timer</h3>
-
-                    <p>Trivial timeout implementation for React PHP's Promise lib.</p>
-                </a>
-            </div>
-            <div class="gee-gutter-unit-4">
-                <a href="https://github.com/reactphp/child-process" class="box">
-                    <h3>Child Process</h3>
-
-                    <p>Asynchronous ChildProcess.</p>
-                </a>
-            </div>
-        </div>
-
-        <h2>Articles</h2>
-
-        <div class="gee-gutter-grid">
-            <div class="gee-gutter-unit-4">
-                <a href="http://blog.wyrihaximus.net/categories/reactphp-series/" class="box">
-                    <h3>Cees-Jan Kiewiet</h3>
-
-                    <p>Blog series about several ReactPHP components and how they work.</p>
-                </a>
-            </div>
-            <div class="gee-gutter-unit-4">
-                <a href="http://marcjschmidt.de/blog/2014/02/08/php-high-performance.html" class="box">
-                    <h3>Marc J. Schmidt</h3>
-
-                    <p>Bring High Performance Into Your PHP App (with ReactPHP)</p>
-                </a>
-            </div>
-            <div class="gee-gutter-unit-4">
-                <a href="https://gnugat.github.io/2016/04/13/super-speed-sf-react-php.html" class="box">
-                    <h3>Loïc Faugeron</h3>
-
-                    <p>Super Speed Symfony - ReactPHP</p>
-                </a>
-            </div>
-        </div>
-
-        <h2>Talks</h2>
-
-        <div class="gee-gutter-grid">
-            <div class="gee-gutter-unit-2"></div>
-            <div class="gee-gutter-unit-10">
-                <iframe width="854" height="480" src="https://www.youtube.com/embed/MWNcItWuKpI" frameborder="0" allowfullscreen></iframe>
-            </div>
-        </div>
-        <div class="gee-gutter-grid">
-            <div class="gee-gutter-unit-2"></div>
-            <div class="gee-gutter-unit-10">
-                <iframe width="854" height="480" src="https://www.youtube.com/embed/-5ZdGUvOqx4" frameborder="0" allowfullscreen></iframe>
-            </div>
-        </div>
-        <div class="gee-gutter-grid">
-            <div class="gee-gutter-unit-2"></div>
-            <div class="gee-gutter-unit-10">
-                <iframe width="854" height="480" src="https://www.youtube.com/embed/s6xrnYae1FU" frameborder="0" allowfullscreen></iframe>
+                        <p>A lightweight implementation of CommonJS Promises/A for PHP.</p>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
-</div>
-<div class="hero4">
-    <div class="wrapper">
-        <h2>Example</h2>
 
-        <p>This simple web server written in React responds with "Hello World" for every request.</p>
+    <div class="hero">
+        <div class="wrapper wrapper--wider">
+            <h2>Network Components</h2>
 
-        <pre class="box"><code class="php">require 'vendor/autoload.php';
+            <div class="grid">
+                <div class="grid-unit-4">
+                    <a href="https://github.com/reactphp/socket" class="box">
+                        <h3>Socket</h3>
 
-$app = function ($request, $response) {
-    $response-&gt;writeHead(200, array('Content-Type' =&gt; 'text/plain'));
-    $response-&gt;end("Hello World\n");
-};
+                        <p>Asynchronous socket server.</p>
+                    </a>
+                </div>
+                <div class="grid-unit-4">
+                    <a href="https://github.com/reactphp/socket-client" class="box">
+                        <h3>Socket Client</h3>
 
-$loop = React\EventLoop\Factory::create();
-$socket = new React\Socket\Server($loop);
-$http = new React\Http\Server($socket, $loop);
+                        <p>Asynchronous socket client.</p>
+                    </a>
+                </div>
+                <div class="grid-unit-4">
+                    <a href="https://github.com/reactphp/datagram" class="box">
+                        <h3>Datagram</h3>
 
-$http-&gt;on('request', $app);
-echo "Server running at http://127.0.0.1:1337\n";
-
-$socket-&gt;listen(1337);
-$loop-&gt;run();</code></pre>
+                        <p>UDP datagram socket client and server.</p>
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
-<footer class="footer">
-    <div class="wrapper">
-        <a href="https://github.com/reactphp"><i class="fa fa-github" aria-hidden="true"></i> GitHub</a>
-        <a href="https://twitter.com/reactphp"><i class="fa fa-twitter" aria-hidden="true"></i> Twitter</a>
-        <a href="irc://irc.freenode.net/reactphp"><i class="fa fa-bars" aria-hidden="true"></i> IRC</a>
+
+    <div class="hero">
+        <div class="wrapper wrapper--wider">
+            <h2>Protocol Components</h2>
+
+            <div class="grid">
+                <div class="grid-unit-4">
+                    <a href="https://github.com/reactphp/http" class="box">
+                        <h3>HTTP</h3>
+
+                        <p>Asynchronous HTTP server.</p>
+                    </a>
+                </div>
+                <div class="grid-unit-4">
+                    <a href="https://github.com/reactphp/http-client" class="box">
+                        <h3>HTTP Client</h3>
+
+                        <p>Asynchronous HTTP client.</p>
+                    </a>
+                </div>
+                <div class="grid-unit-4">
+                    <a href="https://github.com/reactphp/dns" class="box">
+                        <h3>DNS</h3>
+
+                        <p>Asynchronous DNS resolver.</p>
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
-</footer>
 
-<script>hljs.configure({classPrefix: ''});hljs.initHighlightingOnLoad();</script>
+    <div class="hero">
+        <div class="wrapper wrapper--wider">
+            <h2>Utility Components</h2>
 
-</body>
+            <div class="grid">
+                <div class="grid-unit-4">
+                    <a href="https://github.com/reactphp/cache" class="box">
+                        <h3>Cache</h3>
+
+                        <p>Asynchronous cache.</p>
+                    </a>
+                </div>
+                <div class="grid-unit-4">
+                    <a href="https://github.com/reactphp/promise-timer" class="box">
+                        <h3>Promise Timer</h3>
+
+                        <p>Trivial timeout implementation for ReactPHP's Promise lib.</p>
+                    </a>
+                </div>
+                <div class="grid-unit-4">
+                    <a href="https://github.com/reactphp/child-process" class="box">
+                        <h3>Child Process</h3>
+
+                        <p>Asynchronous ChildProcess.</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="hero">
+        <div class="wrapper">
+            <h2>Example</h2>
+
+            <p>This simple web server written in React responds with "Hello World" for every request.</p>
+
+            <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-k">require</span> <span class="pl-s"><span class="pl-pds">'</span>vendor/autoload.php<span class="pl-pds">'</span></span>;</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-smi">$app</span> <span class="pl-k">=</span> <span class="pl-k">function</span> (<span class="pl-smi">$request</span>, <span class="pl-smi">$response</span>) {</span>
+<span class="pl-s1">    <span class="pl-smi">$response</span><span class="pl-k">-&gt;</span>writeHead(<span class="pl-c1">200</span>, <span class="pl-c1">array</span>(<span class="pl-s"><span class="pl-pds">'</span>Content-Type<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> <span class="pl-s"><span class="pl-pds">'</span>text/plain<span class="pl-pds">'</span></span>));</span>
+<span class="pl-s1">    <span class="pl-smi">$response</span><span class="pl-k">-&gt;</span>end(<span class="pl-s"><span class="pl-pds">"</span>Hello World<span class="pl-cce">\n</span><span class="pl-pds">"</span></span>);</span>
+<span class="pl-s1">};</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-smi">$loop</span> <span class="pl-k">=</span> <span class="pl-c1">React\EventLoop\</span><span class="pl-c1">Factory</span><span class="pl-k">::</span>create();</span>
+<span class="pl-s1"><span class="pl-smi">$socket</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-c1">React\Socket\</span><span class="pl-c1">Server</span>(<span class="pl-smi">$loop</span>);</span>
+<span class="pl-s1"><span class="pl-smi">$http</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-c1">React\Http\</span><span class="pl-c1">Server</span>(<span class="pl-smi">$socket</span>, <span class="pl-smi">$loop</span>);</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-smi">$http</span><span class="pl-k">-&gt;</span>on(<span class="pl-s"><span class="pl-pds">'</span>request<span class="pl-pds">'</span></span>, <span class="pl-smi">$app</span>);</span>
+<span class="pl-s1"><span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">"</span>Server running at http://127.0.0.1:1337<span class="pl-cce">\n</span><span class="pl-pds">"</span></span>;</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-smi">$socket</span><span class="pl-k">-&gt;</span>listen(<span class="pl-c1">1337</span>);</span>
+<span class="pl-s1"><span class="pl-smi">$loop</span><span class="pl-k">-&gt;</span>run();</span></pre></div>
+        </div>
+    </div>
+
+    <div class="hero hero--pattern">
+        <div class="wrapper wrapper--wider">
+            <h2>Articles</h2>
+
+            <div class="grid">
+                <div class="grid-unit-4">
+                    <a href="https://gnugat.github.io/2016/04/13/super-speed-sf-react-php.html" class="box">
+                        <h3>Loïc Faugeron</h3>
+
+                        <p>Super Speed Symfony - ReactPHP</p>
+                    </a>
+                </div>
+                <div class="grid-unit-4">
+                    <a href="http://blog.wyrihaximus.net/categories/reactphp-series/" class="box">
+                        <h3>Cees-Jan Kiewiet</h3>
+
+                        <p>Blog series about several ReactPHP components and how they work.</p>
+                    </a>
+                </div>
+                <div class="grid-unit-4">
+                    <a href="http://marcjschmidt.de/blog/2014/02/08/php-high-performance.html" class="box">
+                        <h3>Marc J. Schmidt</h3>
+
+                        <p>Bring High Performance Into Your PHP App (with ReactPHP)</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="hero">
+        <div class="wrapper wrapper--wider">
+            <h2>Talks</h2>
+
+            <div class="grid">
+                <div class="grid-unit-4">
+                    <p class="iframe">
+                        <iframe width="854" height="480" src="https://www.youtube.com/embed/s6xrnYae1FU" frameborder="0" allowfullscreen></iframe>
+                    </p>
+                </div>
+                <div class="grid-unit-4">
+                    <p class="iframe">
+                        <iframe width="854" height="480" src="https://www.youtube.com/embed/-5ZdGUvOqx4" frameborder="0" allowfullscreen></iframe>
+                    </p>
+                </div>
+                <div class="grid-unit-4">
+                    <p class="iframe">
+                        <iframe width="854" height="480" src="https://www.youtube.com/embed/MWNcItWuKpI" frameborder="0" allowfullscreen></iframe>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+            <footer class="footer">
+            <div class="wrapper">
+                <a href="https://github.com/reactphp"><i class="icon-github" aria-hidden="true"></i> GitHub</a>
+                <a href="https://twitter.com/reactphp"><i class="icon-twitter" aria-hidden="true"></i> Twitter</a>
+                <a href="irc://irc.freenode.net/reactphp"><i class="icon-irc" aria-hidden="true"></i> IRC</a>
+            </div>
+        </footer>
+        </body>
 </html>
