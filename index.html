@@ -1,130 +1,460 @@
 <!DOCTYPE html>
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>React</title>
-    <link rel="stylesheet" href="./files/main.css">
-</head>
-<body>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<div id="intro">
-    <img src="./files/logo.png" alt="React" height="66">
+        <title>Event-driven, non-blocking I/O with PHP - ReactPHP</title>
 
-    <p>Event-driven, non-blocking I/O with PHP.
-        <br><br>
-        Version: <a href="https://github.com/reactphp/react/releases/tag/v0.4.1">v0.4.1</a></p>
+        <meta name="description" content="Event-driven, non-blocking I/O with PHP.">
 
-        <a href="https://github.com/reactphp/react" class="button" id="downloadbutton">GitHub</a>
-        <a href="https://twitter.com/reactphp" class="button">Twitter</a>
-        <a href="https://vimeo.com/channels/407317" class="button">Vimeo</a>
+        <link rel="apple-touch-icon" type="image/png" href="apple-touch-icon.png" sizes="180x180">
+        <link rel="icon" type="image/png" href="og-image.png" sizes="1800x1800">
+        <link rel="icon" type="image/png" href="favicon-512x512.png" sizes="512x512">
+        <link rel="icon" type="image/png" href="apple-touch-icon.png" sizes="180x180">
+        <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16">
+        <link rel="shortcut icon" href="favicon.ico">
+        <meta name="theme-color" content="#333333">
+        <meta property="og:image" content="og-image.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="1800">
+        <meta property="og:image:height" content="1800">
 
-        <div class="video-links">
-            TALKS:
-            <a href="https://www.youtube.com/watch?v=6E074UCJgvA" class="button">PHPNW12</a>
-            <a href="https://www.youtube.com/watch?v=MWNcItWuKpI" class="button">TakeOff</a>
-            <a href="https://www.youtube.com/watch?v=s6xrnYae1FU" class="button">Laracon</a>
+                <script>window.__assets = 'assets/';</script>
+        <script>!function(n){function o(e){if(t[e])return t[e].exports;var r=t[e]={i:e,l:!1,exports:{}};return n[e].call(r.exports,r,r.exports,o),r.l=!0,r.exports}var e=window.webpackJsonp;window.webpackJsonp=function(o,t,i){for(var a,l,s=0,c=[];s<o.length;s++)l=o[s],r[l]&&c.push(r[l][0]),r[l]=0;for(a in t)Object.prototype.hasOwnProperty.call(t,a)&&(n[a]=t[a]);for(e&&e(o,t,i);c.length;)c.shift()()};var t={},r={1:0};return o.e=function(n){function e(){i.onerror=i.onload=null,clearTimeout(a);var o=r[n];0!==o&&(o&&o[1](new Error("Loading chunk "+n+" failed.")),r[n]=void 0)}if(0===r[n])return Promise.resolve();if(r[n])return r[n][2];var t=document.getElementsByTagName("head")[0],i=document.createElement("script");i.type="text/javascript",i.charset="utf-8",i.async=!0,i.timeout=12e4,o.nc&&i.setAttribute("nonce",o.nc),i.src=o.p+""+({}[n]||n)+"."+{0:"571c163c789725ce2d39"}[n]+".js";var a=setTimeout(e,12e4);i.onerror=i.onload=e;var l=new Promise(function(o,e){r[n]=[o,e]});return r[n][2]=l,t.appendChild(i),l},o.m=n,o.c=t,o.i=function(n){return n},o.d=function(n,e,t){o.o(n,e)||Object.defineProperty(n,e,{configurable:!1,enumerable:!0,get:t})},o.n=function(n){var e=n&&n.__esModule?function(){return n.default}:function(){return n};return o.d(e,"a",e),e},o.o=function(n,o){return Object.prototype.hasOwnProperty.call(n,o)},o.p="/assets/",o.oe=function(n){throw console.error(n),n},o(o.s=17)}([function(n,o){n.exports=function(){var n=[];return n.toString=function(){for(var n=[],o=0;o<this.length;o++){var e=this[o];e[2]?n.push("@media "+e[2]+"{"+e[1]+"}"):n.push(e[1])}return n.join("")},n.i=function(o,e){"string"==typeof o&&(o=[[null,o,""]]);for(var t={},r=0;r<this.length;r++){var i=this[r][0];"number"==typeof i&&(t[i]=!0)}for(r=0;r<o.length;r++){var a=o[r];"number"==typeof a[0]&&t[a[0]]||(e&&!a[2]?a[2]=e:e&&(a[2]="("+a[2]+") and ("+e+")"),n.push(a))}},n}},function(n,o){function e(n,o){for(var e=0;e<n.length;e++){var t=n[e],r=d[t.id];if(r){r.refs++;for(var i=0;i<r.parts.length;i++)r.parts[i](t.parts[i]);for(;i<t.parts.length;i++)r.parts.push(s(t.parts[i],o))}else{for(var a=[],i=0;i<t.parts.length;i++)a.push(s(t.parts[i],o));d[t.id]={id:t.id,refs:1,parts:a}}}}function t(n){for(var o=[],e={},t=0;t<n.length;t++){var r=n[t],i=r[0],a=r[1],l=r[2],s=r[3],c={css:a,media:l,sourceMap:s};e[i]?e[i].parts.push(c):o.push(e[i]={id:i,parts:[c]})}return o}function r(n,o){var e=g(),t=x[x.length-1];if("top"===n.insertAt)t?t.nextSibling?e.insertBefore(o,t.nextSibling):e.appendChild(o):e.insertBefore(o,e.firstChild),x.push(o);else{if("bottom"!==n.insertAt)throw new Error("Invalid value for parameter 'insertAt'. Must be 'top' or 'bottom'.");e.appendChild(o)}}function i(n){n.parentNode.removeChild(n);var o=x.indexOf(n);o>=0&&x.splice(o,1)}function a(n){var o=document.createElement("style");return o.type="text/css",r(n,o),o}function l(n){var o=document.createElement("link");return o.rel="stylesheet",r(n,o),o}function s(n,o){var e,t,r;if(o.singleton){var s=b++;e=m||(m=a(o)),t=c.bind(null,e,s,!1),r=c.bind(null,e,s,!0)}else n.sourceMap&&"function"==typeof URL&&"function"==typeof URL.createObjectURL&&"function"==typeof URL.revokeObjectURL&&"function"==typeof Blob&&"function"==typeof btoa?(e=l(o),t=p.bind(null,e),r=function(){i(e),e.href&&URL.revokeObjectURL(e.href)}):(e=a(o),t=f.bind(null,e),r=function(){i(e)});return t(n),function(o){if(o){if(o.css===n.css&&o.media===n.media&&o.sourceMap===n.sourceMap)return;t(n=o)}else r()}}function c(n,o,e,t){var r=e?"":t.css;if(n.styleSheet)n.styleSheet.cssText=w(o,r);else{var i=document.createTextNode(r),a=n.childNodes;a[o]&&n.removeChild(a[o]),a.length?n.insertBefore(i,a[o]):n.appendChild(i)}}function f(n,o){var e=o.css,t=o.media;if(t&&n.setAttribute("media",t),n.styleSheet)n.styleSheet.cssText=e;else{for(;n.firstChild;)n.removeChild(n.firstChild);n.appendChild(document.createTextNode(e))}}function p(n,o){var e=o.css,t=o.sourceMap;t&&(e+="\n/*# sourceMappingURL=data:application/json;base64,"+btoa(unescape(encodeURIComponent(JSON.stringify(t))))+" */");var r=new Blob([e],{type:"text/css"}),i=n.href;n.href=URL.createObjectURL(r),i&&URL.revokeObjectURL(i)}var d={},h=function(n){var o;return function(){return"undefined"==typeof o&&(o=n.apply(this,arguments)),o}},u=h(function(){return/msie [6-9]\b/.test(window.navigator.userAgent.toLowerCase())}),g=h(function(){return document.head||document.getElementsByTagName("head")[0]}),m=null,b=0,x=[];n.exports=function(n,o){if("undefined"!=typeof DEBUG&&DEBUG&&"object"!=typeof document)throw new Error("The style-loader cannot be used in a non-browser environment");o=o||{},"undefined"==typeof o.singleton&&(o.singleton=u()),"undefined"==typeof o.insertAt&&(o.insertAt="bottom");var r=t(n);return e(r,o),function(n){for(var i=[],a=0;a<r.length;a++){var l=r[a],s=d[l.id];s.refs--,i.push(s)}if(n){var c=t(n);e(c,o)}for(var a=0;a<i.length;a++){var s=i[a];if(0===s.refs){for(var f=0;f<s.parts.length;f++)s.parts[f]();delete d[s.id]}}}};var w=function(){var n=[];return function(o,e){return n[o]=e,n.filter(Boolean).join("\n")}}()},function(n,o,e){e(15),e(14),e(5),e(16)},function(n,o,e){e.p=window.__assets},,function(n,o,e){function t(n){return 2===("; "+document.cookie).split("; font-loaded-"+n+"=").length}function r(n){document.documentElement.className+=" font-loaded-"+n}function i(n){var o=new Date;o.setTime(o.getTime()+24*a*60*60*1e3),window.document.cookie="font-loaded-"+n+"=true; expires="+o.toGMTString()+"; path=/"}var a=1;t("source-sans-pro")?r("source-sans-pro"):e.e(0).then(function(){var n=e(4),o=new n("Source Sans Pro");o.load().then(r.bind(null,"source-sans-pro")).then(i.bind(null,"source-sans-pro")).then(null,function(){})}.bind(null,e)).catch(e.oe)},function(n,o,e){o=n.exports=e(0)(),o.push([n.i,'@font-face {\n  font-family: \'Source Sans Pro\';\n  font-style: normal;\n  font-weight: 400;\n  src: local("Source Sans Pro"), \n    local("SourceSansPro-Regular"), \n    url('+e(9)+') format("woff");\n}\n\n@font-face {\n  font-family: \'Source Sans Pro\';\n  font-style: normal;\n  font-weight: 700;\n  src: local("Source Sans Pro Bold"), \n    local("SourceSansPro-Bold"), \n    url('+e(10)+') format("woff");\n}\n\n',""])},function(n,o,e){o=n.exports=e(0)(),o.push([n.i,"@font-face {\n  font-family: 'icons';\n  src:\n    url("+e(12)+") format('truetype'),\n    url("+e(13)+") format('woff'),\n    url("+e(11)+'#icons) format(\'svg\');\n  font-weight: normal;\n  font-style: normal;\n}\n\n[class^="icon-"], [class*=" icon-"] {\n  /* use !important to prevent issues with browser extensions that change fonts */\n  font-family: \'icons\' !important;\n  speak: none;\n  font-style: normal;\n  font-weight: normal;\n  font-feature-settings: normal;\n  font-variant: normal;\n  text-transform: none;\n  line-height: 1;\n\n  /* Better Font Rendering =========== */\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n\n.icon-hash:before {\n  content: "\\E900";\n}\n\n.icon-twitter:before {\n  content: "\\E901";\n}\n\n.icon-github:before {\n  content: "\\E902";\n}\n\n.icon-blog:before {\n  content: "\\E905";\n}\n\n.icon-earth:before {\n  content: "\\E903";\n}\n\n.icon-youtube:before {\n  content: "\\E904";\n}\n\n[class^="icon-"], [class*=" icon-"] {\n    vertical-align: -8%;\n}\n',""])},function(n,o,e){o=n.exports=e(0)(),o.push([n.i,'html {\n    box-sizing: border-box;\n}\n*, *:before, *:after {\n    box-sizing: inherit;\n}\nbody {\n    margin: 0;\n\n    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";\n\n    font-size: 16px;\n    line-height: 1.5;\n    color: #333;\n    background-color: #fff;\n}\np, ul, ol, hr, h1, h2, h3, h4, h5, h6 {\n    margin: 0 0 16px 0;\n}\na {\n    color: #8892bf;\n}\nhr {\n    clear: both;\n    height: 0;\n    border: 0;\n    border-bottom: 1px solid #f7f7f7;\n    padding: 0;\n}\nh1, h2, h3, h4, h5, h6 {\n    font-weight: bold;\n    line-height: 1;\n    -webkit-font-smoothing: antialiased;\n    text-shadow: 1px 1px 0 rgba(255, 255, 255, .5);\n    color: #444;\n}\n.font-loaded-source-sans-pro h1,\n.font-loaded-source-sans-pro h2,\n.font-loaded-source-sans-pro h3,\n.font-loaded-source-sans-pro h4,\n.font-loaded-source-sans-pro h5,\n.font-loaded-source-sans-pro h6 {\n    font-family: "Source Sans Pro","Helvetica Neue",Arial,sans-serif;\n    font-weight: 700;\n}\nh1 {\n    font-size: 2.4em;\n}\nh2 {\n    font-size: 1.8em;\n    margin-bottom: 32px;\n}\nh3 {\n    font-size: 1.4em;\n}\n@media (max-width: 768px) {\n    h1 {\n        font-size: 1.8em;\n    }\n\n    h2 {\n        font-size: 1.6em;\n        margin-bottom: 32px;\n    }\n}\nimg {\n    max-width: 100%;\n    height: auto !important;\n}\ndetails {\n    text-align: left;\n}\ndetails summary {\n    color: #8892bf;\n    font-weight: bold;\n    font-size: 18px;\n    text-shadow: 1px 1px 0 rgba(255, 255, 255, .5);\n    margin-bottom: 10px;\n}\npre {\n    text-align: left !important;\n}\ncode {\n    display: block;\n    padding: 20px !important;\n}\n.wrapper {\n    max-width: 600px;\n    margin: auto;\n}\n.wrapper--wider {\n    max-width: 1200px;\n}\n.logo {\n    filter: url(\'data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feGaussianBlur in="SourceAlpha" stdDeviation="25" /><feOffset dx="1" dy="1" result="offsetblur" /><feFlood flood-color="rgba(255,255,255,1)" /><feComposite in2="offsetblur" operator="in" /><feMerge><feMergeNode /><feMergeNode in="SourceGraphic" /></feMerge></filter></svg>#filter\');\n    -webkit-filter: drop-shadow(0 0 25px #fff);\n            filter: drop-shadow(0 0 25px #fff);\n    display: block;\n    margin: auto;\n    height: 200px;\n}\n.hero {\n    padding: 32px 24px;\n    text-align: center;\n}\n.hero :last-child {\n    margin-bottom: 0;\n}\n@media (max-width: 768px) {\n    .hero {\n        padding: 24px 16px;\n    }\n}\n.hero--alt {\n    background: #e7e7e7;\n}\n.hero--highlight {\n    background: #333;\n    color: #e2e4ef;\n    text-shadow: 1px 1px 0 rgba(0, 0, 0, .25);\n}\n.hero--highlight h1 {\n    color: #8892bf;\n    text-shadow: 1px 1px 0 rgba(0, 0, 0, .25);\n}\n.hero--highlight h2,\n.hero--highlight h3,\n.hero--highlight h4,\n.hero--highlight h5,\n.hero--highlight h6 {\n    color: #c4c9df;\n    text-shadow: 1px 1px 0 rgba(0, 0, 0, .25);\n}\n.footer {\n    background: #333;\n    padding: 32px;\n    text-align: center;\n    text-shadow: 1px 1px 0 rgba(0, 0, 0, .125);\n}\n.grid {\n    font-family: FreeSans, Arimo, "Droid Sans", Helvetica, Arial, sans-serif;\n    letter-spacing: -0.31em;\n    text-rendering: optimizespeed;\n    display: -webkit-flex;\n    display: -ms-flexbox;\n    -ms-flex-flow: row wrap;\n    -ms-align-content: flex-start;\n    -ms-flex-line-pack: start;\n        align-content: flex-start;\n    width: 102%;\n    margin-left: -2%;\n    display: flex;\n    -ms-flex-wrap: wrap;\n        flex-wrap: wrap;\n}\n.grid .opera-only :-o-prefocus,\n.grid {\n    word-spacing: -0.43em;\n}\n[class*="grid-unit"] {\n    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";\n\n    display: inline-block;\n    zoom: 1;\n    letter-spacing: normal;\n    word-spacing: normal;\n    vertical-align: top;\n    text-rendering: auto;\n    margin-left: 2%;\n\n    display: -ms-flexbox;\n\n    display: flex;\n    -ms-flex-wrap: wrap;\n        flex-wrap: wrap;\n}\n.grid-unit-12 {\n    width: 98%;\n}\n.grid-unit-11 {\n    width: 89.66%;\n}\n.grid-unit-10 {\n    width: 81.33%;\n}\n.grid-unit-9 {\n    width: 73%;\n}\n.grid-unit-8 {\n    width: 64.66%;\n}\n.grid-unit-7 {\n    width: 56.33%;\n}\n.grid-unit-6 {\n    width: 48%;\n}\n.grid-unit-5 {\n    width: 39.66%;\n}\n.grid-unit-4 {\n    width: 31.33%;\n}\n.grid-unit-3 {\n    width: 23%;\n}\n.grid-unit-2 {\n    width: 14.66%;\n}\n.grid-unit-1 {\n    width: 6.33%;\n}\n@media (max-width: 768px) {\n    [class*="grid-unit"] {\n        width: 100%;\n    }\n}\n.iframe {\n    position:relative;\n    padding-bottom:56.25%;\n    height:0;\n    overflow:hidden;\n    width:100%;\n}\n.iframe iframe {\n    position:absolute;\n    top:0;\n    left:0;\n    width:100%;\n    height:100%;\n}\n.box {\n    background-color: #f7f7f7;\n    border-radius: 4px;\n    text-align: left;\n    vertical-align: top;\n    padding: 16px;\n    margin: 0 0 16px 0 !important;\n    width: 100%;\n    text-decoration: none;\n    color: inherit;\n    overflow: auto;\n    display: -ms-flexbox;\n    display: flex;\n    -ms-flex-direction: column;\n        flex-direction: column;\n}\n.box:hover {\n    background-color: #f0f0f0;\n}\n.box p,\n.box ul,\n.box ol,\n.box hr,\n.box h1,\n.box h2,\n.box h3,\n.box h4,\n.box h5,\n.box h6 {\n    margin-bottom: 8px;\n}\n.box h1,\n.box h2,\n.box h3,\n.box h4,\n.box h5,\n.box h6 {\n    color: #4f5b93;\n}\n.box :first-child {\n    margin-top: 0;\n}\n.box :last-child {\n    margin-bottom: 0;\n}\n.box__content {\n    -ms-flex-positive: 1;\n        flex-grow: 1;\n}\n.box__content:not(:last-child) {\n    margin-bottom: 16px;\n}\n.box__link {\n    display: block;\n    font-size: 12px;\n    color: #555;\n    text-decoration: none;\n}\n.links {\n    text-align: center;\n    margin: 0;\n    padding: 0;\n}\n.links li {\n    display: inline-block;\n    margin: 0 8px;\n    text-decoration: none;\n}\n.links a {\n    display: block;\n    text-decoration: none;\n    color: rgba(255, 255, 255, .75);\n}\n.links a:hover {\n    color: #fff;\n}\ntt, code, pre {\n    font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;\n    font-size: 12px\n}\ncode, tt {\n    padding: 0;\n    padding-top: 0.2em;\n    padding-bottom: 0.2em;\n    margin: 0;\n    background-color: rgba(0, 0, 0, .04);\n    border-radius: 3px\n}\ncode::before, code::after, tt::before, tt::after {\n    letter-spacing: -0.2em;\n    content: "\\A0"\n}\ncode br, tt br {\n    display: none\n}\ndel code {\n    text-decoration: inherit\n}\npre {\n    word-wrap: normal\n}\npre > code {\n    padding: 0;\n    margin: 0;\n    font-size: 100%;\n    word-break: normal;\n    white-space: pre;\n    background: transparent;\n    border: 0\n}\n.highlight {\n    margin-bottom: 16px;\n}\n.highlight pre {\n    margin-bottom: 0;\n    word-break: normal\n}\n.highlight pre, pre {\n    padding: 16px;\n    overflow: auto;\n    font-size: 85%;\n    line-height: 1.45;\n    background-color: #f7f7f7;\n    color: #333;\n    text-shadow: none !important;\n    border-radius: 3px\n}\npre code, pre tt {\n    display: inline;\n    max-width: auto;\n    padding: 0;\n    margin: 0;\n    overflow: visible;\n    line-height: inherit;\n    word-wrap: normal;\n    background-color: transparent;\n    border: 0\n}\npre code::before, pre code::after, pre tt::before, pre tt::after {\n    content: normal\n}\n.pl-c {\n    color: #969896\n}\n.pl-c1, .pl-s .pl-v {\n    color: #0086b3\n}\n.pl-e, .pl-en {\n    color: #795da3\n}\n.pl-smi, .pl-s .pl-s1 {\n    color: #333\n}\n.pl-ent {\n    color: #63a35c\n}\n.pl-k {\n    color: #a71d5d\n}\n.pl-s, .pl-pds, .pl-s .pl-pse .pl-s1, .pl-sr, .pl-sr .pl-cce, .pl-sr .pl-sre, .pl-sr .pl-sra {\n    color: #183691\n}\n.pl-v, .pl-smw {\n    color: #ed6a43\n}\n.pl-bu {\n    color: #b52a1d\n}\n.pl-ii {\n    color: #f8f8f8;\n    background-color: #b52a1d\n}\n.pl-c2 {\n    color: #f8f8f8;\n    background-color: #b52a1d\n}\n.pl-c2::before {\n    content: "^M"\n}\n.pl-sr .pl-cce {\n    font-weight: bold;\n    color: #63a35c\n}\n.pl-ml {\n    color: #693a17\n}\n.pl-mh, .pl-mh .pl-en, .pl-ms {\n    font-weight: bold;\n    color: #1d3e81\n}\n.pl-mq {\n    color: #008080\n}\n.pl-mi {\n    font-style: italic;\n    color: #333\n}\n.pl-mb {\n    font-weight: bold;\n    color: #333\n}\n.pl-md {\n    color: #bd2c00;\n    background-color: #ffecec\n}\n.pl-mi1 {\n    color: #55a532;\n    background-color: #eaffea\n}\n.pl-mc {\n    color: #ef9700;\n    background-color: #ffe3b4\n}\n.pl-mi2 {\n    color: #d8d8d8;\n    background-color: #808080\n}\n.pl-mdr {\n    font-weight: bold;\n    color: #795da3\n}\n.pl-mo {\n    color: #1d3e81\n}\n.pl-ba {\n    color: #595e62\n}\n.pl-sg {\n    color: #c0c0c0\n}\n.pl-corl {\n    text-decoration: underline;\n    color: #183691\n}\n',""])},function(n,o,e){n.exports=e.p+"fdc0354668675e460e18d8e6b880e634.woff"},function(n,o,e){n.exports=e.p+"54f926c7e2cffb824547c75bc5ac0b5e.woff"},function(n,o,e){n.exports=e.p+"3a236481c8604a874ae3ca2f7d8ad2ee.svg"},function(n,o,e){n.exports=e.p+"0dcfe24197d73c49f143fd62b2fcf08c.ttf"},function(n,o,e){n.exports=e.p+"ef2e020f0b70034cb6d691d2b7d6fe02.woff"},function(n,o,e){var t=e(6);"string"==typeof t&&(t=[[n.i,t,""]]);e(1)(t,{});t.locals&&(n.exports=t.locals)},function(n,o,e){var t=e(7);"string"==typeof t&&(t=[[n.i,t,""]]);e(1)(t,{});t.locals&&(n.exports=t.locals)},function(n,o,e){var t=e(8);"string"==typeof t&&(t=[[n.i,t,""]]);e(1)(t,{});t.locals&&(n.exports=t.locals)},function(n,o,e){e(3),n.exports=e(2)}]);</script>
+            </head>
+
+    <body>
+        <header class="hero hero--alt">
+        <div class="wrapper">
+            <svg class="logo" xmlns="http://www.w3.org/2000/svg" width="342.729" height="320" viewBox="64.144 0 342.729 320">
+                <path fill="#333" d="M141.027 227.652V0h100.68c10.47 0 20.142 2.196 29.017 6.574 8.866 4.382 16.513 10.156 22.926 17.313 6.412 7.167 11.438 15.29 15.07 24.37 3.634 9.09 5.45 18.228 5.45 27.413 0 14.75-3.69 28.168-11.06 40.238-7.375 12.08-17.37 20.796-29.98 26.134l51.942 85.61h-49.698l-46.492-76.313h-43.606v76.31h-44.25zm44.247-115.108h55.47c4.056 0 7.855-.96 11.383-2.886 3.527-1.924 6.575-4.537 9.14-7.856 2.564-3.308 4.59-7.214 6.09-11.703 1.498-4.49 2.244-9.3 2.244-14.43 0-5.34-.853-10.26-2.563-14.75-1.715-4.487-4.008-8.382-6.896-11.702-2.884-3.313-6.203-5.878-9.938-7.695-3.74-1.812-7.533-2.726-11.382-2.726h-53.544v73.747z"/>
+                <path fill="#8892BF" d="M290.952 53.872c-2.726-6.99-6.495-13.26-11.305-18.8-4.815-5.54-10.582-9.988-17.3-13.35-6.722-3.36-13.99-5.043-21.796-5.043h-80.336v193.424h5.445V22.137h74.89c6.712 0 13.07 1.498 19.068 4.495 5.993 2.998 11.21 6.948 15.663 11.852 4.45 4.906 7.947 10.534 10.494 16.89 2.54 6.36 3.815 12.988 3.815 19.887 0 6.723-1.092 13.26-3.272 19.617-2.18 6.358-5.312 12.032-9.398 17.02-4.09 5.004-9.038 9.044-14.846 12.125-5.82 3.094-12.357 4.633-19.617 4.633H199.46v-5.306l-14.162 8.175 14.16 8.177v-5.596h46.27c7.264-.545 13.934-2.495 20.02-5.856 6.088-3.358 11.312-7.713 15.664-13.078 4.364-5.354 7.717-11.48 10.08-18.388 2.356-6.9 3.544-14.073 3.544-21.522.004-7.266-1.36-14.397-4.084-21.39z"/>
+                <path fill="#333" d="M64.144 319.595v-47.808h21.142c2.2 0 4.233.46 6.092 1.38 1.864.92 3.47 2.132 4.817 3.64 1.346 1.502 2.4 3.204 3.164 5.113.76 1.907 1.143 3.83 1.143 5.758 0 3.097-.775 5.915-2.324 8.448-1.548 2.54-3.646 4.37-6.295 5.49l10.907 17.98H92.357l-9.763-16.025h-9.157v16.027h-9.292v-.002zm9.29-24.172h11.647c.855 0 1.653-.202 2.39-.606s1.382-.955 1.92-1.65c.54-.698.965-1.515 1.28-2.457.314-.942.473-1.953.473-3.03 0-1.122-.18-2.153-.54-3.097-.36-.943-.843-1.765-1.45-2.458-.605-.696-1.3-1.235-2.086-1.615-.786-.386-1.582-.575-2.39-.575H73.434v15.487h.002zm68.682 16.025v8.147h-33.198v-47.808h32.59v8.147h-23.295v11.514h20.132v7.543h-20.132v12.458h23.903zm20.874-39.66h8.212l18.182 47.808h-9.56l-4.446-11.92h-16.7l-4.378 11.92h-9.56l18.247-47.808h.003zm10.704 29.36l-6.6-18.79-6.865 18.79h13.467-.003zm16.297-5.794c0-2.918.53-5.803 1.583-8.652s2.59-5.398 4.61-7.642c2.02-2.245 4.49-4.062 7.407-5.455 2.918-1.392 6.24-2.086 9.964-2.086 4.4 0 8.205.963 11.416 2.893 3.205 1.932 5.6 4.445 7.17 7.542L225 286.87c-.63-1.345-1.392-2.478-2.29-3.398-.897-.92-1.86-1.65-2.895-2.19-1.033-.538-2.11-.93-3.232-1.178-1.122-.246-2.222-.368-3.3-.368-2.334 0-4.366.47-6.093 1.41-1.73.946-3.165 2.17-4.31 3.672-1.145 1.504-2.01 3.21-2.592 5.117-.585 1.907-.876 3.804-.876 5.688 0 2.11.337 4.142 1.01 6.092.673 1.955 1.627 3.672 2.862 5.15 1.233 1.486 2.714 2.678 4.443 3.573 1.726.897 3.622 1.347 5.687 1.347 1.078 0 2.2-.135 3.368-.404 1.166-.27 2.275-.696 3.334-1.276 1.05-.584 2.028-1.34 2.927-2.262.897-.914 1.616-2.028 2.154-3.33l7.61 4.376c-.766 1.796-1.853 3.38-3.267 4.746-1.413 1.37-3.007 2.525-4.78 3.468s-3.672 1.662-5.69 2.156c-2.02.496-3.993.742-5.925.742-3.412 0-6.53-.718-9.36-2.156-2.827-1.438-5.263-3.31-7.305-5.626-2.043-2.31-3.637-4.938-4.78-7.877-1.146-2.938-1.716-5.937-1.716-8.988l.004.002zm84.373-15.42h-15.286v39.66h-9.225v-39.66h-15.284v-8.146h39.795v8.147z"/>
+                <path fill="#8892BF" d="M281.297 319.595v-47.808h19.795c2.064 0 3.96.438 5.69 1.314 1.732.88 3.22 2.02 4.48 3.432 1.254 1.415 2.244 3.02 2.96 4.815.718 1.796 1.08 3.614 1.08 5.456 0 1.974-.337 3.87-1.013 5.69-.674 1.816-1.615 3.42-2.828 4.812-1.21 1.393-2.658 2.515-4.342 3.366-1.683.856-3.558 1.285-5.623 1.285H286.01v17.64h-4.713zm4.712-21.816h15.282c1.392 0 2.66-.306 3.805-.91 1.145-.606 2.12-1.415 2.93-2.424.808-1.01 1.435-2.177 1.885-3.5.448-1.327.672-2.708.672-4.144 0-1.48-.256-2.886-.772-4.21-.513-1.32-1.21-2.477-2.083-3.466-.88-.986-1.91-1.76-3.102-2.323-1.19-.562-2.438-.842-3.736-.842h-14.88v21.818h-.003zm74.872-25.992v47.808h-4.646V297.24h-28.348v22.355h-4.715v-47.808h4.715v21.278h28.347v-21.278H360.882zm11.985 47.807v-47.808h19.797c2.068 0 3.963.438 5.69 1.314 1.73.88 3.223 2.02 4.48 3.432 1.257 1.415 2.246 3.02 2.962 4.815.718 1.796 1.078 3.614 1.078 5.456 0 1.974-.337 3.87-1.01 5.69-.674 1.816-1.616 3.42-2.828 4.812-1.213 1.393-2.66 2.515-4.345 3.366-1.682.856-3.558 1.285-5.62 1.285H377.58v17.64h-4.714zm4.714-21.816h15.284c1.393 0 2.662-.306 3.805-.91s2.117-1.415 2.925-2.424c.81-1.01 1.438-2.177 1.887-3.5.448-1.327.673-2.708.673-4.144 0-1.48-.256-2.886-.772-4.21-.515-1.32-1.213-2.477-2.087-3.466-.878-.986-1.91-1.76-3.1-2.323-1.188-.562-2.437-.842-3.734-.842H377.58v21.818z"/>
+            </svg>
         </div>
-</div>
+    </header>
 
-<div id="quotes" class="clearfix">
-    <h2>React in the industry</h2>
+        <main class="hero hero--highlight">
+        <div class="wrapper">
+            <h1>
+<a id="event-driven-non-blocking-io-with-php" class="anchor" href="#event-driven-non-blocking-io-with-php" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Event-driven, non-blocking I/O with PHP</h1>
 
-    <ul>
-        <li><a href="https://github.com/jolicode/php-ar-drone">
-            <div><img src="./files/ar-drone.png" alt="AR-Drone" height="100"></div>
-            PHP-AR-Drone</a>
-            <br>Drone Remote Control</li>
-    </ul>
+<p>ReactPHP is a low-level library for event-driven programming in
+<a href="http://php.net">PHP</a>. At its core is an event loop, on
+top of which it provides low-level utilities, such as: Streams
+abstraction, async dns resolver, network client/server, http
+client/server, interaction with processes. Third-party libraries can
+use these components to create async network clients/servers and
+more.</p>
 
-    <br style="clear: both;">
-    <br>
 
-    <ul>
-        <li><a href="http://socketo.me/">
-            <div><img src="./files/ratchet.png" alt="Ratchet" height="100"></div>
-            Ratchet</a>
-            <br>WebSocket Server</li>
-        <li><a href="https://github.com/nrk/predis-async">
-            <div style="padding-top: 14px;"><img src="./files/redis.png" alt="Redis" height="86"></div>
-            Predis/Async</a>
-            <br>Redis Client</li>
-        <li><a href="https://github.com/bergie/dnode-php">
-            <div style="padding-top: 36px; padding-bottom: 25px;"><img src="./files/dnode.png" alt="DNode" height="39"></div>
-            DNode-PHP</a>
-            <br>DNode Bindings</li>
-        <li><a href="https://github.com/umpirsky/wisdom">
-            <div style="padding-top: 8px; padding-bottom: 0px;"><img src="./files/wisdom.png" alt="Wisdom" height="92"></div>
-            Wisdom</a>
-            <br>Domain Checker</li>
-    </ul>
+            <ul class="links">
+                <li><a href="https://github.com/reactphp"><i class="icon-github" aria-hidden="true"></i> GitHub</a></li>
+                <li><a href="https://twitter.com/reactphp"><i class="icon-twitter" aria-hidden="true"></i> Twitter</a></li>
+                <li><a href="irc://irc.freenode.net/reactphp"><i class="icon-hash" aria-hidden="true"></i> IRC</a></li>
+            </ul>
+        </div>
+    </main>
 
-    <br style="clear: both;">
-    <br>
+    <div class="hero">
+        <div class="wrapper wrapper--wider">
+            <h2>Core Components</h2>
 
-    <ul>
-        <li><a href="https://github.com/reactphp/zmq">
-            <div style="padding-top: 39px; padding-bottom: 30px;"><img src="./files/zmq.png" alt="ZeroMQ" height="31"></div>
-            React/ZMQ</a>
-            <br>ZeroMQ Bindings</li>
-        <li><a href="https://github.com/reactphp/stomp">
-            <div style="padding-top: 23px; padding-bottom: 15px;"><img src="./files/stomp.png" alt="STOMP" height="62"></div>
-            React/STOMP</a>
-            <br>STOMP Bindings</li>
-        <li><a href="https://github.com/reactphp/promise">
-            <div style="padding-top: 22px; padding-bottom: 6px;"><img src="./files/promise.png" alt="Promise" height="72"></div>
-            React/Promise</a>
-            <br>Callback Heaven</li>
-    </ul>
+            <div class="grid">
+                <div class="grid-unit-4">
+                    <a href="https://github.com/reactphp/event-loop" class="box">
+                        <div class="box__content">
+                            <h3>Event Loop</h3>
 
-    <br style="clear: both;">
-    <br>
+                            <p>ReactPHP's core reactor event-loop.</p>
+                        </div>
+                        <p class="box__link">
+                            <i class="icon-github" aria-hidden="true"></i> reactphp/event-loop
+                        </p>
+                    </a>
+                </div>
+                <div class="grid-unit-4">
+                    <a href="https://github.com/reactphp/stream" class="box">
+                        <div class="box__content">
+                            <h3>Stream</h3>
 
-    <ul>
-        <li><a href="https://github.com/reactphp/partial">
-            <div style="padding-top: 20px; padding-bottom: 5px;"><img src="./files/partial.png" alt="Partial" height="75"></div>
-            React/Partial</a>
-            <br>Partial Application</li>
-        <li><a href="https://github.com/reactphp/whois">
-            <div style="padding-top: 15px; padding-bottom: 10px;"><img src="./files/whois.png" alt="Whois" height="75"></div>
-            React/Whois</a>
-            <br>Whois Client</li>
-        <li><a href="https://github.com/reactphp/chatroulette">
-            <div style="padding-top: 20px; padding-bottom: 5px;"><img src="./files/chatroulette.png" alt="Chatroulette" height="75"></div>
-            React/Chatroulette</a>
-            <br>Sample app</li>
-        <li><a href="https://github.com/reactphp/gifsocket">
-            <div style="padding-top: 10px;"><img src="./files/gifsocket.png" alt="Gifsocket" height="90"></div>
-            React/Gifsocket</a>
-            <br>Real Time Animated Gif</li>
-    </ul>
-</div>
+                            <p>Asynchronous OO stream wrapper.</p>
+                        </div>
 
-<div id="content" class="clearfix">
-    <h2>An example: Webserver</h2>
-    <p>This simple web server written in React responds with "Hello World" for every request.</p>
-    <pre>require 'vendor/autoload.php';
+                        <p class="box__link">
+                            <i class="icon-github" aria-hidden="true"></i> reactphp/stream
+                        </p>
+                    </a>
+                </div>
+                <div class="grid-unit-4">
+                    <a href="https://github.com/reactphp/promise" class="box">
+                        <div class="box__content">
+                            <h3>Promise</h3>
 
-$app = function ($request, $response) {
-    $response-&gt;writeHead(200, array('Content-Type' =&gt; 'text/plain'));
-    $response-&gt;end("Hello World\n");
-};
+                            <p>A lightweight implementation of CommonJS Promises/A for PHP.</p>
+                        </div>
 
-$loop = React\EventLoop\Factory::create();
-$socket = new React\Socket\Server($loop);
-$http = new React\Http\Server($socket, $loop);
+                        <p class="box__link">
+                            <i class="icon-github" aria-hidden="true"></i> reactphp/promise
+                        </p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 
-$http-&gt;on('request', $app);
-echo "Server running at http://127.0.0.1:1337\n";
+    <div class="hero">
+        <div class="wrapper wrapper--wider">
+            <h2>Network Components</h2>
 
-$socket-&gt;listen(1337);
-$loop-&gt;run();</pre>
+            <div class="grid">
+                <div class="grid-unit-4">
+                    <a href="https://github.com/reactphp/socket" class="box">
+                        <div class="box__content">
+                            <h3>Socket</h3>
 
-    <p>To install, just run this command:</p>
-    <pre class="sh_none">% composer init --require=react/http:0.3.* -n
-% composer install</pre>
+                            <p>Async, streaming plaintext TCP/IP and secure TLS socket server for ReactPHP.</p>
+                        </div>
+                        <p class="box__link">
+                            <i class="icon-github" aria-hidden="true"></i> reactphp/socket
+                        </p>
+                    </a>
+                </div>
+                <div class="grid-unit-4">
+                    <a href="https://github.com/reactphp/socket-client" class="box">
+                        <div class="box__content">
+                            <h3>Socket Client</h3>
 
-    <p>To run the server, put the code into a file <code>example.php</code> and execute it with the <code>php</code> program:</p>
-    <pre class="sh_none">% php example.php
-Server running at http://127.0.0.1:1337</pre>
+                            <p>Async connector to open TCP/IP and SSL/TLS based connections.</p>
+                        </div>
+                        <p class="box__link">
+                            <i class="icon-github" aria-hidden="true"></i> reactphp/socket-client
+                        </p>
+                    </a>
+                </div>
+                <div class="grid-unit-4">
+                    <a href="https://github.com/reactphp/datagram" class="box">
+                        <div class="box__content">
+                            <h3>Datagram</h3>
 
-</div>
+                            <p>UDP client and server sockets for ReactPHP.</p>
+                        </div>
+                        <p class="box__link">
+                            <i class="icon-github" aria-hidden="true"></i> reactphp/datagram
+                        </p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 
-</body></html>
+    <div class="hero">
+        <div class="wrapper wrapper--wider">
+            <h2>Protocol Components</h2>
+
+            <div class="grid">
+                <div class="grid-unit-4">
+                    <a href="https://github.com/reactphp/http" class="box">
+                        <div class="box__content">
+                            <h3>HTTP</h3>
+
+                            <p>Event-driven, streaming plaintext HTTP and secure HTTPS server for ReactPHP.</p>
+                        </div>
+                        <p class="box__link">
+                            <i class="icon-github" aria-hidden="true"></i> reactphp/http
+                        </p>
+                    </a>
+                </div>
+                <div class="grid-unit-4">
+                    <a href="https://github.com/reactphp/http-client" class="box">
+                        <div class="box__content">
+                            <h3>HTTP Client</h3>
+
+                            <p>Asynchronous HTTP client.</p>
+                        </div>
+                        <p class="box__link">
+                            <i class="icon-github" aria-hidden="true"></i> reactphp/http-client
+                        </p>
+                    </a>
+                </div>
+                <div class="grid-unit-4">
+                    <a href="https://github.com/reactphp/dns" class="box">
+                        <div class="box__content">
+                            <h3>DNS</h3>
+
+                            <p>Asynchronous DNS resolver.</p>
+                        </div>
+                        <p class="box__link">
+                            <i class="icon-github" aria-hidden="true"></i> reactphp/dns
+                        </p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="hero">
+        <div class="wrapper wrapper--wider">
+            <h2>Utility Components</h2>
+
+            <div class="grid">
+                <div class="grid-unit-4">
+                    <a href="https://github.com/reactphp/cache" class="box">
+                        <div class="box__content">
+                            <h3>Cache</h3>
+
+                            <p>Asynchronous cache.</p>
+                        </div>
+                        <p class="box__link">
+                            <i class="icon-github" aria-hidden="true"></i> reactphp/cache
+                        </p>
+                    </a>
+                </div>
+                <div class="grid-unit-4">
+                    <a href="https://github.com/reactphp/promise-timer" class="box">
+                        <div class="box__content">
+                            <h3>Promise Timer</h3>
+
+                            <p>Trivial timeout implementation for ReactPHP's Promise lib.</p>
+                        </div>
+                        <p class="box__link">
+                            <i class="icon-github" aria-hidden="true"></i> reactphp/promise-timer
+                        </p>
+                    </a>
+                </div>
+                <div class="grid-unit-4">
+                    <a href="https://github.com/reactphp/child-process" class="box">
+                        <div class="box__content">
+                            <h3>Child Process</h3>
+
+                            <p>Asynchronous ChildProcess.</p>
+                        </div>
+                        <p class="box__link">
+                            <i class="icon-github" aria-hidden="true"></i> reactphp/child-process
+                        </p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="hero">
+        <div class="wrapper">
+            <h2>Example</h2>
+
+            <p>This simple web server written in ReactPHP responds with "Hello World" for every request.</p>
+
+            <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-k">require</span> <span class="pl-s"><span class="pl-pds">'</span>vendor/autoload.php<span class="pl-pds">'</span></span>;</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-smi">$app</span> <span class="pl-k">=</span> <span class="pl-k">function</span> (<span class="pl-smi">$request</span>, <span class="pl-smi">$response</span>) {</span>
+<span class="pl-s1">    <span class="pl-smi">$response</span><span class="pl-k">-&gt;</span>writeHead(<span class="pl-c1">200</span>, <span class="pl-c1">array</span>(<span class="pl-s"><span class="pl-pds">'</span>Content-Type<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> <span class="pl-s"><span class="pl-pds">'</span>text/plain<span class="pl-pds">'</span></span>));</span>
+<span class="pl-s1">    <span class="pl-smi">$response</span><span class="pl-k">-&gt;</span>end(<span class="pl-s"><span class="pl-pds">"</span>Hello World<span class="pl-cce">\n</span><span class="pl-pds">"</span></span>);</span>
+<span class="pl-s1">};</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-smi">$loop</span> <span class="pl-k">=</span> <span class="pl-c1">React\EventLoop\</span><span class="pl-c1">Factory</span><span class="pl-k">::</span>create();</span>
+<span class="pl-s1"><span class="pl-smi">$socket</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-c1">React\Socket\</span><span class="pl-c1">Server</span>(<span class="pl-smi">$loop</span>);</span>
+<span class="pl-s1"><span class="pl-smi">$http</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-c1">React\Http\</span><span class="pl-c1">Server</span>(<span class="pl-smi">$socket</span>, <span class="pl-smi">$loop</span>);</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-smi">$http</span><span class="pl-k">-&gt;</span>on(<span class="pl-s"><span class="pl-pds">'</span>request<span class="pl-pds">'</span></span>, <span class="pl-smi">$app</span>);</span>
+<span class="pl-s1"><span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">"</span>Server running at http://127.0.0.1:1337<span class="pl-cce">\n</span><span class="pl-pds">"</span></span>;</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-smi">$socket</span><span class="pl-k">-&gt;</span>listen(<span class="pl-c1">1337</span>);</span>
+<span class="pl-s1"><span class="pl-smi">$loop</span><span class="pl-k">-&gt;</span>run();</span></pre></div>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="hero">
+        <div class="wrapper wrapper--wider">
+            <h2>Built with ReactPHP</h2>
+
+            <div class="grid">
+                <div class="grid-unit-4">
+                    <a href="http://socketo.me" class="box">
+                        <div class="box__content">
+                            <h3>Ratchet</h3>
+
+                            <p>A PHP library for asynchronously serving WebSockets.</p>
+                        </div>
+                        <p class="box__link">
+                            <i class="icon-earth" aria-hidden="true"></i> socketo.me
+                        </p>
+                    </a>
+                </div>
+                <div class="grid-unit-4">
+                    <a href="https://github.com/voryx/Thruway" class="box">
+                        <div class="box__content">
+                            <h3>Thruway</h3>
+
+                            <p>PHP Client and Router Library for Autobahn and WAMP for Real-Time Application Messaging.</p>
+                        </div>
+                        <p class="box__link">
+                            <i class="icon-github" aria-hidden="true"></i> voryx/Thruway
+                        </p>
+                    </a>
+                </div>
+                <div class="grid-unit-4">
+                    <a href="https://github.com/php-pm/php-pm" class="box">
+                        <div class="box__content">
+                            <h3>PPM - PHP Process Manager</h3>
+
+                            <p>A process manager, supercharger and load balancer for PHP applications.</p>
+                        </div>
+                        <p class="box__link">
+                            <i class="icon-github" aria-hidden="true"></i> php-pm/php-pm
+                        </p>
+                    </a>
+                </div>
+                <div class="grid-unit-4">
+                    <a href="https://github.com/jolicode/php-ar-drone" class="box">
+                        <div class="box__content">
+                            <h3>php-ar-drone</h3>
+
+                            <p>Allows user to control a Parrot AR Drone over PHP.</p>
+                        </div>
+                        <p class="box__link">
+                            <i class="icon-github" aria-hidden="true"></i> jolicode/php-ar-drone
+                        </p>
+                    </a>
+                </div>
+                <div class="grid-unit-4">
+                    <a href="https://github.com/nrk/predis-async" class="box">
+                        <div class="box__content">
+                            <h3>Predis\Async</h3>
+
+                            <p>Asynchronous PHP client library for Redis built on top of ReactPHP.</p>
+                        </div>
+                        <p class="box__link">
+                            <i class="icon-github" aria-hidden="true"></i> nrk/predis-async
+                        </p>
+                    </a>
+                </div>
+                <div class="grid-unit-4">
+                    <a href="https://github.com/clue/redis-server" class="box">
+                        <div class="box__content">
+                            <h3>clue/redis-server</h3>
+
+                            <p>A Redis server implementation in pure PHP.</p>
+                        </div>
+                        <p class="box__link">
+                            <i class="icon-github" aria-hidden="true"></i> clue/redis-server
+                        </p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="hero">
+        <div class="wrapper wrapper--wider">
+            <h2>Articles</h2>
+
+            <div class="grid">
+                <div class="grid-unit-4">
+                    <a href="https://gnugat.github.io/2016/04/13/super-speed-sf-react-php.html" class="box">
+                        <div class="box__content">
+                            <h3>Loïc Faugeron</h3>
+
+                            <p>Super Speed Symfony - ReactPHP.</p>
+                        </div>
+                        <p class="box__link">
+                            <i class="icon-blog" aria-hidden="true"></i> gnugat.github.io
+                        </p>
+                    </a>
+                </div>
+                <div class="grid-unit-4">
+                    <a href="http://blog.wyrihaximus.net/categories/reactphp-series/" class="box">
+                        <div class="box__content">
+                            <h3>Cees-Jan Kiewiet</h3>
+
+                            <p>Blog series about several ReactPHP components and how they work.</p>
+                        </div>
+                        <p class="box__link">
+                            <i class="icon-blog" aria-hidden="true"></i> blog.wyrihaximus.net
+                        </p>
+                    </a>
+                </div>
+                <div class="grid-unit-4">
+                    <a href="http://marcjschmidt.de/blog/2014/02/08/php-high-performance.html" class="box">
+                        <div class="box__content">
+                            <h3>Marc J. Schmidt</h3>
+
+                            <p>Bring High Performance Into Your PHP App (with ReactPHP).</p>
+                        </div>
+                        <p class="box__link">
+                            <i class="icon-blog" aria-hidden="true"></i> marcjschmidt.de
+                        </p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="hero">
+        <div class="wrapper wrapper--wider">
+            <h2>Talks</h2>
+
+            <div class="grid">
+                <div class="grid-unit-4">
+                    <div class="box">
+                        <div class="box__content">
+                            <div class="iframe">
+                                <iframe width="854" height="480" src="https://www.youtube.com/embed/-5ZdGUvOqx4" frameborder="0" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                        <a href="https://www.youtube.com/watch?v=-5ZdGUvOqx4" class="box__link">
+                            <i class="icon-youtube" aria-hidden="true"></i> youtube.com
+                        </a>
+                    </div>
+                </div>
+                <div class="grid-unit-4">
+                    <div class="box">
+                        <div class="box__content">
+                            <div class="iframe">
+                                <iframe width="854" height="480" src="https://www.youtube.com/embed/s6xrnYae1FU" frameborder="0" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                        <a href="https://www.youtube.com/watch?v=s6xrnYae1FU" class="box__link">
+                            <i class="icon-youtube" aria-hidden="true"></i> youtube.com
+                        </a>
+                    </div>
+                </div>
+                <div class="grid-unit-4">
+                    <div class="box">
+                        <div class="box__content">
+                            <div class="iframe">
+                                <iframe width="854" height="480" src="https://www.youtube.com/embed/MWNcItWuKpI" frameborder="0" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                        <a href="https://www.youtube.com/watch?v=MWNcItWuKpI" class="box__link">
+                            <i class="icon-youtube" aria-hidden="true"></i> youtube.com
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+            <footer class="footer">
+            <div class="wrapper">
+                <ul class="links">
+                    <li><a href="https://github.com/reactphp"><i class="icon-github" aria-hidden="true"></i> GitHub</a></li>
+                    <li><a href="https://twitter.com/reactphp"><i class="icon-twitter" aria-hidden="true"></i> Twitter</a></li>
+                    <li><a href="irc://irc.freenode.net/reactphp"><i class="icon-hash" aria-hidden="true"></i> IRC</a></li>
+                </ul>
+            </div>
+        </footer>
+    
+    </body>
+</html>
