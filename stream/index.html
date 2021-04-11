@@ -1,0 +1,1474 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <title>Stream: 
+Stream - ReactPHP</title>
+
+        <meta name="description" content="Event-driven readable and writable streams for non-blocking I/O in ReactPHP.">
+
+        <link rel="apple-touch-icon" sizes="180x180" href="https://reactphp.org/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="https://reactphp.org/favicon-32x32.png">
+        <link rel="manifest" href="https://reactphp.org/manifest.json">
+        <link rel="mask-icon" href="https://reactphp.org/safari-pinned-tab.svg" color="#4f5b93">
+        <meta name="apple-mobile-web-app-title" content="ReactPHP">
+        <meta name="application-name" content="ReactPHP">
+        <meta name="theme-color" content="#f4f3f1">
+        <meta name="msapplication-config" content="https://reactphp.org/browserconfig.xml" />
+
+        <meta property="og:image" content="https://reactphp.org/og-image.png">
+
+            <link rel="preload" href="../assets/sourcesanspro-regular.19ca4d35.woff" as="font" type="font/woff" crossorigin>
+        <link rel="preload" href="../assets/sourcesanspro-bold.be4ba3dd.woff" as="font" type="font/woff" crossorigin>
+
+        <script>window.__assets = '../assets/';</script>
+        <script>!function(e){function t(t){for(var n,o,i=t[0],c=t[1],l=t[2],f=0,d=[];f<i.length;f++)o=i[f],Object.prototype.hasOwnProperty.call(a,o)&&a[o]&&d.push(a[o][0]),a[o]=0;for(n in c)Object.prototype.hasOwnProperty.call(c,n)&&(e[n]=c[n]);for(s&&s(t);d.length;)d.shift()();return u.push.apply(u,l||[]),r()}function r(){for(var e,t=0;t<u.length;t++){for(var r=u[t],n=!0,o=1;o<r.length;o++){var c=r[o];0!==a[c]&&(n=!1)}n&&(u.splice(t--,1),e=i(i.s=r[0]))}return e}var n={},o={1:0},a={1:0},u=[];function i(t){if(n[t])return n[t].exports;var r=n[t]={i:t,l:!1,exports:{}};return e[t].call(r.exports,r,r.exports,i),r.l=!0,r.exports}i.e=function(e){var t=[];o[e]?t.push(o[e]):0!==o[e]&&{3:1,4:1,5:1}[e]&&t.push(o[e]=new Promise((function(t,r){for(var n=({}[e]||e)+"."+{2:"31d6cfe0",3:"284c81ab",4:"87863994",5:"ef18ddd4"}[e]+".css",a=i.p+n,u=document.getElementsByTagName("link"),c=0;c<u.length;c++){var l=(s=u[c]).getAttribute("data-href")||s.getAttribute("href");if("stylesheet"===s.rel&&(l===n||l===a))return t()}var f=document.getElementsByTagName("style");for(c=0;c<f.length;c++){var s;if((l=(s=f[c]).getAttribute("data-href"))===n||l===a)return t()}var d=document.createElement("link");d.rel="stylesheet",d.type="text/css",d.onload=t,d.onerror=function(t){var n=t&&t.target&&t.target.src||a,u=new Error("Loading CSS chunk "+e+" failed.\n("+n+")");u.code="CSS_CHUNK_LOAD_FAILED",u.request=n,delete o[e],d.parentNode.removeChild(d),r(u)},d.href=a,document.getElementsByTagName("head")[0].appendChild(d)})).then((function(){o[e]=0})));var r=a[e];if(0!==r)if(r)t.push(r[2]);else{var n=new Promise((function(t,n){r=a[e]=[t,n]}));t.push(r[2]=n);var u,c=document.createElement("script");c.charset="utf-8",c.timeout=120,i.nc&&c.setAttribute("nonce",i.nc),c.src=function(e){return i.p+""+({}[e]||e)+"."+{2:"0f8f4948",3:"ca2827c9",4:"7d534a7e",5:"99f8f23a"}[e]+".js"}(e);var l=new Error;u=function(t){c.onerror=c.onload=null,clearTimeout(f);var r=a[e];if(0!==r){if(r){var n=t&&("load"===t.type?"missing":t.type),o=t&&t.target&&t.target.src;l.message="Loading chunk "+e+" failed.\n("+n+": "+o+")",l.name="ChunkLoadError",l.type=n,l.request=o,r[1](l)}a[e]=void 0}};var f=setTimeout((function(){u({type:"timeout",target:c})}),12e4);c.onerror=c.onload=u,document.head.appendChild(c)}return Promise.all(t)},i.m=e,i.c=n,i.d=function(e,t,r){i.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:r})},i.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},i.t=function(e,t){if(1&t&&(e=i(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var r=Object.create(null);if(i.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var n in e)i.d(r,n,function(t){return e[t]}.bind(null,n));return r},i.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return i.d(t,"a",t),t},i.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},i.p="",i.oe=function(e){throw console.error(e),e};var c=window.webpackJsonp=window.webpackJsonp||[],l=c.push.bind(c);c.push=t,c=c.slice();for(var f=0;f<c.length;f++)t(c[f]);var s=l;r()}([]);</script>
+        <style>@font-face{font-family:Source Sans Pro;font-style:normal;font-weight:400;font-display:swap;src:local("Source Sans Pro Regular"),local("SourceSansPro-Regular"),url(../assets/sourcesanspro-regular.19ca4d35.woff) format("woff")}@font-face{font-family:Source Sans Pro;font-style:normal;font-weight:700;font-display:swap;src:local("Source Sans Pro Bold"),local("SourceSansPro-Bold"),url(../assets/sourcesanspro-bold.be4ba3dd.woff) format("woff")}@font-face{font-family:icons;src:url(../assets/icons.063d0ba7.ttf) format("truetype"),url(../assets/icons.5ea4cc5c.woff) format("woff"),url(../assets/icons.d59afb7d.svg#icons) format("svg");font-weight:400;font-style:normal}[class*=" icon-"],[class^=icon-]{font-family:icons!important;speak:none;font-style:normal;font-weight:400;-webkit-font-feature-settings:normal;font-feature-settings:normal;font-variant:normal;text-transform:none;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.icon-hash:before{content:"\e900"}.icon-twitter:before{content:"\e901"}.icon-github:before{content:"\e902"}.icon-blog:before{content:"\e905"}.icon-earth:before{content:"\e903"}.icon-link:before{content:"\e906"}.icon-youtube:before{content:"\e904"}.icon-book:before{content:"\f007"}.icon-calendar:before{content:"\f068"}.icon-chevron-down:before{content:"\f0a3"}.icon-chevron-up:before{content:"\f0a2"}.icon-law:before{content:"\f0d8"}.icon-search:before{content:"\f02e"}.icon-x:before{content:"\f081"}.icon-feed:before{content:"\ea9b"}[class*=" icon-"],[class^=icon-]{vertical-align:-8%}html{-webkit-box-sizing:border-box;box-sizing:border-box;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;font-size:16px;line-height:1.6}@media (max-width:768px){html{font-size:18px}}*,:after,:before{-webkit-box-sizing:inherit;box-sizing:inherit}body{margin:0;color:#584b4f;color:var(--color-base);background-color:#fff}a{color:#4f5b93;color:var(--color-key)}a:hover{color:#a2aacd;color:var(--color-key-light);text-decoration:underline}blockquote{padding:16px 16px 16px 24px;border-left:4px solid #4f5b93;border-left:4px solid var(--color-key);border-radius:4px;background-color:#f4f3f1;background-color:var(--color-background-lighter);-webkit-box-shadow:0 1px 0 0 rgba(0,0,0,.1);box-shadow:0 1px 0 0 rgba(0,0,0,.1);-webkit-box-shadow:var(--box-shadow-lighter);box-shadow:var(--box-shadow-lighter);position:relative;font-size:.875rem}blockquote:before{content:"i";position:absolute;top:12px;left:-14px;display:block;width:24px;height:24px;background:#4f5b93;background:var(--color-key);font-size:12px;padding:0 4px;-webkit-box-sizing:border-box;box-sizing:border-box;text-align:center;font-weight:700;color:#fff;line-height:24px;border-radius:50%}blockquote :last-child{margin-bottom:0}blockquote,fieldset,form,h1,h2,h3,h4,h5,h6,hr,ol,p,ul{margin:0 0 16px}ul ul{margin-bottom:0}hr{clear:both;height:0;border:0;border-bottom:1px dashed #eae8e3;border-bottom:1px dashed var(--color-background-light);padding:0}h1,h2,h3,h4,h5,h6{line-height:1;-webkit-font-smoothing:antialiased;color:#584b4f;color:var(--color-base);font-family:Source Sans Pro,Helvetica Neue,Arial,sans-serif;font-weight:700}h1 a,h1 a:hover,h2 a,h2 a:hover,h3 a,h3 a:hover,h4 a,h4 a:hover,h5 a,h5 a:hover,h6 a,h6 a:hover{text-decoration:none}h1{font-size:2.5rem;margin-bottom:32px;letter-spacing:-1px}h1,h1 a,h1 a:hover{color:#4f5b93;color:var(--color-key)}h1:not(:first-child){margin-top:32px}h2{font-size:2rem;margin-bottom:32px}h2,h2 a,h2 a:hover{color:#4f5b93;color:var(--color-key)}h2:not(:first-child){margin-top:32px}h3{font-size:1.5rem;margin-bottom:24px}h3,h3 a,h3 a:hover{color:#584b4f;color:var(--color-base)}h3:not(:first-child){margin-top:24px}h4{font-size:1.25rem}h4,h4 a,h4 a:hover{color:#4f5b93;color:var(--color-key)}h4:not(:first-child){margin-top:24px}@media (max-width:768px){h1{font-size:2rem}h2{font-size:1.75rem;margin-bottom:32px}}.container{padding:32px}@media (max-width:768px){.container{padding:16px}}.wrapper{max-width:1600px;margin:auto}.wrapper--medium{max-width:1280px}.wrapper--small{max-width:960px;margin:auto}.wrapper--narrow{max-width:640px}.main{width:calc(98% - 400px)}.main,.sidebar{margin-bottom:32px}.sidebar{width:calc(400px - 2%)}@media (max-width:1024px){.main,.sidebar{width:auto;margin-top:16px}}.visually-hidden{position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px)}.grid{display:-ms-flexbox;display:flex;-ms-flex-direction:row;flex-direction:row;-ms-flex-wrap:wrap;flex-wrap:wrap;-ms-flex-pack:center;justify-content:center;width:102%;margin-left:-2%}.grid>*{margin-left:2%;max-width:100%}.grid--4cols>*{-ms-flex-preferred-size:23%;flex-basis:23%}.grid--3cols>*{-ms-flex-preferred-size:31.33%;flex-basis:31.33%}.grid--2cols>*{-ms-flex-preferred-size:48%;flex-basis:48%}@media (max-width:768px){.grid{-ms-flex-direction:column;flex-direction:column}.grid,.grid>*{width:100%;margin-left:0}.grid>*{-ms-flex:0 0 auto;flex:0 0 auto}}.center{text-align:center}.center h1,.center h2,.center h3,.center h4,.center h5,.center h6,.hamburger{display:inline-block}.hamburger{padding:14px 12px;height:48px;cursor:pointer;font:inherit;color:inherit;text-transform:none;background-color:transparent;border:0;margin:0;overflow:visible;outline:none}.hamburger__box{width:24px;height:16px;display:inline-block;position:relative}.hamburger__inner{display:block;top:50%;margin-top:-2px}.hamburger__inner,.hamburger__inner:after,.hamburger__inner:before{width:24px;height:3px;background-color:#584b4f;background-color:var(--color-base);border-radius:2px;position:absolute;-webkit-transition-property:-webkit-transform;transition-property:-webkit-transform;-o-transition-property:transform;transition-property:transform;transition-property:transform,-webkit-transform;-webkit-transition-duration:.15s;-o-transition-duration:.15s;transition-duration:.15s;-webkit-transition-timing-function:ease;-o-transition-timing-function:ease;transition-timing-function:ease}.hamburger__inner:after,.hamburger__inner:before{content:"";display:block}.hamburger__inner:before{top:-6px}.hamburger__inner:after{bottom:-6px}.header{width:100%;background:#fefefe;-webkit-box-shadow:0 1px 0 0 rgba(0,0,0,.08);box-shadow:0 1px 0 0 rgba(0,0,0,.08);-webkit-box-shadow:var(--box-shadow-lightest);box-shadow:var(--box-shadow-lightest);padding:0 32px}@media (max-width:768px){.header{padding:0 16px}}.header__container{width:100%;position:relative;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:justify;justify-content:space-between}.header__logo{display:block;line-height:1;padding:16px 0}.header__logo svg{display:block;width:120px;height:18px}.header__search{margin:0;position:absolute;right:48px;top:7px;z-index:799}.header__search input{width:400px}@media (max-width:768px){.header__search input{width:calc(100vw - 94px)}}.header__menu{position:absolute;right:-12px;top:0;z-index:800}.footer{background:#584b4f;background:var(--color-base);padding:32px;text-align:center;text-shadow:1px 1px 0 rgba(0,0,0,.125)}.footer .links a{color:#eae8e3;color:var(--color-background-light);text-decoration:none}.footer .links a:hover{color:#9ad8bb;color:var(--color-green-light);text-decoration:none}.iframe{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;width:100%}.iframe iframe{position:absolute;top:0;left:0;width:100%;height:100%}.links{margin:0;padding:0}.links li{display:inline-block;margin:0 8px;text-decoration:none}.links li:first-child{margin-left:0}.links li:last-child{margin-right:0}.links a{display:block}.box,.links a,.links a:hover{text-decoration:none}.box{background:#f4f3f1;background:var(--color-background-lighter);-webkit-box-shadow:0 1px 0 0 rgba(0,0,0,.1);box-shadow:0 1px 0 0 rgba(0,0,0,.1);-webkit-box-shadow:var(--box-shadow-lighter);box-shadow:var(--box-shadow-lighter);border-radius:4px;text-align:left;vertical-align:top;padding:24px;margin-top:0;margin-bottom:24px;color:inherit;overflow:auto;display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column}.box:hover{background:#eae8e3;background:var(--color-background-light);-webkit-box-shadow:0 1px 0 0 rgba(0,0,0,.15);box-shadow:0 1px 0 0 rgba(0,0,0,.15);-webkit-box-shadow:var(--box-shadow-light);box-shadow:var(--box-shadow-light);text-decoration:none}.box h1,.box h2,.box h3,.box h4,.box h5,.box h6,.box hr,.box ol,.box p,.box ul{margin-bottom:8px}.box h1,.box h2,.box h3,.box h4,.box h5,.box h6{color:#584b4f;color:var(--color-base)}.box :first-child{margin-top:0}.box :last-child{margin-bottom:0}.box__content{-ms-flex-positive:1;flex-grow:1;color:#584b4f;color:var(--color-base);text-decoration:none}.box__content p{font-size:.875rem}.box__content:hover{color:#584b4f;color:var(--color-base);text-decoration:none}.box__content:not(:last-child){margin-bottom:16px}.box__link{display:block;font-size:.75rem;text-decoration:none}.box__link,.box__link [class*=icon]{color:#4f5b93;color:var(--color-key)}.box__link:hover{color:#a2aacd;color:var(--color-key-light);text-decoration:none}code,pre,tt{font-family:SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace}code,tt{font-size:.75rem;padding:.3rem .45rem;margin:0;background-color:rgba(0,0,0,.05);border-radius:4px}code br,tt br{display:none}del code{text-decoration:inherit}pre{word-wrap:normal;text-align:left;font-size:.875rem;line-height:1.45}@media (max-width:768px){pre{font-size:.75rem}}pre>code{padding:0;margin:0;font-size:100%;word-break:normal;white-space:pre;background:transparent;border:0}.highlight{margin-bottom:16px}.highlight pre{margin-bottom:0;word-break:normal}.highlight pre,pre{padding:16px 16px 14px;overflow:auto;background-color:#f9f9f8;background-color:var(--color-background-lightest);-webkit-box-shadow:0 1px 0 0 rgba(0,0,0,.08);box-shadow:0 1px 0 0 rgba(0,0,0,.08);-webkit-box-shadow:var(--box-shadow-lightest);box-shadow:var(--box-shadow-lightest);color:#584b4f;color:var(--color-base);text-shadow:none!important;border-radius:4px}pre code,pre tt{display:inline;max-width:none;padding:0;margin:0;overflow:visible;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}pre code:after,pre code:before,pre tt:after,pre tt:before{content:normal}.pl-c{color:#969896}.pl-c1,.pl-s .pl-v{color:#0086b3}.pl-e,.pl-en{color:#795da3}.pl-s .pl-s1,.pl-smi{color:#444}.pl-ent{color:#63a35c}.pl-k{color:#a71d5d}.pl-pds,.pl-s,.pl-s .pl-pse .pl-s1,.pl-sr,.pl-sr .pl-cce,.pl-sr .pl-sra,.pl-sr .pl-sre{color:#183691}.pl-smw,.pl-v{color:#ed6a43}.pl-bu{color:#b52a1d}.pl-c2,.pl-ii{color:#f8f8f8;background-color:#b52a1d}.pl-c2:before{content:"^M"}.pl-sr .pl-cce{font-weight:700;color:#63a35c}.pl-ml{color:#693a17}.pl-mh,.pl-mh .pl-en,.pl-ms{font-weight:700;color:#1d3e81}.pl-mq{color:teal}.pl-mi{font-style:italic;color:#333}.pl-mb{font-weight:700;color:#333}.pl-md{color:#bd2c00;background-color:#ffecec}.pl-mi1{color:#55a532;background-color:#eaffea}.pl-mc{color:#ef9700;background-color:#ffe3b4}.pl-mi2{color:#d8d8d8;background-color:grey}.pl-mdr{font-weight:700;color:#795da3}.pl-mo{color:#1d3e81}.pl-ba{color:#595e62}.pl-sg{color:silver}.pl-corl{text-decoration:underline;color:#183691}.anchor{display:block;float:left;position:absolute;padding-right:2px;-webkit-transform:translateX(-100%);transform:translateX(-100%);text-decoration:none!important}.anchor:focus{outline:none}.anchor>*{visibility:hidden}:hover>.anchor>*{visibility:visible}.anchor>:before{content:"#";font-weight:400!important;color:#a2aacd;color:var(--color-key-light)}.anchor--disable .anchor>*,.anchor.anchor--disable>*{visibility:hidden!important}.searchbox{width:100%}.searchbox,.searchbox:focus{-webkit-appearance:none;-moz-appearance:none;appearance:none;padding:6px 8px 6px 32px;font-size:.875rem;line-height:24px;color:#584b4f;color:var(--color-base);border:0;background:#eae8e3 url(../assets/search.72dc4739.svg) no-repeat 10px;background:var(--color-background-light) url(../assets/search.72dc4739.svg) no-repeat 10px;background-size:16px 16px;-webkit-box-shadow:0 1px 0 0 rgba(0,0,0,.15);box-shadow:0 1px 0 0 rgba(0,0,0,.15);-webkit-box-shadow:var(--box-shadow-light);box-shadow:var(--box-shadow-light);border-radius:4px;outline:none;-webkit-transition:width .35s cubic-bezier(.23,1,.32,1);-o-transition:width .35s cubic-bezier(.23,1,.32,1);transition:width .35s cubic-bezier(.23,1,.32,1)}.searchbox::-webkit-input-placeholder{color:#afa1a5;color:var(--color-base-light)}.searchbox:-moz-placeholder,.searchbox::-moz-placeholder{color:#afa1a5;color:var(--color-base-light)}.searchbox::-moz-placeholder{opacity:1}.searchbox:-ms-input-placeholder{color:#afa1a5;color:var(--color-base-light)}.searchbox:focus{background-color:#f4f3f1!important;background-color:var(--color-background-lighter)!important;-webkit-box-shadow:0 1px 0 0 rgba(0,0,0,.1);box-shadow:0 1px 0 0 rgba(0,0,0,.1);-webkit-box-shadow:var(--box-shadow-lighter);box-shadow:var(--box-shadow-lighter)}.searchbox--collapsed:not(:focus){background-color:transparent;border:0;width:32px!important;margin-right:-12px;cursor:pointer;-webkit-box-shadow:none;box-shadow:none}.searchbox--collapsed:not(:focus)::-webkit-search-cancel-button,.searchbox--collapsed:not(:focus)::-webkit-search-decoration{display:none}.searchbox--collapsed:not(:focus)::-webkit-search-results-button,.searchbox--collapsed:not(:focus)::-webkit-search-results-decoration{display:none}.searchbox--collapsed:not(:focus)::-ms-clear{display:none}.searchbox--large,.searchbox--large:focus{padding:8px 12px 8px 40px}.alert{padding:16px 16px 16px 24px;border-left:4px solid #ba3525;border-left:4px solid var(--color-red);border-radius:4px;background-color:#f4f3f1;background-color:var(--color-background-lighter);-webkit-box-shadow:0 1px 0 0 rgba(0,0,0,.1);box-shadow:0 1px 0 0 rgba(0,0,0,.1);-webkit-box-shadow:var(--box-shadow-lighter);box-shadow:var(--box-shadow-lighter);position:relative;font-size:.9em}.alert:before{content:"!";position:absolute;top:12px;left:-14px;display:block;width:24px;height:24px;background:#ba3525;background:var(--color-red);font-size:12px;padding:0 4px;-webkit-box-sizing:border-box;box-sizing:border-box;text-align:center;font-weight:700;color:#fff;line-height:22px;border-radius:50%}.alert a{color:#ba3525;color:var(--color-red)}.alert :last-child{margin-bottom:0}.toc{display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;padding:0;list-style:none;margin-left:-4px}.toc li{margin:4px}.toc a{display:-ms-flexbox;display:flex;background-color:#584b4f;background-color:var(--color-base);-webkit-box-shadow:0 1px 0 0 rgba(0,0,0,.1);box-shadow:0 1px 0 0 rgba(0,0,0,.1);-webkit-box-shadow:var(--box-shadow-lighter);box-shadow:var(--box-shadow-lighter);font-family:SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;font-weight:bolder;letter-spacing:normal;padding:.25rem 1rem .15rem;border-radius:4px}.toc a,.toc a:hover{color:#fff;text-decoration:none}@media (max-width:768px){.toc{font-size:.85rem}}.welcome__intro{padding:16px 0 136px;border-bottom:1px dashed #eae8e3;border-bottom:1px dashed var(--color-background-light);background-image:-o-radial-gradient(center,ellipse,#fff 0,#eae8e3 100%);background-image:radial-gradient(ellipse at center,#fff 0,#eae8e3 100%);background-image:-o-radial-gradient(center,ellipse,#fff 0,var(--color-background-light) 100%);background-image:radial-gradient(ellipse at center,#fff 0,var(--color-background-light) 100%);background-size:auto 100%;background-position:50% 0}.welcome__intro h1{font-size:2rem;margin-bottom:16px;color:#4f5b93;color:var(--color-key)}.welcome__logo{display:block;margin:0 auto;max-width:320px}.welcome__logo svg{display:block;height:240px}.welcome__content{padding-top:16px;display:block;max-width:calc(98% - 320px)}.welcome__example{display:block;max-width:850px;margin:-160px auto auto}.welcome__example .highlight pre{padding:32px;background:#fff;-webkit-box-shadow:0 0 16px #d6d1c8;box-shadow:0 0 16px #d6d1c8;-webkit-box-shadow:0 0 16px var(--color-background);box-shadow:0 0 16px var(--color-background)}.welcome__intro .links a{color:#584b4f;color:var(--color-base);text-decoration:none}.welcome__intro .links a:hover{color:#4f5b93;color:var(--color-key);text-decoration:none}.welcome__team img{border-radius:50%;max-width:190px;display:inline-block}.welcome__team h3{display:block;margin:.2em 0}.welcome__team div.grid>*{margin-bottom:1em}@media (max-width:768px){.welcome__content{padding:32px 16px 16px;max-width:100%}.welcome__logo svg{height:160px}.welcome__intro h1{text-align:center;font-size:1.75rem;margin-bottom:16px;color:#4f5b93;color:var(--color-key)}.welcome__intro .links{text-align:center}}.off-canvas-menu{position:fixed;top:0;right:0;pointer-events:none}.off-canvas-menu__content{-webkit-transform:translate3d(105%,0,0);transform:translate3d(105%,0,0)}.component-info{position:-webkit-sticky;position:sticky;top:16px;bottom:16px;padding:24px;background-color:#f4f3f1;background-color:var(--color-background-lighter);-webkit-box-shadow:0 1px 0 0 rgba(0,0,0,.1);box-shadow:0 1px 0 0 rgba(0,0,0,.1);-webkit-box-shadow:var(--box-shadow-lighter);box-shadow:var(--box-shadow-lighter);border-radius:4px;font-size:.875rem}.component-info,.component-info a,.component-info a [class*=icon]{color:#584b4f;color:var(--color-base)}.component-info a:hover{color:#afa1a5;color:var(--color-base-light);text-decoration:none}.component-info pre{line-height:1;font-size:.75rem}.component-info__title{display:-ms-flexbox;display:flex;font-size:1.5rem;line-height:1rem;margin-bottom:1rem;color:#584b4f;color:var(--color-base);-ms-flex-align:center;align-items:center}.component-info__title a{text-decoration:none}.component-info__title>:not(:last-child){margin-right:8px}.component-info__subtitle{font-size:.875rem;line-height:.875rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;margin-bottom:.875rem;color:#afa1a5;color:var(--color-base-light)}.component-info__info{padding:0;list-style:none;display:-ms-flexbox;display:flex;-ms-flex-flow:row;flex-flow:row;-ms-flex-pack:start;justify-content:flex-start}.component-info__info li{margin-right:16px}.component-info__info li:last-child{margin-right:0}.component-info__info a{font-size:.75rem;text-decoration:none;white-space:nowrap;-o-text-overflow:ellipsis;text-overflow:ellipsis}.component-info__contributors{display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;padding:0;list-style:none}.component-info__contributors li{padding:0 4px 4px 0;margin:0}.component-info__contributors img{display:block;width:40px;height:auto;border-radius:2px}.component-info__contributors img,.component-info__participation{-webkit-box-shadow:0 1px 0 0 rgba(0,0,0,.1);box-shadow:0 1px 0 0 rgba(0,0,0,.1);-webkit-box-shadow:var(--box-shadow-lighter);box-shadow:var(--box-shadow-lighter)}.component-info__participation{background-color:#f9f9f8;background-color:var(--color-background-lightest);padding:8px;border-radius:4px;text-align:center}.component-info__participation svg{display:block;margin:auto;max-width:100%;height:auto!important}:root{--color-key:#4f5b93;--color-key-light:#a2aacd;--color-base:#584b4f;--color-base-light:#afa1a5;--color-green:#40a977;--color-green-light:#9ad8bb;--color-red:#ba3525;--color-red-light:#e79187;--color-background:#d6d1c8;--color-background-light:#eae8e3;--color-background-lighter:#f4f3f1;--color-background-lightest:#f9f9f8;--box-shadow-light:0 1px 0 0 rgba(0,0,0,0.15);--box-shadow-lighter:0 1px 0 0 rgba(0,0,0,0.1);--box-shadow-lightest:0 1px 0 0 rgba(0,0,0,0.08)}.version-selector{position:relative;font-size:.875rem;color:#fff}.version-selector :last-child{margin-bottom:0}.version-selector__button,.version-selector__version{-webkit-appearance:none;border:0;margin:0;text-shadow:none;-webkit-box-shadow:none;box-shadow:none;text-decoration:none;text-transform:none;overflow:visible;cursor:pointer;outline:none;display:-ms-flexbox;display:flex;background-color:#584b4f;background-color:var(--color-base);-webkit-box-shadow:0 1px 0 0 rgba(0,0,0,.1);box-shadow:0 1px 0 0 rgba(0,0,0,.1);-webkit-box-shadow:var(--box-shadow-lighter);box-shadow:var(--box-shadow-lighter);color:#fff;font-family:SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;font-size:.75rem;font-weight:bolder;letter-spacing:normal;padding:.25rem .4rem .2rem;border-radius:4px}.version-selector__button{position:relative}.version-selector__button [class=icon-chevron-down]{display:inline-block;margin-left:4px}.version-selector__button [class=icon-chevron-up]{display:none;margin-left:4px}.version-selector__version{background-color:hsla(0,0%,100%,.33);border:1px solid transparent;text-decoration:none;color:#fff!important}.version-selector__version:hover{background-color:hsla(0,0%,100%,.11);border:1px solid hsla(0,0%,100%,.22)}.version-selector__button--dev,.version-selector__version--dev,.version-selector__version--dev:hover{background-color:#ba3525;background-color:var(--color-red)}.version-selector__button--latest,.version-selector__version--latest,.version-selector__version--latest:hover{background-color:#40a977;background-color:var(--color-green)}.version-selector__panel{position:fixed;top:-20000em;visibility:hidden}</style>
+        <script async src="../assets/main.d691d407.js"></script>
+            </head>
+
+    <body>
+            <header class="header">
+            <div class="wrapper">
+                <div class="header__container">
+                    <a class="header__logo" href="../">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="320" height="47.29" viewBox="0 428.964 320 47.29"><path fill="#584B4F" d="M30.86 452.385c1.637-2.287 2.455-5 2.455-8.134 0-4.313-1.367-7.87-4.088-10.68-2.723-2.812-6.39-4.216-11.004-4.216h-7.71c-3.79 0-6.49.798-8.1 2.388C.806 433.332 0 435.872 0 439.355v36.512h9.08v-17.245h6.53l9.08 17.245h10.52L24.82 457.12c2.395-.87 4.41-2.447 6.04-4.735zm-8.488-3.334c-1.24 1.33-2.82 1.99-4.734 1.99H9.08v-9.47c0-2.74 1.35-4.112 4.05-4.112h4.508c2 0 3.603.61 4.8 1.83 1.196 1.22 1.797 2.82 1.797 4.802 0 1.982-.623 3.64-1.864 4.964v-.003zm20.348 14.536c0 4.572 1.055 7.766 3.167 9.57 2.114 1.81 5.782 2.71 11.008 2.71h16.46v-8.1H57.548c-2.18 0-3.68-.35-4.51-1.045-.83-.695-1.24-1.96-1.24-3.788v-6.467h14.434l.656-8.1h-15.09v-10.912h21.56v-8.098H42.72v34.23zm57.97-33.442c-.718-.523-1.665-.787-2.84-.787-1.177 0-2.168.285-2.972.85-.807.567-1.537 1.592-2.19 3.073l-14.89 42.585h9.47l2.55-8.03h15.613l2.613 8.03h9.47l-14.893-42.588c-.567-1.572-1.21-2.613-1.93-3.135v.002zM92.1 460.19l5.75-18.42 5.487 18.418H92.1v.002zm53.074 5.455c-1.155 1.678-3.245 2.512-6.27 2.512-3.03 0-5.258-.914-6.697-2.74-1.394-1.83-2.093-5.25-2.093-10.256v-4.052c0-1.783.045-3.2.13-4.243.178-3.27.785-5.576 1.833-6.928 1.48-1.914 3.745-2.873 6.794-2.873 2.613 0 4.532.653 5.75 1.96 1.218 1.308 2.07 3.245 2.547 5.813h8.49c0-5.14-1.557-9.07-4.67-11.79-3.114-2.723-7.153-4.084-12.116-4.084-3.398 0-6.293.564-8.687 1.7-6.097 2.783-9.146 9.686-9.146 20.704v3.918c0 13.982 5.945 20.968 17.833 20.968 5.4 0 9.58-1.59 12.54-4.77 2.964-3.176 4.44-7.73 4.44-13.653h-8.426c-.346 3.53-1.1 6.134-2.25 7.81v.005zm14.667-36.29v8.1h12.412v38.41h9.08v-38.41h12.47v-8.1"/><path fill="#4F5B93" d="M218.89 429.356h-18.03v46.51h9.086v-14.897h8.944c4.876 0 8.647-1.337 11.328-4.016 2.683-2.68 4.02-6.608 4.02-11.788s-1.337-9.112-4.02-11.788c-2.68-2.68-6.454-4.02-11.328-4.02v-.002zm4.538 21.686c-1.15 1.177-2.815 1.768-5 1.768h-8.485v-15.354h8.484c4.483 0 6.73 2.572 6.73 7.71 0 2.744-.578 4.703-1.73 5.88v-.004zm43.93-2.02H250.31v-19.666h-9.088v46.51h9.086v-18.81h17.05v18.81h9.076v-46.51h-9.078m48.63 4.02c-2.683-2.68-6.46-4.02-11.335-4.02h-18.027v46.507h9.085V460.97h8.943c4.877 0 8.654-1.336 11.337-4.014 2.68-2.678 4.013-6.608 4.013-11.788s-1.332-9.112-4.013-11.79v-.003zm-6.795 17.666c-1.154 1.177-2.822 1.768-5 1.768h-8.484v-15.354h8.485c4.483 0 6.734 2.572 6.734 7.71 0 2.744-.583 4.703-1.735 5.88v-.004z"/></svg>
+                    </a>
+                    <form class="header__search">
+                        <input type="search" class="searchbox searchbox--collapsed" data-docsearch placeholder="Search documentation...">
+                    </form>
+                    <div class="header__menu">
+    <button class="hamburger" data-ctrly="off-canvas-menu" data-off-canvas-menu-control>
+        <div class="hamburger__box">
+            <div class="hamburger__inner">
+                <span class="visually-hidden">Menu</span>
+            </div>
+        </div>
+    </button>
+</div>
+<nav id="off-canvas-menu" class="off-canvas-menu" aria-hidden="true" tabindex="0">
+    <div class="off-canvas-menu__content">
+        <button aria-label="Close menu" class="off-canvas-menu__close" data-ctrly="off-canvas-menu" data-off-canvas-menu-control>
+            <i class="icon-x" aria-hidden="true"></i>
+        </button>
+
+        <section class="off-canvas-menu__section">
+            <a class="off-canvas-menu__section-top" href="../">Home</a>
+        </section>
+
+        <section class="off-canvas-menu__section">
+            <a class="off-canvas-menu__section-top" href="../changelog.html">Changelog</a>
+        </section>
+            <section class="off-canvas-menu__section">
+            <h3 class="off-canvas-menu__section-header">Core Components</h3>
+            <ul class="off-canvas-menu__list">
+                            <li>
+                    <a class="off-canvas-menu__link" href="../event-loop/">
+                        EventLoop
+
+                        <span class="off-canvas-menu__version">
+                            v1.1.1
+                        </span>
+                    </a>
+                </li>
+                            <li>
+                    <a class="off-canvas-menu__link" href="../stream/">
+                        Stream
+
+                        <span class="off-canvas-menu__version">
+                            v1.1.1
+                        </span>
+                    </a>
+                </li>
+                            <li>
+                    <a class="off-canvas-menu__link" href="../promise/">
+                        Promise
+
+                        <span class="off-canvas-menu__version">
+                            v2.8.0
+                        </span>
+                    </a>
+                </li>
+                        </ul>
+        </section>
+            <section class="off-canvas-menu__section">
+            <h3 class="off-canvas-menu__section-header">Network Components</h3>
+            <ul class="off-canvas-menu__list">
+                            <li>
+                    <a class="off-canvas-menu__link" href="../socket/">
+                        Socket
+
+                        <span class="off-canvas-menu__version">
+                            v1.6.0
+                        </span>
+                    </a>
+                </li>
+                            <li>
+                    <a class="off-canvas-menu__link" href="../datagram/">
+                        Datagram
+
+                        <span class="off-canvas-menu__version">
+                            v1.6.0
+                        </span>
+                    </a>
+                </li>
+                        </ul>
+        </section>
+            <section class="off-canvas-menu__section">
+            <h3 class="off-canvas-menu__section-header">Protocol Components</h3>
+            <ul class="off-canvas-menu__list">
+                            <li>
+                    <a class="off-canvas-menu__link" href="../http/">
+                        HTTP
+
+                        <span class="off-canvas-menu__version">
+                            v1.3.0
+                        </span>
+                    </a>
+                </li>
+                            <li>
+                    <a class="off-canvas-menu__link" href="../http-client/">
+                        HTTPClient
+
+                        <span class="off-canvas-menu__version">
+                            v0.5.11
+                        </span>
+                    </a>
+                </li>
+                            <li>
+                    <a class="off-canvas-menu__link" href="../dns/">
+                        DNS
+
+                        <span class="off-canvas-menu__version">
+                            v1.5.0
+                        </span>
+                    </a>
+                </li>
+                        </ul>
+        </section>
+            <section class="off-canvas-menu__section">
+            <h3 class="off-canvas-menu__section-header">Utility Components</h3>
+            <ul class="off-canvas-menu__list">
+                            <li>
+                    <a class="off-canvas-menu__link" href="../cache/">
+                        Cache
+
+                        <span class="off-canvas-menu__version">
+                            v1.1.1
+                        </span>
+                    </a>
+                </li>
+                            <li>
+                    <a class="off-canvas-menu__link" href="../child-process/">
+                        ChildProcess
+
+                        <span class="off-canvas-menu__version">
+                            v0.6.2
+                        </span>
+                    </a>
+                </li>
+                            <li>
+                    <a class="off-canvas-menu__link" href="../promise-timer/">
+                        PromiseTimer
+
+                        <span class="off-canvas-menu__version">
+                            v1.6.0
+                        </span>
+                    </a>
+                </li>
+                            <li>
+                    <a class="off-canvas-menu__link" href="../promise-stream/">
+                        PromiseStream
+
+                        <span class="off-canvas-menu__version">
+                            v1.2.0
+                        </span>
+                    </a>
+                </li>
+                        </ul>
+        </section>
+        </div>
+</nav>
+                </div>
+            </div>
+        </header>
+    
+        <div class="container">
+        <div class="wrapper">
+            <div class="grid grid--wrap grid--gutter">
+                <main class="main">
+                                    <h1>Stream</h1>
+
+                    
+<p><a href="https://travis-ci.org/reactphp/stream" rel="nofollow"><img src="https://camo.githubusercontent.com/355b34abbed7922a8cb8f8a9aa845a8d56fe354f1d956a76e3bead55af6dacb3/68747470733a2f2f7472617669732d63692e6f72672f72656163747068702f73747265616d2e7376673f6272616e63683d6d6173746572" alt="Build Status" data-canonical-src="https://travis-ci.org/reactphp/stream.svg?branch=master" style="max-width:100%;"></a></p>
+<p>Event-driven readable and writable streams for non-blocking I/O in <a href="https://reactphp.org/" rel="nofollow">ReactPHP</a>.</p>
+<p>In order to make the <a href="../event-loop/">EventLoop</a>
+easier to use, this component introduces the powerful concept of "streams".
+Streams allow you to efficiently process huge amounts of data (such as a multi
+Gigabyte file download) in small chunks without having to store everything in
+memory at once.
+They are very similar to the streams found in PHP itself,
+but have an interface more suited for async, non-blocking I/O.</p>
+<p><strong>Table of contents</strong></p>
+<ul>
+<li>
+<a href="#stream-usage">Stream usage</a>
+<ul>
+<li>
+<a href="#readablestreaminterface">ReadableStreamInterface</a>
+<ul>
+<li><a href="#data-event">data event</a></li>
+<li><a href="#end-event">end event</a></li>
+<li><a href="#error-event">error event</a></li>
+<li><a href="#close-event">close event</a></li>
+<li><a href="#isreadable">isReadable()</a></li>
+<li><a href="#pause">pause()</a></li>
+<li><a href="#resume">resume()</a></li>
+<li><a href="#pipe">pipe()</a></li>
+<li><a href="#close">close()</a></li>
+</ul>
+</li>
+<li>
+<a href="#writablestreaminterface">WritableStreamInterface</a>
+<ul>
+<li><a href="#drain-event">drain event</a></li>
+<li><a href="#pipe-event">pipe event</a></li>
+<li><a href="#error-event-1">error event</a></li>
+<li><a href="#close-event-1">close event</a></li>
+<li><a href="#iswritable">isWritable()</a></li>
+<li><a href="#write">write()</a></li>
+<li><a href="#end">end()</a></li>
+<li><a href="#close-1">close()</a></li>
+</ul>
+</li>
+<li><a href="#duplexstreaminterface">DuplexStreamInterface</a></li>
+</ul>
+</li>
+<li>
+<a href="#creating-streams">Creating streams</a>
+<ul>
+<li><a href="#readableresourcestream">ReadableResourceStream</a></li>
+<li><a href="#writableresourcestream">WritableResourceStream</a></li>
+<li><a href="#duplexresourcestream">DuplexResourceStream</a></li>
+<li><a href="#throughstream">ThroughStream</a></li>
+<li><a href="#compositestream">CompositeStream</a></li>
+</ul>
+</li>
+<li><a href="#usage">Usage</a></li>
+<li><a href="#install">Install</a></li>
+<li><a href="#tests">Tests</a></li>
+<li><a href="#license">License</a></li>
+<li><a href="#more">More</a></li>
+</ul>
+<h2>
+<a id="stream-usage" class="anchor" href="#stream-usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Stream usage</h2>
+<p>ReactPHP uses the concept of "streams" throughout its ecosystem to provide a
+consistent higher-level abstraction for processing streams of arbitrary data
+contents and size.
+While a stream itself is a quite low-level concept, it can be used as a powerful
+abstraction to build higher-level components and protocols on top.</p>
+<p>If you're new to this concept, it helps to think of them as a water pipe:
+You can consume water from a source or you can produce water and forward (pipe)
+it to any destination (sink).</p>
+<p>Similarly, streams can either be</p>
+<ul>
+<li>readable (such as <code>STDIN</code> terminal input) or</li>
+<li>writable (such as <code>STDOUT</code> terminal output) or</li>
+<li>duplex (both readable <em>and</em> writable, such as a TCP/IP connection)</li>
+</ul>
+<p>Accordingly, this package defines the following three interfaces</p>
+<ul>
+<li><a href="#readablestreaminterface"><code>ReadableStreamInterface</code></a></li>
+<li><a href="#writablestreaminterface"><code>WritableStreamInterface</code></a></li>
+<li><a href="#duplexstreaminterface"><code>DuplexStreamInterface</code></a></li>
+</ul>
+<h3>
+<a id="readablestreaminterface" class="anchor" href="#readablestreaminterface" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>ReadableStreamInterface</h3>
+<p>The <code>ReadableStreamInterface</code> is responsible for providing an interface for
+read-only streams and the readable side of duplex streams.</p>
+<p>Besides defining a few methods, this interface also implements the
+<code>EventEmitterInterface</code> which allows you to react to certain events.</p>
+<p>The event callback functions MUST be a valid <code>callable</code> that obeys strict
+parameter definitions and MUST accept event parameters exactly as documented.
+The event callback functions MUST NOT throw an <code>Exception</code>.
+The return value of the event callback functions will be ignored and has no
+effect, so for performance reasons you're recommended to not return any
+excessive data structures.</p>
+<p>Every implementation of this interface MUST follow these event semantics in
+order to be considered a well-behaving stream.</p>
+<blockquote>
+<p>Note that higher-level implementations of this interface may choose to
+define additional events with dedicated semantics not defined as part of
+this low-level stream specification. Conformance with these event semantics
+is out of scope for this interface, so you may also have to refer to the
+documentation of such a higher-level implementation.</p>
+</blockquote>
+<h4>
+<a id="data-event" class="anchor" href="#data-event" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>data event</h4>
+<p>The <code>data</code> event will be emitted whenever some data was read/received
+from this source stream.
+The event receives a single mixed argument for incoming data.</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'data'</span>, <span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>data</span>) {
+    <span class="pl-k">echo</span> <span class="pl-s1"><span class="pl-c1">$</span>data</span>;
+});</pre></div>
+<p>This event MAY be emitted any number of times, which may be zero times if
+this stream does not send any data at all.
+It SHOULD not be emitted after an <code>end</code> or <code>close</code> event.</p>
+<p>The given <code>$data</code> argument may be of mixed type, but it's usually
+recommended it SHOULD be a <code>string</code> value or MAY use a type that allows
+representation as a <code>string</code> for maximum compatibility.</p>
+<p>Many common streams (such as a TCP/IP connection or a file-based stream)
+will emit the raw (binary) payload data that is received over the wire as
+chunks of <code>string</code> values.</p>
+<p>Due to the stream-based nature of this, the sender may send any number
+of chunks with varying sizes. There are no guarantees that these chunks
+will be received with the exact same framing the sender intended to send.
+In other words, many lower-level protocols (such as TCP/IP) transfer the
+data in chunks that may be anywhere between single-byte values to several
+dozens of kilobytes. You may want to apply a higher-level protocol to
+these low-level data chunks in order to achieve proper message framing.</p>
+<h4>
+<a id="end-event" class="anchor" href="#end-event" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>end event</h4>
+<p>The <code>end</code> event will be emitted once the source stream has successfully
+reached the end of the stream (EOF).</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'end'</span>, <span class="pl-k">function</span> () {
+    <span class="pl-k">echo</span> <span class="pl-s">'END'</span>;
+});</pre></div>
+<p>This event SHOULD be emitted once or never at all, depending on whether
+a successful end was detected.
+It SHOULD NOT be emitted after a previous <code>end</code> or <code>close</code> event.
+It MUST NOT be emitted if the stream closes due to a non-successful
+end, such as after a previous <code>error</code> event.</p>
+<p>After the stream is ended, it MUST switch to non-readable mode,
+see also <code>isReadable()</code>.</p>
+<p>This event will only be emitted if the <em>end</em> was reached successfully,
+not if the stream was interrupted by an unrecoverable error or explicitly
+closed. Not all streams know this concept of a "successful end".
+Many use-cases involve detecting when the stream closes (terminates)
+instead, in this case you should use the <code>close</code> event.
+After the stream emits an <code>end</code> event, it SHOULD usually be followed by a
+<code>close</code> event.</p>
+<p>Many common streams (such as a TCP/IP connection or a file-based stream)
+will emit this event if either the remote side closes the connection or
+a file handle was successfully read until reaching its end (EOF).</p>
+<p>Note that this event should not be confused with the <code>end()</code> method.
+This event defines a successful end <em>reading</em> from a source stream, while
+the <code>end()</code> method defines <em>writing</em> a successful end to a destination
+stream.</p>
+<h4>
+<a id="error-event" class="anchor" href="#error-event" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>error event</h4>
+<p>The <code>error</code> event will be emitted once a fatal error occurs, usually while
+trying to read from this stream.
+The event receives a single <code>Exception</code> argument for the error instance.</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>server</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'error'</span>, <span class="pl-k">function</span> (<span class="pl-smi">Exception</span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>) {
+    <span class="pl-k">echo</span> <span class="pl-s">'Error: '</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
+});</pre></div>
+<p>This event SHOULD be emitted once the stream detects a fatal error, such
+as a fatal transmission error or after an unexpected <code>data</code> or premature
+<code>end</code> event.
+It SHOULD NOT be emitted after a previous <code>error</code>, <code>end</code> or <code>close</code> event.
+It MUST NOT be emitted if this is not a fatal error condition, such as
+a temporary network issue that did not cause any data to be lost.</p>
+<p>After the stream errors, it MUST close the stream and SHOULD thus be
+followed by a <code>close</code> event and then switch to non-readable mode, see
+also <code>close()</code> and <code>isReadable()</code>.</p>
+<p>Many common streams (such as a TCP/IP connection or a file-based stream)
+only deal with data transmission and do not make assumption about data
+boundaries (such as unexpected <code>data</code> or premature <code>end</code> events).
+In other words, many lower-level protocols (such as TCP/IP) may choose
+to only emit this for a fatal transmission error once and will then
+close (terminate) the stream in response.</p>
+<p>If this stream is a <code>DuplexStreamInterface</code>, you should also notice
+how the writable side of the stream also implements an <code>error</code> event.
+In other words, an error may occur while either reading or writing the
+stream which should result in the same error processing.</p>
+<h4>
+<a id="close-event" class="anchor" href="#close-event" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>close event</h4>
+<p>The <code>close</code> event will be emitted once the stream closes (terminates).</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'close'</span>, <span class="pl-k">function</span> () {
+    <span class="pl-k">echo</span> <span class="pl-s">'CLOSED'</span>;
+});</pre></div>
+<p>This event SHOULD be emitted once or never at all, depending on whether
+the stream ever terminates.
+It SHOULD NOT be emitted after a previous <code>close</code> event.</p>
+<p>After the stream is closed, it MUST switch to non-readable mode,
+see also <code>isReadable()</code>.</p>
+<p>Unlike the <code>end</code> event, this event SHOULD be emitted whenever the stream
+closes, irrespective of whether this happens implicitly due to an
+unrecoverable error or explicitly when either side closes the stream.
+If you only want to detect a <em>successful</em> end, you should use the <code>end</code>
+event instead.</p>
+<p>Many common streams (such as a TCP/IP connection or a file-based stream)
+will likely choose to emit this event after reading a <em>successful</em> <code>end</code>
+event or after a fatal transmission <code>error</code> event.</p>
+<p>If this stream is a <code>DuplexStreamInterface</code>, you should also notice
+how the writable side of the stream also implements a <code>close</code> event.
+In other words, after receiving this event, the stream MUST switch into
+non-writable AND non-readable mode, see also <code>isWritable()</code>.
+Note that this event should not be confused with the <code>end</code> event.</p>
+<h4>
+<a id="isreadable" class="anchor" href="#isreadable" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>isReadable()</h4>
+<p>The <code>isReadable(): bool</code> method can be used to
+check whether this stream is in a readable state (not closed already).</p>
+<p>This method can be used to check if the stream still accepts incoming
+data events or if it is ended or closed already.
+Once the stream is non-readable, no further <code>data</code> or <code>end</code> events SHOULD
+be emitted.</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-en">assert</span>(<span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">isReadable</span>() === <span class="pl-c1">false</span>);
+
+<span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'data'</span>, <span class="pl-en">assertNeverCalled</span>());
+<span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'end'</span>, <span class="pl-en">assertNeverCalled</span>());</pre></div>
+<p>A successfully opened stream always MUST start in readable mode.</p>
+<p>Once the stream ends or closes, it MUST switch to non-readable mode.
+This can happen any time, explicitly through <code>close()</code> or
+implicitly due to a remote close or an unrecoverable transmission error.
+Once a stream has switched to non-readable mode, it MUST NOT transition
+back to readable mode.</p>
+<p>If this stream is a <code>DuplexStreamInterface</code>, you should also notice
+how the writable side of the stream also implements an <code>isWritable()</code>
+method. Unless this is a half-open duplex stream, they SHOULD usually
+have the same return value.</p>
+<h4>
+<a id="pause" class="anchor" href="#pause" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>pause()</h4>
+<p>The <code>pause(): void</code> method can be used to
+pause reading incoming data events.</p>
+<p>Removes the data source file descriptor from the event loop. This
+allows you to throttle incoming data.</p>
+<p>Unless otherwise noted, a successfully opened stream SHOULD NOT start
+in paused state.</p>
+<p>Once the stream is paused, no futher <code>data</code> or <code>end</code> events SHOULD
+be emitted.</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">pause</span>();
+
+<span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'data'</span>, <span class="pl-en">assertShouldNeverCalled</span>());
+<span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'end'</span>, <span class="pl-en">assertShouldNeverCalled</span>());</pre></div>
+<p>This method is advisory-only, though generally not recommended, the
+stream MAY continue emitting <code>data</code> events.</p>
+<p>You can continue processing events by calling <code>resume()</code> again.</p>
+<p>Note that both methods can be called any number of times, in particular
+calling <code>pause()</code> more than once SHOULD NOT have any effect.</p>
+<p>See also <code>resume()</code>.</p>
+<h4>
+<a id="resume" class="anchor" href="#resume" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>resume()</h4>
+<p>The <code>resume(): void</code> method can be used to
+resume reading incoming data events.</p>
+<p>Re-attach the data source after a previous <code>pause()</code>.</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">pause</span>();
+
+<span class="pl-s1"><span class="pl-c1">$</span>loop</span>-&gt;<span class="pl-en">addTimer</span>(<span class="pl-c1">1.0</span>, <span class="pl-k">function</span> () <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>stream</span>) {
+    <span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">resume</span>();
+});</pre></div>
+<p>Note that both methods can be called any number of times, in particular
+calling <code>resume()</code> without a prior <code>pause()</code> SHOULD NOT have any effect.</p>
+<p>See also <code>pause()</code>.</p>
+<h4>
+<a id="pipe" class="anchor" href="#pipe" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>pipe()</h4>
+<p>The <code>pipe(WritableStreamInterface $dest, array $options = [])</code> method can be used to
+pipe all the data from this readable source into the given writable destination.</p>
+<p>Automatically sends all incoming data to the destination.
+Automatically throttles the source based on what the destination can handle.</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>source</span>-&gt;<span class="pl-en">pipe</span>(<span class="pl-s1"><span class="pl-c1">$</span>dest</span>);</pre></div>
+<p>Similarly, you can also pipe an instance implementing <code>DuplexStreamInterface</code>
+into itself in order to write back all the data that is received.
+This may be a useful feature for a TCP/IP echo service:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>connection</span>-&gt;<span class="pl-en">pipe</span>(<span class="pl-s1"><span class="pl-c1">$</span>connection</span>);</pre></div>
+<p>This method returns the destination stream as-is, which can be used to
+set up chains of piped streams:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>source</span>-&gt;<span class="pl-en">pipe</span>(<span class="pl-s1"><span class="pl-c1">$</span>decodeGzip</span>)-&gt;<span class="pl-en">pipe</span>(<span class="pl-s1"><span class="pl-c1">$</span>filterBadWords</span>)-&gt;<span class="pl-en">pipe</span>(<span class="pl-s1"><span class="pl-c1">$</span>dest</span>);</pre></div>
+<p>By default, this will call <code>end()</code> on the destination stream once the
+source stream emits an <code>end</code> event. This can be disabled like this:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>source</span>-&gt;<span class="pl-en">pipe</span>(<span class="pl-s1"><span class="pl-c1">$</span>dest</span>, <span class="pl-en">array</span>(<span class="pl-s">'end'</span> =&gt; <span class="pl-c1">false</span>));</pre></div>
+<p>Note that this only applies to the <code>end</code> event.
+If an <code>error</code> or explicit <code>close</code> event happens on the source stream,
+you'll have to manually close the destination stream:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>source</span>-&gt;<span class="pl-en">pipe</span>(<span class="pl-s1"><span class="pl-c1">$</span>dest</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>source</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'close'</span>, <span class="pl-k">function</span> () <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>dest</span>) {
+    <span class="pl-s1"><span class="pl-c1">$</span>dest</span>-&gt;<span class="pl-en">end</span>(<span class="pl-s">'BYE!'</span>);
+});</pre></div>
+<p>If the source stream is not readable (closed state), then this is a NO-OP.</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>source</span>-&gt;<span class="pl-en">close</span>();
+<span class="pl-s1"><span class="pl-c1">$</span>source</span>-&gt;<span class="pl-en">pipe</span>(<span class="pl-s1"><span class="pl-c1">$</span>dest</span>); <span class="pl-c">// NO-OP</span></pre></div>
+<p>If the destinantion stream is not writable (closed state), then this will simply
+throttle (pause) the source stream:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>dest</span>-&gt;<span class="pl-en">close</span>();
+<span class="pl-s1"><span class="pl-c1">$</span>source</span>-&gt;<span class="pl-en">pipe</span>(<span class="pl-s1"><span class="pl-c1">$</span>dest</span>); <span class="pl-c">// calls $source-&gt;pause()</span></pre></div>
+<p>Similarly, if the destination stream is closed while the pipe is still
+active, it will also throttle (pause) the source stream:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>source</span>-&gt;<span class="pl-en">pipe</span>(<span class="pl-s1"><span class="pl-c1">$</span>dest</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>dest</span>-&gt;<span class="pl-en">close</span>(); <span class="pl-c">// calls $source-&gt;pause()</span></pre></div>
+<p>Once the pipe is set up successfully, the destination stream MUST emit
+a <code>pipe</code> event with this source stream an event argument.</p>
+<h4>
+<a id="close" class="anchor" href="#close" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>close()</h4>
+<p>The <code>close(): void</code> method can be used to
+close the stream (forcefully).</p>
+<p>This method can be used to (forcefully) close the stream.</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">close</span>();</pre></div>
+<p>Once the stream is closed, it SHOULD emit a <code>close</code> event.
+Note that this event SHOULD NOT be emitted more than once, in particular
+if this method is called multiple times.</p>
+<p>After calling this method, the stream MUST switch into a non-readable
+mode, see also <code>isReadable()</code>.
+This means that no further <code>data</code> or <code>end</code> events SHOULD be emitted.</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">close</span>();
+<span class="pl-en">assert</span>(<span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">isReadable</span>() === <span class="pl-c1">false</span>);
+
+<span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'data'</span>, <span class="pl-en">assertNeverCalled</span>());
+<span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'end'</span>, <span class="pl-en">assertNeverCalled</span>());</pre></div>
+<p>If this stream is a <code>DuplexStreamInterface</code>, you should also notice
+how the writable side of the stream also implements a <code>close()</code> method.
+In other words, after calling this method, the stream MUST switch into
+non-writable AND non-readable mode, see also <code>isWritable()</code>.
+Note that this method should not be confused with the <code>end()</code> method.</p>
+<h3>
+<a id="writablestreaminterface" class="anchor" href="#writablestreaminterface" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>WritableStreamInterface</h3>
+<p>The <code>WritableStreamInterface</code> is responsible for providing an interface for
+write-only streams and the writable side of duplex streams.</p>
+<p>Besides defining a few methods, this interface also implements the
+<code>EventEmitterInterface</code> which allows you to react to certain events.</p>
+<p>The event callback functions MUST be a valid <code>callable</code> that obeys strict
+parameter definitions and MUST accept event parameters exactly as documented.
+The event callback functions MUST NOT throw an <code>Exception</code>.
+The return value of the event callback functions will be ignored and has no
+effect, so for performance reasons you're recommended to not return any
+excessive data structures.</p>
+<p>Every implementation of this interface MUST follow these event semantics in
+order to be considered a well-behaving stream.</p>
+<blockquote>
+<p>Note that higher-level implementations of this interface may choose to
+define additional events with dedicated semantics not defined as part of
+this low-level stream specification. Conformance with these event semantics
+is out of scope for this interface, so you may also have to refer to the
+documentation of such a higher-level implementation.</p>
+</blockquote>
+<h4>
+<a id="drain-event" class="anchor" href="#drain-event" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>drain event</h4>
+<p>The <code>drain</code> event will be emitted whenever the write buffer became full
+previously and is now ready to accept more data.</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'drain'</span>, <span class="pl-k">function</span> () <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>stream</span>) {
+    <span class="pl-k">echo</span> <span class="pl-s">'Stream is now ready to accept more data'</span>;
+});</pre></div>
+<p>This event SHOULD be emitted once every time the buffer became full
+previously and is now ready to accept more data.
+In other words, this event MAY be emitted any number of times, which may
+be zero times if the buffer never became full in the first place.
+This event SHOULD NOT be emitted if the buffer has not become full
+previously.</p>
+<p>This event is mostly used internally, see also <code>write()</code> for more details.</p>
+<h4>
+<a id="pipe-event" class="anchor" href="#pipe-event" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>pipe event</h4>
+<p>The <code>pipe</code> event will be emitted whenever a readable stream is <code>pipe()</code>d
+into this stream.
+The event receives a single <code>ReadableStreamInterface</code> argument for the
+source stream.</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'pipe'</span>, <span class="pl-k">function</span> (<span class="pl-smi">ReadableStreamInterface</span> <span class="pl-s1"><span class="pl-c1">$</span>source</span>) <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>stream</span>) {
+    <span class="pl-k">echo</span> <span class="pl-s">'Now receiving piped data'</span>;
+
+    <span class="pl-c">// explicitly close target if source emits an error</span>
+    <span class="pl-s1"><span class="pl-c1">$</span>source</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'error'</span>, <span class="pl-k">function</span> () <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>stream</span>) {
+        <span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">close</span>();
+    });
+});
+
+<span class="pl-s1"><span class="pl-c1">$</span>source</span>-&gt;<span class="pl-en">pipe</span>(<span class="pl-s1"><span class="pl-c1">$</span>stream</span>);</pre></div>
+<p>This event MUST be emitted once for each readable stream that is
+successfully piped into this destination stream.
+In other words, this event MAY be emitted any number of times, which may
+be zero times if no stream is ever piped into this stream.
+This event MUST NOT be emitted if either the source is not readable
+(closed already) or this destination is not writable (closed already).</p>
+<p>This event is mostly used internally, see also <code>pipe()</code> for more details.</p>
+<h4>
+<a id="error-event-1" class="anchor" href="#error-event-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>error event</h4>
+<p>The <code>error</code> event will be emitted once a fatal error occurs, usually while
+trying to write to this stream.
+The event receives a single <code>Exception</code> argument for the error instance.</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'error'</span>, <span class="pl-k">function</span> (<span class="pl-smi">Exception</span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>) {
+    <span class="pl-k">echo</span> <span class="pl-s">'Error: '</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
+});</pre></div>
+<p>This event SHOULD be emitted once the stream detects a fatal error, such
+as a fatal transmission error.
+It SHOULD NOT be emitted after a previous <code>error</code> or <code>close</code> event.
+It MUST NOT be emitted if this is not a fatal error condition, such as
+a temporary network issue that did not cause any data to be lost.</p>
+<p>After the stream errors, it MUST close the stream and SHOULD thus be
+followed by a <code>close</code> event and then switch to non-writable mode, see
+also <code>close()</code> and <code>isWritable()</code>.</p>
+<p>Many common streams (such as a TCP/IP connection or a file-based stream)
+only deal with data transmission and may choose
+to only emit this for a fatal transmission error once and will then
+close (terminate) the stream in response.</p>
+<p>If this stream is a <code>DuplexStreamInterface</code>, you should also notice
+how the readable side of the stream also implements an <code>error</code> event.
+In other words, an error may occur while either reading or writing the
+stream which should result in the same error processing.</p>
+<h4>
+<a id="close-event-1" class="anchor" href="#close-event-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>close event</h4>
+<p>The <code>close</code> event will be emitted once the stream closes (terminates).</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'close'</span>, <span class="pl-k">function</span> () {
+    <span class="pl-k">echo</span> <span class="pl-s">'CLOSED'</span>;
+});</pre></div>
+<p>This event SHOULD be emitted once or never at all, depending on whether
+the stream ever terminates.
+It SHOULD NOT be emitted after a previous <code>close</code> event.</p>
+<p>After the stream is closed, it MUST switch to non-writable mode,
+see also <code>isWritable()</code>.</p>
+<p>This event SHOULD be emitted whenever the stream closes, irrespective of
+whether this happens implicitly due to an unrecoverable error or
+explicitly when either side closes the stream.</p>
+<p>Many common streams (such as a TCP/IP connection or a file-based stream)
+will likely choose to emit this event after flushing the buffer from
+the <code>end()</code> method, after receiving a <em>successful</em> <code>end</code> event or after
+a fatal transmission <code>error</code> event.</p>
+<p>If this stream is a <code>DuplexStreamInterface</code>, you should also notice
+how the readable side of the stream also implements a <code>close</code> event.
+In other words, after receiving this event, the stream MUST switch into
+non-writable AND non-readable mode, see also <code>isReadable()</code>.
+Note that this event should not be confused with the <code>end</code> event.</p>
+<h4>
+<a id="iswritable" class="anchor" href="#iswritable" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>isWritable()</h4>
+<p>The <code>isWritable(): bool</code> method can be used to
+check whether this stream is in a writable state (not closed already).</p>
+<p>This method can be used to check if the stream still accepts writing
+any data or if it is ended or closed already.
+Writing any data to a non-writable stream is a NO-OP:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-en">assert</span>(<span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">isWritable</span>() === <span class="pl-c1">false</span>);
+
+<span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">write</span>(<span class="pl-s">'end'</span>); <span class="pl-c">// NO-OP</span>
+<span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">end</span>(<span class="pl-s">'end'</span>); <span class="pl-c">// NO-OP</span></pre></div>
+<p>A successfully opened stream always MUST start in writable mode.</p>
+<p>Once the stream ends or closes, it MUST switch to non-writable mode.
+This can happen any time, explicitly through <code>end()</code> or <code>close()</code> or
+implicitly due to a remote close or an unrecoverable transmission error.
+Once a stream has switched to non-writable mode, it MUST NOT transition
+back to writable mode.</p>
+<p>If this stream is a <code>DuplexStreamInterface</code>, you should also notice
+how the readable side of the stream also implements an <code>isReadable()</code>
+method. Unless this is a half-open duplex stream, they SHOULD usually
+have the same return value.</p>
+<h4>
+<a id="write" class="anchor" href="#write" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>write()</h4>
+<p>The <code>write(mixed $data): bool</code> method can be used to
+write some data into the stream.</p>
+<p>A successful write MUST be confirmed with a boolean <code>true</code>, which means
+that either the data was written (flushed) immediately or is buffered and
+scheduled for a future write. Note that this interface gives you no
+control over explicitly flushing the buffered data, as finding the
+appropriate time for this is beyond the scope of this interface and left
+up to the implementation of this interface.</p>
+<p>Many common streams (such as a TCP/IP connection or file-based stream)
+may choose to buffer all given data and schedule a future flush by using
+an underlying EventLoop to check when the resource is actually writable.</p>
+<p>If a stream cannot handle writing (or flushing) the data, it SHOULD emit
+an <code>error</code> event and MAY <code>close()</code> the stream if it can not recover from
+this error.</p>
+<p>If the internal buffer is full after adding <code>$data</code>, then <code>write()</code>
+SHOULD return <code>false</code>, indicating that the caller should stop sending
+data until the buffer drains.
+The stream SHOULD send a <code>drain</code> event once the buffer is ready to accept
+more data.</p>
+<p>Similarly, if the the stream is not writable (already in a closed state)
+it MUST NOT process the given <code>$data</code> and SHOULD return <code>false</code>,
+indicating that the caller should stop sending data.</p>
+<p>The given <code>$data</code> argument MAY be of mixed type, but it's usually
+recommended it SHOULD be a <code>string</code> value or MAY use a type that allows
+representation as a <code>string</code> for maximum compatibility.</p>
+<p>Many common streams (such as a TCP/IP connection or a file-based stream)
+will only accept the raw (binary) payload data that is transferred over
+the wire as chunks of <code>string</code> values.</p>
+<p>Due to the stream-based nature of this, the sender may send any number
+of chunks with varying sizes. There are no guarantees that these chunks
+will be received with the exact same framing the sender intended to send.
+In other words, many lower-level protocols (such as TCP/IP) transfer the
+data in chunks that may be anywhere between single-byte values to several
+dozens of kilobytes. You may want to apply a higher-level protocol to
+these low-level data chunks in order to achieve proper message framing.</p>
+<h4>
+<a id="end" class="anchor" href="#end" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>end()</h4>
+<p>The <code>end(mixed $data = null): void</code> method can be used to
+successfully end the stream (after optionally sending some final data).</p>
+<p>This method can be used to successfully end the stream, i.e. close
+the stream after sending out all data that is currently buffered.</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">write</span>(<span class="pl-s">'hello'</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">write</span>(<span class="pl-s">'world'</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">end</span>();</pre></div>
+<p>If there's no data currently buffered and nothing to be flushed, then
+this method MAY <code>close()</code> the stream immediately.</p>
+<p>If there's still data in the buffer that needs to be flushed first, then
+this method SHOULD try to write out this data and only then <code>close()</code>
+the stream.
+Once the stream is closed, it SHOULD emit a <code>close</code> event.</p>
+<p>Note that this interface gives you no control over explicitly flushing
+the buffered data, as finding the appropriate time for this is beyond the
+scope of this interface and left up to the implementation of this
+interface.</p>
+<p>Many common streams (such as a TCP/IP connection or file-based stream)
+may choose to buffer all given data and schedule a future flush by using
+an underlying EventLoop to check when the resource is actually writable.</p>
+<p>You can optionally pass some final data that is written to the stream
+before ending the stream. If a non-<code>null</code> value is given as <code>$data</code>, then
+this method will behave just like calling <code>write($data)</code> before ending
+with no data.</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-c">// shorter version</span>
+<span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">end</span>(<span class="pl-s">'bye'</span>);
+
+<span class="pl-c">// same as longer version</span>
+<span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">write</span>(<span class="pl-s">'bye'</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">end</span>();</pre></div>
+<p>After calling this method, the stream MUST switch into a non-writable
+mode, see also <code>isWritable()</code>.
+This means that no further writes are possible, so any additional
+<code>write()</code> or <code>end()</code> calls have no effect.</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">end</span>();
+<span class="pl-en">assert</span>(<span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">isWritable</span>() === <span class="pl-c1">false</span>);
+
+<span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">write</span>(<span class="pl-s">'nope'</span>); <span class="pl-c">// NO-OP</span>
+<span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">end</span>(); <span class="pl-c">// NO-OP</span></pre></div>
+<p>If this stream is a <code>DuplexStreamInterface</code>, calling this method SHOULD
+also end its readable side, unless the stream supports half-open mode.
+In other words, after calling this method, these streams SHOULD switch
+into non-writable AND non-readable mode, see also <code>isReadable()</code>.
+This implies that in this case, the stream SHOULD NOT emit any <code>data</code>
+or <code>end</code> events anymore.
+Streams MAY choose to use the <code>pause()</code> method logic for this, but
+special care may have to be taken to ensure a following call to the
+<code>resume()</code> method SHOULD NOT continue emitting readable events.</p>
+<p>Note that this method should not be confused with the <code>close()</code> method.</p>
+<h4>
+<a id="close-1" class="anchor" href="#close-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>close()</h4>
+<p>The <code>close(): void</code> method can be used to
+close the stream (forcefully).</p>
+<p>This method can be used to forcefully close the stream, i.e. close
+the stream without waiting for any buffered data to be flushed.
+If there's still data in the buffer, this data SHOULD be discarded.</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">close</span>();</pre></div>
+<p>Once the stream is closed, it SHOULD emit a <code>close</code> event.
+Note that this event SHOULD NOT be emitted more than once, in particular
+if this method is called multiple times.</p>
+<p>After calling this method, the stream MUST switch into a non-writable
+mode, see also <code>isWritable()</code>.
+This means that no further writes are possible, so any additional
+<code>write()</code> or <code>end()</code> calls have no effect.</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">close</span>();
+<span class="pl-en">assert</span>(<span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">isWritable</span>() === <span class="pl-c1">false</span>);
+
+<span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">write</span>(<span class="pl-s">'nope'</span>); <span class="pl-c">// NO-OP</span>
+<span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">end</span>(); <span class="pl-c">// NO-OP</span></pre></div>
+<p>Note that this method should not be confused with the <code>end()</code> method.
+Unlike the <code>end()</code> method, this method does not take care of any existing
+buffers and simply discards any buffer contents.
+Likewise, this method may also be called after calling <code>end()</code> on a
+stream in order to stop waiting for the stream to flush its final data.</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">end</span>();
+<span class="pl-s1"><span class="pl-c1">$</span>loop</span>-&gt;<span class="pl-en">addTimer</span>(<span class="pl-c1">1.0</span>, <span class="pl-k">function</span> () <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>stream</span>) {
+    <span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">close</span>();
+});</pre></div>
+<p>If this stream is a <code>DuplexStreamInterface</code>, you should also notice
+how the readable side of the stream also implements a <code>close()</code> method.
+In other words, after calling this method, the stream MUST switch into
+non-writable AND non-readable mode, see also <code>isReadable()</code>.</p>
+<h3>
+<a id="duplexstreaminterface" class="anchor" href="#duplexstreaminterface" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>DuplexStreamInterface</h3>
+<p>The <code>DuplexStreamInterface</code> is responsible for providing an interface for
+duplex streams (both readable and writable).</p>
+<p>It builds on top of the existing interfaces for readable and writable streams
+and follows the exact same method and event semantics.
+If you're new to this concept, you should look into the
+<code>ReadableStreamInterface</code> and <code>WritableStreamInterface</code> first.</p>
+<p>Besides defining a few methods, this interface also implements the
+<code>EventEmitterInterface</code> which allows you to react to the same events defined
+on the <code>ReadbleStreamInterface</code> and <code>WritableStreamInterface</code>.</p>
+<p>The event callback functions MUST be a valid <code>callable</code> that obeys strict
+parameter definitions and MUST accept event parameters exactly as documented.
+The event callback functions MUST NOT throw an <code>Exception</code>.
+The return value of the event callback functions will be ignored and has no
+effect, so for performance reasons you're recommended to not return any
+excessive data structures.</p>
+<p>Every implementation of this interface MUST follow these event semantics in
+order to be considered a well-behaving stream.</p>
+<blockquote>
+<p>Note that higher-level implementations of this interface may choose to
+define additional events with dedicated semantics not defined as part of
+this low-level stream specification. Conformance with these event semantics
+is out of scope for this interface, so you may also have to refer to the
+documentation of such a higher-level implementation.</p>
+</blockquote>
+<p>See also <a href="#readablestreaminterface"><code>ReadableStreamInterface</code></a> and
+<a href="#writablestreaminterface"><code>WritableStreamInterface</code></a> for more details.</p>
+<h2>
+<a id="creating-streams" class="anchor" href="#creating-streams" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Creating streams</h2>
+<p>ReactPHP uses the concept of "streams" throughout its ecosystem, so that
+many higher-level consumers of this package only deal with
+<a href="#stream-usage">stream usage</a>.
+This implies that stream instances are most often created within some
+higher-level components and many consumers never actually have to deal with
+creating a stream instance.</p>
+<ul>
+<li>Use <a href="../socket/">react/socket</a>
+if you want to accept incoming or establish outgoing plaintext TCP/IP or
+secure TLS socket connection streams.</li>
+<li>Use <a href="../http/">react/http</a>
+if you want to receive an incoming HTTP request body streams.</li>
+<li>Use <a href="../child-process/">react/child-process</a>
+if you want to communicate with child processes via process pipes such as
+STDIN, STDOUT, STDERR etc.</li>
+<li>Use experimental <a href="https://github.com/reactphp/filesystem">react/filesystem</a>
+if you want to read from / write to the filesystem.</li>
+<li>See also the last chapter for <a href="#more">more real-world applications</a>.</li>
+</ul>
+<p>However, if you are writing a lower-level component or want to create a stream
+instance from a stream resource, then the following chapter is for you.</p>
+<blockquote>
+<p>Note that the following examples use <code>fopen()</code> and <code>stream_socket_client()</code>
+for illustration purposes only.
+These functions SHOULD NOT be used in a truly async program because each call
+may take several seconds to complete and would block the EventLoop otherwise.
+Additionally, the <code>fopen()</code> call will return a file handle on some platforms
+which may or may not be supported by all EventLoop implementations.
+As an alternative, you may want to use higher-level libraries listed above.</p>
+</blockquote>
+<h3>
+<a id="readableresourcestream" class="anchor" href="#readableresourcestream" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>ReadableResourceStream</h3>
+<p>The <code>ReadableResourceStream</code> is a concrete implementation of the
+<a href="#readablestreaminterface"><code>ReadableStreamInterface</code></a> for PHP's stream resources.</p>
+<p>This can be used to represent a read-only resource like a file stream opened in
+readable mode or a stream such as <code>STDIN</code>:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>stream</span> = <span class="pl-k">new</span> <span class="pl-v">ReadableResourceStream</span>(<span class="pl-c1">STDIN</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'data'</span>, <span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>chunk</span>) {
+    <span class="pl-k">echo</span> <span class="pl-s1"><span class="pl-c1">$</span>chunk</span>;
+});
+<span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'end'</span>, <span class="pl-k">function</span> () {
+    <span class="pl-k">echo</span> <span class="pl-s">'END'</span>;
+});</pre></div>
+<p>See also <a href="#readablestreaminterface"><code>ReadableStreamInterface</code></a> for more details.</p>
+<p>The first parameter given to the constructor MUST be a valid stream resource
+that is opened in reading mode (e.g. <code>fopen()</code> mode <code>r</code>).
+Otherwise, it will throw an <code>InvalidArgumentException</code>:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-c">// throws InvalidArgumentException</span>
+<span class="pl-s1"><span class="pl-c1">$</span>stream</span> = <span class="pl-k">new</span> <span class="pl-v">ReadableResourceStream</span>(<span class="pl-c1">false</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);</pre></div>
+<p>See also the <a href="#readableresourcestream"><code>DuplexResourceStream</code></a> for read-and-write
+stream resources otherwise.</p>
+<p>Internally, this class tries to enable non-blocking mode on the stream resource
+which may not be supported for all stream resources.
+Most notably, this is not supported by pipes on Windows (STDIN etc.).
+If this fails, it will throw a <code>RuntimeException</code>:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-c">// throws RuntimeException on Windows</span>
+<span class="pl-s1"><span class="pl-c1">$</span>stream</span> = <span class="pl-k">new</span> <span class="pl-v">ReadableResourceStream</span>(<span class="pl-c1">STDIN</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);</pre></div>
+<p>Once the constructor is called with a valid stream resource, this class will
+take care of the underlying stream resource.
+You SHOULD only use its public API and SHOULD NOT interfere with the underlying
+stream resource manually.</p>
+<p>This class takes an optional <code>int|null $readChunkSize</code> parameter that controls
+the maximum buffer size in bytes to read at once from the stream.
+You can use a <code>null</code> value here in order to apply its default value.
+This value SHOULD NOT be changed unless you know what you're doing.
+This can be a positive number which means that up to X bytes will be read
+at once from the underlying stream resource. Note that the actual number
+of bytes read may be lower if the stream resource has less than X bytes
+currently available.
+This can be <code>-1</code> which means "read everything available" from the
+underlying stream resource.
+This should read until the stream resource is not readable anymore
+(i.e. underlying buffer drained), note that this does not neccessarily
+mean it reached EOF.</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>stream</span> = <span class="pl-k">new</span> <span class="pl-v">ReadableResourceStream</span>(<span class="pl-c1">STDIN</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>, <span class="pl-c1">8192</span>);</pre></div>
+<blockquote>
+<p>PHP bug warning: If the PHP process has explicitly been started without a
+<code>STDIN</code> stream, then trying to read from <code>STDIN</code> may return data from
+another stream resource. This does not happen if you start this with an empty
+stream like <code>php test.php &lt; /dev/null</code> instead of <code>php test.php &lt;&amp;-</code>.
+See <a href="https://github.com/reactphp/stream/issues/81">#81</a> for more details.</p>
+</blockquote>
+<h3>
+<a id="writableresourcestream" class="anchor" href="#writableresourcestream" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>WritableResourceStream</h3>
+<p>The <code>WritableResourceStream</code> is a concrete implementation of the
+<a href="#writablestreaminterface"><code>WritableStreamInterface</code></a> for PHP's stream resources.</p>
+<p>This can be used to represent a write-only resource like a file stream opened in
+writable mode or a stream such as <code>STDOUT</code> or <code>STDERR</code>:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>stream</span> = <span class="pl-k">new</span> <span class="pl-v">WritableResourceStream</span>(<span class="pl-c1">STDOUT</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">write</span>(<span class="pl-s">'hello!'</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">end</span>();</pre></div>
+<p>See also <a href="#writablestreaminterface"><code>WritableStreamInterface</code></a> for more details.</p>
+<p>The first parameter given to the constructor MUST be a valid stream resource
+that is opened for writing.
+Otherwise, it will throw an <code>InvalidArgumentException</code>:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-c">// throws InvalidArgumentException</span>
+<span class="pl-s1"><span class="pl-c1">$</span>stream</span> = <span class="pl-k">new</span> <span class="pl-v">WritableResourceStream</span>(<span class="pl-c1">false</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);</pre></div>
+<p>See also the <a href="#readableresourcestream"><code>DuplexResourceStream</code></a> for read-and-write
+stream resources otherwise.</p>
+<p>Internally, this class tries to enable non-blocking mode on the stream resource
+which may not be supported for all stream resources.
+Most notably, this is not supported by pipes on Windows (STDOUT, STDERR etc.).
+If this fails, it will throw a <code>RuntimeException</code>:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-c">// throws RuntimeException on Windows</span>
+<span class="pl-s1"><span class="pl-c1">$</span>stream</span> = <span class="pl-k">new</span> <span class="pl-v">WritableResourceStream</span>(<span class="pl-c1">STDOUT</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);</pre></div>
+<p>Once the constructor is called with a valid stream resource, this class will
+take care of the underlying stream resource.
+You SHOULD only use its public API and SHOULD NOT interfere with the underlying
+stream resource manually.</p>
+<p>Any <code>write()</code> calls to this class will not be performed instantly, but will
+be performed asynchronously, once the EventLoop reports the stream resource is
+ready to accept data.
+For this, it uses an in-memory buffer string to collect all outstanding writes.
+This buffer has a soft-limit applied which defines how much data it is willing
+to accept before the caller SHOULD stop sending further data.</p>
+<p>This class takes an optional <code>int|null $writeBufferSoftLimit</code> parameter that controls
+this maximum buffer size in bytes.
+You can use a <code>null</code> value here in order to apply its default value.
+This value SHOULD NOT be changed unless you know what you're doing.</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>stream</span> = <span class="pl-k">new</span> <span class="pl-v">WritableResourceStream</span>(<span class="pl-c1">STDOUT</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>, <span class="pl-c1">8192</span>);</pre></div>
+<p>This class takes an optional <code>int|null $writeChunkSize</code> parameter that controls
+this maximum buffer size in bytes to write at once to the stream.
+You can use a <code>null</code> value here in order to apply its default value.
+This value SHOULD NOT be changed unless you know what you're doing.
+This can be a positive number which means that up to X bytes will be written
+at once to the underlying stream resource. Note that the actual number
+of bytes written may be lower if the stream resource has less than X bytes
+currently available.
+This can be <code>-1</code> which means "write everything available" to the
+underlying stream resource.</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>stream</span> = <span class="pl-k">new</span> <span class="pl-v">WritableResourceStream</span>(<span class="pl-c1">STDOUT</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>, <span class="pl-c1">null</span>, <span class="pl-c1">8192</span>);</pre></div>
+<p>See also <a href="#write"><code>write()</code></a> for more details.</p>
+<h3>
+<a id="duplexresourcestream" class="anchor" href="#duplexresourcestream" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>DuplexResourceStream</h3>
+<p>The <code>DuplexResourceStream</code> is a concrete implementation of the
+<a href="#duplexstreaminterface"><code>DuplexStreamInterface</code></a> for PHP's stream resources.</p>
+<p>This can be used to represent a read-and-write resource like a file stream opened
+in read and write mode mode or a stream such as a TCP/IP connection:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>conn</span> = <span class="pl-en">stream_socket_client</span>(<span class="pl-s">'tcp://google.com:80'</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>stream</span> = <span class="pl-k">new</span> <span class="pl-v">DuplexResourceStream</span>(<span class="pl-s1"><span class="pl-c1">$</span>conn</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">write</span>(<span class="pl-s">'hello!'</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">end</span>();</pre></div>
+<p>See also <a href="#duplexstreaminterface"><code>DuplexStreamInterface</code></a> for more details.</p>
+<p>The first parameter given to the constructor MUST be a valid stream resource
+that is opened for reading <em>and</em> writing.
+Otherwise, it will throw an <code>InvalidArgumentException</code>:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-c">// throws InvalidArgumentException</span>
+<span class="pl-s1"><span class="pl-c1">$</span>stream</span> = <span class="pl-k">new</span> <span class="pl-v">DuplexResourceStream</span>(<span class="pl-c1">false</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);</pre></div>
+<p>See also the <a href="#readableresourcestream"><code>ReadableResourceStream</code></a> for read-only
+and the <a href="#writableresourcestream"><code>WritableResourceStream</code></a> for write-only
+stream resources otherwise.</p>
+<p>Internally, this class tries to enable non-blocking mode on the stream resource
+which may not be supported for all stream resources.
+Most notably, this is not supported by pipes on Windows (STDOUT, STDERR etc.).
+If this fails, it will throw a <code>RuntimeException</code>:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-c">// throws RuntimeException on Windows</span>
+<span class="pl-s1"><span class="pl-c1">$</span>stream</span> = <span class="pl-k">new</span> <span class="pl-v">DuplexResourceStream</span>(<span class="pl-c1">STDOUT</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);</pre></div>
+<p>Once the constructor is called with a valid stream resource, this class will
+take care of the underlying stream resource.
+You SHOULD only use its public API and SHOULD NOT interfere with the underlying
+stream resource manually.</p>
+<p>This class takes an optional <code>int|null $readChunkSize</code> parameter that controls
+the maximum buffer size in bytes to read at once from the stream.
+You can use a <code>null</code> value here in order to apply its default value.
+This value SHOULD NOT be changed unless you know what you're doing.
+This can be a positive number which means that up to X bytes will be read
+at once from the underlying stream resource. Note that the actual number
+of bytes read may be lower if the stream resource has less than X bytes
+currently available.
+This can be <code>-1</code> which means "read everything available" from the
+underlying stream resource.
+This should read until the stream resource is not readable anymore
+(i.e. underlying buffer drained), note that this does not neccessarily
+mean it reached EOF.</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>conn</span> = <span class="pl-en">stream_socket_client</span>(<span class="pl-s">'tcp://google.com:80'</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>stream</span> = <span class="pl-k">new</span> <span class="pl-v">DuplexResourceStream</span>(<span class="pl-s1"><span class="pl-c1">$</span>conn</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>, <span class="pl-c1">8192</span>);</pre></div>
+<p>Any <code>write()</code> calls to this class will not be performed instantly, but will
+be performed asynchronously, once the EventLoop reports the stream resource is
+ready to accept data.
+For this, it uses an in-memory buffer string to collect all outstanding writes.
+This buffer has a soft-limit applied which defines how much data it is willing
+to accept before the caller SHOULD stop sending further data.</p>
+<p>This class takes another optional <code>WritableStreamInterface|null $buffer</code> parameter
+that controls this write behavior of this stream.
+You can use a <code>null</code> value here in order to apply its default value.
+This value SHOULD NOT be changed unless you know what you're doing.</p>
+<p>If you want to change the write buffer soft limit, you can pass an instance of
+<a href="#writableresourcestream"><code>WritableResourceStream</code></a> like this:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>conn</span> = <span class="pl-en">stream_socket_client</span>(<span class="pl-s">'tcp://google.com:80'</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>buffer</span> = <span class="pl-k">new</span> <span class="pl-v">WritableResourceStream</span>(<span class="pl-s1"><span class="pl-c1">$</span>conn</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>, <span class="pl-c1">8192</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>stream</span> = <span class="pl-k">new</span> <span class="pl-v">DuplexResourceStream</span>(<span class="pl-s1"><span class="pl-c1">$</span>conn</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>, <span class="pl-c1">null</span>, <span class="pl-s1"><span class="pl-c1">$</span>buffer</span>);</pre></div>
+<p>See also <a href="#writableresourcestream"><code>WritableResourceStream</code></a> for more details.</p>
+<h3>
+<a id="throughstream" class="anchor" href="#throughstream" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>ThroughStream</h3>
+<p>The <code>ThroughStream</code> implements the
+<a href="#duplexstreaminterface"><code>DuplexStreamInterface</code></a> and will simply pass any data
+you write to it through to its readable end.</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>through</span> = <span class="pl-k">new</span> <span class="pl-v">ThroughStream</span>();
+<span class="pl-s1"><span class="pl-c1">$</span>through</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'data'</span>, <span class="pl-s1"><span class="pl-c1">$</span><span class="pl-smi">this</span></span>-&gt;<span class="pl-en">expectCallableOnceWith</span>(<span class="pl-s">'hello'</span>));
+
+<span class="pl-s1"><span class="pl-c1">$</span>through</span>-&gt;<span class="pl-en">write</span>(<span class="pl-s">'hello'</span>);</pre></div>
+<p>Similarly, the <a href="#end"><code>end()</code> method</a> will end the stream and emit an
+<a href="#end-event"><code>end</code> event</a> and then <a href="#close-1"><code>close()</code></a> the stream.
+The <a href="#close-1"><code>close()</code> method</a> will close the stream and emit a
+<a href="#close-event"><code>close</code> event</a>.
+Accordingly, this is can also be used in a <a href="#pipe"><code>pipe()</code></a> context like this:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>through</span> = <span class="pl-k">new</span> <span class="pl-v">ThroughStream</span>();
+<span class="pl-s1"><span class="pl-c1">$</span>source</span>-&gt;<span class="pl-en">pipe</span>(<span class="pl-s1"><span class="pl-c1">$</span>through</span>)-&gt;<span class="pl-en">pipe</span>(<span class="pl-s1"><span class="pl-c1">$</span>dest</span>);</pre></div>
+<p>Optionally, its constructor accepts any callable function which will then be
+used to <em>filter</em> any data written to it. This function receives a single data
+argument as passed to the writable side and must return the data as it will be
+passed to its readable end:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>through</span> = <span class="pl-k">new</span> <span class="pl-v">ThroughStream</span>(<span class="pl-s">'strtoupper'</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>source</span>-&gt;<span class="pl-en">pipe</span>(<span class="pl-s1"><span class="pl-c1">$</span>through</span>)-&gt;<span class="pl-en">pipe</span>(<span class="pl-s1"><span class="pl-c1">$</span>dest</span>);</pre></div>
+<p>Note that this class makes no assumptions about any data types. This can be
+used to convert data, for example for transforming any structured data into
+a newline-delimited JSON (NDJSON) stream like this:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>through</span> = <span class="pl-k">new</span> <span class="pl-v">ThroughStream</span>(<span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>data</span>) {
+    <span class="pl-k">return</span> <span class="pl-en">json_encode</span>(<span class="pl-s1"><span class="pl-c1">$</span>data</span>) . <span class="pl-c1">PHP_EOL</span>;
+});
+<span class="pl-s1"><span class="pl-c1">$</span>through</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'data'</span>, <span class="pl-s1"><span class="pl-c1">$</span><span class="pl-smi">this</span></span>-&gt;<span class="pl-en">expectCallableOnceWith</span>(<span class="pl-s">"[2, true]\n"</span>));
+
+<span class="pl-s1"><span class="pl-c1">$</span>through</span>-&gt;<span class="pl-en">write</span>(<span class="pl-en">array</span>(<span class="pl-c1">2</span>, <span class="pl-c1">true</span>));</pre></div>
+<p>The callback function is allowed to throw an <code>Exception</code>. In this case,
+the stream will emit an <code>error</code> event and then <a href="#close-1"><code>close()</code></a> the stream.</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>through</span> = <span class="pl-k">new</span> <span class="pl-v">ThroughStream</span>(<span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>data</span>) {
+    <span class="pl-k">if</span> (!<span class="pl-en">is_string</span>(<span class="pl-s1"><span class="pl-c1">$</span>data</span>)) {
+        <span class="pl-k">throw</span> <span class="pl-k">new</span> \<span class="pl-v">UnexpectedValueException</span>(<span class="pl-s">'Only strings allowed'</span>);
+    }
+    <span class="pl-k">return</span> <span class="pl-s1"><span class="pl-c1">$</span>data</span>;
+});
+<span class="pl-s1"><span class="pl-c1">$</span>through</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'error'</span>, <span class="pl-s1"><span class="pl-c1">$</span><span class="pl-smi">this</span></span>-&gt;<span class="pl-en">expectCallableOnce</span>()));
+<span class="pl-s1"><span class="pl-c1">$</span>through</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'close'</span>, <span class="pl-s1"><span class="pl-c1">$</span><span class="pl-smi">this</span></span>-&gt;<span class="pl-en">expectCallableOnce</span>()));
+<span class="pl-s1"><span class="pl-c1">$</span>through</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'data'</span>, <span class="pl-s1"><span class="pl-c1">$</span><span class="pl-smi">this</span></span>-&gt;<span class="pl-en">expectCallableNever</span>()));
+
+<span class="pl-s1"><span class="pl-c1">$</span>through</span>-&gt;<span class="pl-en">write</span>(<span class="pl-c1">2</span>);</pre></div>
+<h3>
+<a id="compositestream" class="anchor" href="#compositestream" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>CompositeStream</h3>
+<p>The <code>CompositeStream</code> implements the
+<a href="#duplexstreaminterface"><code>DuplexStreamInterface</code></a> and can be used to create a
+single duplex stream from two individual streams implementing
+<a href="#readablestreaminterface"><code>ReadableStreamInterface</code></a> and
+<a href="#writablestreaminterface"><code>WritableStreamInterface</code></a> respectively.</p>
+<p>This is useful for some APIs which may require a single
+<a href="#duplexstreaminterface"><code>DuplexStreamInterface</code></a> or simply because it's often
+more convenient to work with a single stream instance like this:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>stdin</span> = <span class="pl-k">new</span> <span class="pl-v">ReadableResourceStream</span>(<span class="pl-c1">STDIN</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>stdout</span> = <span class="pl-k">new</span> <span class="pl-v">WritableResourceStream</span>(<span class="pl-c1">STDOUT</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
+
+<span class="pl-s1"><span class="pl-c1">$</span>stdio</span> = <span class="pl-k">new</span> <span class="pl-v">CompositeStream</span>(<span class="pl-s1"><span class="pl-c1">$</span>stdin</span>, <span class="pl-s1"><span class="pl-c1">$</span>stdout</span>);
+
+<span class="pl-s1"><span class="pl-c1">$</span>stdio</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'data'</span>, <span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>chunk</span>) <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>stdio</span>) {
+    <span class="pl-s1"><span class="pl-c1">$</span>stdio</span>-&gt;<span class="pl-en">write</span>(<span class="pl-s">'You said: '</span> . <span class="pl-s1"><span class="pl-c1">$</span>chunk</span>);
+});</pre></div>
+<p>This is a well-behaving stream which forwards all stream events from the
+underlying streams and forwards all streams calls to the underlying streams.</p>
+<p>If you <code>write()</code> to the duplex stream, it will simply <code>write()</code> to the
+writable side and return its status.</p>
+<p>If you <code>end()</code> the duplex stream, it will <code>end()</code> the writable side and will
+<code>pause()</code> the readable side.</p>
+<p>If you <code>close()</code> the duplex stream, both input streams will be closed.
+If either of the two input streams emits a <code>close</code> event, the duplex stream
+will also close.
+If either of the two input streams is already closed while constructing the
+duplex stream, it will <code>close()</code> the other side and return a closed stream.</p>
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h2>
+<p>The following example can be used to pipe the contents of a source file into
+a destination file without having to ever read the whole file into memory:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>loop</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">EventLoop</span>\<span class="pl-v">StreamSelectLoop</span>;
+
+<span class="pl-s1"><span class="pl-c1">$</span>source</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Stream</span>\<span class="pl-v">ReadableResourceStream</span>(<span class="pl-en">fopen</span>(<span class="pl-s">'source.txt'</span>, <span class="pl-s">'r'</span>), <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>dest</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Stream</span>\<span class="pl-v">WritableResourceStream</span>(<span class="pl-en">fopen</span>(<span class="pl-s">'destination.txt'</span>, <span class="pl-s">'w'</span>), <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
+
+<span class="pl-s1"><span class="pl-c1">$</span>source</span>-&gt;<span class="pl-en">pipe</span>(<span class="pl-s1"><span class="pl-c1">$</span>dest</span>);
+
+<span class="pl-s1"><span class="pl-c1">$</span>loop</span>-&gt;<span class="pl-en">run</span>();</pre></div>
+<blockquote>
+<p>Note that this example uses <code>fopen()</code> for illustration purposes only.
+This should not be used in a truly async program because the filesystem is
+inherently blocking and each call could potentially take several seconds.
+See also <a href="#creating-streams">creating streams</a> for more sophisticated
+examples.</p>
+</blockquote>
+<h2>
+<a id="install" class="anchor" href="#install" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Install</h2>
+<p>The recommended way to install this library is <a href="https://getcomposer.org" rel="nofollow">through Composer</a>.
+<a href="https://getcomposer.org/doc/00-intro.md" rel="nofollow">New to Composer?</a></p>
+<p>This project follows <a href="https://semver.org/" rel="nofollow">SemVer</a>.
+This will install the latest supported version:</p>
+<div class="highlight highlight-source-shell"><pre>$ composer require react/stream:^1.1.1</pre></div>
+<p>See also the <a href="changelog.html">CHANGELOG</a> for details about version upgrades.</p>
+<p>This project aims to run on any platform and thus does not require any PHP
+extensions and supports running on legacy PHP 5.3 through current PHP 7+ and HHVM.
+It's <em>highly recommended to use PHP 7+</em> for this project due to its vast
+performance improvements.</p>
+<h2>
+<a id="tests" class="anchor" href="#tests" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Tests</h2>
+<p>To run the test suite, you first need to clone this repo and then install all
+dependencies <a href="https://getcomposer.org" rel="nofollow">through Composer</a>:</p>
+<div class="highlight highlight-source-shell"><pre>$ composer install</pre></div>
+<p>To run the test suite, go to the project root and run:</p>
+<div class="highlight highlight-source-shell"><pre>$ php vendor/bin/phpunit</pre></div>
+<p>The test suite also contains a number of functional integration tests that rely
+on a stable internet connection.
+If you do not want to run these, they can simply be skipped like this:</p>
+<div class="highlight highlight-source-shell"><pre>$ php vendor/bin/phpunit --exclude-group internet</pre></div>
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
+<p>MIT, see <a href="license.html">LICENSE file</a>.</p>
+<h2>
+<a id="more" class="anchor" href="#more" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>More</h2>
+<ul>
+<li>See <a href="#creating-streams">creating streams</a> for more information on how streams
+are created in real-world applications.</li>
+<li>See our <a href="https://github.com/reactphp/react/wiki/Users">users wiki</a> and the
+<a href="https://packagist.org/packages/react/stream/dependents" rel="nofollow">dependents on Packagist</a>
+for a list of packages that use streams in real-world applications.</li>
+</ul>
+                                </main>
+                <aside class="sidebar" role="complementary">
+                    <section class="component-info">
+                        <h2 class="component-info__title">
+                            <a href="../stream/">Stream</a>
+
+                            <div class="version-selector">
+                                <button class="version-selector__button version-selector__button--latest" data-ctrly="component-version-selector" data-version-selector-control>
+                                    v1.1.1
+
+                                    <i class="icon-chevron-down" aria-hidden="true"></i>
+                                    <i class="icon-chevron-up" aria-hidden="true"></i>
+                                </button>
+
+                                <div id="component-version-selector" class="version-selector__panel" aria-hidden="true">
+                                    <p>Read the documentation of development and older versions on GitHub:</p>
+
+                                    <ul class="version-selector__list">
+                                        <li>
+                                            <a href="https://github.com/reactphp/stream#readme" class="version-selector__version version-selector__version--dev">
+                                                master
+                                            </a>
+                                        </li>
+                                                                                                                                                                                                                    <li>
+                                                <a href="https://github.com/reactphp/stream/tree/v1.1.0#readme" class="version-selector__version">
+                                                    v1.1.0
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
+                                                <a href="https://github.com/reactphp/stream/tree/v1.0.0#readme" class="version-selector__version">
+                                                    v1.0.0
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
+                                                <a href="https://github.com/reactphp/stream/tree/v0.7.7#readme" class="version-selector__version">
+                                                    v0.7.7
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
+                                                <a href="https://github.com/reactphp/stream/tree/v0.7.6#readme" class="version-selector__version">
+                                                    v0.7.6
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
+                                                <a href="https://github.com/reactphp/stream/tree/v0.7.5#readme" class="version-selector__version">
+                                                    v0.7.5
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
+                                                <a href="https://github.com/reactphp/stream/tree/v0.7.4#readme" class="version-selector__version">
+                                                    v0.7.4
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
+                                                <a href="https://github.com/reactphp/stream/tree/v0.7.3#readme" class="version-selector__version">
+                                                    v0.7.3
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
+                                                <a href="https://github.com/reactphp/stream/tree/v0.7.2#readme" class="version-selector__version">
+                                                    v0.7.2
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
+                                                <a href="https://github.com/reactphp/stream/tree/v0.7.1#readme" class="version-selector__version">
+                                                    v0.7.1
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
+                                                <a href="https://github.com/reactphp/stream/tree/v0.7.0#readme" class="version-selector__version">
+                                                    v0.7.0
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
+                                                <a href="https://github.com/reactphp/stream/tree/v0.6.0#readme" class="version-selector__version">
+                                                    v0.6.0
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
+                                                <a href="https://github.com/reactphp/stream/tree/v0.5.0#readme" class="version-selector__version">
+                                                    v0.5.0
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
+                                                <a href="https://github.com/reactphp/stream/tree/v0.4.6#readme" class="version-selector__version">
+                                                    v0.4.6
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
+                                                <a href="https://github.com/reactphp/stream/tree/v0.4.5#readme" class="version-selector__version">
+                                                    v0.4.5
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
+                                                <a href="https://github.com/reactphp/stream/tree/v0.4.4#readme" class="version-selector__version">
+                                                    v0.4.4
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
+                                                <a href="https://github.com/reactphp/stream/tree/v0.4.3#readme" class="version-selector__version">
+                                                    v0.4.3
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
+                                                <a href="https://github.com/reactphp/stream/tree/v0.4.2#readme" class="version-selector__version">
+                                                    v0.4.2
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
+                                                <a href="https://github.com/reactphp/stream/tree/v0.4.1#readme" class="version-selector__version">
+                                                    v0.4.1
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
+                                                <a href="https://github.com/reactphp/stream/tree/v0.3.4#readme" class="version-selector__version">
+                                                    v0.3.4
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
+                                                <a href="https://github.com/reactphp/stream/tree/v0.4.0#readme" class="version-selector__version">
+                                                    v0.4.0
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
+                                                <a href="https://github.com/reactphp/stream/tree/v0.3.3#readme" class="version-selector__version">
+                                                    v0.3.3
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
+                                                <a href="https://github.com/reactphp/stream/tree/v0.3.2#readme" class="version-selector__version">
+                                                    v0.3.2
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
+                                                <a href="https://github.com/reactphp/stream/tree/v0.3.1#readme" class="version-selector__version">
+                                                    v0.3.1
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
+                                                <a href="https://github.com/reactphp/stream/tree/v0.3.0#readme" class="version-selector__version">
+                                                    v0.3.0
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
+                                                <a href="https://github.com/reactphp/stream/tree/v0.2.6#readme" class="version-selector__version">
+                                                    v0.2.6
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
+                                                <a href="https://github.com/reactphp/stream/tree/v0.2.5#readme" class="version-selector__version">
+                                                    v0.2.5
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
+                                                <a href="https://github.com/reactphp/stream/tree/v0.2.4#readme" class="version-selector__version">
+                                                    v0.2.4
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
+                                                <a href="https://github.com/reactphp/stream/tree/v0.2.3#readme" class="version-selector__version">
+                                                    v0.2.3
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
+                                                <a href="https://github.com/reactphp/stream/tree/v0.2.2#readme" class="version-selector__version">
+                                                    v0.2.2
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
+                                                <a href="https://github.com/reactphp/stream/tree/v0.2.1#readme" class="version-selector__version">
+                                                    v0.2.1
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
+                                                <a href="https://github.com/reactphp/stream/tree/v0.2.0#readme" class="version-selector__version">
+                                                    v0.2.0
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
+                                                <a href="https://github.com/reactphp/stream/tree/v0.1.1#readme" class="version-selector__version">
+                                                    v0.1.1
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
+                                                <a href="https://github.com/reactphp/stream/tree/v0.1.0#readme" class="version-selector__version">
+                                                    v0.1.0
+                                                </a>
+                                            </li>
+                                                                                                                        </ul>
+                                </div>
+                            </div>
+                        </h2>
+
+                        <ul class="component-info__info">
+                            <li>
+                                <a href="https://github.com/reactphp/stream">
+                                    <i class="icon-github" aria-hidden="true"></i> Repository
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../stream/changelog.html">
+                                    <i class="icon-calendar" aria-hidden="true"></i> Changelog
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../stream/license.html">
+                                    <i class="icon-law" aria-hidden="true"></i> MIT License
+                                </a>
+                            </li>
+                        </ul>
+
+                        <h3 class="component-info__subtitle">Installation</h3>
+
+                        <div class="highlight highlight-source-shell"><pre>composer require react/stream:^1.1.1</pre></div>
+
+                        <h3 class="component-info__subtitle">Contributors</h3>
+
+                        <ul class="component-info__contributors">
+                                                    <li>
+                                <a href="https://github.com/clue">
+                                    <img src="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=80 2x" alt="clue" title="clue (172 contributions)">
+                                </a>
+                            </li>
+                                                    <li>
+                                <a href="https://github.com/WyriHaximus">
+                                    <img src="https://avatars.githubusercontent.com/u/147145?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/147145?v=4&amp;s=80 2x" alt="WyriHaximus" title="WyriHaximus (57 contributions)">
+                                </a>
+                            </li>
+                                                    <li>
+                                <a href="https://github.com/igorw">
+                                    <img src="https://avatars.githubusercontent.com/u/88061?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/88061?v=4&amp;s=80 2x" alt="igorw" title="igorw (43 contributions)">
+                                </a>
+                            </li>
+                                                    <li>
+                                <a href="https://github.com/cboden">
+                                    <img src="https://avatars.githubusercontent.com/u/617694?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/617694?v=4&amp;s=80 2x" alt="cboden" title="cboden (43 contributions)">
+                                </a>
+                            </li>
+                                                    <li>
+                                <a href="https://github.com/jsor">
+                                    <img src="https://avatars.githubusercontent.com/u/55574?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/55574?v=4&amp;s=80 2x" alt="jsor" title="jsor (13 contributions)">
+                                </a>
+                            </li>
+                                                    <li>
+                                <a href="https://github.com/SimonFrings">
+                                    <img src="https://avatars.githubusercontent.com/u/44357440?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/44357440?v=4&amp;s=80 2x" alt="SimonFrings" title="SimonFrings (6 contribution)">
+                                </a>
+                            </li>
+                                                    <li>
+                                <a href="https://github.com/steverhoades">
+                                    <img src="https://avatars.githubusercontent.com/u/1146668?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/1146668?v=4&amp;s=80 2x" alt="steverhoades" title="steverhoades (4 contribution)">
+                                </a>
+                            </li>
+                                                    <li>
+                                <a href="https://github.com/arnaud-lb">
+                                    <img src="https://avatars.githubusercontent.com/u/365207?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/365207?v=4&amp;s=80 2x" alt="arnaud-lb" title="arnaud-lb (3 contribution)">
+                                </a>
+                            </li>
+                                                    <li>
+                                <a href="https://github.com/carusogabriel">
+                                    <img src="https://avatars.githubusercontent.com/u/16328050?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/16328050?v=4&amp;s=80 2x" alt="carusogabriel" title="carusogabriel (3 contribution)">
+                                </a>
+                            </li>
+                                                    <li>
+                                <a href="https://github.com/lysenkobv">
+                                    <img src="https://avatars.githubusercontent.com/u/1250142?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/1250142?v=4&amp;s=80 2x" alt="lysenkobv" title="lysenkobv (3 contribution)">
+                                </a>
+                            </li>
+                                                    <li>
+                                <a href="https://github.com/jmalloc">
+                                    <img src="https://avatars.githubusercontent.com/u/761536?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/761536?v=4&amp;s=80 2x" alt="jmalloc" title="jmalloc (2 contribution)">
+                                </a>
+                            </li>
+                                                    <li>
+                                <a href="https://github.com/nawarian">
+                                    <img src="https://avatars.githubusercontent.com/u/3905582?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/3905582?v=4&amp;s=80 2x" alt="nawarian" title="nawarian (2 contribution)">
+                                </a>
+                            </li>
+                                                    <li>
+                                <a href="https://github.com/pulyavin">
+                                    <img src="https://avatars.githubusercontent.com/u/9364583?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/9364583?v=4&amp;s=80 2x" alt="pulyavin" title="pulyavin (1 contribution)">
+                                </a>
+                            </li>
+                                                    <li>
+                                <a href="https://github.com/DaveRandom">
+                                    <img src="https://avatars.githubusercontent.com/u/2396425?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/2396425?v=4&amp;s=80 2x" alt="DaveRandom" title="DaveRandom (1 contribution)">
+                                </a>
+                            </li>
+                                                    <li>
+                                <a href="https://github.com/docteurklein">
+                                    <img src="https://avatars.githubusercontent.com/u/109846?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/109846?v=4&amp;s=80 2x" alt="docteurklein" title="docteurklein (1 contribution)">
+                                </a>
+                            </li>
+                                                    <li>
+                                <a href="https://github.com/reedy">
+                                    <img src="https://avatars.githubusercontent.com/u/67615?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/67615?v=4&amp;s=80 2x" alt="reedy" title="reedy (1 contribution)">
+                                </a>
+                            </li>
+                                                    <li>
+                                <a href="https://github.com/andig">
+                                    <img src="https://avatars.githubusercontent.com/u/184815?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/184815?v=4&amp;s=80 2x" alt="andig" title="andig (1 contribution)">
+                                </a>
+                            </li>
+                                                </ul>
+
+                        <h3 class="component-info__subtitle">Activity</h3>
+
+                        <div class="component-info__participation">
+                            <svg width="320" height="42">
+    <defs>
+        <linearGradient id="reactphp-stream-participation-gradient" x1="0" x2="0" y1="1" y2="0">
+            <stop offset="10%" stop-color="#40a977"></stop>
+            <stop offset="90%" stop-color="#ba3525"></stop>
+        </linearGradient>
+        <mask id="reactphp-stream-participation-sparkline" x="0" y="0" width="320" height="40" >
+            <polyline 
+                transform="translate(0, 40) scale(1,-1)"
+                points="0,1 6,1 12,5 18,2 24,1 30,1 36,1 42,1 48,1 54,1 60,1 66,1 72,1 78,3 84,2 90,1 96,1 102,1 108,1 114,4 120,1 126,1 132,1 138,2 144,1 150,1 156,1 162,1 168,1 174,1 180,1 186,1 192,3 198,1 204,1 210,1 216,1 222,1 228,1 234,1 240,1 246,1 252,1 258,4 264,1 270,1 276,1 282,1 288,1 294,1 300,1 306,1" 
+                fill="transparent" 
+                stroke="#40a977" 
+                stroke-width="2"
+            >
+        </mask>
+    </defs>
+
+    <g transform="translate(0, -1.5)">
+        <rect 
+            x="0" 
+            y="-2" 
+            width="320" 
+            height="42"
+            style="stroke:none;fill:url(#reactphp-stream-participation-gradient);mask:url(#reactphp-stream-participation-sparkline)"
+        ></rect>
+    </g>
+</svg>
+                        </div>
+                    </section>
+                </aside>
+            </div>
+        </div>
+    </div>
+
+            <footer class="footer">
+            <div class="wrapper">
+                <ul class="links">
+                    <li><a href="https://github.com/reactphp"><i class="icon-github" aria-hidden="true"></i> GitHub</a></li>
+                    <li><a href="https://twitter.com/reactphp"><i class="icon-twitter" aria-hidden="true"></i> Twitter</a></li>
+                    <li><a href="https://gitter.im/reactphp/reactphp"><i class="icon-hash" aria-hidden="true"></i> Gitter</a></li>
+                </ul>
+            </div>
+        </footer>
+        </body>
+</html>

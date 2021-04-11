@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <title>ReactPHP: Event-driven, non-blocking I/O with PHP - ReactPHP</title>
+
+        <meta name="description" content="Event-driven, non-blocking I/O with PHP.">
+
+        <link rel="apple-touch-icon" sizes="180x180" href="https://reactphp.org/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="https://reactphp.org/favicon-32x32.png">
+        <link rel="manifest" href="https://reactphp.org/manifest.json">
+        <link rel="mask-icon" href="https://reactphp.org/safari-pinned-tab.svg" color="#4f5b93">
+        <meta name="apple-mobile-web-app-title" content="ReactPHP">
+        <meta name="application-name" content="ReactPHP">
+        <meta name="theme-color" content="#f4f3f1">
+        <meta name="msapplication-config" content="https://reactphp.org/browserconfig.xml" />
+
+        <meta property="og:image" content="https://reactphp.org/og-image.png">
+
+            <link rel="preload" href="assets/sourcesanspro-regular.19ca4d35.woff" as="font" type="font/woff" crossorigin>
+        <link rel="preload" href="assets/sourcesanspro-bold.be4ba3dd.woff" as="font" type="font/woff" crossorigin>
+
+        <script>window.__assets = 'assets/';</script>
+        <script>!function(e){function t(t){for(var n,o,i=t[0],c=t[1],l=t[2],f=0,d=[];f<i.length;f++)o=i[f],Object.prototype.hasOwnProperty.call(a,o)&&a[o]&&d.push(a[o][0]),a[o]=0;for(n in c)Object.prototype.hasOwnProperty.call(c,n)&&(e[n]=c[n]);for(s&&s(t);d.length;)d.shift()();return u.push.apply(u,l||[]),r()}function r(){for(var e,t=0;t<u.length;t++){for(var r=u[t],n=!0,o=1;o<r.length;o++){var c=r[o];0!==a[c]&&(n=!1)}n&&(u.splice(t--,1),e=i(i.s=r[0]))}return e}var n={},o={1:0},a={1:0},u=[];function i(t){if(n[t])return n[t].exports;var r=n[t]={i:t,l:!1,exports:{}};return e[t].call(r.exports,r,r.exports,i),r.l=!0,r.exports}i.e=function(e){var t=[];o[e]?t.push(o[e]):0!==o[e]&&{3:1,4:1,5:1}[e]&&t.push(o[e]=new Promise((function(t,r){for(var n=({}[e]||e)+"."+{2:"31d6cfe0",3:"284c81ab",4:"87863994",5:"ef18ddd4"}[e]+".css",a=i.p+n,u=document.getElementsByTagName("link"),c=0;c<u.length;c++){var l=(s=u[c]).getAttribute("data-href")||s.getAttribute("href");if("stylesheet"===s.rel&&(l===n||l===a))return t()}var f=document.getElementsByTagName("style");for(c=0;c<f.length;c++){var s;if((l=(s=f[c]).getAttribute("data-href"))===n||l===a)return t()}var d=document.createElement("link");d.rel="stylesheet",d.type="text/css",d.onload=t,d.onerror=function(t){var n=t&&t.target&&t.target.src||a,u=new Error("Loading CSS chunk "+e+" failed.\n("+n+")");u.code="CSS_CHUNK_LOAD_FAILED",u.request=n,delete o[e],d.parentNode.removeChild(d),r(u)},d.href=a,document.getElementsByTagName("head")[0].appendChild(d)})).then((function(){o[e]=0})));var r=a[e];if(0!==r)if(r)t.push(r[2]);else{var n=new Promise((function(t,n){r=a[e]=[t,n]}));t.push(r[2]=n);var u,c=document.createElement("script");c.charset="utf-8",c.timeout=120,i.nc&&c.setAttribute("nonce",i.nc),c.src=function(e){return i.p+""+({}[e]||e)+"."+{2:"0f8f4948",3:"ca2827c9",4:"7d534a7e",5:"99f8f23a"}[e]+".js"}(e);var l=new Error;u=function(t){c.onerror=c.onload=null,clearTimeout(f);var r=a[e];if(0!==r){if(r){var n=t&&("load"===t.type?"missing":t.type),o=t&&t.target&&t.target.src;l.message="Loading chunk "+e+" failed.\n("+n+": "+o+")",l.name="ChunkLoadError",l.type=n,l.request=o,r[1](l)}a[e]=void 0}};var f=setTimeout((function(){u({type:"timeout",target:c})}),12e4);c.onerror=c.onload=u,document.head.appendChild(c)}return Promise.all(t)},i.m=e,i.c=n,i.d=function(e,t,r){i.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:r})},i.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},i.t=function(e,t){if(1&t&&(e=i(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var r=Object.create(null);if(i.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var n in e)i.d(r,n,function(t){return e[t]}.bind(null,n));return r},i.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return i.d(t,"a",t),t},i.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},i.p="",i.oe=function(e){throw console.error(e),e};var c=window.webpackJsonp=window.webpackJsonp||[],l=c.push.bind(c);c.push=t,c=c.slice();for(var f=0;f<c.length;f++)t(c[f]);var s=l;r()}([]);</script>
+        <style>@font-face{font-family:Source Sans Pro;font-style:normal;font-weight:400;font-display:swap;src:local("Source Sans Pro Regular"),local("SourceSansPro-Regular"),url(assets/sourcesanspro-regular.19ca4d35.woff) format("woff")}@font-face{font-family:Source Sans Pro;font-style:normal;font-weight:700;font-display:swap;src:local("Source Sans Pro Bold"),local("SourceSansPro-Bold"),url(assets/sourcesanspro-bold.be4ba3dd.woff) format("woff")}@font-face{font-family:icons;src:url(assets/icons.063d0ba7.ttf) format("truetype"),url(assets/icons.5ea4cc5c.woff) format("woff"),url(assets/icons.d59afb7d.svg#icons) format("svg");font-weight:400;font-style:normal}[class*=" icon-"],[class^=icon-]{font-family:icons!important;speak:none;font-style:normal;font-weight:400;-webkit-font-feature-settings:normal;font-feature-settings:normal;font-variant:normal;text-transform:none;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.icon-hash:before{content:"\e900"}.icon-twitter:before{content:"\e901"}.icon-github:before{content:"\e902"}.icon-blog:before{content:"\e905"}.icon-earth:before{content:"\e903"}.icon-link:before{content:"\e906"}.icon-youtube:before{content:"\e904"}.icon-book:before{content:"\f007"}.icon-calendar:before{content:"\f068"}.icon-chevron-down:before{content:"\f0a3"}.icon-chevron-up:before{content:"\f0a2"}.icon-law:before{content:"\f0d8"}.icon-search:before{content:"\f02e"}.icon-x:before{content:"\f081"}.icon-feed:before{content:"\ea9b"}[class*=" icon-"],[class^=icon-]{vertical-align:-8%}html{-webkit-box-sizing:border-box;box-sizing:border-box;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;font-size:16px;line-height:1.6}@media (max-width:768px){html{font-size:18px}}*,:after,:before{-webkit-box-sizing:inherit;box-sizing:inherit}body{margin:0;color:#584b4f;color:var(--color-base);background-color:#fff}a{color:#4f5b93;color:var(--color-key)}a:hover{color:#a2aacd;color:var(--color-key-light);text-decoration:underline}blockquote{padding:16px 16px 16px 24px;border-left:4px solid #4f5b93;border-left:4px solid var(--color-key);border-radius:4px;background-color:#f4f3f1;background-color:var(--color-background-lighter);-webkit-box-shadow:0 1px 0 0 rgba(0,0,0,.1);box-shadow:0 1px 0 0 rgba(0,0,0,.1);-webkit-box-shadow:var(--box-shadow-lighter);box-shadow:var(--box-shadow-lighter);position:relative;font-size:.875rem}blockquote:before{content:"i";position:absolute;top:12px;left:-14px;display:block;width:24px;height:24px;background:#4f5b93;background:var(--color-key);font-size:12px;padding:0 4px;-webkit-box-sizing:border-box;box-sizing:border-box;text-align:center;font-weight:700;color:#fff;line-height:24px;border-radius:50%}blockquote :last-child{margin-bottom:0}blockquote,fieldset,form,h1,h2,h3,h4,h5,h6,hr,ol,p,ul{margin:0 0 16px}ul ul{margin-bottom:0}hr{clear:both;height:0;border:0;border-bottom:1px dashed #eae8e3;border-bottom:1px dashed var(--color-background-light);padding:0}h1,h2,h3,h4,h5,h6{line-height:1;-webkit-font-smoothing:antialiased;color:#584b4f;color:var(--color-base);font-family:Source Sans Pro,Helvetica Neue,Arial,sans-serif;font-weight:700}h1 a,h1 a:hover,h2 a,h2 a:hover,h3 a,h3 a:hover,h4 a,h4 a:hover,h5 a,h5 a:hover,h6 a,h6 a:hover{text-decoration:none}h1{font-size:2.5rem;margin-bottom:32px;letter-spacing:-1px}h1,h1 a,h1 a:hover{color:#4f5b93;color:var(--color-key)}h1:not(:first-child){margin-top:32px}h2{font-size:2rem;margin-bottom:32px}h2,h2 a,h2 a:hover{color:#4f5b93;color:var(--color-key)}h2:not(:first-child){margin-top:32px}h3{font-size:1.5rem;margin-bottom:24px}h3,h3 a,h3 a:hover{color:#584b4f;color:var(--color-base)}h3:not(:first-child){margin-top:24px}h4{font-size:1.25rem}h4,h4 a,h4 a:hover{color:#4f5b93;color:var(--color-key)}h4:not(:first-child){margin-top:24px}@media (max-width:768px){h1{font-size:2rem}h2{font-size:1.75rem;margin-bottom:32px}}.container{padding:32px}@media (max-width:768px){.container{padding:16px}}.wrapper{max-width:1600px;margin:auto}.wrapper--medium{max-width:1280px}.wrapper--small{max-width:960px;margin:auto}.wrapper--narrow{max-width:640px}.main{width:calc(98% - 400px)}.main,.sidebar{margin-bottom:32px}.sidebar{width:calc(400px - 2%)}@media (max-width:1024px){.main,.sidebar{width:auto;margin-top:16px}}.visually-hidden{position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px)}.grid{display:-ms-flexbox;display:flex;-ms-flex-direction:row;flex-direction:row;-ms-flex-wrap:wrap;flex-wrap:wrap;-ms-flex-pack:center;justify-content:center;width:102%;margin-left:-2%}.grid>*{margin-left:2%;max-width:100%}.grid--4cols>*{-ms-flex-preferred-size:23%;flex-basis:23%}.grid--3cols>*{-ms-flex-preferred-size:31.33%;flex-basis:31.33%}.grid--2cols>*{-ms-flex-preferred-size:48%;flex-basis:48%}@media (max-width:768px){.grid{-ms-flex-direction:column;flex-direction:column}.grid,.grid>*{width:100%;margin-left:0}.grid>*{-ms-flex:0 0 auto;flex:0 0 auto}}.center{text-align:center}.center h1,.center h2,.center h3,.center h4,.center h5,.center h6,.hamburger{display:inline-block}.hamburger{padding:14px 12px;height:48px;cursor:pointer;font:inherit;color:inherit;text-transform:none;background-color:transparent;border:0;margin:0;overflow:visible;outline:none}.hamburger__box{width:24px;height:16px;display:inline-block;position:relative}.hamburger__inner{display:block;top:50%;margin-top:-2px}.hamburger__inner,.hamburger__inner:after,.hamburger__inner:before{width:24px;height:3px;background-color:#584b4f;background-color:var(--color-base);border-radius:2px;position:absolute;-webkit-transition-property:-webkit-transform;transition-property:-webkit-transform;-o-transition-property:transform;transition-property:transform;transition-property:transform,-webkit-transform;-webkit-transition-duration:.15s;-o-transition-duration:.15s;transition-duration:.15s;-webkit-transition-timing-function:ease;-o-transition-timing-function:ease;transition-timing-function:ease}.hamburger__inner:after,.hamburger__inner:before{content:"";display:block}.hamburger__inner:before{top:-6px}.hamburger__inner:after{bottom:-6px}.header{width:100%;background:#fefefe;-webkit-box-shadow:0 1px 0 0 rgba(0,0,0,.08);box-shadow:0 1px 0 0 rgba(0,0,0,.08);-webkit-box-shadow:var(--box-shadow-lightest);box-shadow:var(--box-shadow-lightest);padding:0 32px}@media (max-width:768px){.header{padding:0 16px}}.header__container{width:100%;position:relative;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:justify;justify-content:space-between}.header__logo{display:block;line-height:1;padding:16px 0}.header__logo svg{display:block;width:120px;height:18px}.header__search{margin:0;position:absolute;right:48px;top:7px;z-index:799}.header__search input{width:400px}@media (max-width:768px){.header__search input{width:calc(100vw - 94px)}}.header__menu{position:absolute;right:-12px;top:0;z-index:800}.footer{background:#584b4f;background:var(--color-base);padding:32px;text-align:center;text-shadow:1px 1px 0 rgba(0,0,0,.125)}.footer .links a{color:#eae8e3;color:var(--color-background-light);text-decoration:none}.footer .links a:hover{color:#9ad8bb;color:var(--color-green-light);text-decoration:none}.iframe{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;width:100%}.iframe iframe{position:absolute;top:0;left:0;width:100%;height:100%}.links{margin:0;padding:0}.links li{display:inline-block;margin:0 8px;text-decoration:none}.links li:first-child{margin-left:0}.links li:last-child{margin-right:0}.links a{display:block}.box,.links a,.links a:hover{text-decoration:none}.box{background:#f4f3f1;background:var(--color-background-lighter);-webkit-box-shadow:0 1px 0 0 rgba(0,0,0,.1);box-shadow:0 1px 0 0 rgba(0,0,0,.1);-webkit-box-shadow:var(--box-shadow-lighter);box-shadow:var(--box-shadow-lighter);border-radius:4px;text-align:left;vertical-align:top;padding:24px;margin-top:0;margin-bottom:24px;color:inherit;overflow:auto;display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column}.box:hover{background:#eae8e3;background:var(--color-background-light);-webkit-box-shadow:0 1px 0 0 rgba(0,0,0,.15);box-shadow:0 1px 0 0 rgba(0,0,0,.15);-webkit-box-shadow:var(--box-shadow-light);box-shadow:var(--box-shadow-light);text-decoration:none}.box h1,.box h2,.box h3,.box h4,.box h5,.box h6,.box hr,.box ol,.box p,.box ul{margin-bottom:8px}.box h1,.box h2,.box h3,.box h4,.box h5,.box h6{color:#584b4f;color:var(--color-base)}.box :first-child{margin-top:0}.box :last-child{margin-bottom:0}.box__content{-ms-flex-positive:1;flex-grow:1;color:#584b4f;color:var(--color-base);text-decoration:none}.box__content p{font-size:.875rem}.box__content:hover{color:#584b4f;color:var(--color-base);text-decoration:none}.box__content:not(:last-child){margin-bottom:16px}.box__link{display:block;font-size:.75rem;text-decoration:none}.box__link,.box__link [class*=icon]{color:#4f5b93;color:var(--color-key)}.box__link:hover{color:#a2aacd;color:var(--color-key-light);text-decoration:none}code,pre,tt{font-family:SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace}code,tt{font-size:.75rem;padding:.3rem .45rem;margin:0;background-color:rgba(0,0,0,.05);border-radius:4px}code br,tt br{display:none}del code{text-decoration:inherit}pre{word-wrap:normal;text-align:left;font-size:.875rem;line-height:1.45}@media (max-width:768px){pre{font-size:.75rem}}pre>code{padding:0;margin:0;font-size:100%;word-break:normal;white-space:pre;background:transparent;border:0}.highlight{margin-bottom:16px}.highlight pre{margin-bottom:0;word-break:normal}.highlight pre,pre{padding:16px 16px 14px;overflow:auto;background-color:#f9f9f8;background-color:var(--color-background-lightest);-webkit-box-shadow:0 1px 0 0 rgba(0,0,0,.08);box-shadow:0 1px 0 0 rgba(0,0,0,.08);-webkit-box-shadow:var(--box-shadow-lightest);box-shadow:var(--box-shadow-lightest);color:#584b4f;color:var(--color-base);text-shadow:none!important;border-radius:4px}pre code,pre tt{display:inline;max-width:none;padding:0;margin:0;overflow:visible;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}pre code:after,pre code:before,pre tt:after,pre tt:before{content:normal}.pl-c{color:#969896}.pl-c1,.pl-s .pl-v{color:#0086b3}.pl-e,.pl-en{color:#795da3}.pl-s .pl-s1,.pl-smi{color:#444}.pl-ent{color:#63a35c}.pl-k{color:#a71d5d}.pl-pds,.pl-s,.pl-s .pl-pse .pl-s1,.pl-sr,.pl-sr .pl-cce,.pl-sr .pl-sra,.pl-sr .pl-sre{color:#183691}.pl-smw,.pl-v{color:#ed6a43}.pl-bu{color:#b52a1d}.pl-c2,.pl-ii{color:#f8f8f8;background-color:#b52a1d}.pl-c2:before{content:"^M"}.pl-sr .pl-cce{font-weight:700;color:#63a35c}.pl-ml{color:#693a17}.pl-mh,.pl-mh .pl-en,.pl-ms{font-weight:700;color:#1d3e81}.pl-mq{color:teal}.pl-mi{font-style:italic;color:#333}.pl-mb{font-weight:700;color:#333}.pl-md{color:#bd2c00;background-color:#ffecec}.pl-mi1{color:#55a532;background-color:#eaffea}.pl-mc{color:#ef9700;background-color:#ffe3b4}.pl-mi2{color:#d8d8d8;background-color:grey}.pl-mdr{font-weight:700;color:#795da3}.pl-mo{color:#1d3e81}.pl-ba{color:#595e62}.pl-sg{color:silver}.pl-corl{text-decoration:underline;color:#183691}.anchor{display:block;float:left;position:absolute;padding-right:2px;-webkit-transform:translateX(-100%);transform:translateX(-100%);text-decoration:none!important}.anchor:focus{outline:none}.anchor>*{visibility:hidden}:hover>.anchor>*{visibility:visible}.anchor>:before{content:"#";font-weight:400!important;color:#a2aacd;color:var(--color-key-light)}.anchor--disable .anchor>*,.anchor.anchor--disable>*{visibility:hidden!important}.searchbox{width:100%}.searchbox,.searchbox:focus{-webkit-appearance:none;-moz-appearance:none;appearance:none;padding:6px 8px 6px 32px;font-size:.875rem;line-height:24px;color:#584b4f;color:var(--color-base);border:0;background:#eae8e3 url(assets/search.72dc4739.svg) no-repeat 10px;background:var(--color-background-light) url(assets/search.72dc4739.svg) no-repeat 10px;background-size:16px 16px;-webkit-box-shadow:0 1px 0 0 rgba(0,0,0,.15);box-shadow:0 1px 0 0 rgba(0,0,0,.15);-webkit-box-shadow:var(--box-shadow-light);box-shadow:var(--box-shadow-light);border-radius:4px;outline:none;-webkit-transition:width .35s cubic-bezier(.23,1,.32,1);-o-transition:width .35s cubic-bezier(.23,1,.32,1);transition:width .35s cubic-bezier(.23,1,.32,1)}.searchbox::-webkit-input-placeholder{color:#afa1a5;color:var(--color-base-light)}.searchbox:-moz-placeholder,.searchbox::-moz-placeholder{color:#afa1a5;color:var(--color-base-light)}.searchbox::-moz-placeholder{opacity:1}.searchbox:-ms-input-placeholder{color:#afa1a5;color:var(--color-base-light)}.searchbox:focus{background-color:#f4f3f1!important;background-color:var(--color-background-lighter)!important;-webkit-box-shadow:0 1px 0 0 rgba(0,0,0,.1);box-shadow:0 1px 0 0 rgba(0,0,0,.1);-webkit-box-shadow:var(--box-shadow-lighter);box-shadow:var(--box-shadow-lighter)}.searchbox--collapsed:not(:focus){background-color:transparent;border:0;width:32px!important;margin-right:-12px;cursor:pointer;-webkit-box-shadow:none;box-shadow:none}.searchbox--collapsed:not(:focus)::-webkit-search-cancel-button,.searchbox--collapsed:not(:focus)::-webkit-search-decoration{display:none}.searchbox--collapsed:not(:focus)::-webkit-search-results-button,.searchbox--collapsed:not(:focus)::-webkit-search-results-decoration{display:none}.searchbox--collapsed:not(:focus)::-ms-clear{display:none}.searchbox--large,.searchbox--large:focus{padding:8px 12px 8px 40px}.alert{padding:16px 16px 16px 24px;border-left:4px solid #ba3525;border-left:4px solid var(--color-red);border-radius:4px;background-color:#f4f3f1;background-color:var(--color-background-lighter);-webkit-box-shadow:0 1px 0 0 rgba(0,0,0,.1);box-shadow:0 1px 0 0 rgba(0,0,0,.1);-webkit-box-shadow:var(--box-shadow-lighter);box-shadow:var(--box-shadow-lighter);position:relative;font-size:.9em}.alert:before{content:"!";position:absolute;top:12px;left:-14px;display:block;width:24px;height:24px;background:#ba3525;background:var(--color-red);font-size:12px;padding:0 4px;-webkit-box-sizing:border-box;box-sizing:border-box;text-align:center;font-weight:700;color:#fff;line-height:22px;border-radius:50%}.alert a{color:#ba3525;color:var(--color-red)}.alert :last-child{margin-bottom:0}.toc{display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;padding:0;list-style:none;margin-left:-4px}.toc li{margin:4px}.toc a{display:-ms-flexbox;display:flex;background-color:#584b4f;background-color:var(--color-base);-webkit-box-shadow:0 1px 0 0 rgba(0,0,0,.1);box-shadow:0 1px 0 0 rgba(0,0,0,.1);-webkit-box-shadow:var(--box-shadow-lighter);box-shadow:var(--box-shadow-lighter);font-family:SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;font-weight:bolder;letter-spacing:normal;padding:.25rem 1rem .15rem;border-radius:4px}.toc a,.toc a:hover{color:#fff;text-decoration:none}@media (max-width:768px){.toc{font-size:.85rem}}.welcome__intro{padding:16px 0 136px;border-bottom:1px dashed #eae8e3;border-bottom:1px dashed var(--color-background-light);background-image:-o-radial-gradient(center,ellipse,#fff 0,#eae8e3 100%);background-image:radial-gradient(ellipse at center,#fff 0,#eae8e3 100%);background-image:-o-radial-gradient(center,ellipse,#fff 0,var(--color-background-light) 100%);background-image:radial-gradient(ellipse at center,#fff 0,var(--color-background-light) 100%);background-size:auto 100%;background-position:50% 0}.welcome__intro h1{font-size:2rem;margin-bottom:16px;color:#4f5b93;color:var(--color-key)}.welcome__logo{display:block;margin:0 auto;max-width:320px}.welcome__logo svg{display:block;height:240px}.welcome__content{padding-top:16px;display:block;max-width:calc(98% - 320px)}.welcome__example{display:block;max-width:850px;margin:-160px auto auto}.welcome__example .highlight pre{padding:32px;background:#fff;-webkit-box-shadow:0 0 16px #d6d1c8;box-shadow:0 0 16px #d6d1c8;-webkit-box-shadow:0 0 16px var(--color-background);box-shadow:0 0 16px var(--color-background)}.welcome__intro .links a{color:#584b4f;color:var(--color-base);text-decoration:none}.welcome__intro .links a:hover{color:#4f5b93;color:var(--color-key);text-decoration:none}.welcome__team img{border-radius:50%;max-width:190px;display:inline-block}.welcome__team h3{display:block;margin:.2em 0}.welcome__team div.grid>*{margin-bottom:1em}@media (max-width:768px){.welcome__content{padding:32px 16px 16px;max-width:100%}.welcome__logo svg{height:160px}.welcome__intro h1{text-align:center;font-size:1.75rem;margin-bottom:16px;color:#4f5b93;color:var(--color-key)}.welcome__intro .links{text-align:center}}.off-canvas-menu{position:fixed;top:0;right:0;pointer-events:none}.off-canvas-menu__content{-webkit-transform:translate3d(105%,0,0);transform:translate3d(105%,0,0)}.component-info{position:-webkit-sticky;position:sticky;top:16px;bottom:16px;padding:24px;background-color:#f4f3f1;background-color:var(--color-background-lighter);-webkit-box-shadow:0 1px 0 0 rgba(0,0,0,.1);box-shadow:0 1px 0 0 rgba(0,0,0,.1);-webkit-box-shadow:var(--box-shadow-lighter);box-shadow:var(--box-shadow-lighter);border-radius:4px;font-size:.875rem}.component-info,.component-info a,.component-info a [class*=icon]{color:#584b4f;color:var(--color-base)}.component-info a:hover{color:#afa1a5;color:var(--color-base-light);text-decoration:none}.component-info pre{line-height:1;font-size:.75rem}.component-info__title{display:-ms-flexbox;display:flex;font-size:1.5rem;line-height:1rem;margin-bottom:1rem;color:#584b4f;color:var(--color-base);-ms-flex-align:center;align-items:center}.component-info__title a{text-decoration:none}.component-info__title>:not(:last-child){margin-right:8px}.component-info__subtitle{font-size:.875rem;line-height:.875rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;margin-bottom:.875rem;color:#afa1a5;color:var(--color-base-light)}.component-info__info{padding:0;list-style:none;display:-ms-flexbox;display:flex;-ms-flex-flow:row;flex-flow:row;-ms-flex-pack:start;justify-content:flex-start}.component-info__info li{margin-right:16px}.component-info__info li:last-child{margin-right:0}.component-info__info a{font-size:.75rem;text-decoration:none;white-space:nowrap;-o-text-overflow:ellipsis;text-overflow:ellipsis}.component-info__contributors{display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;padding:0;list-style:none}.component-info__contributors li{padding:0 4px 4px 0;margin:0}.component-info__contributors img{display:block;width:40px;height:auto;border-radius:2px}.component-info__contributors img,.component-info__participation{-webkit-box-shadow:0 1px 0 0 rgba(0,0,0,.1);box-shadow:0 1px 0 0 rgba(0,0,0,.1);-webkit-box-shadow:var(--box-shadow-lighter);box-shadow:var(--box-shadow-lighter)}.component-info__participation{background-color:#f9f9f8;background-color:var(--color-background-lightest);padding:8px;border-radius:4px;text-align:center}.component-info__participation svg{display:block;margin:auto;max-width:100%;height:auto!important}:root{--color-key:#4f5b93;--color-key-light:#a2aacd;--color-base:#584b4f;--color-base-light:#afa1a5;--color-green:#40a977;--color-green-light:#9ad8bb;--color-red:#ba3525;--color-red-light:#e79187;--color-background:#d6d1c8;--color-background-light:#eae8e3;--color-background-lighter:#f4f3f1;--color-background-lightest:#f9f9f8;--box-shadow-light:0 1px 0 0 rgba(0,0,0,0.15);--box-shadow-lighter:0 1px 0 0 rgba(0,0,0,0.1);--box-shadow-lightest:0 1px 0 0 rgba(0,0,0,0.08)}.version-selector{position:relative;font-size:.875rem;color:#fff}.version-selector :last-child{margin-bottom:0}.version-selector__button,.version-selector__version{-webkit-appearance:none;border:0;margin:0;text-shadow:none;-webkit-box-shadow:none;box-shadow:none;text-decoration:none;text-transform:none;overflow:visible;cursor:pointer;outline:none;display:-ms-flexbox;display:flex;background-color:#584b4f;background-color:var(--color-base);-webkit-box-shadow:0 1px 0 0 rgba(0,0,0,.1);box-shadow:0 1px 0 0 rgba(0,0,0,.1);-webkit-box-shadow:var(--box-shadow-lighter);box-shadow:var(--box-shadow-lighter);color:#fff;font-family:SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;font-size:.75rem;font-weight:bolder;letter-spacing:normal;padding:.25rem .4rem .2rem;border-radius:4px}.version-selector__button{position:relative}.version-selector__button [class=icon-chevron-down]{display:inline-block;margin-left:4px}.version-selector__button [class=icon-chevron-up]{display:none;margin-left:4px}.version-selector__version{background-color:hsla(0,0%,100%,.33);border:1px solid transparent;text-decoration:none;color:#fff!important}.version-selector__version:hover{background-color:hsla(0,0%,100%,.11);border:1px solid hsla(0,0%,100%,.22)}.version-selector__button--dev,.version-selector__version--dev,.version-selector__version--dev:hover{background-color:#ba3525;background-color:var(--color-red)}.version-selector__button--latest,.version-selector__version--latest,.version-selector__version--latest:hover{background-color:#40a977;background-color:var(--color-green)}.version-selector__panel{position:fixed;top:-20000em;visibility:hidden}</style>
+        <script async src="assets/main.d691d407.js"></script>
+            </head>
+
+    <body>
+    <header class="header">
+    <div class="header__container">
+        <div class="header__menu">
+    <button class="hamburger" data-ctrly="off-canvas-menu" data-off-canvas-menu-control>
+        <div class="hamburger__box">
+            <div class="hamburger__inner">
+                <span class="visually-hidden">Menu</span>
+            </div>
+        </div>
+    </button>
+</div>
+<nav id="off-canvas-menu" class="off-canvas-menu" aria-hidden="true" tabindex="0">
+    <div class="off-canvas-menu__content">
+        <button aria-label="Close menu" class="off-canvas-menu__close" data-ctrly="off-canvas-menu" data-off-canvas-menu-control>
+            <i class="icon-x" aria-hidden="true"></i>
+        </button>
+
+        <section class="off-canvas-menu__section">
+            <a class="off-canvas-menu__section-top" href="./">Home</a>
+        </section>
+
+        <section class="off-canvas-menu__section">
+            <a class="off-canvas-menu__section-top" href="changelog.html">Changelog</a>
+        </section>
+            <section class="off-canvas-menu__section">
+            <h3 class="off-canvas-menu__section-header">Core Components</h3>
+            <ul class="off-canvas-menu__list">
+                            <li>
+                    <a class="off-canvas-menu__link" href="event-loop/">
+                        EventLoop
+
+                        <span class="off-canvas-menu__version">
+                            v1.1.1
+                        </span>
+                    </a>
+                </li>
+                            <li>
+                    <a class="off-canvas-menu__link" href="stream/">
+                        Stream
+
+                        <span class="off-canvas-menu__version">
+                            v1.1.1
+                        </span>
+                    </a>
+                </li>
+                            <li>
+                    <a class="off-canvas-menu__link" href="promise/">
+                        Promise
+
+                        <span class="off-canvas-menu__version">
+                            v2.8.0
+                        </span>
+                    </a>
+                </li>
+                        </ul>
+        </section>
+            <section class="off-canvas-menu__section">
+            <h3 class="off-canvas-menu__section-header">Network Components</h3>
+            <ul class="off-canvas-menu__list">
+                            <li>
+                    <a class="off-canvas-menu__link" href="socket/">
+                        Socket
+
+                        <span class="off-canvas-menu__version">
+                            v1.6.0
+                        </span>
+                    </a>
+                </li>
+                            <li>
+                    <a class="off-canvas-menu__link" href="datagram/">
+                        Datagram
+
+                        <span class="off-canvas-menu__version">
+                            v1.6.0
+                        </span>
+                    </a>
+                </li>
+                        </ul>
+        </section>
+            <section class="off-canvas-menu__section">
+            <h3 class="off-canvas-menu__section-header">Protocol Components</h3>
+            <ul class="off-canvas-menu__list">
+                            <li>
+                    <a class="off-canvas-menu__link" href="http/">
+                        HTTP
+
+                        <span class="off-canvas-menu__version">
+                            v1.3.0
+                        </span>
+                    </a>
+                </li>
+                            <li>
+                    <a class="off-canvas-menu__link" href="http-client/">
+                        HTTPClient
+
+                        <span class="off-canvas-menu__version">
+                            v0.5.11
+                        </span>
+                    </a>
+                </li>
+                            <li>
+                    <a class="off-canvas-menu__link" href="dns/">
+                        DNS
+
+                        <span class="off-canvas-menu__version">
+                            v1.5.0
+                        </span>
+                    </a>
+                </li>
+                        </ul>
+        </section>
+            <section class="off-canvas-menu__section">
+            <h3 class="off-canvas-menu__section-header">Utility Components</h3>
+            <ul class="off-canvas-menu__list">
+                            <li>
+                    <a class="off-canvas-menu__link" href="cache/">
+                        Cache
+
+                        <span class="off-canvas-menu__version">
+                            v1.1.1
+                        </span>
+                    </a>
+                </li>
+                            <li>
+                    <a class="off-canvas-menu__link" href="child-process/">
+                        ChildProcess
+
+                        <span class="off-canvas-menu__version">
+                            v0.6.2
+                        </span>
+                    </a>
+                </li>
+                            <li>
+                    <a class="off-canvas-menu__link" href="promise-timer/">
+                        PromiseTimer
+
+                        <span class="off-canvas-menu__version">
+                            v1.6.0
+                        </span>
+                    </a>
+                </li>
+                            <li>
+                    <a class="off-canvas-menu__link" href="promise-stream/">
+                        PromiseStream
+
+                        <span class="off-canvas-menu__version">
+                            v1.2.0
+                        </span>
+                    </a>
+                </li>
+                        </ul>
+        </section>
+        </div>
+</nav>
+    </div>
+</header>
+
+        <header class="welcome anchor--disable">
+        <div class="welcome__intro">
+            <div class="container">
+                <div class="wrapper wrapper--small">
+                    <div class="grid">
+                        <div class="welcome__logo">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="320" height="476.037" viewBox="0 0 320 476.037"><path fill="#584b4f" d="M320 406.195l-86.506-155.403c-2.67 1.365-5.377 2.67-8.123 3.908-22.3 10.07-53.39 12.457-69.61 12.995l72.393 138.5H320z"/><path fill="#4F5B93" d="M255.323 36.793C231.543 12.263 199.5 0 159.193 0h-67.32C58.783 0 35.197 6.942 21.13 20.82 7.055 34.71.022 56.86.022 87.285v318.91h79.3V106.68c0-23.957 11.783-35.94 35.37-35.94h39.364c17.49 0 31.47 5.33 41.932 15.972 10.457 10.652 15.688 24.63 15.688 41.935 0 17.31-5.42 31.763-16.257 43.356-10.844 11.604-24.633 17.398-41.365 17.398h-16.168v-14.664L92.395 222.44l45.493 47.703v-14.54c8.476.042 50.736-.412 78.925-13.144 20.28-9.155 38.51-21.393 52.77-41.36s21.395-43.646 21.395-71.028c0-37.656-11.894-68.744-35.655-93.28z"/><path d="M30.717 452.275c1.628-2.276 2.442-4.976 2.442-8.096 0-4.294-1.36-7.835-4.068-10.63-2.71-2.8-6.36-4.197-10.953-4.197h-7.674c-3.772 0-6.458.794-8.063 2.377C.803 433.31 0 435.838 0 439.306v36.342h9.038v-17.165h6.5l9.037 17.165h10.47l-10.34-18.66c2.383-.865 4.388-2.436 6.012-4.712zm-8.45-3.318c-1.235 1.323-2.808 1.98-4.712 1.98H9.038v-9.426c0-2.726 1.343-4.094 4.03-4.094h4.487c1.992 0 3.586.607 4.777 1.822 1.192 1.215 1.79 2.808 1.79 4.78 0 1.973-.62 3.623-1.855 4.94zm20.253 14.466c0 4.552 1.05 7.73 3.152 9.527 2.104 1.8 5.755 2.696 10.957 2.696h16.383v-8.062H57.28c-2.17 0-3.663-.346-4.488-1.04-.826-.692-1.235-1.95-1.235-3.77v-6.438h14.367l.652-8.062h-15.02v-10.86h21.458v-8.06H42.52v34.07zm57.7-33.285c-.714-.52-1.657-.783-2.828-.783-1.17 0-2.156.284-2.957.847-.803.563-1.53 1.583-2.18 3.057l-14.822 42.387h9.428l2.537-7.994h15.54l2.6 7.994h9.427l-14.824-42.39c-.565-1.564-1.205-2.6-1.92-3.12zm-8.55 29.906l5.722-18.335 5.463 18.333H91.67zm52.826 5.43c-1.15 1.67-3.23 2.5-6.242 2.5-3.015 0-5.233-.91-6.665-2.728-1.388-1.822-2.083-5.226-2.083-10.207v-4.035c0-1.774.045-3.184.13-4.223.176-3.254.78-5.55 1.823-6.895 1.473-1.905 3.727-2.86 6.762-2.86 2.6 0 4.51.65 5.722 1.95 1.212 1.303 2.06 3.23 2.535 5.787h8.45c0-5.114-1.55-9.028-4.648-11.735-3.1-2.71-7.12-4.065-12.06-4.065-3.383 0-6.265.562-8.647 1.693-6.068 2.77-9.103 9.64-9.103 20.607v3.9c0 13.917 5.917 20.87 17.75 20.87 5.374 0 9.535-1.583 12.482-4.747 2.95-3.162 4.418-7.694 4.418-13.59h-8.386c-.344 3.514-1.095 6.105-2.24 7.774zm14.598-36.12v8.062h12.353v38.23h9.037v-38.23h12.412v-8.062" fill="#584b4f"/><path d="M217.867 429.354h-17.945v46.292h9.043V460.82h8.902c4.853 0 8.608-1.33 11.276-3.996 2.67-2.666 4-6.577 4-11.733s-1.33-9.07-4-11.733c-2.668-2.667-6.424-4.002-11.276-4.002zm4.518 21.584c-1.147 1.172-2.803 1.76-4.976 1.76h-8.447v-15.282h8.445c4.462 0 6.696 2.56 6.696 7.675 0 2.73-.573 4.68-1.72 5.85zm43.725-2.01h-16.97v-19.574h-9.044v46.292h9.043v-18.72h16.97v18.72h9.034v-46.292h-9.036m48.404 4c-2.67-2.665-6.43-4-11.282-4h-17.944v46.29h9.042v-14.823h8.902c4.853 0 8.613-1.33 11.282-3.995s3.995-6.577 3.995-11.733-1.326-9.07-3.995-11.735zm-6.763 17.584c-1.15 1.172-2.81 1.76-4.977 1.76h-8.446v-15.282h8.446c4.462 0 6.702 2.56 6.702 7.675 0 2.73-.58 4.68-1.727 5.85z" fill="#4F5B93"/></svg>
+                        </div>
+                        <main class="welcome__content">
+                            <h1>Event-driven, non-blocking I/O with PHP</h1>
+                            <p>
+                                ReactPHP is a low-level library for event-driven programming in PHP. At its core is an event loop, on top of which it provides low-level utilities, such as: Streams abstraction, async DNS resolver, network client/server, HTTP client/server and interaction with processes. Third-party libraries can use these components to create async network clients/servers and more.
+                            </p>
+
+                            <ul class="links">
+                                <li><a href="https://github.com/reactphp"><i class="icon-github" aria-hidden="true"></i> GitHub</a></li>
+                                <li><a href="https://twitter.com/reactphp"><i class="icon-twitter" aria-hidden="true"></i> Twitter</a></li>
+                                <li><a href="https://gitter.im/reactphp/reactphp"><i class="icon-hash" aria-hidden="true"></i> Gitter</a></li>
+                            </ul>
+                        </main>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="wrapper wrapper--small">
+                <div class="welcome__example">
+            <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>loop</span> = <span class="pl-v">React</span>\<span class="pl-v">EventLoop</span>\<span class="pl-v">Factory</span>::<span class="pl-en">create</span>();
+
+<span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Server</span>(<span class="pl-s1"><span class="pl-c1">$</span>loop</span>, <span class="pl-k">function</span> (<span class="pl-v">Psr</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-smi">ServerRequestInterface</span> <span class="pl-s1"><span class="pl-c1">$</span>request</span>) {
+    <span class="pl-k">return</span> <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">Response</span>(
+        <span class="pl-c1">200</span>,
+        <span class="pl-en">array</span>(
+            <span class="pl-s">'Content-Type'</span> =&gt; <span class="pl-s">'text/plain'</span>
+        ),
+        <span class="pl-s">"Hello World!\n"</span>
+    );
+});
+
+<span class="pl-s1"><span class="pl-c1">$</span>socket</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Server</span>(<span class="pl-c1">8080</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>server</span>-&gt;<span class="pl-en">listen</span>(<span class="pl-s1"><span class="pl-c1">$</span>socket</span>);
+
+<span class="pl-k">echo</span> <span class="pl-s">"Server running at http://127.0.0.1:8080\n"</span>;
+
+<span class="pl-s1"><span class="pl-c1">$</span>loop</span>-&gt;<span class="pl-en">run</span>();</pre></div>
+                    <p class="center">This simple web server written in ReactPHP responds with "Hello World" for every request.</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <hr>
+
+    <div class="container">
+        <div class="wrapper wrapper--small">
+            <div class="grid grid--2cols">
+                <div>
+                    <p>
+                        ReactPHP is production ready and battle-tested with millions of installations from all kinds of projects around the world.
+                        </p>
+                    <p>
+                        Its event-driven architecture makes it a perfect fit for efficient network servers and clients handling hundreds or thousands of concurrent connections, long-running applications and many other forms of cooperative multitasking with non-blocking I/O operations.
+                    </p>
+                    <p>
+                        What makes ReactPHP special is its vivid ecosystem with hundreds of third-party libraries allowing you to integrate with many existing systems, such as common network services, database systems and other third-party APIs.
+                    </p>
+                    <p>
+                        ReactPHP is non-blocking by default. Use workers for blocking I/O.
+                    </p>
+                    <p>
+                        The event loop is based on the reactor pattern (hence the name) and strongly inspired by libraries such as EventMachine (Ruby), Twisted (Python) and Node.js (V8).
+                    </p>
+                </div>
+
+                <ul>
+                    <li><strong>Production ready</strong> and battle-tested.</li>
+                    <li><strong>Rock-solid</strong> with stable long-term support (LTS) releases.</li>
+                    <li><strong>Requires no extensions</strong> and runs on any platform - no excuses!</li>
+                    <li>Takes advantage of <strong>optional extensions</strong> to get better performance when available.</li>
+                    <li><strong>Highly recommends latest version of PHP 7+</strong> for best performance and support.</li>
+                    <li><strong>Supports legacy PHP 5.3+ and HHVM</strong> for maximum compatibility.</li>
+                    <li><strong>Well designed</strong> and <strong>reusable components</strong>.</li>
+                    <li><strong>Decoupled parts</strong> so they can be replaced by alternate implementations.</li>
+                    <li>Carefully <strong>tested</strong> (unit &amp; functional).</li>
+                    <li>Promotes <strong>standard PSRs</strong> where possible for maximum interoperability.</li>
+                    <li>Aims to be <strong>technology neutral</strong>, so you can use your preferred application stack.</li>
+                    <li>Small <strong>core team of professionals</strong> supported by <strong>large network</strong> of outside contributors.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="container center">
+        <div class="wrapper wrapper--narrow">
+            <form>
+                <input type="search" class="searchbox searchbox--large" data-docsearch placeholder="Search documentation...">
+            </form>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="container center">
+        <div class="wrapper wrapper--small">
+            <h2>
+                <a id="core-components" class="anchor" href="#core-components" aria-hidden="true">
+                    <span aria-hidden="true" class="octicon octicon-link"></span>
+                </a>
+                Core Components
+            </h2>
+
+            <div class="grid grid--3cols">
+                            <a href="event-loop/" class="box">
+                    <div class="box__content">
+                        <h3>EventLoop</h3>
+
+                        <p>ReactPHP&#039;s core reactor event loop that libraries can use for evented I/O.</p>
+                    </div>
+                    <p class="box__link">
+                        <i class="icon-book" aria-hidden="true"></i>
+                        Read the documentation
+                    </p>
+                </a>
+                            <a href="stream/" class="box">
+                    <div class="box__content">
+                        <h3>Stream</h3>
+
+                        <p>Event-driven readable and writable streams for non-blocking I/O in ReactPHP.</p>
+                    </div>
+                    <p class="box__link">
+                        <i class="icon-book" aria-hidden="true"></i>
+                        Read the documentation
+                    </p>
+                </a>
+                            <a href="promise/" class="box">
+                    <div class="box__content">
+                        <h3>Promise</h3>
+
+                        <p>Promises/A implementation for PHP.</p>
+                    </div>
+                    <p class="box__link">
+                        <i class="icon-book" aria-hidden="true"></i>
+                        Read the documentation
+                    </p>
+                </a>
+                        </div>
+        </div>
+    </div>
+    <div class="container center">
+        <div class="wrapper wrapper--small">
+            <h2>
+                <a id="network-components" class="anchor" href="#network-components" aria-hidden="true">
+                    <span aria-hidden="true" class="octicon octicon-link"></span>
+                </a>
+                Network Components
+            </h2>
+
+            <div class="grid grid--2cols">
+                            <a href="socket/" class="box">
+                    <div class="box__content">
+                        <h3>Socket</h3>
+
+                        <p>Async, streaming plaintext TCP/IP and secure TLS socket server and client connections for ReactPHP.</p>
+                    </div>
+                    <p class="box__link">
+                        <i class="icon-book" aria-hidden="true"></i>
+                        Read the documentation
+                    </p>
+                </a>
+                            <a href="datagram/" class="box">
+                    <div class="box__content">
+                        <h3>Datagram</h3>
+
+                        <p>Event-driven UDP client and server sockets for ReactPHP.</p>
+                    </div>
+                    <p class="box__link">
+                        <i class="icon-book" aria-hidden="true"></i>
+                        Read the documentation
+                    </p>
+                </a>
+                        </div>
+        </div>
+    </div>
+    <div class="container center">
+        <div class="wrapper wrapper--small">
+            <h2>
+                <a id="protocol-components" class="anchor" href="#protocol-components" aria-hidden="true">
+                    <span aria-hidden="true" class="octicon octicon-link"></span>
+                </a>
+                Protocol Components
+            </h2>
+
+            <div class="grid grid--3cols">
+                            <a href="http/" class="box">
+                    <div class="box__content">
+                        <h3>HTTP</h3>
+
+                        <p>Event-driven, streaming HTTP client and server implementation for ReactPHP.</p>
+                    </div>
+                    <p class="box__link">
+                        <i class="icon-book" aria-hidden="true"></i>
+                        Read the documentation
+                    </p>
+                </a>
+                            <a href="http-client/" class="box">
+                    <div class="box__content">
+                        <h3>HTTPClient</h3>
+
+                        <p>[Deprecated] Event-driven, streaming HTTP client for ReactPHP.</p>
+                    </div>
+                    <p class="box__link">
+                        <i class="icon-book" aria-hidden="true"></i>
+                        Read the documentation
+                    </p>
+                </a>
+                            <a href="dns/" class="box">
+                    <div class="box__content">
+                        <h3>DNS</h3>
+
+                        <p>Async DNS resolver for ReactPHP.</p>
+                    </div>
+                    <p class="box__link">
+                        <i class="icon-book" aria-hidden="true"></i>
+                        Read the documentation
+                    </p>
+                </a>
+                        </div>
+        </div>
+    </div>
+    <div class="container center">
+        <div class="wrapper wrapper--small">
+            <h2>
+                <a id="utility-components" class="anchor" href="#utility-components" aria-hidden="true">
+                    <span aria-hidden="true" class="octicon octicon-link"></span>
+                </a>
+                Utility Components
+            </h2>
+
+            <div class="grid grid--2cols">
+                            <a href="cache/" class="box">
+                    <div class="box__content">
+                        <h3>Cache</h3>
+
+                        <p>Async, Promise-based cache interface for ReactPHP.</p>
+                    </div>
+                    <p class="box__link">
+                        <i class="icon-book" aria-hidden="true"></i>
+                        Read the documentation
+                    </p>
+                </a>
+                            <a href="child-process/" class="box">
+                    <div class="box__content">
+                        <h3>ChildProcess</h3>
+
+                        <p>Event-driven library for executing child processes with ReactPHP.</p>
+                    </div>
+                    <p class="box__link">
+                        <i class="icon-book" aria-hidden="true"></i>
+                        Read the documentation
+                    </p>
+                </a>
+                            <a href="promise-timer/" class="box">
+                    <div class="box__content">
+                        <h3>PromiseTimer</h3>
+
+                        <p>A trivial implementation of timeouts for Promises, built on top of ReactPHP.</p>
+                    </div>
+                    <p class="box__link">
+                        <i class="icon-book" aria-hidden="true"></i>
+                        Read the documentation
+                    </p>
+                </a>
+                            <a href="promise-stream/" class="box">
+                    <div class="box__content">
+                        <h3>PromiseStream</h3>
+
+                        <p>The missing link between Promise-land and Stream-land for ReactPHP.</p>
+                    </div>
+                    <p class="box__link">
+                        <i class="icon-book" aria-hidden="true"></i>
+                        Read the documentation
+                    </p>
+                </a>
+                        </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="container center">
+        <div class="wrapper wrapper--small">
+            <h2>
+                <a id="built-with-reactphp" class="anchor" href="#built-with-reactphp" aria-hidden="true">
+                    <span aria-hidden="true" class="octicon octicon-link"></span>
+                </a>
+                Built with ReactPHP
+            </h2>
+
+            <div class="grid grid--3cols">
+                            <a href="https://github.com/voryx/Thruway" class="box">
+                    <div class="box__content">
+                        <h3>Thruway</h3>
+
+                        <p>PHP Client and Router Library for Autobahn and WAMP (Web Application Messaging Protocol) for Real-Time Application Messaging</p>
+                    </div>
+                    <p class="box__link">
+                        <i class="icon-github" aria-hidden="true"></i>
+                        voryx/Thruway
+                    </p>
+                </a>
+                            <a href="https://github.com/php-pm/php-pm" class="box">
+                    <div class="box__content">
+                        <h3>PPM - PHP Process Manager</h3>
+
+                        <p>PPM is a process manager, supercharger and load balancer for modern PHP applications.</p>
+                    </div>
+                    <p class="box__link">
+                        <i class="icon-github" aria-hidden="true"></i>
+                        php-pm/php-pm
+                    </p>
+                </a>
+                            <a href="https://github.com/jolicode/php-ar-drone" class="box">
+                    <div class="box__content">
+                        <h3>php-ar-drone</h3>
+
+                        <p>🚁 Port of node-ar-drone which allows user to control a Parrot AR Drone over PHP</p>
+                    </div>
+                    <p class="box__link">
+                        <i class="icon-github" aria-hidden="true"></i>
+                        jolicode/php-ar-drone
+                    </p>
+                </a>
+                            <a href="https://github.com/ratchetphp/Ratchet" class="box">
+                    <div class="box__content">
+                        <h3>Ratchet</h3>
+
+                        <p>Asynchronous WebSocket server</p>
+                    </div>
+                    <p class="box__link">
+                        <i class="icon-github" aria-hidden="true"></i>
+                        ratchetphp/Ratchet
+                    </p>
+                </a>
+                            <a href="https://github.com/nrk/predis-async" class="box">
+                    <div class="box__content">
+                        <h3>Predis\Async</h3>
+
+                        <p>Asynchronous PHP client library for Redis built on top of ReactPHP</p>
+                    </div>
+                    <p class="box__link">
+                        <i class="icon-github" aria-hidden="true"></i>
+                        nrk/predis-async
+                    </p>
+                </a>
+                            <a href="https://github.com/clue/php-redis-server" class="box">
+                    <div class="box__content">
+                        <h3>clue/redis-server</h3>
+
+                        <p>A Redis server implementation in pure PHP</p>
+                    </div>
+                    <p class="box__link">
+                        <i class="icon-github" aria-hidden="true"></i>
+                        clue/redis-server
+                    </p>
+                </a>
+                        </div>
+
+            <p>
+                <a href="https://github.com/reactphp/react/wiki/Users">
+                    And many more on our wiki page &raquo;
+                </a>
+            </p>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="container center">
+        <div class="wrapper wrapper--small">
+            <h2>
+                <a id="articles" class="anchor" href="#articles" aria-hidden="true">
+                    <span aria-hidden="true" class="octicon octicon-link"></span>
+                </a>
+                Articles
+            </h2>
+
+            <div class="grid grid--2cols">
+                            <a href="http://sergeyzhuk.me/reactphp-series" class="box">
+                    <div class="box__content">
+                        <h3>Sergey Zhuk</h3>
+
+                        <p>A series of articles covering ReactPHP: from the basics to the real application examples.</p>
+                    </div>
+                    <p class="box__link">
+                        <i class="icon-blog" aria-hidden="true"></i> sergeyzhuk.me
+                    </p>
+                </a>
+                            <a href="http://blog.wyrihaximus.net/categories/reactphp-series/" class="box">
+                    <div class="box__content">
+                        <h3>Cees-Jan Kiewiet</h3>
+
+                        <p>Blog series about several ReactPHP components and how they work.</p>
+                    </div>
+                    <p class="box__link">
+                        <i class="icon-blog" aria-hidden="true"></i> blog.wyrihaximus.net
+                    </p>
+                </a>
+                            <a href="https://gnugat.github.io/2016/04/13/super-speed-sf-react-php.html" class="box">
+                    <div class="box__content">
+                        <h3>Loïc Faugeron</h3>
+
+                        <p>Super Speed Symfony - ReactPHP.</p>
+                    </div>
+                    <p class="box__link">
+                        <i class="icon-blog" aria-hidden="true"></i> gnugat.github.io
+                    </p>
+                </a>
+                            <a href="http://marcjschmidt.de/blog/2014/02/08/php-high-performance.html" class="box">
+                    <div class="box__content">
+                        <h3>Marc J. Schmidt</h3>
+
+                        <p>Bring High Performance Into Your PHP App (with ReactPHP).</p>
+                    </div>
+                    <p class="box__link">
+                        <i class="icon-blog" aria-hidden="true"></i> marcjschmidt.de
+                    </p>
+                </a>
+                        </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="container center">
+        <div class="wrapper wrapper--medium">
+            <h2>
+                <a id="talks" class="anchor" href="#talks" aria-hidden="true">
+                    <span aria-hidden="true" class="octicon octicon-link"></span>
+                </a>
+                Talks
+            </h2>
+
+            <div class="grid grid--3cols">
+                            <div class="box">
+                    <div class="box__content">
+                        <div class="iframe">
+                            <iframe width="854" height="480" src="https://www.youtube-nocookie.com/embed/-5ZdGUvOqx4" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <a href="https://www.youtube.com/watch?v=-5ZdGUvOqx4" class="box__link">
+                        <i class="icon-youtube" aria-hidden="true"></i> youtube.com
+                    </a>
+                </div>
+                            <div class="box">
+                    <div class="box__content">
+                        <div class="iframe">
+                            <iframe width="854" height="480" src="https://www.youtube-nocookie.com/embed/s6xrnYae1FU" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <a href="https://www.youtube.com/watch?v=s6xrnYae1FU" class="box__link">
+                        <i class="icon-youtube" aria-hidden="true"></i> youtube.com
+                    </a>
+                </div>
+                            <div class="box">
+                    <div class="box__content">
+                        <div class="iframe">
+                            <iframe width="854" height="480" src="https://www.youtube-nocookie.com/embed/MWNcItWuKpI" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <a href="https://www.youtube.com/watch?v=MWNcItWuKpI" class="box__link">
+                        <i class="icon-youtube" aria-hidden="true"></i> youtube.com
+                    </a>
+                </div>
+                        </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="welcome__team container">
+        <div class="wrapper wrapper--small center">
+            <h2>
+                <a id="team" class="anchor" href="#team" aria-hidden="true">
+                    <span aria-hidden="true" class="octicon octicon-link"></span>
+                </a>
+                Get to know the people behind ReactPHP
+            </h2>
+
+            <p>
+                We're a small core team of professionals. We help manage, maintain and steer the project.<br />
+                But ReactPHP isn't <em>just us</em>.
+                We're proudly supported by a large network of outside contributors from all over the world.
+            </p>
+        </div>
+
+        <div class="wrapper wrapper--small">
+            <div class="grid grid--4cols">
+                <div class="center">
+                    <a href="https://github.com/clue"><img src="https://github.com/clue.png" alt="Christian Lück"></a>
+                    <h3>Christian Lück</h3>
+                    <ul class="links">
+                        <li><a href="https://github.com/clue" title="@clue on GitHub"><i class="icon-github" aria-hidden="true"></i><span class="visually-hidden">@clue on GitHub</span></a></li>
+                        <li><a href="https://twitter.com/another_clue" title="@another_clue on Twitter"><i class="icon-twitter" aria-hidden="true"></i><span class="visually-hidden">@another_clue on Twitter</span></a></li>
+                        <li><a href="https://github.com/sponsors/clue" title="Sponsor @clue on GitHub Sponsors">❤️<span class="visually-hidden">Sponsor @clue on GitHub Sponsors</span></a></li>
+                    </ul>
+                </div>
+                <div class="center">
+                    <a href="https://github.com/WyriHaximus"><img src="https://github.com/WyriHaximus.png" alt="Cees-Jan Kiewiet"></a>
+                    <h3>Cees-Jan Kiewiet</h3>
+                    <ul class="links">
+                        <li><a href="https://github.com/WyriHaximus" title="@WyriHaximus on GitHub"><i class="icon-github" aria-hidden="true"></i><span class="visually-hidden">@WyriHaximus on GitHub</span></a></li>
+                        <li><a href="https://twitter.com/WyriHaximus" title="@WyriHaximus on Twitter"><i class="icon-twitter" aria-hidden="true"></i><span class="visually-hidden">@WyriHaximus on Twitter</span></a></li>
+                        <li><a href="https://github.com/sponsors/WyriHaximus" title="Sponsor @WyriHaximus on GitHub Sponsors">❤️<span class="visually-hidden">Sponsor @WyriHaximus on GitHub Sponsors</span></a></li>
+                    </ul>
+                </div>
+                <div class="center">
+                    <a href="https://github.com/jsor"><img src="https://github.com/jsor.png" alt="Jan Sorgalla"></a>
+                    <h3>Jan Sorgalla</h3>
+                    <ul class="links">
+                        <li><a href="https://github.com/jsor" title="@jsor on GitHub"><i class="icon-github" aria-hidden="true"></i><span class="visually-hidden">@jsor on GitHub</span></a></li>
+                        <li><a href="https://twitter.com/jansor" title="@jansor on Twitter"><i class="icon-twitter" aria-hidden="true"></i><span class="visually-hidden">@jansor on Twitter</span></a></li>
+                    </ul>
+                </div>
+                <div class="center">
+                    <a href="https://github.com/cboden"><img src="https://github.com/cboden.png" alt="Chris Boden"></a>
+                    <h3>Chris Boden</h3>
+                    <ul class="links">
+                        <li><a href="https://github.com/cboden" title="@cboden on GitHub"><i class="icon-github" aria-hidden="true"></i><span class="visually-hidden">@cboden on GitHub</span></a></li>
+                        <li><a href="https://twitter.com/boden_c" title="@boden_c on Twitter"><i class="icon-twitter" aria-hidden="true"></i><span class="visually-hidden">@boden_c on Twitter</span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="container">
+        <div class="wrapper wrapper--small center">
+            <h2>
+                <a id="support" class="anchor" href="#support" aria-hidden="true">
+                    <span aria-hidden="true" class="octicon octicon-link"></span>
+                </a>
+                Support
+            </h2>
+
+            <p>
+                <strong>Do you have a question and need help with ReactPHP?<br> Don't worry, we're here to help!</strong>
+            </p>
+        </div>
+
+        <div class="wrapper wrapper--small">
+            <div class="grid grid--2cols">
+                <div>
+                    <p>
+                        As a first step, check the elaborate documentation that comes with each component (see links to individual documentation for each component above).
+                        If you find your question is not answered within the documentation, there's a fair chance that it may be relevant to more people.
+                        Please do not hesitate to file your question as an issue in the relevant component so others can also participate.
+                    </p>
+                    <p>
+                        You can find our official channel at <code><a href="https://gitter.im/reactphp/reactphp">reactphp/reactphp</a></code> on <code>Gitter.im</code>.
+                        Many of us are available in this channel, so many questions get answered in a few minutes to some hours. We also use this channel to announce all new releases and ongoing development efforts.
+                    </p>
+                    <p>
+                        Also follow <a href="https://twitter.com/reactphp" rel="nofollow">@reactphp</a> on Twitter for updates. We use this mostly for noteworthy, bigger updates and to keep the community updated about ongoing development efforts.
+                        You can always use the <code>#reactphp</code> hashtag if you have anything to share!
+                    </p>
+                </div>
+                <div>
+                    <p>
+                        We're a very open project and we prefer public communication whenever possible, so that more people can participate and help getting the best solutions available.
+                        At the same time, we realize that some things are better addressed in private.
+                    </p>
+                    <p>
+                        Whether you just want to say <em>thank you</em>, want to report a security issue or  want to help sponsor a certain feature development, you can reach out to the core team in private by sending an email to <code>support@reactphp.org</code>.
+                        Please keep in mind that we're a small team of volunteers and do our best to support anybody reaching out.
+                    </p>
+                    <p>
+                        Do you want to support ReactPHP? Awesome! Let's start with letting the the world know why you think ReactPHP is awesome and try to help others getting on board!
+                        Send a tweet, write a blog post, give a talk at your local user group or conference or even write a book.
+                        There are many ways you can help. You can always reach out to us in private and help others in our support channels. Thank you!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+            <footer class="footer">
+            <div class="wrapper">
+                <ul class="links">
+                    <li><a href="https://github.com/reactphp"><i class="icon-github" aria-hidden="true"></i> GitHub</a></li>
+                    <li><a href="https://twitter.com/reactphp"><i class="icon-twitter" aria-hidden="true"></i> Twitter</a></li>
+                    <li><a href="https://gitter.im/reactphp/reactphp"><i class="icon-hash" aria-hidden="true"></i> Gitter</a></li>
+                </ul>
+            </div>
+        </footer>
+        </body>
+</html>

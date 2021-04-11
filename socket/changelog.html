@@ -1,0 +1,1944 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <title>Socket: Changelog - ReactPHP</title>
+
+        <meta name="description" content="Async, streaming plaintext TCP/IP and secure TLS socket server and client connections for ReactPHP.">
+
+        <link rel="apple-touch-icon" sizes="180x180" href="https://reactphp.org/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="https://reactphp.org/favicon-32x32.png">
+        <link rel="manifest" href="https://reactphp.org/manifest.json">
+        <link rel="mask-icon" href="https://reactphp.org/safari-pinned-tab.svg" color="#4f5b93">
+        <meta name="apple-mobile-web-app-title" content="ReactPHP">
+        <meta name="application-name" content="ReactPHP">
+        <meta name="theme-color" content="#f4f3f1">
+        <meta name="msapplication-config" content="https://reactphp.org/browserconfig.xml" />
+
+        <meta property="og:image" content="https://reactphp.org/og-image.png">
+
+            <link rel="preload" href="../assets/sourcesanspro-regular.19ca4d35.woff" as="font" type="font/woff" crossorigin>
+        <link rel="preload" href="../assets/sourcesanspro-bold.be4ba3dd.woff" as="font" type="font/woff" crossorigin>
+
+        <script>window.__assets = '../assets/';</script>
+        <script>!function(e){function t(t){for(var n,o,i=t[0],c=t[1],l=t[2],f=0,d=[];f<i.length;f++)o=i[f],Object.prototype.hasOwnProperty.call(a,o)&&a[o]&&d.push(a[o][0]),a[o]=0;for(n in c)Object.prototype.hasOwnProperty.call(c,n)&&(e[n]=c[n]);for(s&&s(t);d.length;)d.shift()();return u.push.apply(u,l||[]),r()}function r(){for(var e,t=0;t<u.length;t++){for(var r=u[t],n=!0,o=1;o<r.length;o++){var c=r[o];0!==a[c]&&(n=!1)}n&&(u.splice(t--,1),e=i(i.s=r[0]))}return e}var n={},o={1:0},a={1:0},u=[];function i(t){if(n[t])return n[t].exports;var r=n[t]={i:t,l:!1,exports:{}};return e[t].call(r.exports,r,r.exports,i),r.l=!0,r.exports}i.e=function(e){var t=[];o[e]?t.push(o[e]):0!==o[e]&&{3:1,4:1,5:1}[e]&&t.push(o[e]=new Promise((function(t,r){for(var n=({}[e]||e)+"."+{2:"31d6cfe0",3:"284c81ab",4:"87863994",5:"ef18ddd4"}[e]+".css",a=i.p+n,u=document.getElementsByTagName("link"),c=0;c<u.length;c++){var l=(s=u[c]).getAttribute("data-href")||s.getAttribute("href");if("stylesheet"===s.rel&&(l===n||l===a))return t()}var f=document.getElementsByTagName("style");for(c=0;c<f.length;c++){var s;if((l=(s=f[c]).getAttribute("data-href"))===n||l===a)return t()}var d=document.createElement("link");d.rel="stylesheet",d.type="text/css",d.onload=t,d.onerror=function(t){var n=t&&t.target&&t.target.src||a,u=new Error("Loading CSS chunk "+e+" failed.\n("+n+")");u.code="CSS_CHUNK_LOAD_FAILED",u.request=n,delete o[e],d.parentNode.removeChild(d),r(u)},d.href=a,document.getElementsByTagName("head")[0].appendChild(d)})).then((function(){o[e]=0})));var r=a[e];if(0!==r)if(r)t.push(r[2]);else{var n=new Promise((function(t,n){r=a[e]=[t,n]}));t.push(r[2]=n);var u,c=document.createElement("script");c.charset="utf-8",c.timeout=120,i.nc&&c.setAttribute("nonce",i.nc),c.src=function(e){return i.p+""+({}[e]||e)+"."+{2:"0f8f4948",3:"ca2827c9",4:"7d534a7e",5:"99f8f23a"}[e]+".js"}(e);var l=new Error;u=function(t){c.onerror=c.onload=null,clearTimeout(f);var r=a[e];if(0!==r){if(r){var n=t&&("load"===t.type?"missing":t.type),o=t&&t.target&&t.target.src;l.message="Loading chunk "+e+" failed.\n("+n+": "+o+")",l.name="ChunkLoadError",l.type=n,l.request=o,r[1](l)}a[e]=void 0}};var f=setTimeout((function(){u({type:"timeout",target:c})}),12e4);c.onerror=c.onload=u,document.head.appendChild(c)}return Promise.all(t)},i.m=e,i.c=n,i.d=function(e,t,r){i.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:r})},i.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},i.t=function(e,t){if(1&t&&(e=i(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var r=Object.create(null);if(i.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var n in e)i.d(r,n,function(t){return e[t]}.bind(null,n));return r},i.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return i.d(t,"a",t),t},i.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},i.p="",i.oe=function(e){throw console.error(e),e};var c=window.webpackJsonp=window.webpackJsonp||[],l=c.push.bind(c);c.push=t,c=c.slice();for(var f=0;f<c.length;f++)t(c[f]);var s=l;r()}([]);</script>
+        <style>@font-face{font-family:Source Sans Pro;font-style:normal;font-weight:400;font-display:swap;src:local("Source Sans Pro Regular"),local("SourceSansPro-Regular"),url(../assets/sourcesanspro-regular.19ca4d35.woff) format("woff")}@font-face{font-family:Source Sans Pro;font-style:normal;font-weight:700;font-display:swap;src:local("Source Sans Pro Bold"),local("SourceSansPro-Bold"),url(../assets/sourcesanspro-bold.be4ba3dd.woff) format("woff")}@font-face{font-family:icons;src:url(../assets/icons.063d0ba7.ttf) format("truetype"),url(../assets/icons.5ea4cc5c.woff) format("woff"),url(../assets/icons.d59afb7d.svg#icons) format("svg");font-weight:400;font-style:normal}[class*=" icon-"],[class^=icon-]{font-family:icons!important;speak:none;font-style:normal;font-weight:400;-webkit-font-feature-settings:normal;font-feature-settings:normal;font-variant:normal;text-transform:none;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.icon-hash:before{content:"\e900"}.icon-twitter:before{content:"\e901"}.icon-github:before{content:"\e902"}.icon-blog:before{content:"\e905"}.icon-earth:before{content:"\e903"}.icon-link:before{content:"\e906"}.icon-youtube:before{content:"\e904"}.icon-book:before{content:"\f007"}.icon-calendar:before{content:"\f068"}.icon-chevron-down:before{content:"\f0a3"}.icon-chevron-up:before{content:"\f0a2"}.icon-law:before{content:"\f0d8"}.icon-search:before{content:"\f02e"}.icon-x:before{content:"\f081"}.icon-feed:before{content:"\ea9b"}[class*=" icon-"],[class^=icon-]{vertical-align:-8%}html{-webkit-box-sizing:border-box;box-sizing:border-box;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;font-size:16px;line-height:1.6}@media (max-width:768px){html{font-size:18px}}*,:after,:before{-webkit-box-sizing:inherit;box-sizing:inherit}body{margin:0;color:#584b4f;color:var(--color-base);background-color:#fff}a{color:#4f5b93;color:var(--color-key)}a:hover{color:#a2aacd;color:var(--color-key-light);text-decoration:underline}blockquote{padding:16px 16px 16px 24px;border-left:4px solid #4f5b93;border-left:4px solid var(--color-key);border-radius:4px;background-color:#f4f3f1;background-color:var(--color-background-lighter);-webkit-box-shadow:0 1px 0 0 rgba(0,0,0,.1);box-shadow:0 1px 0 0 rgba(0,0,0,.1);-webkit-box-shadow:var(--box-shadow-lighter);box-shadow:var(--box-shadow-lighter);position:relative;font-size:.875rem}blockquote:before{content:"i";position:absolute;top:12px;left:-14px;display:block;width:24px;height:24px;background:#4f5b93;background:var(--color-key);font-size:12px;padding:0 4px;-webkit-box-sizing:border-box;box-sizing:border-box;text-align:center;font-weight:700;color:#fff;line-height:24px;border-radius:50%}blockquote :last-child{margin-bottom:0}blockquote,fieldset,form,h1,h2,h3,h4,h5,h6,hr,ol,p,ul{margin:0 0 16px}ul ul{margin-bottom:0}hr{clear:both;height:0;border:0;border-bottom:1px dashed #eae8e3;border-bottom:1px dashed var(--color-background-light);padding:0}h1,h2,h3,h4,h5,h6{line-height:1;-webkit-font-smoothing:antialiased;color:#584b4f;color:var(--color-base);font-family:Source Sans Pro,Helvetica Neue,Arial,sans-serif;font-weight:700}h1 a,h1 a:hover,h2 a,h2 a:hover,h3 a,h3 a:hover,h4 a,h4 a:hover,h5 a,h5 a:hover,h6 a,h6 a:hover{text-decoration:none}h1{font-size:2.5rem;margin-bottom:32px;letter-spacing:-1px}h1,h1 a,h1 a:hover{color:#4f5b93;color:var(--color-key)}h1:not(:first-child){margin-top:32px}h2{font-size:2rem;margin-bottom:32px}h2,h2 a,h2 a:hover{color:#4f5b93;color:var(--color-key)}h2:not(:first-child){margin-top:32px}h3{font-size:1.5rem;margin-bottom:24px}h3,h3 a,h3 a:hover{color:#584b4f;color:var(--color-base)}h3:not(:first-child){margin-top:24px}h4{font-size:1.25rem}h4,h4 a,h4 a:hover{color:#4f5b93;color:var(--color-key)}h4:not(:first-child){margin-top:24px}@media (max-width:768px){h1{font-size:2rem}h2{font-size:1.75rem;margin-bottom:32px}}.container{padding:32px}@media (max-width:768px){.container{padding:16px}}.wrapper{max-width:1600px;margin:auto}.wrapper--medium{max-width:1280px}.wrapper--small{max-width:960px;margin:auto}.wrapper--narrow{max-width:640px}.main{width:calc(98% - 400px)}.main,.sidebar{margin-bottom:32px}.sidebar{width:calc(400px - 2%)}@media (max-width:1024px){.main,.sidebar{width:auto;margin-top:16px}}.visually-hidden{position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px)}.grid{display:-ms-flexbox;display:flex;-ms-flex-direction:row;flex-direction:row;-ms-flex-wrap:wrap;flex-wrap:wrap;-ms-flex-pack:center;justify-content:center;width:102%;margin-left:-2%}.grid>*{margin-left:2%;max-width:100%}.grid--4cols>*{-ms-flex-preferred-size:23%;flex-basis:23%}.grid--3cols>*{-ms-flex-preferred-size:31.33%;flex-basis:31.33%}.grid--2cols>*{-ms-flex-preferred-size:48%;flex-basis:48%}@media (max-width:768px){.grid{-ms-flex-direction:column;flex-direction:column}.grid,.grid>*{width:100%;margin-left:0}.grid>*{-ms-flex:0 0 auto;flex:0 0 auto}}.center{text-align:center}.center h1,.center h2,.center h3,.center h4,.center h5,.center h6,.hamburger{display:inline-block}.hamburger{padding:14px 12px;height:48px;cursor:pointer;font:inherit;color:inherit;text-transform:none;background-color:transparent;border:0;margin:0;overflow:visible;outline:none}.hamburger__box{width:24px;height:16px;display:inline-block;position:relative}.hamburger__inner{display:block;top:50%;margin-top:-2px}.hamburger__inner,.hamburger__inner:after,.hamburger__inner:before{width:24px;height:3px;background-color:#584b4f;background-color:var(--color-base);border-radius:2px;position:absolute;-webkit-transition-property:-webkit-transform;transition-property:-webkit-transform;-o-transition-property:transform;transition-property:transform;transition-property:transform,-webkit-transform;-webkit-transition-duration:.15s;-o-transition-duration:.15s;transition-duration:.15s;-webkit-transition-timing-function:ease;-o-transition-timing-function:ease;transition-timing-function:ease}.hamburger__inner:after,.hamburger__inner:before{content:"";display:block}.hamburger__inner:before{top:-6px}.hamburger__inner:after{bottom:-6px}.header{width:100%;background:#fefefe;-webkit-box-shadow:0 1px 0 0 rgba(0,0,0,.08);box-shadow:0 1px 0 0 rgba(0,0,0,.08);-webkit-box-shadow:var(--box-shadow-lightest);box-shadow:var(--box-shadow-lightest);padding:0 32px}@media (max-width:768px){.header{padding:0 16px}}.header__container{width:100%;position:relative;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:justify;justify-content:space-between}.header__logo{display:block;line-height:1;padding:16px 0}.header__logo svg{display:block;width:120px;height:18px}.header__search{margin:0;position:absolute;right:48px;top:7px;z-index:799}.header__search input{width:400px}@media (max-width:768px){.header__search input{width:calc(100vw - 94px)}}.header__menu{position:absolute;right:-12px;top:0;z-index:800}.footer{background:#584b4f;background:var(--color-base);padding:32px;text-align:center;text-shadow:1px 1px 0 rgba(0,0,0,.125)}.footer .links a{color:#eae8e3;color:var(--color-background-light);text-decoration:none}.footer .links a:hover{color:#9ad8bb;color:var(--color-green-light);text-decoration:none}.iframe{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;width:100%}.iframe iframe{position:absolute;top:0;left:0;width:100%;height:100%}.links{margin:0;padding:0}.links li{display:inline-block;margin:0 8px;text-decoration:none}.links li:first-child{margin-left:0}.links li:last-child{margin-right:0}.links a{display:block}.box,.links a,.links a:hover{text-decoration:none}.box{background:#f4f3f1;background:var(--color-background-lighter);-webkit-box-shadow:0 1px 0 0 rgba(0,0,0,.1);box-shadow:0 1px 0 0 rgba(0,0,0,.1);-webkit-box-shadow:var(--box-shadow-lighter);box-shadow:var(--box-shadow-lighter);border-radius:4px;text-align:left;vertical-align:top;padding:24px;margin-top:0;margin-bottom:24px;color:inherit;overflow:auto;display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column}.box:hover{background:#eae8e3;background:var(--color-background-light);-webkit-box-shadow:0 1px 0 0 rgba(0,0,0,.15);box-shadow:0 1px 0 0 rgba(0,0,0,.15);-webkit-box-shadow:var(--box-shadow-light);box-shadow:var(--box-shadow-light);text-decoration:none}.box h1,.box h2,.box h3,.box h4,.box h5,.box h6,.box hr,.box ol,.box p,.box ul{margin-bottom:8px}.box h1,.box h2,.box h3,.box h4,.box h5,.box h6{color:#584b4f;color:var(--color-base)}.box :first-child{margin-top:0}.box :last-child{margin-bottom:0}.box__content{-ms-flex-positive:1;flex-grow:1;color:#584b4f;color:var(--color-base);text-decoration:none}.box__content p{font-size:.875rem}.box__content:hover{color:#584b4f;color:var(--color-base);text-decoration:none}.box__content:not(:last-child){margin-bottom:16px}.box__link{display:block;font-size:.75rem;text-decoration:none}.box__link,.box__link [class*=icon]{color:#4f5b93;color:var(--color-key)}.box__link:hover{color:#a2aacd;color:var(--color-key-light);text-decoration:none}code,pre,tt{font-family:SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace}code,tt{font-size:.75rem;padding:.3rem .45rem;margin:0;background-color:rgba(0,0,0,.05);border-radius:4px}code br,tt br{display:none}del code{text-decoration:inherit}pre{word-wrap:normal;text-align:left;font-size:.875rem;line-height:1.45}@media (max-width:768px){pre{font-size:.75rem}}pre>code{padding:0;margin:0;font-size:100%;word-break:normal;white-space:pre;background:transparent;border:0}.highlight{margin-bottom:16px}.highlight pre{margin-bottom:0;word-break:normal}.highlight pre,pre{padding:16px 16px 14px;overflow:auto;background-color:#f9f9f8;background-color:var(--color-background-lightest);-webkit-box-shadow:0 1px 0 0 rgba(0,0,0,.08);box-shadow:0 1px 0 0 rgba(0,0,0,.08);-webkit-box-shadow:var(--box-shadow-lightest);box-shadow:var(--box-shadow-lightest);color:#584b4f;color:var(--color-base);text-shadow:none!important;border-radius:4px}pre code,pre tt{display:inline;max-width:none;padding:0;margin:0;overflow:visible;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}pre code:after,pre code:before,pre tt:after,pre tt:before{content:normal}.pl-c{color:#969896}.pl-c1,.pl-s .pl-v{color:#0086b3}.pl-e,.pl-en{color:#795da3}.pl-s .pl-s1,.pl-smi{color:#444}.pl-ent{color:#63a35c}.pl-k{color:#a71d5d}.pl-pds,.pl-s,.pl-s .pl-pse .pl-s1,.pl-sr,.pl-sr .pl-cce,.pl-sr .pl-sra,.pl-sr .pl-sre{color:#183691}.pl-smw,.pl-v{color:#ed6a43}.pl-bu{color:#b52a1d}.pl-c2,.pl-ii{color:#f8f8f8;background-color:#b52a1d}.pl-c2:before{content:"^M"}.pl-sr .pl-cce{font-weight:700;color:#63a35c}.pl-ml{color:#693a17}.pl-mh,.pl-mh .pl-en,.pl-ms{font-weight:700;color:#1d3e81}.pl-mq{color:teal}.pl-mi{font-style:italic;color:#333}.pl-mb{font-weight:700;color:#333}.pl-md{color:#bd2c00;background-color:#ffecec}.pl-mi1{color:#55a532;background-color:#eaffea}.pl-mc{color:#ef9700;background-color:#ffe3b4}.pl-mi2{color:#d8d8d8;background-color:grey}.pl-mdr{font-weight:700;color:#795da3}.pl-mo{color:#1d3e81}.pl-ba{color:#595e62}.pl-sg{color:silver}.pl-corl{text-decoration:underline;color:#183691}.anchor{display:block;float:left;position:absolute;padding-right:2px;-webkit-transform:translateX(-100%);transform:translateX(-100%);text-decoration:none!important}.anchor:focus{outline:none}.anchor>*{visibility:hidden}:hover>.anchor>*{visibility:visible}.anchor>:before{content:"#";font-weight:400!important;color:#a2aacd;color:var(--color-key-light)}.anchor--disable .anchor>*,.anchor.anchor--disable>*{visibility:hidden!important}.searchbox{width:100%}.searchbox,.searchbox:focus{-webkit-appearance:none;-moz-appearance:none;appearance:none;padding:6px 8px 6px 32px;font-size:.875rem;line-height:24px;color:#584b4f;color:var(--color-base);border:0;background:#eae8e3 url(../assets/search.72dc4739.svg) no-repeat 10px;background:var(--color-background-light) url(../assets/search.72dc4739.svg) no-repeat 10px;background-size:16px 16px;-webkit-box-shadow:0 1px 0 0 rgba(0,0,0,.15);box-shadow:0 1px 0 0 rgba(0,0,0,.15);-webkit-box-shadow:var(--box-shadow-light);box-shadow:var(--box-shadow-light);border-radius:4px;outline:none;-webkit-transition:width .35s cubic-bezier(.23,1,.32,1);-o-transition:width .35s cubic-bezier(.23,1,.32,1);transition:width .35s cubic-bezier(.23,1,.32,1)}.searchbox::-webkit-input-placeholder{color:#afa1a5;color:var(--color-base-light)}.searchbox:-moz-placeholder,.searchbox::-moz-placeholder{color:#afa1a5;color:var(--color-base-light)}.searchbox::-moz-placeholder{opacity:1}.searchbox:-ms-input-placeholder{color:#afa1a5;color:var(--color-base-light)}.searchbox:focus{background-color:#f4f3f1!important;background-color:var(--color-background-lighter)!important;-webkit-box-shadow:0 1px 0 0 rgba(0,0,0,.1);box-shadow:0 1px 0 0 rgba(0,0,0,.1);-webkit-box-shadow:var(--box-shadow-lighter);box-shadow:var(--box-shadow-lighter)}.searchbox--collapsed:not(:focus){background-color:transparent;border:0;width:32px!important;margin-right:-12px;cursor:pointer;-webkit-box-shadow:none;box-shadow:none}.searchbox--collapsed:not(:focus)::-webkit-search-cancel-button,.searchbox--collapsed:not(:focus)::-webkit-search-decoration{display:none}.searchbox--collapsed:not(:focus)::-webkit-search-results-button,.searchbox--collapsed:not(:focus)::-webkit-search-results-decoration{display:none}.searchbox--collapsed:not(:focus)::-ms-clear{display:none}.searchbox--large,.searchbox--large:focus{padding:8px 12px 8px 40px}.alert{padding:16px 16px 16px 24px;border-left:4px solid #ba3525;border-left:4px solid var(--color-red);border-radius:4px;background-color:#f4f3f1;background-color:var(--color-background-lighter);-webkit-box-shadow:0 1px 0 0 rgba(0,0,0,.1);box-shadow:0 1px 0 0 rgba(0,0,0,.1);-webkit-box-shadow:var(--box-shadow-lighter);box-shadow:var(--box-shadow-lighter);position:relative;font-size:.9em}.alert:before{content:"!";position:absolute;top:12px;left:-14px;display:block;width:24px;height:24px;background:#ba3525;background:var(--color-red);font-size:12px;padding:0 4px;-webkit-box-sizing:border-box;box-sizing:border-box;text-align:center;font-weight:700;color:#fff;line-height:22px;border-radius:50%}.alert a{color:#ba3525;color:var(--color-red)}.alert :last-child{margin-bottom:0}.toc{display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;padding:0;list-style:none;margin-left:-4px}.toc li{margin:4px}.toc a{display:-ms-flexbox;display:flex;background-color:#584b4f;background-color:var(--color-base);-webkit-box-shadow:0 1px 0 0 rgba(0,0,0,.1);box-shadow:0 1px 0 0 rgba(0,0,0,.1);-webkit-box-shadow:var(--box-shadow-lighter);box-shadow:var(--box-shadow-lighter);font-family:SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;font-weight:bolder;letter-spacing:normal;padding:.25rem 1rem .15rem;border-radius:4px}.toc a,.toc a:hover{color:#fff;text-decoration:none}@media (max-width:768px){.toc{font-size:.85rem}}.welcome__intro{padding:16px 0 136px;border-bottom:1px dashed #eae8e3;border-bottom:1px dashed var(--color-background-light);background-image:-o-radial-gradient(center,ellipse,#fff 0,#eae8e3 100%);background-image:radial-gradient(ellipse at center,#fff 0,#eae8e3 100%);background-image:-o-radial-gradient(center,ellipse,#fff 0,var(--color-background-light) 100%);background-image:radial-gradient(ellipse at center,#fff 0,var(--color-background-light) 100%);background-size:auto 100%;background-position:50% 0}.welcome__intro h1{font-size:2rem;margin-bottom:16px;color:#4f5b93;color:var(--color-key)}.welcome__logo{display:block;margin:0 auto;max-width:320px}.welcome__logo svg{display:block;height:240px}.welcome__content{padding-top:16px;display:block;max-width:calc(98% - 320px)}.welcome__example{display:block;max-width:850px;margin:-160px auto auto}.welcome__example .highlight pre{padding:32px;background:#fff;-webkit-box-shadow:0 0 16px #d6d1c8;box-shadow:0 0 16px #d6d1c8;-webkit-box-shadow:0 0 16px var(--color-background);box-shadow:0 0 16px var(--color-background)}.welcome__intro .links a{color:#584b4f;color:var(--color-base);text-decoration:none}.welcome__intro .links a:hover{color:#4f5b93;color:var(--color-key);text-decoration:none}.welcome__team img{border-radius:50%;max-width:190px;display:inline-block}.welcome__team h3{display:block;margin:.2em 0}.welcome__team div.grid>*{margin-bottom:1em}@media (max-width:768px){.welcome__content{padding:32px 16px 16px;max-width:100%}.welcome__logo svg{height:160px}.welcome__intro h1{text-align:center;font-size:1.75rem;margin-bottom:16px;color:#4f5b93;color:var(--color-key)}.welcome__intro .links{text-align:center}}.off-canvas-menu{position:fixed;top:0;right:0;pointer-events:none}.off-canvas-menu__content{-webkit-transform:translate3d(105%,0,0);transform:translate3d(105%,0,0)}.component-info{position:-webkit-sticky;position:sticky;top:16px;bottom:16px;padding:24px;background-color:#f4f3f1;background-color:var(--color-background-lighter);-webkit-box-shadow:0 1px 0 0 rgba(0,0,0,.1);box-shadow:0 1px 0 0 rgba(0,0,0,.1);-webkit-box-shadow:var(--box-shadow-lighter);box-shadow:var(--box-shadow-lighter);border-radius:4px;font-size:.875rem}.component-info,.component-info a,.component-info a [class*=icon]{color:#584b4f;color:var(--color-base)}.component-info a:hover{color:#afa1a5;color:var(--color-base-light);text-decoration:none}.component-info pre{line-height:1;font-size:.75rem}.component-info__title{display:-ms-flexbox;display:flex;font-size:1.5rem;line-height:1rem;margin-bottom:1rem;color:#584b4f;color:var(--color-base);-ms-flex-align:center;align-items:center}.component-info__title a{text-decoration:none}.component-info__title>:not(:last-child){margin-right:8px}.component-info__subtitle{font-size:.875rem;line-height:.875rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;margin-bottom:.875rem;color:#afa1a5;color:var(--color-base-light)}.component-info__info{padding:0;list-style:none;display:-ms-flexbox;display:flex;-ms-flex-flow:row;flex-flow:row;-ms-flex-pack:start;justify-content:flex-start}.component-info__info li{margin-right:16px}.component-info__info li:last-child{margin-right:0}.component-info__info a{font-size:.75rem;text-decoration:none;white-space:nowrap;-o-text-overflow:ellipsis;text-overflow:ellipsis}.component-info__contributors{display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;padding:0;list-style:none}.component-info__contributors li{padding:0 4px 4px 0;margin:0}.component-info__contributors img{display:block;width:40px;height:auto;border-radius:2px}.component-info__contributors img,.component-info__participation{-webkit-box-shadow:0 1px 0 0 rgba(0,0,0,.1);box-shadow:0 1px 0 0 rgba(0,0,0,.1);-webkit-box-shadow:var(--box-shadow-lighter);box-shadow:var(--box-shadow-lighter)}.component-info__participation{background-color:#f9f9f8;background-color:var(--color-background-lightest);padding:8px;border-radius:4px;text-align:center}.component-info__participation svg{display:block;margin:auto;max-width:100%;height:auto!important}:root{--color-key:#4f5b93;--color-key-light:#a2aacd;--color-base:#584b4f;--color-base-light:#afa1a5;--color-green:#40a977;--color-green-light:#9ad8bb;--color-red:#ba3525;--color-red-light:#e79187;--color-background:#d6d1c8;--color-background-light:#eae8e3;--color-background-lighter:#f4f3f1;--color-background-lightest:#f9f9f8;--box-shadow-light:0 1px 0 0 rgba(0,0,0,0.15);--box-shadow-lighter:0 1px 0 0 rgba(0,0,0,0.1);--box-shadow-lightest:0 1px 0 0 rgba(0,0,0,0.08)}.version-selector{position:relative;font-size:.875rem;color:#fff}.version-selector :last-child{margin-bottom:0}.version-selector__button,.version-selector__version{-webkit-appearance:none;border:0;margin:0;text-shadow:none;-webkit-box-shadow:none;box-shadow:none;text-decoration:none;text-transform:none;overflow:visible;cursor:pointer;outline:none;display:-ms-flexbox;display:flex;background-color:#584b4f;background-color:var(--color-base);-webkit-box-shadow:0 1px 0 0 rgba(0,0,0,.1);box-shadow:0 1px 0 0 rgba(0,0,0,.1);-webkit-box-shadow:var(--box-shadow-lighter);box-shadow:var(--box-shadow-lighter);color:#fff;font-family:SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;font-size:.75rem;font-weight:bolder;letter-spacing:normal;padding:.25rem .4rem .2rem;border-radius:4px}.version-selector__button{position:relative}.version-selector__button [class=icon-chevron-down]{display:inline-block;margin-left:4px}.version-selector__button [class=icon-chevron-up]{display:none;margin-left:4px}.version-selector__version{background-color:hsla(0,0%,100%,.33);border:1px solid transparent;text-decoration:none;color:#fff!important}.version-selector__version:hover{background-color:hsla(0,0%,100%,.11);border:1px solid hsla(0,0%,100%,.22)}.version-selector__button--dev,.version-selector__version--dev,.version-selector__version--dev:hover{background-color:#ba3525;background-color:var(--color-red)}.version-selector__button--latest,.version-selector__version--latest,.version-selector__version--latest:hover{background-color:#40a977;background-color:var(--color-green)}.version-selector__panel{position:fixed;top:-20000em;visibility:hidden}</style>
+        <script async src="../assets/main.d691d407.js"></script>
+        <link href="https://github.com/reactphp/socket/releases.atom" type="application/atom+xml" rel="alternate" title="Socket Changelog">
+    </head>
+
+    <body>
+            <header class="header">
+            <div class="wrapper">
+                <div class="header__container">
+                    <a class="header__logo" href="../">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="320" height="47.29" viewBox="0 428.964 320 47.29"><path fill="#584B4F" d="M30.86 452.385c1.637-2.287 2.455-5 2.455-8.134 0-4.313-1.367-7.87-4.088-10.68-2.723-2.812-6.39-4.216-11.004-4.216h-7.71c-3.79 0-6.49.798-8.1 2.388C.806 433.332 0 435.872 0 439.355v36.512h9.08v-17.245h6.53l9.08 17.245h10.52L24.82 457.12c2.395-.87 4.41-2.447 6.04-4.735zm-8.488-3.334c-1.24 1.33-2.82 1.99-4.734 1.99H9.08v-9.47c0-2.74 1.35-4.112 4.05-4.112h4.508c2 0 3.603.61 4.8 1.83 1.196 1.22 1.797 2.82 1.797 4.802 0 1.982-.623 3.64-1.864 4.964v-.003zm20.348 14.536c0 4.572 1.055 7.766 3.167 9.57 2.114 1.81 5.782 2.71 11.008 2.71h16.46v-8.1H57.548c-2.18 0-3.68-.35-4.51-1.045-.83-.695-1.24-1.96-1.24-3.788v-6.467h14.434l.656-8.1h-15.09v-10.912h21.56v-8.098H42.72v34.23zm57.97-33.442c-.718-.523-1.665-.787-2.84-.787-1.177 0-2.168.285-2.972.85-.807.567-1.537 1.592-2.19 3.073l-14.89 42.585h9.47l2.55-8.03h15.613l2.613 8.03h9.47l-14.893-42.588c-.567-1.572-1.21-2.613-1.93-3.135v.002zM92.1 460.19l5.75-18.42 5.487 18.418H92.1v.002zm53.074 5.455c-1.155 1.678-3.245 2.512-6.27 2.512-3.03 0-5.258-.914-6.697-2.74-1.394-1.83-2.093-5.25-2.093-10.256v-4.052c0-1.783.045-3.2.13-4.243.178-3.27.785-5.576 1.833-6.928 1.48-1.914 3.745-2.873 6.794-2.873 2.613 0 4.532.653 5.75 1.96 1.218 1.308 2.07 3.245 2.547 5.813h8.49c0-5.14-1.557-9.07-4.67-11.79-3.114-2.723-7.153-4.084-12.116-4.084-3.398 0-6.293.564-8.687 1.7-6.097 2.783-9.146 9.686-9.146 20.704v3.918c0 13.982 5.945 20.968 17.833 20.968 5.4 0 9.58-1.59 12.54-4.77 2.964-3.176 4.44-7.73 4.44-13.653h-8.426c-.346 3.53-1.1 6.134-2.25 7.81v.005zm14.667-36.29v8.1h12.412v38.41h9.08v-38.41h12.47v-8.1"/><path fill="#4F5B93" d="M218.89 429.356h-18.03v46.51h9.086v-14.897h8.944c4.876 0 8.647-1.337 11.328-4.016 2.683-2.68 4.02-6.608 4.02-11.788s-1.337-9.112-4.02-11.788c-2.68-2.68-6.454-4.02-11.328-4.02v-.002zm4.538 21.686c-1.15 1.177-2.815 1.768-5 1.768h-8.485v-15.354h8.484c4.483 0 6.73 2.572 6.73 7.71 0 2.744-.578 4.703-1.73 5.88v-.004zm43.93-2.02H250.31v-19.666h-9.088v46.51h9.086v-18.81h17.05v18.81h9.076v-46.51h-9.078m48.63 4.02c-2.683-2.68-6.46-4.02-11.335-4.02h-18.027v46.507h9.085V460.97h8.943c4.877 0 8.654-1.336 11.337-4.014 2.68-2.678 4.013-6.608 4.013-11.788s-1.332-9.112-4.013-11.79v-.003zm-6.795 17.666c-1.154 1.177-2.822 1.768-5 1.768h-8.484v-15.354h8.485c4.483 0 6.734 2.572 6.734 7.71 0 2.744-.583 4.703-1.735 5.88v-.004z"/></svg>
+                    </a>
+                    <form class="header__search">
+                        <input type="search" class="searchbox searchbox--collapsed" data-docsearch placeholder="Search documentation...">
+                    </form>
+                    <div class="header__menu">
+    <button class="hamburger" data-ctrly="off-canvas-menu" data-off-canvas-menu-control>
+        <div class="hamburger__box">
+            <div class="hamburger__inner">
+                <span class="visually-hidden">Menu</span>
+            </div>
+        </div>
+    </button>
+</div>
+<nav id="off-canvas-menu" class="off-canvas-menu" aria-hidden="true" tabindex="0">
+    <div class="off-canvas-menu__content">
+        <button aria-label="Close menu" class="off-canvas-menu__close" data-ctrly="off-canvas-menu" data-off-canvas-menu-control>
+            <i class="icon-x" aria-hidden="true"></i>
+        </button>
+
+        <section class="off-canvas-menu__section">
+            <a class="off-canvas-menu__section-top" href="../">Home</a>
+        </section>
+
+        <section class="off-canvas-menu__section">
+            <a class="off-canvas-menu__section-top" href="../changelog.html">Changelog</a>
+        </section>
+            <section class="off-canvas-menu__section">
+            <h3 class="off-canvas-menu__section-header">Core Components</h3>
+            <ul class="off-canvas-menu__list">
+                            <li>
+                    <a class="off-canvas-menu__link" href="../event-loop/">
+                        EventLoop
+
+                        <span class="off-canvas-menu__version">
+                            v1.1.1
+                        </span>
+                    </a>
+                </li>
+                            <li>
+                    <a class="off-canvas-menu__link" href="../stream/">
+                        Stream
+
+                        <span class="off-canvas-menu__version">
+                            v1.1.1
+                        </span>
+                    </a>
+                </li>
+                            <li>
+                    <a class="off-canvas-menu__link" href="../promise/">
+                        Promise
+
+                        <span class="off-canvas-menu__version">
+                            v2.8.0
+                        </span>
+                    </a>
+                </li>
+                        </ul>
+        </section>
+            <section class="off-canvas-menu__section">
+            <h3 class="off-canvas-menu__section-header">Network Components</h3>
+            <ul class="off-canvas-menu__list">
+                            <li>
+                    <a class="off-canvas-menu__link" href="../socket/">
+                        Socket
+
+                        <span class="off-canvas-menu__version">
+                            v1.6.0
+                        </span>
+                    </a>
+                </li>
+                            <li>
+                    <a class="off-canvas-menu__link" href="../datagram/">
+                        Datagram
+
+                        <span class="off-canvas-menu__version">
+                            v1.6.0
+                        </span>
+                    </a>
+                </li>
+                        </ul>
+        </section>
+            <section class="off-canvas-menu__section">
+            <h3 class="off-canvas-menu__section-header">Protocol Components</h3>
+            <ul class="off-canvas-menu__list">
+                            <li>
+                    <a class="off-canvas-menu__link" href="../http/">
+                        HTTP
+
+                        <span class="off-canvas-menu__version">
+                            v1.3.0
+                        </span>
+                    </a>
+                </li>
+                            <li>
+                    <a class="off-canvas-menu__link" href="../http-client/">
+                        HTTPClient
+
+                        <span class="off-canvas-menu__version">
+                            v0.5.11
+                        </span>
+                    </a>
+                </li>
+                            <li>
+                    <a class="off-canvas-menu__link" href="../dns/">
+                        DNS
+
+                        <span class="off-canvas-menu__version">
+                            v1.5.0
+                        </span>
+                    </a>
+                </li>
+                        </ul>
+        </section>
+            <section class="off-canvas-menu__section">
+            <h3 class="off-canvas-menu__section-header">Utility Components</h3>
+            <ul class="off-canvas-menu__list">
+                            <li>
+                    <a class="off-canvas-menu__link" href="../cache/">
+                        Cache
+
+                        <span class="off-canvas-menu__version">
+                            v1.1.1
+                        </span>
+                    </a>
+                </li>
+                            <li>
+                    <a class="off-canvas-menu__link" href="../child-process/">
+                        ChildProcess
+
+                        <span class="off-canvas-menu__version">
+                            v0.6.2
+                        </span>
+                    </a>
+                </li>
+                            <li>
+                    <a class="off-canvas-menu__link" href="../promise-timer/">
+                        PromiseTimer
+
+                        <span class="off-canvas-menu__version">
+                            v1.6.0
+                        </span>
+                    </a>
+                </li>
+                            <li>
+                    <a class="off-canvas-menu__link" href="../promise-stream/">
+                        PromiseStream
+
+                        <span class="off-canvas-menu__version">
+                            v1.2.0
+                        </span>
+                    </a>
+                </li>
+                        </ul>
+        </section>
+        </div>
+</nav>
+                </div>
+            </div>
+        </header>
+    
+        <div class="container">
+        <div class="wrapper">
+            <div class="grid grid--wrap grid--gutter">
+                <main class="main">
+                    <h1>Socket Changelog</h1>
+
+    <ul class="toc">
+            <li><a href="#2020" title="Jump to year 2020 (3 releases)">2020</a></li>
+            <li><a href="#2019" title="Jump to year 2019 (3 releases)">2019</a></li>
+            <li><a href="#2018" title="Jump to year 2018 (7 releases)">2018</a></li>
+            <li><a href="#2017" title="Jump to year 2017 (16 releases)">2017</a></li>
+            <li><a href="#2016" title="Jump to year 2016 (2 releases)">2016</a></li>
+            <li><a href="#2014" title="Jump to year 2014 (4 releases)">2014</a></li>
+            <li><a href="#2013" title="Jump to year 2013 (4 releases)">2013</a></li>
+            <li><a href="#2012" title="Jump to year 2012 (5 releases)">2012</a></li>
+        </ul>
+
+    <h2>
+        <a id="2020" class="anchor" href="#2020" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+        2020
+    </h2>
+
+    
+            <h3>
+        <a id="160-2020-08-28" class="anchor" href="#160-2020-08-28" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        1.6.0
+
+        <small>
+            (2020-08-28)
+            <a href="https://github.com/reactphp/socket/releases/tag/v1.6.0" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
+<li>
+<p>Feature: Support upcoming PHP 8 release.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="684903619" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/246" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/246/hovercard" href="https://github.com/reactphp/socket/pull/246">#246</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+</li>
+<li>
+<p>Feature: Change default socket backlog size to 511.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="669758102" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/242" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/242/hovercard" href="https://github.com/reactphp/socket/pull/242">#242</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+</li>
+<li>
+<p>Fix: Fix closing connection when cancelling during TLS handshake.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="668028878" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/241" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/241/hovercard" href="https://github.com/reactphp/socket/pull/241">#241</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+</li>
+<li>
+<p>Fix: Fix blocking during possible <code>accept()</code> race condition<br>
+when multiple socket servers listen on same socket address.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="684206394" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/244" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/244/hovercard" href="https://github.com/reactphp/socket/pull/244">#244</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+</li>
+<li>
+<p>Improve test suite, update PHPUnit config and add full core team to the license.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="681737691" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/243" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/243/hovercard" href="https://github.com/reactphp/socket/pull/243">#243</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/SimonFrings/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/SimonFrings">@SimonFrings</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="684797041" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/245" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/245/hovercard" href="https://github.com/reactphp/socket/pull/245">#245</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/WyriHaximus/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/WyriHaximus">@WyriHaximus</a>)</p>
+</li>
+</ul>
+
+    <hr>
+    
+            <h3>
+        <a id="150-2020-07-01" class="anchor" href="#150-2020-07-01" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        1.5.0
+
+        <small>
+            (2020-07-01)
+            <a href="https://github.com/reactphp/socket/releases/tag/v1.5.0" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
+<li>
+<p>Feature / Fix: Improve error handling and reporting for happy eyeballs and<br>
+immediately try next connection when one connection attempt fails.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="616010323" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/230" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/230/hovercard" href="https://github.com/reactphp/socket/pull/230">#230</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="616678345" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/231" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/231/hovercard" href="https://github.com/reactphp/socket/pull/231">#231</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="618332369" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/232" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/232/hovercard" href="https://github.com/reactphp/socket/pull/232">#232</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="619502390" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/233" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/233/hovercard" href="https://github.com/reactphp/socket/pull/233">#233</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+<p>Error messages for failed connection attempts now include more details to<br>
+ease debugging. Additionally, the happy eyeballs algorithm has been improved<br>
+to avoid having to wait for some timers to expire which significantly<br>
+improves connection setup times (in particular when IPv6 isn't available).</p>
+</li>
+<li>
+<p>Improve test suite, minor code cleanup and improve code coverage to 100%.<br>
+Update to PHPUnit 9 and skip legacy TLS 1.0 / TLS 1.1 tests if disabled by<br>
+system. Run tests on Windows and simplify Travis CI test matrix for Mac OS X<br>
+setup and skip all TLS tests on legacy HHVM.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="615192265" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/229" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/229/hovercard" href="https://github.com/reactphp/socket/pull/229">#229</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="619795864" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/235" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/235/hovercard" href="https://github.com/reactphp/socket/pull/235">#235</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="620293750" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/236" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/236/hovercard" href="https://github.com/reactphp/socket/pull/236">#236</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="642634838" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/238" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/238/hovercard" href="https://github.com/reactphp/socket/pull/238">#238</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="644536121" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/239" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/239/hovercard" href="https://github.com/reactphp/socket/pull/239">#239</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/SimonFrings/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/SimonFrings">@SimonFrings</a>)</p>
+</li>
+</ul>
+
+    <hr>
+    
+            <h3>
+        <a id="140-2020-03-12" class="anchor" href="#140-2020-03-12" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        1.4.0
+
+        <small>
+            (2020-03-12)
+            <a href="https://github.com/reactphp/socket/releases/tag/v1.4.0" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <p>A major new feature release, see <a href="https://clue.engineering/2020/introducing-ipv6-for-reactphp" rel="nofollow"><strong>release announcement</strong></a>.</p>
+<ul>
+<li>
+<p>Feature: Add IPv6 support to <code>Connector</code> (implement "Happy Eyeballs" algorithm to support IPv6 probing).<br>
+IPv6 support is turned on by default, use new <code>happy_eyeballs</code> option in <code>Connector</code> to toggle behavior.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="415336445" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/196" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/196/hovercard" href="https://github.com/reactphp/socket/pull/196">#196</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="577351300" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/224" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/224/hovercard" href="https://github.com/reactphp/socket/pull/224">#224</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="579243592" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/225" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/225/hovercard" href="https://github.com/reactphp/socket/pull/225">#225</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/WyriHaximus/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/WyriHaximus">@WyriHaximus</a> and <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+</li>
+<li>
+<p>Feature: Default to using DNS cache (with max 256 entries) for <code>Connector</code>.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="579375999" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/226" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/226/hovercard" href="https://github.com/reactphp/socket/pull/226">#226</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+</li>
+<li>
+<p>Add <code>.gitattributes</code> to exclude dev files from exports and some minor code style fixes.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="530763455" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/219" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/219/hovercard" href="https://github.com/reactphp/socket/pull/219">#219</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/reedy/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/reedy">@reedy</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="525991391" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/218" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/218/hovercard" href="https://github.com/reactphp/socket/pull/218">#218</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/mmoreram/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/mmoreram">@mmoreram</a>)</p>
+</li>
+<li>
+<p>Improve test suite to fix failing test cases when using new DNS component,<br>
+significantly improve test performance by awaiting events instead of sleeping,<br>
+exclude TLS 1.3 test on PHP 7.3, run tests on PHP 7.4 and simplify test matrix.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="469718878" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/208" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/208/hovercard" href="https://github.com/reactphp/socket/pull/208">#208</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="481098218" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/209" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/209/hovercard" href="https://github.com/reactphp/socket/pull/209">#209</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="481102160" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/210" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/210/hovercard" href="https://github.com/reactphp/socket/pull/210">#210</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="524032637" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/217" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/217/hovercard" href="https://github.com/reactphp/socket/pull/217">#217</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="575460798" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/223" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/223/hovercard" href="https://github.com/reactphp/socket/pull/223">#223</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+</li>
+</ul>
+
+    <hr>
+        <h2>
+        <a id="2019" class="anchor" href="#2019" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+        2019
+    </h2>
+
+    
+            <h3>
+        <a id="130-2019-07-10" class="anchor" href="#130-2019-07-10" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        1.3.0
+
+        <small>
+            (2019-07-10)
+            <a href="https://github.com/reactphp/socket/releases/tag/v1.3.0" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
+<li>Feature: Forward compatibility with upcoming stable DNS component.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="464951885" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/206" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/206/hovercard" href="https://github.com/reactphp/socket/pull/206">#206</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</li>
+</ul>
+
+    <hr>
+    
+            <h3>
+        <a id="121-2019-06-03" class="anchor" href="#121-2019-06-03" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        1.2.1
+
+        <small>
+            (2019-06-03)
+            <a href="https://github.com/reactphp/socket/releases/tag/v1.2.1" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
+<li>
+<p>Avoid uneeded fragmented TLS work around for PHP 7.3.3+ and<br>
+work around failing test case detecting EOF on TLS 1.3 socket streams.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="448608612" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/201" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/201/hovercard" href="https://github.com/reactphp/socket/pull/201">#201</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="450731876" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/202" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/202/hovercard" href="https://github.com/reactphp/socket/pull/202">#202</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+</li>
+<li>
+<p>Improve TLS certificate/passphrase example.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="401920397" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/190" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/190/hovercard" href="https://github.com/reactphp/socket/pull/190">#190</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/jsor/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/jsor">@jsor</a>)</p>
+</li>
+</ul>
+
+    <hr>
+    
+            <h3>
+        <a id="120-2019-01-07" class="anchor" href="#120-2019-01-07" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        1.2.0
+
+        <small>
+            (2019-01-07)
+            <a href="https://github.com/reactphp/socket/releases/tag/v1.2.0" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
+<li>
+<p>Feature / Fix: Improve TLS 1.3 support.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="395302314" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/186" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/186/hovercard" href="https://github.com/reactphp/socket/pull/186">#186</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+<p>TLS 1.3 is now an official standard as of August 2018! <g-emoji class="g-emoji" alias="tada" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f389.png">🎉</g-emoji><br>
+The protocol has major improvements in the areas of security, performance, and privacy.<br>
+TLS 1.3 is supported by default as of <a href="https://www.openssl.org/blog/blog/2018/09/11/release111/" rel="nofollow">OpenSSL 1.1.1</a>.<br>
+For example, this version ships with Ubuntu 18.10 (and newer) by default, meaning that recent installations support TLS 1.3 out of the box <img class="emoji" title=":shipit:" alt=":shipit:" src="https://github.githubassets.com/images/icons/emoji/shipit.png" height="20" width="20" align="absmiddle"></p>
+</li>
+<li>
+<p>Fix: Avoid possibility of missing remote address when TLS handshake fails.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="396284100" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/188" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/188/hovercard" href="https://github.com/reactphp/socket/pull/188">#188</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+</li>
+<li>
+<p>Improve performance by prefixing all global functions calls with <code>\</code> to skip the look up and resolve process and go straight to the global function.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="394901397" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/183" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/183/hovercard" href="https://github.com/reactphp/socket/pull/183">#183</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/WyriHaximus/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/WyriHaximus">@WyriHaximus</a>)</p>
+</li>
+<li>
+<p>Update documentation to use full class names with namespaces.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="396040268" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/187" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/187/hovercard" href="https://github.com/reactphp/socket/pull/187">#187</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+</li>
+<li>
+<p>Improve test suite to avoid some possible race conditions,<br>
+test against PHP 7.3 on Travis and<br>
+use dedicated <code>assertInstanceOf()</code> assertions.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="395084900" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/185" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/185/hovercard" href="https://github.com/reactphp/socket/pull/185">#185</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="374436516" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/178" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/178/hovercard" href="https://github.com/reactphp/socket/pull/178">#178</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/WyriHaximus/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/WyriHaximus">@WyriHaximus</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="379523025" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/181" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/181/hovercard" href="https://github.com/reactphp/socket/pull/181">#181</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/carusogabriel/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/carusogabriel">@carusogabriel</a>)</p>
+</li>
+</ul>
+
+    <hr>
+        <h2>
+        <a id="2018" class="anchor" href="#2018" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+        2018
+    </h2>
+
+    
+            <h3>
+        <a id="110-2018-10-01" class="anchor" href="#110-2018-10-01" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        1.1.0
+
+        <small>
+            (2018-10-01)
+            <a href="https://github.com/reactphp/socket/releases/tag/v1.1.0" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
+<li>
+<p>Feature: Improve error reporting for failed connection attempts and improve<br>
+cancellation forwarding during DNS lookup, TCP/IP connection or TLS handshake.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="342009514" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/168" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/168/hovercard" href="https://github.com/reactphp/socket/pull/168">#168</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="342683404" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/169" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/169/hovercard" href="https://github.com/reactphp/socket/pull/169">#169</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="346511755" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/170" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/170/hovercard" href="https://github.com/reactphp/socket/pull/170">#170</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="348085928" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/171" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/171/hovercard" href="https://github.com/reactphp/socket/pull/171">#171</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="362933766" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/176" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/176/hovercard" href="https://github.com/reactphp/socket/pull/176">#176</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="364365413" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/177" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/177/hovercard" href="https://github.com/reactphp/socket/pull/177">#177</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+<p>All error messages now always contain a reference to the remote URI to give<br>
+more details which connection actually failed and the reason for this error.<br>
+Accordingly, failures during DNS lookup will now mention both the remote URI<br>
+as well as the DNS error reason. TCP/IP connection issues and errors during<br>
+a secure TLS handshake will both mention the remote URI as well as the<br>
+underlying socket error. Similarly, lost/dropped connections during a TLS<br>
+handshake will now report a lost connection instead of an empty error reason.</p>
+<p>For most common use cases this means that simply reporting the <code>Exception</code><br>
+message should give the most relevant details for any connection issues:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>promise</span> = <span class="pl-s1"><span class="pl-c1">$</span>connector</span>-&gt;<span class="pl-en">connect</span>(<span class="pl-s">'tls://example.com:443'</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>promise</span>-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-smi">ConnectionInterface</span> <span class="pl-s1"><span class="pl-c1">$</span>conn</span>) <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>loop</span>) {
+    <span class="pl-c">// …</span>
+}, <span class="pl-k">function</span> (<span class="pl-smi">Exception</span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>) {
+    <span class="pl-k">echo</span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>();
+});</pre></div>
+</li>
+</ul>
+
+    <hr>
+    
+            <h3>
+        <a id="100-2018-07-11" class="anchor" href="#100-2018-07-11" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        1.0.0
+
+        <small>
+            (2018-07-11)
+            <a href="https://github.com/reactphp/socket/releases/tag/v1.0.0" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
+<li>First stable LTS release, now following <a href="https://semver.org/" rel="nofollow">SemVer</a>.<br>
+We'd like to emphasize that this component is production ready and battle-tested.<br>
+We plan to support all long-term support (LTS) releases for at least 24 months,<br>
+so you have a rock-solid foundation to build on top of.</li>
+</ul>
+<blockquote>
+<p>Contains no other changes, so it's actually fully compatible with the v0.8.12 release.</p>
+</blockquote>
+
+    <hr>
+    
+            <h3>
+        <a id="0812-2018-06-11" class="anchor" href="#0812-2018-06-11" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.8.12
+
+        <small>
+            (2018-06-11)
+            <a href="https://github.com/reactphp/socket/releases/tag/v0.8.12" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
+<li>
+<p>Feature: Improve memory consumption for failed and cancelled connection attempts.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="320498009" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/161" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/161/hovercard" href="https://github.com/reactphp/socket/pull/161">#161</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+</li>
+<li>
+<p>Improve test suite to fix Travis config to test against legacy PHP 5.3 again.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="320515617" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/162" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/162/hovercard" href="https://github.com/reactphp/socket/pull/162">#162</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+</li>
+</ul>
+
+    <hr>
+    
+            <h3>
+        <a id="0811-2018-04-24" class="anchor" href="#0811-2018-04-24" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.8.11
+
+        <small>
+            (2018-04-24)
+            <a href="https://github.com/reactphp/socket/releases/tag/v0.8.11" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
+<li>Feature: Improve memory consumption for cancelled connection attempts and<br>
+simplify skipping DNS lookup when connecting to IP addresses.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="316722153" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/159" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/159/hovercard" href="https://github.com/reactphp/socket/pull/159">#159</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="316745437" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/160" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/160/hovercard" href="https://github.com/reactphp/socket/pull/160">#160</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</li>
+</ul>
+
+    <hr>
+    
+            <h3>
+        <a id="0810-2018-02-28" class="anchor" href="#0810-2018-02-28" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.8.10
+
+        <small>
+            (2018-02-28)
+            <a href="https://github.com/reactphp/socket/releases/tag/v0.8.10" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
+<li>
+<p>Feature: Update DNS dependency to support loading system default DNS<br>
+nameserver config on all supported platforms<br>
+(<code>/etc/resolv.conf</code> on Unix/Linux/Mac/Docker/WSL and WMIC on Windows)<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="300621054" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/152" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/152/hovercard" href="https://github.com/reactphp/socket/pull/152">#152</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+<p>This means that connecting to hosts that are managed by a local DNS server,<br>
+such as a corporate DNS server or when using Docker containers, will now<br>
+work as expected across all platforms with no changes required:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>connector</span> = <span class="pl-k">new</span> <span class="pl-v">Connector</span>(<span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>connector</span>-&gt;<span class="pl-en">connect</span>(<span class="pl-s">'intranet.example:80'</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>connection</span>) {
+    <span class="pl-c">// …</span>
+});</pre></div>
+</li>
+</ul>
+
+    <hr>
+    
+            <h3>
+        <a id="089-2018-01-18" class="anchor" href="#089-2018-01-18" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.8.9
+
+        <small>
+            (2018-01-18)
+            <a href="https://github.com/reactphp/socket/releases/tag/v0.8.9" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
+<li>
+<p>Feature: Support explicitly choosing TLS version to negotiate with remote side<br>
+by respecting <code>crypto_method</code> context parameter for all classes.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="288880718" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/149" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/149/hovercard" href="https://github.com/reactphp/socket/pull/149">#149</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+<p>By default, all connector and server classes support TLSv1.0+ and exclude<br>
+support for legacy SSLv2/SSLv3. As of PHP 5.6+ you can also explicitly<br>
+choose the TLS version you want to negotiate with the remote side:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-c">// new: now supports 'crypto_method` context parameter for all classes</span>
+<span class="pl-s1"><span class="pl-c1">$</span>connector</span> = <span class="pl-k">new</span> <span class="pl-v">Connector</span>(<span class="pl-s1"><span class="pl-c1">$</span>loop</span>, <span class="pl-en">array</span>(
+    <span class="pl-s">'tls'</span> =&gt; <span class="pl-en">array</span>(
+        <span class="pl-s">'crypto_method'</span> =&gt; <span class="pl-v">STREAM_CRYPTO_METHOD_TLSv1_2_CLIENT</span>
+    )
+));</pre></div>
+</li>
+<li>
+<p>Minor internal clean up to unify class imports<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="288872868" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/148" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/148/hovercard" href="https://github.com/reactphp/socket/pull/148">#148</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+</li>
+</ul>
+
+    <hr>
+    
+            <h3>
+        <a id="088-2018-01-06" class="anchor" href="#088-2018-01-06" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.8.8
+
+        <small>
+            (2018-01-06)
+            <a href="https://github.com/reactphp/socket/releases/tag/v0.8.8" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
+<li>Improve test suite by adding test group to skip integration tests relying on<br>
+internet connection and fix minor documentation typo.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="286403640" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/146" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/146/hovercard" href="https://github.com/reactphp/socket/pull/146">#146</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="285625461" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/145" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/145/hovercard" href="https://github.com/reactphp/socket/pull/145">#145</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/cn007b/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/cn007b">@cn007b</a>)</li>
+</ul>
+
+    <hr>
+        <h2>
+        <a id="2017" class="anchor" href="#2017" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+        2017
+    </h2>
+
+    
+            <h3>
+        <a id="087-2017-12-24" class="anchor" href="#087-2017-12-24" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.8.7
+
+        <small>
+            (2017-12-24)
+            <a href="https://github.com/reactphp/socket/releases/tag/v0.8.7" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
+<li>
+<p>Fix: Fix closing socket resource before removing from loop<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="284322182" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/141" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/141/hovercard" href="https://github.com/reactphp/socket/pull/141">#141</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+<p>This fixes the root cause of an uncaught <code>Exception</code> that only manifested<br>
+itself after the recent Stream v0.7.4 component update and only if you're<br>
+using <code>ext-event</code> (<code>ExtEventLoop</code>).</p>
+</li>
+<li>
+<p>Improve test suite by testing against PHP 7.2<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="278458521" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/140" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/140/hovercard" href="https://github.com/reactphp/socket/pull/140">#140</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/carusogabriel/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/carusogabriel">@carusogabriel</a>)</p>
+</li>
+</ul>
+
+    <hr>
+    
+            <h3>
+        <a id="086-2017-11-18" class="anchor" href="#086-2017-11-18" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.8.6
+
+        <small>
+            (2017-11-18)
+            <a href="https://github.com/reactphp/socket/releases/tag/v0.8.6" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
+<li>
+<p>Feature: Add Unix domain socket (UDS) support to <code>Server</code> with <code>unix://</code> URI scheme<br>
+and add advanced <code>UnixServer</code> class.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="263643414" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/120" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/120/hovercard" href="https://github.com/reactphp/socket/pull/120">#120</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/andig/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/andig">@andig</a>)</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-c">// new: Server now supports "unix://" scheme</span>
+<span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">Server</span>(<span class="pl-s">'unix:///tmp/server.sock'</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
+
+<span class="pl-c">// new: advanced usage</span>
+<span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">UnixServer</span>(<span class="pl-s">'/tmp/server.sock'</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);</pre></div>
+</li>
+<li>
+<p>Restructure examples to ease getting started<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="275084657" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/136" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/136/hovercard" href="https://github.com/reactphp/socket/pull/136">#136</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+</li>
+<li>
+<p>Improve test suite by adding forward compatibility with PHPUnit 6 and<br>
+ignore Mac OS X test failures for now until Travis tests work again<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="273192715" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/133" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/133/hovercard" href="https://github.com/reactphp/socket/pull/133">#133</a> by @gabriel-caruso and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="273485503" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/134" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/134/hovercard" href="https://github.com/reactphp/socket/pull/134">#134</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+</li>
+</ul>
+
+    <hr>
+    
+            <h3>
+        <a id="085-2017-10-23" class="anchor" href="#085-2017-10-23" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.8.5
+
+        <small>
+            (2017-10-23)
+            <a href="https://github.com/reactphp/socket/releases/tag/v0.8.5" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
+<li>
+<p>Fix: Work around PHP bug with Unix domain socket (UDS) paths for Mac OS X<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="263655223" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/123" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/123/hovercard" href="https://github.com/reactphp/socket/pull/123">#123</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/andig/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/andig">@andig</a>)</p>
+</li>
+<li>
+<p>Fix: Fix <code>SecureServer</code> to return <code>null</code> URI if server socket is already closed<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="265358393" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/129" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/129/hovercard" href="https://github.com/reactphp/socket/pull/129">#129</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+</li>
+<li>
+<p>Improve test suite by adding forward compatibility with PHPUnit v5 and<br>
+forward compatibility with upcoming EventLoop releases in tests and<br>
+test Mac OS X on Travis<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="263651039" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/122" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/122/hovercard" href="https://github.com/reactphp/socket/pull/122">#122</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/andig/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/andig">@andig</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="263719207" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/125" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/125/hovercard" href="https://github.com/reactphp/socket/pull/125">#125</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="264684286" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/127" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/127/hovercard" href="https://github.com/reactphp/socket/pull/127">#127</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="267480956" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/130" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/130/hovercard" href="https://github.com/reactphp/socket/pull/130">#130</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+</li>
+<li>
+<p>Readme improvements<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="262001059" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/118" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/118/hovercard" href="https://github.com/reactphp/socket/pull/118">#118</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/jsor/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/jsor">@jsor</a>)</p>
+</li>
+</ul>
+
+    <hr>
+    
+            <h3>
+        <a id="084-2017-09-16" class="anchor" href="#084-2017-09-16" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.8.4
+
+        <small>
+            (2017-09-16)
+            <a href="https://github.com/reactphp/socket/releases/tag/v0.8.4" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
+<li>
+<p>Feature: Add <code>FixedUriConnector</code> decorator to use fixed, preconfigured URI instead<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="258032672" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/117" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/117/hovercard" href="https://github.com/reactphp/socket/pull/117">#117</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+<p>This can be useful for consumers that do not support certain URIs, such as<br>
+when you want to explicitly connect to a Unix domain socket (UDS) path<br>
+instead of connecting to a default address assumed by an higher-level API:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>connector</span> = <span class="pl-k">new</span> <span class="pl-v">FixedUriConnector</span>(
+    <span class="pl-s">'unix:///var/run/docker.sock'</span>,
+    <span class="pl-k">new</span> <span class="pl-v">UnixConnector</span>(<span class="pl-s1"><span class="pl-c1">$</span>loop</span>)
+);
+
+<span class="pl-c">// destination will be ignored, actually connects to Unix domain socket</span>
+<span class="pl-s1"><span class="pl-c1">$</span>promise</span> = <span class="pl-s1"><span class="pl-c1">$</span>connector</span>-&gt;<span class="pl-en">connect</span>(<span class="pl-s">'localhost:80'</span>);</pre></div>
+</li>
+</ul>
+
+    <hr>
+    
+            <h3>
+        <a id="083-2017-09-08" class="anchor" href="#083-2017-09-08" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.8.3
+
+        <small>
+            (2017-09-08)
+            <a href="https://github.com/reactphp/socket/releases/tag/v0.8.3" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
+<li>
+<p>Feature: Reduce memory consumption for failed connections<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="254614468" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/113" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/113/hovercard" href="https://github.com/reactphp/socket/pull/113">#113</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/valga/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/valga">@valga</a>)</p>
+</li>
+<li>
+<p>Fix: Work around write chunk size for TLS streams for PHP &lt; 7.1.14<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="256246825" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/114" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/114/hovercard" href="https://github.com/reactphp/socket/pull/114">#114</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+</li>
+</ul>
+
+    <hr>
+    
+            <h3>
+        <a id="082-2017-08-25" class="anchor" href="#082-2017-08-25" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.8.2
+
+        <small>
+            (2017-08-25)
+            <a href="https://github.com/reactphp/socket/releases/tag/v0.8.2" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
+<li>
+<p>Feature: Update DNS dependency to support hosts file on all platforms<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="252837020" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/112" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/112/hovercard" href="https://github.com/reactphp/socket/pull/112">#112</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+<p>This means that connecting to hosts such as <code>localhost</code> will now work as<br>
+expected across all platforms with no changes required:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>connector</span> = <span class="pl-k">new</span> <span class="pl-v">Connector</span>(<span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>connector</span>-&gt;<span class="pl-en">connect</span>(<span class="pl-s">'localhost:8080'</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>connection</span>) {
+    <span class="pl-c">// …</span>
+});</pre></div>
+</li>
+</ul>
+
+    <hr>
+    
+            <h3>
+        <a id="081-2017-08-15" class="anchor" href="#081-2017-08-15" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.8.1
+
+        <small>
+            (2017-08-15)
+            <a href="https://github.com/reactphp/socket/releases/tag/v0.8.1" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
+<li>
+<p>Feature: Forward compatibility with upcoming EventLoop v1.0 and v0.5 and<br>
+target evenement 3.0 a long side 2.0 and 1.0<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="230023829" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/104" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/104/hovercard" href="https://github.com/reactphp/socket/pull/104">#104</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="248200949" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/111" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/111/hovercard" href="https://github.com/reactphp/socket/pull/111">#111</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/WyriHaximus/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/WyriHaximus">@WyriHaximus</a>)</p>
+</li>
+<li>
+<p>Improve test suite by locking Travis distro so new defaults will not break the build and<br>
+fix HHVM build for now again and ignore future HHVM build errors<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="235168171" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/109" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/109/hovercard" href="https://github.com/reactphp/socket/pull/109">#109</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="248011984" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/110" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/110/hovercard" href="https://github.com/reactphp/socket/pull/110">#110</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+</li>
+<li>
+<p>Minor documentation fixes<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="228658383" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/103" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/103/hovercard" href="https://github.com/reactphp/socket/pull/103">#103</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/christiaan/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/christiaan">@christiaan</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="235095527" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/108" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/108/hovercard" href="https://github.com/reactphp/socket/pull/108">#108</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/hansott/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/hansott">@hansott</a>)</p>
+</li>
+</ul>
+
+    <hr>
+    
+            <h3>
+        <a id="080-2017-05-09" class="anchor" href="#080-2017-05-09" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.8.0
+
+        <small>
+            (2017-05-09)
+            <a href="https://github.com/reactphp/socket/releases/tag/v0.8.0" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
+<li>
+<p>Feature: New <code>Server</code> class now acts as a facade for existing server classes<br>
+and renamed old <code>Server</code> to <code>TcpServer</code> for advanced usage.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="223777520" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/96" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/96/hovercard" href="https://github.com/reactphp/socket/pull/96">#96</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="225122944" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/97" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/97/hovercard" href="https://github.com/reactphp/socket/pull/97">#97</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+<p>The <code>Server</code> class is now the main class in this package that implements the<br>
+<code>ServerInterface</code> and allows you to accept incoming streaming connections,<br>
+such as plaintext TCP/IP or secure TLS connection streams.</p>
+<blockquote>
+<p>This is not a BC break and consumer code does not have to be updated.</p>
+</blockquote>
+</li>
+<li>
+<p>Feature / BC break: All addresses are now URIs that include the URI scheme<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="225141367" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/98" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/98/hovercard" href="https://github.com/reactphp/socket/pull/98">#98</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+<div class="highlight highlight-source-diff"><pre><span class="pl-md"><span class="pl-md">-</span> $parts = parse_url('tcp://' . $conn-&gt;getRemoteAddress());</span>
+<span class="pl-mi1"><span class="pl-mi1">+</span> $parts = parse_url($conn-&gt;getRemoteAddress());</span></pre></div>
+</li>
+<li>
+<p>Fix: Fix <code>unix://</code> addresses for Unix domain socket (UDS) paths<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="227005937" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/100" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/100/hovercard" href="https://github.com/reactphp/socket/pull/100">#100</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+</li>
+<li>
+<p>Feature: Forward compatibility with Stream v1.0 and v0.7<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="226647809" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/99" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/99/hovercard" href="https://github.com/reactphp/socket/pull/99">#99</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+</li>
+</ul>
+
+    <hr>
+    
+            <h3>
+        <a id="072-2017-04-24" class="anchor" href="#072-2017-04-24" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.7.2
+
+        <small>
+            (2017-04-24)
+            <a href="https://github.com/reactphp/socket/releases/tag/v0.7.2" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
+<li>Fix: Work around latest PHP 7.0.18 and 7.1.4 no longer accepting full URIs<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="223574812" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/94" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/94/hovercard" href="https://github.com/reactphp/socket/pull/94">#94</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</li>
+</ul>
+
+    <hr>
+    
+            <h3>
+        <a id="071-2017-04-10" class="anchor" href="#071-2017-04-10" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.7.1
+
+        <small>
+            (2017-04-10)
+            <a href="https://github.com/reactphp/socket/releases/tag/v0.7.1" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
+<li>Fix: Ignore HHVM errors when closing connection that is already closing<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="220691001" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/91" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/91/hovercard" href="https://github.com/reactphp/socket/pull/91">#91</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</li>
+</ul>
+
+    <hr>
+    
+            <h3>
+        <a id="070-2017-04-10" class="anchor" href="#070-2017-04-10" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.7.0
+
+        <small>
+            (2017-04-10)
+            <a href="https://github.com/reactphp/socket/releases/tag/v0.7.0" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
+<li>
+<p>Feature: Merge SocketClient component into this component<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="219318125" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/87" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/87/hovercard" href="https://github.com/reactphp/socket/pull/87">#87</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+<p>This means that this package now provides async, streaming plaintext TCP/IP<br>
+and secure TLS socket server and client connections for ReactPHP.</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>connector</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Connector</span>(<span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>connector</span>-&gt;<span class="pl-en">connect</span>(<span class="pl-s">'google.com:80'</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-smi">ConnectionInterface</span> <span class="pl-s1"><span class="pl-c1">$</span>conn</span>) {
+    <span class="pl-s1"><span class="pl-c1">$</span>connection</span>-&gt;<span class="pl-en">write</span>(<span class="pl-s">'…'</span>);
+});</pre></div>
+<p>Accordingly, the <code>ConnectionInterface</code> is now used to represent both incoming<br>
+server side connections as well as outgoing client side connections.</p>
+<p>If you've previously used the SocketClient component to establish outgoing<br>
+client connections, upgrading should take no longer than a few minutes.<br>
+All classes have been merged as-is from the latest <code>v0.7.0</code> release with no<br>
+other changes, so you can simply update your code to use the updated namespace<br>
+like this:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-c">// old from SocketClient component and namespace</span>
+<span class="pl-s1"><span class="pl-c1">$</span>connector</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">SocketClient</span>\<span class="pl-v">Connector</span>(<span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>connector</span>-&gt;<span class="pl-en">connect</span>(<span class="pl-s">'google.com:80'</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-smi">ConnectionInterface</span> <span class="pl-s1"><span class="pl-c1">$</span>conn</span>) {
+    <span class="pl-s1"><span class="pl-c1">$</span>connection</span>-&gt;<span class="pl-en">write</span>(<span class="pl-s">'…'</span>);
+});
+
+<span class="pl-c">// new</span>
+<span class="pl-s1"><span class="pl-c1">$</span>connector</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Connector</span>(<span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>connector</span>-&gt;<span class="pl-en">connect</span>(<span class="pl-s">'google.com:80'</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-smi">ConnectionInterface</span> <span class="pl-s1"><span class="pl-c1">$</span>conn</span>) {
+    <span class="pl-s1"><span class="pl-c1">$</span>connection</span>-&gt;<span class="pl-en">write</span>(<span class="pl-s">'…'</span>);
+});</pre></div>
+</li>
+</ul>
+
+    <hr>
+    
+            <h3>
+        <a id="060-2017-04-04" class="anchor" href="#060-2017-04-04" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.6.0
+
+        <small>
+            (2017-04-04)
+            <a href="https://github.com/reactphp/socket/releases/tag/v0.6.0" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
+<li>
+<p>Feature: Add <code>LimitingServer</code> to limit and keep track of open connections<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="218795441" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/86" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/86/hovercard" href="https://github.com/reactphp/socket/pull/86">#86</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">Server</span>(<span class="pl-c1">0</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">LimitingServer</span>(<span class="pl-s1"><span class="pl-c1">$</span>server</span>, <span class="pl-c1">100</span>);
+
+<span class="pl-s1"><span class="pl-c1">$</span>server</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'connection'</span>, <span class="pl-k">function</span> (<span class="pl-smi">ConnectionInterface</span> <span class="pl-s1"><span class="pl-c1">$</span>connection</span>) {
+    <span class="pl-s1"><span class="pl-c1">$</span>connection</span>-&gt;<span class="pl-en">write</span>(<span class="pl-s">'hello there!'</span> . <span class="pl-c1">PHP_EOL</span>);
+    …
+});</pre></div>
+</li>
+<li>
+<p>Feature / BC break: Add <code>pause()</code> and <code>resume()</code> methods to limit active<br>
+connections<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="217096848" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/84" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/84/hovercard" href="https://github.com/reactphp/socket/pull/84">#84</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">Server</span>(<span class="pl-c1">0</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>server</span>-&gt;<span class="pl-en">pause</span>();
+
+<span class="pl-s1"><span class="pl-c1">$</span>loop</span>-&gt;<span class="pl-en">addTimer</span>(<span class="pl-c1">1.0</span>, <span class="pl-k">function</span>() <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>server</span>) {
+    <span class="pl-s1"><span class="pl-c1">$</span>server</span>-&gt;<span class="pl-en">resume</span>();
+});</pre></div>
+</li>
+</ul>
+
+    <hr>
+    
+            <h3>
+        <a id="051-2017-03-09" class="anchor" href="#051-2017-03-09" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.5.1
+
+        <small>
+            (2017-03-09)
+            <a href="https://github.com/reactphp/socket/releases/tag/v0.5.1" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
+<li>Feature: Forward compatibility with Stream v0.5 and upcoming v0.6<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="212760724" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/79" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/79/hovercard" href="https://github.com/reactphp/socket/pull/79">#79</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</li>
+</ul>
+
+    <hr>
+    
+            <h3>
+        <a id="050-2017-02-14" class="anchor" href="#050-2017-02-14" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.5.0
+
+        <small>
+            (2017-02-14)
+            <a href="https://github.com/reactphp/socket/releases/tag/v0.5.0" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
+<li>
+<p>Feature / BC break: Replace <code>listen()</code> call with URIs passed to constructor<br>
+and reject listening on hostnames with <code>InvalidArgumentException</code><br>
+and replace <code>ConnectionException</code> with <code>RuntimeException</code> for consistency<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="201196498" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/61" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/61/hovercard" href="https://github.com/reactphp/socket/pull/61">#61</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="203649238" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/66" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/66/hovercard" href="https://github.com/reactphp/socket/pull/66">#66</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="206189853" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/72" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/72/hovercard" href="https://github.com/reactphp/socket/pull/72">#72</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-c">// old</span>
+<span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">Server</span>(<span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>server</span>-&gt;<span class="pl-en">listen</span>(<span class="pl-c1">8080</span>);
+
+<span class="pl-c">// new</span>
+<span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">Server</span>(<span class="pl-c1">8080</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);</pre></div>
+<p>Similarly, you can now pass a full listening URI to the constructor to change<br>
+the listening host:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-c">// old</span>
+<span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">Server</span>(<span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>server</span>-&gt;<span class="pl-en">listen</span>(<span class="pl-c1">8080</span>, <span class="pl-s">'127.0.0.1'</span>);
+
+<span class="pl-c">// new</span>
+<span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">Server</span>(<span class="pl-s">'127.0.0.1:8080'</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);</pre></div>
+<p>Trying to start listening on (DNS) host names will now throw an<br>
+<code>InvalidArgumentException</code>, use IP addresses instead:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-c">// old</span>
+<span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">Server</span>(<span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>server</span>-&gt;<span class="pl-en">listen</span>(<span class="pl-c1">8080</span>, <span class="pl-s">'localhost'</span>);
+
+<span class="pl-c">// new</span>
+<span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">Server</span>(<span class="pl-s">'127.0.0.1:8080'</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);</pre></div>
+<p>If trying to listen fails (such as if port is already in use or port below<br>
+1024 may require root access etc.), it will now throw a <code>RuntimeException</code>,<br>
+the <code>ConnectionException</code> class has been removed:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-c">// old: throws React\Socket\ConnectionException</span>
+<span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">Server</span>(<span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>server</span>-&gt;<span class="pl-en">listen</span>(<span class="pl-c1">80</span>);
+
+<span class="pl-c">// new: throws RuntimeException</span>
+<span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">Server</span>(<span class="pl-c1">80</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);</pre></div>
+</li>
+<li>
+<p>Feature / BC break: Rename <code>shutdown()</code> to <code>close()</code> for consistency throughout React<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="201220570" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/62" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/62/hovercard" href="https://github.com/reactphp/socket/pull/62">#62</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-c">// old</span>
+<span class="pl-s1"><span class="pl-c1">$</span>server</span>-&gt;<span class="pl-en">shutdown</span>();
+
+<span class="pl-c">// new</span>
+<span class="pl-s1"><span class="pl-c1">$</span>server</span>-&gt;<span class="pl-en">close</span>();</pre></div>
+</li>
+<li>
+<p>Feature / BC break: Replace <code>getPort()</code> with <code>getAddress()</code><br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="205420718" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/67" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/67/hovercard" href="https://github.com/reactphp/socket/pull/67">#67</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-c">// old</span>
+<span class="pl-k">echo</span> <span class="pl-s1"><span class="pl-c1">$</span>server</span>-&gt;<span class="pl-en">getPort</span>(); <span class="pl-c">// 8080</span>
+
+<span class="pl-c">// new</span>
+<span class="pl-k">echo</span> <span class="pl-s1"><span class="pl-c1">$</span>server</span>-&gt;<span class="pl-en">getAddress</span>(); <span class="pl-c">// 127.0.0.1:8080</span></pre></div>
+</li>
+<li>
+<p>Feature / BC break: <code>getRemoteAddress()</code> returns full address instead of only IP<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="203327734" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/65" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/65/hovercard" href="https://github.com/reactphp/socket/pull/65">#65</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-c">// old</span>
+<span class="pl-k">echo</span> <span class="pl-s1"><span class="pl-c1">$</span>connection</span>-&gt;<span class="pl-en">getRemoteAddress</span>(); <span class="pl-c">// 192.168.0.1</span>
+
+<span class="pl-c">// new</span>
+<span class="pl-k">echo</span> <span class="pl-s1"><span class="pl-c1">$</span>connection</span>-&gt;<span class="pl-en">getRemoteAddress</span>(); <span class="pl-c">// 192.168.0.1:51743</span></pre></div>
+</li>
+<li>
+<p>Feature / BC break: Add <code>getLocalAddress()</code> method<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="205428178" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/68" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/68/hovercard" href="https://github.com/reactphp/socket/pull/68">#68</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-k">echo</span> <span class="pl-s1"><span class="pl-c1">$</span>connection</span>-&gt;<span class="pl-en">getLocalAddress</span>(); <span class="pl-c">// 127.0.0.1:8080</span></pre></div>
+</li>
+<li>
+<p>BC break: The <code>Server</code> and <code>SecureServer</code> class are now marked <code>final</code><br>
+and you can no longer <code>extend</code> them<br>
+(which was never documented or recommended anyway).<br>
+Public properties and event handlers are now internal only.<br>
+Please use composition instead of extension.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="206188067" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/71" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/71/hovercard" href="https://github.com/reactphp/socket/pull/71">#71</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="206165079" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/70" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/70/hovercard" href="https://github.com/reactphp/socket/pull/70">#70</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="206140559" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/69" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/69/hovercard" href="https://github.com/reactphp/socket/pull/69">#69</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+</li>
+</ul>
+
+    <hr>
+    
+            <h3>
+        <a id="046-2017-01-26" class="anchor" href="#046-2017-01-26" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.4.6
+
+        <small>
+            (2017-01-26)
+            <a href="https://github.com/reactphp/socket/releases/tag/v0.4.6" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
+<li>Feature: Support socket context options passed to <code>Server</code><br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="202817509" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/64" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/64/hovercard" href="https://github.com/reactphp/socket/pull/64">#64</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</li>
+<li>Fix: Properly return <code>null</code> for unknown addresses<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="202649771" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/63" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/63/hovercard" href="https://github.com/reactphp/socket/pull/63">#63</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</li>
+<li>Improve documentation for <code>ServerInterface</code> and lock test suite requirements<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="200869964" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/60" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/60/hovercard" href="https://github.com/reactphp/socket/pull/60">#60</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="199442321" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/57" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/57/hovercard" href="https://github.com/reactphp/socket/pull/57">#57</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/shaunbramley/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/shaunbramley">@shaunbramley</a>)</li>
+</ul>
+
+    <hr>
+    
+            <h3>
+        <a id="045-2017-01-08" class="anchor" href="#045-2017-01-08" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.4.5
+
+        <small>
+            (2017-01-08)
+            <a href="https://github.com/reactphp/socket/releases/tag/v0.4.5" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
+<li>Feature: Add <code>SecureServer</code> for secure TLS connections<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="198240316" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/55" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/55/hovercard" href="https://github.com/reactphp/socket/pull/55">#55</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</li>
+<li>Add functional integration tests<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="197990494" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/54" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/54/hovercard" href="https://github.com/reactphp/socket/pull/54">#54</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</li>
+</ul>
+
+    <hr>
+        <h2>
+        <a id="2016" class="anchor" href="#2016" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+        2016
+    </h2>
+
+    
+            <h3>
+        <a id="044-2016-12-19" class="anchor" href="#044-2016-12-19" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.4.4
+
+        <small>
+            (2016-12-19)
+            <a href="https://github.com/reactphp/socket/releases/tag/v0.4.4" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
+<li>Feature / Fix: <code>ConnectionInterface</code> should extend <code>DuplexStreamInterface</code> + documentation<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="188979236" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/50" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/50/hovercard" href="https://github.com/reactphp/socket/pull/50">#50</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</li>
+<li>Feature / Fix: Improve test suite and switch to normal stream handler<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="189327106" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/51" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/51/hovercard" href="https://github.com/reactphp/socket/pull/51">#51</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</li>
+<li>Feature: Add examples<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="188333298" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/49" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/49/hovercard" href="https://github.com/reactphp/socket/pull/49">#49</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</li>
+</ul>
+
+    <hr>
+    
+            <h3>
+        <a id="043-2016-03-01" class="anchor" href="#043-2016-03-01" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.4.3
+
+        <small>
+            (2016-03-01)
+            <a href="https://github.com/reactphp/socket/releases/tag/v0.4.3" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
+<li>Suppress errors on stream_socket_accept to prevent PHP from crashing</li>
+<li>Support for PHP7 and HHVM</li>
+<li>Support PHP 5.3 again</li>
+</ul>
+
+    <hr>
+        <h2>
+        <a id="2014" class="anchor" href="#2014" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+        2014
+    </h2>
+
+    
+            <h3>
+        <a id="042-2014-05-25" class="anchor" href="#042-2014-05-25" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.4.2
+
+        <small>
+            (2014-05-25)
+            <a href="https://github.com/reactphp/socket/releases/tag/v0.4.2" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
+<li>[Connection] Verify stream is valid resource</li>
+</ul>
+
+    <hr>
+    
+            <h3>
+        <a id="041-2014-04-13" class="anchor" href="#041-2014-04-13" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.4.1
+
+        <small>
+            (2014-04-13)
+            <a href="https://github.com/reactphp/socket/releases/tag/v0.4.1" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
+<li>Bug fix: Check read buffer for data before shutdown signal and end emit (<a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/artydev/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/artydev">@artydev</a>)</li>
+<li>Bug fix: v0.3.4 changes merged for v0.4.1</li>
+</ul>
+
+    <hr>
+    
+            <h3>
+        <a id="034-2014-02-17" class="anchor" href="#034-2014-02-17" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.3.4
+
+        <small>
+            (2014-02-17)
+            <a href="https://github.com/reactphp/socket/releases/tag/v0.3.4" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
+<li>Bug fix: Reset socket to non-blocking after shutting down (PHP bug)</li>
+</ul>
+
+    <hr>
+    
+            <h3>
+        <a id="040-2014-02-02" class="anchor" href="#040-2014-02-02" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.4.0
+
+        <small>
+            (2014-02-02)
+            <a href="https://github.com/reactphp/socket/releases/tag/v0.4.0" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
+<li>BC break: Bump minimum PHP version to PHP 5.4, remove 5.3 specific hacks</li>
+<li>BC break: Update to React/Promise 2.0</li>
+<li>BC break: Update to Evenement 2.0</li>
+<li>Dependency: Autoloading and filesystem structure now PSR-4 instead of PSR-0</li>
+<li>Bump React dependencies to v0.4</li>
+</ul>
+
+    <hr>
+        <h2>
+        <a id="2013" class="anchor" href="#2013" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+        2013
+    </h2>
+
+    
+            <h3>
+        <a id="033-2013-07-08" class="anchor" href="#033-2013-07-08" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.3.3
+
+        <small>
+            (2013-07-08)
+            <a href="https://github.com/reactphp/socket/releases/tag/v0.3.3" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
+<li>Version bump</li>
+</ul>
+
+    <hr>
+    
+            <h3>
+        <a id="032-2013-04-26" class="anchor" href="#032-2013-04-26" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.3.2
+
+        <small>
+            (2013-04-26)
+            <a href="https://github.com/reactphp/socket/releases/tag/v0.3.2" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
+<li>Version bump</li>
+</ul>
+
+    <hr>
+    
+            <h3>
+        <a id="031-2013-04-20" class="anchor" href="#031-2013-04-20" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.3.1
+
+        <small>
+            (2013-04-20)
+            <a href="https://github.com/reactphp/socket/releases/tag/v0.3.1" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
+<li>Feature: Support binding to IPv6 addresses (<a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</li>
+</ul>
+
+    <hr>
+    
+            <h3>
+        <a id="030-2013-01-21" class="anchor" href="#030-2013-01-21" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.3.0
+
+        <small>
+            (2013-01-21)
+            <a href="https://github.com/reactphp/socket/releases/tag/v0.3.0" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
+<li>Bump React dependencies to v0.3</li>
+</ul>
+
+    <hr>
+        <h2>
+        <a id="2012" class="anchor" href="#2012" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+        2012
+    </h2>
+
+    
+            <h3>
+        <a id="026-2012-12-14" class="anchor" href="#026-2012-12-14" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.2.6
+
+        <small>
+            (2012-12-14)
+            <a href="https://github.com/reactphp/socket/releases/tag/v0.2.6" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
+<li>Version bump</li>
+</ul>
+
+    <hr>
+    
+            <h3>
+        <a id="023-2012-11-05" class="anchor" href="#023-2012-11-05" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.2.3
+
+        <small>
+            (2012-11-05)
+            <a href="https://github.com/reactphp/socket/releases/tag/v0.2.3" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
+<li>Version bump</li>
+</ul>
+
+    <hr>
+    
+            <h3>
+        <a id="020-2012-09-10" class="anchor" href="#020-2012-09-10" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.2.0
+
+        <small>
+            (2012-09-10)
+            <a href="https://github.com/reactphp/socket/releases/tag/v0.2.0" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
+<li>Bump React dependencies to v0.2</li>
+</ul>
+
+    <hr>
+    
+            <h3>
+        <a id="011-2012-07-12" class="anchor" href="#011-2012-07-12" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.1.1
+
+        <small>
+            (2012-07-12)
+            <a href="https://github.com/reactphp/socket/releases/tag/v0.1.1" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
+<li>Version bump</li>
+</ul>
+
+    <hr>
+    
+            <h3>
+        <a id="010-2012-07-11" class="anchor" href="#010-2012-07-11" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.1.0
+
+        <small>
+            (2012-07-11)
+            <a href="https://github.com/reactphp/socket/releases/tag/v0.1.0" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
+<li>First tagged release</li>
+</ul>
+
+    <hr>
+    
+    <ul class="links">
+        <li>
+            <a href="https://github.com/reactphp/socket/releases.atom">
+                <i class="icon-feed" aria-hidden="true"></i>
+                Subscribe to the Changelog feed
+            </a>
+        </li>
+    </ul>
+                </main>
+                <aside class="sidebar" role="complementary">
+                    <section class="component-info">
+                        <h2 class="component-info__title">
+                            <a href="../socket/">Socket</a>
+
+                            <div class="version-selector">
+                                <button class="version-selector__button version-selector__button--latest" data-ctrly="component-version-selector" data-version-selector-control>
+                                    v1.6.0
+
+                                    <i class="icon-chevron-down" aria-hidden="true"></i>
+                                    <i class="icon-chevron-up" aria-hidden="true"></i>
+                                </button>
+
+                                <div id="component-version-selector" class="version-selector__panel" aria-hidden="true">
+                                    <p>Read the documentation of development and older versions on GitHub:</p>
+
+                                    <ul class="version-selector__list">
+                                        <li>
+                                            <a href="https://github.com/reactphp/socket#readme" class="version-selector__version version-selector__version--dev">
+                                                master
+                                            </a>
+                                        </li>
+                                                                                                                                                                                                                    <li>
+                                                <a href="https://github.com/reactphp/socket/tree/v1.5.0#readme" class="version-selector__version">
+                                                    v1.5.0
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
+                                                <a href="https://github.com/reactphp/socket/tree/v1.4.0#readme" class="version-selector__version">
+                                                    v1.4.0
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
+                                                <a href="https://github.com/reactphp/socket/tree/v1.3.0#readme" class="version-selector__version">
+                                                    v1.3.0
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
+                                                <a href="https://github.com/reactphp/socket/tree/v1.2.1#readme" class="version-selector__version">
+                                                    v1.2.1
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
+                                                <a href="https://github.com/reactphp/socket/tree/v1.2.0#readme" class="version-selector__version">
+                                                    v1.2.0
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
+                                                <a href="https://github.com/reactphp/socket/tree/v1.1.0#readme" class="version-selector__version">
+                                                    v1.1.0
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
+                                                <a href="https://github.com/reactphp/socket/tree/v1.0.0#readme" class="version-selector__version">
+                                                    v1.0.0
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
+                                                <a href="https://github.com/reactphp/socket/tree/v0.8.12#readme" class="version-selector__version">
+                                                    v0.8.12
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
+                                                <a href="https://github.com/reactphp/socket/tree/v0.8.11#readme" class="version-selector__version">
+                                                    v0.8.11
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
+                                                <a href="https://github.com/reactphp/socket/tree/v0.8.10#readme" class="version-selector__version">
+                                                    v0.8.10
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
+                                                <a href="https://github.com/reactphp/socket/tree/v0.8.9#readme" class="version-selector__version">
+                                                    v0.8.9
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
+                                                <a href="https://github.com/reactphp/socket/tree/v0.8.8#readme" class="version-selector__version">
+                                                    v0.8.8
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
+                                                <a href="https://github.com/reactphp/socket/tree/v0.8.7#readme" class="version-selector__version">
+                                                    v0.8.7
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
+                                                <a href="https://github.com/reactphp/socket/tree/v0.8.6#readme" class="version-selector__version">
+                                                    v0.8.6
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
+                                                <a href="https://github.com/reactphp/socket/tree/v0.8.5#readme" class="version-selector__version">
+                                                    v0.8.5
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
+                                                <a href="https://github.com/reactphp/socket/tree/v0.8.4#readme" class="version-selector__version">
+                                                    v0.8.4
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
+                                                <a href="https://github.com/reactphp/socket/tree/v0.8.3#readme" class="version-selector__version">
+                                                    v0.8.3
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
+                                                <a href="https://github.com/reactphp/socket/tree/v0.8.2#readme" class="version-selector__version">
+                                                    v0.8.2
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
+                                                <a href="https://github.com/reactphp/socket/tree/v0.8.1#readme" class="version-selector__version">
+                                                    v0.8.1
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
+                                                <a href="https://github.com/reactphp/socket/tree/v0.8.0#readme" class="version-selector__version">
+                                                    v0.8.0
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
+                                                <a href="https://github.com/reactphp/socket/tree/v0.7.2#readme" class="version-selector__version">
+                                                    v0.7.2
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
+                                                <a href="https://github.com/reactphp/socket/tree/v0.7.1#readme" class="version-selector__version">
+                                                    v0.7.1
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
+                                                <a href="https://github.com/reactphp/socket/tree/v0.7.0#readme" class="version-selector__version">
+                                                    v0.7.0
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
+                                                <a href="https://github.com/reactphp/socket/tree/v0.6.0#readme" class="version-selector__version">
+                                                    v0.6.0
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
+                                                <a href="https://github.com/reactphp/socket/tree/v0.5.1#readme" class="version-selector__version">
+                                                    v0.5.1
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
+                                                <a href="https://github.com/reactphp/socket/tree/v0.5.0#readme" class="version-selector__version">
+                                                    v0.5.0
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
+                                                <a href="https://github.com/reactphp/socket/tree/v0.4.6#readme" class="version-selector__version">
+                                                    v0.4.6
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
+                                                <a href="https://github.com/reactphp/socket/tree/v0.4.5#readme" class="version-selector__version">
+                                                    v0.4.5
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
+                                                <a href="https://github.com/reactphp/socket/tree/v0.4.4#readme" class="version-selector__version">
+                                                    v0.4.4
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
+                                                <a href="https://github.com/reactphp/socket/tree/v0.4.3#readme" class="version-selector__version">
+                                                    v0.4.3
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
+                                                <a href="https://github.com/reactphp/socket/tree/v0.4.2#readme" class="version-selector__version">
+                                                    v0.4.2
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
+                                                <a href="https://github.com/reactphp/socket/tree/v0.4.1#readme" class="version-selector__version">
+                                                    v0.4.1
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
+                                                <a href="https://github.com/reactphp/socket/tree/v0.3.4#readme" class="version-selector__version">
+                                                    v0.3.4
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
+                                                <a href="https://github.com/reactphp/socket/tree/v0.4.0#readme" class="version-selector__version">
+                                                    v0.4.0
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
+                                                <a href="https://github.com/reactphp/socket/tree/v0.3.3#readme" class="version-selector__version">
+                                                    v0.3.3
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
+                                                <a href="https://github.com/reactphp/socket/tree/v0.3.2#readme" class="version-selector__version">
+                                                    v0.3.2
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
+                                                <a href="https://github.com/reactphp/socket/tree/v0.3.1#readme" class="version-selector__version">
+                                                    v0.3.1
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
+                                                <a href="https://github.com/reactphp/socket/tree/v0.3.0#readme" class="version-selector__version">
+                                                    v0.3.0
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
+                                                <a href="https://github.com/reactphp/socket/tree/v0.2.6#readme" class="version-selector__version">
+                                                    v0.2.6
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
+                                                <a href="https://github.com/reactphp/socket/tree/v0.2.3#readme" class="version-selector__version">
+                                                    v0.2.3
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
+                                                <a href="https://github.com/reactphp/socket/tree/v0.2.0#readme" class="version-selector__version">
+                                                    v0.2.0
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
+                                                <a href="https://github.com/reactphp/socket/tree/v0.1.1#readme" class="version-selector__version">
+                                                    v0.1.1
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
+                                                <a href="https://github.com/reactphp/socket/tree/v0.1.0#readme" class="version-selector__version">
+                                                    v0.1.0
+                                                </a>
+                                            </li>
+                                                                                                                        </ul>
+                                </div>
+                            </div>
+                        </h2>
+
+                        <ul class="component-info__info">
+                            <li>
+                                <a href="https://github.com/reactphp/socket">
+                                    <i class="icon-github" aria-hidden="true"></i> Repository
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../socket/changelog.html">
+                                    <i class="icon-calendar" aria-hidden="true"></i> Changelog
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../socket/license.html">
+                                    <i class="icon-law" aria-hidden="true"></i> MIT License
+                                </a>
+                            </li>
+                        </ul>
+
+                        <h3 class="component-info__subtitle">Installation</h3>
+
+                        <div class="highlight highlight-source-shell"><pre>composer require react/socket:^1.6.0</pre></div>
+
+                        <h3 class="component-info__subtitle">Contributors</h3>
+
+                        <ul class="component-info__contributors">
+                                                    <li>
+                                <a href="https://github.com/clue">
+                                    <img src="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=80 2x" alt="clue" title="clue (315 contributions)">
+                                </a>
+                            </li>
+                                                    <li>
+                                <a href="https://github.com/cboden">
+                                    <img src="https://avatars.githubusercontent.com/u/617694?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/617694?v=4&amp;s=80 2x" alt="cboden" title="cboden (87 contributions)">
+                                </a>
+                            </li>
+                                                    <li>
+                                <a href="https://github.com/igorw">
+                                    <img src="https://avatars.githubusercontent.com/u/88061?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/88061?v=4&amp;s=80 2x" alt="igorw" title="igorw (69 contributions)">
+                                </a>
+                            </li>
+                                                    <li>
+                                <a href="https://github.com/WyriHaximus">
+                                    <img src="https://avatars.githubusercontent.com/u/147145?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/147145?v=4&amp;s=80 2x" alt="WyriHaximus" title="WyriHaximus (67 contributions)">
+                                </a>
+                            </li>
+                                                    <li>
+                                <a href="https://github.com/jsor">
+                                    <img src="https://avatars.githubusercontent.com/u/55574?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/55574?v=4&amp;s=80 2x" alt="jsor" title="jsor (39 contributions)">
+                                </a>
+                            </li>
+                                                    <li>
+                                <a href="https://github.com/SimonFrings">
+                                    <img src="https://avatars.githubusercontent.com/u/44357440?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/44357440?v=4&amp;s=80 2x" alt="SimonFrings" title="SimonFrings (8 contribution)">
+                                </a>
+                            </li>
+                                                    <li>
+                                <a href="https://github.com/andig">
+                                    <img src="https://avatars.githubusercontent.com/u/184815?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/184815?v=4&amp;s=80 2x" alt="andig" title="andig (5 contribution)">
+                                </a>
+                            </li>
+                                                    <li>
+                                <a href="https://github.com/carusogabriel">
+                                    <img src="https://avatars.githubusercontent.com/u/16328050?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/16328050?v=4&amp;s=80 2x" alt="carusogabriel" title="carusogabriel (4 contribution)">
+                                </a>
+                            </li>
+                                                    <li>
+                                <a href="https://github.com/artggd">
+                                    <img src="https://avatars.githubusercontent.com/u/1837559?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/1837559?v=4&amp;s=80 2x" alt="artggd" title="artggd (2 contribution)">
+                                </a>
+                            </li>
+                                                    <li>
+                                <a href="https://github.com/tkleinhakisa">
+                                    <img src="https://avatars.githubusercontent.com/u/1912952?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/1912952?v=4&amp;s=80 2x" alt="tkleinhakisa" title="tkleinhakisa (2 contribution)">
+                                </a>
+                            </li>
+                                                    <li>
+                                <a href="https://github.com/valga">
+                                    <img src="https://avatars.githubusercontent.com/u/23472603?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/23472603?v=4&amp;s=80 2x" alt="valga" title="valga (1 contribution)">
+                                </a>
+                            </li>
+                                                    <li>
+                                <a href="https://github.com/alexmace">
+                                    <img src="https://avatars.githubusercontent.com/u/207391?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/207391?v=4&amp;s=80 2x" alt="alexmace" title="alexmace (1 contribution)">
+                                </a>
+                            </li>
+                                                    <li>
+                                <a href="https://github.com/DaveRandom">
+                                    <img src="https://avatars.githubusercontent.com/u/2396425?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/2396425?v=4&amp;s=80 2x" alt="DaveRandom" title="DaveRandom (1 contribution)">
+                                </a>
+                            </li>
+                                                    <li>
+                                <a href="https://github.com/christiaan">
+                                    <img src="https://avatars.githubusercontent.com/u/118490?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/118490?v=4&amp;s=80 2x" alt="christiaan" title="christiaan (1 contribution)">
+                                </a>
+                            </li>
+                                                    <li>
+                                <a href="https://github.com/elliot">
+                                    <img src="https://avatars.githubusercontent.com/u/9938?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/9938?v=4&amp;s=80 2x" alt="elliot" title="elliot (1 contribution)">
+                                </a>
+                            </li>
+                                                    <li>
+                                <a href="https://github.com/hansott">
+                                    <img src="https://avatars.githubusercontent.com/u/3886384?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/3886384?v=4&amp;s=80 2x" alt="hansott" title="hansott (1 contribution)">
+                                </a>
+                            </li>
+                                                    <li>
+                                <a href="https://github.com/mmoreram">
+                                    <img src="https://avatars.githubusercontent.com/u/521409?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/521409?v=4&amp;s=80 2x" alt="mmoreram" title="mmoreram (1 contribution)">
+                                </a>
+                            </li>
+                                                    <li>
+                                <a href="https://github.com/kelunik">
+                                    <img src="https://avatars.githubusercontent.com/u/2743004?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/2743004?v=4&amp;s=80 2x" alt="kelunik" title="kelunik (1 contribution)">
+                                </a>
+                            </li>
+                                                    <li>
+                                <a href="https://github.com/reedy">
+                                    <img src="https://avatars.githubusercontent.com/u/67615?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/67615?v=4&amp;s=80 2x" alt="reedy" title="reedy (1 contribution)">
+                                </a>
+                            </li>
+                                                    <li>
+                                <a href="https://github.com/Sgoettschkes">
+                                    <img src="https://avatars.githubusercontent.com/u/628796?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/628796?v=4&amp;s=80 2x" alt="Sgoettschkes" title="Sgoettschkes (1 contribution)">
+                                </a>
+                            </li>
+                                                    <li>
+                                <a href="https://github.com/cn007b">
+                                    <img src="https://avatars.githubusercontent.com/u/5052324?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/5052324?v=4&amp;s=80 2x" alt="cn007b" title="cn007b (1 contribution)">
+                                </a>
+                            </li>
+                                                    <li>
+                                <a href="https://github.com/e3betht">
+                                    <img src="https://avatars.githubusercontent.com/u/1811561?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/1811561?v=4&amp;s=80 2x" alt="e3betht" title="e3betht (1 contribution)">
+                                </a>
+                            </li>
+                                                    <li>
+                                <a href="https://github.com/the-eater">
+                                    <img src="https://avatars.githubusercontent.com/u/1922630?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/1922630?v=4&amp;s=80 2x" alt="the-eater" title="the-eater (1 contribution)">
+                                </a>
+                            </li>
+                                                </ul>
+
+                        <h3 class="component-info__subtitle">Activity</h3>
+
+                        <div class="component-info__participation">
+                            <svg width="320" height="42">
+    <defs>
+        <linearGradient id="reactphp-socket-participation-gradient" x1="0" x2="0" y1="1" y2="0">
+            <stop offset="10%" stop-color="#40a977"></stop>
+            <stop offset="90%" stop-color="#ba3525"></stop>
+        </linearGradient>
+        <mask id="reactphp-socket-participation-sparkline" x="0" y="0" width="320" height="40" >
+            <polyline 
+                transform="translate(0, 40) scale(1,-1)"
+                points="0,2 6,1 12,1 18,2 24,13 30,7 36,1 42,1 48,1 54,2 60,4 66,3 72,1 78,1 84,1 90,6 96,1 102,1 108,5 114,8 120,1 126,2 132,1 138,1 144,1 150,1 156,1 162,1 168,1 174,1 180,1 186,1 192,1 198,1 204,1 210,1 216,1 222,1 228,1 234,1 240,1 246,1 252,1 258,4 264,1 270,2 276,1 282,1 288,1 294,1 300,1 306,2" 
+                fill="transparent" 
+                stroke="#40a977" 
+                stroke-width="2"
+            >
+        </mask>
+    </defs>
+
+    <g transform="translate(0, -1.5)">
+        <rect 
+            x="0" 
+            y="-2" 
+            width="320" 
+            height="42"
+            style="stroke:none;fill:url(#reactphp-socket-participation-gradient);mask:url(#reactphp-socket-participation-sparkline)"
+        ></rect>
+    </g>
+</svg>
+                        </div>
+                    </section>
+                </aside>
+            </div>
+        </div>
+    </div>
+
+            <footer class="footer">
+            <div class="wrapper">
+                <ul class="links">
+                    <li><a href="https://github.com/reactphp"><i class="icon-github" aria-hidden="true"></i> GitHub</a></li>
+                    <li><a href="https://twitter.com/reactphp"><i class="icon-twitter" aria-hidden="true"></i> Twitter</a></li>
+                    <li><a href="https://gitter.im/reactphp/reactphp"><i class="icon-hash" aria-hidden="true"></i> Gitter</a></li>
+                </ul>
+            </div>
+        </footer>
+        </body>
+</html>
