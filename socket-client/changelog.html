@@ -5,9 +5,9 @@
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <title>Promise: License - ReactPHP</title>
+        <title>Changelog - ReactPHP</title>
 
-        <meta name="description" content="Promises/A implementation for PHP.">
+        <meta name="description" content="Event-driven, non-blocking I/O with PHP.">
 
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -143,241 +143,225 @@
 </nav>
                 </div>
             </div>
-        </header>    <div class="container">
-        <div class="wrapper">
-            <div class="grid grid--wrap grid--gutter">
-                <main class="main">    <h1>Promise License</h1><p>Copyright (c) 2012-2016 Jan Sorgalla</p>
-<p>Permission is hereby granted, free of charge, to any person
-obtaining a copy of this software and associated documentation
-files (the "Software"), to deal in the Software without
-restriction, including without limitation the rights to use,
-copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the
-Software is furnished to do so, subject to the following
-conditions:</p>
-<p>The above copyright notice and this permission notice shall be
-included in all copies or substantial portions of the Software.</p>
-<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
-OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
-HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
-WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
-OTHER DEALINGS IN THE SOFTWARE.</p>                </main>
-                <aside class="sidebar" role="complementary">
-                    <section class="component-info">
-                        <h2 class="component-info__title">
-                            <a href="../promise/">Promise</a>
+        </header>        <div class="container">
+            <main class="wrapper"><h1>
+<a id="changelog" class="anchor" href="#changelog" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Changelog</h1>
+<h2>
+<a id="070-2017-04-02" class="anchor" href="#070-2017-04-02" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.7.0 (2017-04-02)</h2>
+<ul>
+<li>
+<p>Feature / BC break: Add main <code>Connector</code> facade
+(#93 by @clue)</p>
+<p>The new <code>Connector</code> class acts as a facade for all underlying connectors,
+which are now marked as "advanced usage", but continue to work unchanged.
+This now makes it trivially easy to create plaintext TCP/IP, secure TLS and
+Unix domain socket (UDS) connection streams simply like this:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>connector</span> = <span class="pl-k">new</span> <span class="pl-v">Connector</span>(<span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
 
-                            <div class="version-selector">
-                                <button class="version-selector__button version-selector__button--latest" data-ctrly="component-version-selector" data-version-selector-control>v2.8.0
+<span class="pl-s1"><span class="pl-c1">$</span>connector</span>-&gt;<span class="pl-en">connect</span>(<span class="pl-s">'tls://google.com:443'</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-smi">ConnectionInterface</span> <span class="pl-s1"><span class="pl-c1">$</span>conn</span>) {
+    <span class="pl-s1"><span class="pl-c1">$</span>conn</span>-&gt;<span class="pl-en">write</span>(<span class="pl-s">"GET / HTTP/1.0\r\n\r\n"</span>);
+});</pre></div>
+<p>Optionally, it accepts options to configure all underlying connectors, such
+as using a custom DNS setup, timeout values and disabling certain protocols
+and much more. See the README for more details.</p>
+</li>
+</ul>
+<h2>
+<a id="062-2017-03-17" class="anchor" href="#062-2017-03-17" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.6.2 (2017-03-17)</h2>
+<ul>
+<li>Feature / Fix: Support SNI on legacy PHP &lt; 5.6 and add documentation for
+supported PHP and HHVM versions.
+(#90 and #91 by @clue)</li>
+</ul>
+<h2>
+<a id="061-2017-03-10" class="anchor" href="#061-2017-03-10" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.6.1 (2017-03-10)</h2>
+<ul>
+<li>
+<p>Feature: Forward compatibility with Stream v0.5 and upcoming v0.6
+(#89 by @clue)</p>
+</li>
+<li>
+<p>Fix: Fix examples to use updated API
+(#88 by @clue)</p>
+</li>
+</ul>
+<h2>
+<a id="060-2017-02-17" class="anchor" href="#060-2017-02-17" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.6.0 (2017-02-17)</h2>
+<ul>
+<li>
+<p>Feature / BC break: Use <code>connect($uri)</code> instead of <code>create($host, $port)</code>
+and resolve with a <code>ConnectionInterface</code> instead of <code>Stream</code>
+and expose remote and local addresses through this interface
+and remove superfluous and undocumented <code>ConnectionException</code>.
+(#74, #82 and #84 by @clue)</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-c">// old</span>
+<span class="pl-s1"><span class="pl-c1">$</span>connector</span>-&gt;<span class="pl-en">create</span>(<span class="pl-s">'google.com'</span>, <span class="pl-c1">80</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-smi">Stream</span> <span class="pl-s1"><span class="pl-c1">$</span>conn</span>) {
+    <span class="pl-k">echo</span> <span class="pl-s">'Connected'</span> . <span class="pl-c1">PHP_EOL</span>;
+    <span class="pl-s1"><span class="pl-c1">$</span>conn</span>-&gt;<span class="pl-en">write</span>(<span class="pl-s">"GET / HTTP/1.0\r\n\r\n"</span>);
+});
 
-                                    <i class="icon-chevron-down" aria-hidden="true"></i>
-                                    <i class="icon-chevron-up" aria-hidden="true"></i>
-                                </button>
+<span class="pl-c">// new</span>
+<span class="pl-s1"><span class="pl-c1">$</span>connector</span>-&gt;<span class="pl-en">connect</span>(<span class="pl-s">'google.com:80'</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-smi">ConnectionInterface</span> <span class="pl-s1"><span class="pl-c1">$</span>conn</span>) {
+    <span class="pl-k">echo</span> <span class="pl-s">'Connected to '</span> . <span class="pl-s1"><span class="pl-c1">$</span>conn</span>-&gt;<span class="pl-en">getRemoteAddress</span>() . <span class="pl-c1">PHP_EOL</span>;
+    <span class="pl-s1"><span class="pl-c1">$</span>conn</span>-&gt;<span class="pl-en">write</span>(<span class="pl-s">"GET / HTTP/1.0\r\n\r\n"</span>);
+});</pre></div>
+<blockquote>
+<p>Note that both the old <code>Stream</code> and the new <code>ConnectionInterface</code> implement
+the same underlying <code>DuplexStreamInterface</code>, so their streaming behavior is
+actually equivalent.
+In order to upgrade, simply use the new typehints.
+Existing stream handlers should continue to work unchanged.</p>
+</blockquote>
+</li>
+<li>
+<p>Feature / BC break: All connectors now MUST offer cancellation support.
+You can now rely on getting a rejected promise when calling <code>cancel()</code> on a
+pending connection attempt.
+(#79 by @clue)</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-c">// old: promise resolution not enforced and thus unreliable</span>
+<span class="pl-s1"><span class="pl-c1">$</span>promise</span> = <span class="pl-s1"><span class="pl-c1">$</span>connector</span>-&gt;<span class="pl-en">create</span>(<span class="pl-s1"><span class="pl-c1">$</span>host</span>, <span class="pl-s1"><span class="pl-c1">$</span>port</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>promise</span>-&gt;<span class="pl-en">cancel</span>();
+<span class="pl-s1"><span class="pl-c1">$</span>promise</span>-&gt;<span class="pl-en">then</span>(<span class="pl-c">/* MAY still be called */</span>, <span class="pl-c">/* SHOULD be called */</span>);
 
-                                <div id="component-version-selector" class="version-selector__panel" aria-hidden="true">
-                                    <p>Read the documentation of development and older versions on GitHub:</p>
+<span class="pl-c">// new: rejecting after cancellation is mandatory</span>
+<span class="pl-s1"><span class="pl-c1">$</span>promise</span> = <span class="pl-s1"><span class="pl-c1">$</span>connector</span>-&gt;<span class="pl-en">connect</span>(<span class="pl-s1"><span class="pl-c1">$</span>uri</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>promise</span>-&gt;<span class="pl-en">cancel</span>();
+<span class="pl-s1"><span class="pl-c1">$</span>promise</span>-&gt;<span class="pl-en">then</span>(<span class="pl-c">/* MUST NOT be called */</span>, <span class="pl-c">/* MUST be called */</span>);</pre></div>
+<blockquote>
+<p>Note that this behavior is only mandatory for <em>pending</em> connection attempts.
+Once the promise is settled (resolved), calling <code>cancel()</code> will have no effect.</p>
+</blockquote>
+</li>
+<li>
+<p>BC break: All connector classes are now marked <code>final</code>
+and you can no longer <code>extend</code> them
+(which was never documented or recommended anyway).
+Please use composition instead of extension.
+(#85 by @clue)</p>
+</li>
+</ul>
+<h2>
+<a id="053-2016-12-24" class="anchor" href="#053-2016-12-24" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.5.3 (2016-12-24)</h2>
+<ul>
+<li>
+<p>Fix: Skip IPv6 tests if not supported by the system
+(#76 by @clue)</p>
+</li>
+<li>
+<p>Documentation for <code>ConnectorInterface</code>
+(#77 by @clue)</p>
+</li>
+</ul>
+<h2>
+<a id="052-2016-12-19" class="anchor" href="#052-2016-12-19" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.5.2 (2016-12-19)</h2>
+<ul>
+<li>
+<p>Feature: Replace <code>SecureStream</code> with unlimited read buffer from react/stream v0.4.5
+(#72 by @clue)</p>
+</li>
+<li>
+<p>Feature: Add examples
+(#75 by @clue)</p>
+</li>
+</ul>
+<h2>
+<a id="051-2016-11-20" class="anchor" href="#051-2016-11-20" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.5.1 (2016-11-20)</h2>
+<ul>
+<li>
+<p>Feature: Support Promise cancellation for all connectors
+(#71 by @clue)</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>promise</span> = <span class="pl-s1"><span class="pl-c1">$</span>connector</span>-&gt;<span class="pl-en">create</span>(<span class="pl-s1"><span class="pl-c1">$</span>host</span>, <span class="pl-s1"><span class="pl-c1">$</span>port</span>);
 
-                                    <ul class="version-selector__list">
-                                        <li>
-                                            <a href="https://github.com/reactphp/promise#readme" class="version-selector__version version-selector__version--dev">
-                                                master
-                                            </a>
-                                        </li>                                            <li>
-                                                <a href="https://github.com/reactphp/promise/tree/v2.7.1#readme" class="version-selector__version">v2.7.1
-                                                </a>
-                                            </li>                                            <li>
-                                                <a href="https://github.com/reactphp/promise/tree/v2.7.0#readme" class="version-selector__version">v2.7.0
-                                                </a>
-                                            </li>                                            <li>
-                                                <a href="https://github.com/reactphp/promise/tree/v2.6.0#readme" class="version-selector__version">v2.6.0
-                                                </a>
-                                            </li>                                            <li>
-                                                <a href="https://github.com/reactphp/promise/tree/v2.5.1#readme" class="version-selector__version">v2.5.1
-                                                </a>
-                                            </li>                                            <li>
-                                                <a href="https://github.com/reactphp/promise/tree/v2.5.0#readme" class="version-selector__version">v2.5.0
-                                                </a>
-                                            </li>                                            <li>
-                                                <a href="https://github.com/reactphp/promise/tree/v2.4.1#readme" class="version-selector__version">v2.4.1
-                                                </a>
-                                            </li>                                            <li>
-                                                <a href="https://github.com/reactphp/promise/tree/v2.4.0#readme" class="version-selector__version">v2.4.0
-                                                </a>
-                                            </li>                                            <li>
-                                                <a href="https://github.com/reactphp/promise/tree/v2.3.0#readme" class="version-selector__version">v2.3.0
-                                                </a>
-                                            </li>                                            <li>
-                                                <a href="https://github.com/reactphp/promise/tree/v1.2.1#readme" class="version-selector__version">v1.2.1
-                                                </a>
-                                            </li>                                            <li>
-                                                <a href="https://github.com/reactphp/promise/tree/v1.2.0#readme" class="version-selector__version">v1.2.0
-                                                </a>
-                                            </li>                                            <li>
-                                                <a href="https://github.com/reactphp/promise/tree/v2.2.2#readme" class="version-selector__version">v2.2.2
-                                                </a>
-                                            </li>                                            <li>
-                                                <a href="https://github.com/reactphp/promise/tree/v2.2.1#readme" class="version-selector__version">v2.2.1
-                                                </a>
-                                            </li>                                            <li>
-                                                <a href="https://github.com/reactphp/promise/tree/v1.1.0#readme" class="version-selector__version">v1.1.0
-                                                </a>
-                                            </li>                                            <li>
-                                                <a href="https://github.com/reactphp/promise/tree/v2.2.0#readme" class="version-selector__version">v2.2.0
-                                                </a>
-                                            </li>                                            <li>
-                                                <a href="https://github.com/reactphp/promise/tree/v2.1.0#readme" class="version-selector__version">v2.1.0
-                                                </a>
-                                            </li>                                            <li>
-                                                <a href="https://github.com/reactphp/promise/tree/v2.0.0#readme" class="version-selector__version">v2.0.0
-                                                </a>
-                                            </li>                                            <li>
-                                                <a href="https://github.com/reactphp/promise/tree/v1.0.4#readme" class="version-selector__version">v1.0.4
-                                                </a>
-                                            </li>                                            <li>
-                                                <a href="https://github.com/reactphp/promise/tree/v1.0.3#readme" class="version-selector__version">v1.0.3
-                                                </a>
-                                            </li>                                            <li>
-                                                <a href="https://github.com/reactphp/promise/tree/v1.0.2#readme" class="version-selector__version">v1.0.2
-                                                </a>
-                                            </li>                                            <li>
-                                                <a href="https://github.com/reactphp/promise/tree/v1.0.1#readme" class="version-selector__version">v1.0.1
-                                                </a>
-                                            </li>                                            <li>
-                                                <a href="https://github.com/reactphp/promise/tree/v1.0.0#readme" class="version-selector__version">v1.0.0
-                                                </a>
-                                            </li>                                    </ul>
-                                </div>
-                            </div>
-                        </h2>
+<span class="pl-s1"><span class="pl-c1">$</span>promise</span>-&gt;<span class="pl-en">cancel</span>();</pre></div>
+</li>
+<li>
+<p>Feature: Add TimeoutConnector decorator
+(#51 by @clue)</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>timeout</span> = <span class="pl-k">new</span> <span class="pl-v">TimeoutConnector</span>(<span class="pl-s1"><span class="pl-c1">$</span>connector</span>, <span class="pl-c1">3.0</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>timeout</span>-&gt;<span class="pl-en">create</span>(<span class="pl-s1"><span class="pl-c1">$</span>host</span>, <span class="pl-s1"><span class="pl-c1">$</span>port</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span>(<span class="pl-smi">Stream</span> <span class="pl-s1"><span class="pl-c1">$</span>stream</span>) {
+    <span class="pl-c">// connection resolved within 3.0s</span>
+});</pre></div>
+</li>
+</ul>
+<h2>
+<a id="050-2016-03-19" class="anchor" href="#050-2016-03-19" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.5.0 (2016-03-19)</h2>
+<ul>
+<li>
+<p>Feature / BC break: Support Connector without DNS
+(#46 by @clue)</p>
+<p>BC break: The <code>Connector</code> class now serves as a BC layer only.
+The <code>TcpConnector</code> and <code>DnsConnector</code> classes replace its functionality.
+If you're merely <em>using</em> this class, then you're <em>recommended</em> to upgrade as
+per the below snippet – existing code will still work unchanged.
+If you're <code>extend</code>ing the <code>Connector</code> (generally not recommended), then you
+may have to rework your class hierarchy.</p>
+<div class="highlight highlight-text-html-php"><pre></pre></div>
+</li>
+</ul>
+<p>// old (still supported, but marked deprecated)
+$connector = new Connector($loop, $resolver);</p>
+<p>// new equivalent
+$connector = new DnsConnector(new TcpConnector($loop), $resolver);</p>
+<p>// new feature: supports connecting to IP addresses only
+$connector = new TcpConnector($loop);</p>
+<pre><code>
+* Feature: Add socket and SSL/TLS context options to connectors
+  (#52 by @clue)
 
-                        <ul class="component-info__info">
-                            <li>
-                                <a href="https://github.com/reactphp/promise">
-                                    <i class="icon-github" aria-hidden="true"></i> Repository
-                                </a>
-                            </li>
-                            <li>
-                                <a href="../promise/changelog.html">
-                                    <i class="icon-calendar" aria-hidden="true"></i> Changelog
-                                </a>
-                            </li>
-                            <li>
-                                <a href="../promise/license.html">
-                                    <i class="icon-law" aria-hidden="true"></i>MIT License
-                                </a>
-                            </li>
-                        </ul>
+* Fix: PHP 5.6+ uses new SSL/TLS context options
+  (#61 by @clue)
 
-                        <h3 class="component-info__subtitle">Installation</h3>
+* Fix: Move SSL/TLS context options to SecureConnector
+  (#43 by @clue)
 
-                        <div class="highlight highlight-source-shell"><pre>composer requirereact/promise:^2.8.0</pre></div>
+* Fix: Fix error reporting for invalid addresses
+  (#47 by @clue)
 
-                        <h3 class="component-info__subtitle">Contributors</h3>
+* Fix: Close stream resource if connection fails
+  (#48 by @clue)
 
-                        <ul class="component-info__contributors">                            <li>
-                                <a href="https://github.com/jsor">
-                                    <img src="https://avatars.githubusercontent.com/u/55574?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/55574?v=4&amp;s=80 2x" alt="jsor" title="jsor (351 contributions)">
-                                </a>
-                            </li>                            <li>
-                                <a href="https://github.com/igorw">
-                                    <img src="https://avatars.githubusercontent.com/u/88061?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/88061?v=4&amp;s=80 2x" alt="igorw" title="igorw (26 contributions)">
-                                </a>
-                            </li>                            <li>
-                                <a href="https://github.com/clue">
-                                    <img src="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=80 2x" alt="clue" title="clue (22 contributions)">
-                                </a>
-                            </li>                            <li>
-                                <a href="https://github.com/WyriHaximus">
-                                    <img src="https://avatars.githubusercontent.com/u/147145?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/147145?v=4&amp;s=80 2x" alt="WyriHaximus" title="WyriHaximus (21 contributions)">
-                                </a>
-                            </li>                            <li>
-                                <a href="https://github.com/SimonFrings">
-                                    <img src="https://avatars.githubusercontent.com/u/44357440?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/44357440?v=4&amp;s=80 2x" alt="SimonFrings" title="SimonFrings (4 contribution)">
-                                </a>
-                            </li>                            <li>
-                                <a href="https://github.com/cboden">
-                                    <img src="https://avatars.githubusercontent.com/u/617694?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/617694?v=4&amp;s=80 2x" alt="cboden" title="cboden (4 contribution)">
-                                </a>
-                            </li>                            <li>
-                                <a href="https://github.com/carusogabriel">
-                                    <img src="https://avatars.githubusercontent.com/u/16328050?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/16328050?v=4&amp;s=80 2x" alt="carusogabriel" title="carusogabriel (3 contribution)">
-                                </a>
-                            </li>                            <li>
-                                <a href="https://github.com/smscr">
-                                    <img src="https://avatars.githubusercontent.com/u/13821666?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/13821666?v=4&amp;s=80 2x" alt="smscr" title="smscr (2 contribution)">
-                                </a>
-                            </li>                            <li>
-                                <a href="https://github.com/danielecr">
-                                    <img src="https://avatars.githubusercontent.com/u/2484638?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/2484638?v=4&amp;s=80 2x" alt="danielecr" title="danielecr (1 contribution)">
-                                </a>
-                            </li>                            <li>
-                                <a href="https://github.com/srdante">
-                                    <img src="https://avatars.githubusercontent.com/u/35383529?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/35383529?v=4&amp;s=80 2x" alt="srdante" title="srdante (1 contribution)">
-                                </a>
-                            </li>                            <li>
-                                <a href="https://github.com/joshdifabio">
-                                    <img src="https://avatars.githubusercontent.com/u/5609851?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/5609851?v=4&amp;s=80 2x" alt="joshdifabio" title="joshdifabio (1 contribution)">
-                                </a>
-                            </li>                            <li>
-                                <a href="https://github.com/Kubo2">
-                                    <img src="https://avatars.githubusercontent.com/u/6882599?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/6882599?v=4&amp;s=80 2x" alt="Kubo2" title="Kubo2 (1 contribution)">
-                                </a>
-                            </li>                            <li>
-                                <a href="https://github.com/mtdowling">
-                                    <img src="https://avatars.githubusercontent.com/u/190930?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/190930?v=4&amp;s=80 2x" alt="mtdowling" title="mtdowling (1 contribution)">
-                                </a>
-                            </li>                            <li>
-                                <a href="https://github.com/reedy">
-                                    <img src="https://avatars.githubusercontent.com/u/67615?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/67615?v=4&amp;s=80 2x" alt="reedy" title="reedy (1 contribution)">
-                                </a>
-                            </li>                            <li>
-                                <a href="https://github.com/seregazhuk">
-                                    <img src="https://avatars.githubusercontent.com/u/9959761?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/9959761?v=4&amp;s=80 2x" alt="seregazhuk" title="seregazhuk (1 contribution)">
-                                </a>
-                            </li>                            <li>
-                                <a href="https://github.com/nawarian">
-                                    <img src="https://avatars.githubusercontent.com/u/3905582?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/3905582?v=4&amp;s=80 2x" alt="nawarian" title="nawarian (1 contribution)">
-                                </a>
-                            </li>                        </ul>
+* First class support for PHP 5.3 through PHP 7 and HHVM
+  (#53, #54 by @clue)
 
-                        <h3 class="component-info__subtitle">Activity</h3>
+* Add integration tests for SSL/TLS sockets
+  (#62 by @clue)
 
-                        <div class="component-info__participation"><svg width="320" height="42">
-    <defs>
-        <linearGradient id="reactphp-promise-participation-gradient" x1="0" x2="0" y1="1" y2="0">
-            <stop offset="10%" stop-color="#40a977"></stop>
-            <stop offset="90%" stop-color="#ba3525"></stop>
-        </linearGradient>
-        <mask id="reactphp-promise-participation-sparkline" x="0" y="0" width="320" height="40" >
-            <polyline 
-                transform="translate(0, 40) scale(1,-1)"
-                points="0,1 6,4 12,1 18,1 24,2 30,2 36,5 42,2 48,1 54,1 60,1 66,1 72,1 78,1 84,1 90,1 96,1 102,1 108,1 114,1 120,1 126,1 132,1 138,1 144,1 150,1 156,1 162,1 168,1 174,1 180,2 186,2 192,1 198,1 204,1 210,1 216,1 222,1 228,1 234,1 240,1 246,1 252,1 258,3 264,1 270,1 276,1 282,1 288,1 294,1 300,1 306,1" 
-                fill="transparent" 
-                stroke="#40a977" 
-                stroke-width="2"
-            >
-        </mask>
-    </defs>
+## 0.4.4 (2015-09-23)
 
-    <g transform="translate(0, -1.5)">
-        <rect 
-            x="0" 
-            y="-2" 
-            width="320" 
-            height="42"
-            style="stroke:none;fill:url(#reactphp-promise-participation-gradient);mask:url(#reactphp-promise-participation-sparkline)"
-        ></rect>
-    </g>
-</svg>
-                        </div>
-                    </section>
-                </aside>
-            </div>
-        </div>
-    </div>        <footer class="footer">
+* Feature: Add support for Unix domain sockets (UDS) (#41 by @clue)
+* Bugfix: Explicitly set supported TLS versions for PHP 5.6+ (#31 by @WyriHaximus)
+* Bugfix: Ignore SSL non-draining buffer workaround for PHP 5.6.8+ (#33 by @alexmace)
+
+## 0.4.3 (2015-03-20)
+
+* Bugfix: Set peer name to hostname to correct security concern in PHP 5.6 (@WyriHaximus)
+* Bugfix: Always wrap secure to pull buffer due to regression in PHP
+* Bugfix: SecureStream extends Stream to match documentation preventing BC (@clue)
+
+## 0.4.2 (2014-10-16)
+
+* Bugfix: Only toggle the stream crypto handshake once (@DaveRandom and @rdlowrey)
+* Bugfix: Workaround for ext-openssl buffering bug (@DaveRandom)
+* Bugfix: SNI fix for PHP &lt; 5.6 (@DaveRandom)
+
+## 0.4.(0/1) (2014-02-02)
+
+* BC break: Bump minimum PHP version to PHP 5.4, remove 5.3 specific hacks
+* BC break: Update to React/Promise 2.0
+* Dependency: Autoloading and filesystem structure now PSR-4 instead of PSR-0
+* Bump React dependencies to v0.4
+
+## 0.3.1 (2013-04-21)
+
+* Feature: [SocketClient] Support connecting to IPv6 addresses (@clue)
+
+## 0.3.0 (2013-04-14)
+
+* Feature: [SocketClient] New SocketClient component extracted from HttpClient (@clue)
+</code></pre>
+
+            </main>
+        </div>        <footer class="footer">
             <div class="wrapper">
                 <ul class="links">
                     <li><a href="https://github.com/reactphp"><i class="icon-github" aria-hidden="true"></i> GitHub</a></li>
