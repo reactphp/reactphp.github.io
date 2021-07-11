@@ -70,7 +70,7 @@ Datagram - ReactPHP</title>
                         EventLoop
 
                         <span class="off-canvas-menu__version">
-                            v1.1.1
+                            v1.2.0
                         </span>
                     </a>
                 </li>
@@ -79,7 +79,7 @@ Datagram - ReactPHP</title>
                         Stream
 
                         <span class="off-canvas-menu__version">
-                            v1.1.1
+                            v1.2.0
                         </span>
                     </a>
                 </li>
@@ -102,7 +102,7 @@ Datagram - ReactPHP</title>
                         Socket
 
                         <span class="off-canvas-menu__version">
-                            v1.7.0
+                            v1.8.0
                         </span>
                     </a>
                 </li>
@@ -111,7 +111,7 @@ Datagram - ReactPHP</title>
                         Datagram
 
                         <span class="off-canvas-menu__version">
-                            v1.7.0
+                            v1.8.0
                         </span>
                     </a>
                 </li>
@@ -125,7 +125,7 @@ Datagram - ReactPHP</title>
                         HTTP
 
                         <span class="off-canvas-menu__version">
-                            v1.3.0
+                            v1.4.0
                         </span>
                     </a>
                 </li>
@@ -143,7 +143,7 @@ Datagram - ReactPHP</title>
                         DNS
 
                         <span class="off-canvas-menu__version">
-                            v1.7.0
+                            v1.8.0
                         </span>
                     </a>
                 </li>
@@ -166,7 +166,7 @@ Datagram - ReactPHP</title>
                         ChildProcess
 
                         <span class="off-canvas-menu__version">
-                            v0.6.2
+                            v0.6.3
                         </span>
                     </a>
                 </li>
@@ -175,7 +175,7 @@ Datagram - ReactPHP</title>
                         PromiseTimer
 
                         <span class="off-canvas-menu__version">
-                            v1.6.0
+                            v1.7.0
                         </span>
                     </a>
                 </li>
@@ -209,8 +209,7 @@ Datagram - ReactPHP</title>
 <a id="quickstart-example" class="anchor" href="#quickstart-example" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Quickstart example</h2>
 <p>Once <a href="#install">installed</a>, you can use the following code to connect to an UDP server listening on
 <code>localhost:1234</code> and send and receive UDP datagrams:</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>loop</span> = <span class="pl-v">React</span>\<span class="pl-v">EventLoop</span>\<span class="pl-v">Factory</span>::<span class="pl-en">create</span>();
-<span class="pl-s1"><span class="pl-c1">$</span>factory</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Datagram</span>\<span class="pl-v">Factory</span>(<span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>factory</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Datagram</span>\<span class="pl-v">Factory</span>();
 
 <span class="pl-s1"><span class="pl-c1">$</span>factory</span>-&gt;<span class="pl-en">createClient</span>(<span class="pl-s">'localhost:1234'</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-v">React</span>\<span class="pl-v">Datagram</span>\<span class="pl-smi">Socket</span> <span class="pl-s1"><span class="pl-c1">$</span>client</span>) {
     <span class="pl-s1"><span class="pl-c1">$</span>client</span>-&gt;<span class="pl-en">send</span>(<span class="pl-s">'first'</span>);
@@ -218,10 +217,8 @@ Datagram - ReactPHP</title>
     <span class="pl-s1"><span class="pl-c1">$</span>client</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'message'</span>, <span class="pl-k">function</span>(<span class="pl-s1"><span class="pl-c1">$</span>message</span>, <span class="pl-s1"><span class="pl-c1">$</span>serverAddress</span>, <span class="pl-s1"><span class="pl-c1">$</span>client</span>) {
         <span class="pl-k">echo</span> <span class="pl-s">'received "'</span> . <span class="pl-s1"><span class="pl-c1">$</span>message</span> . <span class="pl-s">'" from '</span> . <span class="pl-s1"><span class="pl-c1">$</span>serverAddress</span>. <span class="pl-c1">PHP_EOL</span>;
     });
-});
-
-<span class="pl-s1"><span class="pl-c1">$</span>loop</span>-&gt;<span class="pl-en">run</span>();</pre></div>
-<p>See also the <a href="https://github.com/reactphp/datagram/blob/v1.7.0/examples">examples</a>.</p>
+});</pre></div>
+<p>See also the <a href="https://github.com/reactphp/datagram/blob/v1.8.0/examples">examples</a>.</p>
 <h2>
 <a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h2>
 <p>This library's API is modelled after node.js's API for
@@ -232,7 +229,7 @@ Datagram - ReactPHP</title>
 <a href="https://getcomposer.org/doc/00-intro.md" rel="nofollow">New to Composer?</a></p>
 <p>This project follows <a href="https://semver.org/" rel="nofollow">SemVer</a>.
 This will install the latest supported version:</p>
-<div class="highlight highlight-source-shell"><pre>$ composer require react/datagram:^1.7</pre></div>
+<div class="highlight highlight-source-shell"><pre>$ composer require react/datagram:^1.8</pre></div>
 <p>See also the <a href="changelog.html">CHANGELOG</a> for details about version upgrades.</p>
 <p>This project aims to run on any platform and thus does not require any PHP
 extensions and supports running on legacy PHP 5.3 through current PHP 8+ and
@@ -256,7 +253,7 @@ dependencies <a href="https://getcomposer.org/" rel="nofollow">through Composer<
 
                             <div class="version-selector">
                                 <button class="version-selector__button version-selector__button--latest" data-ctrly="component-version-selector" data-version-selector-control>
-                                    v1.7.0
+                                    v1.8.0
 
                                     <i class="icon-chevron-down" aria-hidden="true"></i>
                                     <i class="icon-chevron-up" aria-hidden="true"></i>
@@ -272,6 +269,11 @@ dependencies <a href="https://getcomposer.org/" rel="nofollow">through Composer<
                                             </a>
                                         </li>
                                                                                                                                                                                                                     <li>
+                                                <a href="https://github.com/reactphp/datagram/tree/v1.7.0#readme" class="version-selector__version">
+                                                    v1.7.0
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
                                                 <a href="https://github.com/reactphp/datagram/tree/v1.6.0#readme" class="version-selector__version">
                                                     v1.6.0
                                                 </a>
@@ -341,14 +343,14 @@ dependencies <a href="https://getcomposer.org/" rel="nofollow">through Composer<
 
                         <h3 class="component-info__subtitle">Installation</h3>
 
-                        <div class="highlight highlight-source-shell"><pre>composer require react/datagram:^1.7.0</pre></div>
+                        <div class="highlight highlight-source-shell"><pre>composer require react/datagram:^1.8.0</pre></div>
 
                         <h3 class="component-info__subtitle">Contributors</h3>
 
                         <ul class="component-info__contributors">
                                                     <li>
                                 <a href="https://github.com/clue">
-                                    <img src="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=80 2x" alt="clue" title="clue (169 contributions)">
+                                    <img src="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=80 2x" alt="clue" title="clue (173 contributions)">
                                 </a>
                             </li>
                                                     <li>

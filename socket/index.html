@@ -70,7 +70,7 @@ Socket - ReactPHP</title>
                         EventLoop
 
                         <span class="off-canvas-menu__version">
-                            v1.1.1
+                            v1.2.0
                         </span>
                     </a>
                 </li>
@@ -79,7 +79,7 @@ Socket - ReactPHP</title>
                         Stream
 
                         <span class="off-canvas-menu__version">
-                            v1.1.1
+                            v1.2.0
                         </span>
                     </a>
                 </li>
@@ -102,7 +102,7 @@ Socket - ReactPHP</title>
                         Socket
 
                         <span class="off-canvas-menu__version">
-                            v1.7.0
+                            v1.8.0
                         </span>
                     </a>
                 </li>
@@ -111,7 +111,7 @@ Socket - ReactPHP</title>
                         Datagram
 
                         <span class="off-canvas-menu__version">
-                            v1.7.0
+                            v1.8.0
                         </span>
                     </a>
                 </li>
@@ -125,7 +125,7 @@ Socket - ReactPHP</title>
                         HTTP
 
                         <span class="off-canvas-menu__version">
-                            v1.3.0
+                            v1.4.0
                         </span>
                     </a>
                 </li>
@@ -143,7 +143,7 @@ Socket - ReactPHP</title>
                         DNS
 
                         <span class="off-canvas-menu__version">
-                            v1.7.0
+                            v1.8.0
                         </span>
                     </a>
                 </li>
@@ -166,7 +166,7 @@ Socket - ReactPHP</title>
                         ChildProcess
 
                         <span class="off-canvas-menu__version">
-                            v0.6.2
+                            v0.6.3
                         </span>
                     </a>
                 </li>
@@ -175,7 +175,7 @@ Socket - ReactPHP</title>
                         PromiseTimer
 
                         <span class="off-canvas-menu__version">
-                            v1.6.0
+                            v1.7.0
                         </span>
                     </a>
                 </li>
@@ -292,8 +292,7 @@ handle multiple concurrent connections without blocking.</p>
 <h2>
 <a id="quickstart-example" class="anchor" href="#quickstart-example" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Quickstart example</h2>
 <p>Here is a server that closes the connection if you send it anything:</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>loop</span> = <span class="pl-v">React</span>\<span class="pl-v">EventLoop</span>\<span class="pl-v">Factory</span>::<span class="pl-en">create</span>();
-<span class="pl-s1"><span class="pl-c1">$</span>socket</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Server</span>(<span class="pl-s">'127.0.0.1:8080'</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>socket</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Server</span>(<span class="pl-s">'127.0.0.1:8080'</span>);
 
 <span class="pl-s1"><span class="pl-c1">$</span>socket</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'connection'</span>, <span class="pl-k">function</span> (<span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-smi">ConnectionInterface</span> <span class="pl-s1"><span class="pl-c1">$</span>connection</span>) {
     <span class="pl-s1"><span class="pl-c1">$</span>connection</span>-&gt;<span class="pl-en">write</span>(<span class="pl-s">"Hello "</span> . <span class="pl-s1"><span class="pl-c1">$</span>connection</span>-&gt;<span class="pl-en">getRemoteAddress</span>() . <span class="pl-s">"!\n"</span>);
@@ -303,21 +302,16 @@ handle multiple concurrent connections without blocking.</p>
     <span class="pl-s1"><span class="pl-c1">$</span>connection</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'data'</span>, <span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>data</span>) <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>connection</span>) {
         <span class="pl-s1"><span class="pl-c1">$</span>connection</span>-&gt;<span class="pl-en">close</span>();
     });
-});
-
-<span class="pl-s1"><span class="pl-c1">$</span>loop</span>-&gt;<span class="pl-en">run</span>();</pre></div>
-<p>See also the <a href="https://github.com/reactphp/socket/blob/v1.7.0/examples">examples</a>.</p>
+});</pre></div>
+<p>See also the <a href="https://github.com/reactphp/socket/blob/v1.8.0/examples">examples</a>.</p>
 <p>Here's a client that outputs the output of said server and then attempts to
 send it a string:</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>loop</span> = <span class="pl-v">React</span>\<span class="pl-v">EventLoop</span>\<span class="pl-v">Factory</span>::<span class="pl-en">create</span>();
-<span class="pl-s1"><span class="pl-c1">$</span>connector</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Connector</span>(<span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>connector</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Connector</span>();
 
-<span class="pl-s1"><span class="pl-c1">$</span>connector</span>-&gt;<span class="pl-en">connect</span>(<span class="pl-s">'127.0.0.1:8080'</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-smi">ConnectionInterface</span> <span class="pl-s1"><span class="pl-c1">$</span>connection</span>) <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>loop</span>) {
-    <span class="pl-s1"><span class="pl-c1">$</span>connection</span>-&gt;<span class="pl-en">pipe</span>(<span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Stream</span>\<span class="pl-v">WritableResourceStream</span>(<span class="pl-c1">STDOUT</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>));
+<span class="pl-s1"><span class="pl-c1">$</span>connector</span>-&gt;<span class="pl-en">connect</span>(<span class="pl-s">'127.0.0.1:8080'</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-smi">ConnectionInterface</span> <span class="pl-s1"><span class="pl-c1">$</span>connection</span>) {
+    <span class="pl-s1"><span class="pl-c1">$</span>connection</span>-&gt;<span class="pl-en">pipe</span>(<span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Stream</span>\<span class="pl-v">WritableResourceStream</span>(<span class="pl-c1">STDOUT</span>));
     <span class="pl-s1"><span class="pl-c1">$</span>connection</span>-&gt;<span class="pl-en">write</span>(<span class="pl-s">"Hello World!\n"</span>);
-});
-
-<span class="pl-s1"><span class="pl-c1">$</span>loop</span>-&gt;<span class="pl-en">run</span>();</pre></div>
+});</pre></div>
 <h2>
 <a id="connection-usage" class="anchor" href="#connection-usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Connection usage</h2>
 <h3>
@@ -479,7 +473,7 @@ resume accepting new incoming connections.</p>
 <p>Re-attach the socket resource to the EventLoop after a previous <code>pause()</code>.</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>server</span>-&gt;<span class="pl-en">pause</span>();
 
-<span class="pl-s1"><span class="pl-c1">$</span>loop</span>-&gt;<span class="pl-en">addTimer</span>(<span class="pl-c1">1.0</span>, <span class="pl-k">function</span> () <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>server</span>) {
+<span class="pl-v">Loop</span>::<span class="pl-en">addTimer</span>(<span class="pl-c1">1.0</span>, <span class="pl-k">function</span> () <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>server</span>) {
     <span class="pl-s1"><span class="pl-c1">$</span>server</span>-&gt;<span class="pl-en">resume</span>();
 });</pre></div>
 <p>Note that both methods can be called any number of times, in particular
@@ -499,43 +493,48 @@ shut down this listening socket.</p>
 <a href="#serverinterface"><code>ServerInterface</code></a> and allows you to accept incoming
 streaming connections, such as plaintext TCP/IP or secure TLS connection streams.
 Connections can also be accepted on Unix domain sockets.</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Server</span>(<span class="pl-c1">8080</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);</pre></div>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Server</span>(<span class="pl-c1">8080</span>);</pre></div>
 <p>As above, the <code>$uri</code> parameter can consist of only a port, in which case the
 server will default to listening on the localhost address <code>127.0.0.1</code>,
 which means it will not be reachable from outside of this system.</p>
 <p>In order to use a random port assignment, you can use the port <code>0</code>:</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Server</span>(<span class="pl-c1">0</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Server</span>(<span class="pl-c1">0</span>);
 <span class="pl-s1"><span class="pl-c1">$</span>address</span> = <span class="pl-s1"><span class="pl-c1">$</span>server</span>-&gt;<span class="pl-en">getAddress</span>();</pre></div>
 <p>In order to change the host the socket is listening on, you can provide an IP
 address through the first parameter provided to the constructor, optionally
 preceded by the <code>tcp://</code> scheme:</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Server</span>(<span class="pl-s">'192.168.0.1:8080'</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);</pre></div>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Server</span>(<span class="pl-s">'192.168.0.1:8080'</span>);</pre></div>
 <p>If you want to listen on an IPv6 address, you MUST enclose the host in square
 brackets:</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Server</span>(<span class="pl-s">'[::1]:8080'</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);</pre></div>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Server</span>(<span class="pl-s">'[::1]:8080'</span>);</pre></div>
 <p>To listen on a Unix domain socket (UDS) path, you MUST prefix the URI with the
 <code>unix://</code> scheme:</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Server</span>(<span class="pl-s">'unix:///tmp/server.sock'</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);</pre></div>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Server</span>(<span class="pl-s">'unix:///tmp/server.sock'</span>);</pre></div>
 <p>If the given URI is invalid, does not contain a port, any other scheme or if it
 contains a hostname, it will throw an <code>InvalidArgumentException</code>:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-c">// throws InvalidArgumentException due to missing port</span>
-<span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Server</span>(<span class="pl-s">'127.0.0.1'</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);</pre></div>
+<span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Server</span>(<span class="pl-s">'127.0.0.1'</span>);</pre></div>
 <p>If the given URI appears to be valid, but listening on it fails (such as if port
 is already in use or port below 1024 may require root access etc.), it will
 throw a <code>RuntimeException</code>:</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>first</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Server</span>(<span class="pl-c1">8080</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>first</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Server</span>(<span class="pl-c1">8080</span>);
 
 <span class="pl-c">// throws RuntimeException because port is already in use</span>
-<span class="pl-s1"><span class="pl-c1">$</span>second</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Server</span>(<span class="pl-c1">8080</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);</pre></div>
+<span class="pl-s1"><span class="pl-c1">$</span>second</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Server</span>(<span class="pl-c1">8080</span>);</pre></div>
 <blockquote>
 <p>Note that these error conditions may vary depending on your system and/or
 configuration.
 See the exception message and code for more details about the actual error
 condition.</p>
 </blockquote>
+<p>This class takes an optional <code>LoopInterface|null $loop</code> parameter that can be used to
+pass the event loop instance to use for this object. You can use a <code>null</code> value
+here in order to use the <a href="../event-loop/#loop">default loop</a>.
+This value SHOULD NOT be given unless you're sure you want to explicitly use a
+given event loop instance.</p>
 <p>Optionally, you can specify <a href="https://www.php.net/manual/en/context.socket.php" rel="nofollow">TCP socket context options</a>
 for the underlying stream socket resource like this:</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Server</span>(<span class="pl-s">'[::1]:8080'</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>, <span class="pl-en">array</span>(
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Server</span>(<span class="pl-s">'[::1]:8080'</span>, <span class="pl-c1">null</span>, <span class="pl-en">array</span>(
     <span class="pl-s">'tcp'</span> =&gt; <span class="pl-en">array</span>(
         <span class="pl-s">'backlog'</span> =&gt; <span class="pl-c1">200</span>,
         <span class="pl-s">'so_reuseport'</span> =&gt; <span class="pl-c1">true</span>,
@@ -558,7 +557,7 @@ TLS handshake for each connection.
 It thus requires valid <a href="https://www.php.net/manual/en/context.ssl.php" rel="nofollow">TLS context options</a>,
 which in its most basic form may look something like this if you're using a
 PEM encoded certificate file:</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Server</span>(<span class="pl-s">'tls://127.0.0.1:8080'</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>, <span class="pl-en">array</span>(
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Server</span>(<span class="pl-s">'tls://127.0.0.1:8080'</span>, <span class="pl-c1">null</span>, <span class="pl-en">array</span>(
     <span class="pl-s">'tls'</span> =&gt; <span class="pl-en">array</span>(
         <span class="pl-s">'local_cert'</span> =&gt; <span class="pl-s">'server.pem'</span>
     )
@@ -571,7 +570,7 @@ an <code>error</code> event at a later time.</p>
 </blockquote>
 <p>If your private key is encrypted with a passphrase, you have to specify it
 like this:</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Server</span>(<span class="pl-s">'tls://127.0.0.1:8000'</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>, <span class="pl-en">array</span>(
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Server</span>(<span class="pl-s">'tls://127.0.0.1:8000'</span>, <span class="pl-c1">null</span>, <span class="pl-en">array</span>(
     <span class="pl-s">'tls'</span> =&gt; <span class="pl-en">array</span>(
         <span class="pl-s">'local_cert'</span> =&gt; <span class="pl-s">'server.pem'</span>,
         <span class="pl-s">'passphrase'</span> =&gt; <span class="pl-s">'secret'</span>
@@ -580,7 +579,7 @@ like this:</p>
 <p>By default, this server supports TLSv1.0+ and excludes support for legacy
 SSLv2/SSLv3. As of PHP 5.6+ you can also explicitly choose the TLS version you
 want to negotiate with the remote side:</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Server</span>(<span class="pl-s">'tls://127.0.0.1:8000'</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>, <span class="pl-en">array</span>(
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Server</span>(<span class="pl-s">'tls://127.0.0.1:8000'</span>, <span class="pl-c1">null</span>, <span class="pl-en">array</span>(
     <span class="pl-s">'tls'</span> =&gt; <span class="pl-en">array</span>(
         <span class="pl-s">'local_cert'</span> =&gt; <span class="pl-s">'server.pem'</span>,
         <span class="pl-s">'crypto_method'</span> =&gt; <span class="pl-v">STREAM_CRYPTO_METHOD_TLSv1_2_SERVER</span>
@@ -616,40 +615,45 @@ use the generic <a href="#serverinterface"><code>ServerInterface</code></a> inst
 <a id="tcpserver" class="anchor" href="#tcpserver" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>TcpServer</h4>
 <p>The <code>TcpServer</code> class implements the <a href="#serverinterface"><code>ServerInterface</code></a> and
 is responsible for accepting plaintext TCP/IP connections.</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">TcpServer</span>(<span class="pl-c1">8080</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);</pre></div>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">TcpServer</span>(<span class="pl-c1">8080</span>);</pre></div>
 <p>As above, the <code>$uri</code> parameter can consist of only a port, in which case the
 server will default to listening on the localhost address <code>127.0.0.1</code>,
 which means it will not be reachable from outside of this system.</p>
 <p>In order to use a random port assignment, you can use the port <code>0</code>:</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">TcpServer</span>(<span class="pl-c1">0</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">TcpServer</span>(<span class="pl-c1">0</span>);
 <span class="pl-s1"><span class="pl-c1">$</span>address</span> = <span class="pl-s1"><span class="pl-c1">$</span>server</span>-&gt;<span class="pl-en">getAddress</span>();</pre></div>
 <p>In order to change the host the socket is listening on, you can provide an IP
 address through the first parameter provided to the constructor, optionally
 preceded by the <code>tcp://</code> scheme:</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">TcpServer</span>(<span class="pl-s">'192.168.0.1:8080'</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);</pre></div>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">TcpServer</span>(<span class="pl-s">'192.168.0.1:8080'</span>);</pre></div>
 <p>If you want to listen on an IPv6 address, you MUST enclose the host in square
 brackets:</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">TcpServer</span>(<span class="pl-s">'[::1]:8080'</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);</pre></div>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">TcpServer</span>(<span class="pl-s">'[::1]:8080'</span>);</pre></div>
 <p>If the given URI is invalid, does not contain a port, any other scheme or if it
 contains a hostname, it will throw an <code>InvalidArgumentException</code>:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-c">// throws InvalidArgumentException due to missing port</span>
-<span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">TcpServer</span>(<span class="pl-s">'127.0.0.1'</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);</pre></div>
+<span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">TcpServer</span>(<span class="pl-s">'127.0.0.1'</span>);</pre></div>
 <p>If the given URI appears to be valid, but listening on it fails (such as if port
 is already in use or port below 1024 may require root access etc.), it will
 throw a <code>RuntimeException</code>:</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>first</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">TcpServer</span>(<span class="pl-c1">8080</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>first</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">TcpServer</span>(<span class="pl-c1">8080</span>);
 
 <span class="pl-c">// throws RuntimeException because port is already in use</span>
-<span class="pl-s1"><span class="pl-c1">$</span>second</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">TcpServer</span>(<span class="pl-c1">8080</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);</pre></div>
+<span class="pl-s1"><span class="pl-c1">$</span>second</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">TcpServer</span>(<span class="pl-c1">8080</span>);</pre></div>
 <blockquote>
 <p>Note that these error conditions may vary depending on your system and/or
 configuration.
 See the exception message and code for more details about the actual error
 condition.</p>
 </blockquote>
+<p>This class takes an optional <code>LoopInterface|null $loop</code> parameter that can be used to
+pass the event loop instance to use for this object. You can use a <code>null</code> value
+here in order to use the <a href="../event-loop/#loop">default loop</a>.
+This value SHOULD NOT be given unless you're sure you want to explicitly use a
+given event loop instance.</p>
 <p>Optionally, you can specify <a href="https://www.php.net/manual/en/context.socket.php" rel="nofollow">socket context options</a>
 for the underlying stream socket resource like this:</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">TcpServer</span>(<span class="pl-s">'[::1]:8080'</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>, <span class="pl-en">array</span>(
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">TcpServer</span>(<span class="pl-s">'[::1]:8080'</span>, <span class="pl-c1">null</span>, <span class="pl-en">array</span>(
     <span class="pl-s">'backlog'</span> =&gt; <span class="pl-c1">200</span>,
     <span class="pl-s">'so_reuseport'</span> =&gt; <span class="pl-c1">true</span>,
     <span class="pl-s">'ipv6_v6only'</span> =&gt; <span class="pl-c1">true</span>
@@ -679,8 +683,8 @@ TCP/IP connections and then performs a TLS handshake for each connection.
 It thus requires valid <a href="https://www.php.net/manual/en/context.ssl.php" rel="nofollow">TLS context options</a>,
 which in its most basic form may look something like this if you're using a
 PEM encoded certificate file:</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">TcpServer</span>(<span class="pl-c1">8000</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
-<span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">SecureServer</span>(<span class="pl-s1"><span class="pl-c1">$</span>server</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>, <span class="pl-en">array</span>(
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">TcpServer</span>(<span class="pl-c1">8000</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">SecureServer</span>(<span class="pl-s1"><span class="pl-c1">$</span>server</span>, <span class="pl-c1">null</span>, <span class="pl-en">array</span>(
     <span class="pl-s">'local_cert'</span> =&gt; <span class="pl-s">'server.pem'</span>
 ));</pre></div>
 <blockquote>
@@ -691,16 +695,16 @@ an <code>error</code> event at a later time.</p>
 </blockquote>
 <p>If your private key is encrypted with a passphrase, you have to specify it
 like this:</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">TcpServer</span>(<span class="pl-c1">8000</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
-<span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">SecureServer</span>(<span class="pl-s1"><span class="pl-c1">$</span>server</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>, <span class="pl-en">array</span>(
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">TcpServer</span>(<span class="pl-c1">8000</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">SecureServer</span>(<span class="pl-s1"><span class="pl-c1">$</span>server</span>, <span class="pl-c1">null</span>, <span class="pl-en">array</span>(
     <span class="pl-s">'local_cert'</span> =&gt; <span class="pl-s">'server.pem'</span>,
     <span class="pl-s">'passphrase'</span> =&gt; <span class="pl-s">'secret'</span>
 ));</pre></div>
 <p>By default, this server supports TLSv1.0+ and excludes support for legacy
 SSLv2/SSLv3. As of PHP 5.6+ you can also explicitly choose the TLS version you
 want to negotiate with the remote side:</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">TcpServer</span>(<span class="pl-c1">8000</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
-<span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">SecureServer</span>(<span class="pl-s1"><span class="pl-c1">$</span>server</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>, <span class="pl-en">array</span>(
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">TcpServer</span>(<span class="pl-c1">8000</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">SecureServer</span>(<span class="pl-s1"><span class="pl-c1">$</span>server</span>, <span class="pl-c1">null</span>, <span class="pl-en">array</span>(
     <span class="pl-s">'local_cert'</span> =&gt; <span class="pl-s">'server.pem'</span>,
     <span class="pl-s">'crypto_method'</span> =&gt; <span class="pl-v">STREAM_CRYPTO_METHOD_TLSv1_2_SERVER</span>
 ));</pre></div>
@@ -727,6 +731,11 @@ with a connection instance implementing <a href="#connectioninterface"><code>Con
 <p>Note that the <code>SecureServer</code> class is a concrete implementation for TLS sockets.
 If you want to typehint in your higher-level protocol implementation, you SHOULD
 use the generic <a href="#serverinterface"><code>ServerInterface</code></a> instead.</p>
+<p>This class takes an optional <code>LoopInterface|null $loop</code> parameter that can be used to
+pass the event loop instance to use for this object. You can use a <code>null</code> value
+here in order to use the <a href="../event-loop/#loop">default loop</a>.
+This value SHOULD NOT be given unless you're sure you want to explicitly use a
+given event loop instance.</p>
 <blockquote>
 <p>Advanced usage: Despite allowing any <code>ServerInterface</code> as first parameter,
 you SHOULD pass a <code>TcpServer</code> instance as first parameter, unless you
@@ -746,16 +755,16 @@ then close the underlying connection.</p>
 <a id="unixserver" class="anchor" href="#unixserver" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>UnixServer</h4>
 <p>The <code>UnixServer</code> class implements the <a href="#serverinterface"><code>ServerInterface</code></a> and
 is responsible for accepting connections on Unix domain sockets (UDS).</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">UnixServer</span>(<span class="pl-s">'/tmp/server.sock'</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);</pre></div>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">UnixServer</span>(<span class="pl-s">'/tmp/server.sock'</span>);</pre></div>
 <p>As above, the <code>$uri</code> parameter can consist of only a socket path or socket path
 prefixed by the <code>unix://</code> scheme.</p>
 <p>If the given URI appears to be valid, but listening on it fails (such as if the
 socket is already in use or the file not accessible etc.), it will throw a
 <code>RuntimeException</code>:</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>first</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">UnixServer</span>(<span class="pl-s">'/tmp/same.sock'</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>first</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">UnixServer</span>(<span class="pl-s">'/tmp/same.sock'</span>);
 
 <span class="pl-c">// throws RuntimeException because socket is already in use</span>
-<span class="pl-s1"><span class="pl-c1">$</span>second</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">UnixServer</span>(<span class="pl-s">'/tmp/same.sock'</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);</pre></div>
+<span class="pl-s1"><span class="pl-c1">$</span>second</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">UnixServer</span>(<span class="pl-s">'/tmp/same.sock'</span>);</pre></div>
 <blockquote>
 <p>Note that these error conditions may vary depending on your system and/or
 configuration.
@@ -765,6 +774,11 @@ given UDS path to report a more user-friendly error message in this case.
 See the exception message and code for more details about the actual error
 condition.</p>
 </blockquote>
+<p>This class takes an optional <code>LoopInterface|null $loop</code> parameter that can be used to
+pass the event loop instance to use for this object. You can use a <code>null</code> value
+here in order to use the <a href="../event-loop/#loop">default loop</a>.
+This value SHOULD NOT be given unless you're sure you want to explicitly use a
+given event loop instance.</p>
 <p>Whenever a client connects, it will emit a <code>connection</code> event with a connection
 instance implementing <a href="#connectioninterface"><code>ConnectionInterface</code></a>:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>server</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'connection'</span>, <span class="pl-k">function</span> (<span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-smi">ConnectionInterface</span> <span class="pl-s1"><span class="pl-c1">$</span>connection</span>) {
@@ -793,7 +807,7 @@ open connections.</p>
     <span class="pl-s1"><span class="pl-c1">$</span>connection</span>-&gt;<span class="pl-en">write</span>(<span class="pl-s">'hello there!'</span> . <span class="pl-c1">PHP_EOL</span>);
     …
 });</pre></div>
-<p>See also the <a href="https://github.com/reactphp/socket/blob/v1.7.0/examples">second example</a> for more details.</p>
+<p>See also the <a href="https://github.com/reactphp/socket/blob/v1.8.0/examples">second example</a> for more details.</p>
 <p>You have to pass a maximum number of open connections to ensure
 the server will automatically reject (close) connections once this limit
 is exceeded. In this case, it will emit an <code>error</code> event to inform about
@@ -878,15 +892,12 @@ resources and references as applicable:</p>
 <p>You can use this connector to create any kind of streaming connections, such
 as plaintext TCP/IP, secure TLS or local Unix connection streams.</p>
 <p>It binds to the main event loop and can be used like this:</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>loop</span> = <span class="pl-v">React</span>\<span class="pl-v">EventLoop</span>\<span class="pl-v">Factory</span>::<span class="pl-en">create</span>();
-<span class="pl-s1"><span class="pl-c1">$</span>connector</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Connector</span>(<span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>connector</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Connector</span>();
 
 <span class="pl-s1"><span class="pl-c1">$</span>connector</span>-&gt;<span class="pl-en">connect</span>(<span class="pl-s1"><span class="pl-c1">$</span>uri</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-smi">ConnectionInterface</span> <span class="pl-s1"><span class="pl-c1">$</span>connection</span>) {
     <span class="pl-s1"><span class="pl-c1">$</span>connection</span>-&gt;<span class="pl-en">write</span>(<span class="pl-s">'...'</span>);
     <span class="pl-s1"><span class="pl-c1">$</span>connection</span>-&gt;<span class="pl-en">end</span>();
-});
-
-<span class="pl-s1"><span class="pl-c1">$</span>loop</span>-&gt;<span class="pl-en">run</span>();</pre></div>
+});</pre></div>
 <p>In order to create a plaintext TCP/IP connection, you can simply pass a host
 and port combination like this:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>connector</span>-&gt;<span class="pl-en">connect</span>(<span class="pl-s">'www.google.com:80'</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-smi">ConnectionInterface</span> <span class="pl-s1"><span class="pl-c1">$</span>connection</span>) {
@@ -923,6 +934,11 @@ for the lower-level connectors implemented in this package. This means it
 also shares all of their features and implementation details.
 If you want to typehint in your higher-level protocol implementation, you SHOULD
 use the generic <a href="#connectorinterface"><code>ConnectorInterface</code></a> instead.</p>
+<p>This class takes an optional <code>LoopInterface|null $loop</code> parameter that can be used to
+pass the event loop instance to use for this object. You can use a <code>null</code> value
+here in order to use the <a href="../event-loop/#loop">default loop</a>.
+This value SHOULD NOT be given unless you're sure you want to explicitly use a
+given event loop instance.</p>
 <p>As of <code>v1.4.0</code>, the <code>Connector</code> class defaults to using the
 <a href="https://en.wikipedia.org/wiki/Happy_Eyeballs" rel="nofollow">happy eyeballs algorithm</a> to
 automatically connect over IPv4 or IPv6 when a hostname is given.
@@ -931,7 +947,7 @@ This automatically attempts to connect using both IPv4 and IPv6 at the same time
 IPv6 connections or setups.
 If you want to revert to the old behavior of only doing an IPv4 lookup and
 only attempt a single IPv4 connection, you can set up the <code>Connector</code> like this:</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>connector</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Connector</span>(<span class="pl-s1"><span class="pl-c1">$</span>loop</span>, <span class="pl-en">array</span>(
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>connector</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Connector</span>(<span class="pl-c1">null</span>, <span class="pl-en">array</span>(
     <span class="pl-s">'happy_eyeballs'</span> =&gt; <span class="pl-c1">false</span>
 ));</pre></div>
 <p>Similarly, you can also affect the default DNS behavior as follows.
@@ -941,7 +957,7 @@ system settings) to resolve all public hostnames into underlying IP addresses by
 default.
 If you explicitly want to use a custom DNS server (such as a local DNS relay or
 a company wide DNS server), you can set up the <code>Connector</code> like this:</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>connector</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Connector</span>(<span class="pl-s1"><span class="pl-c1">$</span>loop</span>, <span class="pl-en">array</span>(
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>connector</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Connector</span>(<span class="pl-c1">null</span>, <span class="pl-en">array</span>(
     <span class="pl-s">'dns'</span> =&gt; <span class="pl-s">'127.0.1.1'</span>
 ));
 
@@ -951,7 +967,7 @@ a company wide DNS server), you can set up the <code>Connector</code> like this:
 });</pre></div>
 <p>If you do not want to use a DNS resolver at all and want to connect to IP
 addresses only, you can also set up your <code>Connector</code> like this:</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>connector</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Connector</span>(<span class="pl-s1"><span class="pl-c1">$</span>loop</span>, <span class="pl-en">array</span>(
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>connector</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Connector</span>(<span class="pl-c1">null</span>, <span class="pl-en">array</span>(
     <span class="pl-s">'dns'</span> =&gt; <span class="pl-c1">false</span>
 ));
 
@@ -962,9 +978,9 @@ addresses only, you can also set up your <code>Connector</code> like this:</p>
 <p>Advanced: If you need a custom DNS <code>React\Dns\Resolver\ResolverInterface</code> instance, you
 can also set up your <code>Connector</code> like this:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>dnsResolverFactory</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Dns</span>\<span class="pl-v">Resolver</span>\<span class="pl-v">Factory</span>();
-<span class="pl-s1"><span class="pl-c1">$</span>resolver</span> = <span class="pl-s1"><span class="pl-c1">$</span>dnsResolverFactory</span>-&gt;<span class="pl-en">createCached</span>(<span class="pl-s">'127.0.1.1'</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>resolver</span> = <span class="pl-s1"><span class="pl-c1">$</span>dnsResolverFactory</span>-&gt;<span class="pl-en">createCached</span>(<span class="pl-s">'127.0.1.1'</span>);
 
-<span class="pl-s1"><span class="pl-c1">$</span>connector</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Connector</span>(<span class="pl-s1"><span class="pl-c1">$</span>loop</span>, <span class="pl-en">array</span>(
+<span class="pl-s1"><span class="pl-c1">$</span>connector</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Connector</span>(<span class="pl-c1">null</span>, <span class="pl-en">array</span>(
     <span class="pl-s">'dns'</span> =&gt; <span class="pl-s1"><span class="pl-c1">$</span>resolver</span>
 ));
 
@@ -975,19 +991,19 @@ can also set up your <code>Connector</code> like this:</p>
 <p>By default, the <code>tcp://</code> and <code>tls://</code> URI schemes will use timeout value that
 respects your <code>default_socket_timeout</code> ini setting (which defaults to 60s).
 If you want a custom timeout value, you can simply pass this like this:</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>connector</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Connector</span>(<span class="pl-s1"><span class="pl-c1">$</span>loop</span>, <span class="pl-en">array</span>(
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>connector</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Connector</span>(<span class="pl-c1">null</span>, <span class="pl-en">array</span>(
     <span class="pl-s">'timeout'</span> =&gt; <span class="pl-c1">10.0</span>
 ));</pre></div>
 <p>Similarly, if you do not want to apply a timeout at all and let the operating
 system handle this, you can pass a boolean flag like this:</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>connector</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Connector</span>(<span class="pl-s1"><span class="pl-c1">$</span>loop</span>, <span class="pl-en">array</span>(
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>connector</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Connector</span>(<span class="pl-c1">null</span>, <span class="pl-en">array</span>(
     <span class="pl-s">'timeout'</span> =&gt; <span class="pl-c1">false</span>
 ));</pre></div>
 <p>By default, the <code>Connector</code> supports the <code>tcp://</code>, <code>tls://</code> and <code>unix://</code>
 URI schemes. If you want to explicitly prohibit any of these, you can simply
 pass boolean flags like this:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-c">// only allow secure TLS connections</span>
-<span class="pl-s1"><span class="pl-c1">$</span>connector</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Connector</span>(<span class="pl-s1"><span class="pl-c1">$</span>loop</span>, <span class="pl-en">array</span>(
+<span class="pl-s1"><span class="pl-c1">$</span>connector</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Connector</span>(<span class="pl-c1">null</span>, <span class="pl-en">array</span>(
     <span class="pl-s">'tcp'</span> =&gt; <span class="pl-c1">false</span>,
     <span class="pl-s">'tls'</span> =&gt; <span class="pl-c1">true</span>,
     <span class="pl-s">'unix'</span> =&gt; <span class="pl-c1">false</span>,
@@ -1002,7 +1018,7 @@ the underlying connectors.
 If you want to explicitly pass additional context options, you can simply
 pass arrays of context options like this:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-c">// allow insecure TLS connections</span>
-<span class="pl-s1"><span class="pl-c1">$</span>connector</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Connector</span>(<span class="pl-s1"><span class="pl-c1">$</span>loop</span>, <span class="pl-en">array</span>(
+<span class="pl-s1"><span class="pl-c1">$</span>connector</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Connector</span>(<span class="pl-c1">null</span>, <span class="pl-en">array</span>(
     <span class="pl-s">'tcp'</span> =&gt; <span class="pl-en">array</span>(
         <span class="pl-s">'bindto'</span> =&gt; <span class="pl-s">'192.168.0.1:0'</span>
     ),
@@ -1019,7 +1035,7 @@ pass arrays of context options like this:</p>
 <p>By default, this connector supports TLSv1.0+ and excludes support for legacy
 SSLv2/SSLv3. As of PHP 5.6+ you can also explicitly choose the TLS version you
 want to negotiate with the remote side:</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>connector</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Connector</span>(<span class="pl-s1"><span class="pl-c1">$</span>loop</span>, <span class="pl-en">array</span>(
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>connector</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Connector</span>(<span class="pl-c1">null</span>, <span class="pl-en">array</span>(
     <span class="pl-s">'tls'</span> =&gt; <span class="pl-en">array</span>(
         <span class="pl-s">'crypto_method'</span> =&gt; <span class="pl-v">STREAM_CRYPTO_METHOD_TLSv1_2_CLIENT</span>
     )
@@ -1035,14 +1051,14 @@ For this, it sets up the required connector classes automatically.
 If you want to explicitly pass custom connectors for any of these, you can simply
 pass an instance implementing the <code>ConnectorInterface</code> like this:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>dnsResolverFactory</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Dns</span>\<span class="pl-v">Resolver</span>\<span class="pl-v">Factory</span>();
-<span class="pl-s1"><span class="pl-c1">$</span>resolver</span> = <span class="pl-s1"><span class="pl-c1">$</span>dnsResolverFactory</span>-&gt;<span class="pl-en">createCached</span>(<span class="pl-s">'127.0.1.1'</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
-<span class="pl-s1"><span class="pl-c1">$</span>tcp</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">HappyEyeBallsConnector</span>(<span class="pl-s1"><span class="pl-c1">$</span>loop</span>, <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">TcpConnector</span>(<span class="pl-s1"><span class="pl-c1">$</span>loop</span>), <span class="pl-s1"><span class="pl-c1">$</span>resolver</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>resolver</span> = <span class="pl-s1"><span class="pl-c1">$</span>dnsResolverFactory</span>-&gt;<span class="pl-en">createCached</span>(<span class="pl-s">'127.0.1.1'</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>tcp</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">HappyEyeBallsConnector</span>(<span class="pl-c1">null</span>, <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">TcpConnector</span>(), <span class="pl-s1"><span class="pl-c1">$</span>resolver</span>);
 
-<span class="pl-s1"><span class="pl-c1">$</span>tls</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">SecureConnector</span>(<span class="pl-s1"><span class="pl-c1">$</span>tcp</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>tls</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">SecureConnector</span>(<span class="pl-s1"><span class="pl-c1">$</span>tcp</span>);
 
-<span class="pl-s1"><span class="pl-c1">$</span>unix</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">UnixConnector</span>(<span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>unix</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">UnixConnector</span>();
 
-<span class="pl-s1"><span class="pl-c1">$</span>connector</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Connector</span>(<span class="pl-s1"><span class="pl-c1">$</span>loop</span>, <span class="pl-en">array</span>(
+<span class="pl-s1"><span class="pl-c1">$</span>connector</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Connector</span>(<span class="pl-c1">null</span>, <span class="pl-en">array</span>(
     <span class="pl-s">'tcp'</span> =&gt; <span class="pl-s1"><span class="pl-c1">$</span>tcp</span>,
     <span class="pl-s">'tls'</span> =&gt; <span class="pl-s1"><span class="pl-c1">$</span>tls</span>,
     <span class="pl-s">'unix'</span> =&gt; <span class="pl-s1"><span class="pl-c1">$</span>unix</span>,
@@ -1075,15 +1091,13 @@ Internally, the <code>tcp://</code> and <code>tls://</code> connectors will alwa
 <p>The <code>TcpConnector</code> class implements the
 <a href="#connectorinterface"><code>ConnectorInterface</code></a> and allows you to create plaintext
 TCP/IP connections to any IP-port-combination:</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>tcpConnector</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">TcpConnector</span>(<span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>tcpConnector</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">TcpConnector</span>();
 
 <span class="pl-s1"><span class="pl-c1">$</span>tcpConnector</span>-&gt;<span class="pl-en">connect</span>(<span class="pl-s">'127.0.0.1:80'</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-smi">ConnectionInterface</span> <span class="pl-s1"><span class="pl-c1">$</span>connection</span>) {
     <span class="pl-s1"><span class="pl-c1">$</span>connection</span>-&gt;<span class="pl-en">write</span>(<span class="pl-s">'...'</span>);
     <span class="pl-s1"><span class="pl-c1">$</span>connection</span>-&gt;<span class="pl-en">end</span>();
-});
-
-<span class="pl-s1"><span class="pl-c1">$</span>loop</span>-&gt;<span class="pl-en">run</span>();</pre></div>
-<p>See also the <a href="https://github.com/reactphp/socket/blob/v1.7.0/examples">examples</a>.</p>
+});</pre></div>
+<p>See also the <a href="https://github.com/reactphp/socket/blob/v1.8.0/examples">examples</a>.</p>
 <p>Pending connection attempts can be cancelled by cancelling its pending promise like so:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>promise</span> = <span class="pl-s1"><span class="pl-c1">$</span>tcpConnector</span>-&gt;<span class="pl-en">connect</span>(<span class="pl-s">'127.0.0.1:80'</span>);
 
@@ -1091,10 +1105,15 @@ TCP/IP connections to any IP-port-combination:</p>
 <p>Calling <code>cancel()</code> on a pending promise will close the underlying socket
 resource, thus cancelling the pending TCP/IP connection, and reject the
 resulting promise.</p>
+<p>This class takes an optional <code>LoopInterface|null $loop</code> parameter that can be used to
+pass the event loop instance to use for this object. You can use a <code>null</code> value
+here in order to use the <a href="../event-loop/#loop">default loop</a>.
+This value SHOULD NOT be given unless you're sure you want to explicitly use a
+given event loop instance.</p>
 <p>You can optionally pass additional
 <a href="https://www.php.net/manual/en/context.socket.php" rel="nofollow">socket context options</a>
 to the constructor like this:</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>tcpConnector</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">TcpConnector</span>(<span class="pl-s1"><span class="pl-c1">$</span>loop</span>, <span class="pl-en">array</span>(
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>tcpConnector</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">TcpConnector</span>(<span class="pl-c1">null</span>, <span class="pl-en">array</span>(
     <span class="pl-s">'bindto'</span> =&gt; <span class="pl-s">'192.168.0.1:0'</span>
 ));</pre></div>
 <p>Note that this class only allows you to connect to IP-port-combinations.
@@ -1125,23 +1144,26 @@ looks up the given domain name via DNS (if applicable) and then establishes the
 underlying TCP/IP connection to the resolved target IP address.</p>
 <p>Make sure to set up your DNS resolver and underlying TCP connector like this:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>dnsResolverFactory</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Dns</span>\<span class="pl-v">Resolver</span>\<span class="pl-v">Factory</span>();
-<span class="pl-s1"><span class="pl-c1">$</span>dns</span> = <span class="pl-s1"><span class="pl-c1">$</span>dnsResolverFactory</span>-&gt;<span class="pl-en">createCached</span>(<span class="pl-s">'8.8.8.8'</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>dns</span> = <span class="pl-s1"><span class="pl-c1">$</span>dnsResolverFactory</span>-&gt;<span class="pl-en">createCached</span>(<span class="pl-s">'8.8.8.8'</span>);
 
-<span class="pl-s1"><span class="pl-c1">$</span>dnsConnector</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">HappyEyeBallsConnector</span>(<span class="pl-s1"><span class="pl-c1">$</span>loop</span>, <span class="pl-s1"><span class="pl-c1">$</span>tcpConnector</span>, <span class="pl-s1"><span class="pl-c1">$</span>dns</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>dnsConnector</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">HappyEyeBallsConnector</span>(<span class="pl-c1">null</span>, <span class="pl-s1"><span class="pl-c1">$</span>tcpConnector</span>, <span class="pl-s1"><span class="pl-c1">$</span>dns</span>);
 
 <span class="pl-s1"><span class="pl-c1">$</span>dnsConnector</span>-&gt;<span class="pl-en">connect</span>(<span class="pl-s">'www.google.com:80'</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-smi">ConnectionInterface</span> <span class="pl-s1"><span class="pl-c1">$</span>connection</span>) {
     <span class="pl-s1"><span class="pl-c1">$</span>connection</span>-&gt;<span class="pl-en">write</span>(<span class="pl-s">'...'</span>);
     <span class="pl-s1"><span class="pl-c1">$</span>connection</span>-&gt;<span class="pl-en">end</span>();
-});
-
-<span class="pl-s1"><span class="pl-c1">$</span>loop</span>-&gt;<span class="pl-en">run</span>();</pre></div>
-<p>See also the <a href="https://github.com/reactphp/socket/blob/v1.7.0/examples">examples</a>.</p>
+});</pre></div>
+<p>See also the <a href="https://github.com/reactphp/socket/blob/v1.8.0/examples">examples</a>.</p>
 <p>Pending connection attempts can be cancelled by cancelling its pending promise like so:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>promise</span> = <span class="pl-s1"><span class="pl-c1">$</span>dnsConnector</span>-&gt;<span class="pl-en">connect</span>(<span class="pl-s">'www.google.com:80'</span>);
 
 <span class="pl-s1"><span class="pl-c1">$</span>promise</span>-&gt;<span class="pl-en">cancel</span>();</pre></div>
 <p>Calling <code>cancel()</code> on a pending promise will cancel the underlying DNS lookups
 and/or the underlying TCP/IP connection(s) and reject the resulting promise.</p>
+<p>This class takes an optional <code>LoopInterface|null $loop</code> parameter that can be used to
+pass the event loop instance to use for this object. You can use a <code>null</code> value
+here in order to use the <a href="../event-loop/#loop">default loop</a>.
+This value SHOULD NOT be given unless you're sure you want to explicitly use a
+given event loop instance.</p>
 <blockquote>
 <p>Advanced usage: Internally, the <code>HappyEyeBallsConnector</code> relies on a <code>Resolver</code> to
 look up the IP addresses for the given hostname.
@@ -1165,17 +1187,15 @@ looks up the given domain name via DNS (if applicable) and then establishes the
 underlying TCP/IP connection to the resolved target IP address.</p>
 <p>Make sure to set up your DNS resolver and underlying TCP connector like this:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>dnsResolverFactory</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Dns</span>\<span class="pl-v">Resolver</span>\<span class="pl-v">Factory</span>();
-<span class="pl-s1"><span class="pl-c1">$</span>dns</span> = <span class="pl-s1"><span class="pl-c1">$</span>dnsResolverFactory</span>-&gt;<span class="pl-en">createCached</span>(<span class="pl-s">'8.8.8.8'</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>dns</span> = <span class="pl-s1"><span class="pl-c1">$</span>dnsResolverFactory</span>-&gt;<span class="pl-en">createCached</span>(<span class="pl-s">'8.8.8.8'</span>);
 
 <span class="pl-s1"><span class="pl-c1">$</span>dnsConnector</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">DnsConnector</span>(<span class="pl-s1"><span class="pl-c1">$</span>tcpConnector</span>, <span class="pl-s1"><span class="pl-c1">$</span>dns</span>);
 
 <span class="pl-s1"><span class="pl-c1">$</span>dnsConnector</span>-&gt;<span class="pl-en">connect</span>(<span class="pl-s">'www.google.com:80'</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-smi">ConnectionInterface</span> <span class="pl-s1"><span class="pl-c1">$</span>connection</span>) {
     <span class="pl-s1"><span class="pl-c1">$</span>connection</span>-&gt;<span class="pl-en">write</span>(<span class="pl-s">'...'</span>);
     <span class="pl-s1"><span class="pl-c1">$</span>connection</span>-&gt;<span class="pl-en">end</span>();
-});
-
-<span class="pl-s1"><span class="pl-c1">$</span>loop</span>-&gt;<span class="pl-en">run</span>();</pre></div>
-<p>See also the <a href="https://github.com/reactphp/socket/blob/v1.7.0/examples">examples</a>.</p>
+});</pre></div>
+<p>See also the <a href="https://github.com/reactphp/socket/blob/v1.8.0/examples">examples</a>.</p>
 <p>Pending connection attempts can be cancelled by cancelling its pending promise like so:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>promise</span> = <span class="pl-s1"><span class="pl-c1">$</span>dnsConnector</span>-&gt;<span class="pl-en">connect</span>(<span class="pl-s">'www.google.com:80'</span>);
 
@@ -1202,32 +1222,35 @@ TLS (formerly known as SSL) connections to any hostname-port-combination.</p>
 <p>It does so by decorating a given <code>DnsConnector</code> instance so that it first
 creates a plaintext TCP/IP connection and then enables TLS encryption on this
 stream.</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>secureConnector</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">SecureConnector</span>(<span class="pl-s1"><span class="pl-c1">$</span>dnsConnector</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>secureConnector</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">SecureConnector</span>(<span class="pl-s1"><span class="pl-c1">$</span>dnsConnector</span>);
 
 <span class="pl-s1"><span class="pl-c1">$</span>secureConnector</span>-&gt;<span class="pl-en">connect</span>(<span class="pl-s">'www.google.com:443'</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-smi">ConnectionInterface</span> <span class="pl-s1"><span class="pl-c1">$</span>connection</span>) {
     <span class="pl-s1"><span class="pl-c1">$</span>connection</span>-&gt;<span class="pl-en">write</span>(<span class="pl-s">"GET / HTTP/1.0\r\nHost: www.google.com\r\n\r\n"</span>);
     <span class="pl-c1">.</span>.<span class="pl-c1">.</span>
-});
-
-<span class="pl-s1"><span class="pl-c1">$</span>loop</span>-&gt;<span class="pl-en">run</span>();</pre></div>
-<p>See also the <a href="https://github.com/reactphp/socket/blob/v1.7.0/examples">examples</a>.</p>
+});</pre></div>
+<p>See also the <a href="https://github.com/reactphp/socket/blob/v1.8.0/examples">examples</a>.</p>
 <p>Pending connection attempts can be cancelled by cancelling its pending promise like so:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>promise</span> = <span class="pl-s1"><span class="pl-c1">$</span>secureConnector</span>-&gt;<span class="pl-en">connect</span>(<span class="pl-s">'www.google.com:443'</span>);
 
 <span class="pl-s1"><span class="pl-c1">$</span>promise</span>-&gt;<span class="pl-en">cancel</span>();</pre></div>
 <p>Calling <code>cancel()</code> on a pending promise will cancel the underlying TCP/IP
 connection and/or the SSL/TLS negotiation and reject the resulting promise.</p>
+<p>This class takes an optional <code>LoopInterface|null $loop</code> parameter that can be used to
+pass the event loop instance to use for this object. You can use a <code>null</code> value
+here in order to use the <a href="../event-loop/#loop">default loop</a>.
+This value SHOULD NOT be given unless you're sure you want to explicitly use a
+given event loop instance.</p>
 <p>You can optionally pass additional
 <a href="https://www.php.net/manual/en/context.ssl.php" rel="nofollow">SSL context options</a>
 to the constructor like this:</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>secureConnector</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">SecureConnector</span>(<span class="pl-s1"><span class="pl-c1">$</span>dnsConnector</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>, <span class="pl-en">array</span>(
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>secureConnector</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">SecureConnector</span>(<span class="pl-s1"><span class="pl-c1">$</span>dnsConnector</span>, <span class="pl-c1">null</span>, <span class="pl-en">array</span>(
     <span class="pl-s">'verify_peer'</span> =&gt; <span class="pl-c1">false</span>,
     <span class="pl-s">'verify_peer_name'</span> =&gt; <span class="pl-c1">false</span>
 ));</pre></div>
 <p>By default, this connector supports TLSv1.0+ and excludes support for legacy
 SSLv2/SSLv3. As of PHP 5.6+ you can also explicitly choose the TLS version you
 want to negotiate with the remote side:</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>secureConnector</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">SecureConnector</span>(<span class="pl-s1"><span class="pl-c1">$</span>dnsConnector</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>, <span class="pl-en">array</span>(
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>secureConnector</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">SecureConnector</span>(<span class="pl-s1"><span class="pl-c1">$</span>dnsConnector</span>, <span class="pl-c1">null</span>, <span class="pl-en">array</span>(
     <span class="pl-s">'crypto_method'</span> =&gt; <span class="pl-v">STREAM_CRYPTO_METHOD_TLSv1_2_CLIENT</span>
 ));</pre></div>
 <blockquote>
@@ -1248,12 +1271,17 @@ handling to any existing connector instance.</p>
 <p>It does so by decorating any given <a href="#connectorinterface"><code>ConnectorInterface</code></a>
 instance and starting a timer that will automatically reject and abort any
 underlying connection attempt if it takes too long.</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>timeoutConnector</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">TimeoutConnector</span>(<span class="pl-s1"><span class="pl-c1">$</span>connector</span>, <span class="pl-c1">3.0</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>timeoutConnector</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">TimeoutConnector</span>(<span class="pl-s1"><span class="pl-c1">$</span>connector</span>, <span class="pl-c1">3.0</span>);
 
 <span class="pl-s1"><span class="pl-c1">$</span>timeoutConnector</span>-&gt;<span class="pl-en">connect</span>(<span class="pl-s">'google.com:80'</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-smi">ConnectionInterface</span> <span class="pl-s1"><span class="pl-c1">$</span>connection</span>) {
     <span class="pl-c">// connection succeeded within 3.0 seconds</span>
 });</pre></div>
-<p>See also any of the <a href="https://github.com/reactphp/socket/blob/v1.7.0/examples">examples</a>.</p>
+<p>See also any of the <a href="https://github.com/reactphp/socket/blob/v1.8.0/examples">examples</a>.</p>
+<p>This class takes an optional <code>LoopInterface|null $loop</code> parameter that can be used to
+pass the event loop instance to use for this object. You can use a <code>null</code> value
+here in order to use the <a href="../event-loop/#loop">default loop</a>.
+This value SHOULD NOT be given unless you're sure you want to explicitly use a
+given event loop instance.</p>
 <p>Pending connection attempts can be cancelled by cancelling its pending promise like so:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>promise</span> = <span class="pl-s1"><span class="pl-c1">$</span>timeoutConnector</span>-&gt;<span class="pl-en">connect</span>(<span class="pl-s">'google.com:80'</span>);
 
@@ -1265,13 +1293,11 @@ attempt, abort the timer and reject the resulting promise.</p>
 <p>The <code>UnixConnector</code> class implements the
 <a href="#connectorinterface"><code>ConnectorInterface</code></a> and allows you to connect to
 Unix domain socket (UDS) paths like this:</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>connector</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">UnixConnector</span>(<span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>connector</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">UnixConnector</span>();
 
 <span class="pl-s1"><span class="pl-c1">$</span>connector</span>-&gt;<span class="pl-en">connect</span>(<span class="pl-s">'/tmp/demo.sock'</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-smi">ConnectionInterface</span> <span class="pl-s1"><span class="pl-c1">$</span>connection</span>) {
     <span class="pl-s1"><span class="pl-c1">$</span>connection</span>-&gt;<span class="pl-en">write</span>(<span class="pl-s">"HELLO\n"</span>);
-});
-
-<span class="pl-s1"><span class="pl-c1">$</span>loop</span>-&gt;<span class="pl-en">run</span>();</pre></div>
+});</pre></div>
 <p>Connecting to Unix domain sockets is an atomic operation, i.e. its promise will
 settle (either resolve or reject) immediately.
 As such, calling <code>cancel()</code> on the resulting promise has no effect.</p>
@@ -1282,6 +1308,11 @@ with the <code>unix://</code> scheme, for example <code>unix:///tmp/demo.sock</c
 The <a href="#getlocaladdress"><code>getLocalAddress()</code></a> method will most likely return a
 <code>null</code> value as this value is not applicable to UDS connections here.</p>
 </blockquote>
+<p>This class takes an optional <code>LoopInterface|null $loop</code> parameter that can be used to
+pass the event loop instance to use for this object. You can use a <code>null</code> value
+here in order to use the <a href="../event-loop/#loop">default loop</a>.
+This value SHOULD NOT be given unless you're sure you want to explicitly use a
+given event loop instance.</p>
 <h4>
 <a id="fixeduriconnector" class="anchor" href="#fixeduriconnector" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>FixedUriConnector</h4>
 <p>The <code>FixedUriConnector</code> class implements the
@@ -1292,7 +1323,7 @@ when you want to explicitly connect to a Unix domain socket (UDS) path
 instead of connecting to a default address assumed by an higher-level API:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>connector</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">FixedUriConnector</span>(
     <span class="pl-s">'unix:///var/run/docker.sock'</span>,
-    <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">UnixConnector</span>(<span class="pl-s1"><span class="pl-c1">$</span>loop</span>)
+    <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">UnixConnector</span>()
 );
 
 <span class="pl-c">// destination will be ignored, actually connects to Unix domain socket</span>
@@ -1303,7 +1334,7 @@ instead of connecting to a default address assumed by an higher-level API:</p>
 <a href="https://getcomposer.org/doc/00-intro.md" rel="nofollow">New to Composer?</a></p>
 <p>This project follows <a href="https://semver.org/" rel="nofollow">SemVer</a>.
 This will install the latest supported version:</p>
-<div class="highlight highlight-source-shell"><pre>$ composer require react/socket:^1.7</pre></div>
+<div class="highlight highlight-source-shell"><pre>$ composer require react/socket:^1.8</pre></div>
 <p>See also the <a href="changelog.html">CHANGELOG</a> for details about version upgrades.</p>
 <p>This project aims to run on any platform and thus does not require any PHP
 extensions and supports running on legacy PHP 5.3 through current PHP 8+ and HHVM.
@@ -1359,7 +1390,7 @@ If you do not want to run these, they can simply be skipped like this:</p>
 
                             <div class="version-selector">
                                 <button class="version-selector__button version-selector__button--latest" data-ctrly="component-version-selector" data-version-selector-control>
-                                    v1.7.0
+                                    v1.8.0
 
                                     <i class="icon-chevron-down" aria-hidden="true"></i>
                                     <i class="icon-chevron-up" aria-hidden="true"></i>
@@ -1375,6 +1406,11 @@ If you do not want to run these, they can simply be skipped like this:</p>
                                             </a>
                                         </li>
                                                                                                                                                                                                                     <li>
+                                                <a href="https://github.com/reactphp/socket/tree/v1.7.0#readme" class="version-selector__version">
+                                                    v1.7.0
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
                                                 <a href="https://github.com/reactphp/socket/tree/v1.6.0#readme" class="version-selector__version">
                                                     v1.6.0
                                                 </a>
@@ -1619,14 +1655,14 @@ If you do not want to run these, they can simply be skipped like this:</p>
 
                         <h3 class="component-info__subtitle">Installation</h3>
 
-                        <div class="highlight highlight-source-shell"><pre>composer require react/socket:^1.7.0</pre></div>
+                        <div class="highlight highlight-source-shell"><pre>composer require react/socket:^1.8.0</pre></div>
 
                         <h3 class="component-info__subtitle">Contributors</h3>
 
                         <ul class="component-info__contributors">
                                                     <li>
                                 <a href="https://github.com/clue">
-                                    <img src="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=80 2x" alt="clue" title="clue (320 contributions)">
+                                    <img src="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=80 2x" alt="clue" title="clue (324 contributions)">
                                 </a>
                             </li>
                                                     <li>
@@ -1753,7 +1789,7 @@ If you do not want to run these, they can simply be skipped like this:</p>
         <mask id="reactphp-socket-participation-sparkline" x="0" y="0" width="320" height="40" >
             <polyline 
                 transform="translate(0, 40) scale(1,-1)"
-                points="0,1 6,1 12,4 18,3 24,1 30,4 36,9 42,1 48,2 54,1 60,1 66,1 72,1 78,1 84,1 90,1 96,1 102,1 108,1 114,1 120,1 126,1 132,1 138,1 144,1 150,1 156,1 162,1 168,1 174,1 180,4 186,1 192,2 198,1 204,1 210,2 216,1 222,1 228,2 234,1 240,1 246,1 252,1 258,1 264,1 270,1 276,1 282,1 288,1 294,6 300,1 306,1" 
+                points="0,1 6,1 12,6 18,1 24,1 30,5 36,8 42,1 48,2 54,1 60,1 66,1 72,1 78,1 84,1 90,1 96,1 102,1 108,1 114,1 120,1 126,1 132,1 138,1 144,1 150,1 156,1 162,1 168,1 174,1 180,4 186,1 192,2 198,1 204,1 210,2 216,1 222,1 228,2 234,1 240,1 246,1 252,1 258,1 264,1 270,1 276,1 282,1 288,1 294,6 300,1 306,1" 
                 fill="transparent" 
                 stroke="#40a977" 
                 stroke-width="2"

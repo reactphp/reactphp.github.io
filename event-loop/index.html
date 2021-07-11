@@ -70,7 +70,7 @@ EventLoop Component - ReactPHP</title>
                         EventLoop
 
                         <span class="off-canvas-menu__version">
-                            v1.1.1
+                            v1.2.0
                         </span>
                     </a>
                 </li>
@@ -79,7 +79,7 @@ EventLoop Component - ReactPHP</title>
                         Stream
 
                         <span class="off-canvas-menu__version">
-                            v1.1.1
+                            v1.2.0
                         </span>
                     </a>
                 </li>
@@ -102,7 +102,7 @@ EventLoop Component - ReactPHP</title>
                         Socket
 
                         <span class="off-canvas-menu__version">
-                            v1.7.0
+                            v1.8.0
                         </span>
                     </a>
                 </li>
@@ -111,7 +111,7 @@ EventLoop Component - ReactPHP</title>
                         Datagram
 
                         <span class="off-canvas-menu__version">
-                            v1.7.0
+                            v1.8.0
                         </span>
                     </a>
                 </li>
@@ -125,7 +125,7 @@ EventLoop Component - ReactPHP</title>
                         HTTP
 
                         <span class="off-canvas-menu__version">
-                            v1.3.0
+                            v1.4.0
                         </span>
                     </a>
                 </li>
@@ -143,7 +143,7 @@ EventLoop Component - ReactPHP</title>
                         DNS
 
                         <span class="off-canvas-menu__version">
-                            v1.7.0
+                            v1.8.0
                         </span>
                     </a>
                 </li>
@@ -166,7 +166,7 @@ EventLoop Component - ReactPHP</title>
                         ChildProcess
 
                         <span class="off-canvas-menu__version">
-                            v0.6.2
+                            v0.6.3
                         </span>
                     </a>
                 </li>
@@ -175,7 +175,7 @@ EventLoop Component - ReactPHP</title>
                         PromiseTimer
 
                         <span class="off-canvas-menu__version">
-                            v1.6.0
+                            v1.7.0
                         </span>
                     </a>
                 </li>
@@ -203,7 +203,7 @@ EventLoop Component - ReactPHP</title>
                                     <h1>EventLoop</h1>
 
                     
-<p><a href="https://travis-ci.org/reactphp/event-loop" rel="nofollow"><img src="https://camo.githubusercontent.com/3bcb4ec5069ffda3fd2966f0b1e25916528110b9f44a3ea366b951da14e7fd18/68747470733a2f2f7472617669732d63692e6f72672f72656163747068702f6576656e742d6c6f6f702e7376673f6272616e63683d6d6173746572" alt="Build Status" data-canonical-src="https://travis-ci.org/reactphp/event-loop.svg?branch=master" style="max-width:100%;"></a></p>
+<p><a href="https://github.com/reactphp/event-loop/actions"><img src="https://github.com/reactphp/event-loop/workflows/CI/badge.svg" alt="CI status" style="max-width:100%;"></a></p>
 <p><a href="https://reactphp.org/" rel="nofollow">ReactPHP</a>'s core reactor event loop that libraries can use for evented I/O.</p>
 <p>In order for async based libraries to be interoperable, they need to use the
 same event loop. This component provides a common <code>LoopInterface</code> that any
@@ -216,9 +216,17 @@ single <a href="#run"><code>run()</code></a> call that is controlled by the user
 <a href="#usage">Usage</a>
 <ul>
 <li>
-<a href="#factory">Factory</a>
+<a href="#loop">Loop</a>
 <ul>
-<li><a href="#create">create()</a></li>
+<li><a href="#loop-methods">Loop methods</a></li>
+<li><a href="#loop-autorun">Loop autorun</a></li>
+<li><a href="#get">get()</a></li>
+</ul>
+</li>
+<li>
+<a href="#factory"><del>Factory</del></a>
+<ul>
+<li><a href="#create"><del>create()</del></a></li>
 </ul>
 </li>
 <li>
@@ -226,10 +234,10 @@ single <a href="#run"><code>run()</code></a> call that is controlled by the user
 <ul>
 <li><a href="#streamselectloop">StreamSelectLoop</a></li>
 <li><a href="#exteventloop">ExtEventLoop</a></li>
-<li><a href="#extlibeventloop">ExtLibeventLoop</a></li>
-<li><a href="#extlibevloop">ExtLibevLoop</a></li>
 <li><a href="#extevloop">ExtEvLoop</a></li>
 <li><a href="#extuvloop">ExtUvLoop</a></li>
+<li><a href="#extlibeventloop"><del>ExtLibeventLoop</del></a></li>
+<li><a href="#extlibevloop"><del>ExtLibevLoop</del></a></li>
 </ul>
 </li>
 <li>
@@ -259,74 +267,235 @@ single <a href="#run"><code>run()</code></a> call that is controlled by the user
 <h2>
 <a id="quickstart-example" class="anchor" href="#quickstart-example" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Quickstart example</h2>
 <p>Here is an async HTTP server built with just the event loop.</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>loop</span> = <span class="pl-v">React</span>\<span class="pl-v">EventLoop</span>\<span class="pl-v">Factory</span>::<span class="pl-en">create</span>();
+<div class="highlight highlight-text-html-php"><pre><span class="pl-ent">&lt;?php</span>
+
+<span class="pl-k">use</span> <span class="pl-v">React</span>\<span class="pl-v">EventLoop</span>\<span class="pl-v">Loop</span>;
+
+<span class="pl-k">require</span> __DIR__ . <span class="pl-s">'/vendor/autoload.php'</span>;
 
 <span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-en">stream_socket_server</span>(<span class="pl-s">'tcp://127.0.0.1:8080'</span>);
 <span class="pl-en">stream_set_blocking</span>(<span class="pl-s1"><span class="pl-c1">$</span>server</span>, <span class="pl-c1">false</span>);
 
-<span class="pl-s1"><span class="pl-c1">$</span>loop</span>-&gt;<span class="pl-en">addReadStream</span>(<span class="pl-s1"><span class="pl-c1">$</span>server</span>, <span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>server</span>) <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>loop</span>) {
+<span class="pl-v">Loop</span>::<span class="pl-en">addReadStream</span>(<span class="pl-s1"><span class="pl-c1">$</span>server</span>, <span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>server</span>) {
     <span class="pl-s1"><span class="pl-c1">$</span>conn</span> = <span class="pl-en">stream_socket_accept</span>(<span class="pl-s1"><span class="pl-c1">$</span>server</span>);
     <span class="pl-s1"><span class="pl-c1">$</span>data</span> = <span class="pl-s">"HTTP/1.1 200 OK\r\nContent-Length: 3\r\n\r\nHi\n"</span>;
-    <span class="pl-s1"><span class="pl-c1">$</span>loop</span>-&gt;<span class="pl-en">addWriteStream</span>(<span class="pl-s1"><span class="pl-c1">$</span>conn</span>, <span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>conn</span>) <span class="pl-k">use</span> (&amp;<span class="pl-s1"><span class="pl-c1">$</span>data</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>) {
+    <span class="pl-v">Loop</span>::<span class="pl-en">addWriteStream</span>(<span class="pl-s1"><span class="pl-c1">$</span>conn</span>, <span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>conn</span>) <span class="pl-k">use</span> (&amp;<span class="pl-s1"><span class="pl-c1">$</span>data</span>) {
         <span class="pl-s1"><span class="pl-c1">$</span>written</span> = <span class="pl-en">fwrite</span>(<span class="pl-s1"><span class="pl-c1">$</span>conn</span>, <span class="pl-s1"><span class="pl-c1">$</span>data</span>);
         <span class="pl-k">if</span> (<span class="pl-s1"><span class="pl-c1">$</span>written</span> === <span class="pl-en">strlen</span>(<span class="pl-s1"><span class="pl-c1">$</span>data</span>)) {
             <span class="pl-en">fclose</span>(<span class="pl-s1"><span class="pl-c1">$</span>conn</span>);
-            <span class="pl-s1"><span class="pl-c1">$</span>loop</span>-&gt;<span class="pl-en">removeWriteStream</span>(<span class="pl-s1"><span class="pl-c1">$</span>conn</span>);
+            <span class="pl-v">Loop</span>::<span class="pl-en">removeWriteStream</span>(<span class="pl-s1"><span class="pl-c1">$</span>conn</span>);
         } <span class="pl-k">else</span> {
             <span class="pl-s1"><span class="pl-c1">$</span>data</span> = <span class="pl-en">substr</span>(<span class="pl-s1"><span class="pl-c1">$</span>data</span>, <span class="pl-s1"><span class="pl-c1">$</span>written</span>);
         }
     });
 });
 
-<span class="pl-s1"><span class="pl-c1">$</span>loop</span>-&gt;<span class="pl-en">addPeriodicTimer</span>(<span class="pl-c1">5</span>, <span class="pl-k">function</span> () {
+<span class="pl-v">Loop</span>::<span class="pl-en">addPeriodicTimer</span>(<span class="pl-c1">5</span>, <span class="pl-k">function</span> () {
     <span class="pl-s1"><span class="pl-c1">$</span>memory</span> = <span class="pl-en">memory_get_usage</span>() / <span class="pl-c1">1024</span>;
     <span class="pl-s1"><span class="pl-c1">$</span>formatted</span> = <span class="pl-en">number_format</span>(<span class="pl-s1"><span class="pl-c1">$</span>memory</span>, <span class="pl-c1">3</span>).<span class="pl-s">'K'</span>;
     <span class="pl-k">echo</span> <span class="pl-s">"Current memory usage: {$formatted}\n"</span>;
-});
-
-<span class="pl-s1"><span class="pl-c1">$</span>loop</span>-&gt;<span class="pl-en">run</span>();</pre></div>
-<p>See also the <a href="https://github.com/reactphp/event-loop/blob/v1.1.1/examples">examples</a>.</p>
+});</pre></div>
+<p>See also the <a href="https://github.com/reactphp/event-loop/blob/v1.2.0/examples">examples</a>.</p>
 <h2>
 <a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h2>
-<p>Typical applications use a single event loop which is created at the beginning
-and run at the end of the program.</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-c">// [1]</span>
-<span class="pl-s1"><span class="pl-c1">$</span>loop</span> = <span class="pl-v">React</span>\<span class="pl-v">EventLoop</span>\<span class="pl-v">Factory</span>::<span class="pl-en">create</span>();
+<p>As of <code>v1.2.0</code>, typical applications would use the <a href="#loop"><code>Loop</code> object</a>
+to use the currently active event loop like this:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-k">use</span> <span class="pl-v">React</span>\<span class="pl-v">EventLoop</span>\<span class="pl-v">Loop</span>;
 
-<span class="pl-c">// [2]</span>
-<span class="pl-s1"><span class="pl-c1">$</span>loop</span>-&gt;<span class="pl-en">addPeriodicTimer</span>(<span class="pl-c1">1</span>, <span class="pl-k">function</span> () {
-    <span class="pl-k">echo</span> <span class="pl-s">"Tick\n"</span>;
+<span class="pl-s1"><span class="pl-c1">$</span>timer</span> = <span class="pl-v">Loop</span>::<span class="pl-en">addPeriodicTimer</span>(<span class="pl-c1">0.1</span>, <span class="pl-k">function</span> () {
+    <span class="pl-k">echo</span> <span class="pl-s">'Tick'</span> . <span class="pl-c1">PHP_EOL</span>;
 });
 
-<span class="pl-s1"><span class="pl-c1">$</span>stream</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Stream</span>\<span class="pl-v">ReadableResourceStream</span>(
-    <span class="pl-en">fopen</span>(<span class="pl-s">'file.txt'</span>, <span class="pl-s">'r'</span>),
-    <span class="pl-s1"><span class="pl-c1">$</span>loop</span>
-);
+<span class="pl-v">Loop</span>::<span class="pl-en">addTimer</span>(<span class="pl-c1">1.0</span>, <span class="pl-k">function</span> () <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>timer</span>) {
+    <span class="pl-v">Loop</span>::<span class="pl-en">cancelTimer</span>(<span class="pl-s1"><span class="pl-c1">$</span>timer</span>);
+    <span class="pl-k">echo</span> <span class="pl-s">'Done'</span> . <span class="pl-c1">PHP_EOL</span>;
+});</pre></div>
+<p>As an alternative, you can also explicitly create an event loop instance at the
+beginning, reuse it throughout your program and finally run it at the end of the
+program like this:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>loop</span> = <span class="pl-v">React</span>\<span class="pl-v">EventLoop</span>\<span class="pl-v">Loop</span>::<span class="pl-en">get</span>(); <span class="pl-c">// or deprecated React\EventLoop\Factory::create();</span>
 
-<span class="pl-c">// [3]</span>
+<span class="pl-s1"><span class="pl-c1">$</span>timer</span> = <span class="pl-s1"><span class="pl-c1">$</span>loop</span>-&gt;<span class="pl-en">addPeriodicTimer</span>(<span class="pl-c1">0.1</span>, <span class="pl-k">function</span> () {
+    <span class="pl-k">echo</span> <span class="pl-s">'Tick'</span> . <span class="pl-c1">PHP_EOL</span>;
+});
+
+<span class="pl-s1"><span class="pl-c1">$</span>loop</span>-&gt;<span class="pl-en">addTimer</span>(<span class="pl-c1">1.0</span>, <span class="pl-k">function</span> () <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>loop</span>, <span class="pl-s1"><span class="pl-c1">$</span>timer</span>) {
+    <span class="pl-s1"><span class="pl-c1">$</span>loop</span>-&gt;<span class="pl-en">cancelTimer</span>(<span class="pl-s1"><span class="pl-c1">$</span>timer</span>);
+    <span class="pl-k">echo</span> <span class="pl-s">'Done'</span> . <span class="pl-c1">PHP_EOL</span>;
+});
+
 <span class="pl-s1"><span class="pl-c1">$</span>loop</span>-&gt;<span class="pl-en">run</span>();</pre></div>
+<p>While the former is more concise, the latter is more explicit.
+In both cases, the program would perform the exact same steps.</p>
 <ol>
-<li>The loop instance is created at the beginning of the program. A convenience
-factory <a href="#create"><code>React\EventLoop\Factory::create()</code></a> is provided by this library which
-picks the best available <a href="#loop-implementations">loop implementation</a>.</li>
-<li>The loop instance is used directly or passed to library and application code.
-In this example, a periodic timer is registered with the event loop which
-simply outputs <code>Tick</code> every second and a
-<a href="../stream/#readableresourcestream">readable stream</a>
-is created by using ReactPHP's
-<a href="../stream/">stream component</a> for demonstration
-purposes.</li>
-<li>The loop is run with a single <a href="#run"><code>$loop-&gt;run()</code></a> call at the end of the program.</li>
+<li>The event loop instance is created at the beginning of the program. This is
+implicitly done the first time you call the <a href="#loop"><code>Loop</code> class</a> or
+explicitly when using the deprecated <a href="#create"><code>Factory::create() method</code></a>
+(or manually instantiating any of the <a href="#loop-implementations">loop implementations</a>).</li>
+<li>The event loop is used directly or passed as an instance to library and
+application code. In this example, a periodic timer is registered with the
+event loop which simply outputs <code>Tick</code> every fraction of a second until another
+timer stops the periodic timer after a second.</li>
+<li>The event loop is run at the end of the program. This is automatically done
+when using <a href="#loop"><code>Loop</code> class</a> or explicitly with a single <a href="#run"><code>run()</code></a>
+call at the end of the program.</li>
 </ol>
+<p>As of <code>v1.2.0</code>, we highly recommend using the <a href="#loop"><code>Loop</code> class</a>.
+The explicit loop instructions are still valid and may still be useful in some
+applications, especially for a transition period towards the more concise style.</p>
 <h3>
-<a id="factory" class="anchor" href="#factory" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Factory</h3>
-<p>The <code>Factory</code> class exists as a convenient way to pick the best available
+<a id="loop" class="anchor" href="#loop" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Loop</h3>
+<p>The <code>Loop</code> class exists as a convenient global accessor for the event loop.</p>
+<h4>
+<a id="loop-methods" class="anchor" href="#loop-methods" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Loop methods</h4>
+<p>The <code>Loop</code> class provides all methods that exist on the <a href="#loopinterface"><code>LoopInterface</code></a>
+as static methods:</p>
+<ul>
+<li><a href="#run">run()</a></li>
+<li><a href="#stop">stop()</a></li>
+<li><a href="#addtimer">addTimer()</a></li>
+<li><a href="#addperiodictimer">addPeriodicTimer()</a></li>
+<li><a href="#canceltimer">cancelTimer()</a></li>
+<li><a href="#futuretick">futureTick()</a></li>
+<li><a href="#addsignal">addSignal()</a></li>
+<li><a href="#removesignal">removeSignal()</a></li>
+<li><a href="#addreadstream">addReadStream()</a></li>
+<li><a href="#addwritestream">addWriteStream()</a></li>
+<li><a href="#removereadstream">removeReadStream()</a></li>
+<li><a href="#removewritestream">removeWriteStream()</a></li>
+</ul>
+<p>If you're working with the event loop in your application code, it's often
+easiest to directly interface with the static methods defined on the <code>Loop</code> class
+like this:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-k">use</span> <span class="pl-v">React</span>\<span class="pl-v">EventLoop</span>\<span class="pl-v">Loop</span>;
+
+<span class="pl-s1"><span class="pl-c1">$</span>timer</span> = <span class="pl-v">Loop</span>::<span class="pl-en">addPeriodicTimer</span>(<span class="pl-c1">0.1</span>, <span class="pl-k">function</span> () {
+    <span class="pl-k">echo</span> <span class="pl-s">'Tick'</span> . <span class="pl-c1">PHP_EOL</span>;
+});
+
+<span class="pl-v">Loop</span>::<span class="pl-en">addTimer</span>(<span class="pl-c1">1.0</span>, <span class="pl-k">function</span> () <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>timer</span>) {
+    <span class="pl-v">Loop</span>::<span class="pl-en">cancelTimer</span>(<span class="pl-s1"><span class="pl-c1">$</span>timer</span>);
+    <span class="pl-k">echo</span> <span class="pl-s">'Done'</span> . <span class="pl-c1">PHP_EOL</span>;
+});</pre></div>
+<p>On the other hand, if you're familiar with object-oriented programming (OOP) and
+dependency injection (DI), you may want to inject an event loop instance and
+invoke instance methods on the <code>LoopInterface</code> like this:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-k">use</span> <span class="pl-v">React</span>\<span class="pl-v">EventLoop</span>\<span class="pl-v">Loop</span>;
+<span class="pl-k">use</span> <span class="pl-v">React</span>\<span class="pl-v">EventLoop</span>\<span class="pl-v">LoopInterface</span>;
+
+<span class="pl-k">class</span> <span class="pl-v">Greeter</span>
+{
+    <span class="pl-k">private</span> <span class="pl-c1"><span class="pl-c1">$</span>loop</span>;
+
+    <span class="pl-k">public</span> <span class="pl-k">function</span> <span class="pl-en">__construct</span>(<span class="pl-smi">LoopInterface</span> <span class="pl-s1"><span class="pl-c1">$</span>loop</span>)
+    {
+        <span class="pl-s1"><span class="pl-c1">$</span><span class="pl-smi">this</span></span>-&gt;<span class="pl-c1">loop</span> = <span class="pl-s1"><span class="pl-c1">$</span>loop</span>;
+    }
+
+    <span class="pl-k">public</span> <span class="pl-k">function</span> <span class="pl-en">greet</span>(<span class="pl-smi">string</span> <span class="pl-s1"><span class="pl-c1">$</span>name</span>)
+    {
+        <span class="pl-s1"><span class="pl-c1">$</span><span class="pl-smi">this</span></span>-&gt;<span class="pl-c1">loop</span>-&gt;<span class="pl-en">addTimer</span>(<span class="pl-c1">1.0</span>, <span class="pl-k">function</span> () <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>name</span>) {
+            <span class="pl-k">echo</span> <span class="pl-s">'Hello '</span> . <span class="pl-s1"><span class="pl-c1">$</span>name</span> . <span class="pl-s">'!'</span> . <span class="pl-c1">PHP_EOL</span>;
+        });
+    }
+}
+
+<span class="pl-s1"><span class="pl-c1">$</span>greeter</span> = <span class="pl-k">new</span> <span class="pl-v">Greeter</span>(<span class="pl-v">Loop</span>::<span class="pl-en">get</span>());
+<span class="pl-s1"><span class="pl-c1">$</span>greeter</span>-&gt;<span class="pl-en">greet</span>(<span class="pl-s">'Alice'</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>greeter</span>-&gt;<span class="pl-en">greet</span>(<span class="pl-s">'Bob'</span>);</pre></div>
+<p>Each static method call will be forwarded as-is to the underlying event loop
+instance by using the <a href="#get"><code>Loop::get()</code></a> call internally.
+See <a href="#loopinterface"><code>LoopInterface</code></a> for more details about available methods.</p>
+<h4>
+<a id="loop-autorun" class="anchor" href="#loop-autorun" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Loop autorun</h4>
+<p>When using the <code>Loop</code> class, it will automatically execute the loop at the end of
+the program. This means the following example will schedule a timer and will
+automatically execute the program until the timer event fires:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-k">use</span> <span class="pl-v">React</span>\<span class="pl-v">EventLoop</span>\<span class="pl-v">Loop</span>;
+
+<span class="pl-v">Loop</span>::<span class="pl-en">addTimer</span>(<span class="pl-c1">1.0</span>, <span class="pl-k">function</span> () {
+    <span class="pl-k">echo</span> <span class="pl-s">'Hello'</span> . <span class="pl-c1">PHP_EOL</span>;
+});</pre></div>
+<p>As of <code>v1.2.0</code>, we highly recommend using the <code>Loop</code> class this way and omitting any
+explicit <a href="#run"><code>run()</code></a> calls. For BC reasons, the explicit <a href="#run"><code>run()</code></a>
+method is still valid and may still be useful in some applications, especially
+for a transition period towards the more concise style.</p>
+<p>If you don't want the <code>Loop</code> to run automatically, you can either explicitly
+<a href="#run"><code>run()</code></a> or <a href="#stop"><code>stop()</code></a> it. This can be useful if you're using
+a global exception handler like this:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-k">use</span> <span class="pl-v">React</span>\<span class="pl-v">EventLoop</span>\<span class="pl-v">Loop</span>;
+
+<span class="pl-v">Loop</span>::<span class="pl-en">addTimer</span>(<span class="pl-c1">10.0</span>, <span class="pl-k">function</span> () {
+    <span class="pl-k">echo</span> <span class="pl-s">'Never happens'</span>;
+});
+
+<span class="pl-en">set_exception_handler</span>(<span class="pl-k">function</span> (<span class="pl-smi">Throwable</span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>) {
+    <span class="pl-k">echo</span> <span class="pl-s">'Error: '</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
+    <span class="pl-v">Loop</span>::<span class="pl-en">stop</span>();
+});
+
+<span class="pl-k">throw</span> <span class="pl-k">new</span> <span class="pl-v">RuntimeException</span>(<span class="pl-s">'Demo'</span>);</pre></div>
+<h4>
+<a id="get" class="anchor" href="#get" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>get()</h4>
+<p>The <code>get(): LoopInterface</code> method can be used to
+get the currently active event loop instance.</p>
+<p>This method will always return the same event loop instance throughout the
+lifetime of your application.</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-k">use</span> <span class="pl-v">React</span>\<span class="pl-v">EventLoop</span>\<span class="pl-v">Loop</span>;
+<span class="pl-k">use</span> <span class="pl-v">React</span>\<span class="pl-v">EventLoop</span>\<span class="pl-v">LoopInterface</span>;
+
+<span class="pl-s1"><span class="pl-c1">$</span>loop</span> = <span class="pl-v">Loop</span>::<span class="pl-en">get</span>();
+
+<span class="pl-en">assert</span>(<span class="pl-s1"><span class="pl-c1">$</span>loop</span> instanceof <span class="pl-v">LoopInterface</span>);
+<span class="pl-en">assert</span>(<span class="pl-s1"><span class="pl-c1">$</span>loop</span> === <span class="pl-v">Loop</span>::<span class="pl-en">get</span>());</pre></div>
+<p>This is particularly useful if you're using object-oriented programming (OOP)
+and dependency injection (DI). In this case, you may want to inject an event
+loop instance and invoke instance methods on the <code>LoopInterface</code> like this:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-k">use</span> <span class="pl-v">React</span>\<span class="pl-v">EventLoop</span>\<span class="pl-v">Loop</span>;
+<span class="pl-k">use</span> <span class="pl-v">React</span>\<span class="pl-v">EventLoop</span>\<span class="pl-v">LoopInterface</span>;
+
+<span class="pl-k">class</span> <span class="pl-v">Greeter</span>
+{
+    <span class="pl-k">private</span> <span class="pl-c1"><span class="pl-c1">$</span>loop</span>;
+
+    <span class="pl-k">public</span> <span class="pl-k">function</span> <span class="pl-en">__construct</span>(<span class="pl-smi">LoopInterface</span> <span class="pl-s1"><span class="pl-c1">$</span>loop</span>)
+    {
+        <span class="pl-s1"><span class="pl-c1">$</span><span class="pl-smi">this</span></span>-&gt;<span class="pl-c1">loop</span> = <span class="pl-s1"><span class="pl-c1">$</span>loop</span>;
+    }
+
+    <span class="pl-k">public</span> <span class="pl-k">function</span> <span class="pl-en">greet</span>(<span class="pl-smi">string</span> <span class="pl-s1"><span class="pl-c1">$</span>name</span>)
+    {
+        <span class="pl-s1"><span class="pl-c1">$</span><span class="pl-smi">this</span></span>-&gt;<span class="pl-c1">loop</span>-&gt;<span class="pl-en">addTimer</span>(<span class="pl-c1">1.0</span>, <span class="pl-k">function</span> () <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>name</span>) {
+            <span class="pl-k">echo</span> <span class="pl-s">'Hello '</span> . <span class="pl-s1"><span class="pl-c1">$</span>name</span> . <span class="pl-s">'!'</span> . <span class="pl-c1">PHP_EOL</span>;
+        });
+    }
+}
+
+<span class="pl-s1"><span class="pl-c1">$</span>greeter</span> = <span class="pl-k">new</span> <span class="pl-v">Greeter</span>(<span class="pl-v">Loop</span>::<span class="pl-en">get</span>());
+<span class="pl-s1"><span class="pl-c1">$</span>greeter</span>-&gt;<span class="pl-en">greet</span>(<span class="pl-s">'Alice'</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>greeter</span>-&gt;<span class="pl-en">greet</span>(<span class="pl-s">'Bob'</span>);</pre></div>
+<p>See <a href="#loopinterface"><code>LoopInterface</code></a> for more details about available methods.</p>
+<h3>
+<a id="factory" class="anchor" href="#factory" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><del>Factory</del>
+</h3>
+<blockquote>
+<p>Deprecated since v1.2.0, see <a href="#loop"><code>Loop</code> class</a> instead.</p>
+</blockquote>
+<p>The deprecated <code>Factory</code> class exists as a convenient way to pick the best available
 <a href="#loop-implementations">event loop implementation</a>.</p>
 <h4>
-<a id="create" class="anchor" href="#create" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>create()</h4>
-<p>The <code>create(): LoopInterface</code> method can be used to create a new event loop
-instance:</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>loop</span> = <span class="pl-v">React</span>\<span class="pl-v">EventLoop</span>\<span class="pl-v">Factory</span>::<span class="pl-en">create</span>();</pre></div>
+<a id="create" class="anchor" href="#create" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><del>create()</del>
+</h4>
+<blockquote>
+<p>Deprecated since v1.2.0, see <a href="#get"><code>Loop::get()</code></a> instead.</p>
+</blockquote>
+<p>The deprecated <code>create(): LoopInterface</code> method can be used to
+create a new event loop instance:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-c">// deprecated</span>
+<span class="pl-s1"><span class="pl-c1">$</span>loop</span> = <span class="pl-v">React</span>\<span class="pl-v">EventLoop</span>\<span class="pl-v">Factory</span>::<span class="pl-en">create</span>();
+
+<span class="pl-c">// new</span>
+<span class="pl-s1"><span class="pl-c1">$</span>loop</span> = <span class="pl-v">React</span>\<span class="pl-v">EventLoop</span>\<span class="pl-v">Loop</span>::<span class="pl-en">get</span>();</pre></div>
 <p>This method always returns an instance implementing <a href="#loopinterface"><code>LoopInterface</code></a>,
 the actual <a href="#loop-implementations">event loop implementation</a> is an implementation detail.</p>
 <p>This method should usually only be called once at the beginning of the program.</p>
@@ -387,25 +556,33 @@ See also <a href="#addtimer"><code>addTimer()</code></a> for more details.</p>
 <h4>
 <a id="exteventloop" class="anchor" href="#exteventloop" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>ExtEventLoop</h4>
 <p>An <code>ext-event</code> based event loop.</p>
-<p>This uses the <a href="https://pecl.php.net/package/event" rel="nofollow"><code>event</code> PECL extension</a>.
-It supports the same backends as libevent.</p>
+<p>This uses the <a href="https://pecl.php.net/package/event" rel="nofollow"><code>event</code> PECL extension</a>,
+that provides an interface to <code>libevent</code> library.
+<code>libevent</code> itself supports a number of system-specific backends (epoll, kqueue).</p>
 <p>This loop is known to work with PHP 5.4 through PHP 7+.</p>
 <h4>
 <a id="extevloop" class="anchor" href="#extevloop" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>ExtEvLoop</h4>
 <p>An <code>ext-ev</code> based event loop.</p>
-<p>This loop uses the <a href="https://pecl.php.net/package/ev" rel="nofollow"><code>ev</code> PECL extension</a>, that
-provides an interface to <code>libev</code> library.</p>
+<p>This loop uses the <a href="https://pecl.php.net/package/ev" rel="nofollow"><code>ev</code> PECL extension</a>,
+that provides an interface to <code>libev</code> library.
+<code>libev</code> itself supports a number of system-specific backends (epoll, kqueue).</p>
 <p>This loop is known to work with PHP 5.4 through PHP 7+.</p>
 <h4>
 <a id="extuvloop" class="anchor" href="#extuvloop" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>ExtUvLoop</h4>
 <p>An <code>ext-uv</code> based event loop.</p>
-<p>This loop uses the <a href="https://pecl.php.net/package/uv" rel="nofollow"><code>uv</code> PECL extension</a>, that
-provides an interface to <code>libuv</code> library.</p>
+<p>This loop uses the <a href="https://pecl.php.net/package/uv" rel="nofollow"><code>uv</code> PECL extension</a>,
+that provides an interface to <code>libuv</code> library.
+<code>libuv</code> itself supports a number of system-specific backends (epoll, kqueue).</p>
 <p>This loop is known to work with PHP 7+.</p>
 <h4>
-<a id="extlibeventloop" class="anchor" href="#extlibeventloop" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>ExtLibeventLoop</h4>
+<a id="extlibeventloop" class="anchor" href="#extlibeventloop" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><del>ExtLibeventLoop</del>
+</h4>
+<blockquote>
+<p>Deprecated since v1.2.0, use <a href="#exteventloop"><code>ExtEventLoop</code></a> instead.</p>
+</blockquote>
 <p>An <code>ext-libevent</code> based event loop.</p>
-<p>This uses the <a href="https://pecl.php.net/package/libevent" rel="nofollow"><code>libevent</code> PECL extension</a>.
+<p>This uses the <a href="https://pecl.php.net/package/libevent" rel="nofollow"><code>libevent</code> PECL extension</a>,
+that provides an interface to <code>libevent</code> library.
 <code>libevent</code> itself supports a number of system-specific backends (epoll, kqueue).</p>
 <p>This event loop does only work with PHP 5.
 An <a href="https://github.com/php/pecl-event-libevent/pull/2">unofficial update</a> for
@@ -422,10 +599,15 @@ As such, it's recommended to use <code>stream_set_read_buffer($stream, 0);</code
 to disable PHP's internal read buffer in this case.
 See also <a href="#addreadstream"><code>addReadStream()</code></a> for more details.</p>
 <h4>
-<a id="extlibevloop" class="anchor" href="#extlibevloop" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>ExtLibevLoop</h4>
+<a id="extlibevloop" class="anchor" href="#extlibevloop" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><del>ExtLibevLoop</del>
+</h4>
+<blockquote>
+<p>Deprecated since v1.2.0, use <a href="#extevloop"><code>ExtEvLoop</code></a> instead.</p>
+</blockquote>
 <p>An <code>ext-libev</code> based event loop.</p>
-<p>This uses an <a href="https://github.com/m4rw3r/php-libev">unofficial <code>libev</code> extension</a>.
-It supports the same backends as libevent.</p>
+<p>This uses an <a href="https://github.com/m4rw3r/php-libev">unofficial <code>libev</code> extension</a>,
+that provides an interface to <code>libev</code> library.
+<code>libev</code> itself supports a number of system-specific backends (epoll, kqueue).</p>
 <p>This loop does only work with PHP 5.
 An update for PHP 7 is <a href="https://github.com/m4rw3r/php-libev/issues/8">unlikely</a>
 to happen any time soon.</p>
@@ -486,7 +668,7 @@ You can invoke <a href="#canceltimer"><code>cancelTimer</code></a> to cancel a p
 <span class="pl-s1"><span class="pl-c1">$</span>loop</span>-&gt;<span class="pl-en">addTimer</span>(<span class="pl-c1">0.3</span>, <span class="pl-k">function</span> () {
     <span class="pl-k">echo</span> <span class="pl-s">'hello '</span>;
 });</pre></div>
-<p>See also <a href="https://github.com/reactphp/event-loop/blob/v1.1.1/examples">example #1</a>.</p>
+<p>See also <a href="https://github.com/reactphp/event-loop/blob/v1.2.0/examples">example #1</a>.</p>
 <p>If you want to access any variables within your callback function, you
 can bind arbitrary data to a callback closure like this:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-k">function</span> <span class="pl-en">hello</span>(<span class="pl-s1"><span class="pl-c1">$</span>name</span>, <span class="pl-smi">LoopInterface</span> <span class="pl-s1"><span class="pl-c1">$</span>loop</span>)
@@ -538,7 +720,7 @@ invoke <a href="#canceltimer"><code>cancelTimer</code></a>.</p>
     <span class="pl-s1"><span class="pl-c1">$</span>loop</span>-&gt;<span class="pl-en">cancelTimer</span>(<span class="pl-s1"><span class="pl-c1">$</span>timer</span>);
     <span class="pl-k">echo</span> <span class="pl-s">'Done'</span> . <span class="pl-c1">PHP_EOL</span>;
 });</pre></div>
-<p>See also <a href="https://github.com/reactphp/event-loop/blob/v1.1.1/examples">example #2</a>.</p>
+<p>See also <a href="https://github.com/reactphp/event-loop/blob/v1.2.0/examples">example #2</a>.</p>
 <p>If you want to limit the number of executions, you can bind
 arbitrary data to a callback closure like this:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-k">function</span> <span class="pl-en">hello</span>(<span class="pl-s1"><span class="pl-c1">$</span>name</span>, <span class="pl-smi">LoopInterface</span> <span class="pl-s1"><span class="pl-c1">$</span>loop</span>)
@@ -582,7 +764,7 @@ accuracy or below.</p>
 <a id="canceltimer" class="anchor" href="#canceltimer" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>cancelTimer()</h4>
 <p>The <code>cancelTimer(TimerInterface $timer): void</code> method can be used to
 cancel a pending timer.</p>
-<p>See also <a href="#addperiodictimer"><code>addPeriodicTimer()</code></a> and <a href="https://github.com/reactphp/event-loop/blob/v1.1.1/examples">example #2</a>.</p>
+<p>See also <a href="#addperiodictimer"><code>addPeriodicTimer()</code></a> and <a href="https://github.com/reactphp/event-loop/blob/v1.2.0/examples">example #2</a>.</p>
 <p>Calling this method on a timer instance that has not been added to this
 loop instance or on a timer that has already been cancelled has no effect.</p>
 <h4>
@@ -618,7 +800,7 @@ of cooperative multitasking).</p>
     <span class="pl-k">echo</span> <span class="pl-s">'c'</span>;
 });
 <span class="pl-k">echo</span> <span class="pl-s">'a'</span>;</pre></div>
-<p>See also <a href="https://github.com/reactphp/event-loop/blob/v1.1.1/examples">example #3</a>.</p>
+<p>See also <a href="https://github.com/reactphp/event-loop/blob/v1.2.0/examples">example #3</a>.</p>
 <h4>
 <a id="addsignal" class="anchor" href="#addsignal" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>addSignal()</h4>
 <p>The <code>addSignal(int $signal, callable $listener): void</code> method can be used to
@@ -635,7 +817,7 @@ any excessive data structures.</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>loop</span>-&gt;<span class="pl-en">addSignal</span>(<span class="pl-c1">SIGINT</span>, <span class="pl-k">function</span> (<span class="pl-smi">int</span> <span class="pl-s1"><span class="pl-c1">$</span>signal</span>) {
     <span class="pl-k">echo</span> <span class="pl-s">'Caught user interrupt signal'</span> . <span class="pl-c1">PHP_EOL</span>;
 });</pre></div>
-<p>See also <a href="https://github.com/reactphp/event-loop/blob/v1.1.1/examples">example #4</a>.</p>
+<p>See also <a href="https://github.com/reactphp/event-loop/blob/v1.2.0/examples">example #4</a>.</p>
 <p>Signaling is only available on Unix-like platform, Windows isn't
 supported due to operating system limitations.
 This method may throw a <code>BadMethodCallException</code> if signals aren't
@@ -678,7 +860,7 @@ can bind arbitrary data to a callback closure like this:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>loop</span>-&gt;<span class="pl-en">addReadStream</span>(<span class="pl-s1"><span class="pl-c1">$</span>stream</span>, <span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>stream</span>) <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>name</span>) {
     <span class="pl-k">echo</span> <span class="pl-s1"><span class="pl-c1">$</span>name</span> . <span class="pl-s">' said: '</span> . <span class="pl-en">fread</span>(<span class="pl-s1"><span class="pl-c1">$</span>stream</span>);
 });</pre></div>
-<p>See also <a href="https://github.com/reactphp/event-loop/blob/v1.1.1/examples">example #11</a>.</p>
+<p>See also <a href="https://github.com/reactphp/event-loop/blob/v1.2.0/examples">example #11</a>.</p>
 <p>You can invoke <a href="#removereadstream"><code>removeReadStream()</code></a> to remove the
 read event listener for this stream.</p>
 <p>The execution order of listeners when multiple streams become ready at
@@ -719,7 +901,7 @@ can bind arbitrary data to a callback closure like this:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>loop</span>-&gt;<span class="pl-en">addWriteStream</span>(<span class="pl-s1"><span class="pl-c1">$</span>stream</span>, <span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>stream</span>) <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>name</span>) {
     <span class="pl-en">fwrite</span>(<span class="pl-s1"><span class="pl-c1">$</span>stream</span>, <span class="pl-s">'Hello '</span> . <span class="pl-s1"><span class="pl-c1">$</span>name</span>);
 });</pre></div>
-<p>See also <a href="https://github.com/reactphp/event-loop/blob/v1.1.1/examples">example #12</a>.</p>
+<p>See also <a href="https://github.com/reactphp/event-loop/blob/v1.2.0/examples">example #12</a>.</p>
 <p>You can invoke <a href="#removewritestream"><code>removeWriteStream()</code></a> to remove the
 write event listener for this stream.</p>
 <p>The execution order of listeners when multiple streams become ready at
@@ -742,10 +924,10 @@ to remove a stream that was never added or is invalid has no effect.</p>
 <a href="https://getcomposer.org/doc/00-intro.md" rel="nofollow">New to Composer?</a></p>
 <p>This project follows <a href="https://semver.org/" rel="nofollow">SemVer</a>.
 This will install the latest supported version:</p>
-<div class="highlight highlight-source-shell"><pre>$ composer require react/event-loop:^1.1.1</pre></div>
+<div class="highlight highlight-source-shell"><pre>$ composer require react/event-loop:^1.2</pre></div>
 <p>See also the <a href="changelog.html">CHANGELOG</a> for details about version upgrades.</p>
 <p>This project aims to run on any platform and thus does not require any PHP
-extensions and supports running on legacy PHP 5.3 through current PHP 7+ and
+extensions and supports running on legacy PHP 5.3 through current PHP 8+ and
 HHVM.
 It's <em>highly recommended to use PHP 7+</em> for this project.</p>
 <p>Installing any of the event loop extensions is suggested, but entirely optional.
@@ -777,7 +959,7 @@ for a list of packages that use the EventLoop in real-world applications.</li>
 
                             <div class="version-selector">
                                 <button class="version-selector__button version-selector__button--latest" data-ctrly="component-version-selector" data-version-selector-control>
-                                    v1.1.1
+                                    v1.2.0
 
                                     <i class="icon-chevron-down" aria-hidden="true"></i>
                                     <i class="icon-chevron-up" aria-hidden="true"></i>
@@ -793,6 +975,11 @@ for a list of packages that use the EventLoop in real-world applications.</li>
                                             </a>
                                         </li>
                                                                                                                                                                                                                     <li>
+                                                <a href="https://github.com/reactphp/event-loop/tree/v1.1.1#readme" class="version-selector__version">
+                                                    v1.1.1
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
                                                 <a href="https://github.com/reactphp/event-loop/tree/v1.1.0#readme" class="version-selector__version">
                                                     v1.1.0
                                                 </a>
@@ -917,19 +1104,19 @@ for a list of packages that use the EventLoop in real-world applications.</li>
 
                         <h3 class="component-info__subtitle">Installation</h3>
 
-                        <div class="highlight highlight-source-shell"><pre>composer require react/event-loop:^1.1.1</pre></div>
+                        <div class="highlight highlight-source-shell"><pre>composer require react/event-loop:^1.2.0</pre></div>
 
                         <h3 class="component-info__subtitle">Contributors</h3>
 
                         <ul class="component-info__contributors">
                                                     <li>
                                 <a href="https://github.com/clue">
-                                    <img src="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=80 2x" alt="clue" title="clue (115 contributions)">
+                                    <img src="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=80 2x" alt="clue" title="clue (116 contributions)">
                                 </a>
                             </li>
                                                     <li>
                                 <a href="https://github.com/WyriHaximus">
-                                    <img src="https://avatars.githubusercontent.com/u/147145?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/147145?v=4&amp;s=80 2x" alt="WyriHaximus" title="WyriHaximus (68 contributions)">
+                                    <img src="https://avatars.githubusercontent.com/u/147145?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/147145?v=4&amp;s=80 2x" alt="WyriHaximus" title="WyriHaximus (69 contributions)">
                                 </a>
                             </li>
                                                     <li>
@@ -983,6 +1170,11 @@ for a list of packages that use the EventLoop in real-world applications.</li>
                                 </a>
                             </li>
                                                     <li>
+                                <a href="https://github.com/SimonFrings">
+                                    <img src="https://avatars.githubusercontent.com/u/44357440?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/44357440?v=4&amp;s=80 2x" alt="SimonFrings" title="SimonFrings (4 contribution)">
+                                </a>
+                            </li>
+                                                    <li>
                                 <a href="https://github.com/cameronjacobson">
                                     <img src="https://avatars.githubusercontent.com/u/2303661?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/2303661?v=4&amp;s=80 2x" alt="cameronjacobson" title="cameronjacobson (3 contribution)">
                                 </a>
@@ -990,11 +1182,6 @@ for a list of packages that use the EventLoop in real-world applications.</li>
                                                     <li>
                                 <a href="https://github.com/kelunik">
                                     <img src="https://avatars.githubusercontent.com/u/2743004?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/2743004?v=4&amp;s=80 2x" alt="kelunik" title="kelunik (3 contribution)">
-                                </a>
-                            </li>
-                                                    <li>
-                                <a href="https://github.com/SimonFrings">
-                                    <img src="https://avatars.githubusercontent.com/u/44357440?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/44357440?v=4&amp;s=80 2x" alt="SimonFrings" title="SimonFrings (3 contribution)">
                                 </a>
                             </li>
                                                     <li>
@@ -1086,7 +1273,7 @@ for a list of packages that use the EventLoop in real-world applications.</li>
         <mask id="reactphp-event-loop-participation-sparkline" x="0" y="0" width="320" height="40" >
             <polyline 
                 transform="translate(0, 40) scale(1,-1)"
-                points="0,3 6,2 12,1 18,1 24,1 30,1 36,4 42,1 48,2 54,2 60,1 66,1 72,1 78,1 84,1 90,1 96,1 102,1 108,1 114,1 120,1 126,1 132,1 138,1 144,1 150,1 156,1 162,1 168,1 174,1 180,1 186,1 192,1 198,1 204,1 210,1 216,1 222,1 228,2 234,1 240,1 246,1 252,1 258,1 264,1 270,1 276,1 282,3 288,1 294,1 300,13 306,6" 
+                points="0,3 6,2 12,1 18,1 24,1 30,1 36,4 42,1 48,3 54,1 60,1 66,1 72,1 78,1 84,1 90,1 96,1 102,1 108,1 114,1 120,1 126,1 132,1 138,1 144,1 150,1 156,1 162,1 168,1 174,1 180,1 186,1 192,1 198,1 204,1 210,1 216,1 222,1 228,2 234,1 240,1 246,1 252,1 258,1 264,1 270,1 276,2 282,2 288,1 294,2 300,13 306,7" 
                 fill="transparent" 
                 stroke="#40a977" 
                 stroke-width="2"

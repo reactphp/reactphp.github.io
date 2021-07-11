@@ -70,7 +70,7 @@ Stream - ReactPHP</title>
                         EventLoop
 
                         <span class="off-canvas-menu__version">
-                            v1.1.1
+                            v1.2.0
                         </span>
                     </a>
                 </li>
@@ -79,7 +79,7 @@ Stream - ReactPHP</title>
                         Stream
 
                         <span class="off-canvas-menu__version">
-                            v1.1.1
+                            v1.2.0
                         </span>
                     </a>
                 </li>
@@ -102,7 +102,7 @@ Stream - ReactPHP</title>
                         Socket
 
                         <span class="off-canvas-menu__version">
-                            v1.7.0
+                            v1.8.0
                         </span>
                     </a>
                 </li>
@@ -111,7 +111,7 @@ Stream - ReactPHP</title>
                         Datagram
 
                         <span class="off-canvas-menu__version">
-                            v1.7.0
+                            v1.8.0
                         </span>
                     </a>
                 </li>
@@ -125,7 +125,7 @@ Stream - ReactPHP</title>
                         HTTP
 
                         <span class="off-canvas-menu__version">
-                            v1.3.0
+                            v1.4.0
                         </span>
                     </a>
                 </li>
@@ -143,7 +143,7 @@ Stream - ReactPHP</title>
                         DNS
 
                         <span class="off-canvas-menu__version">
-                            v1.7.0
+                            v1.8.0
                         </span>
                     </a>
                 </li>
@@ -166,7 +166,7 @@ Stream - ReactPHP</title>
                         ChildProcess
 
                         <span class="off-canvas-menu__version">
-                            v0.6.2
+                            v0.6.3
                         </span>
                     </a>
                 </li>
@@ -175,7 +175,7 @@ Stream - ReactPHP</title>
                         PromiseTimer
 
                         <span class="off-canvas-menu__version">
-                            v1.6.0
+                            v1.7.0
                         </span>
                     </a>
                 </li>
@@ -203,7 +203,7 @@ Stream - ReactPHP</title>
                                     <h1>Stream</h1>
 
                     
-<p><a href="https://travis-ci.org/reactphp/stream" rel="nofollow"><img src="https://camo.githubusercontent.com/355b34abbed7922a8cb8f8a9aa845a8d56fe354f1d956a76e3bead55af6dacb3/68747470733a2f2f7472617669732d63692e6f72672f72656163747068702f73747265616d2e7376673f6272616e63683d6d6173746572" alt="Build Status" data-canonical-src="https://travis-ci.org/reactphp/stream.svg?branch=master" style="max-width:100%;"></a></p>
+<p><a href="https://github.com/reactphp/stream/actions"><img src="https://github.com/reactphp/stream/workflows/CI/badge.svg" alt="CI status" style="max-width:100%;"></a></p>
 <p>Event-driven readable and writable streams for non-blocking I/O in <a href="https://reactphp.org/" rel="nofollow">ReactPHP</a>.</p>
 <p>In order to make the <a href="../event-loop/">EventLoop</a>
 easier to use, this component introduces the powerful concept of "streams".
@@ -458,7 +458,7 @@ resume reading incoming data events.</p>
 <p>Re-attach the data source after a previous <code>pause()</code>.</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">pause</span>();
 
-<span class="pl-s1"><span class="pl-c1">$</span>loop</span>-&gt;<span class="pl-en">addTimer</span>(<span class="pl-c1">1.0</span>, <span class="pl-k">function</span> () <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>stream</span>) {
+<span class="pl-v">Loop</span>::<span class="pl-en">addTimer</span>(<span class="pl-c1">1.0</span>, <span class="pl-k">function</span> () <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>stream</span>) {
     <span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">resume</span>();
 });</pre></div>
 <p>Note that both methods can be called any number of times, in particular
@@ -763,7 +763,7 @@ buffers and simply discards any buffer contents.
 Likewise, this method may also be called after calling <code>end()</code> on a
 stream in order to stop waiting for the stream to flush its final data.</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">end</span>();
-<span class="pl-s1"><span class="pl-c1">$</span>loop</span>-&gt;<span class="pl-en">addTimer</span>(<span class="pl-c1">1.0</span>, <span class="pl-k">function</span> () <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>stream</span>) {
+<span class="pl-v">Loop</span>::<span class="pl-en">addTimer</span>(<span class="pl-c1">1.0</span>, <span class="pl-k">function</span> () <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>stream</span>) {
     <span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">close</span>();
 });</pre></div>
 <p>If this stream is a <code>DuplexStreamInterface</code>, you should also notice
@@ -836,7 +836,7 @@ As an alternative, you may want to use higher-level libraries listed above.</p>
 <a href="#readablestreaminterface"><code>ReadableStreamInterface</code></a> for PHP's stream resources.</p>
 <p>This can be used to represent a read-only resource like a file stream opened in
 readable mode or a stream such as <code>STDIN</code>:</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>stream</span> = <span class="pl-k">new</span> <span class="pl-v">ReadableResourceStream</span>(<span class="pl-c1">STDIN</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>stream</span> = <span class="pl-k">new</span> <span class="pl-v">ReadableResourceStream</span>(<span class="pl-c1">STDIN</span>);
 <span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'data'</span>, <span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>chunk</span>) {
     <span class="pl-k">echo</span> <span class="pl-s1"><span class="pl-c1">$</span>chunk</span>;
 });
@@ -848,7 +848,7 @@ readable mode or a stream such as <code>STDIN</code>:</p>
 that is opened in reading mode (e.g. <code>fopen()</code> mode <code>r</code>).
 Otherwise, it will throw an <code>InvalidArgumentException</code>:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-c">// throws InvalidArgumentException</span>
-<span class="pl-s1"><span class="pl-c1">$</span>stream</span> = <span class="pl-k">new</span> <span class="pl-v">ReadableResourceStream</span>(<span class="pl-c1">false</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);</pre></div>
+<span class="pl-s1"><span class="pl-c1">$</span>stream</span> = <span class="pl-k">new</span> <span class="pl-v">ReadableResourceStream</span>(<span class="pl-c1">false</span>);</pre></div>
 <p>See also the <a href="#readableresourcestream"><code>DuplexResourceStream</code></a> for read-and-write
 stream resources otherwise.</p>
 <p>Internally, this class tries to enable non-blocking mode on the stream resource
@@ -856,11 +856,16 @@ which may not be supported for all stream resources.
 Most notably, this is not supported by pipes on Windows (STDIN etc.).
 If this fails, it will throw a <code>RuntimeException</code>:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-c">// throws RuntimeException on Windows</span>
-<span class="pl-s1"><span class="pl-c1">$</span>stream</span> = <span class="pl-k">new</span> <span class="pl-v">ReadableResourceStream</span>(<span class="pl-c1">STDIN</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);</pre></div>
+<span class="pl-s1"><span class="pl-c1">$</span>stream</span> = <span class="pl-k">new</span> <span class="pl-v">ReadableResourceStream</span>(<span class="pl-c1">STDIN</span>);</pre></div>
 <p>Once the constructor is called with a valid stream resource, this class will
 take care of the underlying stream resource.
 You SHOULD only use its public API and SHOULD NOT interfere with the underlying
 stream resource manually.</p>
+<p>This class takes an optional <code>LoopInterface|null $loop</code> parameter that can be used to
+pass the event loop instance to use for this object. You can use a <code>null</code> value
+here in order to use the <a href="../event-loop/#loop">default loop</a>.
+This value SHOULD NOT be given unless you're sure you want to explicitly use a
+given event loop instance.</p>
 <p>This class takes an optional <code>int|null $readChunkSize</code> parameter that controls
 the maximum buffer size in bytes to read at once from the stream.
 You can use a <code>null</code> value here in order to apply its default value.
@@ -874,7 +879,7 @@ underlying stream resource.
 This should read until the stream resource is not readable anymore
 (i.e. underlying buffer drained), note that this does not neccessarily
 mean it reached EOF.</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>stream</span> = <span class="pl-k">new</span> <span class="pl-v">ReadableResourceStream</span>(<span class="pl-c1">STDIN</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>, <span class="pl-c1">8192</span>);</pre></div>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>stream</span> = <span class="pl-k">new</span> <span class="pl-v">ReadableResourceStream</span>(<span class="pl-c1">STDIN</span>, <span class="pl-c1">null</span>, <span class="pl-c1">8192</span>);</pre></div>
 <blockquote>
 <p>PHP bug warning: If the PHP process has explicitly been started without a
 <code>STDIN</code> stream, then trying to read from <code>STDIN</code> may return data from
@@ -882,13 +887,17 @@ another stream resource. This does not happen if you start this with an empty
 stream like <code>php test.php &lt; /dev/null</code> instead of <code>php test.php &lt;&amp;-</code>.
 See <a href="https://github.com/reactphp/stream/issues/81">#81</a> for more details.</p>
 </blockquote>
+<blockquote>
+<p>Changelog: As of v1.2.0 the <code>$loop</code> parameter can be omitted (or skipped with a
+<code>null</code> value) to use the <a href="../event-loop/#loop">default loop</a>.</p>
+</blockquote>
 <h3>
 <a id="writableresourcestream" class="anchor" href="#writableresourcestream" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>WritableResourceStream</h3>
 <p>The <code>WritableResourceStream</code> is a concrete implementation of the
 <a href="#writablestreaminterface"><code>WritableStreamInterface</code></a> for PHP's stream resources.</p>
 <p>This can be used to represent a write-only resource like a file stream opened in
 writable mode or a stream such as <code>STDOUT</code> or <code>STDERR</code>:</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>stream</span> = <span class="pl-k">new</span> <span class="pl-v">WritableResourceStream</span>(<span class="pl-c1">STDOUT</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>stream</span> = <span class="pl-k">new</span> <span class="pl-v">WritableResourceStream</span>(<span class="pl-c1">STDOUT</span>);
 <span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">write</span>(<span class="pl-s">'hello!'</span>);
 <span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">end</span>();</pre></div>
 <p>See also <a href="#writablestreaminterface"><code>WritableStreamInterface</code></a> for more details.</p>
@@ -896,7 +905,7 @@ writable mode or a stream such as <code>STDOUT</code> or <code>STDERR</code>:</p
 that is opened for writing.
 Otherwise, it will throw an <code>InvalidArgumentException</code>:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-c">// throws InvalidArgumentException</span>
-<span class="pl-s1"><span class="pl-c1">$</span>stream</span> = <span class="pl-k">new</span> <span class="pl-v">WritableResourceStream</span>(<span class="pl-c1">false</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);</pre></div>
+<span class="pl-s1"><span class="pl-c1">$</span>stream</span> = <span class="pl-k">new</span> <span class="pl-v">WritableResourceStream</span>(<span class="pl-c1">false</span>);</pre></div>
 <p>See also the <a href="#readableresourcestream"><code>DuplexResourceStream</code></a> for read-and-write
 stream resources otherwise.</p>
 <p>Internally, this class tries to enable non-blocking mode on the stream resource
@@ -904,7 +913,7 @@ which may not be supported for all stream resources.
 Most notably, this is not supported by pipes on Windows (STDOUT, STDERR etc.).
 If this fails, it will throw a <code>RuntimeException</code>:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-c">// throws RuntimeException on Windows</span>
-<span class="pl-s1"><span class="pl-c1">$</span>stream</span> = <span class="pl-k">new</span> <span class="pl-v">WritableResourceStream</span>(<span class="pl-c1">STDOUT</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);</pre></div>
+<span class="pl-s1"><span class="pl-c1">$</span>stream</span> = <span class="pl-k">new</span> <span class="pl-v">WritableResourceStream</span>(<span class="pl-c1">STDOUT</span>);</pre></div>
 <p>Once the constructor is called with a valid stream resource, this class will
 take care of the underlying stream resource.
 You SHOULD only use its public API and SHOULD NOT interfere with the underlying
@@ -915,11 +924,16 @@ ready to accept data.
 For this, it uses an in-memory buffer string to collect all outstanding writes.
 This buffer has a soft-limit applied which defines how much data it is willing
 to accept before the caller SHOULD stop sending further data.</p>
+<p>This class takes an optional <code>LoopInterface|null $loop</code> parameter that can be used to
+pass the event loop instance to use for this object. You can use a <code>null</code> value
+here in order to use the <a href="../event-loop/#loop">default loop</a>.
+This value SHOULD NOT be given unless you're sure you want to explicitly use a
+given event loop instance.</p>
 <p>This class takes an optional <code>int|null $writeBufferSoftLimit</code> parameter that controls
 this maximum buffer size in bytes.
 You can use a <code>null</code> value here in order to apply its default value.
 This value SHOULD NOT be changed unless you know what you're doing.</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>stream</span> = <span class="pl-k">new</span> <span class="pl-v">WritableResourceStream</span>(<span class="pl-c1">STDOUT</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>, <span class="pl-c1">8192</span>);</pre></div>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>stream</span> = <span class="pl-k">new</span> <span class="pl-v">WritableResourceStream</span>(<span class="pl-c1">STDOUT</span>, <span class="pl-c1">null</span>, <span class="pl-c1">8192</span>);</pre></div>
 <p>This class takes an optional <code>int|null $writeChunkSize</code> parameter that controls
 this maximum buffer size in bytes to write at once to the stream.
 You can use a <code>null</code> value here in order to apply its default value.
@@ -930,8 +944,12 @@ of bytes written may be lower if the stream resource has less than X bytes
 currently available.
 This can be <code>-1</code> which means "write everything available" to the
 underlying stream resource.</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>stream</span> = <span class="pl-k">new</span> <span class="pl-v">WritableResourceStream</span>(<span class="pl-c1">STDOUT</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>, <span class="pl-c1">null</span>, <span class="pl-c1">8192</span>);</pre></div>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>stream</span> = <span class="pl-k">new</span> <span class="pl-v">WritableResourceStream</span>(<span class="pl-c1">STDOUT</span>, <span class="pl-c1">null</span>, <span class="pl-c1">null</span>, <span class="pl-c1">8192</span>);</pre></div>
 <p>See also <a href="#write"><code>write()</code></a> for more details.</p>
+<blockquote>
+<p>Changelog: As of v1.2.0 the <code>$loop</code> parameter can be omitted (or skipped with a
+<code>null</code> value) to use the <a href="../event-loop/#loop">default loop</a>.</p>
+</blockquote>
 <h3>
 <a id="duplexresourcestream" class="anchor" href="#duplexresourcestream" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>DuplexResourceStream</h3>
 <p>The <code>DuplexResourceStream</code> is a concrete implementation of the
@@ -939,7 +957,7 @@ underlying stream resource.</p>
 <p>This can be used to represent a read-and-write resource like a file stream opened
 in read and write mode mode or a stream such as a TCP/IP connection:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>conn</span> = <span class="pl-en">stream_socket_client</span>(<span class="pl-s">'tcp://google.com:80'</span>);
-<span class="pl-s1"><span class="pl-c1">$</span>stream</span> = <span class="pl-k">new</span> <span class="pl-v">DuplexResourceStream</span>(<span class="pl-s1"><span class="pl-c1">$</span>conn</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>stream</span> = <span class="pl-k">new</span> <span class="pl-v">DuplexResourceStream</span>(<span class="pl-s1"><span class="pl-c1">$</span>conn</span>);
 <span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">write</span>(<span class="pl-s">'hello!'</span>);
 <span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">end</span>();</pre></div>
 <p>See also <a href="#duplexstreaminterface"><code>DuplexStreamInterface</code></a> for more details.</p>
@@ -947,7 +965,7 @@ in read and write mode mode or a stream such as a TCP/IP connection:</p>
 that is opened for reading <em>and</em> writing.
 Otherwise, it will throw an <code>InvalidArgumentException</code>:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-c">// throws InvalidArgumentException</span>
-<span class="pl-s1"><span class="pl-c1">$</span>stream</span> = <span class="pl-k">new</span> <span class="pl-v">DuplexResourceStream</span>(<span class="pl-c1">false</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);</pre></div>
+<span class="pl-s1"><span class="pl-c1">$</span>stream</span> = <span class="pl-k">new</span> <span class="pl-v">DuplexResourceStream</span>(<span class="pl-c1">false</span>);</pre></div>
 <p>See also the <a href="#readableresourcestream"><code>ReadableResourceStream</code></a> for read-only
 and the <a href="#writableresourcestream"><code>WritableResourceStream</code></a> for write-only
 stream resources otherwise.</p>
@@ -956,11 +974,16 @@ which may not be supported for all stream resources.
 Most notably, this is not supported by pipes on Windows (STDOUT, STDERR etc.).
 If this fails, it will throw a <code>RuntimeException</code>:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-c">// throws RuntimeException on Windows</span>
-<span class="pl-s1"><span class="pl-c1">$</span>stream</span> = <span class="pl-k">new</span> <span class="pl-v">DuplexResourceStream</span>(<span class="pl-c1">STDOUT</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);</pre></div>
+<span class="pl-s1"><span class="pl-c1">$</span>stream</span> = <span class="pl-k">new</span> <span class="pl-v">DuplexResourceStream</span>(<span class="pl-c1">STDOUT</span>);</pre></div>
 <p>Once the constructor is called with a valid stream resource, this class will
 take care of the underlying stream resource.
 You SHOULD only use its public API and SHOULD NOT interfere with the underlying
 stream resource manually.</p>
+<p>This class takes an optional <code>LoopInterface|null $loop</code> parameter that can be used to
+pass the event loop instance to use for this object. You can use a <code>null</code> value
+here in order to use the <a href="../event-loop/#loop">default loop</a>.
+This value SHOULD NOT be given unless you're sure you want to explicitly use a
+given event loop instance.</p>
 <p>This class takes an optional <code>int|null $readChunkSize</code> parameter that controls
 the maximum buffer size in bytes to read at once from the stream.
 You can use a <code>null</code> value here in order to apply its default value.
@@ -975,7 +998,7 @@ This should read until the stream resource is not readable anymore
 (i.e. underlying buffer drained), note that this does not neccessarily
 mean it reached EOF.</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>conn</span> = <span class="pl-en">stream_socket_client</span>(<span class="pl-s">'tcp://google.com:80'</span>);
-<span class="pl-s1"><span class="pl-c1">$</span>stream</span> = <span class="pl-k">new</span> <span class="pl-v">DuplexResourceStream</span>(<span class="pl-s1"><span class="pl-c1">$</span>conn</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>, <span class="pl-c1">8192</span>);</pre></div>
+<span class="pl-s1"><span class="pl-c1">$</span>stream</span> = <span class="pl-k">new</span> <span class="pl-v">DuplexResourceStream</span>(<span class="pl-s1"><span class="pl-c1">$</span>conn</span>, <span class="pl-c1">null</span>, <span class="pl-c1">8192</span>);</pre></div>
 <p>Any <code>write()</code> calls to this class will not be performed instantly, but will
 be performed asynchronously, once the EventLoop reports the stream resource is
 ready to accept data.
@@ -989,9 +1012,13 @@ This value SHOULD NOT be changed unless you know what you're doing.</p>
 <p>If you want to change the write buffer soft limit, you can pass an instance of
 <a href="#writableresourcestream"><code>WritableResourceStream</code></a> like this:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>conn</span> = <span class="pl-en">stream_socket_client</span>(<span class="pl-s">'tcp://google.com:80'</span>);
-<span class="pl-s1"><span class="pl-c1">$</span>buffer</span> = <span class="pl-k">new</span> <span class="pl-v">WritableResourceStream</span>(<span class="pl-s1"><span class="pl-c1">$</span>conn</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>, <span class="pl-c1">8192</span>);
-<span class="pl-s1"><span class="pl-c1">$</span>stream</span> = <span class="pl-k">new</span> <span class="pl-v">DuplexResourceStream</span>(<span class="pl-s1"><span class="pl-c1">$</span>conn</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>, <span class="pl-c1">null</span>, <span class="pl-s1"><span class="pl-c1">$</span>buffer</span>);</pre></div>
+<span class="pl-s1"><span class="pl-c1">$</span>buffer</span> = <span class="pl-k">new</span> <span class="pl-v">WritableResourceStream</span>(<span class="pl-s1"><span class="pl-c1">$</span>conn</span>, <span class="pl-c1">null</span>, <span class="pl-c1">8192</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>stream</span> = <span class="pl-k">new</span> <span class="pl-v">DuplexResourceStream</span>(<span class="pl-s1"><span class="pl-c1">$</span>conn</span>, <span class="pl-c1">null</span>, <span class="pl-c1">null</span>, <span class="pl-s1"><span class="pl-c1">$</span>buffer</span>);</pre></div>
 <p>See also <a href="#writableresourcestream"><code>WritableResourceStream</code></a> for more details.</p>
+<blockquote>
+<p>Changelog: As of v1.2.0 the <code>$loop</code> parameter can be omitted (or skipped with a
+<code>null</code> value) to use the <a href="../event-loop/#loop">default loop</a>.</p>
+</blockquote>
 <h3>
 <a id="throughstream" class="anchor" href="#throughstream" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>ThroughStream</h3>
 <p>The <code>ThroughStream</code> implements the
@@ -1046,8 +1073,8 @@ single duplex stream from two individual streams implementing
 <p>This is useful for some APIs which may require a single
 <a href="#duplexstreaminterface"><code>DuplexStreamInterface</code></a> or simply because it's often
 more convenient to work with a single stream instance like this:</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>stdin</span> = <span class="pl-k">new</span> <span class="pl-v">ReadableResourceStream</span>(<span class="pl-c1">STDIN</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
-<span class="pl-s1"><span class="pl-c1">$</span>stdout</span> = <span class="pl-k">new</span> <span class="pl-v">WritableResourceStream</span>(<span class="pl-c1">STDOUT</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>stdin</span> = <span class="pl-k">new</span> <span class="pl-v">ReadableResourceStream</span>(<span class="pl-c1">STDIN</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>stdout</span> = <span class="pl-k">new</span> <span class="pl-v">WritableResourceStream</span>(<span class="pl-c1">STDOUT</span>);
 
 <span class="pl-s1"><span class="pl-c1">$</span>stdio</span> = <span class="pl-k">new</span> <span class="pl-v">CompositeStream</span>(<span class="pl-s1"><span class="pl-c1">$</span>stdin</span>, <span class="pl-s1"><span class="pl-c1">$</span>stdout</span>);
 
@@ -1069,14 +1096,10 @@ duplex stream, it will <code>close()</code> the other side and return a closed s
 <a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h2>
 <p>The following example can be used to pipe the contents of a source file into
 a destination file without having to ever read the whole file into memory:</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>loop</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">EventLoop</span>\<span class="pl-v">StreamSelectLoop</span>;
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>source</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Stream</span>\<span class="pl-v">ReadableResourceStream</span>(<span class="pl-en">fopen</span>(<span class="pl-s">'source.txt'</span>, <span class="pl-s">'r'</span>));
+<span class="pl-s1"><span class="pl-c1">$</span>dest</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Stream</span>\<span class="pl-v">WritableResourceStream</span>(<span class="pl-en">fopen</span>(<span class="pl-s">'destination.txt'</span>, <span class="pl-s">'w'</span>));
 
-<span class="pl-s1"><span class="pl-c1">$</span>source</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Stream</span>\<span class="pl-v">ReadableResourceStream</span>(<span class="pl-en">fopen</span>(<span class="pl-s">'source.txt'</span>, <span class="pl-s">'r'</span>), <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
-<span class="pl-s1"><span class="pl-c1">$</span>dest</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Stream</span>\<span class="pl-v">WritableResourceStream</span>(<span class="pl-en">fopen</span>(<span class="pl-s">'destination.txt'</span>, <span class="pl-s">'w'</span>), <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
-
-<span class="pl-s1"><span class="pl-c1">$</span>source</span>-&gt;<span class="pl-en">pipe</span>(<span class="pl-s1"><span class="pl-c1">$</span>dest</span>);
-
-<span class="pl-s1"><span class="pl-c1">$</span>loop</span>-&gt;<span class="pl-en">run</span>();</pre></div>
+<span class="pl-s1"><span class="pl-c1">$</span>source</span>-&gt;<span class="pl-en">pipe</span>(<span class="pl-s1"><span class="pl-c1">$</span>dest</span>);</pre></div>
 <blockquote>
 <p>Note that this example uses <code>fopen()</code> for illustration purposes only.
 This should not be used in a truly async program because the filesystem is
@@ -1090,10 +1113,10 @@ examples.</p>
 <a href="https://getcomposer.org/doc/00-intro.md" rel="nofollow">New to Composer?</a></p>
 <p>This project follows <a href="https://semver.org/" rel="nofollow">SemVer</a>.
 This will install the latest supported version:</p>
-<div class="highlight highlight-source-shell"><pre>$ composer require react/stream:^1.1.1</pre></div>
+<div class="highlight highlight-source-shell"><pre>$ composer require react/stream:^1.2</pre></div>
 <p>See also the <a href="changelog.html">CHANGELOG</a> for details about version upgrades.</p>
 <p>This project aims to run on any platform and thus does not require any PHP
-extensions and supports running on legacy PHP 5.3 through current PHP 7+ and HHVM.
+extensions and supports running on legacy PHP 5.3 through current PHP 8+ and HHVM.
 It's <em>highly recommended to use PHP 7+</em> for this project due to its vast
 performance improvements.</p>
 <h2>
@@ -1127,7 +1150,7 @@ for a list of packages that use streams in real-world applications.</li>
 
                             <div class="version-selector">
                                 <button class="version-selector__button version-selector__button--latest" data-ctrly="component-version-selector" data-version-selector-control>
-                                    v1.1.1
+                                    v1.2.0
 
                                     <i class="icon-chevron-down" aria-hidden="true"></i>
                                     <i class="icon-chevron-up" aria-hidden="true"></i>
@@ -1143,6 +1166,11 @@ for a list of packages that use streams in real-world applications.</li>
                                             </a>
                                         </li>
                                                                                                                                                                                                                     <li>
+                                                <a href="https://github.com/reactphp/stream/tree/v1.1.1#readme" class="version-selector__version">
+                                                    v1.1.1
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
                                                 <a href="https://github.com/reactphp/stream/tree/v1.1.0#readme" class="version-selector__version">
                                                     v1.1.0
                                                 </a>
@@ -1332,14 +1360,14 @@ for a list of packages that use streams in real-world applications.</li>
 
                         <h3 class="component-info__subtitle">Installation</h3>
 
-                        <div class="highlight highlight-source-shell"><pre>composer require react/stream:^1.1.1</pre></div>
+                        <div class="highlight highlight-source-shell"><pre>composer require react/stream:^1.2.0</pre></div>
 
                         <h3 class="component-info__subtitle">Contributors</h3>
 
                         <ul class="component-info__contributors">
                                                     <li>
                                 <a href="https://github.com/clue">
-                                    <img src="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=80 2x" alt="clue" title="clue (172 contributions)">
+                                    <img src="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=80 2x" alt="clue" title="clue (176 contributions)">
                                 </a>
                             </li>
                                                     <li>

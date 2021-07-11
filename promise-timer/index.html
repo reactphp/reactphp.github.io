@@ -70,7 +70,7 @@ PromiseTimer - ReactPHP</title>
                         EventLoop
 
                         <span class="off-canvas-menu__version">
-                            v1.1.1
+                            v1.2.0
                         </span>
                     </a>
                 </li>
@@ -79,7 +79,7 @@ PromiseTimer - ReactPHP</title>
                         Stream
 
                         <span class="off-canvas-menu__version">
-                            v1.1.1
+                            v1.2.0
                         </span>
                     </a>
                 </li>
@@ -102,7 +102,7 @@ PromiseTimer - ReactPHP</title>
                         Socket
 
                         <span class="off-canvas-menu__version">
-                            v1.7.0
+                            v1.8.0
                         </span>
                     </a>
                 </li>
@@ -111,7 +111,7 @@ PromiseTimer - ReactPHP</title>
                         Datagram
 
                         <span class="off-canvas-menu__version">
-                            v1.7.0
+                            v1.8.0
                         </span>
                     </a>
                 </li>
@@ -125,7 +125,7 @@ PromiseTimer - ReactPHP</title>
                         HTTP
 
                         <span class="off-canvas-menu__version">
-                            v1.3.0
+                            v1.4.0
                         </span>
                     </a>
                 </li>
@@ -143,7 +143,7 @@ PromiseTimer - ReactPHP</title>
                         DNS
 
                         <span class="off-canvas-menu__version">
-                            v1.7.0
+                            v1.8.0
                         </span>
                     </a>
                 </li>
@@ -166,7 +166,7 @@ PromiseTimer - ReactPHP</title>
                         ChildProcess
 
                         <span class="off-canvas-menu__version">
-                            v0.6.2
+                            v0.6.3
                         </span>
                     </a>
                 </li>
@@ -175,7 +175,7 @@ PromiseTimer - ReactPHP</title>
                         PromiseTimer
 
                         <span class="off-canvas-menu__version">
-                            v1.6.0
+                            v1.7.0
                         </span>
                     </a>
                 </li>
@@ -203,7 +203,7 @@ PromiseTimer - ReactPHP</title>
                                     <h1>PromiseTimer</h1>
 
                     
-<p><a href="https://travis-ci.org/reactphp/promise-timer" rel="nofollow"><img src="https://camo.githubusercontent.com/bfd7a03e1939d030dfe09bc9496626b0bb37ae733c05e50a912b5b1e9966e9e2/68747470733a2f2f7472617669732d63692e6f72672f72656163747068702f70726f6d6973652d74696d65722e7376673f6272616e63683d6d6173746572" alt="Build Status" data-canonical-src="https://travis-ci.org/reactphp/promise-timer.svg?branch=master" style="max-width:100%;"></a></p>
+<p><a href="https://github.com/reactphp/promise-timer/actions"><img src="https://github.com/reactphp/promise-timer/workflows/CI/badge.svg" alt="CI status" style="max-width:100%;"></a></p>
 <p>A trivial implementation of timeouts for <code>Promise</code>s, built on top of <a href="https://reactphp.org/" rel="nofollow">ReactPHP</a>.</p>
 <p><strong>Table of contents</strong></p>
 <ul>
@@ -251,7 +251,7 @@ All functions reside under the <code>React\Promise\Timer</code> namespace.</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-en">\<span class="pl-v">React</span>\<span class="pl-v">Promise</span>\<span class="pl-v">Timer</span>\timeout</span>(…);</pre></div>
 <h3>
 <a id="timeout" class="anchor" href="#timeout" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>timeout()</h3>
-<p>The <code>timeout(PromiseInterface $promise, $time, LoopInterface $loop)</code> function
+<p>The <code>timeout(PromiseInterface $promise, $time, LoopInterface $loop = null)</code> function
 can be used to <em>cancel</em> operations that take <em>too long</em>.
 You need to pass in an input <code>$promise</code> that represents a pending operation and timeout parameters.
 It returns a new <code>Promise</code> with the following resolution behavior:</p>
@@ -266,14 +266,19 @@ This implies that if you pass a really small (or negative) value, it will still
 start a timer and will thus trigger at the earliest possible time in the future.</p>
 <p>If the input <code>$promise</code> is already settled, then the resulting promise will
 resolve or reject immediately without starting a timer at all.</p>
+<p>This function takes an optional <code>LoopInterface|null $loop</code> parameter that can be used to
+pass the event loop instance to use. You can use a <code>null</code> value here in order to
+use the <a href="../event-loop/#loop">default loop</a>. This value
+SHOULD NOT be given unless you're sure you want to explicitly use a given event
+loop instance.</p>
 <p>A common use case for handling only resolved values looks like this:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>promise</span> = <span class="pl-en">accessSomeRemoteResource</span>();
-<span class="pl-en"><span class="pl-v">Timer</span>\timeout</span>(<span class="pl-s1"><span class="pl-c1">$</span>promise</span>, <span class="pl-c1">10.0</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>value</span>) {
+<span class="pl-en"><span class="pl-v">Timer</span>\timeout</span>(<span class="pl-s1"><span class="pl-c1">$</span>promise</span>, <span class="pl-c1">10.0</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>value</span>) {
     <span class="pl-c">// the operation finished within 10.0 seconds</span>
 });</pre></div>
 <p>A more complete example could look like this:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>promise</span> = <span class="pl-en">accessSomeRemoteResource</span>();
-<span class="pl-en"><span class="pl-v">Timer</span>\timeout</span>(<span class="pl-s1"><span class="pl-c1">$</span>promise</span>, <span class="pl-c1">10.0</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>)-&gt;<span class="pl-en">then</span>(
+<span class="pl-en"><span class="pl-v">Timer</span>\timeout</span>(<span class="pl-s1"><span class="pl-c1">$</span>promise</span>, <span class="pl-c1">10.0</span>)-&gt;<span class="pl-en">then</span>(
     <span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>value</span>) {
         <span class="pl-c">// the operation finished within 10.0 seconds</span>
     },
@@ -286,7 +291,7 @@ resolve or reject immediately without starting a timer at all.</p>
     }
 );</pre></div>
 <p>Or if you're using <a href="../promise/">react/promise v2.2.0</a> or up:</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-en"><span class="pl-v">Timer</span>\timeout</span>(<span class="pl-s1"><span class="pl-c1">$</span>promise</span>, <span class="pl-c1">10.0</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>)
+<div class="highlight highlight-text-html-php"><pre><span class="pl-en"><span class="pl-v">Timer</span>\timeout</span>(<span class="pl-s1"><span class="pl-c1">$</span>promise</span>, <span class="pl-c1">10.0</span>)
     -&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>value</span>) {
         <span class="pl-c">// the operation finished within 10.0 seconds</span>
     })
@@ -357,7 +362,7 @@ input <code>$promise</code> at any time.
 This means that the <code>timeout()</code> handling does not affect cancellation of the
 input <code>$promise</code>, as demonstrated in the following example:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>promise</span> = <span class="pl-en">accessSomeRemoteResource</span>();
-<span class="pl-s1"><span class="pl-c1">$</span>timeout</span> = <span class="pl-en"><span class="pl-v">Timer</span>\timeout</span>(<span class="pl-s1"><span class="pl-c1">$</span>promise</span>, <span class="pl-c1">10.0</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>timeout</span> = <span class="pl-en"><span class="pl-v">Timer</span>\timeout</span>(<span class="pl-s1"><span class="pl-c1">$</span>promise</span>, <span class="pl-c1">10.0</span>);
 
 <span class="pl-s1"><span class="pl-c1">$</span>promise</span>-&gt;<span class="pl-en">cancel</span>();</pre></div>
 <p>The registered <a href="#cancellation-handler">cancellation handler</a> is responsible for
@@ -376,7 +381,7 @@ The same happens if the input <code>$promise</code> does not register a
 <a id="output-cancellation" class="anchor" href="#output-cancellation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Output cancellation</h4>
 <p>Similarily, you can also explicitly <code>cancel()</code> the resulting promise like this:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>promise</span> = <span class="pl-en">accessSomeRemoteResource</span>();
-<span class="pl-s1"><span class="pl-c1">$</span>timeout</span> = <span class="pl-en"><span class="pl-v">Timer</span>\timeout</span>(<span class="pl-s1"><span class="pl-c1">$</span>promise</span>, <span class="pl-c1">10.0</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>timeout</span> = <span class="pl-en"><span class="pl-v">Timer</span>\timeout</span>(<span class="pl-s1"><span class="pl-c1">$</span>promise</span>, <span class="pl-c1">10.0</span>);
 
 <span class="pl-s1"><span class="pl-c1">$</span>timeout</span>-&gt;<span class="pl-en">cancel</span>();</pre></div>
 <p>Note how this looks very similar to the above <a href="#input-cancellation">input cancellation</a>
@@ -405,7 +410,7 @@ If the input promise is still pending when the timeout occurs, then the normal
 the output promise with a <a href="#timeoutexception"><code>TimeoutException</code></a>.</p>
 <p>This is done for consistency with the <a href="#timeout-cancellation">timeout cancellation</a>
 handling and also because it is assumed this is often used like this:</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>timeout</span> = <span class="pl-en"><span class="pl-v">Timer</span>\timeout</span>(<span class="pl-en">accessSomeRemoteResource</span>(), <span class="pl-c1">10.0</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>timeout</span> = <span class="pl-en"><span class="pl-v">Timer</span>\timeout</span>(<span class="pl-en">accessSomeRemoteResource</span>(), <span class="pl-c1">10.0</span>);
 
 <span class="pl-s1"><span class="pl-c1">$</span>timeout</span>-&gt;<span class="pl-en">cancel</span>();</pre></div>
 <p>As described above, this example works as expected and cleans up any resources
@@ -426,7 +431,7 @@ continue consuming resources.</p>
 
 <span class="pl-s1"><span class="pl-c1">$</span>promise</span> = <span class="pl-en">\<span class="pl-v">React</span>\<span class="pl-v">Promise</span>\all</span>(<span class="pl-s1"><span class="pl-c1">$</span>promises</span>);
 
-<span class="pl-en"><span class="pl-v">Timer</span>\timeout</span>(<span class="pl-s1"><span class="pl-c1">$</span>promise</span>, <span class="pl-c1">10</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>values</span>) {
+<span class="pl-en"><span class="pl-v">Timer</span>\timeout</span>(<span class="pl-s1"><span class="pl-c1">$</span>promise</span>, <span class="pl-c1">10</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>values</span>) {
     <span class="pl-c">// *all* promises resolved</span>
 });</pre></div>
 <p>The applies to all promise collection primitives alike, i.e. <code>all()</code>, <code>race()</code>, <code>any()</code>, <code>some()</code> etc.</p>
@@ -434,39 +439,49 @@ continue consuming resources.</p>
 <a href="../promise/#functions">Promise documentation</a>.</p>
 <h3>
 <a id="resolve" class="anchor" href="#resolve" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>resolve()</h3>
-<p>The <code>resolve($time, LoopInterface $loop)</code> function can be used to create a new Promise that
+<p>The <code>resolve($time, LoopInterface $loop = null)</code> function can be used to create a new Promise that
 resolves in <code>$time</code> seconds with the <code>$time</code> as the fulfillment value.</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-en"><span class="pl-v">Timer</span>\resolve</span>(<span class="pl-c1">1.5</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>time</span>) {
+<div class="highlight highlight-text-html-php"><pre><span class="pl-en"><span class="pl-v">Timer</span>\resolve</span>(<span class="pl-c1">1.5</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>time</span>) {
     <span class="pl-k">echo</span> <span class="pl-s">'Thanks for waiting '</span> . <span class="pl-s1"><span class="pl-c1">$</span>time</span> . <span class="pl-s">' seconds'</span> . <span class="pl-c1">PHP_EOL</span>;
 });</pre></div>
 <p>Internally, the given <code>$time</code> value will be used to start a timer that will
 resolve the promise once it triggers.
 This implies that if you pass a really small (or negative) value, it will still
 start a timer and will thus trigger at the earliest possible time in the future.</p>
+<p>This function takes an optional <code>LoopInterface|null $loop</code> parameter that can be used to
+pass the event loop instance to use. You can use a <code>null</code> value here in order to
+use the <a href="../event-loop/#loop">default loop</a>. This value
+SHOULD NOT be given unless you're sure you want to explicitly use a given event
+loop instance.</p>
 <h4>
 <a id="resolve-cancellation" class="anchor" href="#resolve-cancellation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Resolve cancellation</h4>
 <p>You can explicitly <code>cancel()</code> the resulting timer promise at any time:</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>timer</span> = <span class="pl-en"><span class="pl-v">Timer</span>\resolve</span>(<span class="pl-c1">2.0</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>timer</span> = <span class="pl-en"><span class="pl-v">Timer</span>\resolve</span>(<span class="pl-c1">2.0</span>);
 
 <span class="pl-s1"><span class="pl-c1">$</span>timer</span>-&gt;<span class="pl-en">cancel</span>();</pre></div>
 <p>This will abort the timer and <em>reject</em> with a <code>RuntimeException</code>.</p>
 <h3>
 <a id="reject" class="anchor" href="#reject" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>reject()</h3>
-<p>The <code>reject($time, LoopInterface $loop)</code> function can be used to create a new Promise
+<p>The <code>reject($time, LoopInterface $loop = null)</code> function can be used to create a new Promise
 which rejects in <code>$time</code> seconds with a <code>TimeoutException</code>.</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-en"><span class="pl-v">Timer</span>\reject</span>(<span class="pl-c1">2.0</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-c1">null</span>, <span class="pl-k">function</span> (<span class="pl-smi">TimeoutException</span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>) {
+<div class="highlight highlight-text-html-php"><pre><span class="pl-en"><span class="pl-v">Timer</span>\reject</span>(<span class="pl-c1">2.0</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-c1">null</span>, <span class="pl-k">function</span> (<span class="pl-smi">TimeoutException</span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>) {
     <span class="pl-k">echo</span> <span class="pl-s">'Rejected after '</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getTimeout</span>() . <span class="pl-s">' seconds '</span> . <span class="pl-c1">PHP_EOL</span>;
 });</pre></div>
 <p>Internally, the given <code>$time</code> value will be used to start a timer that will
 reject the promise once it triggers.
 This implies that if you pass a really small (or negative) value, it will still
 start a timer and will thus trigger at the earliest possible time in the future.</p>
+<p>This function takes an optional <code>LoopInterface|null $loop</code> parameter that can be used to
+pass the event loop instance to use. You can use a <code>null</code> value here in order to
+use the <a href="../event-loop/#loop">default loop</a>. This value
+SHOULD NOT be given unless you're sure you want to explicitly use a given event
+loop instance.</p>
 <p>This function complements the <a href="#resolve"><code>resolve()</code></a> function
 and can be used as a basic building block for higher-level promise consumers.</p>
 <h4>
 <a id="reject-cancellation" class="anchor" href="#reject-cancellation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Reject cancellation</h4>
 <p>You can explicitly <code>cancel()</code> the resulting timer promise at any time:</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>timer</span> = <span class="pl-en"><span class="pl-v">Timer</span>\reject</span>(<span class="pl-c1">2.0</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>timer</span> = <span class="pl-en"><span class="pl-v">Timer</span>\reject</span>(<span class="pl-c1">2.0</span>);
 
 <span class="pl-s1"><span class="pl-c1">$</span>timer</span>-&gt;<span class="pl-en">cancel</span>();</pre></div>
 <p>This will abort the timer and <em>reject</em> with a <code>RuntimeException</code>.</p>
@@ -480,10 +495,10 @@ and can be used as a basic building block for higher-level promise consumers.</p
 <a href="https://getcomposer.org/doc/00-intro.md" rel="nofollow">New to Composer?</a></p>
 <p>This project follows <a href="https://semver.org/" rel="nofollow">SemVer</a>.
 This will install the latest supported version:</p>
-<div class="highlight highlight-source-shell"><pre>$ composer require react/promise-timer:^1.6</pre></div>
+<div class="highlight highlight-source-shell"><pre>$ composer require react/promise-timer:^1.7</pre></div>
 <p>See also the <a href="changelog.html">CHANGELOG</a> for details about version upgrades.</p>
 <p>This project aims to run on any platform and thus does not require any PHP
-extensions and supports running on legacy PHP 5.3 through current PHP 7+ and
+extensions and supports running on legacy PHP 5.3 through current PHP 8+ and
 HHVM.
 It's <em>highly recommended to use PHP 7+</em> for this project.</p>
 <h2>
@@ -504,7 +519,7 @@ dependencies <a href="https://getcomposer.org" rel="nofollow">through Composer</
 
                             <div class="version-selector">
                                 <button class="version-selector__button version-selector__button--latest" data-ctrly="component-version-selector" data-version-selector-control>
-                                    v1.6.0
+                                    v1.7.0
 
                                     <i class="icon-chevron-down" aria-hidden="true"></i>
                                     <i class="icon-chevron-up" aria-hidden="true"></i>
@@ -520,6 +535,11 @@ dependencies <a href="https://getcomposer.org" rel="nofollow">through Composer</
                                             </a>
                                         </li>
                                                                                                                                                                                                                     <li>
+                                                <a href="https://github.com/reactphp/promise-timer/tree/v1.6.0#readme" class="version-selector__version">
+                                                    v1.6.0
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
                                                 <a href="https://github.com/reactphp/promise-timer/tree/v1.5.1#readme" class="version-selector__version">
                                                     v1.5.1
                                                 </a>
@@ -589,14 +609,14 @@ dependencies <a href="https://getcomposer.org" rel="nofollow">through Composer</
 
                         <h3 class="component-info__subtitle">Installation</h3>
 
-                        <div class="highlight highlight-source-shell"><pre>composer require react/promise-timer:^1.6.0</pre></div>
+                        <div class="highlight highlight-source-shell"><pre>composer require react/promise-timer:^1.7.0</pre></div>
 
                         <h3 class="component-info__subtitle">Contributors</h3>
 
                         <ul class="component-info__contributors">
                                                     <li>
                                 <a href="https://github.com/clue">
-                                    <img src="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=80 2x" alt="clue" title="clue (47 contributions)">
+                                    <img src="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=80 2x" alt="clue" title="clue (51 contributions)">
                                 </a>
                             </li>
                                                     <li>
