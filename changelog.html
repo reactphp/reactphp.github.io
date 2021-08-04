@@ -125,7 +125,7 @@
                         HTTP
 
                         <span class="off-canvas-menu__version">
-                            v1.4.0
+                            v1.5.0
                         </span>
                     </a>
                 </li>
@@ -205,7 +205,7 @@
 
 
             <ul class="toc">
-            <li><a href="#2021" title="Jump to year 2021 (19 releases)">2021</a></li>
+            <li><a href="#2021" title="Jump to year 2021 (20 releases)">2021</a></li>
             <li><a href="#2020" title="Jump to year 2020 (16 releases)">2020</a></li>
             <li><a href="#2019" title="Jump to year 2019 (21 releases)">2019</a></li>
             <li><a href="#2018" title="Jump to year 2018 (33 releases)">2018</a></li>
@@ -222,6 +222,51 @@
         2021
     </h2>
 
+    
+                        <h3>
+        <a id="http-150-2021-08-04" class="anchor" href="#http-150-2021-08-04" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        HTTP 1.5.0
+
+        <small>
+            (2021-08-04)
+            <a href="https://github.com/reactphp/http/releases/tag/v1.5.0" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
+<li>
+<p>Feature: Update <code>Browser</code> signature to take optional <code>$connector</code> as first argument and<br>
+to match new Socket API without nullable loop arguments.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="953931212" data-permission-text="Title is private" data-url="https://github.com/reactphp/http/issues/418" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/http/pull/418/hovercard" href="https://github.com/reactphp/http/pull/418">#418</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="954214562" data-permission-text="Title is private" data-url="https://github.com/reactphp/http/issues/419" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/http/pull/419/hovercard" href="https://github.com/reactphp/http/pull/419">#419</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-c">// unchanged</span>
+<span class="pl-s1"><span class="pl-c1">$</span>browser</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Browser</span>();
+
+<span class="pl-c">// deprecated</span>
+<span class="pl-s1"><span class="pl-c1">$</span>browser</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Browser</span>(<span class="pl-c1">null</span>, <span class="pl-s1"><span class="pl-c1">$</span>connector</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>browser</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Browser</span>(<span class="pl-s1"><span class="pl-c1">$</span>loop</span>, <span class="pl-s1"><span class="pl-c1">$</span>connector</span>);
+
+<span class="pl-c">// new</span>
+<span class="pl-s1"><span class="pl-c1">$</span>browser</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Browser</span>(<span class="pl-s1"><span class="pl-c1">$</span>connector</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>browser</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Browser</span>(<span class="pl-s1"><span class="pl-c1">$</span>connector</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);</pre></div>
+</li>
+<li>
+<p>Feature: Rename <code>Server</code> to <code>HttpServer</code> to avoid class name collisions and<br>
+to avoid any ambiguities with regards to the new <code>SocketServer</code> API.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="952329149" data-permission-text="Title is private" data-url="https://github.com/reactphp/http/issues/417" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/http/pull/417/hovercard" href="https://github.com/reactphp/http/pull/417">#417</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="954214562" data-permission-text="Title is private" data-url="https://github.com/reactphp/http/issues/419" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/http/pull/419/hovercard" href="https://github.com/reactphp/http/pull/419">#419</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-c">// deprecated</span>
+<span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Server</span>(<span class="pl-s1"><span class="pl-c1">$</span>handler</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>server</span>-&gt;<span class="pl-en">listen</span>(<span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Server</span>(<span class="pl-c1">8080</span>));
+
+<span class="pl-c">// new</span>
+<span class="pl-s1"><span class="pl-c1">$</span>http</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">HttpServer</span>(<span class="pl-s1"><span class="pl-c1">$</span>handler</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>http</span>-&gt;<span class="pl-en">listen</span>(<span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">SocketServer</span>(<span class="pl-s">'127.0.0.1:8080'</span>));</pre></div>
+</li>
+</ul>
+
+    <hr>
     
                         <h3>
         <a id="socket-190-2021-08-03" class="anchor" href="#socket-190-2021-08-03" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
