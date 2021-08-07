@@ -107,26 +107,12 @@
                         </span>
                     </a>
                 </li>
-                        </ul>
-        </section>
-            <section class="off-canvas-menu__section">
-            <h3 class="off-canvas-menu__section-header">Protocol Components</h3>
-            <ul class="off-canvas-menu__list">
                             <li>
                     <a class="off-canvas-menu__link" href="http/">
                         HTTP
 
                         <span class="off-canvas-menu__version">
                             v1.5.0
-                        </span>
-                    </a>
-                </li>
-                            <li>
-                    <a class="off-canvas-menu__link" href="http-client/">
-                        HTTPClient
-
-                        <span class="off-canvas-menu__version">
-                            v0.5.11
                         </span>
                     </a>
                 </li>
@@ -182,6 +168,29 @@
                 </li>
                         </ul>
         </section>
+            <section class="off-canvas-menu__section">
+            <h3 class="off-canvas-menu__section-header">Legacy Components</h3>
+            <ul class="off-canvas-menu__list">
+                            <li>
+                    <a class="off-canvas-menu__link" href="http-client/">
+                        HttpClient
+
+                        <span class="off-canvas-menu__version">
+                            v0.5.11
+                        </span>
+                    </a>
+                </li>
+                            <li>
+                    <a class="off-canvas-menu__link" href="socket-client/">
+                        SocketClient
+
+                        <span class="off-canvas-menu__version">
+                            v0.7.0
+                        </span>
+                    </a>
+                </li>
+                        </ul>
+        </section>
         </div>
 </nav>
     </div>
@@ -215,7 +224,7 @@
         <div class="container">
             <div class="wrapper wrapper--small">
                 <div class="welcome__example">
-            <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Server</span>(<span class="pl-k">function</span> (<span class="pl-v">Psr</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-smi">ServerRequestInterface</span> <span class="pl-s1"><span class="pl-c1">$</span>request</span>) {
+            <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>http</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">HttpServer</span>(<span class="pl-k">function</span> (<span class="pl-v">Psr</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-smi">ServerRequestInterface</span> <span class="pl-s1"><span class="pl-c1">$</span>request</span>) {
     <span class="pl-k">return</span> <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">Response</span>(
         <span class="pl-c1">200</span>,
         <span class="pl-en">array</span>(
@@ -225,8 +234,8 @@
     );
 });
 
-<span class="pl-s1"><span class="pl-c1">$</span>socket</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Server</span>(<span class="pl-s">'127.0.0.1:8080'</span>);
-<span class="pl-s1"><span class="pl-c1">$</span>server</span>-&gt;<span class="pl-en">listen</span>(<span class="pl-s1"><span class="pl-c1">$</span>socket</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>socket</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">SocketServer</span>(<span class="pl-s">'127.0.0.1:8080'</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>http</span>-&gt;<span class="pl-en">listen</span>(<span class="pl-s1"><span class="pl-c1">$</span>socket</span>);
 
 <span class="pl-k">echo</span> <span class="pl-s">"Server running at http://127.0.0.1:8080"</span> . <span class="pl-c1">PHP_EOL</span>;</pre></div>
                     <p class="center">This simple web server written in ReactPHP responds with "Hello World!" for every request.</p>
@@ -263,8 +272,8 @@
                     <li><strong>Rock-solid</strong> with stable long-term support (LTS) releases.</li>
                     <li><strong>Requires no extensions</strong> and runs on any platform - no excuses!</li>
                     <li>Takes advantage of <strong>optional extensions</strong> to get better performance when available.</li>
-                    <li><strong>Highly recommends latest version of PHP 7+</strong> for best performance and support.</li>
-                    <li><strong>Supports legacy PHP 5.3+ and HHVM</strong> for maximum compatibility.</li>
+                    <li><strong>Supports latest version of PHP 8+ and PHP 7+</strong> for best performance and support.</li>
+                    <li>Still <strong>supports legacy PHP 5.3+ and HHVM</strong> for maximum compatibility.</li>
                     <li><strong>Well designed</strong> and <strong>reusable components</strong>.</li>
                     <li><strong>Decoupled parts</strong> so they can be replaced by alternate implementations.</li>
                     <li>Carefully <strong>tested</strong> (unit &amp; functional).</li>
@@ -366,35 +375,11 @@
                         Read the documentation
                     </p>
                 </a>
-                        </div>
-        </div>
-    </div>
-    <div class="container center">
-        <div class="wrapper wrapper--small">
-            <h2>
-                <a id="protocol-components" class="anchor" href="#protocol-components" aria-hidden="true">
-                    <span aria-hidden="true" class="octicon octicon-link"></span>
-                </a>
-                Protocol Components
-            </h2>
-
-            <div class="grid grid--3cols">
                             <a href="http/" class="box">
                     <div class="box__content">
                         <h3>HTTP</h3>
 
                         <p>Event-driven, streaming HTTP client and server implementation for ReactPHP.</p>
-                    </div>
-                    <p class="box__link">
-                        <i class="icon-book" aria-hidden="true"></i>
-                        Read the documentation
-                    </p>
-                </a>
-                            <a href="http-client/" class="box">
-                    <div class="box__content">
-                        <h3>HTTPClient</h3>
-
-                        <p>[Deprecated] Event-driven, streaming HTTP client for ReactPHP.</p>
                     </div>
                     <p class="box__link">
                         <i class="icon-book" aria-hidden="true"></i>
@@ -463,6 +448,41 @@
                         <h3>PromiseStream</h3>
 
                         <p>The missing link between Promise-land and Stream-land for ReactPHP.</p>
+                    </div>
+                    <p class="box__link">
+                        <i class="icon-book" aria-hidden="true"></i>
+                        Read the documentation
+                    </p>
+                </a>
+                        </div>
+        </div>
+    </div>
+    <div class="container center">
+        <div class="wrapper wrapper--small">
+            <h2>
+                <a id="legacy-components" class="anchor" href="#legacy-components" aria-hidden="true">
+                    <span aria-hidden="true" class="octicon octicon-link"></span>
+                </a>
+                Legacy Components
+            </h2>
+
+            <div class="grid grid--2cols">
+                            <a href="http-client/" class="box">
+                    <div class="box__content">
+                        <h3>HttpClient</h3>
+
+                        <p>[Deprecated] Event-driven, streaming HTTP client for ReactPHP.</p>
+                    </div>
+                    <p class="box__link">
+                        <i class="icon-book" aria-hidden="true"></i>
+                        Read the documentation
+                    </p>
+                </a>
+                            <a href="socket-client/" class="box">
+                    <div class="box__content">
+                        <h3>SocketClient</h3>
+
+                        <p>[Legacy] Async, streaming plaintext TCP/IP and secure TLS based connections for ReactPHP.</p>
                     </div>
                     <p class="box__link">
                         <i class="icon-book" aria-hidden="true"></i>
