@@ -152,7 +152,7 @@ ChildProcess - ReactPHP</title>
                         ChildProcess
 
                         <span class="off-canvas-menu__version">
-                            v0.6.3
+                            v0.6.4
                         </span>
                     </a>
                 </li>
@@ -251,7 +251,7 @@ as <a href="../stream/">Streams</a>.</p>
 <span class="pl-s1"><span class="pl-c1">$</span>process</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'exit'</span>, <span class="pl-k">function</span>(<span class="pl-s1"><span class="pl-c1">$</span>exitCode</span>, <span class="pl-s1"><span class="pl-c1">$</span>termSignal</span>) {
     <span class="pl-k">echo</span> <span class="pl-s">'Process exited with code '</span> . <span class="pl-s1"><span class="pl-c1">$</span>exitCode</span> . <span class="pl-c1">PHP_EOL</span>;
 });</pre></div>
-<p>See also the <a href="https://github.com/reactphp/child-process/blob/v0.6.3/examples">examples</a>.</p>
+<p>See also the <a href="https://github.com/reactphp/child-process/blob/v0.6.4/examples">examples</a>.</p>
 <h2>
 <a id="process" class="anchor" href="#process" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Process</h2>
 <h3>
@@ -664,7 +664,7 @@ rely on any external helper program like this:</p>
 <span class="pl-s1"><span class="pl-c1">$</span>command</span> = <span class="pl-s">'ping example.com | php -r '</span> . <span class="pl-en">escapeshellarg</span>(<span class="pl-s1"><span class="pl-c1">$</span>code</span>) . <span class="pl-s">' '</span> . <span class="pl-en">escapeshellarg</span>(<span class="pl-s1"><span class="pl-c1">$</span>server</span>-&gt;<span class="pl-en">getAddress</span>());
 <span class="pl-s1"><span class="pl-c1">$</span>process</span> = <span class="pl-k">new</span> <span class="pl-v">Process</span>(<span class="pl-s1"><span class="pl-c1">$</span>command</span>, <span class="pl-c1">null</span>, <span class="pl-c1">null</span>, <span class="pl-en">array</span>());
 <span class="pl-s1"><span class="pl-c1">$</span>process</span>-&gt;<span class="pl-en">start</span>();</pre></div>
-<p>See also <a href="https://github.com/reactphp/child-process/blob/v0.6.3/examples/23-forward-socket.php">example #23</a>.</p>
+<p>See also <a href="https://github.com/reactphp/child-process/blob/v0.6.4/examples/23-forward-socket.php">example #23</a>.</p>
 <p>Note that this is for illustration purposes only and you may want to implement
 some proper error checks and/or socket verification in actual production use
 if you do not want to risk other processes connecting to the server socket.
@@ -685,7 +685,7 @@ particular, this means that shell built-in functions such as <code>echo hello</c
 <p>The recommended way to install this library is <a href="https://getcomposer.org" rel="nofollow">through Composer</a>.
 <a href="https://getcomposer.org/doc/00-intro.md" rel="nofollow">New to Composer?</a></p>
 <p>This will install the latest supported version:</p>
-<div class="highlight highlight-source-shell"><pre>$ composer require react/child-process:^0.6.3</pre></div>
+<div class="highlight highlight-source-shell"><pre>$ composer require react/child-process:^0.6.4</pre></div>
 <p>See also the <a href="changelog.html">CHANGELOG</a> for details about version upgrades.</p>
 <p>This project aims to run on any platform and thus does not require any PHP
 extensions and supports running on legacy PHP 5.3 through current PHP 8+ and HHVM.
@@ -709,7 +709,7 @@ dependencies <a href="https://getcomposer.org" rel="nofollow">through Composer</
 
                             <div class="version-selector">
                                 <button class="version-selector__button version-selector__button--latest" data-ctrly="component-version-selector" data-version-selector-control>
-                                    v0.6.3
+                                    v0.6.4
 
                                     <i class="icon-chevron-down" aria-hidden="true"></i>
                                     <i class="icon-chevron-up" aria-hidden="true"></i>
@@ -725,6 +725,11 @@ dependencies <a href="https://getcomposer.org" rel="nofollow">through Composer</
                                             </a>
                                         </li>
                                                                                                                                                                                                                     <li>
+                                                <a href="https://github.com/reactphp/child-process/tree/v0.6.3#readme" class="version-selector__version">
+                                                    v0.6.3
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
                                                 <a href="https://github.com/reactphp/child-process/tree/v0.6.2#readme" class="version-selector__version">
                                                     v0.6.2
                                                 </a>
@@ -804,19 +809,19 @@ dependencies <a href="https://getcomposer.org" rel="nofollow">through Composer</
 
                         <h3 class="component-info__subtitle">Installation</h3>
 
-                        <div class="highlight highlight-source-shell"><pre>composer require react/child-process:^0.6.3</pre></div>
+                        <div class="highlight highlight-source-shell"><pre>composer require react/child-process:^0.6.4</pre></div>
 
                         <h3 class="component-info__subtitle">Contributors</h3>
 
                         <ul class="component-info__contributors">
                                                     <li>
                                 <a href="https://github.com/clue">
-                                    <img src="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=80 2x" alt="clue" title="clue (65 contributions)">
+                                    <img src="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=80 2x" alt="clue" title="clue (69 contributions)">
                                 </a>
                             </li>
                                                     <li>
                                 <a href="https://github.com/WyriHaximus">
-                                    <img src="https://avatars.githubusercontent.com/u/147145?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/147145?v=4&amp;s=80 2x" alt="WyriHaximus" title="WyriHaximus (45 contributions)">
+                                    <img src="https://avatars.githubusercontent.com/u/147145?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/147145?v=4&amp;s=80 2x" alt="WyriHaximus" title="WyriHaximus (47 contributions)">
                                 </a>
                             </li>
                                                     <li>
@@ -893,7 +898,7 @@ dependencies <a href="https://getcomposer.org" rel="nofollow">through Composer</
         <mask id="reactphp-child-process-participation-sparkline" x="0" y="0" width="320" height="40" >
             <polyline 
                 transform="translate(0, 40) scale(1,-1)"
-                points="0,1 6,1 12,4 18,1 24,1 30,1 36,1 42,1 48,1 54,1 60,1 66,1 72,1 78,1 84,1 90,5 96,1 102,1 108,1 114,1 120,1 126,1 132,1 138,1 144,6 150,7 156,1 162,1 168,1 174,1 180,1 186,1 192,1 198,1 204,1 210,1 216,1 222,1 228,1 234,1 240,1 246,1 252,1 258,1 264,1 270,1 276,1 282,3 288,3 294,1 300,1 306,1" 
+                points="0,1 6,1 12,1 18,1 24,1 30,5 36,1 42,1 48,1 54,1 60,1 66,1 72,1 78,1 84,6 90,8 96,1 102,1 108,1 114,1 120,1 126,1 132,1 138,1 144,1 150,1 156,1 162,1 168,1 174,1 180,1 186,1 192,1 198,1 204,1 210,1 216,1 222,3 228,3 234,1 240,1 246,1 252,1 258,1 264,1 270,1 276,1 282,1 288,1 294,1 300,3 306,4" 
                 fill="transparent" 
                 stroke="#40a977" 
                 stroke-width="2"

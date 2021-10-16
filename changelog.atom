@@ -1,11 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
   <title type="text">The combined changelog for all ReactPHP components.</title>
-  <updated>2021-08-04T12:25:10+00:00</updated>
+  <updated>2021-10-12T10:39:53+00:00</updated>
   <generator uri="http://framework.zend.com" version="2">Zend_Feed_Writer</generator>
   <link rel="alternate" type="text/html" href="https://reactphp.org/changelog.html"/>
   <link rel="self" type="application/atom+xml" href="https://reactphp.org/changelog.atom"/>
   <id>https://reactphp.org/changelog.html</id>
+  <entry>
+    <title type="html"><![CDATA[ChildProcess 0.6.4]]></title>
+    <summary type="html"><![CDATA[<ul>
+<li>
+<p>Feature / Fix: Skip sigchild check if <code>phpinfo()</code> has been disabled.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1019679584" data-permission-text="Title is private" data-url="https://github.com/reactphp/child-process/issues/89" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/child-process/pull/89/hovercard" href="https://github.com/reactphp/child-process/pull/89">#89</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+</li>
+<li>
+<p>Fix: Fix detecting closed socket pipes on PHP 8.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1019873397" data-permission-text="Title is private" data-url="https://github.com/reactphp/child-process/issues/90" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/child-process/pull/90/hovercard" href="https://github.com/reactphp/child-process/pull/90">#90</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+</li>
+</ul>]]></summary>
+    <updated>2021-10-12T10:39:53+00:00</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/reactphp/child-process/releases/tag/v0.6.4"/>
+    <id>https://github.com/reactphp/child-process/releases/tag/v0.6.4</id>
+    <author>
+      <name>clue</name>
+      <uri>https://github.com/clue</uri>
+    </author>
+  </entry>
   <entry>
     <title type="html"><![CDATA[HTTP 1.5.0]]></title>
     <summary type="html"><![CDATA[<ul>
@@ -266,51 +286,6 @@ update PHPUnit config, run tests on PHP 8 and add full core team to the license.
     <updated>2021-07-11T12:38:04+00:00</updated>
     <link rel="alternate" type="text/html" href="https://github.com/reactphp/stream/releases/tag/v1.2.0"/>
     <id>https://github.com/reactphp/stream/releases/tag/v1.2.0</id>
-    <author>
-      <name>clue</name>
-      <uri>https://github.com/clue</uri>
-    </author>
-  </entry>
-  <entry>
-    <title type="html"><![CDATA[EventLoop 1.2.0]]></title>
-    <summary type="html"><![CDATA[<p>A major new feature release, see <a href="https://clue.engineering/2021/announcing-reactphp-default-loop" rel="nofollow"><strong>release announcement</strong></a>.</p>
-<ul>
-<li>
-<p>Feature: Introduce new concept of default loop with the new <code>Loop</code> class.<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="864123342" data-permission-text="Title is private" data-url="https://github.com/reactphp/event-loop/issues/226" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/event-loop/pull/226/hovercard" href="https://github.com/reactphp/event-loop/pull/226">#226</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/WyriHaximus/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/WyriHaximus">@WyriHaximus</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="932427483" data-permission-text="Title is private" data-url="https://github.com/reactphp/event-loop/issues/229" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/event-loop/pull/229/hovercard" href="https://github.com/reactphp/event-loop/pull/229">#229</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="933393531" data-permission-text="Title is private" data-url="https://github.com/reactphp/event-loop/issues/231" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/event-loop/pull/231/hovercard" href="https://github.com/reactphp/event-loop/pull/231">#231</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="933761239" data-permission-text="Title is private" data-url="https://github.com/reactphp/event-loop/issues/232" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/event-loop/pull/232/hovercard" href="https://github.com/reactphp/event-loop/pull/232">#232</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
-<p>The <code>Loop</code> class exists as a convenient global accessor for the event loop.<br>
-It provides all methods that exist on the <code>LoopInterface</code> as static methods and<br>
-will automatically execute the loop at the end of the program:</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>timer</span> = <span class="pl-v">Loop</span>::<span class="pl-en">addPeriodicTimer</span>(<span class="pl-c1">0.1</span>, <span class="pl-k">function</span> () {
-    <span class="pl-k">echo</span> <span class="pl-s">'Tick'</span> . <span class="pl-c1">PHP_EOL</span>;
-});
-
-<span class="pl-v">Loop</span>::<span class="pl-en">addTimer</span>(<span class="pl-c1">1.0</span>, <span class="pl-k">function</span> () <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>timer</span>) {
-    <span class="pl-v">Loop</span>::<span class="pl-en">cancelTimer</span>(<span class="pl-s1"><span class="pl-c1">$</span>timer</span>);
-    <span class="pl-k">echo</span> <span class="pl-s">'Done'</span> . <span class="pl-c1">PHP_EOL</span>;
-});</pre></div>
-<p>The explicit loop instructions are still valid and may still be useful in some applications,<br>
-especially for a transition period towards the more concise style.<br>
-The <code>Loop::get()</code> method can be used to get the currently active event loop instance.</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-c">// deprecated</span>
-<span class="pl-s1"><span class="pl-c1">$</span>loop</span> = <span class="pl-v">React</span>\<span class="pl-v">EventLoop</span>\<span class="pl-v">Factory</span>::<span class="pl-en">create</span>();
-
-<span class="pl-c">// new</span>
-<span class="pl-s1"><span class="pl-c1">$</span>loop</span> = <span class="pl-v">React</span>\<span class="pl-v">EventLoop</span>\<span class="pl-v">Loop</span>::<span class="pl-en">get</span>();</pre></div>
-</li>
-<li>
-<p>Minor documentation improvements and mark legacy extensions as deprecated.<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="937736574" data-permission-text="Title is private" data-url="https://github.com/reactphp/event-loop/issues/234" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/event-loop/pull/234/hovercard" href="https://github.com/reactphp/event-loop/pull/234">#234</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/SimonFrings/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/SimonFrings">@SimonFrings</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="684821037" data-permission-text="Title is private" data-url="https://github.com/reactphp/event-loop/issues/214" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/event-loop/pull/214/hovercard" href="https://github.com/reactphp/event-loop/pull/214">#214</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/WyriHaximus/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/WyriHaximus">@WyriHaximus</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="936961737" data-permission-text="Title is private" data-url="https://github.com/reactphp/event-loop/issues/233" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/event-loop/pull/233/hovercard" href="https://github.com/reactphp/event-loop/pull/233">#233</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="937844927" data-permission-text="Title is private" data-url="https://github.com/reactphp/event-loop/issues/235" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/event-loop/pull/235/hovercard" href="https://github.com/reactphp/event-loop/pull/235">#235</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/nhedger/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/nhedger">@nhedger</a>)</p>
-</li>
-<li>
-<p>Improve test suite, use GitHub actions for continuous integration (CI),<br>
-update PHPUnit config and run tests on PHP 8.<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="659067999" data-permission-text="Title is private" data-url="https://github.com/reactphp/event-loop/issues/212" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/event-loop/pull/212/hovercard" href="https://github.com/reactphp/event-loop/pull/212">#212</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="696720247" data-permission-text="Title is private" data-url="https://github.com/reactphp/event-loop/issues/215" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/event-loop/pull/215/hovercard" href="https://github.com/reactphp/event-loop/pull/215">#215</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/SimonFrings/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/SimonFrings">@SimonFrings</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="933008879" data-permission-text="Title is private" data-url="https://github.com/reactphp/event-loop/issues/230" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/event-loop/pull/230/hovercard" href="https://github.com/reactphp/event-loop/pull/230">#230</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
-</li>
-</ul>]]></summary>
-    <updated>2021-07-11T12:31:32+00:00</updated>
-    <link rel="alternate" type="text/html" href="https://github.com/reactphp/event-loop/releases/tag/v1.2.0"/>
-    <id>https://github.com/reactphp/event-loop/releases/tag/v1.2.0</id>
     <author>
       <name>clue</name>
       <uri>https://github.com/clue</uri>
