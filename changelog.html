@@ -170,7 +170,7 @@
                         PromiseStream
 
                         <span class="off-canvas-menu__version">
-                            v1.2.0
+                            v1.3.0
                         </span>
                     </a>
                 </li>
@@ -214,7 +214,7 @@
 
 
             <ul class="toc">
-            <li><a href="#2021" title="Jump to year 2021 (21 releases)">2021</a></li>
+            <li><a href="#2021" title="Jump to year 2021 (22 releases)">2021</a></li>
             <li><a href="#2020" title="Jump to year 2020 (16 releases)">2020</a></li>
             <li><a href="#2019" title="Jump to year 2019 (21 releases)">2019</a></li>
             <li><a href="#2018" title="Jump to year 2018 (33 releases)">2018</a></li>
@@ -231,6 +231,44 @@
         2021
     </h2>
 
+    
+                        <h3>
+        <a id="promisestream-130-2021-10-18" class="anchor" href="#promisestream-130-2021-10-18" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        PromiseStream 1.3.0
+
+        <small>
+            (2021-10-18)
+            <a href="https://github.com/reactphp/promise-stream/releases/tag/v1.3.0" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
+<li>
+<p>Feature: Improve error reporting by appending previous exception messages.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1022868983" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise-stream/issues/26" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise-stream/pull/26/hovercard" href="https://github.com/reactphp/promise-stream/pull/26">#26</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+<p>For most common use cases this means that simply reporting the <code>Exception</code><br>
+message should give the most relevant details for any issues:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Promise</span>\<span class="pl-v">Stream</span>\buffer</span>(<span class="pl-s1"><span class="pl-c1">$</span>stream</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-smi">string</span> <span class="pl-s1"><span class="pl-c1">$</span>contents</span>) {
+    <span class="pl-c">// …</span>
+}, <span class="pl-k">function</span> (<span class="pl-smi">Exception</span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>) {
+    <span class="pl-k">echo</span> <span class="pl-s">'Error:'</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
+});</pre></div>
+</li>
+<li>
+<p>Improve documentation, describe promise and stream data types.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1028096375" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise-stream/issues/27" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise-stream/pull/27/hovercard" href="https://github.com/reactphp/promise-stream/pull/27">#27</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="684829245" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise-stream/issues/23" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise-stream/pull/23/hovercard" href="https://github.com/reactphp/promise-stream/pull/23">#23</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/WyriHaximus/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/WyriHaximus">@WyriHaximus</a>)</p>
+</li>
+<li>
+<p>Improve test suite and add <code>.gitattributes</code> to exclude dev files from exports.<br>
+Use GitHub actions for continuous integration (CI) and run tests on PHPUnit 9 and PHP 8.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="530765482" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise-stream/issues/21" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise-stream/pull/21/hovercard" href="https://github.com/reactphp/promise-stream/pull/21">#21</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/reedy/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/reedy">@reedy</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="659181363" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise-stream/issues/22" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise-stream/pull/22/hovercard" href="https://github.com/reactphp/promise-stream/pull/22">#22</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="707278541" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise-stream/issues/24" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise-stream/pull/24/hovercard" href="https://github.com/reactphp/promise-stream/pull/24">#24</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="799127290" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise-stream/issues/25" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise-stream/pull/25/hovercard" href="https://github.com/reactphp/promise-stream/pull/25">#25</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/SimonFrings/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/SimonFrings">@SimonFrings</a>)</p>
+</li>
+</ul>
+
+    <hr>
     
                         <h3>
         <a id="childprocess-064-2021-10-12" class="anchor" href="#childprocess-064-2021-10-12" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
