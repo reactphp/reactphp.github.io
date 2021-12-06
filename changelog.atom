@@ -1,11 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
   <title type="text">The combined changelog for all ReactPHP components.</title>
-  <updated>2021-11-29T10:08:32+00:00</updated>
+  <updated>2021-12-06T11:08:55+00:00</updated>
   <generator uri="http://framework.zend.com" version="2">Zend_Feed_Writer</generator>
   <link rel="alternate" type="text/html" href="https://reactphp.org/changelog.html"/>
   <link rel="self" type="application/atom+xml" href="https://reactphp.org/changelog.atom"/>
   <id>https://reactphp.org/changelog.html</id>
+  <entry>
+    <title type="html"><![CDATA[PromiseTimer 1.8.0]]></title>
+    <summary type="html"><![CDATA[<ul dir="auto">
+<li>
+<p dir="auto">Feature: Add new <code>sleep()</code> function and deprecate <code>resolve()</code> and <code>reject()</code> functions.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1071469949" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise-timer/issues/51" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise-timer/pull/51/hovercard" href="https://github.com/reactphp/promise-timer/pull/51">#51</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-c">// deprecated</span>
+<span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Promise</span>\<span class="pl-v">Timer</span>\resolve</span>(<span class="pl-s1"><span class="pl-c1">$</span>time</span>);
+<span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Promise</span>\<span class="pl-v">Timer</span>\reject</span>(<span class="pl-s1"><span class="pl-c1">$</span>time</span>);
+
+<span class="pl-c">// new</span>
+<span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Promise</span>\<span class="pl-v">Timer</span>\sleep</span>(<span class="pl-s1"><span class="pl-c1">$</span>time</span>);</pre></div>
+</li>
+<li>
+<p dir="auto">Feature: Support PHP 8.1 release.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1066136114" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise-timer/issues/50" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise-timer/pull/50/hovercard" href="https://github.com/reactphp/promise-timer/pull/50">#50</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/Thomas-Gelf/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/Thomas-Gelf">@Thomas-Gelf</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1071490423" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise-timer/issues/52" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise-timer/pull/52/hovercard" href="https://github.com/reactphp/promise-timer/pull/52">#52</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1053786450" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise-timer/issues/48" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise-timer/pull/48/hovercard" href="https://github.com/reactphp/promise-timer/pull/48">#48</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/SimonFrings/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/SimonFrings">@SimonFrings</a>)</p>
+</li>
+<li>
+<p dir="auto">Improve API documentation and add parameter types and return types.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1065702986" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise-timer/issues/49" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise-timer/pull/49/hovercard" href="https://github.com/reactphp/promise-timer/pull/49">#49</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1030130963" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise-timer/issues/47" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise-timer/pull/47/hovercard" href="https://github.com/reactphp/promise-timer/pull/47">#47</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/SimonFrings/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/SimonFrings">@SimonFrings</a>)</p>
+</li>
+</ul>]]></summary>
+    <updated>2021-12-06T11:08:55+00:00</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/reactphp/promise-timer/releases/tag/v1.8.0"/>
+    <id>https://github.com/reactphp/promise-timer/releases/tag/v1.8.0</id>
+    <author>
+      <name>clue</name>
+      <uri>https://github.com/clue</uri>
+    </author>
+  </entry>
   <entry>
     <title type="html"><![CDATA[Socket 1.10.0]]></title>
     <summary type="html"><![CDATA[<ul dir="auto">
@@ -284,30 +314,6 @@ update PHPUnit config, run tests on PHP 8 and add full core team to the license.
     <updated>2021-07-11T13:03:33+00:00</updated>
     <link rel="alternate" type="text/html" href="https://github.com/reactphp/http/releases/tag/v1.4.0"/>
     <id>https://github.com/reactphp/http/releases/tag/v1.4.0</id>
-    <author>
-      <name>clue</name>
-      <uri>https://github.com/clue</uri>
-    </author>
-  </entry>
-  <entry>
-    <title type="html"><![CDATA[Socket 1.8.0]]></title>
-    <summary type="html"><![CDATA[<p dir="auto">A major new feature release, see <a href="https://clue.engineering/2021/announcing-reactphp-default-loop" rel="nofollow"><strong>release announcement</strong></a>.</p>
-<ul dir="auto">
-<li>
-<p dir="auto">Feature: Simplify usage by supporting new <a href="https://reactphp.org/event-loop/#loop" rel="nofollow">default loop</a>.<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="939800316" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/260" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/260/hovercard" href="https://github.com/reactphp/socket/pull/260">#260</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-c">// old (still supported)</span>
-<span class="pl-s1"><span class="pl-c1">$</span>socket</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Server</span>(<span class="pl-s">'127.0.0.1:8080'</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
-<span class="pl-s1"><span class="pl-c1">$</span>connector</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Connector</span>(<span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
-
-<span class="pl-c">// new (using default loop)</span>
-<span class="pl-s1"><span class="pl-c1">$</span>socket</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Server</span>(<span class="pl-s">'127.0.0.1:8080'</span>);
-<span class="pl-s1"><span class="pl-c1">$</span>connector</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Connector</span>();</pre></div>
-</li>
-</ul>]]></summary>
-    <updated>2021-07-11T12:50:15+00:00</updated>
-    <link rel="alternate" type="text/html" href="https://github.com/reactphp/socket/releases/tag/v1.8.0"/>
-    <id>https://github.com/reactphp/socket/releases/tag/v1.8.0</id>
     <author>
       <name>clue</name>
       <uri>https://github.com/clue</uri>

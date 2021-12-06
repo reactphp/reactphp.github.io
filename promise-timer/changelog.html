@@ -161,7 +161,7 @@
                         PromiseTimer
 
                         <span class="off-canvas-menu__version">
-                            v1.7.0
+                            v1.8.0
                         </span>
                     </a>
                 </li>
@@ -212,7 +212,7 @@
                     <h1>PromiseTimer Changelog</h1>
 
     <ul class="toc">
-            <li><a href="#2021" title="Jump to year 2021 (1 release)">2021</a></li>
+            <li><a href="#2021" title="Jump to year 2021 (2 releases)">2021</a></li>
             <li><a href="#2020" title="Jump to year 2020 (1 release)">2020</a></li>
             <li><a href="#2019" title="Jump to year 2019 (1 release)">2019</a></li>
             <li><a href="#2018" title="Jump to year 2018 (3 releases)">2018</a></li>
@@ -226,6 +226,42 @@
         2021
     </h2>
 
+    
+            <h3>
+        <a id="180-2021-12-06" class="anchor" href="#180-2021-12-06" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        1.8.0
+
+        <small>
+            (2021-12-06)
+            <a href="https://github.com/reactphp/promise-timer/releases/tag/v1.8.0" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul dir="auto">
+<li>
+<p dir="auto">Feature: Add new <code>sleep()</code> function and deprecate <code>resolve()</code> and <code>reject()</code> functions.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1071469949" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise-timer/issues/51" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise-timer/pull/51/hovercard" href="https://github.com/reactphp/promise-timer/pull/51">#51</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-c">// deprecated</span>
+<span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Promise</span>\<span class="pl-v">Timer</span>\resolve</span>(<span class="pl-s1"><span class="pl-c1">$</span>time</span>);
+<span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Promise</span>\<span class="pl-v">Timer</span>\reject</span>(<span class="pl-s1"><span class="pl-c1">$</span>time</span>);
+
+<span class="pl-c">// new</span>
+<span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Promise</span>\<span class="pl-v">Timer</span>\sleep</span>(<span class="pl-s1"><span class="pl-c1">$</span>time</span>);</pre></div>
+</li>
+<li>
+<p dir="auto">Feature: Support PHP 8.1 release.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1066136114" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise-timer/issues/50" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise-timer/pull/50/hovercard" href="https://github.com/reactphp/promise-timer/pull/50">#50</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/Thomas-Gelf/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/Thomas-Gelf">@Thomas-Gelf</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1071490423" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise-timer/issues/52" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise-timer/pull/52/hovercard" href="https://github.com/reactphp/promise-timer/pull/52">#52</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1053786450" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise-timer/issues/48" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise-timer/pull/48/hovercard" href="https://github.com/reactphp/promise-timer/pull/48">#48</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/SimonFrings/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/SimonFrings">@SimonFrings</a>)</p>
+</li>
+<li>
+<p dir="auto">Improve API documentation and add parameter types and return types.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1065702986" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise-timer/issues/49" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise-timer/pull/49/hovercard" href="https://github.com/reactphp/promise-timer/pull/49">#49</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1030130963" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise-timer/issues/47" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise-timer/pull/47/hovercard" href="https://github.com/reactphp/promise-timer/pull/47">#47</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/SimonFrings/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/SimonFrings">@SimonFrings</a>)</p>
+</li>
+</ul>
+
+    <hr>
     
             <h3>
         <a id="170-2021-07-11" class="anchor" href="#170-2021-07-11" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
@@ -545,7 +581,7 @@ lock Travis distro so new defaults will not break the build<br>
 
                             <div class="version-selector">
                                 <button class="version-selector__button version-selector__button--latest" data-ctrly="component-version-selector" data-version-selector-control>
-                                    v1.7.0
+                                    v1.8.0
 
                                     <i class="icon-chevron-down" aria-hidden="true"></i>
                                     <i class="icon-chevron-up" aria-hidden="true"></i>
@@ -561,6 +597,11 @@ lock Travis distro so new defaults will not break the build<br>
                                             </a>
                                         </li>
                                                                                                                                                                                                                     <li>
+                                                <a href="https://github.com/reactphp/promise-timer/tree/v1.7.0#readme" class="version-selector__version">
+                                                    v1.7.0
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
                                                 <a href="https://github.com/reactphp/promise-timer/tree/v1.6.0#readme" class="version-selector__version">
                                                     v1.6.0
                                                 </a>
@@ -635,19 +676,19 @@ lock Travis distro so new defaults will not break the build<br>
 
                         <h3 class="component-info__subtitle">Installation</h3>
 
-                        <div class="highlight highlight-source-shell"><pre>composer require react/promise-timer:^1.7.0</pre></div>
+                        <div class="highlight highlight-source-shell"><pre>composer require react/promise-timer:^1.8.0</pre></div>
 
                         <h3 class="component-info__subtitle">Contributors</h3>
 
                         <ul class="component-info__contributors">
                                                     <li>
                                 <a href="https://github.com/clue">
-                                    <img src="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=80 2x" alt="clue" title="clue (51 contributions)">
+                                    <img src="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=80 2x" alt="clue" title="clue (57 contributions)">
                                 </a>
                             </li>
                                                     <li>
                                 <a href="https://github.com/WyriHaximus">
-                                    <img src="https://avatars.githubusercontent.com/u/147145?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/147145?v=4&amp;s=80 2x" alt="WyriHaximus" title="WyriHaximus (17 contributions)">
+                                    <img src="https://avatars.githubusercontent.com/u/147145?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/147145?v=4&amp;s=80 2x" alt="WyriHaximus" title="WyriHaximus (21 contributions)">
                                 </a>
                             </li>
                                                     <li>
@@ -658,6 +699,11 @@ lock Travis distro so new defaults will not break the build<br>
                                                     <li>
                                 <a href="https://github.com/SimonFrings">
                                     <img src="https://avatars.githubusercontent.com/u/44357440?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/44357440?v=4&amp;s=80 2x" alt="SimonFrings" title="SimonFrings (7 contribution)">
+                                </a>
+                            </li>
+                                                    <li>
+                                <a href="https://github.com/Thomas-Gelf">
+                                    <img src="https://avatars.githubusercontent.com/u/553008?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/553008?v=4&amp;s=80 2x" alt="Thomas-Gelf" title="Thomas-Gelf (2 contribution)">
                                 </a>
                             </li>
                                                     <li>
@@ -694,7 +740,7 @@ lock Travis distro so new defaults will not break the build<br>
         <mask id="reactphp-promise-timer-participation-sparkline" x="0" y="0" width="320" height="40" >
             <polyline 
                 transform="translate(0, 40) scale(1,-1)"
-                points="0,1 6,1 12,1 18,1 24,1 30,1 36,1 42,1 48,1 54,4 60,1 66,1 72,1 78,1 84,1 90,1 96,1 102,1 108,1 114,1 120,1 126,1 132,1 138,1 144,1 150,1 156,1 162,1 168,1 174,1 180,2 186,4 192,1 198,1 204,1 210,1 216,1 222,1 228,1 234,1 240,1 246,1 252,1 258,1 264,1 270,1 276,3 282,1 288,1 294,2 300,2 306,1" 
+                points="0,1 6,1 12,1 18,1 24,1 30,1 36,1 42,1 48,4 54,1 60,1 66,1 72,1 78,1 84,1 90,1 96,1 102,1 108,1 114,1 120,1 126,1 132,1 138,1 144,1 150,1 156,1 162,1 168,1 174,1 180,5 186,1 192,1 198,1 204,1 210,1 216,1 222,1 228,1 234,1 240,1 246,1 252,1 258,1 264,1 270,3 276,1 282,1 288,1 294,3 300,4 306,9" 
                 fill="transparent" 
                 stroke="#40a977" 
                 stroke-width="2"
