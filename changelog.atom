@@ -1,11 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
   <title type="text">The combined changelog for all ReactPHP components.</title>
-  <updated>2021-12-20T08:47:03+00:00</updated>
+  <updated>2022-01-14T10:14:38+00:00</updated>
   <generator uri="http://framework.zend.com" version="2">Zend_Feed_Writer</generator>
   <link rel="alternate" type="text/html" href="https://reactphp.org/changelog.html"/>
   <link rel="self" type="application/atom+xml" href="https://reactphp.org/changelog.atom"/>
   <id>https://reactphp.org/changelog.html</id>
+  <entry>
+    <title type="html"><![CDATA[Socket 1.11.0]]></title>
+    <summary type="html"><![CDATA[<ul dir="auto">
+<li>
+<p dir="auto">Feature: Full support for PHP 8.1 release.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1071223739" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/277" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/277/hovercard" href="https://github.com/reactphp/socket/pull/277">#277</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+</li>
+<li>
+<p dir="auto">Feature: Avoid dependency on <code>ext-filter</code>.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1071834480" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/279" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/279/hovercard" href="https://github.com/reactphp/socket/pull/279">#279</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+</li>
+<li>
+<p dir="auto">Improve test suite to skip FD test when hitting memory limit<br>
+and skip legacy TLS 1.0 tests if disabled by system.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1071832139" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/278" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/278/hovercard" href="https://github.com/reactphp/socket/pull/278">#278</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1094540242" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/281" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/281/hovercard" href="https://github.com/reactphp/socket/pull/281">#281</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1101834865" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/283" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/283/hovercard" href="https://github.com/reactphp/socket/pull/283">#283</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/SimonFrings/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/SimonFrings">@SimonFrings</a>)</p>
+</li>
+</ul>]]></summary>
+    <updated>2022-01-14T10:14:38+00:00</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/reactphp/socket/releases/tag/v1.11.0"/>
+    <id>https://github.com/reactphp/socket/releases/tag/v1.11.0</id>
+    <author>
+      <name>clue</name>
+      <uri>https://github.com/clue</uri>
+    </author>
+  </entry>
   <entry>
     <title type="html"><![CDATA[DNS 1.9.0]]></title>
     <summary type="html"><![CDATA[<ul dir="auto">
@@ -72,9 +97,7 @@ by refactoring <code>Parser</code> to avoid assigning dynamic properties.<br>
 <p dir="auto">Feature: Support listening on existing file descriptors (FDs) with <code>SocketServer</code>.<br>
 (<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="977977806" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/269" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/269/hovercard" href="https://github.com/reactphp/socket/pull/269">#269</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>socket</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">SocketSever</span>(<span class="pl-s">'php://fd/3'</span>);</pre></div>
-<p dir="auto">This is particularly useful when using<br>
-<a href="https://www.freedesktop.org/software/systemd/man/systemd.socket.html" rel="nofollow">systemd socket activation</a><br>
-like this:</p>
+<p dir="auto">This is particularly useful when using <a href="https://www.freedesktop.org/software/systemd/man/systemd.socket.html" rel="nofollow">systemd socket activation</a> like this:</p>
 <div class="highlight highlight-source-shell"><pre>$ systemd-socket-activate -l 8000 php examples/03-http-server.php php://fd/3</pre></div>
 </li>
 <li>
@@ -295,30 +318,6 @@ update PHPUnit config, run tests on PHP 8 and add full core team to the license.
     <updated>2021-07-11T13:06:49+00:00</updated>
     <link rel="alternate" type="text/html" href="https://github.com/reactphp/datagram/releases/tag/v1.8.0"/>
     <id>https://github.com/reactphp/datagram/releases/tag/v1.8.0</id>
-    <author>
-      <name>clue</name>
-      <uri>https://github.com/clue</uri>
-    </author>
-  </entry>
-  <entry>
-    <title type="html"><![CDATA[ChildProcess 0.6.3]]></title>
-    <summary type="html"><![CDATA[<p dir="auto">A major new feature release, see <a href="https://clue.engineering/2021/announcing-reactphp-default-loop" rel="nofollow"><strong>release announcement</strong></a>.</p>
-<ul dir="auto">
-<li>
-<p dir="auto">Feature: Simplify usage by supporting new <a href="https://reactphp.org/event-loop/#loop" rel="nofollow">default loop</a>.<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="940489915" data-permission-text="Title is private" data-url="https://github.com/reactphp/child-process/issues/87" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/child-process/pull/87/hovercard" href="https://github.com/reactphp/child-process/pull/87">#87</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-c">// old (still supported)</span>
-<span class="pl-s1"><span class="pl-c1">$</span>process</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">ChildProcess</span>\<span class="pl-v">Process</span>(<span class="pl-s1"><span class="pl-c1">$</span>command</span>);
-<span class="pl-s1"><span class="pl-c1">$</span>process</span>-&gt;<span class="pl-en">start</span>(<span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
-
-<span class="pl-c">// new (using default loop)</span>
-<span class="pl-s1"><span class="pl-c1">$</span>process</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">ChildProcess</span>\<span class="pl-v">Process</span>(<span class="pl-s1"><span class="pl-c1">$</span>command</span>);
-<span class="pl-s1"><span class="pl-c1">$</span>process</span>-&gt;<span class="pl-en">start</span>();</pre></div>
-</li>
-</ul>]]></summary>
-    <updated>2021-07-11T13:05:12+00:00</updated>
-    <link rel="alternate" type="text/html" href="https://github.com/reactphp/child-process/releases/tag/v0.6.3"/>
-    <id>https://github.com/reactphp/child-process/releases/tag/v0.6.3</id>
     <author>
       <name>clue</name>
       <uri>https://github.com/clue</uri>

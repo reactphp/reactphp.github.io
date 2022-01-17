@@ -102,7 +102,7 @@
                         Socket
 
                         <span class="off-canvas-menu__version">
-                            v1.10.0
+                            v1.11.0
                         </span>
                     </a>
                 </li>
@@ -214,6 +214,7 @@
 
 
             <ul class="toc">
+            <li><a href="#2022" title="Jump to year 2022 (1 release)">2022</a></li>
             <li><a href="#2021" title="Jump to year 2021 (25 releases)">2021</a></li>
             <li><a href="#2020" title="Jump to year 2020 (16 releases)">2020</a></li>
             <li><a href="#2019" title="Jump to year 2019 (21 releases)">2019</a></li>
@@ -227,6 +228,42 @@
         </ul>
 
     <h2>
+        <a id="2022" class="anchor" href="#2022" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+        2022
+    </h2>
+
+    
+                        <h3>
+        <a id="socket-1110-2022-01-14" class="anchor" href="#socket-1110-2022-01-14" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        Socket 1.11.0
+
+        <small>
+            (2022-01-14)
+            <a href="https://github.com/reactphp/socket/releases/tag/v1.11.0" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul dir="auto">
+<li>
+<p dir="auto">Feature: Full support for PHP 8.1 release.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1071223739" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/277" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/277/hovercard" href="https://github.com/reactphp/socket/pull/277">#277</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+</li>
+<li>
+<p dir="auto">Feature: Avoid dependency on <code>ext-filter</code>.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1071834480" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/279" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/279/hovercard" href="https://github.com/reactphp/socket/pull/279">#279</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+</li>
+<li>
+<p dir="auto">Improve test suite to skip FD test when hitting memory limit<br>
+and skip legacy TLS 1.0 tests if disabled by system.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1071832139" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/278" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/278/hovercard" href="https://github.com/reactphp/socket/pull/278">#278</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1094540242" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/281" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/281/hovercard" href="https://github.com/reactphp/socket/pull/281">#281</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1101834865" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/283" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/283/hovercard" href="https://github.com/reactphp/socket/pull/283">#283</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/SimonFrings/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/SimonFrings">@SimonFrings</a>)</p>
+</li>
+</ul>
+
+    <hr>
+        <h2>
         <a id="2021" class="anchor" href="#2021" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
         2021
     </h2>
@@ -321,9 +358,7 @@ by refactoring <code>Parser</code> to avoid assigning dynamic properties.<br>
 <p dir="auto">Feature: Support listening on existing file descriptors (FDs) with <code>SocketServer</code>.<br>
 (<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="977977806" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/269" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/269/hovercard" href="https://github.com/reactphp/socket/pull/269">#269</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>socket</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">SocketSever</span>(<span class="pl-s">'php://fd/3'</span>);</pre></div>
-<p dir="auto">This is particularly useful when using<br>
-<a href="https://www.freedesktop.org/software/systemd/man/systemd.socket.html" rel="nofollow">systemd socket activation</a><br>
-like this:</p>
+<p dir="auto">This is particularly useful when using <a href="https://www.freedesktop.org/software/systemd/man/systemd.socket.html" rel="nofollow">systemd socket activation</a> like this:</p>
 <div class="highlight highlight-source-shell"><pre>$ systemd-socket-activate -l 8000 php examples/03-http-server.php php://fd/3</pre></div>
 </li>
 <li>

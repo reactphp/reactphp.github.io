@@ -102,7 +102,7 @@
                         Socket
 
                         <span class="off-canvas-menu__version">
-                            v1.10.0
+                            v1.11.0
                         </span>
                     </a>
                 </li>
@@ -212,6 +212,7 @@
                     <h1>Socket Changelog</h1>
 
     <ul class="toc">
+            <li><a href="#2022" title="Jump to year 2022 (1 release)">2022</a></li>
             <li><a href="#2021" title="Jump to year 2021 (4 releases)">2021</a></li>
             <li><a href="#2020" title="Jump to year 2020 (3 releases)">2020</a></li>
             <li><a href="#2019" title="Jump to year 2019 (3 releases)">2019</a></li>
@@ -224,6 +225,42 @@
         </ul>
 
     <h2>
+        <a id="2022" class="anchor" href="#2022" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+        2022
+    </h2>
+
+    
+            <h3>
+        <a id="1110-2022-01-14" class="anchor" href="#1110-2022-01-14" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        1.11.0
+
+        <small>
+            (2022-01-14)
+            <a href="https://github.com/reactphp/socket/releases/tag/v1.11.0" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul dir="auto">
+<li>
+<p dir="auto">Feature: Full support for PHP 8.1 release.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1071223739" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/277" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/277/hovercard" href="https://github.com/reactphp/socket/pull/277">#277</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+</li>
+<li>
+<p dir="auto">Feature: Avoid dependency on <code>ext-filter</code>.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1071834480" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/279" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/279/hovercard" href="https://github.com/reactphp/socket/pull/279">#279</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+</li>
+<li>
+<p dir="auto">Improve test suite to skip FD test when hitting memory limit<br>
+and skip legacy TLS 1.0 tests if disabled by system.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1071832139" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/278" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/278/hovercard" href="https://github.com/reactphp/socket/pull/278">#278</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1094540242" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/281" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/281/hovercard" href="https://github.com/reactphp/socket/pull/281">#281</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1101834865" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/283" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/283/hovercard" href="https://github.com/reactphp/socket/pull/283">#283</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/SimonFrings/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/SimonFrings">@SimonFrings</a>)</p>
+</li>
+</ul>
+
+    <hr>
+        <h2>
         <a id="2021" class="anchor" href="#2021" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
         2021
     </h2>
@@ -247,9 +284,7 @@
 <p dir="auto">Feature: Support listening on existing file descriptors (FDs) with <code>SocketServer</code>.<br>
 (<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="977977806" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/269" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/269/hovercard" href="https://github.com/reactphp/socket/pull/269">#269</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>socket</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">SocketSever</span>(<span class="pl-s">'php://fd/3'</span>);</pre></div>
-<p dir="auto">This is particularly useful when using<br>
-<a href="https://www.freedesktop.org/software/systemd/man/systemd.socket.html" rel="nofollow">systemd socket activation</a><br>
-like this:</p>
+<p dir="auto">This is particularly useful when using <a href="https://www.freedesktop.org/software/systemd/man/systemd.socket.html" rel="nofollow">systemd socket activation</a> like this:</p>
 <div class="highlight highlight-source-shell"><pre>$ systemd-socket-activate -l 8000 php examples/03-http-server.php php://fd/3</pre></div>
 </li>
 <li>
@@ -1708,7 +1743,7 @@ Please use composition instead of extension.<br>
 
                             <div class="version-selector">
                                 <button class="version-selector__button version-selector__button--latest" data-ctrly="component-version-selector" data-version-selector-control>
-                                    v1.10.0
+                                    v1.11.0
 
                                     <i class="icon-chevron-down" aria-hidden="true"></i>
                                     <i class="icon-chevron-up" aria-hidden="true"></i>
@@ -1724,6 +1759,11 @@ Please use composition instead of extension.<br>
                                             </a>
                                         </li>
                                                                                                                                                                                                                     <li>
+                                                <a href="https://github.com/reactphp/socket/tree/v1.10.0#readme" class="version-selector__version">
+                                                    v1.10.0
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
                                                 <a href="https://github.com/reactphp/socket/tree/v1.9.0#readme" class="version-selector__version">
                                                     v1.9.0
                                                 </a>
@@ -1983,14 +2023,14 @@ Please use composition instead of extension.<br>
 
                         <h3 class="component-info__subtitle">Installation</h3>
 
-                        <div class="highlight highlight-source-shell"><pre>composer require react/socket:^1.10.0</pre></div>
+                        <div class="highlight highlight-source-shell"><pre>composer require react/socket:^1.11.0</pre></div>
 
                         <h3 class="component-info__subtitle">Contributors</h3>
 
                         <ul class="component-info__contributors">
                                                     <li>
                                 <a href="https://github.com/clue">
-                                    <img src="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=80 2x" alt="clue" title="clue (352 contributions)">
+                                    <img src="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=80 2x" alt="clue" title="clue (354 contributions)">
                                 </a>
                             </li>
                                                     <li>
@@ -2000,7 +2040,7 @@ Please use composition instead of extension.<br>
                             </li>
                                                     <li>
                                 <a href="https://github.com/WyriHaximus">
-                                    <img src="https://avatars.githubusercontent.com/u/147145?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/147145?v=4&amp;s=80 2x" alt="WyriHaximus" title="WyriHaximus (81 contributions)">
+                                    <img src="https://avatars.githubusercontent.com/u/147145?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/147145?v=4&amp;s=80 2x" alt="WyriHaximus" title="WyriHaximus (83 contributions)">
                                 </a>
                             </li>
                                                     <li>
@@ -2015,7 +2055,7 @@ Please use composition instead of extension.<br>
                             </li>
                                                     <li>
                                 <a href="https://github.com/SimonFrings">
-                                    <img src="https://avatars.githubusercontent.com/u/44357440?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/44357440?v=4&amp;s=80 2x" alt="SimonFrings" title="SimonFrings (10 contributions)">
+                                    <img src="https://avatars.githubusercontent.com/u/44357440?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/44357440?v=4&amp;s=80 2x" alt="SimonFrings" title="SimonFrings (13 contributions)">
                                 </a>
                             </li>
                                                     <li>
@@ -2117,7 +2157,7 @@ Please use composition instead of extension.<br>
         <mask id="reactphp-socket-participation-sparkline" x="0" y="0" width="320" height="40" >
             <polyline 
                 transform="translate(0, 40) scale(1,-1)"
-                points="0,1 6,1 12,1 18,1 24,1 30,1 36,1 42,4 48,1 54,2 60,1 66,1 72,2 78,1 84,1 90,2 96,1 102,1 108,1 114,1 120,1 126,1 132,1 138,1 144,1 150,1 156,6 162,1 168,5 174,1 180,2 186,4 192,3 198,6 204,4 210,5 216,13 222,2 228,1 234,1 240,1 246,2 252,1 258,1 264,1 270,1 276,1 282,3 288,1 294,4 300,4 306,1" 
+                points="0,1 6,1 12,1 18,4 24,1 30,2 36,1 42,1 48,2 54,1 60,1 66,2 72,1 78,1 84,1 90,1 96,1 102,1 108,1 114,1 120,1 126,1 132,6 138,1 144,5 150,1 156,2 162,4 168,3 174,6 180,4 186,5 192,13 198,2 204,2 210,1 216,1 222,2 228,1 234,1 240,1 246,1 252,1 258,4 264,1 270,4 276,4 282,1 288,1 294,1 300,2 306,5" 
                 fill="transparent" 
                 stroke="#40a977" 
                 stroke-width="2"
