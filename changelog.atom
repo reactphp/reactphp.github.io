@@ -1,11 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
   <title type="text">The combined changelog for all ReactPHP components.</title>
-  <updated>2022-01-14T10:14:38+00:00</updated>
+  <updated>2022-02-03T13:17:42+00:00</updated>
   <generator uri="http://framework.zend.com" version="2">Zend_Feed_Writer</generator>
   <link rel="alternate" type="text/html" href="https://reactphp.org/changelog.html"/>
   <link rel="self" type="application/atom+xml" href="https://reactphp.org/changelog.atom"/>
   <id>https://reactphp.org/changelog.html</id>
+  <entry>
+    <title type="html"><![CDATA[HTTP 1.6.0]]></title>
+    <summary type="html"><![CDATA[<ul dir="auto">
+<li>
+<p dir="auto">Feature: Add factory methods for common HTML/JSON/plaintext/XML response types.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1122815462" data-permission-text="Title is private" data-url="https://github.com/reactphp/http/issues/439" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/http/pull/439/hovercard" href="https://github.com/reactphp/http/pull/439">#439</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>response</span> = <span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Response</span>\html</span>(<span class="pl-s">"&lt;h1&gt;Hello wörld!&lt;/h1&gt;\n"</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>response</span> = <span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Response</span>\json</span>([<span class="pl-s">'message'</span> =&gt; <span class="pl-s">'Hello wörld!'</span>]);
+<span class="pl-s1"><span class="pl-c1">$</span>response</span> = <span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Response</span>\plaintext</span>(<span class="pl-s">"Hello wörld!\n"</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>response</span> = <span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Response</span>\xml</span>(<span class="pl-s">"&lt;message&gt;Hello wörld!&lt;/message&gt;\n"</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>response</span> = <span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Response</span>\redirect</span>(<span class="pl-s">'https://reactphp.org/'</span>);</pre></div>
+</li>
+<li>
+<p dir="auto">Feature: Expose all status code constants via <code>Response</code> class.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1046707387" data-permission-text="Title is private" data-url="https://github.com/reactphp/http/issues/432" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/http/pull/432/hovercard" href="https://github.com/reactphp/http/pull/432">#432</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>response</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">Response</span>(
+    <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">Response</span>::<span class="pl-c1">STATUS_OK</span>, <span class="pl-c">// 200 OK</span>
+    …
+);
+<span class="pl-s1"><span class="pl-c1">$</span>response</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">Response</span>(
+    <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">Response</span>::<span class="pl-c1">STATUS_NOT_FOUND</span>, <span class="pl-c">// 404 Not Found</span>
+    …
+);</pre></div>
+</li>
+<li>
+<p dir="auto">Feature: Full support for PHP 8.1 release.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1053742757" data-permission-text="Title is private" data-url="https://github.com/reactphp/http/issues/433" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/http/pull/433/hovercard" href="https://github.com/reactphp/http/pull/433">#433</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/SimonFrings/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/SimonFrings">@SimonFrings</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1071238894" data-permission-text="Title is private" data-url="https://github.com/reactphp/http/issues/434" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/http/pull/434/hovercard" href="https://github.com/reactphp/http/pull/434">#434</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+</li>
+<li>
+<p dir="auto">Feature / Fix: Improve protocol handling for HTTP responses with no body.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1044927177" data-permission-text="Title is private" data-url="https://github.com/reactphp/http/issues/429" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/http/pull/429/hovercard" href="https://github.com/reactphp/http/pull/429">#429</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1045545800" data-permission-text="Title is private" data-url="https://github.com/reactphp/http/issues/430" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/http/pull/430/hovercard" href="https://github.com/reactphp/http/pull/430">#430</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+</li>
+<li>
+<p dir="auto">Internal refactoring and internal improvements for handling requests and responses.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="972985176" data-permission-text="Title is private" data-url="https://github.com/reactphp/http/issues/422" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/http/pull/422/hovercard" href="https://github.com/reactphp/http/pull/422">#422</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/WyriHaximus/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/WyriHaximus">@WyriHaximus</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1046699669" data-permission-text="Title is private" data-url="https://github.com/reactphp/http/issues/431" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/http/pull/431/hovercard" href="https://github.com/reactphp/http/pull/431">#431</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+</li>
+<li>
+<p dir="auto">Improve documentation, update proxy examples, include error reporting in examples.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="963237744" data-permission-text="Title is private" data-url="https://github.com/reactphp/http/issues/420" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/http/pull/420/hovercard" href="https://github.com/reactphp/http/pull/420">#420</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="981504239" data-permission-text="Title is private" data-url="https://github.com/reactphp/http/issues/424" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/http/pull/424/hovercard" href="https://github.com/reactphp/http/pull/424">#424</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1007762475" data-permission-text="Title is private" data-url="https://github.com/reactphp/http/issues/426" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/http/pull/426/hovercard" href="https://github.com/reactphp/http/pull/426">#426</a>, and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1007774270" data-permission-text="Title is private" data-url="https://github.com/reactphp/http/issues/427" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/http/pull/427/hovercard" href="https://github.com/reactphp/http/pull/427">#427</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+</li>
+<li>
+<p dir="auto">Update test suite to use default loop.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1111834591" data-permission-text="Title is private" data-url="https://github.com/reactphp/http/issues/438" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/http/pull/438/hovercard" href="https://github.com/reactphp/http/pull/438">#438</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+</li>
+</ul>]]></summary>
+    <updated>2022-02-03T13:17:42+00:00</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/reactphp/http/releases/tag/v1.6.0"/>
+    <id>https://github.com/reactphp/http/releases/tag/v1.6.0</id>
+    <author>
+      <name>clue</name>
+      <uri>https://github.com/clue</uri>
+    </author>
+  </entry>
   <entry>
     <title type="html"><![CDATA[Socket 1.11.0]]></title>
     <summary type="html"><![CDATA[<ul dir="auto">
@@ -296,28 +349,6 @@ update PHPUnit config, run tests on PHP 8 and add full core team to the license.
     <updated>2021-07-11T13:09:04+00:00</updated>
     <link rel="alternate" type="text/html" href="https://github.com/reactphp/promise-timer/releases/tag/v1.7.0"/>
     <id>https://github.com/reactphp/promise-timer/releases/tag/v1.7.0</id>
-    <author>
-      <name>clue</name>
-      <uri>https://github.com/clue</uri>
-    </author>
-  </entry>
-  <entry>
-    <title type="html"><![CDATA[Datagram 1.8.0]]></title>
-    <summary type="html"><![CDATA[<p dir="auto">A major new feature release, see <a href="https://clue.engineering/2021/announcing-reactphp-default-loop" rel="nofollow"><strong>release announcement</strong></a>.</p>
-<ul dir="auto">
-<li>
-<p dir="auto">Feature: Simplify usage by supporting new <a href="https://reactphp.org/event-loop/#loop" rel="nofollow">default loop</a>.<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="939951514" data-permission-text="Title is private" data-url="https://github.com/reactphp/datagram/issues/42" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/datagram/pull/42/hovercard" href="https://github.com/reactphp/datagram/pull/42">#42</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-c">// old (still supported)</span>
-<span class="pl-s1"><span class="pl-c1">$</span>factory</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Datagram</span>\<span class="pl-v">Factory</span>(<span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
-
-<span class="pl-c">// new (using default loop)</span>
-<span class="pl-s1"><span class="pl-c1">$</span>factory</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Datagram</span>\<span class="pl-v">Factory</span>();</pre></div>
-</li>
-</ul>]]></summary>
-    <updated>2021-07-11T13:06:49+00:00</updated>
-    <link rel="alternate" type="text/html" href="https://github.com/reactphp/datagram/releases/tag/v1.8.0"/>
-    <id>https://github.com/reactphp/datagram/releases/tag/v1.8.0</id>
     <author>
       <name>clue</name>
       <uri>https://github.com/clue</uri>
