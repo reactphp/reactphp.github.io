@@ -224,7 +224,14 @@
         <div class="container">
             <div class="wrapper wrapper--small">
                 <div class="welcome__example">
-            <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>http</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">HttpServer</span>(<span class="pl-k">function</span> (<span class="pl-v">Psr</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-smi">ServerRequestInterface</span> <span class="pl-s1"><span class="pl-c1">$</span>request</span>) {
+            <div class="highlight highlight-text-html-php"><pre><span class="pl-ent">&lt;?php</span>
+
+<span class="pl-c">// $ composer require react/http react/socket # install example using Composer</span>
+<span class="pl-c">// $ php example.php # run example on command line, requires no additional web server</span>
+
+<span class="pl-k">require</span> __DIR__ . <span class="pl-s">'/vendor/autoload.php'</span>;
+
+<span class="pl-s1"><span class="pl-c1">$</span>http</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">HttpServer</span>(<span class="pl-k">function</span> (<span class="pl-v">Psr</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-smi">ServerRequestInterface</span> <span class="pl-s1"><span class="pl-c1">$</span>request</span>) {
     <span class="pl-k">return</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">Response</span>::<span class="pl-en">plaintext</span>(
         <span class="pl-s">"Hello World!\n"</span>
     );
