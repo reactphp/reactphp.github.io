@@ -170,7 +170,7 @@ ChildProcess - ReactPHP</title>
                         PromiseStream
 
                         <span class="off-canvas-menu__version">
-                            v1.3.0
+                            v1.4.0
                         </span>
                     </a>
                 </li>
@@ -297,7 +297,7 @@ you can use any of their events and methods as usual:</p>
     <span class="pl-k">echo</span> <span class="pl-s">'ended'</span>;
 });
 
-<span class="pl-s1"><span class="pl-c1">$</span>process</span>-&gt;<span class="pl-c1">stdout</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'error'</span>, <span class="pl-k">function</span> (<span class="pl-smi">Exception</span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>) {
+<span class="pl-s1"><span class="pl-c1">$</span>process</span>-&gt;<span class="pl-c1">stdout</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'error'</span>, <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">Exception</span></span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>) {
     <span class="pl-k">echo</span> <span class="pl-s">'error: '</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>();
 });
 
@@ -326,7 +326,7 @@ argument using <code>escapeshellarg()</code> like this:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>bin</span> = <span class="pl-s">'C:\\Program files (x86)\\PHP\\php.exe'</span>;
 <span class="pl-s1"><span class="pl-c1">$</span>file</span> = <span class="pl-s">'C:\\Users\\me\\Desktop\\Application\\main.php'</span>;
 
-<span class="pl-s1"><span class="pl-c1">$</span>process</span> = <span class="pl-k">new</span> <span class="pl-v">Process</span>(<span class="pl-en">escapeshellarg</span>(<span class="pl-s1"><span class="pl-c1">$</span>bin</span>) . <span class="pl-s">' '</span> . <span class="pl-en">escapeshellarg</span>(<span class="pl-s1"><span class="pl-c1">$</span>file</span>));
+<span class="pl-s1"><span class="pl-c1">$</span>process</span> = <span class="pl-k">new</span> <span class="pl-v">Process</span>(escapeshellarg(<span class="pl-s1"><span class="pl-c1">$</span>bin</span>) . <span class="pl-s">' '</span> . escapeshellarg(<span class="pl-s1"><span class="pl-c1">$</span>file</span>));
 <span class="pl-s1"><span class="pl-c1">$</span>process</span>-&gt;<span class="pl-en">start</span>();</pre></div>
 <p>By default, PHP will launch processes by wrapping the given command line string
 in a <code>sh</code> command on Unix, so that the first example will actually execute
@@ -436,7 +436,7 @@ process a signal (SIGTERM by default).
 Depending on which signal you send to the process and whether it has a signal
 handler registered, this can be used to either merely signal a process or even
 forcefully terminate it.</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>process</span>-&gt;<span class="pl-en">terminate</span>(<span class="pl-v">SIGUSR1</span>);</pre></div>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>process</span>-&gt;<span class="pl-en">terminate</span>(<span class="pl-c1">SIGUSR1</span>);</pre></div>
 <p>Keep the above section in mind if you want to forcefully terminate a process.
 If your process spawn sub-processes or implicitly uses the
 <a href="#command">wrapping shell mentioned above</a>, its file descriptors may be
@@ -495,12 +495,12 @@ like this:</p>
 
     <span class="pl-c">// example FDs for files or open resources</span>
     <span class="pl-c1">4</span> =&gt; <span class="pl-en">array</span>(<span class="pl-s">'file'</span>, <span class="pl-s">'/dev/null'</span>, <span class="pl-s">'r'</span>),
-    <span class="pl-c1">6</span> =&gt; <span class="pl-en">fopen</span>(<span class="pl-s">'log.txt'</span>,<span class="pl-s">'a'</span>),
+    <span class="pl-c1">6</span> =&gt; fopen(<span class="pl-s">'log.txt'</span>,<span class="pl-s">'a'</span>),
     <span class="pl-c1">8</span> =&gt; <span class="pl-c1">STDERR</span>,
 
     <span class="pl-c">// example FDs for sockets</span>
-    <span class="pl-c1">10</span> =&gt; <span class="pl-en">fsockopen</span>(<span class="pl-s">'localhost'</span>, <span class="pl-c1">8080</span>),
-    <span class="pl-c1">12</span> =&gt; <span class="pl-en">stream_socket_server</span>(<span class="pl-s">'tcp://0.0.0.0:4711'</span>)
+    <span class="pl-c1">10</span> =&gt; fsockopen(<span class="pl-s">'localhost'</span>, <span class="pl-c1">8080</span>),
+    <span class="pl-c1">12</span> =&gt; stream_socket_server(<span class="pl-s">'tcp://0.0.0.0:4711'</span>)
 );
 
 <span class="pl-s1"><span class="pl-c1">$</span>process</span> = <span class="pl-k">new</span> <span class="pl-v">Process</span>(<span class="pl-s1"><span class="pl-c1">$</span>cmd</span>, <span class="pl-c1">null</span>, <span class="pl-c1">null</span>, <span class="pl-s1"><span class="pl-c1">$</span>fds</span>);
@@ -606,7 +606,7 @@ executed, you can use <a href="#custom-pipes">custom pipes</a> to configure file
 handles to be passed to the child process instead of pipes like this:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>process</span> = <span class="pl-k">new</span> <span class="pl-v">Process</span>(<span class="pl-s">'ping example.com'</span>, <span class="pl-c1">null</span>, <span class="pl-c1">null</span>, <span class="pl-en">array</span>(
     <span class="pl-en">array</span>(<span class="pl-s">'file'</span>, <span class="pl-s">'nul'</span>, <span class="pl-s">'r'</span>),
-    <span class="pl-s1"><span class="pl-c1">$</span>stdout</span> = <span class="pl-en">tmpfile</span>(),
+    <span class="pl-s1"><span class="pl-c1">$</span>stdout</span> = tmpfile(),
     <span class="pl-en">array</span>(<span class="pl-s">'file'</span>, <span class="pl-s">'nul'</span>, <span class="pl-s">'w'</span>)
 ));
 <span class="pl-s1"><span class="pl-c1">$</span>process</span>-&gt;<span class="pl-en">start</span>();
@@ -617,9 +617,9 @@ handles to be passed to the child process instead of pipes like this:</p>
     <span class="pl-c">// rewind to start and then read full file (demo only, this is blocking).</span>
     <span class="pl-c">// reading from shared file is only safe if you have some synchronization in place</span>
     <span class="pl-c">// or after the child process has terminated.</span>
-    <span class="pl-en">rewind</span>(<span class="pl-s1"><span class="pl-c1">$</span>stdout</span>);
-    <span class="pl-k">echo</span> <span class="pl-en">stream_get_contents</span>(<span class="pl-s1"><span class="pl-c1">$</span>stdout</span>);
-    <span class="pl-en">fclose</span>(<span class="pl-s1"><span class="pl-c1">$</span>stdout</span>);
+    rewind(<span class="pl-s1"><span class="pl-c1">$</span>stdout</span>);
+    <span class="pl-k">echo</span> stream_get_contents(<span class="pl-s1"><span class="pl-c1">$</span>stdout</span>);
+    fclose(<span class="pl-s1"><span class="pl-c1">$</span>stdout</span>);
 });</pre></div>
 <p>Note that this example uses <code>tmpfile()</code>/<code>fopen()</code> for illustration purposes only.
 This should not be used in a truly async program because the filesystem is
@@ -633,13 +633,13 @@ you can use redirection to spawn an additional process to forward your
 standard I/O streams to a socket and use <a href="#custom-pipes">custom pipes</a> to
 omit any actual standard I/O pipes like this:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Server</span>(<span class="pl-s">'127.0.0.1:0'</span>);
-<span class="pl-s1"><span class="pl-c1">$</span>server</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'connection'</span>, <span class="pl-k">function</span> (<span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-smi">ConnectionInterface</span> <span class="pl-s1"><span class="pl-c1">$</span>connection</span>) {
+<span class="pl-s1"><span class="pl-c1">$</span>server</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'connection'</span>, <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi"><span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">ConnectionInterface</span></span></span> <span class="pl-s1"><span class="pl-c1">$</span>connection</span>) {
     <span class="pl-s1"><span class="pl-c1">$</span>connection</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'data'</span>, <span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>chunk</span>) {
         <span class="pl-k">echo</span> <span class="pl-s1"><span class="pl-c1">$</span>chunk</span>;
     });
 });
 
-<span class="pl-s1"><span class="pl-c1">$</span>command</span> = <span class="pl-s">'ping example.com | foobar '</span> . <span class="pl-en">escapeshellarg</span>(<span class="pl-s1"><span class="pl-c1">$</span>server</span>-&gt;<span class="pl-en">getAddress</span>());
+<span class="pl-s1"><span class="pl-c1">$</span>command</span> = <span class="pl-s">'ping example.com | foobar '</span> . escapeshellarg(<span class="pl-s1"><span class="pl-c1">$</span>server</span>-&gt;<span class="pl-en">getAddress</span>());
 <span class="pl-s1"><span class="pl-c1">$</span>process</span> = <span class="pl-k">new</span> <span class="pl-v">Process</span>(<span class="pl-s1"><span class="pl-c1">$</span>command</span>, <span class="pl-c1">null</span>, <span class="pl-c1">null</span>, <span class="pl-en">array</span>());
 <span class="pl-s1"><span class="pl-c1">$</span>process</span>-&gt;<span class="pl-en">start</span>();
 
@@ -654,14 +654,14 @@ but in this case does not require modification of the actual child process.</p>
 <p>In this example, the fictional <code>foobar</code> helper program can be implemented by
 simply consuming all data from standard input and forwarding it to a socket
 connection like this:</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>socket</span> = <span class="pl-en">stream_socket_client</span>(<span class="pl-s1"><span class="pl-c1">$</span>argv</span>[<span class="pl-c1">1</span>]);
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>socket</span> = stream_socket_client(<span class="pl-s1"><span class="pl-c1">$</span>argv</span>[<span class="pl-c1">1</span>]);
 <span class="pl-k">do</span> {
-    <span class="pl-en">fwrite</span>(<span class="pl-s1"><span class="pl-c1">$</span>socket</span>, <span class="pl-s1"><span class="pl-c1">$</span>data</span> = <span class="pl-en">fread</span>(<span class="pl-c1">STDIN</span>, <span class="pl-c1">8192</span>));
-} <span class="pl-k">while</span> (<span class="pl-en">isset</span>(<span class="pl-s1"><span class="pl-c1">$</span>data</span>[<span class="pl-c1">0</span>]));</pre></div>
+    fwrite(<span class="pl-s1"><span class="pl-c1">$</span>socket</span>, <span class="pl-s1"><span class="pl-c1">$</span>data</span> = fread(<span class="pl-c1">STDIN</span>, <span class="pl-c1">8192</span>));
+} <span class="pl-k">while</span> (isset(<span class="pl-s1"><span class="pl-c1">$</span>data</span>[<span class="pl-c1">0</span>]));</pre></div>
 <p>Accordingly, this example can also be run with plain PHP without having to
 rely on any external helper program like this:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>code</span> = <span class="pl-s">'$s=stream_socket_client($argv[1]);do{fwrite($s,$d=fread(STDIN, 8192));}while(isset($d[0]));'</span>;
-<span class="pl-s1"><span class="pl-c1">$</span>command</span> = <span class="pl-s">'ping example.com | php -r '</span> . <span class="pl-en">escapeshellarg</span>(<span class="pl-s1"><span class="pl-c1">$</span>code</span>) . <span class="pl-s">' '</span> . <span class="pl-en">escapeshellarg</span>(<span class="pl-s1"><span class="pl-c1">$</span>server</span>-&gt;<span class="pl-en">getAddress</span>());
+<span class="pl-s1"><span class="pl-c1">$</span>command</span> = <span class="pl-s">'ping example.com | php -r '</span> . escapeshellarg(<span class="pl-s1"><span class="pl-c1">$</span>code</span>) . <span class="pl-s">' '</span> . escapeshellarg(<span class="pl-s1"><span class="pl-c1">$</span>server</span>-&gt;<span class="pl-en">getAddress</span>());
 <span class="pl-s1"><span class="pl-c1">$</span>process</span> = <span class="pl-k">new</span> <span class="pl-v">Process</span>(<span class="pl-s1"><span class="pl-c1">$</span>command</span>, <span class="pl-c1">null</span>, <span class="pl-c1">null</span>, <span class="pl-en">array</span>());
 <span class="pl-s1"><span class="pl-c1">$</span>process</span>-&gt;<span class="pl-en">start</span>();</pre></div>
 <p>See also <a href="https://github.com/reactphp/child-process/blob/v0.6.4/examples/23-forward-socket.php">example #23</a>.</p>
@@ -821,7 +821,7 @@ dependencies <a href="https://getcomposer.org" rel="nofollow">through Composer</
                             </li>
                                                     <li>
                                 <a href="https://github.com/WyriHaximus">
-                                    <img src="https://avatars.githubusercontent.com/u/147145?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/147145?v=4&amp;s=80 2x" alt="WyriHaximus" title="WyriHaximus (50 contributions)">
+                                    <img src="https://avatars.githubusercontent.com/u/147145?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/147145?v=4&amp;s=80 2x" alt="WyriHaximus" title="WyriHaximus (51 contributions)">
                                 </a>
                             </li>
                                                     <li>
@@ -870,6 +870,11 @@ dependencies <a href="https://getcomposer.org" rel="nofollow">through Composer</
                                 </a>
                             </li>
                                                     <li>
+                                <a href="https://github.com/nhedger">
+                                    <img src="https://avatars.githubusercontent.com/u/649677?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/649677?v=4&amp;s=80 2x" alt="nhedger" title="nhedger (1 contribution)">
+                                </a>
+                            </li>
+                                                    <li>
                                 <a href="https://github.com/reedy">
                                     <img src="https://avatars.githubusercontent.com/u/67615?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/67615?v=4&amp;s=80 2x" alt="reedy" title="reedy (1 contribution)">
                                 </a>
@@ -898,7 +903,7 @@ dependencies <a href="https://getcomposer.org" rel="nofollow">through Composer</
         <mask id="reactphp-child-process-participation-sparkline" x="0" y="0" width="320" height="40" >
             <polyline 
                 transform="translate(0, 40) scale(1,-1)"
-                points="0,1 6,1 12,1 18,5 24,1 30,1 36,1 42,1 48,1 54,1 60,1 66,1 72,1 78,1 84,1 90,1 96,3 102,4 108,1 114,1 120,1 126,1 132,3 138,1 144,1 150,1 156,1 162,1 168,1 174,1 180,1 186,1 192,1 198,1 204,1 210,1 216,1 222,1 228,1 234,3 240,1 246,2 252,1 258,3 264,2 270,1 276,1 282,1 288,1 294,1 300,1 306,1" 
+                points="0,1 6,1 12,5 18,1 24,1 30,1 36,1 42,1 48,1 54,1 60,1 66,1 72,1 78,1 84,3 90,4 96,1 102,1 108,1 114,1 120,3 126,1 132,1 138,1 144,1 150,1 156,1 162,1 168,1 174,1 180,1 186,1 192,1 198,1 204,1 210,1 216,1 222,3 228,1 234,2 240,1 246,2 252,3 258,1 264,1 270,1 276,1 282,1 288,1 294,1 300,1 306,2" 
                 fill="transparent" 
                 stroke="#40a977" 
                 stroke-width="2"
