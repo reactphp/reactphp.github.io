@@ -5,9 +5,9 @@
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <title>Datagram: License - ReactPHP</title>
+        <title>Async: Changelog - ReactPHP</title>
 
-        <meta name="description" content="Event-driven UDP client and server sockets for ReactPHP.">
+        <meta name="description" content="Async utilities and fibers for ReactPHP.">
 
         <link rel="apple-touch-icon" sizes="180x180" href="https://reactphp.org/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="https://reactphp.org/favicon-32x32.png">
@@ -27,7 +27,8 @@
         <script>!function(){"use strict";var e,t,n,r,o,i={},u={};function a(e){var t=u[e];if(void 0!==t)return t.exports;var n=u[e]={exports:{}};return i[e].call(n.exports,n,n.exports,a),n.exports}a.m=i,e=[],a.O=function(t,n,r,o){if(!n){var i=1/0;for(l=0;l<e.length;l++){n=e[l][0],r=e[l][1],o=e[l][2];for(var u=!0,f=0;f<n.length;f++)(!1&o||i>=o)&&Object.keys(a.O).every((function(e){return a.O[e](n[f])}))?n.splice(f--,1):(u=!1,o<i&&(i=o));if(u){e.splice(l--,1);var c=r();void 0!==c&&(t=c)}}return t}o=o||0;for(var l=e.length;l>0&&e[l-1][2]>o;l--)e[l]=e[l-1];e[l]=[n,r,o]},a.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return a.d(t,{a:t}),t},a.d=function(e,t){for(var n in t)a.o(t,n)&&!a.o(e,n)&&Object.defineProperty(e,n,{enumerable:!0,get:t[n]})},a.f={},a.e=function(e){return Promise.all(Object.keys(a.f).reduce((function(t,n){return a.f[n](e,t),t}),[]))},a.u=function(e){return e+"."+{67:"ab055693",139:"820be3d5",261:"bd162b4a",553:"da065a6b"}[e]+".js"},a.miniCssF=function(e){return e+"."+{67:"4ae9feba",139:"3ced3f7b",553:"90d4e0e8"}[e]+".css"},a.g=function(){if("object"==typeof globalThis)return globalThis;try{return this||new Function("return this")()}catch(e){if("object"==typeof window)return window}}(),a.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},t={},n="reactphp-website:",a.l=function(e,r,o,i){if(t[e])t[e].push(r);else{var u,f;if(void 0!==o)for(var c=document.getElementsByTagName("script"),l=0;l<c.length;l++){var s=c[l];if(s.getAttribute("src")==e||s.getAttribute("data-webpack")==n+o){u=s;break}}u||(f=!0,(u=document.createElement("script")).charset="utf-8",u.timeout=120,a.nc&&u.setAttribute("nonce",a.nc),u.setAttribute("data-webpack",n+o),u.src=e),t[e]=[r];var d=function(n,r){u.onerror=u.onload=null,clearTimeout(p);var o=t[e];if(delete t[e],u.parentNode&&u.parentNode.removeChild(u),o&&o.forEach((function(e){return e(r)})),n)return n(r)},p=setTimeout(d.bind(null,void 0,{type:"timeout",target:u}),12e4);u.onerror=d.bind(null,u.onerror),u.onload=d.bind(null,u.onload),f&&document.head.appendChild(u)}},a.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},a.p="",r=function(e){return new Promise((function(t,n){var r=a.miniCssF(e),o=a.p+r;if(function(e,t){for(var n=document.getElementsByTagName("link"),r=0;r<n.length;r++){var o=(u=n[r]).getAttribute("data-href")||u.getAttribute("href");if("stylesheet"===u.rel&&(o===e||o===t))return u}var i=document.getElementsByTagName("style");for(r=0;r<i.length;r++){var u;if((o=(u=i[r]).getAttribute("data-href"))===e||o===t)return u}}(r,o))return t();!function(e,t,n,r){var o=document.createElement("link");o.rel="stylesheet",o.type="text/css",o.onerror=o.onload=function(i){if(o.onerror=o.onload=null,"load"===i.type)n();else{var u=i&&("load"===i.type?"missing":i.type),a=i&&i.target&&i.target.href||t,f=new Error("Loading CSS chunk "+e+" failed.\n("+a+")");f.code="CSS_CHUNK_LOAD_FAILED",f.type=u,f.request=a,o.parentNode.removeChild(o),r(f)}},o.href=t,document.head.appendChild(o)}(e,o,t,n)}))},o={666:0},a.f.miniCss=function(e,t){o[e]?t.push(o[e]):0!==o[e]&&{67:1,139:1,553:1}[e]&&t.push(o[e]=r(e).then((function(){o[e]=0}),(function(t){throw delete o[e],t})))},function(){var e={666:0};a.f.j=function(t,n){var r=a.o(e,t)?e[t]:void 0;if(0!==r)if(r)n.push(r[2]);else if(666!=t){var o=new Promise((function(n,o){r=e[t]=[n,o]}));n.push(r[2]=o);var i=a.p+a.u(t),u=new Error;a.l(i,(function(n){if(a.o(e,t)&&(0!==(r=e[t])&&(e[t]=void 0),r)){var o=n&&("load"===n.type?"missing":n.type),i=n&&n.target&&n.target.src;u.message="Loading chunk "+t+" failed.\n("+o+": "+i+")",u.name="ChunkLoadError",u.type=o,u.request=i,r[1](u)}}),"chunk-"+t,t)}else e[t]=0},a.O.j=function(t){return 0===e[t]};var t=function(t,n){var r,o,i=n[0],u=n[1],f=n[2],c=0;if(i.some((function(t){return 0!==e[t]}))){for(r in u)a.o(u,r)&&(a.m[r]=u[r]);if(f)var l=f(a)}for(t&&t(n);c<i.length;c++)o=i[c],a.o(e,o)&&e[o]&&e[o][0](),e[o]=0;return a.O(l)},n=self.webpackChunkreactphp_website=self.webpackChunkreactphp_website||[];n.forEach(t.bind(null,0)),n.push=t.bind(null,n.push.bind(n))}()}();</script>
         <style>@font-face{font-display:swap;font-family:Source Sans Pro;font-style:normal;font-weight:400;src:local("Source Sans Pro Regular"),local("SourceSansPro-Regular"),url(../assets/sourcesanspro-regular.f84b2bd4.woff) format("woff")}@font-face{font-display:swap;font-family:Source Sans Pro;font-style:normal;font-weight:700;src:local("Source Sans Pro Bold"),local("SourceSansPro-Bold"),url(../assets/sourcesanspro-bold.cb7d3610.woff) format("woff")}@font-face{font-family:icons;font-style:normal;font-weight:400;src:url(../assets/icons.f41c5641.ttf?ae19fi) format("truetype"),url(../assets/icons.cf61dfff.woff?ae19fi) format("woff"),url(../assets/icons.b4abbede.svg?ae19fi#icons) format("svg")}[class*=" icon-"],[class^=icon-]{speak:none;-webkit-font-feature-settings:normal;font-feature-settings:normal;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-family:icons!important;font-style:normal;font-variant:normal;font-weight:400;line-height:1;text-transform:none}.icon-hash:before{content:"\e900"}.icon-twitter:before{content:"\e901"}.icon-github:before{content:"\e902"}.icon-blog:before{content:"\e905"}.icon-earth:before{content:"\e903"}.icon-link:before{content:"\e906"}.icon-youtube:before{content:"\e904"}.icon-book:before{content:"\f007"}.icon-calendar:before{content:"\f068"}.icon-chevron-down:before{content:"\f0a3"}.icon-chevron-up:before{content:"\f0a2"}.icon-law:before{content:"\f0d8"}.icon-search:before{content:"\f02e"}.icon-x:before{content:"\f081"}.icon-feed:before{content:"\ea9b"}[class*=" icon-"],[class^=icon-]{vertical-align:-8%}html{-webkit-box-sizing:border-box;box-sizing:border-box;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;font-size:16px;line-height:1.6}@media (max-width:768px){html{font-size:18px}}*,:after,:before{-webkit-box-sizing:inherit;box-sizing:inherit}body{background-color:#fff;color:#584b4f;color:var(--color-base);margin:0}a{color:#4f5b93;color:var(--color-key)}a:hover{color:#a2aacd;color:var(--color-key-light);text-decoration:underline}blockquote{background-color:#f4f3f1;background-color:var(--color-background-lighter);border-left:4px solid #4f5b93;border-left:4px solid var(--color-key);border-radius:4px;-webkit-box-shadow:0 1px 0 0 rgba(0,0,0,.1);box-shadow:0 1px 0 0 rgba(0,0,0,.1);-webkit-box-shadow:var(--box-shadow-lighter);box-shadow:var(--box-shadow-lighter);font-size:.875rem;padding:16px 16px 16px 24px;position:relative}blockquote:before{background:#4f5b93;background:var(--color-key);border-radius:50%;-webkit-box-sizing:border-box;box-sizing:border-box;color:#fff;content:"i";display:block;font-size:12px;font-weight:700;height:24px;left:-14px;line-height:24px;padding:0 4px;position:absolute;text-align:center;top:12px;width:24px}blockquote :last-child{margin-bottom:0}blockquote,fieldset,form,h1,h2,h3,h4,h5,h6,hr,ol,p,ul{margin:0 0 16px}ul ul{margin-bottom:0}hr{border:0;border-bottom:1px dashed #eae8e3;border-bottom:1px dashed var(--color-background-light);clear:both;height:0;padding:0}h1,h2,h3,h4,h5,h6{-webkit-font-smoothing:antialiased;color:#584b4f;color:var(--color-base);font-family:Source Sans Pro,Helvetica Neue,Arial,sans-serif;font-weight:700;line-height:1}h1 a,h1 a:hover,h2 a,h2 a:hover,h3 a,h3 a:hover,h4 a,h4 a:hover,h5 a,h5 a:hover,h6 a,h6 a:hover{text-decoration:none}h1{font-size:2.5rem;letter-spacing:-1px;margin-bottom:32px}h1,h1 a,h1 a:hover{color:#4f5b93;color:var(--color-key)}h1:not(:first-child){margin-top:32px}h2{font-size:2rem;margin-bottom:32px}h2,h2 a,h2 a:hover{color:#4f5b93;color:var(--color-key)}h2:not(:first-child){margin-top:32px}h3{font-size:1.5rem;margin-bottom:24px}h3,h3 a,h3 a:hover{color:#584b4f;color:var(--color-base)}h3:not(:first-child){margin-top:24px}h4{font-size:1.25rem}h4,h4 a,h4 a:hover{color:#4f5b93;color:var(--color-key)}h4:not(:first-child){margin-top:24px}@media (max-width:768px){h1{font-size:2rem}h2{font-size:1.75rem;margin-bottom:32px}}.container{padding:32px}@media (max-width:768px){.container{padding:16px}}.wrapper{margin:auto;max-width:1600px}.wrapper--medium{max-width:1280px}.wrapper--small{margin:auto;max-width:960px}.wrapper--narrow{max-width:640px}.main{width:calc(98% - 400px)}.main,.sidebar{margin-bottom:32px}.sidebar{width:calc(400px - 2%)}@media (max-width:1024px){.main,.sidebar{margin-top:16px;width:auto}}.visually-hidden{clip:rect(1px,1px,1px,1px);height:1px;overflow:hidden;position:absolute!important;width:1px}.grid{-ms-flex-pack:center;display:-ms-flexbox;display:flex;-ms-flex-direction:row;flex-direction:row;-ms-flex-wrap:wrap;flex-wrap:wrap;justify-content:center;margin-left:-2%;width:102%}.grid>*{margin-left:2%;max-width:100%}.grid--4cols>*{-ms-flex-preferred-size:23%;flex-basis:23%}.grid--3cols>*{-ms-flex-preferred-size:31.33%;flex-basis:31.33%}.grid--2cols>*{-ms-flex-preferred-size:48%;flex-basis:48%}@media (max-width:768px){.grid{-ms-flex-direction:column;flex-direction:column}.grid,.grid>*{margin-left:0;width:100%}.grid>*{-ms-flex:0 0 auto;flex:0 0 auto}}.center{text-align:center}.center h1,.center h2,.center h3,.center h4,.center h5,.center h6,.hamburger{display:inline-block}.hamburger{background-color:transparent;border:0;color:inherit;cursor:pointer;font:inherit;height:48px;margin:0;outline:none;overflow:visible;padding:14px 12px;text-transform:none}.hamburger__box{display:inline-block;height:16px;position:relative;width:24px}.hamburger__inner{display:block;margin-top:-2px;top:50%}.hamburger__inner,.hamburger__inner:after,.hamburger__inner:before{background-color:#584b4f;background-color:var(--color-base);border-radius:2px;height:3px;position:absolute;-webkit-transition-duration:.15s;-o-transition-duration:.15s;transition-duration:.15s;-webkit-transition-property:-webkit-transform;transition-property:-webkit-transform;-o-transition-property:transform;transition-property:transform;transition-property:transform,-webkit-transform;-webkit-transition-timing-function:ease;-o-transition-timing-function:ease;transition-timing-function:ease;width:24px}.hamburger__inner:after,.hamburger__inner:before{content:"";display:block}.hamburger__inner:before{top:-6px}.hamburger__inner:after{bottom:-6px}.header{background:#fefefe;-webkit-box-shadow:0 1px 0 0 rgba(0,0,0,.08);box-shadow:0 1px 0 0 rgba(0,0,0,.08);-webkit-box-shadow:var(--box-shadow-lightest);box-shadow:var(--box-shadow-lightest);padding:0 32px;width:100%}@media (max-width:768px){.header{padding:0 16px}}.header__container{-ms-flex-align:center;-ms-flex-pack:justify;align-items:center;display:-ms-flexbox;display:flex;justify-content:space-between;position:relative;width:100%}.header__logo{display:block;line-height:1;padding:16px 0}.header__logo svg{display:block;height:18px;width:120px}.header__search{margin:0;position:absolute;right:48px;top:7px;z-index:799}.header__search input{width:400px}@media (max-width:768px){.header__search input{width:calc(100vw - 94px)}}.header__menu{position:absolute;right:-12px;top:0;z-index:800}.footer{background:#584b4f;background:var(--color-base);padding:32px;text-align:center;text-shadow:1px 1px 0 rgba(0,0,0,.125)}.footer .links a{color:#eae8e3;color:var(--color-background-light);text-decoration:none}.footer .links a:hover{color:#9ad8bb;color:var(--color-green-light);text-decoration:none}.iframe{height:0;overflow:hidden;padding-bottom:56.25%;position:relative;width:100%}.iframe iframe{height:100%;left:0;position:absolute;top:0;width:100%}.links{margin:0;padding:0}.links li{display:inline-block;margin:0 8px;text-decoration:none}.links li:first-child{margin-left:0}.links li:last-child{margin-right:0}.links a{display:block}.box,.links a,.links a:hover{text-decoration:none}.box{background:#f4f3f1;background:var(--color-background-lighter);border-radius:4px;-webkit-box-shadow:0 1px 0 0 rgba(0,0,0,.1);box-shadow:0 1px 0 0 rgba(0,0,0,.1);-webkit-box-shadow:var(--box-shadow-lighter);box-shadow:var(--box-shadow-lighter);color:inherit;display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;margin-bottom:24px;margin-top:0;overflow:auto;padding:24px;text-align:left;vertical-align:top}.box:hover{background:#eae8e3;background:var(--color-background-light);-webkit-box-shadow:0 1px 0 0 rgba(0,0,0,.15);box-shadow:0 1px 0 0 rgba(0,0,0,.15);-webkit-box-shadow:var(--box-shadow-light);box-shadow:var(--box-shadow-light);text-decoration:none}.box h1,.box h2,.box h3,.box h4,.box h5,.box h6,.box hr,.box ol,.box p,.box ul{margin-bottom:8px}.box h1,.box h2,.box h3,.box h4,.box h5,.box h6{color:#584b4f;color:var(--color-base)}.box :first-child{margin-top:0}.box :last-child{margin-bottom:0}.box__content{-ms-flex-positive:1;color:#584b4f;color:var(--color-base);flex-grow:1;text-decoration:none}.box__content p{font-size:.875rem}.box__content:hover{color:#584b4f;color:var(--color-base);text-decoration:none}.box__content:not(:last-child){margin-bottom:16px}.box__link{display:block;font-size:.75rem;text-decoration:none}.box__link,.box__link [class*=icon]{color:#4f5b93;color:var(--color-key)}.box__link:hover{color:#a2aacd;color:var(--color-key-light);text-decoration:none}code,pre,tt{font-family:SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace}code,tt{background-color:rgba(0,0,0,.05);border-radius:4px;font-size:.75rem;margin:0;padding:.3rem .45rem}code br,tt br{display:none}del code{text-decoration:inherit}pre{word-wrap:normal;font-size:.875rem;line-height:1.45;text-align:left}@media (max-width:768px){pre{font-size:.75rem}}pre>code{background:transparent;border:0;font-size:100%;margin:0;padding:0;white-space:pre;word-break:normal}.highlight{margin-bottom:16px}.highlight pre{margin-bottom:0;word-break:normal}.highlight pre,pre{background-color:#f9f9f8;background-color:var(--color-background-lightest);border-radius:4px;-webkit-box-shadow:0 1px 0 0 rgba(0,0,0,.08);box-shadow:0 1px 0 0 rgba(0,0,0,.08);-webkit-box-shadow:var(--box-shadow-lightest);box-shadow:var(--box-shadow-lightest);color:#584b4f;color:var(--color-base);overflow:auto;padding:16px 16px 14px;text-shadow:none!important}pre code,pre tt{word-wrap:normal;background-color:transparent;border:0;display:inline;line-height:inherit;margin:0;max-width:none;overflow:visible;padding:0}pre code:after,pre code:before,pre tt:after,pre tt:before{content:normal}.pl-c{color:#969896}.pl-c1,.pl-s .pl-v{color:#0086b3}.pl-e,.pl-en{color:#795da3}.pl-s .pl-s1,.pl-smi{color:#444}.pl-ent{color:#63a35c}.pl-k{color:#a71d5d}.pl-pds,.pl-s,.pl-s .pl-pse .pl-s1,.pl-sr,.pl-sr .pl-cce,.pl-sr .pl-sra,.pl-sr .pl-sre{color:#183691}.pl-smw,.pl-v{color:#ed6a43}.pl-bu{color:#b52a1d}.pl-c2,.pl-ii{background-color:#b52a1d;color:#f8f8f8}.pl-c2:before{content:"^M"}.pl-sr .pl-cce{color:#63a35c;font-weight:700}.pl-ml{color:#693a17}.pl-mh,.pl-mh .pl-en,.pl-ms{color:#1d3e81;font-weight:700}.pl-mq{color:teal}.pl-mi{color:#333;font-style:italic}.pl-mb{color:#333;font-weight:700}.pl-md{background-color:#ffecec;color:#bd2c00}.pl-mi1{background-color:#eaffea;color:#55a532}.pl-mc{background-color:#ffe3b4;color:#ef9700}.pl-mi2{background-color:grey;color:#d8d8d8}.pl-mdr{color:#795da3;font-weight:700}.pl-mo{color:#1d3e81}.pl-ba{color:#595e62}.pl-sg{color:silver}.pl-corl{color:#183691;text-decoration:underline}.anchor{display:block;float:left;padding-right:2px;position:absolute;text-decoration:none!important;-webkit-transform:translateX(-100%);transform:translateX(-100%)}.anchor:focus{outline:none}.anchor>*{visibility:hidden}:hover>.anchor>*{visibility:visible}.anchor>:before{color:#a2aacd;color:var(--color-key-light);content:"#";font-weight:400!important}.anchor--disable .anchor>*,.anchor.anchor--disable>*{visibility:hidden!important}.searchbox{width:100%}.searchbox,.searchbox:focus{-webkit-appearance:none;-moz-appearance:none;appearance:none;background:#eae8e3 url(../assets/search.17d09555.svg) no-repeat 10px;background:var(--color-background-light) url(../assets/search.17d09555.svg) no-repeat 10px center;background-size:16px 16px;border:0;border-radius:4px;-webkit-box-shadow:0 1px 0 0 rgba(0,0,0,.15);box-shadow:0 1px 0 0 rgba(0,0,0,.15);-webkit-box-shadow:var(--box-shadow-light);box-shadow:var(--box-shadow-light);color:#584b4f;color:var(--color-base);font-size:.875rem;line-height:24px;outline:none;padding:6px 8px 6px 32px;-webkit-transition:width .35s cubic-bezier(.23,1,.32,1);-o-transition:width .35s cubic-bezier(.23,1,.32,1);transition:width .35s cubic-bezier(.23,1,.32,1)}.searchbox::-webkit-input-placeholder{color:#afa1a5;color:var(--color-base-light)}.searchbox:-moz-placeholder,.searchbox::-moz-placeholder{color:#afa1a5;color:var(--color-base-light)}.searchbox::-moz-placeholder{opacity:1}.searchbox:-ms-input-placeholder{color:#afa1a5;color:var(--color-base-light)}.searchbox:focus{background-color:#f4f3f1!important;background-color:var(--color-background-lighter)!important;-webkit-box-shadow:0 1px 0 0 rgba(0,0,0,.1);box-shadow:0 1px 0 0 rgba(0,0,0,.1);-webkit-box-shadow:var(--box-shadow-lighter);box-shadow:var(--box-shadow-lighter)}.searchbox--collapsed:not(:focus){background-color:transparent;border:0;-webkit-box-shadow:none;box-shadow:none;cursor:pointer;margin-right:-12px;width:32px!important}.searchbox--collapsed:not(:focus)::-webkit-search-cancel-button,.searchbox--collapsed:not(:focus)::-webkit-search-decoration{display:none}.searchbox--collapsed:not(:focus)::-webkit-search-results-button,.searchbox--collapsed:not(:focus)::-webkit-search-results-decoration{display:none}.searchbox--collapsed:not(:focus)::-ms-clear{display:none}.searchbox--large,.searchbox--large:focus{padding:8px 12px 8px 40px}.alert{background-color:#f4f3f1;background-color:var(--color-background-lighter);border-left:4px solid #ba3525;border-left:4px solid var(--color-red);border-radius:4px;-webkit-box-shadow:0 1px 0 0 rgba(0,0,0,.1);box-shadow:0 1px 0 0 rgba(0,0,0,.1);-webkit-box-shadow:var(--box-shadow-lighter);box-shadow:var(--box-shadow-lighter);font-size:.9em;padding:16px 16px 16px 24px;position:relative}.alert:before{background:#ba3525;background:var(--color-red);border-radius:50%;-webkit-box-sizing:border-box;box-sizing:border-box;color:#fff;content:"!";display:block;font-size:12px;font-weight:700;height:24px;left:-14px;line-height:22px;padding:0 4px;position:absolute;text-align:center;top:12px;width:24px}.alert a{color:#ba3525;color:var(--color-red)}.alert :last-child{margin-bottom:0}.toc{display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;list-style:none;margin-left:-4px;padding:0}.toc li{margin:4px}.toc a{background-color:#584b4f;background-color:var(--color-base);border-radius:4px;-webkit-box-shadow:0 1px 0 0 rgba(0,0,0,.1);box-shadow:0 1px 0 0 rgba(0,0,0,.1);-webkit-box-shadow:var(--box-shadow-lighter);box-shadow:var(--box-shadow-lighter);display:-ms-flexbox;display:flex;font-family:SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;font-weight:bolder;letter-spacing:normal;padding:.25rem 1rem .15rem}.toc a,.toc a:hover{color:#fff;text-decoration:none}@media (max-width:768px){.toc{font-size:.85rem}}.welcome__intro{background-image:-o-radial-gradient(center,ellipse,#fff 0,#eae8e3 100%);background-image:radial-gradient(ellipse at center,#fff 0,#eae8e3 100%);background-image:-o-radial-gradient(center,ellipse,#fff 0,var(--color-background-light) 100%);background-image:radial-gradient(ellipse at center,#fff 0,var(--color-background-light) 100%);background-position:50% 0;background-size:auto 100%;border-bottom:1px dashed #eae8e3;border-bottom:1px dashed var(--color-background-light);padding:16px 0 136px}.welcome__intro h1{color:#4f5b93;color:var(--color-key);font-size:2rem;margin-bottom:16px}.welcome__logo{display:block;margin:0 auto;max-width:320px}.welcome__logo svg{display:block;height:240px}.welcome__content{display:block;max-width:calc(98% - 320px);padding-top:16px}.welcome__example{display:block;margin:-160px auto auto;max-width:850px}.welcome__example .highlight pre{background:#fff;-webkit-box-shadow:0 0 16px #d6d1c8;box-shadow:0 0 16px #d6d1c8;-webkit-box-shadow:0 0 16px var(--color-background);box-shadow:0 0 16px var(--color-background);padding:32px}.welcome__intro .links a{color:#584b4f;color:var(--color-base);text-decoration:none}.welcome__intro .links a:hover{color:#4f5b93;color:var(--color-key);text-decoration:none}.welcome__team img{border-radius:50%;display:inline-block;max-width:190px}.welcome__team h3{display:block;margin:.2em 0}.welcome__team div.grid>*{margin-bottom:1em}@media (max-width:768px){.welcome__content{max-width:100%;padding:32px 16px 16px}.welcome__logo svg{height:160px}.welcome__intro h1{color:#4f5b93;color:var(--color-key);font-size:1.75rem;margin-bottom:16px;text-align:center}.welcome__intro .links{text-align:center}}.off-canvas-menu{pointer-events:none;position:fixed;right:0;top:0}.off-canvas-menu__content{-webkit-transform:translate3d(105%,0,0);transform:translate3d(105%,0,0)}.component-info{background-color:#f4f3f1;background-color:var(--color-background-lighter);border-radius:4px;bottom:16px;-webkit-box-shadow:0 1px 0 0 rgba(0,0,0,.1);box-shadow:0 1px 0 0 rgba(0,0,0,.1);-webkit-box-shadow:var(--box-shadow-lighter);box-shadow:var(--box-shadow-lighter);font-size:.875rem;padding:24px;position:sticky;top:16px}.component-info,.component-info a,.component-info a [class*=icon]{color:#584b4f;color:var(--color-base)}.component-info a:hover{color:#afa1a5;color:var(--color-base-light);text-decoration:none}.component-info pre{font-size:.75rem;line-height:1}.component-info__title{-ms-flex-align:center;align-items:center;color:#584b4f;color:var(--color-base);display:-ms-flexbox;display:flex;font-size:1.5rem;line-height:1rem;margin-bottom:1rem}.component-info__title a{text-decoration:none}.component-info__title>:not(:last-child){margin-right:8px}.component-info__subtitle{color:#afa1a5;color:var(--color-base-light);font-size:.875rem;font-weight:700;letter-spacing:.1em;line-height:.875rem;margin-bottom:.875rem;text-transform:uppercase}.component-info__info{-ms-flex-pack:start;display:-ms-flexbox;display:flex;-ms-flex-flow:row;flex-flow:row;justify-content:flex-start;list-style:none;padding:0}.component-info__info li{margin-right:16px}.component-info__info li:last-child{margin-right:0}.component-info__info a{font-size:.75rem;text-decoration:none;-o-text-overflow:ellipsis;text-overflow:ellipsis;white-space:nowrap}.component-info__contributors{display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;list-style:none;padding:0}.component-info__contributors li{margin:0;padding:0 4px 4px 0}.component-info__contributors img{border-radius:2px;display:block;height:auto;width:40px}.component-info__contributors img,.component-info__participation{-webkit-box-shadow:0 1px 0 0 rgba(0,0,0,.1);box-shadow:0 1px 0 0 rgba(0,0,0,.1);-webkit-box-shadow:var(--box-shadow-lighter);box-shadow:var(--box-shadow-lighter)}.component-info__participation{background-color:#f9f9f8;background-color:var(--color-background-lightest);border-radius:4px;padding:8px;text-align:center}.component-info__participation svg{display:block;height:auto!important;margin:auto;max-width:100%}:root{--color-key:#4f5b93;--color-key-light:#a2aacd;--color-base:#584b4f;--color-base-light:#afa1a5;--color-green:#40a977;--color-green-light:#9ad8bb;--color-red:#ba3525;--color-red-light:#e79187;--color-background:#d6d1c8;--color-background-light:#eae8e3;--color-background-lighter:#f4f3f1;--color-background-lightest:#f9f9f8;--box-shadow-light:0 1px 0 0 rgba(0,0,0,.15);--box-shadow-lighter:0 1px 0 0 rgba(0,0,0,.1);--box-shadow-lightest:0 1px 0 0 rgba(0,0,0,.08)}.version-selector{color:#fff;font-size:.875rem;position:relative}.version-selector :last-child{margin-bottom:0}.version-selector__button,.version-selector__version{-webkit-appearance:none;background-color:#584b4f;background-color:var(--color-base);border:0;border-radius:4px;-webkit-box-shadow:none;box-shadow:none;-webkit-box-shadow:0 1px 0 0 rgba(0,0,0,.1);box-shadow:0 1px 0 0 rgba(0,0,0,.1);-webkit-box-shadow:var(--box-shadow-lighter);box-shadow:var(--box-shadow-lighter);color:#fff;cursor:pointer;display:-ms-flexbox;display:flex;font-family:SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;font-size:.75rem;font-weight:bolder;letter-spacing:normal;margin:0;outline:none;overflow:visible;padding:.25rem .4rem .2rem;text-decoration:none;text-shadow:none;text-transform:none}.version-selector__button{position:relative}.version-selector__button [class=icon-chevron-down]{display:inline-block;margin-left:4px}.version-selector__button [class=icon-chevron-up]{display:none;margin-left:4px}.version-selector__version{background-color:hsla(0,0%,100%,.33);border:1px solid transparent;color:#fff!important;text-decoration:none}.version-selector__version:hover{background-color:hsla(0,0%,100%,.11);border:1px solid hsla(0,0%,100%,.22)}.version-selector__button--dev,.version-selector__version--dev,.version-selector__version--dev:hover{background-color:#ba3525;background-color:var(--color-red)}.version-selector__button--latest,.version-selector__version--latest,.version-selector__version--latest:hover{background-color:#40a977;background-color:var(--color-green)}.version-selector__panel{position:fixed;top:-20000em;visibility:hidden}</style>
         <script async src="../assets/main.93d54642.js"></script>
-            </head>
+        <link href="https://github.com/reactphp/async/releases.atom" type="application/atom+xml" rel="alternate" title="Async Changelog">
+    </head>
 
     <body>
             <header class="header">
@@ -217,34 +218,29 @@
         <div class="wrapper">
             <div class="grid grid--wrap grid--gutter">
                 <main class="main">
-                    <h1>Datagram License</h1>
+                    <h1>Async Changelog</h1>
 
-    <p>The MIT License (MIT)</p>
-<p>Copyright (c) 2013 Christian Lück, Cees-Jan Kiewiet, Jan Sorgalla, Chris Boden</p>
-<p>Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is furnished
-to do so, subject to the following conditions:</p>
-<p>The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.</p>
-<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.</p>
+    <ul class="toc">
+        </ul>
+
+
+    <ul class="links">
+        <li>
+            <a href="https://github.com/reactphp/async/releases.atom">
+                <i class="icon-feed" aria-hidden="true"></i>
+                Subscribe to the Changelog feed
+            </a>
+        </li>
+    </ul>
                 </main>
                 <aside class="sidebar" role="complementary">
                     <section class="component-info">
                         <h2 class="component-info__title">
-                            <a href="../datagram/">Datagram</a>
+                            <a href="../async/">Async</a>
 
                             <div class="version-selector">
                                 <button class="version-selector__button version-selector__button--latest" data-ctrly="component-version-selector" data-version-selector-control>
-                                    v1.8.0
+                                    
 
                                     <i class="icon-chevron-down" aria-hidden="true"></i>
                                     <i class="icon-chevron-up" aria-hidden="true"></i>
@@ -255,78 +251,28 @@ THE SOFTWARE.</p>
 
                                     <ul class="version-selector__list">
                                         <li>
-                                            <a href="https://github.com/reactphp/datagram#readme" class="version-selector__version version-selector__version--dev">
+                                            <a href="https://github.com/reactphp/async#readme" class="version-selector__version version-selector__version--dev">
                                                 master
                                             </a>
                                         </li>
-                                                                                                                                                                                                                    <li>
-                                                <a href="https://github.com/reactphp/datagram/tree/v1.7.0#readme" class="version-selector__version">
-                                                    v1.7.0
-                                                </a>
-                                            </li>
-                                                                                                                                                                            <li>
-                                                <a href="https://github.com/reactphp/datagram/tree/v1.6.0#readme" class="version-selector__version">
-                                                    v1.6.0
-                                                </a>
-                                            </li>
-                                                                                                                                                                            <li>
-                                                <a href="https://github.com/reactphp/datagram/tree/v1.5.0#readme" class="version-selector__version">
-                                                    v1.5.0
-                                                </a>
-                                            </li>
-                                                                                                                                                                            <li>
-                                                <a href="https://github.com/reactphp/datagram/tree/v1.4.0#readme" class="version-selector__version">
-                                                    v1.4.0
-                                                </a>
-                                            </li>
-                                                                                                                                                                            <li>
-                                                <a href="https://github.com/reactphp/datagram/tree/v1.3.0#readme" class="version-selector__version">
-                                                    v1.3.0
-                                                </a>
-                                            </li>
-                                                                                                                                                                            <li>
-                                                <a href="https://github.com/reactphp/datagram/tree/v1.2.0#readme" class="version-selector__version">
-                                                    v1.2.0
-                                                </a>
-                                            </li>
-                                                                                                                                                                            <li>
-                                                <a href="https://github.com/reactphp/datagram/tree/v1.1.1#readme" class="version-selector__version">
-                                                    v1.1.1
-                                                </a>
-                                            </li>
-                                                                                                                                                                            <li>
-                                                <a href="https://github.com/reactphp/datagram/tree/v1.1.0#readme" class="version-selector__version">
-                                                    v1.1.0
-                                                </a>
-                                            </li>
-                                                                                                                                                                            <li>
-                                                <a href="https://github.com/reactphp/datagram/tree/v1.0.1#readme" class="version-selector__version">
-                                                    v1.0.1
-                                                </a>
-                                            </li>
-                                                                                                                                                                            <li>
-                                                <a href="https://github.com/reactphp/datagram/tree/v1.0.0#readme" class="version-selector__version">
-                                                    v1.0.0
-                                                </a>
-                                            </li>
-                                                                                                                        </ul>
+                                                                            </ul>
                                 </div>
                             </div>
                         </h2>
 
                         <ul class="component-info__info">
                             <li>
-                                <a href="https://github.com/reactphp/datagram">
+                                <a href="https://github.com/reactphp/async">
                                     <i class="icon-github" aria-hidden="true"></i> Repository
                                 </a>
                             </li>
                             <li>
-                                <a href="../datagram/changelog.html">
+                                <a href="../async/changelog.html">
                                     <i class="icon-calendar" aria-hidden="true"></i> Changelog
                                 </a>
                             </li>
                             <li>
-                                <a href="../datagram/license.html">
+                                <a href="../async/license.html">
                                     <i class="icon-law" aria-hidden="true"></i> MIT License
                                 </a>
                             </li>
@@ -334,44 +280,29 @@ THE SOFTWARE.</p>
 
                         <h3 class="component-info__subtitle">Installation</h3>
 
-                        <div class="highlight highlight-source-shell"><pre>composer require react/datagram:^1.8.0</pre></div>
+                        <div class="highlight highlight-source-shell"><pre>composer require react/async:^</pre></div>
 
                         <h3 class="component-info__subtitle">Contributors</h3>
 
                         <ul class="component-info__contributors">
                                                     <li>
                                 <a href="https://github.com/clue">
-                                    <img src="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=80 2x" alt="clue" title="clue (176 contributions)">
+                                    <img src="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=80 2x" alt="clue" title="clue (45 contributions)">
                                 </a>
                             </li>
                                                     <li>
                                 <a href="https://github.com/WyriHaximus">
-                                    <img src="https://avatars.githubusercontent.com/u/147145?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/147145?v=4&amp;s=80 2x" alt="WyriHaximus" title="WyriHaximus (24 contributions)">
+                                    <img src="https://avatars.githubusercontent.com/u/147145?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/147145?v=4&amp;s=80 2x" alt="WyriHaximus" title="WyriHaximus (30 contributions)">
                                 </a>
                             </li>
                                                     <li>
-                                <a href="https://github.com/jsor">
-                                    <img src="https://avatars.githubusercontent.com/u/55574?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/55574?v=4&amp;s=80 2x" alt="jsor" title="jsor (6 contribution)">
+                                <a href="https://github.com/igorw">
+                                    <img src="https://avatars.githubusercontent.com/u/88061?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/88061?v=4&amp;s=80 2x" alt="igorw" title="igorw (22 contributions)">
                                 </a>
                             </li>
                                                     <li>
                                 <a href="https://github.com/cboden">
-                                    <img src="https://avatars.githubusercontent.com/u/617694?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/617694?v=4&amp;s=80 2x" alt="cboden" title="cboden (5 contribution)">
-                                </a>
-                            </li>
-                                                    <li>
-                                <a href="https://github.com/SimonFrings">
-                                    <img src="https://avatars.githubusercontent.com/u/44357440?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/44357440?v=4&amp;s=80 2x" alt="SimonFrings" title="SimonFrings (5 contribution)">
-                                </a>
-                            </li>
-                                                    <li>
-                                <a href="https://github.com/andreybolonin">
-                                    <img src="https://avatars.githubusercontent.com/u/2576509?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/2576509?v=4&amp;s=80 2x" alt="andreybolonin" title="andreybolonin (1 contribution)">
-                                </a>
-                            </li>
-                                                    <li>
-                                <a href="https://github.com/enumag">
-                                    <img src="https://avatars.githubusercontent.com/u/539462?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/539462?v=4&amp;s=80 2x" alt="enumag" title="enumag (1 contribution)">
+                                    <img src="https://avatars.githubusercontent.com/u/617694?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/617694?v=4&amp;s=80 2x" alt="cboden" title="cboden (1 contribution)">
                                 </a>
                             </li>
                                                     <li>
@@ -380,13 +311,8 @@ THE SOFTWARE.</p>
                                 </a>
                             </li>
                                                     <li>
-                                <a href="https://github.com/reedy">
-                                    <img src="https://avatars.githubusercontent.com/u/67615?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/67615?v=4&amp;s=80 2x" alt="reedy" title="reedy (1 contribution)">
-                                </a>
-                            </li>
-                                                    <li>
-                                <a href="https://github.com/e3betht">
-                                    <img src="https://avatars.githubusercontent.com/u/1811561?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/1811561?v=4&amp;s=80 2x" alt="e3betht" title="e3betht (1 contribution)">
+                                <a href="https://github.com/SimonFrings">
+                                    <img src="https://avatars.githubusercontent.com/u/44357440?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/44357440?v=4&amp;s=80 2x" alt="SimonFrings" title="SimonFrings (1 contribution)">
                                 </a>
                             </li>
                                                 </ul>
@@ -396,14 +322,14 @@ THE SOFTWARE.</p>
                         <div class="component-info__participation">
                             <svg width="320" height="42">
     <defs>
-        <linearGradient id="reactphp-datagram-participation-gradient" x1="0" x2="0" y1="1" y2="0">
+        <linearGradient id="reactphp-async-participation-gradient" x1="0" x2="0" y1="1" y2="0">
             <stop offset="10%" stop-color="#40a977"></stop>
             <stop offset="90%" stop-color="#ba3525"></stop>
         </linearGradient>
-        <mask id="reactphp-datagram-participation-sparkline" x="0" y="0" width="320" height="40" >
+        <mask id="reactphp-async-participation-sparkline" x="0" y="0" width="320" height="40" >
             <polyline 
                 transform="translate(0, 40) scale(1,-1)"
-                points="0,3 6,1 12,1 18,1 24,1 30,1 36,1 42,1 48,1 54,1 60,1 66,1 72,1 78,1 84,1 90,1 96,1 102,1 108,3 114,1 120,2 126,2 132,1 138,1 144,1 150,1 156,1 162,1 168,1 174,1 180,1 186,1 192,1 198,1 204,1 210,3 216,1 222,2 228,1 234,3 240,2 246,1 252,1 258,1 264,1 270,1 276,1 282,1 288,1 294,3 300,1 306,1" 
+                points="0,1 6,1 12,1 18,1 24,1 30,1 36,1 42,1 48,1 54,1 60,1 66,1 72,4 78,1 84,22 90,1 96,4 102,1 108,14 114,3 120,1 126,1 132,2 138,4 144,1 150,2 156,1 162,1 168,3 174,1 180,6 186,7 192,1 198,4 204,1 210,2 216,2 222,1 228,1 234,1 240,1 246,1 252,1 258,1 264,1 270,1 276,2 282,5 288,2 294,3 300,3 306,3" 
                 fill="transparent" 
                 stroke="#40a977" 
                 stroke-width="2"
@@ -417,7 +343,7 @@ THE SOFTWARE.</p>
             y="-2" 
             width="320" 
             height="42"
-            style="stroke:none;fill:url(#reactphp-datagram-participation-gradient);mask:url(#reactphp-datagram-participation-sparkline)"
+            style="stroke:none;fill:url(#reactphp-async-participation-gradient);mask:url(#reactphp-async-participation-sparkline)"
         ></rect>
     </g>
 </svg>

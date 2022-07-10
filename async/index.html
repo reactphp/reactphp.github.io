@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <title>Async: 
+Async Utilities - ReactPHP</title>
+
+        <meta name="description" content="Async utilities and fibers for ReactPHP.">
+
+        <link rel="apple-touch-icon" sizes="180x180" href="https://reactphp.org/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="https://reactphp.org/favicon-32x32.png">
+        <link rel="manifest" href="https://reactphp.org/manifest.json">
+        <link rel="mask-icon" href="https://reactphp.org/safari-pinned-tab.svg" color="#4f5b93">
+        <meta name="apple-mobile-web-app-title" content="ReactPHP">
+        <meta name="application-name" content="ReactPHP">
+        <meta name="theme-color" content="#f4f3f1">
+        <meta name="msapplication-config" content="https://reactphp.org/browserconfig.xml" />
+
+        <meta property="og:image" content="https://reactphp.org/og-image.png">
+
+            <link rel="preload" href="../assets/sourcesanspro-regular.f84b2bd4.woff" as="font" type="font/woff" crossorigin>
+        <link rel="preload" href="../assets/sourcesanspro-bold.cb7d3610.woff" as="font" type="font/woff" crossorigin>
+
+        <script>window.__assets = '../assets/';</script>
+        <script>!function(){"use strict";var e,t,n,r,o,i={},u={};function a(e){var t=u[e];if(void 0!==t)return t.exports;var n=u[e]={exports:{}};return i[e].call(n.exports,n,n.exports,a),n.exports}a.m=i,e=[],a.O=function(t,n,r,o){if(!n){var i=1/0;for(l=0;l<e.length;l++){n=e[l][0],r=e[l][1],o=e[l][2];for(var u=!0,f=0;f<n.length;f++)(!1&o||i>=o)&&Object.keys(a.O).every((function(e){return a.O[e](n[f])}))?n.splice(f--,1):(u=!1,o<i&&(i=o));if(u){e.splice(l--,1);var c=r();void 0!==c&&(t=c)}}return t}o=o||0;for(var l=e.length;l>0&&e[l-1][2]>o;l--)e[l]=e[l-1];e[l]=[n,r,o]},a.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return a.d(t,{a:t}),t},a.d=function(e,t){for(var n in t)a.o(t,n)&&!a.o(e,n)&&Object.defineProperty(e,n,{enumerable:!0,get:t[n]})},a.f={},a.e=function(e){return Promise.all(Object.keys(a.f).reduce((function(t,n){return a.f[n](e,t),t}),[]))},a.u=function(e){return e+"."+{67:"ab055693",139:"820be3d5",261:"bd162b4a",553:"da065a6b"}[e]+".js"},a.miniCssF=function(e){return e+"."+{67:"4ae9feba",139:"3ced3f7b",553:"90d4e0e8"}[e]+".css"},a.g=function(){if("object"==typeof globalThis)return globalThis;try{return this||new Function("return this")()}catch(e){if("object"==typeof window)return window}}(),a.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},t={},n="reactphp-website:",a.l=function(e,r,o,i){if(t[e])t[e].push(r);else{var u,f;if(void 0!==o)for(var c=document.getElementsByTagName("script"),l=0;l<c.length;l++){var s=c[l];if(s.getAttribute("src")==e||s.getAttribute("data-webpack")==n+o){u=s;break}}u||(f=!0,(u=document.createElement("script")).charset="utf-8",u.timeout=120,a.nc&&u.setAttribute("nonce",a.nc),u.setAttribute("data-webpack",n+o),u.src=e),t[e]=[r];var d=function(n,r){u.onerror=u.onload=null,clearTimeout(p);var o=t[e];if(delete t[e],u.parentNode&&u.parentNode.removeChild(u),o&&o.forEach((function(e){return e(r)})),n)return n(r)},p=setTimeout(d.bind(null,void 0,{type:"timeout",target:u}),12e4);u.onerror=d.bind(null,u.onerror),u.onload=d.bind(null,u.onload),f&&document.head.appendChild(u)}},a.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},a.p="",r=function(e){return new Promise((function(t,n){var r=a.miniCssF(e),o=a.p+r;if(function(e,t){for(var n=document.getElementsByTagName("link"),r=0;r<n.length;r++){var o=(u=n[r]).getAttribute("data-href")||u.getAttribute("href");if("stylesheet"===u.rel&&(o===e||o===t))return u}var i=document.getElementsByTagName("style");for(r=0;r<i.length;r++){var u;if((o=(u=i[r]).getAttribute("data-href"))===e||o===t)return u}}(r,o))return t();!function(e,t,n,r){var o=document.createElement("link");o.rel="stylesheet",o.type="text/css",o.onerror=o.onload=function(i){if(o.onerror=o.onload=null,"load"===i.type)n();else{var u=i&&("load"===i.type?"missing":i.type),a=i&&i.target&&i.target.href||t,f=new Error("Loading CSS chunk "+e+" failed.\n("+a+")");f.code="CSS_CHUNK_LOAD_FAILED",f.type=u,f.request=a,o.parentNode.removeChild(o),r(f)}},o.href=t,document.head.appendChild(o)}(e,o,t,n)}))},o={666:0},a.f.miniCss=function(e,t){o[e]?t.push(o[e]):0!==o[e]&&{67:1,139:1,553:1}[e]&&t.push(o[e]=r(e).then((function(){o[e]=0}),(function(t){throw delete o[e],t})))},function(){var e={666:0};a.f.j=function(t,n){var r=a.o(e,t)?e[t]:void 0;if(0!==r)if(r)n.push(r[2]);else if(666!=t){var o=new Promise((function(n,o){r=e[t]=[n,o]}));n.push(r[2]=o);var i=a.p+a.u(t),u=new Error;a.l(i,(function(n){if(a.o(e,t)&&(0!==(r=e[t])&&(e[t]=void 0),r)){var o=n&&("load"===n.type?"missing":n.type),i=n&&n.target&&n.target.src;u.message="Loading chunk "+t+" failed.\n("+o+": "+i+")",u.name="ChunkLoadError",u.type=o,u.request=i,r[1](u)}}),"chunk-"+t,t)}else e[t]=0},a.O.j=function(t){return 0===e[t]};var t=function(t,n){var r,o,i=n[0],u=n[1],f=n[2],c=0;if(i.some((function(t){return 0!==e[t]}))){for(r in u)a.o(u,r)&&(a.m[r]=u[r]);if(f)var l=f(a)}for(t&&t(n);c<i.length;c++)o=i[c],a.o(e,o)&&e[o]&&e[o][0](),e[o]=0;return a.O(l)},n=self.webpackChunkreactphp_website=self.webpackChunkreactphp_website||[];n.forEach(t.bind(null,0)),n.push=t.bind(null,n.push.bind(n))}()}();</script>
+        <style>@font-face{font-display:swap;font-family:Source Sans Pro;font-style:normal;font-weight:400;src:local("Source Sans Pro Regular"),local("SourceSansPro-Regular"),url(../assets/sourcesanspro-regular.f84b2bd4.woff) format("woff")}@font-face{font-display:swap;font-family:Source Sans Pro;font-style:normal;font-weight:700;src:local("Source Sans Pro Bold"),local("SourceSansPro-Bold"),url(../assets/sourcesanspro-bold.cb7d3610.woff) format("woff")}@font-face{font-family:icons;font-style:normal;font-weight:400;src:url(../assets/icons.f41c5641.ttf?ae19fi) format("truetype"),url(../assets/icons.cf61dfff.woff?ae19fi) format("woff"),url(../assets/icons.b4abbede.svg?ae19fi#icons) format("svg")}[class*=" icon-"],[class^=icon-]{speak:none;-webkit-font-feature-settings:normal;font-feature-settings:normal;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-family:icons!important;font-style:normal;font-variant:normal;font-weight:400;line-height:1;text-transform:none}.icon-hash:before{content:"\e900"}.icon-twitter:before{content:"\e901"}.icon-github:before{content:"\e902"}.icon-blog:before{content:"\e905"}.icon-earth:before{content:"\e903"}.icon-link:before{content:"\e906"}.icon-youtube:before{content:"\e904"}.icon-book:before{content:"\f007"}.icon-calendar:before{content:"\f068"}.icon-chevron-down:before{content:"\f0a3"}.icon-chevron-up:before{content:"\f0a2"}.icon-law:before{content:"\f0d8"}.icon-search:before{content:"\f02e"}.icon-x:before{content:"\f081"}.icon-feed:before{content:"\ea9b"}[class*=" icon-"],[class^=icon-]{vertical-align:-8%}html{-webkit-box-sizing:border-box;box-sizing:border-box;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;font-size:16px;line-height:1.6}@media (max-width:768px){html{font-size:18px}}*,:after,:before{-webkit-box-sizing:inherit;box-sizing:inherit}body{background-color:#fff;color:#584b4f;color:var(--color-base);margin:0}a{color:#4f5b93;color:var(--color-key)}a:hover{color:#a2aacd;color:var(--color-key-light);text-decoration:underline}blockquote{background-color:#f4f3f1;background-color:var(--color-background-lighter);border-left:4px solid #4f5b93;border-left:4px solid var(--color-key);border-radius:4px;-webkit-box-shadow:0 1px 0 0 rgba(0,0,0,.1);box-shadow:0 1px 0 0 rgba(0,0,0,.1);-webkit-box-shadow:var(--box-shadow-lighter);box-shadow:var(--box-shadow-lighter);font-size:.875rem;padding:16px 16px 16px 24px;position:relative}blockquote:before{background:#4f5b93;background:var(--color-key);border-radius:50%;-webkit-box-sizing:border-box;box-sizing:border-box;color:#fff;content:"i";display:block;font-size:12px;font-weight:700;height:24px;left:-14px;line-height:24px;padding:0 4px;position:absolute;text-align:center;top:12px;width:24px}blockquote :last-child{margin-bottom:0}blockquote,fieldset,form,h1,h2,h3,h4,h5,h6,hr,ol,p,ul{margin:0 0 16px}ul ul{margin-bottom:0}hr{border:0;border-bottom:1px dashed #eae8e3;border-bottom:1px dashed var(--color-background-light);clear:both;height:0;padding:0}h1,h2,h3,h4,h5,h6{-webkit-font-smoothing:antialiased;color:#584b4f;color:var(--color-base);font-family:Source Sans Pro,Helvetica Neue,Arial,sans-serif;font-weight:700;line-height:1}h1 a,h1 a:hover,h2 a,h2 a:hover,h3 a,h3 a:hover,h4 a,h4 a:hover,h5 a,h5 a:hover,h6 a,h6 a:hover{text-decoration:none}h1{font-size:2.5rem;letter-spacing:-1px;margin-bottom:32px}h1,h1 a,h1 a:hover{color:#4f5b93;color:var(--color-key)}h1:not(:first-child){margin-top:32px}h2{font-size:2rem;margin-bottom:32px}h2,h2 a,h2 a:hover{color:#4f5b93;color:var(--color-key)}h2:not(:first-child){margin-top:32px}h3{font-size:1.5rem;margin-bottom:24px}h3,h3 a,h3 a:hover{color:#584b4f;color:var(--color-base)}h3:not(:first-child){margin-top:24px}h4{font-size:1.25rem}h4,h4 a,h4 a:hover{color:#4f5b93;color:var(--color-key)}h4:not(:first-child){margin-top:24px}@media (max-width:768px){h1{font-size:2rem}h2{font-size:1.75rem;margin-bottom:32px}}.container{padding:32px}@media (max-width:768px){.container{padding:16px}}.wrapper{margin:auto;max-width:1600px}.wrapper--medium{max-width:1280px}.wrapper--small{margin:auto;max-width:960px}.wrapper--narrow{max-width:640px}.main{width:calc(98% - 400px)}.main,.sidebar{margin-bottom:32px}.sidebar{width:calc(400px - 2%)}@media (max-width:1024px){.main,.sidebar{margin-top:16px;width:auto}}.visually-hidden{clip:rect(1px,1px,1px,1px);height:1px;overflow:hidden;position:absolute!important;width:1px}.grid{-ms-flex-pack:center;display:-ms-flexbox;display:flex;-ms-flex-direction:row;flex-direction:row;-ms-flex-wrap:wrap;flex-wrap:wrap;justify-content:center;margin-left:-2%;width:102%}.grid>*{margin-left:2%;max-width:100%}.grid--4cols>*{-ms-flex-preferred-size:23%;flex-basis:23%}.grid--3cols>*{-ms-flex-preferred-size:31.33%;flex-basis:31.33%}.grid--2cols>*{-ms-flex-preferred-size:48%;flex-basis:48%}@media (max-width:768px){.grid{-ms-flex-direction:column;flex-direction:column}.grid,.grid>*{margin-left:0;width:100%}.grid>*{-ms-flex:0 0 auto;flex:0 0 auto}}.center{text-align:center}.center h1,.center h2,.center h3,.center h4,.center h5,.center h6,.hamburger{display:inline-block}.hamburger{background-color:transparent;border:0;color:inherit;cursor:pointer;font:inherit;height:48px;margin:0;outline:none;overflow:visible;padding:14px 12px;text-transform:none}.hamburger__box{display:inline-block;height:16px;position:relative;width:24px}.hamburger__inner{display:block;margin-top:-2px;top:50%}.hamburger__inner,.hamburger__inner:after,.hamburger__inner:before{background-color:#584b4f;background-color:var(--color-base);border-radius:2px;height:3px;position:absolute;-webkit-transition-duration:.15s;-o-transition-duration:.15s;transition-duration:.15s;-webkit-transition-property:-webkit-transform;transition-property:-webkit-transform;-o-transition-property:transform;transition-property:transform;transition-property:transform,-webkit-transform;-webkit-transition-timing-function:ease;-o-transition-timing-function:ease;transition-timing-function:ease;width:24px}.hamburger__inner:after,.hamburger__inner:before{content:"";display:block}.hamburger__inner:before{top:-6px}.hamburger__inner:after{bottom:-6px}.header{background:#fefefe;-webkit-box-shadow:0 1px 0 0 rgba(0,0,0,.08);box-shadow:0 1px 0 0 rgba(0,0,0,.08);-webkit-box-shadow:var(--box-shadow-lightest);box-shadow:var(--box-shadow-lightest);padding:0 32px;width:100%}@media (max-width:768px){.header{padding:0 16px}}.header__container{-ms-flex-align:center;-ms-flex-pack:justify;align-items:center;display:-ms-flexbox;display:flex;justify-content:space-between;position:relative;width:100%}.header__logo{display:block;line-height:1;padding:16px 0}.header__logo svg{display:block;height:18px;width:120px}.header__search{margin:0;position:absolute;right:48px;top:7px;z-index:799}.header__search input{width:400px}@media (max-width:768px){.header__search input{width:calc(100vw - 94px)}}.header__menu{position:absolute;right:-12px;top:0;z-index:800}.footer{background:#584b4f;background:var(--color-base);padding:32px;text-align:center;text-shadow:1px 1px 0 rgba(0,0,0,.125)}.footer .links a{color:#eae8e3;color:var(--color-background-light);text-decoration:none}.footer .links a:hover{color:#9ad8bb;color:var(--color-green-light);text-decoration:none}.iframe{height:0;overflow:hidden;padding-bottom:56.25%;position:relative;width:100%}.iframe iframe{height:100%;left:0;position:absolute;top:0;width:100%}.links{margin:0;padding:0}.links li{display:inline-block;margin:0 8px;text-decoration:none}.links li:first-child{margin-left:0}.links li:last-child{margin-right:0}.links a{display:block}.box,.links a,.links a:hover{text-decoration:none}.box{background:#f4f3f1;background:var(--color-background-lighter);border-radius:4px;-webkit-box-shadow:0 1px 0 0 rgba(0,0,0,.1);box-shadow:0 1px 0 0 rgba(0,0,0,.1);-webkit-box-shadow:var(--box-shadow-lighter);box-shadow:var(--box-shadow-lighter);color:inherit;display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;margin-bottom:24px;margin-top:0;overflow:auto;padding:24px;text-align:left;vertical-align:top}.box:hover{background:#eae8e3;background:var(--color-background-light);-webkit-box-shadow:0 1px 0 0 rgba(0,0,0,.15);box-shadow:0 1px 0 0 rgba(0,0,0,.15);-webkit-box-shadow:var(--box-shadow-light);box-shadow:var(--box-shadow-light);text-decoration:none}.box h1,.box h2,.box h3,.box h4,.box h5,.box h6,.box hr,.box ol,.box p,.box ul{margin-bottom:8px}.box h1,.box h2,.box h3,.box h4,.box h5,.box h6{color:#584b4f;color:var(--color-base)}.box :first-child{margin-top:0}.box :last-child{margin-bottom:0}.box__content{-ms-flex-positive:1;color:#584b4f;color:var(--color-base);flex-grow:1;text-decoration:none}.box__content p{font-size:.875rem}.box__content:hover{color:#584b4f;color:var(--color-base);text-decoration:none}.box__content:not(:last-child){margin-bottom:16px}.box__link{display:block;font-size:.75rem;text-decoration:none}.box__link,.box__link [class*=icon]{color:#4f5b93;color:var(--color-key)}.box__link:hover{color:#a2aacd;color:var(--color-key-light);text-decoration:none}code,pre,tt{font-family:SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace}code,tt{background-color:rgba(0,0,0,.05);border-radius:4px;font-size:.75rem;margin:0;padding:.3rem .45rem}code br,tt br{display:none}del code{text-decoration:inherit}pre{word-wrap:normal;font-size:.875rem;line-height:1.45;text-align:left}@media (max-width:768px){pre{font-size:.75rem}}pre>code{background:transparent;border:0;font-size:100%;margin:0;padding:0;white-space:pre;word-break:normal}.highlight{margin-bottom:16px}.highlight pre{margin-bottom:0;word-break:normal}.highlight pre,pre{background-color:#f9f9f8;background-color:var(--color-background-lightest);border-radius:4px;-webkit-box-shadow:0 1px 0 0 rgba(0,0,0,.08);box-shadow:0 1px 0 0 rgba(0,0,0,.08);-webkit-box-shadow:var(--box-shadow-lightest);box-shadow:var(--box-shadow-lightest);color:#584b4f;color:var(--color-base);overflow:auto;padding:16px 16px 14px;text-shadow:none!important}pre code,pre tt{word-wrap:normal;background-color:transparent;border:0;display:inline;line-height:inherit;margin:0;max-width:none;overflow:visible;padding:0}pre code:after,pre code:before,pre tt:after,pre tt:before{content:normal}.pl-c{color:#969896}.pl-c1,.pl-s .pl-v{color:#0086b3}.pl-e,.pl-en{color:#795da3}.pl-s .pl-s1,.pl-smi{color:#444}.pl-ent{color:#63a35c}.pl-k{color:#a71d5d}.pl-pds,.pl-s,.pl-s .pl-pse .pl-s1,.pl-sr,.pl-sr .pl-cce,.pl-sr .pl-sra,.pl-sr .pl-sre{color:#183691}.pl-smw,.pl-v{color:#ed6a43}.pl-bu{color:#b52a1d}.pl-c2,.pl-ii{background-color:#b52a1d;color:#f8f8f8}.pl-c2:before{content:"^M"}.pl-sr .pl-cce{color:#63a35c;font-weight:700}.pl-ml{color:#693a17}.pl-mh,.pl-mh .pl-en,.pl-ms{color:#1d3e81;font-weight:700}.pl-mq{color:teal}.pl-mi{color:#333;font-style:italic}.pl-mb{color:#333;font-weight:700}.pl-md{background-color:#ffecec;color:#bd2c00}.pl-mi1{background-color:#eaffea;color:#55a532}.pl-mc{background-color:#ffe3b4;color:#ef9700}.pl-mi2{background-color:grey;color:#d8d8d8}.pl-mdr{color:#795da3;font-weight:700}.pl-mo{color:#1d3e81}.pl-ba{color:#595e62}.pl-sg{color:silver}.pl-corl{color:#183691;text-decoration:underline}.anchor{display:block;float:left;padding-right:2px;position:absolute;text-decoration:none!important;-webkit-transform:translateX(-100%);transform:translateX(-100%)}.anchor:focus{outline:none}.anchor>*{visibility:hidden}:hover>.anchor>*{visibility:visible}.anchor>:before{color:#a2aacd;color:var(--color-key-light);content:"#";font-weight:400!important}.anchor--disable .anchor>*,.anchor.anchor--disable>*{visibility:hidden!important}.searchbox{width:100%}.searchbox,.searchbox:focus{-webkit-appearance:none;-moz-appearance:none;appearance:none;background:#eae8e3 url(../assets/search.17d09555.svg) no-repeat 10px;background:var(--color-background-light) url(../assets/search.17d09555.svg) no-repeat 10px center;background-size:16px 16px;border:0;border-radius:4px;-webkit-box-shadow:0 1px 0 0 rgba(0,0,0,.15);box-shadow:0 1px 0 0 rgba(0,0,0,.15);-webkit-box-shadow:var(--box-shadow-light);box-shadow:var(--box-shadow-light);color:#584b4f;color:var(--color-base);font-size:.875rem;line-height:24px;outline:none;padding:6px 8px 6px 32px;-webkit-transition:width .35s cubic-bezier(.23,1,.32,1);-o-transition:width .35s cubic-bezier(.23,1,.32,1);transition:width .35s cubic-bezier(.23,1,.32,1)}.searchbox::-webkit-input-placeholder{color:#afa1a5;color:var(--color-base-light)}.searchbox:-moz-placeholder,.searchbox::-moz-placeholder{color:#afa1a5;color:var(--color-base-light)}.searchbox::-moz-placeholder{opacity:1}.searchbox:-ms-input-placeholder{color:#afa1a5;color:var(--color-base-light)}.searchbox:focus{background-color:#f4f3f1!important;background-color:var(--color-background-lighter)!important;-webkit-box-shadow:0 1px 0 0 rgba(0,0,0,.1);box-shadow:0 1px 0 0 rgba(0,0,0,.1);-webkit-box-shadow:var(--box-shadow-lighter);box-shadow:var(--box-shadow-lighter)}.searchbox--collapsed:not(:focus){background-color:transparent;border:0;-webkit-box-shadow:none;box-shadow:none;cursor:pointer;margin-right:-12px;width:32px!important}.searchbox--collapsed:not(:focus)::-webkit-search-cancel-button,.searchbox--collapsed:not(:focus)::-webkit-search-decoration{display:none}.searchbox--collapsed:not(:focus)::-webkit-search-results-button,.searchbox--collapsed:not(:focus)::-webkit-search-results-decoration{display:none}.searchbox--collapsed:not(:focus)::-ms-clear{display:none}.searchbox--large,.searchbox--large:focus{padding:8px 12px 8px 40px}.alert{background-color:#f4f3f1;background-color:var(--color-background-lighter);border-left:4px solid #ba3525;border-left:4px solid var(--color-red);border-radius:4px;-webkit-box-shadow:0 1px 0 0 rgba(0,0,0,.1);box-shadow:0 1px 0 0 rgba(0,0,0,.1);-webkit-box-shadow:var(--box-shadow-lighter);box-shadow:var(--box-shadow-lighter);font-size:.9em;padding:16px 16px 16px 24px;position:relative}.alert:before{background:#ba3525;background:var(--color-red);border-radius:50%;-webkit-box-sizing:border-box;box-sizing:border-box;color:#fff;content:"!";display:block;font-size:12px;font-weight:700;height:24px;left:-14px;line-height:22px;padding:0 4px;position:absolute;text-align:center;top:12px;width:24px}.alert a{color:#ba3525;color:var(--color-red)}.alert :last-child{margin-bottom:0}.toc{display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;list-style:none;margin-left:-4px;padding:0}.toc li{margin:4px}.toc a{background-color:#584b4f;background-color:var(--color-base);border-radius:4px;-webkit-box-shadow:0 1px 0 0 rgba(0,0,0,.1);box-shadow:0 1px 0 0 rgba(0,0,0,.1);-webkit-box-shadow:var(--box-shadow-lighter);box-shadow:var(--box-shadow-lighter);display:-ms-flexbox;display:flex;font-family:SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;font-weight:bolder;letter-spacing:normal;padding:.25rem 1rem .15rem}.toc a,.toc a:hover{color:#fff;text-decoration:none}@media (max-width:768px){.toc{font-size:.85rem}}.welcome__intro{background-image:-o-radial-gradient(center,ellipse,#fff 0,#eae8e3 100%);background-image:radial-gradient(ellipse at center,#fff 0,#eae8e3 100%);background-image:-o-radial-gradient(center,ellipse,#fff 0,var(--color-background-light) 100%);background-image:radial-gradient(ellipse at center,#fff 0,var(--color-background-light) 100%);background-position:50% 0;background-size:auto 100%;border-bottom:1px dashed #eae8e3;border-bottom:1px dashed var(--color-background-light);padding:16px 0 136px}.welcome__intro h1{color:#4f5b93;color:var(--color-key);font-size:2rem;margin-bottom:16px}.welcome__logo{display:block;margin:0 auto;max-width:320px}.welcome__logo svg{display:block;height:240px}.welcome__content{display:block;max-width:calc(98% - 320px);padding-top:16px}.welcome__example{display:block;margin:-160px auto auto;max-width:850px}.welcome__example .highlight pre{background:#fff;-webkit-box-shadow:0 0 16px #d6d1c8;box-shadow:0 0 16px #d6d1c8;-webkit-box-shadow:0 0 16px var(--color-background);box-shadow:0 0 16px var(--color-background);padding:32px}.welcome__intro .links a{color:#584b4f;color:var(--color-base);text-decoration:none}.welcome__intro .links a:hover{color:#4f5b93;color:var(--color-key);text-decoration:none}.welcome__team img{border-radius:50%;display:inline-block;max-width:190px}.welcome__team h3{display:block;margin:.2em 0}.welcome__team div.grid>*{margin-bottom:1em}@media (max-width:768px){.welcome__content{max-width:100%;padding:32px 16px 16px}.welcome__logo svg{height:160px}.welcome__intro h1{color:#4f5b93;color:var(--color-key);font-size:1.75rem;margin-bottom:16px;text-align:center}.welcome__intro .links{text-align:center}}.off-canvas-menu{pointer-events:none;position:fixed;right:0;top:0}.off-canvas-menu__content{-webkit-transform:translate3d(105%,0,0);transform:translate3d(105%,0,0)}.component-info{background-color:#f4f3f1;background-color:var(--color-background-lighter);border-radius:4px;bottom:16px;-webkit-box-shadow:0 1px 0 0 rgba(0,0,0,.1);box-shadow:0 1px 0 0 rgba(0,0,0,.1);-webkit-box-shadow:var(--box-shadow-lighter);box-shadow:var(--box-shadow-lighter);font-size:.875rem;padding:24px;position:sticky;top:16px}.component-info,.component-info a,.component-info a [class*=icon]{color:#584b4f;color:var(--color-base)}.component-info a:hover{color:#afa1a5;color:var(--color-base-light);text-decoration:none}.component-info pre{font-size:.75rem;line-height:1}.component-info__title{-ms-flex-align:center;align-items:center;color:#584b4f;color:var(--color-base);display:-ms-flexbox;display:flex;font-size:1.5rem;line-height:1rem;margin-bottom:1rem}.component-info__title a{text-decoration:none}.component-info__title>:not(:last-child){margin-right:8px}.component-info__subtitle{color:#afa1a5;color:var(--color-base-light);font-size:.875rem;font-weight:700;letter-spacing:.1em;line-height:.875rem;margin-bottom:.875rem;text-transform:uppercase}.component-info__info{-ms-flex-pack:start;display:-ms-flexbox;display:flex;-ms-flex-flow:row;flex-flow:row;justify-content:flex-start;list-style:none;padding:0}.component-info__info li{margin-right:16px}.component-info__info li:last-child{margin-right:0}.component-info__info a{font-size:.75rem;text-decoration:none;-o-text-overflow:ellipsis;text-overflow:ellipsis;white-space:nowrap}.component-info__contributors{display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;list-style:none;padding:0}.component-info__contributors li{margin:0;padding:0 4px 4px 0}.component-info__contributors img{border-radius:2px;display:block;height:auto;width:40px}.component-info__contributors img,.component-info__participation{-webkit-box-shadow:0 1px 0 0 rgba(0,0,0,.1);box-shadow:0 1px 0 0 rgba(0,0,0,.1);-webkit-box-shadow:var(--box-shadow-lighter);box-shadow:var(--box-shadow-lighter)}.component-info__participation{background-color:#f9f9f8;background-color:var(--color-background-lightest);border-radius:4px;padding:8px;text-align:center}.component-info__participation svg{display:block;height:auto!important;margin:auto;max-width:100%}:root{--color-key:#4f5b93;--color-key-light:#a2aacd;--color-base:#584b4f;--color-base-light:#afa1a5;--color-green:#40a977;--color-green-light:#9ad8bb;--color-red:#ba3525;--color-red-light:#e79187;--color-background:#d6d1c8;--color-background-light:#eae8e3;--color-background-lighter:#f4f3f1;--color-background-lightest:#f9f9f8;--box-shadow-light:0 1px 0 0 rgba(0,0,0,.15);--box-shadow-lighter:0 1px 0 0 rgba(0,0,0,.1);--box-shadow-lightest:0 1px 0 0 rgba(0,0,0,.08)}.version-selector{color:#fff;font-size:.875rem;position:relative}.version-selector :last-child{margin-bottom:0}.version-selector__button,.version-selector__version{-webkit-appearance:none;background-color:#584b4f;background-color:var(--color-base);border:0;border-radius:4px;-webkit-box-shadow:none;box-shadow:none;-webkit-box-shadow:0 1px 0 0 rgba(0,0,0,.1);box-shadow:0 1px 0 0 rgba(0,0,0,.1);-webkit-box-shadow:var(--box-shadow-lighter);box-shadow:var(--box-shadow-lighter);color:#fff;cursor:pointer;display:-ms-flexbox;display:flex;font-family:SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;font-size:.75rem;font-weight:bolder;letter-spacing:normal;margin:0;outline:none;overflow:visible;padding:.25rem .4rem .2rem;text-decoration:none;text-shadow:none;text-transform:none}.version-selector__button{position:relative}.version-selector__button [class=icon-chevron-down]{display:inline-block;margin-left:4px}.version-selector__button [class=icon-chevron-up]{display:none;margin-left:4px}.version-selector__version{background-color:hsla(0,0%,100%,.33);border:1px solid transparent;color:#fff!important;text-decoration:none}.version-selector__version:hover{background-color:hsla(0,0%,100%,.11);border:1px solid hsla(0,0%,100%,.22)}.version-selector__button--dev,.version-selector__version--dev,.version-selector__version--dev:hover{background-color:#ba3525;background-color:var(--color-red)}.version-selector__button--latest,.version-selector__version--latest,.version-selector__version--latest:hover{background-color:#40a977;background-color:var(--color-green)}.version-selector__panel{position:fixed;top:-20000em;visibility:hidden}</style>
+        <script async src="../assets/main.93d54642.js"></script>
+            </head>
+
+    <body>
+            <header class="header">
+            <div class="wrapper">
+                <div class="header__container">
+                    <a class="header__logo" href="../">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="320" height="47.29" viewBox="0 428.964 320 47.29"><path fill="#584B4F" d="M30.86 452.385c1.637-2.287 2.455-5 2.455-8.134 0-4.313-1.367-7.87-4.088-10.68-2.723-2.812-6.39-4.216-11.004-4.216h-7.71c-3.79 0-6.49.798-8.1 2.388C.806 433.332 0 435.872 0 439.355v36.512h9.08v-17.245h6.53l9.08 17.245h10.52L24.82 457.12c2.395-.87 4.41-2.447 6.04-4.735zm-8.488-3.334c-1.24 1.33-2.82 1.99-4.734 1.99H9.08v-9.47c0-2.74 1.35-4.112 4.05-4.112h4.508c2 0 3.603.61 4.8 1.83 1.196 1.22 1.797 2.82 1.797 4.802 0 1.982-.623 3.64-1.864 4.964v-.003zm20.348 14.536c0 4.572 1.055 7.766 3.167 9.57 2.114 1.81 5.782 2.71 11.008 2.71h16.46v-8.1H57.548c-2.18 0-3.68-.35-4.51-1.045-.83-.695-1.24-1.96-1.24-3.788v-6.467h14.434l.656-8.1h-15.09v-10.912h21.56v-8.098H42.72v34.23zm57.97-33.442c-.718-.523-1.665-.787-2.84-.787-1.177 0-2.168.285-2.972.85-.807.567-1.537 1.592-2.19 3.073l-14.89 42.585h9.47l2.55-8.03h15.613l2.613 8.03h9.47l-14.893-42.588c-.567-1.572-1.21-2.613-1.93-3.135v.002zM92.1 460.19l5.75-18.42 5.487 18.418H92.1v.002zm53.074 5.455c-1.155 1.678-3.245 2.512-6.27 2.512-3.03 0-5.258-.914-6.697-2.74-1.394-1.83-2.093-5.25-2.093-10.256v-4.052c0-1.783.045-3.2.13-4.243.178-3.27.785-5.576 1.833-6.928 1.48-1.914 3.745-2.873 6.794-2.873 2.613 0 4.532.653 5.75 1.96 1.218 1.308 2.07 3.245 2.547 5.813h8.49c0-5.14-1.557-9.07-4.67-11.79-3.114-2.723-7.153-4.084-12.116-4.084-3.398 0-6.293.564-8.687 1.7-6.097 2.783-9.146 9.686-9.146 20.704v3.918c0 13.982 5.945 20.968 17.833 20.968 5.4 0 9.58-1.59 12.54-4.77 2.964-3.176 4.44-7.73 4.44-13.653h-8.426c-.346 3.53-1.1 6.134-2.25 7.81v.005zm14.667-36.29v8.1h12.412v38.41h9.08v-38.41h12.47v-8.1"/><path fill="#4F5B93" d="M218.89 429.356h-18.03v46.51h9.086v-14.897h8.944c4.876 0 8.647-1.337 11.328-4.016 2.683-2.68 4.02-6.608 4.02-11.788s-1.337-9.112-4.02-11.788c-2.68-2.68-6.454-4.02-11.328-4.02v-.002zm4.538 21.686c-1.15 1.177-2.815 1.768-5 1.768h-8.485v-15.354h8.484c4.483 0 6.73 2.572 6.73 7.71 0 2.744-.578 4.703-1.73 5.88v-.004zm43.93-2.02H250.31v-19.666h-9.088v46.51h9.086v-18.81h17.05v18.81h9.076v-46.51h-9.078m48.63 4.02c-2.683-2.68-6.46-4.02-11.335-4.02h-18.027v46.507h9.085V460.97h8.943c4.877 0 8.654-1.336 11.337-4.014 2.68-2.678 4.013-6.608 4.013-11.788s-1.332-9.112-4.013-11.79v-.003zm-6.795 17.666c-1.154 1.177-2.822 1.768-5 1.768h-8.484v-15.354h8.485c4.483 0 6.734 2.572 6.734 7.71 0 2.744-.583 4.703-1.735 5.88v-.004z"/></svg>
+                    </a>
+                    <form class="header__search">
+                        <input type="search" class="searchbox searchbox--collapsed" data-docsearch placeholder="Search documentation...">
+                    </form>
+                    <div class="header__menu">
+    <button class="hamburger" data-ctrly="off-canvas-menu" data-off-canvas-menu-control>
+        <div class="hamburger__box">
+            <div class="hamburger__inner">
+                <span class="visually-hidden">Menu</span>
+            </div>
+        </div>
+    </button>
+</div>
+<nav id="off-canvas-menu" class="off-canvas-menu" aria-hidden="true" tabindex="0">
+    <div class="off-canvas-menu__content">
+        <button aria-label="Close menu" class="off-canvas-menu__close" data-ctrly="off-canvas-menu" data-off-canvas-menu-control>
+            <i class="icon-x" aria-hidden="true"></i>
+        </button>
+
+        <section class="off-canvas-menu__section">
+            <a class="off-canvas-menu__section-top" href="../">Home</a>
+        </section>
+
+        <section class="off-canvas-menu__section">
+            <a class="off-canvas-menu__section-top" href="../changelog.html">Changelog</a>
+        </section>
+            <section class="off-canvas-menu__section">
+            <h3 class="off-canvas-menu__section-header">Core Components</h3>
+            <ul class="off-canvas-menu__list">
+                            <li>
+                    <a class="off-canvas-menu__link" href="../event-loop/">
+                        EventLoop
+
+                        <span class="off-canvas-menu__version">
+                            v1.3.0
+                        </span>
+                    </a>
+                </li>
+                            <li>
+                    <a class="off-canvas-menu__link" href="../stream/">
+                        Stream
+
+                        <span class="off-canvas-menu__version">
+                            v1.2.0
+                        </span>
+                    </a>
+                </li>
+                            <li>
+                    <a class="off-canvas-menu__link" href="../promise/">
+                        Promise
+
+                        <span class="off-canvas-menu__version">
+                            v2.9.0
+                        </span>
+                    </a>
+                </li>
+                            <li>
+                    <a class="off-canvas-menu__link" href="../async/">
+                        Async
+
+                        <span class="off-canvas-menu__version">
+                            
+                        </span>
+                    </a>
+                </li>
+                        </ul>
+        </section>
+            <section class="off-canvas-menu__section">
+            <h3 class="off-canvas-menu__section-header">Network Components</h3>
+            <ul class="off-canvas-menu__list">
+                            <li>
+                    <a class="off-canvas-menu__link" href="../socket/">
+                        Socket
+
+                        <span class="off-canvas-menu__version">
+                            v1.11.0
+                        </span>
+                    </a>
+                </li>
+                            <li>
+                    <a class="off-canvas-menu__link" href="../datagram/">
+                        Datagram
+
+                        <span class="off-canvas-menu__version">
+                            v1.8.0
+                        </span>
+                    </a>
+                </li>
+                            <li>
+                    <a class="off-canvas-menu__link" href="../http/">
+                        HTTP
+
+                        <span class="off-canvas-menu__version">
+                            v1.6.0
+                        </span>
+                    </a>
+                </li>
+                            <li>
+                    <a class="off-canvas-menu__link" href="../dns/">
+                        DNS
+
+                        <span class="off-canvas-menu__version">
+                            v1.9.0
+                        </span>
+                    </a>
+                </li>
+                        </ul>
+        </section>
+            <section class="off-canvas-menu__section">
+            <h3 class="off-canvas-menu__section-header">Utility Components</h3>
+            <ul class="off-canvas-menu__list">
+                            <li>
+                    <a class="off-canvas-menu__link" href="../cache/">
+                        Cache
+
+                        <span class="off-canvas-menu__version">
+                            v1.1.1
+                        </span>
+                    </a>
+                </li>
+                            <li>
+                    <a class="off-canvas-menu__link" href="../child-process/">
+                        ChildProcess
+
+                        <span class="off-canvas-menu__version">
+                            v0.6.4
+                        </span>
+                    </a>
+                </li>
+                            <li>
+                    <a class="off-canvas-menu__link" href="../promise-timer/">
+                        PromiseTimer
+
+                        <span class="off-canvas-menu__version">
+                            v1.9.0
+                        </span>
+                    </a>
+                </li>
+                            <li>
+                    <a class="off-canvas-menu__link" href="../promise-stream/">
+                        PromiseStream
+
+                        <span class="off-canvas-menu__version">
+                            v1.4.0
+                        </span>
+                    </a>
+                </li>
+                        </ul>
+        </section>
+            <section class="off-canvas-menu__section">
+            <h3 class="off-canvas-menu__section-header">Legacy Components</h3>
+            <ul class="off-canvas-menu__list">
+                            <li>
+                    <a class="off-canvas-menu__link" href="../http-client/">
+                        HttpClient
+
+                        <span class="off-canvas-menu__version">
+                            v0.5.11
+                        </span>
+                    </a>
+                </li>
+                            <li>
+                    <a class="off-canvas-menu__link" href="../socket-client/">
+                        SocketClient
+
+                        <span class="off-canvas-menu__version">
+                            v0.7.0
+                        </span>
+                    </a>
+                </li>
+                        </ul>
+        </section>
+        </div>
+</nav>
+                </div>
+            </div>
+        </header>
+    
+        <div class="container">
+        <div class="wrapper">
+            <div class="grid grid--wrap grid--gutter">
+                <main class="main">
+                                    <h1>Async</h1>
+
+                    
+<p><a href="https://github.com/reactphp/async/actions"><img src="https://github.com/reactphp/async/workflows/CI/badge.svg" alt="CI status" style="max-width:100%;"></a>
+<a href="https://packagist.org/packages/react/async" rel="nofollow"><img src="https://camo.githubusercontent.com/3b14cc18b50d4f3ce0a5fac671667b6f4035fb79695b4acda1eba22ed3841f62/68747470733a2f2f696d672e736869656c64732e696f2f7061636b61676973742f64742f72656163742f6173796e633f636f6c6f723d626c7565266c6162656c3d696e7374616c6c732532306f6e2532305061636b6167697374" alt="installs on Packagist" data-canonical-src="https://img.shields.io/packagist/dt/react/async?color=blue&amp;label=installs%20on%20Packagist" style="max-width:100%;"></a></p>
+<p>Async utilities for <a href="https://reactphp.org/" rel="nofollow">ReactPHP</a>.</p>
+<p>This library allows you to manage async control flow. It provides a number of
+combinators for <a href="../promise/">Promise</a>-based APIs.
+Instead of nesting or chaining promise callbacks, you can declare them as a
+list, which is resolved sequentially in an async manner.
+React/Async will not automagically change blocking code to be async. You need
+to have an actual event loop and non-blocking libraries interacting with that
+event loop for it to work. As long as you have a Promise-based API that runs in
+an event loop, it can be used with this library.</p>
+<blockquote>
+<p><strong>Development version:</strong> This branch contains the code for the upcoming 4.0
+release which will be the way forward for this package. However, we will still
+actively support 3.0 and 2.0 for those not yet on PHP 8.1+.</p>
+<p>If you're using an older PHP version, you may use the
+<a href="https://github.com/reactphp/async/tree/3.x"><code>3.x</code> branch</a> (PHP 7.1+) or
+<a href="https://github.com/reactphp/async/tree/2.x"><code>2.x</code> branch</a> (PHP 5.3+) which both
+provide a compatible API but do not take advantage of newer language features.
+See also <a href="#install">installation instructions</a> for more details.</p>
+</blockquote>
+<p><strong>Table of Contents</strong></p>
+<ul>
+<li>
+<a href="#usage">Usage</a>
+<ul>
+<li><a href="#async">async()</a></li>
+<li><a href="#await">await()</a></li>
+<li><a href="#coroutine">coroutine()</a></li>
+<li><a href="#parallel">parallel()</a></li>
+<li><a href="#series">series()</a></li>
+<li><a href="#waterfall">waterfall()</a></li>
+</ul>
+</li>
+<li><a href="#todo">Todo</a></li>
+<li><a href="#install">Install</a></li>
+<li><a href="#tests">Tests</a></li>
+<li><a href="#license">License</a></li>
+</ul>
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h2>
+<p>This lightweight library consists only of a few simple functions.
+All functions reside under the <code>React\Async</code> namespace.</p>
+<p>The below examples refer to all functions with their fully-qualified names like this:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Async</span>\await</span>(…);</pre></div>
+<p>As of PHP 5.6+ you can also import each required function into your code like this:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-k">use</span> <span class="pl-k">function</span> <span class="pl-v">React</span>\<span class="pl-v">Async</span>\await;
+
+await(…);</pre></div>
+<p>Alternatively, you can also use an import statement similar to this:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-k">use</span> <span class="pl-v">React</span>\<span class="pl-v">Async</span>;
+
+<span class="pl-en"><span class="pl-v">Async</span>\await</span>(…);</pre></div>
+<h3>
+<a id="async" class="anchor" href="#async" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>async()</h3>
+<p>The <code>async(callable $function): callable</code> function can be used to
+return an async function for a function that uses <a href="#await"><code>await()</code></a> internally.</p>
+<p>This function is specifically designed to complement the <a href="#await"><code>await()</code> function</a>.
+The <a href="#await"><code>await()</code> function</a> can be considered <em>blocking</em> from the
+perspective of the calling code. You can avoid this blocking behavior by
+wrapping it in an <code>async()</code> function call. Everything inside this function
+will still be blocked, but everything outside this function can be executed
+asynchronously without blocking:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-v">Loop</span>::<span class="pl-en">addTimer</span>(<span class="pl-c1">0.5</span>, <span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Async</span>\async</span>(<span class="pl-k">function</span> () {
+    <span class="pl-k">echo</span> <span class="pl-s">'a'</span>;
+    <span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Async</span>\await</span>(<span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Promise</span>\<span class="pl-v">Timer</span>\sleep</span>(<span class="pl-c1">1.0</span>));
+    <span class="pl-k">echo</span> <span class="pl-s">'c'</span>;
+}));
+
+<span class="pl-v">Loop</span>::<span class="pl-en">addTimer</span>(<span class="pl-c1">1.0</span>, <span class="pl-k">function</span> () {
+    <span class="pl-k">echo</span> <span class="pl-s">'b'</span>;
+});
+
+<span class="pl-c">// prints "a" at t=0.5s</span>
+<span class="pl-c">// prints "b" at t=1.0s</span>
+<span class="pl-c">// prints "c" at t=1.5s</span></pre></div>
+<p>See also the <a href="#await"><code>await()</code> function</a> for more details.</p>
+<p>Note that this function only works in tandem with the <a href="#await"><code>await()</code> function</a>.
+In particular, this function does not "magically" make any blocking function
+non-blocking:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-v">Loop</span>::<span class="pl-en">addTimer</span>(<span class="pl-c1">0.5</span>, <span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Async</span>\async</span>(<span class="pl-k">function</span> () {
+    <span class="pl-k">echo</span> <span class="pl-s">'a'</span>;
+    sleep(<span class="pl-c1">1</span>); <span class="pl-c">// broken: using PHP's blocking sleep() for demonstration purposes</span>
+    <span class="pl-k">echo</span> <span class="pl-s">'c'</span>;
+}));
+
+<span class="pl-v">Loop</span>::<span class="pl-en">addTimer</span>(<span class="pl-c1">1.0</span>, <span class="pl-k">function</span> () {
+    <span class="pl-k">echo</span> <span class="pl-s">'b'</span>;
+});
+
+<span class="pl-c">// prints "a" at t=0.5s</span>
+<span class="pl-c">// prints "c" at t=1.5s: Correct timing, but wrong order</span>
+<span class="pl-c">// prints "b" at t=1.5s: Triggered too late because it was blocked</span></pre></div>
+<p>As an alternative, you should always make sure to use this function in tandem
+with the <a href="#await"><code>await()</code> function</a> and an async API returning a promise
+as shown in the previous example.</p>
+<p>The <code>async()</code> function is specifically designed for cases where it is used
+as a callback (such as an event loop timer, event listener, or promise
+callback). For this reason, it returns a new function wrapping the given
+<code>$function</code> instead of directly invoking it and returning its value.</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-k">use</span> <span class="pl-k">function</span> <span class="pl-v">React</span>\<span class="pl-v">Async</span>\async;
+
+<span class="pl-v">Loop</span>::<span class="pl-en">addTimer</span>(<span class="pl-c1">1.0</span>, async(<span class="pl-k">function</span> () { … }));
+<span class="pl-s1"><span class="pl-c1">$</span>connection</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'close'</span>, async(<span class="pl-k">function</span> () { … }));
+<span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'data'</span>, async(<span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>data</span>) { … }));
+<span class="pl-s1"><span class="pl-c1">$</span>promise</span>-&gt;<span class="pl-en">then</span>(async(<span class="pl-k">function</span> (<span class="pl-smi">int</span> <span class="pl-s1"><span class="pl-c1">$</span>result</span>) { … }));</pre></div>
+<p>You can invoke this wrapping function to invoke the given <code>$function</code> with
+any arguments given as-is. The function will always return a Promise which
+will be fulfilled with whatever your <code>$function</code> returns. Likewise, it will
+return a promise that will be rejected if you throw an <code>Exception</code> or
+<code>Throwable</code> from your <code>$function</code>. This allows you to easily create
+Promise-based functions:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>promise</span> = <span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Async</span>\async</span>(<span class="pl-k">function</span> (): <span class="pl-smi">int</span> {
+    <span class="pl-s1"><span class="pl-c1">$</span>browser</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Browser</span>();
+    <span class="pl-s1"><span class="pl-c1">$</span>urls</span> = [
+        <span class="pl-s">'https://example.com/alice'</span>,
+        <span class="pl-s">'https://example.com/bob'</span>
+    ];
+
+    <span class="pl-s1"><span class="pl-c1">$</span>bytes</span> = <span class="pl-c1">0</span>;
+    <span class="pl-k">foreach</span> (<span class="pl-s1"><span class="pl-c1">$</span>urls</span> <span class="pl-k">as</span> <span class="pl-s1"><span class="pl-c1">$</span>url</span>) {
+        <span class="pl-s1"><span class="pl-c1">$</span>response</span> = <span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Async</span>\await</span>(<span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">get</span>(<span class="pl-s1"><span class="pl-c1">$</span>url</span>));
+        assert(<span class="pl-s1"><span class="pl-c1">$</span>response</span> instanceof <span class="pl-v">Psr</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">ResponseInterface</span>);
+        <span class="pl-s1"><span class="pl-c1">$</span>bytes</span> += <span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">getBody</span>()-&gt;<span class="pl-en">getSize</span>();
+    }
+    <span class="pl-k">return</span> <span class="pl-s1"><span class="pl-c1">$</span>bytes</span>;
+})();
+
+<span class="pl-s1"><span class="pl-c1">$</span>promise</span>-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-smi">int</span> <span class="pl-s1"><span class="pl-c1">$</span>bytes</span>) {
+    <span class="pl-k">echo</span> <span class="pl-s">'Total size: '</span> . <span class="pl-s1"><span class="pl-c1">$</span>bytes</span> . <span class="pl-c1">PHP_EOL</span>;
+}, <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">Exception</span></span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>) {
+    <span class="pl-k">echo</span> <span class="pl-s">'Error: '</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
+});</pre></div>
+<p>The previous example uses <a href="#await"><code>await()</code></a> inside a loop to highlight how
+this vastly simplifies consuming asynchronous operations. At the same time,
+this naive example does not leverage concurrent execution, as it will
+essentially "await" between each operation. In order to take advantage of
+concurrent execution within the given <code>$function</code>, you can "await" multiple
+promises by using a single <a href="#await"><code>await()</code></a> together with Promise-based
+primitives like this:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>promise</span> = <span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Async</span>\async</span>(<span class="pl-k">function</span> (): <span class="pl-smi">int</span> {
+    <span class="pl-s1"><span class="pl-c1">$</span>browser</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Browser</span>();
+    <span class="pl-s1"><span class="pl-c1">$</span>urls</span> = [
+        <span class="pl-s">'https://example.com/alice'</span>,
+        <span class="pl-s">'https://example.com/bob'</span>
+    ];
+
+    <span class="pl-s1"><span class="pl-c1">$</span>promises</span> = [];
+    <span class="pl-k">foreach</span> (<span class="pl-s1"><span class="pl-c1">$</span>urls</span> <span class="pl-k">as</span> <span class="pl-s1"><span class="pl-c1">$</span>url</span>) {
+        <span class="pl-s1"><span class="pl-c1">$</span>promises</span>[] = <span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">get</span>(<span class="pl-s1"><span class="pl-c1">$</span>url</span>);
+    }
+
+    <span class="pl-k">try</span> {
+        <span class="pl-s1"><span class="pl-c1">$</span>responses</span> = <span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Async</span>\await</span>(<span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Promise</span>\all</span>(<span class="pl-s1"><span class="pl-c1">$</span>promises</span>));
+    } <span class="pl-k">catch</span> (<span class="pl-smi"><span class="pl-smi">Exception</span></span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>) {
+        <span class="pl-k">foreach</span> (<span class="pl-s1"><span class="pl-c1">$</span>promises</span> <span class="pl-k">as</span> <span class="pl-s1"><span class="pl-c1">$</span>promise</span>) {
+            <span class="pl-s1"><span class="pl-c1">$</span>promise</span>-&gt;<span class="pl-en">cancel</span>();
+        }
+        <span class="pl-k">throw</span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>;
+    }
+
+    <span class="pl-s1"><span class="pl-c1">$</span>bytes</span> = <span class="pl-c1">0</span>;
+    <span class="pl-k">foreach</span> (<span class="pl-s1"><span class="pl-c1">$</span>responses</span> <span class="pl-k">as</span> <span class="pl-s1"><span class="pl-c1">$</span>response</span>) {
+        assert(<span class="pl-s1"><span class="pl-c1">$</span>response</span> instanceof <span class="pl-v">Psr</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">ResponseInterface</span>);
+        <span class="pl-s1"><span class="pl-c1">$</span>bytes</span> += <span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">getBody</span>()-&gt;<span class="pl-en">getSize</span>();
+    }
+    <span class="pl-k">return</span> <span class="pl-s1"><span class="pl-c1">$</span>bytes</span>;
+})();
+
+<span class="pl-s1"><span class="pl-c1">$</span>promise</span>-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-smi">int</span> <span class="pl-s1"><span class="pl-c1">$</span>bytes</span>) {
+    <span class="pl-k">echo</span> <span class="pl-s">'Total size: '</span> . <span class="pl-s1"><span class="pl-c1">$</span>bytes</span> . <span class="pl-c1">PHP_EOL</span>;
+}, <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">Exception</span></span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>) {
+    <span class="pl-k">echo</span> <span class="pl-s">'Error: '</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
+});</pre></div>
+<p>The returned promise is implemented in such a way that it can be cancelled
+when it is still pending. Cancelling a pending promise will cancel any awaited
+promises inside that fiber or any nested fibers. As such, the following example
+will only output <code>ab</code> and cancel the pending <a href="https://reactphp.org/promise-timer/#sleep" rel="nofollow"><code>sleep()</code></a>.
+The <a href="#await"><code>await()</code></a> calls in this example would throw a <code>RuntimeException</code>
+from the cancelled <a href="https://reactphp.org/promise-timer/#sleep" rel="nofollow"><code>sleep()</code></a> call
+that bubbles up through the fibers.</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>promise</span> = async(<span class="pl-k">static</span> <span class="pl-k">function</span> (): <span class="pl-smi">int</span> {
+    <span class="pl-k">echo</span> <span class="pl-s">'a'</span>;
+    await(async(<span class="pl-k">static</span> <span class="pl-k">function</span> (): <span class="pl-smi">void</span> {
+        <span class="pl-k">echo</span> <span class="pl-s">'b'</span>;
+        await(<span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Promise</span>\<span class="pl-v">Timer</span>\sleep</span>(<span class="pl-c1">2</span>));
+        <span class="pl-k">echo</span> <span class="pl-s">'c'</span>;
+    })());
+    <span class="pl-k">echo</span> <span class="pl-s">'d'</span>;
+
+    <span class="pl-k">return</span> time();
+})();
+
+<span class="pl-s1"><span class="pl-c1">$</span>promise</span>-&gt;<span class="pl-en">cancel</span>();
+await(<span class="pl-s1"><span class="pl-c1">$</span>promise</span>);</pre></div>
+<h3>
+<a id="await" class="anchor" href="#await" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>await()</h3>
+<p>The <code>await(PromiseInterface $promise): mixed</code> function can be used to
+block waiting for the given <code>$promise</code> to be fulfilled.</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>result</span> = <span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Async</span>\await</span>(<span class="pl-s1"><span class="pl-c1">$</span>promise</span>);</pre></div>
+<p>This function will only return after the given <code>$promise</code> has settled, i.e.
+either fulfilled or rejected. While the promise is pending, this function
+can be considered <em>blocking</em> from the perspective of the calling code.
+You can avoid this blocking behavior by wrapping it in an <a href="#async"><code>async()</code> function</a>
+call. Everything inside this function will still be blocked, but everything
+outside this function can be executed asynchronously without blocking:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-v">Loop</span>::<span class="pl-en">addTimer</span>(<span class="pl-c1">0.5</span>, <span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Async</span>\async</span>(<span class="pl-k">function</span> () {
+    <span class="pl-k">echo</span> <span class="pl-s">'a'</span>;
+    <span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Async</span>\await</span>(<span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Promise</span>\<span class="pl-v">Timer</span>\sleep</span>(<span class="pl-c1">1.0</span>));
+    <span class="pl-k">echo</span> <span class="pl-s">'c'</span>;
+}));
+
+<span class="pl-v">Loop</span>::<span class="pl-en">addTimer</span>(<span class="pl-c1">1.0</span>, <span class="pl-k">function</span> () {
+    <span class="pl-k">echo</span> <span class="pl-s">'b'</span>;
+});
+
+<span class="pl-c">// prints "a" at t=0.5s</span>
+<span class="pl-c">// prints "b" at t=1.0s</span>
+<span class="pl-c">// prints "c" at t=1.5s</span></pre></div>
+<p>See also the <a href="#async"><code>async()</code> function</a> for more details.</p>
+<p>Once the promise is fulfilled, this function will return whatever the promise
+resolved to.</p>
+<p>Once the promise is rejected, this will throw whatever the promise rejected
+with. If the promise did not reject with an <code>Exception</code> or <code>Throwable</code>, then
+this function will throw an <code>UnexpectedValueException</code> instead.</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-k">try</span> {
+    <span class="pl-s1"><span class="pl-c1">$</span>result</span> = <span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Async</span>\await</span>(<span class="pl-s1"><span class="pl-c1">$</span>promise</span>);
+    <span class="pl-c">// promise successfully fulfilled with $result</span>
+    <span class="pl-k">echo</span> <span class="pl-s">'Result: '</span> . <span class="pl-s1"><span class="pl-c1">$</span>result</span>;
+} <span class="pl-k">catch</span> (<span class="pl-smi"><span class="pl-smi">Throwable</span></span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>) {
+    <span class="pl-c">// promise rejected with $e</span>
+    <span class="pl-k">echo</span> <span class="pl-s">'Error: '</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>();
+}</pre></div>
+<h3>
+<a id="coroutine" class="anchor" href="#coroutine" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>coroutine()</h3>
+<p>The <code>coroutine(callable $function, mixed ...$args): PromiseInterface&lt;mixed&gt;</code> function can be used to
+execute a Generator-based coroutine to "await" promises.</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Async</span>\coroutine</span>(<span class="pl-k">function</span> () {
+    <span class="pl-s1"><span class="pl-c1">$</span>browser</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Browser</span>();
+
+    <span class="pl-k">try</span> {
+        <span class="pl-s1"><span class="pl-c1">$</span>response</span> = yield <span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">get</span>(<span class="pl-s">'https://example.com/'</span>);
+        assert(<span class="pl-s1"><span class="pl-c1">$</span>response</span> instanceof <span class="pl-v">Psr</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">ResponseInterface</span>);
+        <span class="pl-k">echo</span> <span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">getBody</span>();
+    } <span class="pl-k">catch</span> (<span class="pl-smi"><span class="pl-smi">Exception</span></span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>) {
+        <span class="pl-k">echo</span> <span class="pl-s">'Error: '</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
+    }
+});</pre></div>
+<p>Using Generator-based coroutines is an alternative to directly using the
+underlying promise APIs. For many use cases, this makes using promise-based
+APIs much simpler, as it resembles a synchronous code flow more closely.
+The above example performs the equivalent of directly using the promise APIs:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>browser</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Browser</span>();
+
+<span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">get</span>(<span class="pl-s">'https://example.com/'</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi"><span class="pl-v">Psr</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">ResponseInterface</span></span></span> <span class="pl-s1"><span class="pl-c1">$</span>response</span>) {
+    <span class="pl-k">echo</span> <span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">getBody</span>();
+}, <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">Exception</span></span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>) {
+    <span class="pl-k">echo</span> <span class="pl-s">'Error: '</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
+});</pre></div>
+<p>The <code>yield</code> keyword can be used to "await" a promise resolution. Internally,
+it will turn the entire given <code>$function</code> into a <a href="https://www.php.net/manual/en/class.generator.php" rel="nofollow"><code>Generator</code></a>.
+This allows the execution to be interrupted and resumed at the same place
+when the promise is fulfilled. The <code>yield</code> statement returns whatever the
+promise is fulfilled with. If the promise is rejected, it will throw an
+<code>Exception</code> or <code>Throwable</code>.</p>
+<p>The <code>coroutine()</code> function will always return a Promise which will be
+fulfilled with whatever your <code>$function</code> returns. Likewise, it will return
+a promise that will be rejected if you throw an <code>Exception</code> or <code>Throwable</code>
+from your <code>$function</code>. This allows you to easily create Promise-based
+functions:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>promise</span> = <span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Async</span>\coroutine</span>(<span class="pl-k">function</span> () {
+    <span class="pl-s1"><span class="pl-c1">$</span>browser</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Browser</span>();
+    <span class="pl-s1"><span class="pl-c1">$</span>urls</span> = [
+        <span class="pl-s">'https://example.com/alice'</span>,
+        <span class="pl-s">'https://example.com/bob'</span>
+    ];
+
+    <span class="pl-s1"><span class="pl-c1">$</span>bytes</span> = <span class="pl-c1">0</span>;
+    <span class="pl-k">foreach</span> (<span class="pl-s1"><span class="pl-c1">$</span>urls</span> <span class="pl-k">as</span> <span class="pl-s1"><span class="pl-c1">$</span>url</span>) {
+        <span class="pl-s1"><span class="pl-c1">$</span>response</span> = yield <span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">get</span>(<span class="pl-s1"><span class="pl-c1">$</span>url</span>);
+        assert(<span class="pl-s1"><span class="pl-c1">$</span>response</span> instanceof <span class="pl-v">Psr</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">ResponseInterface</span>);
+        <span class="pl-s1"><span class="pl-c1">$</span>bytes</span> += <span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">getBody</span>()-&gt;<span class="pl-en">getSize</span>();
+    }
+    <span class="pl-k">return</span> <span class="pl-s1"><span class="pl-c1">$</span>bytes</span>;
+});
+
+<span class="pl-s1"><span class="pl-c1">$</span>promise</span>-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-smi">int</span> <span class="pl-s1"><span class="pl-c1">$</span>bytes</span>) {
+    <span class="pl-k">echo</span> <span class="pl-s">'Total size: '</span> . <span class="pl-s1"><span class="pl-c1">$</span>bytes</span> . <span class="pl-c1">PHP_EOL</span>;
+}, <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">Exception</span></span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>) {
+    <span class="pl-k">echo</span> <span class="pl-s">'Error: '</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
+});</pre></div>
+<p>The previous example uses a <code>yield</code> statement inside a loop to highlight how
+this vastly simplifies consuming asynchronous operations. At the same time,
+this naive example does not leverage concurrent execution, as it will
+essentially "await" between each operation. In order to take advantage of
+concurrent execution within the given <code>$function</code>, you can "await" multiple
+promises by using a single <code>yield</code> together with Promise-based primitives
+like this:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>promise</span> = <span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Async</span>\coroutine</span>(<span class="pl-k">function</span> () {
+    <span class="pl-s1"><span class="pl-c1">$</span>browser</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Browser</span>();
+    <span class="pl-s1"><span class="pl-c1">$</span>urls</span> = [
+        <span class="pl-s">'https://example.com/alice'</span>,
+        <span class="pl-s">'https://example.com/bob'</span>
+    ];
+
+    <span class="pl-s1"><span class="pl-c1">$</span>promises</span> = [];
+    <span class="pl-k">foreach</span> (<span class="pl-s1"><span class="pl-c1">$</span>urls</span> <span class="pl-k">as</span> <span class="pl-s1"><span class="pl-c1">$</span>url</span>) {
+        <span class="pl-s1"><span class="pl-c1">$</span>promises</span>[] = <span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">get</span>(<span class="pl-s1"><span class="pl-c1">$</span>url</span>);
+    }
+
+    <span class="pl-k">try</span> {
+        <span class="pl-s1"><span class="pl-c1">$</span>responses</span> = yield <span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Promise</span>\all</span>(<span class="pl-s1"><span class="pl-c1">$</span>promises</span>);
+    } <span class="pl-k">catch</span> (<span class="pl-smi"><span class="pl-smi">Exception</span></span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>) {
+        <span class="pl-k">foreach</span> (<span class="pl-s1"><span class="pl-c1">$</span>promises</span> <span class="pl-k">as</span> <span class="pl-s1"><span class="pl-c1">$</span>promise</span>) {
+            <span class="pl-s1"><span class="pl-c1">$</span>promise</span>-&gt;<span class="pl-en">cancel</span>();
+        }
+        <span class="pl-k">throw</span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>;
+    }
+
+    <span class="pl-s1"><span class="pl-c1">$</span>bytes</span> = <span class="pl-c1">0</span>;
+    <span class="pl-k">foreach</span> (<span class="pl-s1"><span class="pl-c1">$</span>responses</span> <span class="pl-k">as</span> <span class="pl-s1"><span class="pl-c1">$</span>response</span>) {
+        assert(<span class="pl-s1"><span class="pl-c1">$</span>response</span> instanceof <span class="pl-v">Psr</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">ResponseInterface</span>);
+        <span class="pl-s1"><span class="pl-c1">$</span>bytes</span> += <span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">getBody</span>()-&gt;<span class="pl-en">getSize</span>();
+    }
+    <span class="pl-k">return</span> <span class="pl-s1"><span class="pl-c1">$</span>bytes</span>;
+});
+
+<span class="pl-s1"><span class="pl-c1">$</span>promise</span>-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-smi">int</span> <span class="pl-s1"><span class="pl-c1">$</span>bytes</span>) {
+    <span class="pl-k">echo</span> <span class="pl-s">'Total size: '</span> . <span class="pl-s1"><span class="pl-c1">$</span>bytes</span> . <span class="pl-c1">PHP_EOL</span>;
+}, <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">Exception</span></span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>) {
+    <span class="pl-k">echo</span> <span class="pl-s">'Error: '</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
+});</pre></div>
+<h3>
+<a id="parallel" class="anchor" href="#parallel" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>parallel()</h3>
+<p>The <code>parallel(iterable&lt;callable():PromiseInterface&lt;mixed,Exception&gt;&gt; $tasks): PromiseInterface&lt;array&lt;mixed&gt;,Exception&gt;</code> function can be used
+like this:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-ent">&lt;?php</span>
+
+<span class="pl-k">use</span> <span class="pl-v">React</span>\<span class="pl-v">EventLoop</span>\<span class="pl-v">Loop</span>;
+<span class="pl-k">use</span> <span class="pl-v">React</span>\<span class="pl-v">Promise</span>\<span class="pl-v">Promise</span>;
+
+<span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Async</span>\parallel</span>([
+    <span class="pl-k">function</span> () {
+        <span class="pl-k">return</span> <span class="pl-k">new</span> <span class="pl-v">Promise</span>(<span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>resolve</span>) {
+            <span class="pl-v">Loop</span>::<span class="pl-en">addTimer</span>(<span class="pl-c1">1</span>, <span class="pl-k">function</span> () <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>resolve</span>) {
+                <span class="pl-s1"><span class="pl-c1">$</span>resolve</span>(<span class="pl-s">'Slept for a whole second'</span>);
+            });
+        });
+    },
+    <span class="pl-k">function</span> () {
+        <span class="pl-k">return</span> <span class="pl-k">new</span> <span class="pl-v">Promise</span>(<span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>resolve</span>) {
+            <span class="pl-v">Loop</span>::<span class="pl-en">addTimer</span>(<span class="pl-c1">1</span>, <span class="pl-k">function</span> () <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>resolve</span>) {
+                <span class="pl-s1"><span class="pl-c1">$</span>resolve</span>(<span class="pl-s">'Slept for another whole second'</span>);
+            });
+        });
+    },
+    <span class="pl-k">function</span> () {
+        <span class="pl-k">return</span> <span class="pl-k">new</span> <span class="pl-v">Promise</span>(<span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>resolve</span>) {
+            <span class="pl-v">Loop</span>::<span class="pl-en">addTimer</span>(<span class="pl-c1">1</span>, <span class="pl-k">function</span> () <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>resolve</span>) {
+                <span class="pl-s1"><span class="pl-c1">$</span>resolve</span>(<span class="pl-s">'Slept for yet another whole second'</span>);
+            });
+        });
+    },
+])-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-smi">array</span> <span class="pl-s1"><span class="pl-c1">$</span>results</span>) {
+    <span class="pl-k">foreach</span> (<span class="pl-s1"><span class="pl-c1">$</span>results</span> <span class="pl-k">as</span> <span class="pl-s1"><span class="pl-c1">$</span>result</span>) {
+        var_dump(<span class="pl-s1"><span class="pl-c1">$</span>result</span>);
+    }
+}, <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">Exception</span></span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>) {
+    <span class="pl-k">echo</span> <span class="pl-s">'Error: '</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
+});</pre></div>
+<h3>
+<a id="series" class="anchor" href="#series" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>series()</h3>
+<p>The <code>series(iterable&lt;callable():PromiseInterface&lt;mixed,Exception&gt;&gt; $tasks): PromiseInterface&lt;array&lt;mixed&gt;,Exception&gt;</code> function can be used
+like this:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-ent">&lt;?php</span>
+
+<span class="pl-k">use</span> <span class="pl-v">React</span>\<span class="pl-v">EventLoop</span>\<span class="pl-v">Loop</span>;
+<span class="pl-k">use</span> <span class="pl-v">React</span>\<span class="pl-v">Promise</span>\<span class="pl-v">Promise</span>;
+
+<span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Async</span>\series</span>([
+    <span class="pl-k">function</span> () {
+        <span class="pl-k">return</span> <span class="pl-k">new</span> <span class="pl-v">Promise</span>(<span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>resolve</span>) {
+            <span class="pl-v">Loop</span>::<span class="pl-en">addTimer</span>(<span class="pl-c1">1</span>, <span class="pl-k">function</span> () <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>resolve</span>) {
+                <span class="pl-s1"><span class="pl-c1">$</span>resolve</span>(<span class="pl-s">'Slept for a whole second'</span>);
+            });
+        });
+    },
+    <span class="pl-k">function</span> () {
+        <span class="pl-k">return</span> <span class="pl-k">new</span> <span class="pl-v">Promise</span>(<span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>resolve</span>) {
+            <span class="pl-v">Loop</span>::<span class="pl-en">addTimer</span>(<span class="pl-c1">1</span>, <span class="pl-k">function</span> () <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>resolve</span>) {
+                <span class="pl-s1"><span class="pl-c1">$</span>resolve</span>(<span class="pl-s">'Slept for another whole second'</span>);
+            });
+        });
+    },
+    <span class="pl-k">function</span> () {
+        <span class="pl-k">return</span> <span class="pl-k">new</span> <span class="pl-v">Promise</span>(<span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>resolve</span>) {
+            <span class="pl-v">Loop</span>::<span class="pl-en">addTimer</span>(<span class="pl-c1">1</span>, <span class="pl-k">function</span> () <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>resolve</span>) {
+                <span class="pl-s1"><span class="pl-c1">$</span>resolve</span>(<span class="pl-s">'Slept for yet another whole second'</span>);
+            });
+        });
+    },
+])-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-smi">array</span> <span class="pl-s1"><span class="pl-c1">$</span>results</span>) {
+    <span class="pl-k">foreach</span> (<span class="pl-s1"><span class="pl-c1">$</span>results</span> <span class="pl-k">as</span> <span class="pl-s1"><span class="pl-c1">$</span>result</span>) {
+        var_dump(<span class="pl-s1"><span class="pl-c1">$</span>result</span>);
+    }
+}, <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">Exception</span></span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>) {
+    <span class="pl-k">echo</span> <span class="pl-s">'Error: '</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
+});</pre></div>
+<h3>
+<a id="waterfall" class="anchor" href="#waterfall" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>waterfall()</h3>
+<p>The <code>waterfall(iterable&lt;callable(mixed=):PromiseInterface&lt;mixed,Exception&gt;&gt; $tasks): PromiseInterface&lt;mixed,Exception&gt;</code> function can be used
+like this:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-ent">&lt;?php</span>
+
+<span class="pl-k">use</span> <span class="pl-v">React</span>\<span class="pl-v">EventLoop</span>\<span class="pl-v">Loop</span>;
+<span class="pl-k">use</span> <span class="pl-v">React</span>\<span class="pl-v">Promise</span>\<span class="pl-v">Promise</span>;
+
+<span class="pl-s1"><span class="pl-c1">$</span>addOne</span> = <span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>prev</span> = <span class="pl-c1">0</span>) {
+    <span class="pl-k">return</span> <span class="pl-k">new</span> <span class="pl-v">Promise</span>(<span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>resolve</span>) <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>prev</span>) {
+        <span class="pl-v">Loop</span>::<span class="pl-en">addTimer</span>(<span class="pl-c1">1</span>, <span class="pl-k">function</span> () <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>prev</span>, <span class="pl-s1"><span class="pl-c1">$</span>resolve</span>) {
+            <span class="pl-s1"><span class="pl-c1">$</span>resolve</span>(<span class="pl-s1"><span class="pl-c1">$</span>prev</span> + <span class="pl-c1">1</span>);
+        });
+    });
+};
+
+<span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Async</span>\waterfall</span>([
+    <span class="pl-s1"><span class="pl-c1">$</span>addOne</span>,
+    <span class="pl-s1"><span class="pl-c1">$</span>addOne</span>,
+    <span class="pl-s1"><span class="pl-c1">$</span>addOne</span>
+])-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>prev</span>) {
+    <span class="pl-k">echo</span> "<span class="pl-s">Final result is </span><span class="pl-s1"><span class="pl-c1">$</span>prev</span>\n";
+}, <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">Exception</span></span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>) {
+    <span class="pl-k">echo</span> <span class="pl-s">'Error: '</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
+});</pre></div>
+<h2>
+<a id="todo" class="anchor" href="#todo" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Todo</h2>
+<ul>
+<li>Implement queue()</li>
+</ul>
+<h2>
+<a id="install" class="anchor" href="#install" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Install</h2>
+<p>The recommended way to install this library is <a href="https://getcomposer.org/" rel="nofollow">through Composer</a>.
+<a href="https://getcomposer.org/doc/00-intro.md" rel="nofollow">New to Composer?</a></p>
+<p>Once released, this project will follow <a href="https://semver.org/" rel="nofollow">SemVer</a>.
+At the moment, this will install the latest development version:</p>
+<div class="highlight highlight-source-shell"><pre>composer require react/async:^4@dev</pre></div>
+<p>See also the <a href="changelog.html">CHANGELOG</a> for details about version upgrades.</p>
+<p>This project aims to run on any platform and thus does not require any PHP
+extensions and supports running on PHP 8.1+.
+It's <em>highly recommended to use the latest supported PHP version</em> for this project.</p>
+<p>We're committed to providing long-term support (LTS) options and to provide a
+smooth upgrade path. If you're using an older PHP version, you may use the
+<a href="https://github.com/reactphp/async/tree/3.x"><code>3.x</code> branch</a> (PHP 7.1+) or
+<a href="https://github.com/reactphp/async/tree/2.x"><code>2.x</code> branch</a> (PHP 5.3+) which both
+provide a compatible API but do not take advantage of newer language features.
+You may target multiple versions at the same time to support a wider range of
+PHP versions like this:</p>
+<div class="highlight highlight-source-shell"><pre>composer require <span class="pl-s"><span class="pl-pds">"</span>react/async:^4@dev || ^3@dev || ^2@dev<span class="pl-pds">"</span></span></pre></div>
+<h2>
+<a id="tests" class="anchor" href="#tests" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Tests</h2>
+<p>To run the test suite, you first need to clone this repo and then install all
+dependencies <a href="https://getcomposer.org/" rel="nofollow">through Composer</a>:</p>
+<div class="highlight highlight-source-shell"><pre>composer install</pre></div>
+<p>To run the test suite, go to the project root and run:</p>
+<div class="highlight highlight-source-shell"><pre>vendor/bin/phpunit</pre></div>
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
+<p>MIT, see <a href="license.html">LICENSE file</a>.</p>
+<p>This project is heavily influenced by <a href="https://github.com/caolan/async">async.js</a>.</p>
+                                </main>
+                <aside class="sidebar" role="complementary">
+                    <section class="component-info">
+                        <h2 class="component-info__title">
+                            <a href="../async/">Async</a>
+
+                            <div class="version-selector">
+                                <button class="version-selector__button version-selector__button--latest" data-ctrly="component-version-selector" data-version-selector-control>
+                                    
+
+                                    <i class="icon-chevron-down" aria-hidden="true"></i>
+                                    <i class="icon-chevron-up" aria-hidden="true"></i>
+                                </button>
+
+                                <div id="component-version-selector" class="version-selector__panel" aria-hidden="true">
+                                    <p>Read the documentation of development and older versions on GitHub:</p>
+
+                                    <ul class="version-selector__list">
+                                        <li>
+                                            <a href="https://github.com/reactphp/async#readme" class="version-selector__version version-selector__version--dev">
+                                                master
+                                            </a>
+                                        </li>
+                                                                            </ul>
+                                </div>
+                            </div>
+                        </h2>
+
+                        <ul class="component-info__info">
+                            <li>
+                                <a href="https://github.com/reactphp/async">
+                                    <i class="icon-github" aria-hidden="true"></i> Repository
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../async/changelog.html">
+                                    <i class="icon-calendar" aria-hidden="true"></i> Changelog
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../async/license.html">
+                                    <i class="icon-law" aria-hidden="true"></i> MIT License
+                                </a>
+                            </li>
+                        </ul>
+
+                        <h3 class="component-info__subtitle">Installation</h3>
+
+                        <div class="highlight highlight-source-shell"><pre>composer require react/async:^</pre></div>
+
+                        <h3 class="component-info__subtitle">Contributors</h3>
+
+                        <ul class="component-info__contributors">
+                                                    <li>
+                                <a href="https://github.com/clue">
+                                    <img src="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=80 2x" alt="clue" title="clue (45 contributions)">
+                                </a>
+                            </li>
+                                                    <li>
+                                <a href="https://github.com/WyriHaximus">
+                                    <img src="https://avatars.githubusercontent.com/u/147145?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/147145?v=4&amp;s=80 2x" alt="WyriHaximus" title="WyriHaximus (30 contributions)">
+                                </a>
+                            </li>
+                                                    <li>
+                                <a href="https://github.com/igorw">
+                                    <img src="https://avatars.githubusercontent.com/u/88061?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/88061?v=4&amp;s=80 2x" alt="igorw" title="igorw (22 contributions)">
+                                </a>
+                            </li>
+                                                    <li>
+                                <a href="https://github.com/cboden">
+                                    <img src="https://avatars.githubusercontent.com/u/617694?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/617694?v=4&amp;s=80 2x" alt="cboden" title="cboden (1 contribution)">
+                                </a>
+                            </li>
+                                                    <li>
+                                <a href="https://github.com/nhedger">
+                                    <img src="https://avatars.githubusercontent.com/u/649677?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/649677?v=4&amp;s=80 2x" alt="nhedger" title="nhedger (1 contribution)">
+                                </a>
+                            </li>
+                                                    <li>
+                                <a href="https://github.com/SimonFrings">
+                                    <img src="https://avatars.githubusercontent.com/u/44357440?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/44357440?v=4&amp;s=80 2x" alt="SimonFrings" title="SimonFrings (1 contribution)">
+                                </a>
+                            </li>
+                                                </ul>
+
+                        <h3 class="component-info__subtitle">Activity</h3>
+
+                        <div class="component-info__participation">
+                            <svg width="320" height="42">
+    <defs>
+        <linearGradient id="reactphp-async-participation-gradient" x1="0" x2="0" y1="1" y2="0">
+            <stop offset="10%" stop-color="#40a977"></stop>
+            <stop offset="90%" stop-color="#ba3525"></stop>
+        </linearGradient>
+        <mask id="reactphp-async-participation-sparkline" x="0" y="0" width="320" height="40" >
+            <polyline 
+                transform="translate(0, 40) scale(1,-1)"
+                points="0,1 6,1 12,1 18,1 24,1 30,1 36,1 42,1 48,1 54,1 60,1 66,1 72,4 78,1 84,22 90,1 96,4 102,1 108,14 114,3 120,1 126,1 132,2 138,4 144,1 150,2 156,1 162,1 168,3 174,1 180,6 186,7 192,1 198,4 204,1 210,2 216,2 222,1 228,1 234,1 240,1 246,1 252,1 258,1 264,1 270,1 276,2 282,5 288,2 294,3 300,3 306,3" 
+                fill="transparent" 
+                stroke="#40a977" 
+                stroke-width="2"
+            >
+        </mask>
+    </defs>
+
+    <g transform="translate(0, -1.5)">
+        <rect 
+            x="0" 
+            y="-2" 
+            width="320" 
+            height="42"
+            style="stroke:none;fill:url(#reactphp-async-participation-gradient);mask:url(#reactphp-async-participation-sparkline)"
+        ></rect>
+    </g>
+</svg>
+                        </div>
+                    </section>
+                </aside>
+            </div>
+        </div>
+    </div>
+
+            <footer class="footer">
+            <div class="wrapper">
+                <ul class="links">
+                    <li><a href="https://github.com/reactphp"><i class="icon-github" aria-hidden="true"></i> GitHub</a></li>
+                    <li><a href="https://twitter.com/reactphp"><i class="icon-twitter" aria-hidden="true"></i> Twitter</a></li>
+                    <li><a href="https://gitter.im/reactphp/reactphp"><i class="icon-hash" aria-hidden="true"></i> Gitter</a></li>
+                </ul>
+            </div>
+        </footer>
+        </body>
+</html>
