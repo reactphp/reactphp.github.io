@@ -97,7 +97,7 @@ Async Utilities - ReactPHP</title>
                         Async
 
                         <span class="off-canvas-menu__version">
-                            
+                            v4.0.0
                         </span>
                     </a>
                 </li>
@@ -223,7 +223,7 @@ Async Utilities - ReactPHP</title>
                     
 <p><a href="https://github.com/reactphp/async/actions"><img src="https://github.com/reactphp/async/workflows/CI/badge.svg" alt="CI status" style="max-width:100%;"></a>
 <a href="https://packagist.org/packages/react/async" rel="nofollow"><img src="https://camo.githubusercontent.com/3b14cc18b50d4f3ce0a5fac671667b6f4035fb79695b4acda1eba22ed3841f62/68747470733a2f2f696d672e736869656c64732e696f2f7061636b61676973742f64742f72656163742f6173796e633f636f6c6f723d626c7565266c6162656c3d696e7374616c6c732532306f6e2532305061636b6167697374" alt="installs on Packagist" data-canonical-src="https://img.shields.io/packagist/dt/react/async?color=blue&amp;label=installs%20on%20Packagist" style="max-width:100%;"></a></p>
-<p>Async utilities for <a href="https://reactphp.org/" rel="nofollow">ReactPHP</a>.</p>
+<p>Async utilities and fibers for <a href="https://reactphp.org/" rel="nofollow">ReactPHP</a>.</p>
 <p>This library allows you to manage async control flow. It provides a number of
 combinators for <a href="../promise/">Promise</a>-based APIs.
 Instead of nesting or chaining promise callbacks, you can declare them as a
@@ -232,16 +232,6 @@ React/Async will not automagically change blocking code to be async. You need
 to have an actual event loop and non-blocking libraries interacting with that
 event loop for it to work. As long as you have a Promise-based API that runs in
 an event loop, it can be used with this library.</p>
-<blockquote>
-<p><strong>Development version:</strong> This branch contains the code for the upcoming 4.0
-release which will be the way forward for this package. However, we will still
-actively support 3.0 and 2.0 for those not yet on PHP 8.1+.</p>
-<p>If you're using an older PHP version, you may use the
-<a href="https://github.com/reactphp/async/tree/3.x"><code>3.x</code> branch</a> (PHP 7.1+) or
-<a href="https://github.com/reactphp/async/tree/2.x"><code>2.x</code> branch</a> (PHP 5.3+) which both
-provide a compatible API but do not take advantage of newer language features.
-See also <a href="#install">installation instructions</a> for more details.</p>
-</blockquote>
 <p><strong>Table of Contents</strong></p>
 <ul>
 <li>
@@ -664,9 +654,9 @@ like this:</p>
 <a id="install" class="anchor" href="#install" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Install</h2>
 <p>The recommended way to install this library is <a href="https://getcomposer.org/" rel="nofollow">through Composer</a>.
 <a href="https://getcomposer.org/doc/00-intro.md" rel="nofollow">New to Composer?</a></p>
-<p>Once released, this project will follow <a href="https://semver.org/" rel="nofollow">SemVer</a>.
-At the moment, this will install the latest development version:</p>
-<div class="highlight highlight-source-shell"><pre>composer require react/async:^4@dev</pre></div>
+<p>This project follows <a href="https://semver.org/" rel="nofollow">SemVer</a>.
+This will install the latest supported version from this branch:</p>
+<div class="highlight highlight-source-shell"><pre>composer require react/async:^4</pre></div>
 <p>See also the <a href="changelog.html">CHANGELOG</a> for details about version upgrades.</p>
 <p>This project aims to run on any platform and thus does not require any PHP
 extensions and supports running on PHP 8.1+.
@@ -678,7 +668,7 @@ smooth upgrade path. If you're using an older PHP version, you may use the
 provide a compatible API but do not take advantage of newer language features.
 You may target multiple versions at the same time to support a wider range of
 PHP versions like this:</p>
-<div class="highlight highlight-source-shell"><pre>composer require <span class="pl-s"><span class="pl-pds">"</span>react/async:^4@dev || ^3@dev || ^2@dev<span class="pl-pds">"</span></span></pre></div>
+<div class="highlight highlight-source-shell"><pre>composer require <span class="pl-s"><span class="pl-pds">"</span>react/async:^4 || ^3 || ^2<span class="pl-pds">"</span></span></pre></div>
 <h2>
 <a id="tests" class="anchor" href="#tests" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Tests</h2>
 <p>To run the test suite, you first need to clone this repo and then install all
@@ -698,7 +688,7 @@ dependencies <a href="https://getcomposer.org/" rel="nofollow">through Composer<
 
                             <div class="version-selector">
                                 <button class="version-selector__button version-selector__button--latest" data-ctrly="component-version-selector" data-version-selector-control>
-                                    
+                                    v4.0.0
 
                                     <i class="icon-chevron-down" aria-hidden="true"></i>
                                     <i class="icon-chevron-up" aria-hidden="true"></i>
@@ -713,7 +703,22 @@ dependencies <a href="https://getcomposer.org/" rel="nofollow">through Composer<
                                                 master
                                             </a>
                                         </li>
-                                                                            </ul>
+                                                                                                                                                                                                                    <li>
+                                                <a href="https://github.com/reactphp/async/tree/v3.0.0#readme" class="version-selector__version">
+                                                    v3.0.0
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
+                                                <a href="https://github.com/reactphp/async/tree/v2.0.0#readme" class="version-selector__version">
+                                                    v2.0.0
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
+                                                <a href="https://github.com/reactphp/async/tree/v1.0.0#readme" class="version-selector__version">
+                                                    v1.0.0
+                                                </a>
+                                            </li>
+                                                                                                                        </ul>
                                 </div>
                             </div>
                         </h2>
@@ -738,7 +743,7 @@ dependencies <a href="https://getcomposer.org/" rel="nofollow">through Composer<
 
                         <h3 class="component-info__subtitle">Installation</h3>
 
-                        <div class="highlight highlight-source-shell"><pre>composer require react/async:^</pre></div>
+                        <div class="highlight highlight-source-shell"><pre>composer require react/async:^4.0.0</pre></div>
 
                         <h3 class="component-info__subtitle">Contributors</h3>
 
@@ -787,7 +792,7 @@ dependencies <a href="https://getcomposer.org/" rel="nofollow">through Composer<
         <mask id="reactphp-async-participation-sparkline" x="0" y="0" width="320" height="40" >
             <polyline 
                 transform="translate(0, 40) scale(1,-1)"
-                points="0,1 6,1 12,1 18,1 24,1 30,1 36,1 42,1 48,1 54,1 60,1 66,1 72,4 78,1 84,22 90,1 96,4 102,1 108,14 114,3 120,1 126,1 132,2 138,4 144,1 150,2 156,1 162,1 168,3 174,1 180,6 186,7 192,1 198,4 204,1 210,2 216,2 222,1 228,1 234,1 240,1 246,1 252,1 258,1 264,1 270,1 276,2 282,5 288,2 294,3 300,3 306,3" 
+                points="0,1 6,1 12,1 18,1 24,1 30,1 36,1 42,1 48,1 54,1 60,1 66,1 72,4 78,1 84,22 90,1 96,4 102,1 108,15 114,2 120,1 126,1 132,2 138,4 144,1 150,2 156,1 162,1 168,3 174,1 180,7 186,6 192,1 198,4 204,1 210,2 216,2 222,1 228,1 234,1 240,1 246,1 252,1 258,1 264,1 270,1 276,3 282,4 288,2 294,3 300,3 306,3" 
                 fill="transparent" 
                 stroke="#40a977" 
                 stroke-width="2"
