@@ -5,8 +5,7 @@
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <title>Promise: 
-Promise - ReactPHP</title>
+        <title>Promise - ReactPHP</title>
 
         <meta name="description" content="Promises/A implementation for PHP.">
 
@@ -129,7 +128,7 @@ Promise - ReactPHP</title>
                         HTTP
 
                         <span class="off-canvas-menu__version">
-                            v1.6.0
+                            v1.7.0
                         </span>
                     </a>
                 </li>
@@ -223,9 +222,8 @@ Promise - ReactPHP</title>
                     
 <p>A lightweight implementation of
 <a href="http://wiki.commonjs.org/wiki/Promises/A" rel="nofollow">CommonJS Promises/A</a> for PHP.</p>
-<p><a href="https://github.com/reactphp/promise/actions"><img src="https://github.com/reactphp/promise/workflows/CI/badge.svg?branch=2.x" alt="CI status" style="max-width:100%;"></a></p>
-<h2>
-<a id="table-of-contents" class="anchor" href="#table-of-contents" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Table of Contents</h2>
+<p><a href="https://github.com/reactphp/promise/actions"><img src="https://github.com/reactphp/promise/workflows/CI/badge.svg?branch=2.x" alt="CI status" style="max-width: 100%;"></a></p>
+<h2><a id="table-of-contents" class="anchor" aria-hidden="true" href="#table-of-contents"><span aria-hidden="true" class="octicon octicon-link"></span></a>Table of Contents</h2>
 <ol>
 <li><a href="#introduction">Introduction</a></li>
 <li>
@@ -308,30 +306,24 @@ Promise - ReactPHP</title>
 <li><a href="#credits">Credits</a></li>
 <li><a href="#license">License</a></li>
 </ol>
-<h2>
-<a id="introduction" class="anchor" href="#introduction" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Introduction</h2>
+<h2><a id="introduction" class="anchor" aria-hidden="true" href="#introduction"><span aria-hidden="true" class="octicon octicon-link"></span></a>Introduction</h2>
 <p>Promise is a library implementing
 <a href="http://wiki.commonjs.org/wiki/Promises/A" rel="nofollow">CommonJS Promises/A</a> for PHP.</p>
 <p>It also provides several other useful promise-related concepts, such as joining
 multiple promises and mapping and reducing collections of promises.</p>
 <p>If you've never heard about promises before,
 <a href="https://gist.github.com/3889970">read this first</a>.</p>
-<h2>
-<a id="concepts" class="anchor" href="#concepts" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Concepts</h2>
-<h3>
-<a id="deferred" class="anchor" href="#deferred" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Deferred</h3>
+<h2><a id="concepts" class="anchor" aria-hidden="true" href="#concepts"><span aria-hidden="true" class="octicon octicon-link"></span></a>Concepts</h2>
+<h3><a id="deferred" class="anchor" aria-hidden="true" href="#deferred"><span aria-hidden="true" class="octicon octicon-link"></span></a>Deferred</h3>
 <p>A <strong>Deferred</strong> represents a computation or unit of work that may not have
 completed yet. Typically (but not always), that computation will be something
 that executes asynchronously and completes at some point in the future.</p>
-<h3>
-<a id="promise-1" class="anchor" href="#promise-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Promise</h3>
+<h3><a id="promise-1" class="anchor" aria-hidden="true" href="#promise-1"><span aria-hidden="true" class="octicon octicon-link"></span></a>Promise</h3>
 <p>While a deferred represents the computation itself, a <strong>Promise</strong> represents
 the result of that computation. Thus, each deferred has a promise that acts as
 a placeholder for its actual result.</p>
-<h2>
-<a id="api" class="anchor" href="#api" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>API</h2>
-<h3>
-<a id="deferred-1" class="anchor" href="#deferred-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Deferred</h3>
+<h2><a id="api" class="anchor" aria-hidden="true" href="#api"><span aria-hidden="true" class="octicon octicon-link"></span></a>API</h2>
+<h3><a id="deferred-1" class="anchor" aria-hidden="true" href="#deferred-1"><span aria-hidden="true" class="octicon octicon-link"></span></a>Deferred</h3>
 <p>A deferred represents an operation whose resolution is pending. It has separate
 promise and resolver parts.</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>deferred</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Promise</span>\<span class="pl-v">Deferred</span>();
@@ -346,21 +338,18 @@ promise and resolver parts.</p>
 <p>The deprecated <code>notify</code> method is for progress notification.</p>
 <p>The constructor of the <code>Deferred</code> accepts an optional <code>$canceller</code> argument.
 See <a href="#promise-2">Promise</a> for more information.</p>
-<h4>
-<a id="deferredpromise" class="anchor" href="#deferredpromise" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Deferred::promise()</h4>
+<h4><a id="deferredpromise" class="anchor" aria-hidden="true" href="#deferredpromise"><span aria-hidden="true" class="octicon octicon-link"></span></a>Deferred::promise()</h4>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>promise</span> = <span class="pl-s1"><span class="pl-c1">$</span>deferred</span>-&gt;<span class="pl-en">promise</span>();</pre></div>
 <p>Returns the promise of the deferred, which you can hand out to others while
 keeping the authority to modify its state to yourself.</p>
-<h4>
-<a id="deferredresolve" class="anchor" href="#deferredresolve" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Deferred::resolve()</h4>
+<h4><a id="deferredresolve" class="anchor" aria-hidden="true" href="#deferredresolve"><span aria-hidden="true" class="octicon octicon-link"></span></a>Deferred::resolve()</h4>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>deferred</span>-&gt;<span class="pl-en">resolve</span>(mixed <span class="pl-s1"><span class="pl-c1">$</span>value</span> = <span class="pl-c1">null</span>);</pre></div>
 <p>Resolves the promise returned by <code>promise()</code>. All consumers are notified by
 having <code>$onFulfilled</code> (which they registered via <code>$promise-&gt;then()</code>) called with
 <code>$value</code>.</p>
 <p>If <code>$value</code> itself is a promise, the promise will transition to the state of
 this promise once it is resolved.</p>
-<h4>
-<a id="deferredreject" class="anchor" href="#deferredreject" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Deferred::reject()</h4>
+<h4><a id="deferredreject" class="anchor" aria-hidden="true" href="#deferredreject"><span aria-hidden="true" class="octicon octicon-link"></span></a>Deferred::reject()</h4>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>deferred</span>-&gt;<span class="pl-en">reject</span>(mixed <span class="pl-s1"><span class="pl-c1">$</span>reason</span> = <span class="pl-c1">null</span>);</pre></div>
 <p>Rejects the promise returned by <code>promise()</code>, signalling that the deferred's
 computation failed.
@@ -368,8 +357,7 @@ All consumers are notified by having <code>$onRejected</code> (which they regist
 <code>$promise-&gt;then()</code>) called with <code>$reason</code>.</p>
 <p>If <code>$reason</code> itself is a promise, the promise will be rejected with the outcome
 of this promise regardless whether it fulfills or rejects.</p>
-<h4>
-<a id="deferrednotify" class="anchor" href="#deferrednotify" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Deferred::notify()</h4>
+<h4><a id="deferrednotify" class="anchor" aria-hidden="true" href="#deferrednotify"><span aria-hidden="true" class="octicon octicon-link"></span></a>Deferred::notify()</h4>
 <blockquote>
 <p>Deprecated in v2.6.0: Progress support is deprecated and should not be used anymore.</p>
 </blockquote>
@@ -378,16 +366,14 @@ of this promise regardless whether it fulfills or rejects.</p>
 is making progress toward its result.</p>
 <p>All consumers are notified by having <code>$onProgress</code> (which they registered via
 <code>$promise-&gt;then()</code>) called with <code>$update</code>.</p>
-<h3>
-<a id="promiseinterface" class="anchor" href="#promiseinterface" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>PromiseInterface</h3>
+<h3><a id="promiseinterface" class="anchor" aria-hidden="true" href="#promiseinterface"><span aria-hidden="true" class="octicon octicon-link"></span></a>PromiseInterface</h3>
 <p>The promise interface provides the common interface for all promise
 implementations.</p>
 <p>A promise represents an eventual outcome, which is either fulfillment (success)
 and an associated value, or rejection (failure) and an associated reason.</p>
 <p>Once in the fulfilled or rejected state, a promise becomes immutable.
 Neither its state nor its result (or error) can be modified.</p>
-<h4>
-<a id="implementations" class="anchor" href="#implementations" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Implementations</h4>
+<h4><a id="implementations" class="anchor" aria-hidden="true" href="#implementations"><span aria-hidden="true" class="octicon octicon-link"></span></a>Implementations</h4>
 <ul>
 <li><a href="#promise-2">Promise</a></li>
 <li>
@@ -397,8 +383,7 @@ Neither its state nor its result (or error) can be modified.</p>
 <li>
 <a href="#lazypromise">LazyPromise</a> (deprecated)</li>
 </ul>
-<h4>
-<a id="promiseinterfacethen" class="anchor" href="#promiseinterfacethen" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>PromiseInterface::then()</h4>
+<h4><a id="promiseinterfacethen" class="anchor" aria-hidden="true" href="#promiseinterfacethen"><span aria-hidden="true" class="octicon octicon-link"></span></a>PromiseInterface::then()</h4>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>transformedPromise</span> = <span class="pl-s1"><span class="pl-c1">$</span>promise</span>-&gt;<span class="pl-en">then</span>(callable <span class="pl-s1"><span class="pl-c1">$</span>onFulfilled</span> = <span class="pl-c1">null</span>, callable <span class="pl-s1"><span class="pl-c1">$</span>onRejected</span> = <span class="pl-c1">null</span>, callable <span class="pl-s1"><span class="pl-c1">$</span>onProgress</span> = <span class="pl-c1">null</span>);</pre></div>
 <p>Transforms a promise's value by applying a function to the promise's fulfillment
 or rejection value. Returns a new promise for the transformed result.</p>
@@ -430,8 +415,7 @@ than once.</li>
 <li>
 <code>$onProgress</code> (deprecated) may be called multiple times.</li>
 </ol>
-<h4>
-<a id="see-also" class="anchor" href="#see-also" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>See also</h4>
+<h4><a id="see-also" class="anchor" aria-hidden="true" href="#see-also"><span aria-hidden="true" class="octicon octicon-link"></span></a>See also</h4>
 <ul>
 <li>
 <a href="#resolve">resolve()</a> - Creating a resolved promise</li>
@@ -440,12 +424,10 @@ than once.</li>
 <li><a href="#extendedpromiseinterfacedone">ExtendedPromiseInterface::done()</a></li>
 <li><a href="#done-vs-then">done() vs. then()</a></li>
 </ul>
-<h3>
-<a id="extendedpromiseinterface" class="anchor" href="#extendedpromiseinterface" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>ExtendedPromiseInterface</h3>
+<h3><a id="extendedpromiseinterface" class="anchor" aria-hidden="true" href="#extendedpromiseinterface"><span aria-hidden="true" class="octicon octicon-link"></span></a>ExtendedPromiseInterface</h3>
 <p>The ExtendedPromiseInterface extends the PromiseInterface with useful shortcut
 and utility methods which are not part of the Promises/A specification.</p>
-<h4>
-<a id="implementations-1" class="anchor" href="#implementations-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Implementations</h4>
+<h4><a id="implementations-1" class="anchor" aria-hidden="true" href="#implementations-1"><span aria-hidden="true" class="octicon octicon-link"></span></a>Implementations</h4>
 <ul>
 <li><a href="#promise-1">Promise</a></li>
 <li>
@@ -455,8 +437,7 @@ and utility methods which are not part of the Promises/A specification.</p>
 <li>
 <a href="#lazypromise">LazyPromise</a> (deprecated)</li>
 </ul>
-<h4>
-<a id="extendedpromiseinterfacedone" class="anchor" href="#extendedpromiseinterfacedone" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>ExtendedPromiseInterface::done()</h4>
+<h4><a id="extendedpromiseinterfacedone" class="anchor" aria-hidden="true" href="#extendedpromiseinterfacedone"><span aria-hidden="true" class="octicon octicon-link"></span></a>ExtendedPromiseInterface::done()</h4>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>promise</span>-&gt;<span class="pl-en">done</span>(callable <span class="pl-s1"><span class="pl-c1">$</span>onFulfilled</span> = <span class="pl-c1">null</span>, callable <span class="pl-s1"><span class="pl-c1">$</span>onRejected</span> = <span class="pl-c1">null</span>, callable <span class="pl-s1"><span class="pl-c1">$</span>onProgress</span> = <span class="pl-c1">null</span>);</pre></div>
 <p>Consumes the promise's ultimate value if the promise fulfills, or handles the
 ultimate error.</p>
@@ -464,14 +445,12 @@ ultimate error.</p>
 return a rejected promise.</p>
 <p>Since the purpose of <code>done()</code> is consumption rather than transformation,
 <code>done()</code> always returns <code>null</code>.</p>
-<h4>
-<a id="see-also-1" class="anchor" href="#see-also-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>See also</h4>
+<h4><a id="see-also-1" class="anchor" aria-hidden="true" href="#see-also-1"><span aria-hidden="true" class="octicon octicon-link"></span></a>See also</h4>
 <ul>
 <li><a href="#promiseinterfacethen">PromiseInterface::then()</a></li>
 <li><a href="#done-vs-then">done() vs. then()</a></li>
 </ul>
-<h4>
-<a id="extendedpromiseinterfaceotherwise" class="anchor" href="#extendedpromiseinterfaceotherwise" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>ExtendedPromiseInterface::otherwise()</h4>
+<h4><a id="extendedpromiseinterfaceotherwise" class="anchor" aria-hidden="true" href="#extendedpromiseinterfaceotherwise"><span aria-hidden="true" class="octicon octicon-link"></span></a>ExtendedPromiseInterface::otherwise()</h4>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>promise</span>-&gt;<span class="pl-en">otherwise</span>(callable <span class="pl-s1"><span class="pl-c1">$</span>onRejected</span>);</pre></div>
 <p>Registers a rejection handler for promise. It is a shortcut for:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>promise</span>-&gt;<span class="pl-en">then</span>(<span class="pl-c1">null</span>, <span class="pl-s1"><span class="pl-c1">$</span>onRejected</span>);</pre></div>
@@ -485,8 +464,7 @@ only specific errors.</p>
     -&gt;<span class="pl-en">otherwise</span>(<span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>reason</span>) {
         <span class="pl-c">// Catch other errors</span>
     )};</pre></div>
-<h4>
-<a id="extendedpromiseinterfacealways" class="anchor" href="#extendedpromiseinterfacealways" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>ExtendedPromiseInterface::always()</h4>
+<h4><a id="extendedpromiseinterfacealways" class="anchor" aria-hidden="true" href="#extendedpromiseinterfacealways"><span aria-hidden="true" class="octicon octicon-link"></span></a>ExtendedPromiseInterface::always()</h4>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>newPromise</span> = <span class="pl-s1"><span class="pl-c1">$</span>promise</span>-&gt;<span class="pl-en">always</span>(callable <span class="pl-s1"><span class="pl-c1">$</span>onFulfilledOrRejected</span>);</pre></div>
 <p>Allows you to execute "cleanup" type tasks in a promise chain.</p>
 <p>It arranges for <code>$onFulfilledOrRejected</code> to be called, with no arguments,
@@ -519,28 +497,24 @@ written:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-k">return</span> doSomething()
     -&gt;<span class="pl-en">otherwise</span>(<span class="pl-s">'handleError'</span>)
     -&gt;<span class="pl-en">always</span>(<span class="pl-s">'cleanup'</span>);</pre></div>
-<h4>
-<a id="extendedpromiseinterfaceprogress" class="anchor" href="#extendedpromiseinterfaceprogress" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>ExtendedPromiseInterface::progress()</h4>
+<h4><a id="extendedpromiseinterfaceprogress" class="anchor" aria-hidden="true" href="#extendedpromiseinterfaceprogress"><span aria-hidden="true" class="octicon octicon-link"></span></a>ExtendedPromiseInterface::progress()</h4>
 <blockquote>
 <p>Deprecated in v2.6.0: Progress support is deprecated and should not be used anymore.</p>
 </blockquote>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>promise</span>-&gt;<span class="pl-en">progress</span>(callable <span class="pl-s1"><span class="pl-c1">$</span>onProgress</span>);</pre></div>
 <p>Registers a handler for progress updates from promise. It is a shortcut for:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>promise</span>-&gt;<span class="pl-en">then</span>(<span class="pl-c1">null</span>, <span class="pl-c1">null</span>, <span class="pl-s1"><span class="pl-c1">$</span>onProgress</span>);</pre></div>
-<h3>
-<a id="cancellablepromiseinterface" class="anchor" href="#cancellablepromiseinterface" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>CancellablePromiseInterface</h3>
+<h3><a id="cancellablepromiseinterface" class="anchor" aria-hidden="true" href="#cancellablepromiseinterface"><span aria-hidden="true" class="octicon octicon-link"></span></a>CancellablePromiseInterface</h3>
 <p>A cancellable promise provides a mechanism for consumers to notify the creator
 of the promise that they are not longer interested in the result of an
 operation.</p>
-<h4>
-<a id="cancellablepromiseinterfacecancel" class="anchor" href="#cancellablepromiseinterfacecancel" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>CancellablePromiseInterface::cancel()</h4>
+<h4><a id="cancellablepromiseinterfacecancel" class="anchor" aria-hidden="true" href="#cancellablepromiseinterfacecancel"><span aria-hidden="true" class="octicon octicon-link"></span></a>CancellablePromiseInterface::cancel()</h4>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>promise</span>-&gt;<span class="pl-en">cancel</span>();</pre></div>
 <p>The <code>cancel()</code> method notifies the creator of the promise that there is no
 further interest in the results of the operation.</p>
 <p>Once a promise is settled (either fulfilled or rejected), calling <code>cancel()</code> on
 a promise has no effect.</p>
-<h4>
-<a id="implementations-2" class="anchor" href="#implementations-2" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Implementations</h4>
+<h4><a id="implementations-2" class="anchor" aria-hidden="true" href="#implementations-2"><span aria-hidden="true" class="octicon octicon-link"></span></a>Implementations</h4>
 <ul>
 <li><a href="#promise-1">Promise</a></li>
 <li>
@@ -550,8 +524,7 @@ a promise has no effect.</p>
 <li>
 <a href="#lazypromise">LazyPromise</a> (deprecated)</li>
 </ul>
-<h3>
-<a id="promise-2" class="anchor" href="#promise-2" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Promise</h3>
+<h3><a id="promise-2" class="anchor" aria-hidden="true" href="#promise-2"><span aria-hidden="true" class="octicon octicon-link"></span></a>Promise</h3>
 <p>Creates a promise whose state is controlled by the functions passed to
 <code>$resolver</code>.</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>resolver</span> = <span class="pl-k">function</span> (<span class="pl-smi">callable</span> <span class="pl-s1"><span class="pl-c1">$</span>resolve</span>, <span class="pl-smi">callable</span> <span class="pl-s1"><span class="pl-c1">$</span>reject</span>, <span class="pl-smi">callable</span> <span class="pl-s1"><span class="pl-c1">$</span>notify</span>) {
@@ -593,8 +566,7 @@ just throw an exception instead of using <code>$reject()</code>.</li>
 with that thrown exception as the rejection reason.</p>
 <p>The resolver function will be called immediately, the canceller function only
 once all consumers called the <code>cancel()</code> method of the promise.</p>
-<h3>
-<a id="fulfilledpromise" class="anchor" href="#fulfilledpromise" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>FulfilledPromise</h3>
+<h3><a id="fulfilledpromise" class="anchor" aria-hidden="true" href="#fulfilledpromise"><span aria-hidden="true" class="octicon octicon-link"></span></a>FulfilledPromise</h3>
 <blockquote>
 <p>Deprecated in v2.8.0: External usage of <code>FulfilledPromise</code> is deprecated, use <code>resolve()</code> instead.</p>
 </blockquote>
@@ -602,8 +574,7 @@ once all consumers called the <code>cancel()</code> method of the promise.</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>promise</span> = <span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Promise</span>\<span class="pl-v">FulfilledPromise</span></span>(<span class="pl-s1"><span class="pl-c1">$</span>value</span>);</pre></div>
 <p>Note, that <code>$value</code> <strong>cannot</strong> be a promise. It's recommended to use
 <a href="#resolve">resolve()</a> for creating resolved promises.</p>
-<h3>
-<a id="rejectedpromise" class="anchor" href="#rejectedpromise" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>RejectedPromise</h3>
+<h3><a id="rejectedpromise" class="anchor" aria-hidden="true" href="#rejectedpromise"><span aria-hidden="true" class="octicon octicon-link"></span></a>RejectedPromise</h3>
 <blockquote>
 <p>Deprecated in v2.8.0: External usage of <code>RejectedPromise</code> is deprecated, use <code>reject()</code> instead.</p>
 </blockquote>
@@ -611,8 +582,7 @@ once all consumers called the <code>cancel()</code> method of the promise.</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>promise</span> = <span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Promise</span>\<span class="pl-v">RejectedPromise</span></span>(<span class="pl-s1"><span class="pl-c1">$</span>reason</span>);</pre></div>
 <p>Note, that <code>$reason</code> <strong>cannot</strong> be a promise. It's recommended to use
 <a href="#reject">reject()</a> for creating rejected promises.</p>
-<h3>
-<a id="lazypromise" class="anchor" href="#lazypromise" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>LazyPromise</h3>
+<h3><a id="lazypromise" class="anchor" aria-hidden="true" href="#lazypromise"><span aria-hidden="true" class="octicon octicon-link"></span></a>LazyPromise</h3>
 <blockquote>
 <p>Deprecated in v2.8.0: LazyPromise is deprecated and should not be used anymore.</p>
 </blockquote>
@@ -631,16 +601,14 @@ calls the <code>then()</code> method.</p>
 <span class="pl-c">// $factory will only be executed once we call then()</span>
 <span class="pl-s1"><span class="pl-c1">$</span>promise</span>-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>value</span>) {
 });</pre></div>
-<h3>
-<a id="functions" class="anchor" href="#functions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Functions</h3>
+<h3><a id="functions" class="anchor" aria-hidden="true" href="#functions"><span aria-hidden="true" class="octicon octicon-link"></span></a>Functions</h3>
 <p>Useful functions for creating, joining, mapping and reducing collections of
 promises.</p>
 <p>All functions working on promise collections (like <code>all()</code>, <code>race()</code>, <code>some()</code>
 etc.) support cancellation. This means, if you call <code>cancel()</code> on the returned
 promise, all promises in the collection are cancelled. If the collection itself
 is a promise which resolves to an array, this promise is also cancelled.</p>
-<h4>
-<a id="resolve" class="anchor" href="#resolve" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>resolve()</h4>
+<h4><a id="resolve" class="anchor" aria-hidden="true" href="#resolve"><span aria-hidden="true" class="octicon octicon-link"></span></a>resolve()</h4>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>promise</span> = <span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Promise</span>\resolve</span>(mixed <span class="pl-s1"><span class="pl-c1">$</span>promiseOrValue</span>);</pre></div>
 <p>Creates a promise for the supplied <code>$promiseOrValue</code>.</p>
 <p>If <code>$promiseOrValue</code> is a value, it will be the resolution value of the
@@ -652,8 +620,7 @@ a trusted promise that follows the state of the thenable is returned.</p>
 <a href="#extendedpromiseinterface">ExtendedPromiseInterface</a>. If you pass in a custom
 promise which only implements <a href="#promiseinterface">PromiseInterface</a>, this
 promise will be assimilated to a extended promise following <code>$promiseOrValue</code>.</p>
-<h4>
-<a id="reject" class="anchor" href="#reject" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>reject()</h4>
+<h4><a id="reject" class="anchor" aria-hidden="true" href="#reject"><span aria-hidden="true" class="octicon octicon-link"></span></a>reject()</h4>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>promise</span> = <span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Promise</span>\reject</span>(mixed <span class="pl-s1"><span class="pl-c1">$</span>promiseOrValue</span>);</pre></div>
 <p>Creates a rejected promise for the supplied <code>$promiseOrValue</code>.</p>
 <p>If <code>$promiseOrValue</code> is a value, it will be the rejection value of the
@@ -663,20 +630,17 @@ value of the returned promise.</p>
 <p>This can be useful in situations where you need to reject a promise without
 throwing an exception. For example, it allows you to propagate a rejection with
 the value of another promise.</p>
-<h4>
-<a id="all" class="anchor" href="#all" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>all()</h4>
+<h4><a id="all" class="anchor" aria-hidden="true" href="#all"><span aria-hidden="true" class="octicon octicon-link"></span></a>all()</h4>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>promise</span> = <span class="pl-v">React</span>\<span class="pl-v">Promise</span>\all(array|<span class="pl-v">React</span>\<span class="pl-v">Promise</span>\<span class="pl-v">PromiseInterface</span> <span class="pl-s1"><span class="pl-c1">$</span>promisesOrValues</span>);</pre></div>
 <p>Returns a promise that will resolve only once all the items in
 <code>$promisesOrValues</code> have resolved. The resolution value of the returned promise
 will be an array containing the resolution values of each of the items in
 <code>$promisesOrValues</code>.</p>
-<h4>
-<a id="race" class="anchor" href="#race" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>race()</h4>
+<h4><a id="race" class="anchor" aria-hidden="true" href="#race"><span aria-hidden="true" class="octicon octicon-link"></span></a>race()</h4>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>promise</span> = <span class="pl-v">React</span>\<span class="pl-v">Promise</span>\race(array|<span class="pl-v">React</span>\<span class="pl-v">Promise</span>\<span class="pl-v">PromiseInterface</span> <span class="pl-s1"><span class="pl-c1">$</span>promisesOrValues</span>);</pre></div>
 <p>Initiates a competitive race that allows one winner. Returns a promise which is
 resolved in the same way the first settled promise resolves.</p>
-<h4>
-<a id="any" class="anchor" href="#any" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>any()</h4>
+<h4><a id="any" class="anchor" aria-hidden="true" href="#any"><span aria-hidden="true" class="octicon octicon-link"></span></a>any()</h4>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>promise</span> = <span class="pl-v">React</span>\<span class="pl-v">Promise</span>\any(array|<span class="pl-v">React</span>\<span class="pl-v">Promise</span>\<span class="pl-v">PromiseInterface</span> <span class="pl-s1"><span class="pl-c1">$</span>promisesOrValues</span>);</pre></div>
 <p>Returns a promise that will resolve when any one of the items in
 <code>$promisesOrValues</code> resolves. The resolution value of the returned promise
@@ -685,8 +649,7 @@ will be the resolution value of the triggering item.</p>
 rejected. The rejection value will be an array of all rejection reasons.</p>
 <p>The returned promise will also reject with a <code>React\Promise\Exception\LengthException</code>
 if <code>$promisesOrValues</code> contains 0 items.</p>
-<h4>
-<a id="some" class="anchor" href="#some" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>some()</h4>
+<h4><a id="some" class="anchor" aria-hidden="true" href="#some"><span aria-hidden="true" class="octicon octicon-link"></span></a>some()</h4>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>promise</span> = <span class="pl-v">React</span>\<span class="pl-v">Promise</span>\some(array|<span class="pl-v">React</span>\<span class="pl-v">Promise</span>\<span class="pl-v">PromiseInterface</span> <span class="pl-s1"><span class="pl-c1">$</span>promisesOrValues</span>, integer <span class="pl-s1"><span class="pl-c1">$</span>howMany</span>);</pre></div>
 <p>Returns a promise that will resolve when <code>$howMany</code> of the supplied items in
 <code>$promisesOrValues</code> resolve. The resolution value of the returned promise
@@ -698,29 +661,24 @@ reject). The rejection value will be an array of
 <code>(count($promisesOrValues) - $howMany) + 1</code> rejection reasons.</p>
 <p>The returned promise will also reject with a <code>React\Promise\Exception\LengthException</code>
 if <code>$promisesOrValues</code> contains less items than <code>$howMany</code>.</p>
-<h4>
-<a id="map" class="anchor" href="#map" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>map()</h4>
+<h4><a id="map" class="anchor" aria-hidden="true" href="#map"><span aria-hidden="true" class="octicon octicon-link"></span></a>map()</h4>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>promise</span> = <span class="pl-v">React</span>\<span class="pl-v">Promise</span>\map(array|<span class="pl-v">React</span>\<span class="pl-v">Promise</span>\<span class="pl-v">PromiseInterface</span> <span class="pl-s1"><span class="pl-c1">$</span>promisesOrValues</span>, callable <span class="pl-s1"><span class="pl-c1">$</span>mapFunc</span>);</pre></div>
 <p>Traditional map function, similar to <code>array_map()</code>, but allows input to contain
 promises and/or values, and <code>$mapFunc</code> may return either a value or a promise.</p>
 <p>The map function receives each item as argument, where item is a fully resolved
 value of a promise or value in <code>$promisesOrValues</code>.</p>
-<h4>
-<a id="reduce" class="anchor" href="#reduce" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>reduce()</h4>
+<h4><a id="reduce" class="anchor" aria-hidden="true" href="#reduce"><span aria-hidden="true" class="octicon octicon-link"></span></a>reduce()</h4>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>promise</span> = <span class="pl-v">React</span>\<span class="pl-v">Promise</span>\reduce(array|<span class="pl-v">React</span>\<span class="pl-v">Promise</span>\<span class="pl-v">PromiseInterface</span> <span class="pl-s1"><span class="pl-c1">$</span>promisesOrValues</span>, callable <span class="pl-s1"><span class="pl-c1">$</span>reduceFunc</span> , <span class="pl-s1"><span class="pl-c1">$</span>initialValue</span> = <span class="pl-c1">null</span>);</pre></div>
 <p>Traditional reduce function, similar to <code>array_reduce()</code>, but input may contain
 promises and/or values, and <code>$reduceFunc</code> may return either a value or a
 promise, <em>and</em> <code>$initialValue</code> may be a promise or a value for the starting
 value.</p>
-<h3>
-<a id="promisorinterface" class="anchor" href="#promisorinterface" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>PromisorInterface</h3>
+<h3><a id="promisorinterface" class="anchor" aria-hidden="true" href="#promisorinterface"><span aria-hidden="true" class="octicon octicon-link"></span></a>PromisorInterface</h3>
 <p>The <code>React\Promise\PromisorInterface</code> provides a common interface for objects
 that provide a promise. <code>React\Promise\Deferred</code> implements it, but since it
 is part of the public API anyone can implement it.</p>
-<h2>
-<a id="examples" class="anchor" href="#examples" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Examples</h2>
-<h3>
-<a id="how-to-use-deferred" class="anchor" href="#how-to-use-deferred" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How to use Deferred</h3>
+<h2><a id="examples" class="anchor" aria-hidden="true" href="#examples"><span aria-hidden="true" class="octicon octicon-link"></span></a>Examples</h2>
+<h3><a id="how-to-use-deferred" class="anchor" aria-hidden="true" href="#how-to-use-deferred"><span aria-hidden="true" class="octicon octicon-link"></span></a>How to use Deferred</h3>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-k">function</span> <span class="pl-en">getAwesomeResultPromise</span>()
 {
     <span class="pl-s1"><span class="pl-c1">$</span>deferred</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Promise</span>\<span class="pl-v">Deferred</span>();
@@ -750,14 +708,12 @@ getAwesomeResultPromise()
             <span class="pl-c">// Progress notification triggered, do something with $update</span>
         }
     );</pre></div>
-<h3>
-<a id="how-promise-forwarding-works" class="anchor" href="#how-promise-forwarding-works" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How promise forwarding works</h3>
+<h3><a id="how-promise-forwarding-works" class="anchor" aria-hidden="true" href="#how-promise-forwarding-works"><span aria-hidden="true" class="octicon octicon-link"></span></a>How promise forwarding works</h3>
 <p>A few simple examples to show how the mechanics of Promises/A forwarding works.
 These examples are contrived, of course, and in real usage, promise chains will
 typically be spread across several function calls, or even several levels of
 your application architecture.</p>
-<h4>
-<a id="resolution-forwarding" class="anchor" href="#resolution-forwarding" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Resolution forwarding</h4>
+<h4><a id="resolution-forwarding" class="anchor" aria-hidden="true" href="#resolution-forwarding"><span aria-hidden="true" class="octicon octicon-link"></span></a>Resolution forwarding</h4>
 <p>Resolved promises forward resolution values to the next promise.
 The first promise, <code>$deferred-&gt;promise()</code>, will resolve with the value passed
 to <code>$deferred-&gt;resolve()</code> below.</p>
@@ -791,8 +747,7 @@ value of the previous handler. This creates a promise "pipeline".</p>
     });
 
 <span class="pl-s1"><span class="pl-c1">$</span>deferred</span>-&gt;<span class="pl-en">resolve</span>(<span class="pl-c1">1</span>); <span class="pl-c">// Prints "Resolve 4"</span></pre></div>
-<h4>
-<a id="rejection-forwarding" class="anchor" href="#rejection-forwarding" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Rejection forwarding</h4>
+<h4><a id="rejection-forwarding" class="anchor" aria-hidden="true" href="#rejection-forwarding"><span aria-hidden="true" class="octicon octicon-link"></span></a>Rejection forwarding</h4>
 <p>Rejected promises behave similarly, and also work similarly to try/catch:
 When you catch an exception, you must rethrow for it to propagate.</p>
 <p>Similarly, when you handle a rejected promise, to propagate the rejection,
@@ -819,8 +774,7 @@ When you catch an exception, you must rethrow for it to propagate.</p>
     });
 
 <span class="pl-s1"><span class="pl-c1">$</span>deferred</span>-&gt;<span class="pl-en">resolve</span>(<span class="pl-c1">1</span>);  <span class="pl-c">// Prints "Reject 3"</span></pre></div>
-<h4>
-<a id="mixed-resolution-and-rejection-forwarding" class="anchor" href="#mixed-resolution-and-rejection-forwarding" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Mixed resolution and rejection forwarding</h4>
+<h4><a id="mixed-resolution-and-rejection-forwarding" class="anchor" aria-hidden="true" href="#mixed-resolution-and-rejection-forwarding"><span aria-hidden="true" class="octicon octicon-link"></span></a>Mixed resolution and rejection forwarding</h4>
 <p>Just like try/catch, you can choose to propagate or not. Mixing resolutions and
 rejections will still forward handler results in a predictable way.</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>deferred</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Promise</span>\<span class="pl-v">Deferred</span>();
@@ -842,8 +796,7 @@ rejections will still forward handler results in a predictable way.</p>
     });
 
 <span class="pl-s1"><span class="pl-c1">$</span>deferred</span>-&gt;<span class="pl-en">resolve</span>(<span class="pl-c1">1</span>);  <span class="pl-c">// Prints "Mixed 4"</span></pre></div>
-<h4>
-<a id="progress-event-forwarding" class="anchor" href="#progress-event-forwarding" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Progress event forwarding</h4>
+<h4><a id="progress-event-forwarding" class="anchor" aria-hidden="true" href="#progress-event-forwarding"><span aria-hidden="true" class="octicon octicon-link"></span></a>Progress event forwarding</h4>
 <blockquote>
 <p>Deprecated in v2.6.0: Progress support is deprecated and should not be used anymore.</p>
 </blockquote>
@@ -870,8 +823,7 @@ registering a progress handler.</p>
     });
 
 <span class="pl-s1"><span class="pl-c1">$</span>deferred</span>-&gt;<span class="pl-en">notify</span>(<span class="pl-c1">1</span>);  <span class="pl-c">// Prints "Progress 2"</span></pre></div>
-<h3>
-<a id="done-vs-then" class="anchor" href="#done-vs-then" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>done() vs. then()</h3>
+<h3><a id="done-vs-then" class="anchor" aria-hidden="true" href="#done-vs-then"><span aria-hidden="true" class="octicon octicon-link"></span></a>done() vs. then()</h3>
 <p>The golden rule is:</p>
 <pre><code>Either return your promise, or call done() on it.
 </code></pre>
@@ -932,8 +884,7 @@ getJsonResult()
 <p>Note that if a rejection value is not an instance of <code>\Exception</code>, it will be
 wrapped in an exception of the type <code>React\Promise\UnhandledRejectionException</code>.</p>
 <p>You can get the original rejection reason by calling <code>$exception-&gt;getReason()</code>.</p>
-<h2>
-<a id="install" class="anchor" href="#install" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Install</h2>
+<h2><a id="install" class="anchor" aria-hidden="true" href="#install"><span aria-hidden="true" class="octicon octicon-link"></span></a>Install</h2>
 <p>The recommended way to install this library is <a href="https://getcomposer.org" rel="nofollow">through Composer</a>.
 <a href="https://getcomposer.org/doc/00-intro.md" rel="nofollow">New to Composer?</a></p>
 <p>This project follows <a href="https://semver.org/" rel="nofollow">SemVer</a>.
@@ -943,15 +894,13 @@ This will install the latest supported version:</p>
 <p>This project aims to run on any platform and thus does not require any PHP
 extensions and supports running on legacy PHP 5.4 through current PHP 8+ and HHVM.
 It's <em>highly recommended to use the latest supported PHP version</em> for this project.</p>
-<h2>
-<a id="credits" class="anchor" href="#credits" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Credits</h2>
+<h2><a id="credits" class="anchor" aria-hidden="true" href="#credits"><span aria-hidden="true" class="octicon octicon-link"></span></a>Credits</h2>
 <p>Promise is a port of <a href="https://github.com/cujojs/when">when.js</a>
 by <a href="https://github.com/briancavalier">Brian Cavalier</a>.</p>
 <p>Also, large parts of the documentation have been ported from the when.js
 <a href="https://github.com/cujojs/when/wiki">Wiki</a> and the
 <a href="https://github.com/cujojs/when/blob/master/docs/api.md">API docs</a>.</p>
-<h2>
-<a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
+<h2><a id="license" class="anchor" aria-hidden="true" href="#license"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
 <p>Released under the <a href="license.html">MIT</a> license.</p>
                                 </main>
                 <aside class="sidebar" role="complementary">
@@ -1205,7 +1154,7 @@ by <a href="https://github.com/briancavalier">Brian Cavalier</a>.</p>
         <mask id="reactphp-promise-participation-sparkline" x="0" y="0" width="320" height="40" >
             <polyline 
                 transform="translate(0, 40) scale(1,-1)"
-                points="0,1 6,1 12,1 18,1 24,1 30,1 36,1 42,1 48,1 54,1 60,1 66,3 72,1 78,4 84,1 90,1 96,2 102,1 108,5 114,1 120,1 126,1 132,1 138,1 144,1 150,1 156,1 162,1 168,1 174,2 180,3 186,1 192,1 198,1 204,1 210,2 216,2 222,1 228,1 234,3 240,1 246,1 252,1 258,1 264,1 270,1 276,1 282,1 288,1 294,3 300,1 306,1" 
+                points="0,1 6,1 12,1 18,1 24,3 30,1 36,1 42,4 48,1 54,1 60,2 66,5 72,1 78,1 84,1 90,1 96,1 102,1 108,1 114,1 120,1 126,1 132,1 138,2 144,3 150,1 156,1 162,1 168,1 174,3 180,1 186,1 192,2 198,2 204,1 210,1 216,1 222,1 228,1 234,1 240,1 246,1 252,2 258,2 264,1 270,1 276,1 282,1 288,1 294,1 300,1 306,1" 
                 fill="transparent" 
                 stroke="#40a977" 
                 stroke-width="2"

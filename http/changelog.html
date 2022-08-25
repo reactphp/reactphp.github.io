@@ -129,7 +129,7 @@
                         HTTP
 
                         <span class="off-canvas-menu__version">
-                            v1.6.0
+                            v1.7.0
                         </span>
                     </a>
                 </li>
@@ -221,7 +221,7 @@
                     <h1>HTTP Changelog</h1>
 
     <ul class="toc">
-            <li><a href="#2022" title="Jump to year 2022 (1 release)">2022</a></li>
+            <li><a href="#2022" title="Jump to year 2022 (2 releases)">2022</a></li>
             <li><a href="#2021" title="Jump to year 2021 (3 releases)">2021</a></li>
             <li><a href="#2020" title="Jump to year 2020 (5 releases)">2020</a></li>
             <li><a href="#2019" title="Jump to year 2019 (2 releases)">2019</a></li>
@@ -239,6 +239,52 @@
         2022
     </h2>
 
+    
+            <h3>
+        <a id="170-2022-08-23" class="anchor" href="#170-2022-08-23" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        1.7.0
+
+        <small>
+            (2022-08-23)
+            <a href="https://github.com/reactphp/http/releases/tag/v1.7.0" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <p dir="auto">This is a <strong>SECURITY</strong> and feature release for the 1.x series of ReactPHP's HTTP component.</p>
+<ul dir="auto">
+<li>
+<p dir="auto">Security fix: This release fixes a medium severity security issue in ReactPHP's HTTP server component<br>
+that affects all versions between <code class="notranslate">v0.7.0</code> and <code class="notranslate">v1.6.0</code>. All users are encouraged to upgrade immediately.<br>
+Special thanks to Marco Squarcina (TU Wien) for reporting this and working with us to coordinate this release.<br>
+(CVE-2022-36032 reported by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/lavish/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/lavish">@lavish</a> and fixed by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+</li>
+<li>
+<p dir="auto">Feature: Improve HTTP server performance by ~20%, reuse syscall values for clock time and socket addresses.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1242249237" data-permission-text="Title is private" data-url="https://github.com/reactphp/http/issues/457" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/http/pull/457/hovercard" href="https://github.com/reactphp/http/pull/457">#457</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1346720232" data-permission-text="Title is private" data-url="https://github.com/reactphp/http/issues/467" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/http/pull/467/hovercard" href="https://github.com/reactphp/http/pull/467">#467</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+</li>
+<li>
+<p dir="auto">Feature: Full PHP 8.2+ compatibility, refactor internal <code class="notranslate">Transaction</code> to avoid assigning dynamic properties.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1276053781" data-permission-text="Title is private" data-url="https://github.com/reactphp/http/issues/459" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/http/pull/459/hovercard" href="https://github.com/reactphp/http/pull/459">#459</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1338075162" data-permission-text="Title is private" data-url="https://github.com/reactphp/http/issues/466" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/http/pull/466/hovercard" href="https://github.com/reactphp/http/pull/466">#466</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/WyriHaximus/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/WyriHaximus">@WyriHaximus</a>)</p>
+</li>
+<li>
+<p dir="auto">Feature / Fix: Allow explicit <code class="notranslate">Content-Length</code> response header on <code class="notranslate">HEAD</code> requests.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1158321040" data-permission-text="Title is private" data-url="https://github.com/reactphp/http/issues/444" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/http/pull/444/hovercard" href="https://github.com/reactphp/http/pull/444">#444</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/mrsimonbennett/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/mrsimonbennett">@mrsimonbennett</a>)</p>
+</li>
+<li>
+<p dir="auto">Minor documentation improvements.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1204419291" data-permission-text="Title is private" data-url="https://github.com/reactphp/http/issues/452" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/http/pull/452/hovercard" href="https://github.com/reactphp/http/pull/452">#452</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1271212283" data-permission-text="Title is private" data-url="https://github.com/reactphp/http/issues/458" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/http/pull/458/hovercard" href="https://github.com/reactphp/http/pull/458">#458</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/nhedger/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/nhedger">@nhedger</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1193713766" data-permission-text="Title is private" data-url="https://github.com/reactphp/http/issues/448" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/http/pull/448/hovercard" href="https://github.com/reactphp/http/pull/448">#448</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/jorrit/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/jorrit">@jorrit</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1169613305" data-permission-text="Title is private" data-url="https://github.com/reactphp/http/issues/446" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/http/pull/446/hovercard" href="https://github.com/reactphp/http/pull/446">#446</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/SimonFrings/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/SimonFrings">@SimonFrings</a>)</p>
+</li>
+<li>
+<p dir="auto">Improve test suite, update to use new reactphp/async package instead of clue/reactphp-block,<br>
+skip memory tests when lowering memory limit fails and fix legacy HHVM build.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1333036871" data-permission-text="Title is private" data-url="https://github.com/reactphp/http/issues/464" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/http/pull/464/hovercard" href="https://github.com/reactphp/http/pull/464">#464</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1123915823" data-permission-text="Title is private" data-url="https://github.com/reactphp/http/issues/440" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/http/pull/440/hovercard" href="https://github.com/reactphp/http/pull/440">#440</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1201334718" data-permission-text="Title is private" data-url="https://github.com/reactphp/http/issues/450" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/http/pull/450/hovercard" href="https://github.com/reactphp/http/pull/450">#450</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/SimonFrings/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/SimonFrings">@SimonFrings</a>)</p>
+</li>
+</ul>
+
+    <hr>
     
             <h3>
         <a id="160-2022-02-03" class="anchor" href="#160-2022-02-03" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
@@ -1650,7 +1696,7 @@ and replacing unneeded test stubs<br>
 
                             <div class="version-selector">
                                 <button class="version-selector__button version-selector__button--latest" data-ctrly="component-version-selector" data-version-selector-control>
-                                    v1.6.0
+                                    v1.7.0
 
                                     <i class="icon-chevron-down" aria-hidden="true"></i>
                                     <i class="icon-chevron-up" aria-hidden="true"></i>
@@ -1666,6 +1712,11 @@ and replacing unneeded test stubs<br>
                                             </a>
                                         </li>
                                                                                                                                                                                                                     <li>
+                                                <a href="https://github.com/reactphp/http/tree/v1.6.0#readme" class="version-selector__version">
+                                                    v1.6.0
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
                                                 <a href="https://github.com/reactphp/http/tree/v1.5.0#readme" class="version-selector__version">
                                                     v1.5.0
                                                 </a>
@@ -1860,19 +1911,19 @@ and replacing unneeded test stubs<br>
 
                         <h3 class="component-info__subtitle">Installation</h3>
 
-                        <div class="highlight highlight-source-shell"><pre>composer require react/http:^1.6.0</pre></div>
+                        <div class="highlight highlight-source-shell"><pre>composer require react/http:^1.7.0</pre></div>
 
                         <h3 class="component-info__subtitle">Contributors</h3>
 
                         <ul class="component-info__contributors">
                                                     <li>
                                 <a href="https://github.com/clue">
-                                    <img src="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=80 2x" alt="clue" title="clue (277 contributions)">
+                                    <img src="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=80 2x" alt="clue" title="clue (285 contributions)">
                                 </a>
                             </li>
                                                     <li>
                                 <a href="https://github.com/WyriHaximus">
-                                    <img src="https://avatars.githubusercontent.com/u/147145?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/147145?v=4&amp;s=80 2x" alt="WyriHaximus" title="WyriHaximus (188 contributions)">
+                                    <img src="https://avatars.githubusercontent.com/u/147145?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/147145?v=4&amp;s=80 2x" alt="WyriHaximus" title="WyriHaximus (191 contributions)">
                                 </a>
                             </li>
                                                     <li>
@@ -2029,7 +2080,7 @@ and replacing unneeded test stubs<br>
         <mask id="reactphp-http-participation-sparkline" x="0" y="0" width="320" height="40" >
             <polyline 
                 transform="translate(0, 40) scale(1,-1)"
-                points="0,1 6,4 12,5 18,4 24,1 30,4 36,4 42,1 48,1 54,1 60,3 66,3 72,1 78,1 84,1 90,1 96,7 102,1 108,3 114,1 120,3 126,1 132,1 138,1 144,1 150,1 156,1 162,5 168,1 174,5 180,1 186,1 192,1 198,2 204,2 210,3 216,1 222,1 228,2 234,6 240,1 246,1 252,1 258,1 264,3 270,1 276,1 282,1 288,3 294,3 300,1 306,1" 
+                points="0,3 6,1 12,1 18,1 24,5 30,1 36,1 42,1 48,1 54,1 60,7 66,3 72,1 78,1 84,3 90,1 96,1 102,1 108,1 114,1 120,1 126,5 132,1 138,5 144,1 150,1 156,1 162,3 168,2 174,2 180,1 186,2 192,3 198,4 204,1 210,1 216,1 222,1 228,3 234,1 240,1 246,2 252,3 258,3 264,1 270,1 276,1 282,1 288,1 294,5 300,3 306,5" 
                 fill="transparent" 
                 stroke="#40a977" 
                 stroke-width="2"
