@@ -338,9 +338,9 @@ and skip legacy TLS 1.0 tests if disabled by system.<br>
 <li>
 <p dir="auto">Feature: Support listening on existing file descriptors (FDs) with <code class="notranslate">SocketServer</code>.<br>
 (<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="977977806" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/269" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/269/hovercard" href="https://github.com/reactphp/socket/pull/269">#269</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>socket</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">SocketSever</span>(<span class="pl-s">'php://fd/3'</span>);</pre></div>
+<div class="highlight highlight-text-html-php" dir="auto"><pre><span class="pl-s1"><span class="pl-c1">$</span>socket</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">SocketSever</span>(<span class="pl-s">'php://fd/3'</span>);</pre></div>
 <p dir="auto">This is particularly useful when using <a href="https://www.freedesktop.org/software/systemd/man/systemd.socket.html" rel="nofollow">systemd socket activation</a> like this:</p>
-<div class="highlight highlight-source-shell"><pre>$ systemd-socket-activate -l 8000 php examples/03-http-server.php php://fd/3</pre></div>
+<div class="highlight highlight-source-shell" dir="auto"><pre>$ systemd-socket-activate -l 8000 php examples/03-http-server.php php://fd/3</pre></div>
 </li>
 <li>
 <p dir="auto">Feature: Improve error messages for failed connection attempts with <code class="notranslate">errno</code> and <code class="notranslate">errstr</code>.<br>
@@ -355,7 +355,7 @@ Higher-level error messages will now consistently report the connection URI<br>
 scheme and hostname used in all error messages.</p>
 <p dir="auto">For most common use cases this means that simply reporting the <code class="notranslate">Exception</code><br>
 message should give the most relevant details for any connection issues:</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>connector</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Connector</span>();
+<div class="highlight highlight-text-html-php" dir="auto"><pre><span class="pl-s1"><span class="pl-c1">$</span>connector</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Connector</span>();
 <span class="pl-s1"><span class="pl-c1">$</span>connector</span>-&gt;<span class="pl-en">connect</span>(<span class="pl-s1"><span class="pl-c1">$</span>uri</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi"><span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">ConnectionInterface</span></span></span> <span class="pl-s1"><span class="pl-c1">$</span>conn</span>) {
     <span class="pl-c">// …</span>
 }, <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">Exception</span></span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>) {
@@ -391,7 +391,7 @@ message should give the most relevant details for any connection issues:</p>
 as a replacement for the previous <code class="notranslate">Server</code> class in order to avoid any ambiguities.<br>
 The previous name has been deprecated and should not be used anymore.<br>
 In its most basic form, the deprecated <code class="notranslate">Server</code> can now be considered an alias for new <code class="notranslate">SocketServer</code>.</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-c">// deprecated</span>
+<div class="highlight highlight-text-html-php" dir="auto"><pre><span class="pl-c">// deprecated</span>
 <span class="pl-s1"><span class="pl-c1">$</span>socket</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Server</span>(<span class="pl-c1">0</span>);
 <span class="pl-s1"><span class="pl-c1">$</span>socket</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Server</span>(<span class="pl-s">'127.0.0.1:8000'</span>);
 <span class="pl-s1"><span class="pl-c1">$</span>socket</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Server</span>(<span class="pl-s">'127.0.0.1:8000'</span>, <span class="pl-c1">null</span>, <span class="pl-s1"><span class="pl-c1">$</span>context</span>);
@@ -410,7 +410,7 @@ In its most basic form, the deprecated <code class="notranslate">Server</code> c
 consistently move the now commonly unneeded loop argument to the last argument.<br>
 The previous signature has been deprecated and should not be used anymore.<br>
 In its most basic form, both signatures are compatible.</p>
-<div class="highlight highlight-text-html-php"><pre> <span class="pl-c">// deprecated</span>
+<div class="highlight highlight-text-html-php" dir="auto"><pre> <span class="pl-c">// deprecated</span>
 <span class="pl-s1"><span class="pl-c1">$</span>connector</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Connector</span>(<span class="pl-c1">null</span>, <span class="pl-s1"><span class="pl-c1">$</span>context</span>);
 <span class="pl-s1"><span class="pl-c1">$</span>connector</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Connector</span>(<span class="pl-s1"><span class="pl-c1">$</span>loop</span>, <span class="pl-s1"><span class="pl-c1">$</span>context</span>);
 
@@ -440,7 +440,7 @@ In its most basic form, both signatures are compatible.</p>
 <li>
 <p dir="auto">Feature: Simplify usage by supporting new <a href="https://reactphp.org/event-loop/#loop" rel="nofollow">default loop</a>.<br>
 (<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="939800316" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/260" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/260/hovercard" href="https://github.com/reactphp/socket/pull/260">#260</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-c">// old (still supported)</span>
+<div class="highlight highlight-text-html-php" dir="auto"><pre><span class="pl-c">// old (still supported)</span>
 <span class="pl-s1"><span class="pl-c1">$</span>socket</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Server</span>(<span class="pl-s">'127.0.0.1:8080'</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
 <span class="pl-s1"><span class="pl-c1">$</span>connector</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Connector</span>(<span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
 
@@ -739,7 +739,7 @@ underlying socket error. Similarly, lost/dropped connections during a TLS<br>
 handshake will now report a lost connection instead of an empty error reason.</p>
 <p dir="auto">For most common use cases this means that simply reporting the <code class="notranslate">Exception</code><br>
 message should give the most relevant details for any connection issues:</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>promise</span> = <span class="pl-s1"><span class="pl-c1">$</span>connector</span>-&gt;<span class="pl-en">connect</span>(<span class="pl-s">'tls://example.com:443'</span>);
+<div class="highlight highlight-text-html-php" dir="auto"><pre><span class="pl-s1"><span class="pl-c1">$</span>promise</span> = <span class="pl-s1"><span class="pl-c1">$</span>connector</span>-&gt;<span class="pl-en">connect</span>(<span class="pl-s">'tls://example.com:443'</span>);
 <span class="pl-s1"><span class="pl-c1">$</span>promise</span>-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">ConnectionInterface</span></span> <span class="pl-s1"><span class="pl-c1">$</span>conn</span>) <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>loop</span>) {
     <span class="pl-c">// …</span>
 }, <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">Exception</span></span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>) {
@@ -844,7 +844,7 @@ nameserver config on all supported platforms<br>
 <p dir="auto">This means that connecting to hosts that are managed by a local DNS server,<br>
 such as a corporate DNS server or when using Docker containers, will now<br>
 work as expected across all platforms with no changes required:</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>connector</span> = <span class="pl-k">new</span> <span class="pl-v">Connector</span>(<span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
+<div class="highlight highlight-text-html-php" dir="auto"><pre><span class="pl-s1"><span class="pl-c1">$</span>connector</span> = <span class="pl-k">new</span> <span class="pl-v">Connector</span>(<span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
 <span class="pl-s1"><span class="pl-c1">$</span>connector</span>-&gt;<span class="pl-en">connect</span>(<span class="pl-s">'intranet.example:80'</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>connection</span>) {
     <span class="pl-c">// …</span>
 });</pre></div>
@@ -874,7 +874,7 @@ by respecting <code class="notranslate">crypto_method</code> context parameter f
 <p dir="auto">By default, all connector and server classes support TLSv1.0+ and exclude<br>
 support for legacy SSLv2/SSLv3. As of PHP 5.6+ you can also explicitly<br>
 choose the TLS version you want to negotiate with the remote side:</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-c">// new: now supports 'crypto_method` context parameter for all classes</span>
+<div class="highlight highlight-text-html-php" dir="auto"><pre><span class="pl-c">// new: now supports 'crypto_method` context parameter for all classes</span>
 <span class="pl-s1"><span class="pl-c1">$</span>connector</span> = <span class="pl-k">new</span> <span class="pl-v">Connector</span>(<span class="pl-s1"><span class="pl-c1">$</span>loop</span>, <span class="pl-en">array</span>(
     <span class="pl-s">'tls'</span> =&gt; <span class="pl-en">array</span>(
         <span class="pl-s">'crypto_method'</span> =&gt; <span class="pl-v">STREAM_CRYPTO_METHOD_TLSv1_2_CLIENT</span>
@@ -962,7 +962,7 @@ using <code class="notranslate">ext-event</code> (<code class="notranslate">ExtE
 <p dir="auto">Feature: Add Unix domain socket (UDS) support to <code class="notranslate">Server</code> with <code class="notranslate">unix://</code> URI scheme<br>
 and add advanced <code class="notranslate">UnixServer</code> class.<br>
 (<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="263643414" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/120" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/120/hovercard" href="https://github.com/reactphp/socket/pull/120">#120</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/andig/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/andig">@andig</a>)</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-c">// new: Server now supports "unix://" scheme</span>
+<div class="highlight highlight-text-html-php" dir="auto"><pre><span class="pl-c">// new: Server now supports "unix://" scheme</span>
 <span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">Server</span>(<span class="pl-s">'unix:///tmp/server.sock'</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
 
 <span class="pl-c">// new: advanced usage</span>
@@ -1037,7 +1037,7 @@ test Mac OS X on Travis<br>
 <p dir="auto">This can be useful for consumers that do not support certain URIs, such as<br>
 when you want to explicitly connect to a Unix domain socket (UDS) path<br>
 instead of connecting to a default address assumed by an higher-level API:</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>connector</span> = <span class="pl-k">new</span> <span class="pl-v">FixedUriConnector</span>(
+<div class="highlight highlight-text-html-php" dir="auto"><pre><span class="pl-s1"><span class="pl-c1">$</span>connector</span> = <span class="pl-k">new</span> <span class="pl-v">FixedUriConnector</span>(
     <span class="pl-s">'unix:///var/run/docker.sock'</span>,
     <span class="pl-k">new</span> <span class="pl-v">UnixConnector</span>(<span class="pl-s1"><span class="pl-c1">$</span>loop</span>)
 );
@@ -1094,7 +1094,7 @@ instead of connecting to a default address assumed by an higher-level API:</p>
 (<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="252837020" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/112" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/112/hovercard" href="https://github.com/reactphp/socket/pull/112">#112</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 <p dir="auto">This means that connecting to hosts such as <code class="notranslate">localhost</code> will now work as<br>
 expected across all platforms with no changes required:</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>connector</span> = <span class="pl-k">new</span> <span class="pl-v">Connector</span>(<span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
+<div class="highlight highlight-text-html-php" dir="auto"><pre><span class="pl-s1"><span class="pl-c1">$</span>connector</span> = <span class="pl-k">new</span> <span class="pl-v">Connector</span>(<span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
 <span class="pl-s1"><span class="pl-c1">$</span>connector</span>-&gt;<span class="pl-en">connect</span>(<span class="pl-s">'localhost:8080'</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>connection</span>) {
     <span class="pl-c">// …</span>
 });</pre></div>
@@ -1163,7 +1163,7 @@ such as plaintext TCP/IP or secure TLS connection streams.</p>
 <li>
 <p dir="auto">Feature / BC break: All addresses are now URIs that include the URI scheme<br>
 (<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="225141367" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/98" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/98/hovercard" href="https://github.com/reactphp/socket/pull/98">#98</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
-<div class="highlight highlight-source-diff"><pre><span class="pl-md"><span class="pl-md">-</span> $parts = parse_url('tcp://' . $conn-&gt;getRemoteAddress());</span>
+<div class="highlight highlight-source-diff" dir="auto"><pre><span class="pl-md"><span class="pl-md">-</span> $parts = parse_url('tcp://' . $conn-&gt;getRemoteAddress());</span>
 <span class="pl-mi1"><span class="pl-mi1">+</span> $parts = parse_url($conn-&gt;getRemoteAddress());</span></pre></div>
 </li>
 <li>
@@ -1237,7 +1237,7 @@ such as plaintext TCP/IP or secure TLS connection streams.</p>
 (<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="219318125" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/87" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/87/hovercard" href="https://github.com/reactphp/socket/pull/87">#87</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 <p dir="auto">This means that this package now provides async, streaming plaintext TCP/IP<br>
 and secure TLS socket server and client connections for ReactPHP.</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>connector</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Connector</span>(<span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
+<div class="highlight highlight-text-html-php" dir="auto"><pre><span class="pl-s1"><span class="pl-c1">$</span>connector</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Connector</span>(<span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
 <span class="pl-s1"><span class="pl-c1">$</span>connector</span>-&gt;<span class="pl-en">connect</span>(<span class="pl-s">'google.com:80'</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">ConnectionInterface</span></span> <span class="pl-s1"><span class="pl-c1">$</span>conn</span>) {
     <span class="pl-s1"><span class="pl-c1">$</span>connection</span>-&gt;<span class="pl-en">write</span>(<span class="pl-s">'…'</span>);
 });</pre></div>
@@ -1248,7 +1248,7 @@ client connections, upgrading should take no longer than a few minutes.<br>
 All classes have been merged as-is from the latest <code class="notranslate">v0.7.0</code> release with no<br>
 other changes, so you can simply update your code to use the updated namespace<br>
 like this:</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-c">// old from SocketClient component and namespace</span>
+<div class="highlight highlight-text-html-php" dir="auto"><pre><span class="pl-c">// old from SocketClient component and namespace</span>
 <span class="pl-s1"><span class="pl-c1">$</span>connector</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">SocketClient</span>\<span class="pl-v">Connector</span>(<span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
 <span class="pl-s1"><span class="pl-c1">$</span>connector</span>-&gt;<span class="pl-en">connect</span>(<span class="pl-s">'google.com:80'</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">ConnectionInterface</span></span> <span class="pl-s1"><span class="pl-c1">$</span>conn</span>) {
     <span class="pl-s1"><span class="pl-c1">$</span>connection</span>-&gt;<span class="pl-en">write</span>(<span class="pl-s">'…'</span>);
@@ -1281,7 +1281,7 @@ like this:</p>
 <li>
 <p dir="auto">Feature: Add <code class="notranslate">LimitingServer</code> to limit and keep track of open connections<br>
 (<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="218795441" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/86" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/86/hovercard" href="https://github.com/reactphp/socket/pull/86">#86</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">Server</span>(<span class="pl-c1">0</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
+<div class="highlight highlight-text-html-php" dir="auto"><pre><span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">Server</span>(<span class="pl-c1">0</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
 <span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">LimitingServer</span>(<span class="pl-s1"><span class="pl-c1">$</span>server</span>, <span class="pl-c1">100</span>);
 
 <span class="pl-s1"><span class="pl-c1">$</span>server</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'connection'</span>, <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">ConnectionInterface</span></span> <span class="pl-s1"><span class="pl-c1">$</span>connection</span>) {
@@ -1293,7 +1293,7 @@ like this:</p>
 <p dir="auto">Feature / BC break: Add <code class="notranslate">pause()</code> and <code class="notranslate">resume()</code> methods to limit active<br>
 connections<br>
 (<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="217096848" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/84" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/84/hovercard" href="https://github.com/reactphp/socket/pull/84">#84</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">Server</span>(<span class="pl-c1">0</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
+<div class="highlight highlight-text-html-php" dir="auto"><pre><span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">Server</span>(<span class="pl-c1">0</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
 <span class="pl-s1"><span class="pl-c1">$</span>server</span>-&gt;<span class="pl-en">pause</span>();
 
 <span class="pl-s1"><span class="pl-c1">$</span>loop</span>-&gt;<span class="pl-en">addTimer</span>(<span class="pl-c1">1.0</span>, <span class="pl-k">function</span>() <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>server</span>) {
@@ -1343,7 +1343,7 @@ connections<br>
 and reject listening on hostnames with <code class="notranslate">InvalidArgumentException</code><br>
 and replace <code class="notranslate">ConnectionException</code> with <code class="notranslate">RuntimeException</code> for consistency<br>
 (<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="201196498" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/61" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/61/hovercard" href="https://github.com/reactphp/socket/pull/61">#61</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="203649238" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/66" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/66/hovercard" href="https://github.com/reactphp/socket/pull/66">#66</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="206189853" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/72" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/72/hovercard" href="https://github.com/reactphp/socket/pull/72">#72</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-c">// old</span>
+<div class="highlight highlight-text-html-php" dir="auto"><pre><span class="pl-c">// old</span>
 <span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">Server</span>(<span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
 <span class="pl-s1"><span class="pl-c1">$</span>server</span>-&gt;<span class="pl-en">listen</span>(<span class="pl-c1">8080</span>);
 
@@ -1351,7 +1351,7 @@ and replace <code class="notranslate">ConnectionException</code> with <code clas
 <span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">Server</span>(<span class="pl-c1">8080</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);</pre></div>
 <p dir="auto">Similarly, you can now pass a full listening URI to the constructor to change<br>
 the listening host:</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-c">// old</span>
+<div class="highlight highlight-text-html-php" dir="auto"><pre><span class="pl-c">// old</span>
 <span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">Server</span>(<span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
 <span class="pl-s1"><span class="pl-c1">$</span>server</span>-&gt;<span class="pl-en">listen</span>(<span class="pl-c1">8080</span>, <span class="pl-s">'127.0.0.1'</span>);
 
@@ -1359,7 +1359,7 @@ the listening host:</p>
 <span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">Server</span>(<span class="pl-s">'127.0.0.1:8080'</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);</pre></div>
 <p dir="auto">Trying to start listening on (DNS) host names will now throw an<br>
 <code class="notranslate">InvalidArgumentException</code>, use IP addresses instead:</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-c">// old</span>
+<div class="highlight highlight-text-html-php" dir="auto"><pre><span class="pl-c">// old</span>
 <span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">Server</span>(<span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
 <span class="pl-s1"><span class="pl-c1">$</span>server</span>-&gt;<span class="pl-en">listen</span>(<span class="pl-c1">8080</span>, <span class="pl-s">'localhost'</span>);
 
@@ -1368,7 +1368,7 @@ the listening host:</p>
 <p dir="auto">If trying to listen fails (such as if port is already in use or port below<br>
 1024 may require root access etc.), it will now throw a <code class="notranslate">RuntimeException</code>,<br>
 the <code class="notranslate">ConnectionException</code> class has been removed:</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-c">// old: throws React\Socket\ConnectionException</span>
+<div class="highlight highlight-text-html-php" dir="auto"><pre><span class="pl-c">// old: throws React\Socket\ConnectionException</span>
 <span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">Server</span>(<span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
 <span class="pl-s1"><span class="pl-c1">$</span>server</span>-&gt;<span class="pl-en">listen</span>(<span class="pl-c1">80</span>);
 
@@ -1378,7 +1378,7 @@ the <code class="notranslate">ConnectionException</code> class has been removed:
 <li>
 <p dir="auto">Feature / BC break: Rename <code class="notranslate">shutdown()</code> to <code class="notranslate">close()</code> for consistency throughout React<br>
 (<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="201220570" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/62" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/62/hovercard" href="https://github.com/reactphp/socket/pull/62">#62</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-c">// old</span>
+<div class="highlight highlight-text-html-php" dir="auto"><pre><span class="pl-c">// old</span>
 <span class="pl-s1"><span class="pl-c1">$</span>server</span>-&gt;<span class="pl-en">shutdown</span>();
 
 <span class="pl-c">// new</span>
@@ -1387,7 +1387,7 @@ the <code class="notranslate">ConnectionException</code> class has been removed:
 <li>
 <p dir="auto">Feature / BC break: Replace <code class="notranslate">getPort()</code> with <code class="notranslate">getAddress()</code><br>
 (<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="205420718" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/67" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/67/hovercard" href="https://github.com/reactphp/socket/pull/67">#67</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-c">// old</span>
+<div class="highlight highlight-text-html-php" dir="auto"><pre><span class="pl-c">// old</span>
 <span class="pl-k">echo</span> <span class="pl-s1"><span class="pl-c1">$</span>server</span>-&gt;<span class="pl-en">getPort</span>(); <span class="pl-c">// 8080</span>
 
 <span class="pl-c">// new</span>
@@ -1396,7 +1396,7 @@ the <code class="notranslate">ConnectionException</code> class has been removed:
 <li>
 <p dir="auto">Feature / BC break: <code class="notranslate">getRemoteAddress()</code> returns full address instead of only IP<br>
 (<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="203327734" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/65" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/65/hovercard" href="https://github.com/reactphp/socket/pull/65">#65</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-c">// old</span>
+<div class="highlight highlight-text-html-php" dir="auto"><pre><span class="pl-c">// old</span>
 <span class="pl-k">echo</span> <span class="pl-s1"><span class="pl-c1">$</span>connection</span>-&gt;<span class="pl-en">getRemoteAddress</span>(); <span class="pl-c">// 192.168.0.1</span>
 
 <span class="pl-c">// new</span>
@@ -1405,7 +1405,7 @@ the <code class="notranslate">ConnectionException</code> class has been removed:
 <li>
 <p dir="auto">Feature / BC break: Add <code class="notranslate">getLocalAddress()</code> method<br>
 (<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="205428178" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/68" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/68/hovercard" href="https://github.com/reactphp/socket/pull/68">#68</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-k">echo</span> <span class="pl-s1"><span class="pl-c1">$</span>connection</span>-&gt;<span class="pl-en">getLocalAddress</span>(); <span class="pl-c">// 127.0.0.1:8080</span></pre></div>
+<div class="highlight highlight-text-html-php" dir="auto"><pre><span class="pl-k">echo</span> <span class="pl-s1"><span class="pl-c1">$</span>connection</span>-&gt;<span class="pl-en">getLocalAddress</span>(); <span class="pl-c">// 127.0.0.1:8080</span></pre></div>
 </li>
 <li>
 <p dir="auto">BC break: The <code class="notranslate">Server</code> and <code class="notranslate">SecureServer</code> class are now marked <code class="notranslate">final</code><br>
@@ -2222,7 +2222,7 @@ Please use composition instead of extension.<br>
         <mask id="reactphp-socket-participation-sparkline" x="0" y="0" width="320" height="40" >
             <polyline 
                 transform="translate(0, 40) scale(1,-1)"
-                points="0,6 6,11 12,3 18,1 24,1 30,1 36,2 42,1 48,1 54,1 60,1 66,4 72,1 78,2 84,6 90,1 96,1 102,1 108,2 114,2 120,4 126,1 132,1 138,2 144,3 150,1 156,1 162,1 168,3 174,2 180,2 186,3 192,2 198,2 204,1 210,1 216,1 222,1 228,3 234,1 240,1 246,1 252,2 258,2 264,1 270,1 276,2 282,1 288,1 294,5 300,2 306,2" 
+                points="0,13 6,2 12,2 18,1 24,1 30,2 36,1 42,1 48,1 54,1 60,1 66,4 72,1 78,4 84,4 90,1 96,1 102,1 108,2 114,5 120,1 126,1 132,1 138,4 144,1 150,1 156,1 162,2 168,3 174,2 180,2 186,3 192,1 198,2 204,1 210,1 216,1 222,3 228,1 234,1 240,1 246,1 252,3 258,1 264,1 270,2 276,1 282,1 288,4 294,3 300,1 306,4" 
                 fill="transparent" 
                 stroke="#40a977" 
                 stroke-width="2"
