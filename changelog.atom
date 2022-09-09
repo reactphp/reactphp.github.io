@@ -1,11 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
   <title type="text">The combined changelog for all ReactPHP components.</title>
-  <updated>2022-09-08T12:23:15+00:00</updated>
+  <updated>2022-09-09T11:42:24+00:00</updated>
   <generator uri="http://framework.zend.com" version="2">Zend_Feed_Writer</generator>
   <link rel="alternate" type="text/html" href="https://reactphp.org/changelog.html"/>
   <link rel="self" type="application/atom+xml" href="https://reactphp.org/changelog.atom"/>
   <id>https://reactphp.org/changelog.html</id>
+  <entry>
+    <title type="html"><![CDATA[PromiseStream 1.5.0]]></title>
+    <summary type="html"><![CDATA[<ul dir="auto">
+<li>
+<p dir="auto">Feature: Full support for PHP 8.2 release.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1338075556" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise-stream/issues/33" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise-stream/pull/33/hovercard" href="https://github.com/reactphp/promise-stream/pull/33">#33</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/WyriHaximus/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/WyriHaximus">@WyriHaximus</a>)</p>
+</li>
+<li>
+<p dir="auto">Improve test suite and minor documentation improvements.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1333082911" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise-stream/issues/32" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise-stream/pull/32/hovercard" href="https://github.com/reactphp/promise-stream/pull/32">#32</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1277013550" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise-stream/issues/31" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise-stream/pull/31/hovercard" href="https://github.com/reactphp/promise-stream/pull/31">#31</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/nhedger/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/nhedger">@nhedger</a>)</p>
+</li>
+</ul>]]></summary>
+    <updated>2022-09-09T11:42:24+00:00</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/reactphp/promise-stream/releases/tag/v1.5.0"/>
+    <id>https://github.com/reactphp/promise-stream/releases/tag/v1.5.0</id>
+    <author>
+      <name>clue</name>
+      <uri>https://github.com/clue</uri>
+    </author>
+  </entry>
   <entry>
     <title type="html"><![CDATA[DNS 1.10.0]]></title>
     <summary type="html"><![CDATA[<ul dir="auto">
@@ -379,37 +399,6 @@ Run tests on PHP 8.1, PHPUnit 9, switch to GitHub actions and clean up test suit
     <updated>2022-03-17T11:10:29+00:00</updated>
     <link rel="alternate" type="text/html" href="https://github.com/reactphp/event-loop/releases/tag/v1.3.0"/>
     <id>https://github.com/reactphp/event-loop/releases/tag/v1.3.0</id>
-    <author>
-      <name>clue</name>
-      <uri>https://github.com/clue</uri>
-    </author>
-  </entry>
-  <entry>
-    <title type="html"><![CDATA[Promise 2.9.0]]></title>
-    <summary type="html"><![CDATA[<ul dir="auto">
-<li>
-<p dir="auto">Feature: Support union types and address deprecation of <code class="notranslate">ReflectionType::getClass()</code> (PHP 8+).<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1027301171" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/198" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/198/hovercard" href="https://github.com/reactphp/promise/pull/198">#198</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/cdosoftei/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/cdosoftei">@cdosoftei</a> and <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/SimonFrings/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/SimonFrings">@SimonFrings</a>)</p>
-<div class="highlight highlight-text-html-php" dir="auto"><pre><span class="pl-s1"><span class="pl-c1">$</span>promise</span>-&gt;<span class="pl-en">otherwise</span>(<span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">OverflowException</span></span>|<span class="pl-smi"><span class="pl-smi">UnderflowException</span></span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>) {
-    <span class="pl-k">echo</span> <span class="pl-s">'Error: '</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
-});</pre></div>
-</li>
-<li>
-<p dir="auto">Feature: Support intersection types (PHP 8.1+).<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1009515307" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/195" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/195/hovercard" href="https://github.com/reactphp/promise/pull/195">#195</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/bzikarsky/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/bzikarsky">@bzikarsky</a>)</p>
-<div class="highlight highlight-text-html-php" dir="auto"><pre><span class="pl-s1"><span class="pl-c1">$</span>promise</span>-&gt;<span class="pl-en">otherwise</span>(<span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">OverflowException</span></span>&amp;<span class="pl-v">CacheException</span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>) {
-    <span class="pl-k">echo</span> <span class="pl-s">'Error: '</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
-});</pre></div>
-</li>
-<li>
-<p dir="auto">Improve test suite, use GitHub actions for continuous integration (CI),<br>
-update to PHPUnit 9, and add full core team to the license.<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="661766650" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/174" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/174/hovercard" href="https://github.com/reactphp/promise/pull/174">#174</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="793368470" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/183" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/183/hovercard" href="https://github.com/reactphp/promise/pull/183">#183</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="804340937" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/186" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/186/hovercard" href="https://github.com/reactphp/promise/pull/186">#186</a>, and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1054806183" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/201" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/201/hovercard" href="https://github.com/reactphp/promise/pull/201">#201</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/SimonFrings/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/SimonFrings">@SimonFrings</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1132148813" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/211" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/211/hovercard" href="https://github.com/reactphp/promise/pull/211">#211</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
-</li>
-</ul>]]></summary>
-    <updated>2022-02-11T10:28:02+00:00</updated>
-    <link rel="alternate" type="text/html" href="https://github.com/reactphp/promise/releases/tag/v2.9.0"/>
-    <id>https://github.com/reactphp/promise/releases/tag/v2.9.0</id>
     <author>
       <name>clue</name>
       <uri>https://github.com/clue</uri>
