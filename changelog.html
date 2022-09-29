@@ -129,7 +129,7 @@
                         HTTP
 
                         <span class="off-canvas-menu__version">
-                            v1.7.0
+                            v1.8.0
                         </span>
                     </a>
                 </li>
@@ -222,7 +222,7 @@
 
 
             <ul class="toc">
-            <li><a href="#2022" title="Jump to year 2022 (14 releases)">2022</a></li>
+            <li><a href="#2022" title="Jump to year 2022 (15 releases)">2022</a></li>
             <li><a href="#2021" title="Jump to year 2021 (25 releases)">2021</a></li>
             <li><a href="#2020" title="Jump to year 2020 (16 releases)">2020</a></li>
             <li><a href="#2019" title="Jump to year 2019 (21 releases)">2019</a></li>
@@ -240,6 +240,36 @@
         2022
     </h2>
 
+    
+                        <h3>
+        <a id="http-180-2022-09-29" class="anchor" href="#http-180-2022-09-29" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        HTTP 1.8.0
+
+        <small>
+            (2022-09-29)
+            <a href="https://github.com/reactphp/http/releases/tag/v1.8.0" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul dir="auto">
+<li>
+<p dir="auto">Feature: Support for default request headers.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1284092777" data-permission-text="Title is private" data-url="https://github.com/reactphp/http/issues/461" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/http/pull/461/hovercard" href="https://github.com/reactphp/http/pull/461">#461</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/51imyy/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/51imyy">@51imyy</a>)</p>
+<div class="highlight highlight-text-html-php" dir="auto"><pre><span class="pl-s1"><span class="pl-c1">$</span>browser</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Browser</span>();
+<span class="pl-s1"><span class="pl-c1">$</span>browser</span> = <span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">withHeader</span>(<span class="pl-s">'User-Agent'</span>, <span class="pl-s">'ACME'</span>);
+
+<span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">get</span>(<span class="pl-s1"><span class="pl-c1">$</span>url</span>)-&gt;<span class="pl-en">then</span>(…);</pre></div>
+</li>
+<li>
+<p dir="auto">Feature: Forward compatibility with upcoming Promise v3.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1279862509" data-permission-text="Title is private" data-url="https://github.com/reactphp/http/issues/460" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/http/pull/460/hovercard" href="https://github.com/reactphp/http/pull/460">#460</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+</li>
+</ul>
+
+    <hr>
     
                         <h3>
         <a id="childprocess-065-2022-09-16" class="anchor" href="#childprocess-065-2022-09-16" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
@@ -408,7 +438,7 @@
 <p dir="auto">Security fix: This release fixes a medium severity security issue in ReactPHP's HTTP server component<br>
 that affects all versions between <code class="notranslate">v0.7.0</code> and <code class="notranslate">v1.6.0</code>. All users are encouraged to upgrade immediately.<br>
 Special thanks to Marco Squarcina (TU Wien) for reporting this and working with us to coordinate this release.<br>
-(CVE-2022-36032 reported by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/lavish/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/lavish">@lavish</a> and fixed by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+(<a title="CVE-2022-36032" data-hovercard-type="advisory" data-hovercard-url="/advisories/GHSA-w3w9-vrf5-8mx8/hovercard" href="https://github.com/advisories/GHSA-w3w9-vrf5-8mx8">CVE-2022-36032</a> reported by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/lavish/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/lavish">@lavish</a> and fixed by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 </li>
 <li>
 <p dir="auto">Feature: Improve HTTP server performance by ~20%, reuse syscall values for clock time and socket addresses.<br>

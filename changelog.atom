@@ -1,11 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
   <title type="text">The combined changelog for all ReactPHP components.</title>
-  <updated>2022-09-16T13:42:04+00:00</updated>
+  <updated>2022-09-29T12:56:01+00:00</updated>
   <generator uri="http://framework.zend.com" version="2">Zend_Feed_Writer</generator>
   <link rel="alternate" type="text/html" href="https://reactphp.org/changelog.html"/>
   <link rel="self" type="application/atom+xml" href="https://reactphp.org/changelog.atom"/>
   <id>https://reactphp.org/changelog.html</id>
+  <entry>
+    <title type="html"><![CDATA[HTTP 1.8.0]]></title>
+    <summary type="html"><![CDATA[<ul dir="auto">
+<li>
+<p dir="auto">Feature: Support for default request headers.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1284092777" data-permission-text="Title is private" data-url="https://github.com/reactphp/http/issues/461" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/http/pull/461/hovercard" href="https://github.com/reactphp/http/pull/461">#461</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/51imyy/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/51imyy">@51imyy</a>)</p>
+<div class="highlight highlight-text-html-php" dir="auto"><pre><span class="pl-s1"><span class="pl-c1">$</span>browser</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Browser</span>();
+<span class="pl-s1"><span class="pl-c1">$</span>browser</span> = <span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">withHeader</span>(<span class="pl-s">'User-Agent'</span>, <span class="pl-s">'ACME'</span>);
+
+<span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">get</span>(<span class="pl-s1"><span class="pl-c1">$</span>url</span>)-&gt;<span class="pl-en">then</span>(…);</pre></div>
+</li>
+<li>
+<p dir="auto">Feature: Forward compatibility with upcoming Promise v3.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1279862509" data-permission-text="Title is private" data-url="https://github.com/reactphp/http/issues/460" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/http/pull/460/hovercard" href="https://github.com/reactphp/http/pull/460">#460</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+</li>
+</ul>]]></summary>
+    <updated>2022-09-29T12:56:01+00:00</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/reactphp/http/releases/tag/v1.8.0"/>
+    <id>https://github.com/reactphp/http/releases/tag/v1.8.0</id>
+    <author>
+      <name>clue</name>
+      <uri>https://github.com/clue</uri>
+    </author>
+  </entry>
   <entry>
     <title type="html"><![CDATA[ChildProcess 0.6.5]]></title>
     <summary type="html"><![CDATA[<ul dir="auto">
@@ -138,7 +162,7 @@
 <p dir="auto">Security fix: This release fixes a medium severity security issue in ReactPHP's HTTP server component<br>
 that affects all versions between <code class="notranslate">v0.7.0</code> and <code class="notranslate">v1.6.0</code>. All users are encouraged to upgrade immediately.<br>
 Special thanks to Marco Squarcina (TU Wien) for reporting this and working with us to coordinate this release.<br>
-(CVE-2022-36032 reported by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/lavish/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/lavish">@lavish</a> and fixed by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+(<a title="CVE-2022-36032" data-hovercard-type="advisory" data-hovercard-url="/advisories/GHSA-w3w9-vrf5-8mx8/hovercard" href="https://github.com/advisories/GHSA-w3w9-vrf5-8mx8">CVE-2022-36032</a> reported by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/lavish/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/lavish">@lavish</a> and fixed by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 </li>
 <li>
 <p dir="auto">Feature: Improve HTTP server performance by ~20%, reuse syscall values for clock time and socket addresses.<br>
@@ -371,30 +395,6 @@ Run tests on PHP 8.1, PHPUnit 9, switch to GitHub actions and clean up test suit
     <updated>2022-06-20T10:37:06+00:00</updated>
     <link rel="alternate" type="text/html" href="https://github.com/reactphp/promise-stream/releases/tag/v1.4.0"/>
     <id>https://github.com/reactphp/promise-stream/releases/tag/v1.4.0</id>
-    <author>
-      <name>clue</name>
-      <uri>https://github.com/clue</uri>
-    </author>
-  </entry>
-  <entry>
-    <title type="html"><![CDATA[PromiseTimer 1.9.0]]></title>
-    <summary type="html"><![CDATA[<ul dir="auto">
-<li>
-<p dir="auto">Feature: Improve forward compatibility with upcoming Promise v3 API.<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1158005058" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise-timer/issues/54" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise-timer/pull/54/hovercard" href="https://github.com/reactphp/promise-timer/pull/54">#54</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1161564421" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise-timer/issues/55" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise-timer/pull/55/hovercard" href="https://github.com/reactphp/promise-timer/pull/55">#55</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
-</li>
-<li>
-<p dir="auto">Minor documentation improvements for upcoming Promise v3.<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1268652157" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise-timer/issues/58" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise-timer/pull/58/hovercard" href="https://github.com/reactphp/promise-timer/pull/58">#58</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1170976279" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise-timer/issues/56" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise-timer/pull/56/hovercard" href="https://github.com/reactphp/promise-timer/pull/56">#56</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/SimonFrings/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/SimonFrings">@SimonFrings</a>)</p>
-</li>
-<li>
-<p dir="auto">Improve test suite, fix legacy HHVM build by downgrading Composer.<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1201371532" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise-timer/issues/57" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise-timer/pull/57/hovercard" href="https://github.com/reactphp/promise-timer/pull/57">#57</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/SimonFrings/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/SimonFrings">@SimonFrings</a>)</p>
-</li>
-</ul>]]></summary>
-    <updated>2022-06-13T13:41:11+00:00</updated>
-    <link rel="alternate" type="text/html" href="https://github.com/reactphp/promise-timer/releases/tag/v1.9.0"/>
-    <id>https://github.com/reactphp/promise-timer/releases/tag/v1.9.0</id>
     <author>
       <name>clue</name>
       <uri>https://github.com/clue</uri>
