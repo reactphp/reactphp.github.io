@@ -36,7 +36,7 @@
 <li>
 <p dir="auto">Feature: Support for default request headers.<br>
 (<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1284092777" data-permission-text="Title is private" data-url="https://github.com/reactphp/http/issues/461" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/http/pull/461/hovercard" href="https://github.com/reactphp/http/pull/461">#461</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/51imyy/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/51imyy">@51imyy</a>)</p>
-<div class="highlight highlight-text-html-php" dir="auto"><pre><span class="pl-s1"><span class="pl-c1">$</span>browser</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Browser</span>();
+<div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-s1"><span class="pl-c1">$</span>browser</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Browser</span>();
 <span class="pl-s1"><span class="pl-c1">$</span>browser</span> = <span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">withHeader</span>(<span class="pl-s">'User-Agent'</span>, <span class="pl-s">'ACME'</span>);
 
 <span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">get</span>(<span class="pl-s1"><span class="pl-c1">$</span>url</span>)-&gt;<span class="pl-en">then</span>(…);</pre></div>
