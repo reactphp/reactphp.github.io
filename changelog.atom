@@ -1,11 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
   <title type="text">The combined changelog for all ReactPHP components.</title>
-  <updated>2023-05-02T15:18:29+00:00</updated>
+  <updated>2023-05-05T10:11:40+00:00</updated>
   <generator uri="http://framework.zend.com" version="2">Zend_Feed_Writer</generator>
   <link rel="alternate" type="text/html" href="https://reactphp.org/changelog.html"/>
   <link rel="self" type="application/atom+xml" href="https://reactphp.org/changelog.atom"/>
   <id>https://reactphp.org/changelog.html</id>
+  <entry>
+    <title type="html"><![CDATA[EventLoop 1.4.0]]></title>
+    <summary type="html"><![CDATA[<ul dir="auto">
+<li>
+<p dir="auto">Feature: Improve performance of <code class="notranslate">Loop</code> by avoiding unneeded method calls.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1696082164" data-permission-text="Title is private" data-url="https://github.com/reactphp/event-loop/issues/266" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/event-loop/pull/266/hovercard" href="https://github.com/reactphp/event-loop/pull/266">#266</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+</li>
+<li>
+<p dir="auto">Feature: Support checking <code class="notranslate">EINTR</code> constant from <code class="notranslate">ext-pcntl</code> without <code class="notranslate">ext-sockets</code>.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1665978392" data-permission-text="Title is private" data-url="https://github.com/reactphp/event-loop/issues/265" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/event-loop/pull/265/hovercard" href="https://github.com/reactphp/event-loop/pull/265">#265</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+</li>
+<li>
+<p dir="auto">Minor documentation improvements.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1277000377" data-permission-text="Title is private" data-url="https://github.com/reactphp/event-loop/issues/254" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/event-loop/pull/254/hovercard" href="https://github.com/reactphp/event-loop/pull/254">#254</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/nhedger/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/nhedger">@nhedger</a>)</p>
+</li>
+<li>
+<p dir="auto">Improve test suite, run tests on PHP 8.2 and report failed assertions.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1337971632" data-permission-text="Title is private" data-url="https://github.com/reactphp/event-loop/issues/258" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/event-loop/pull/258/hovercard" href="https://github.com/reactphp/event-loop/pull/258">#258</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/WyriHaximus/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/WyriHaximus">@WyriHaximus</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1603143300" data-permission-text="Title is private" data-url="https://github.com/reactphp/event-loop/issues/264" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/event-loop/pull/264/hovercard" href="https://github.com/reactphp/event-loop/pull/264">#264</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1201400600" data-permission-text="Title is private" data-url="https://github.com/reactphp/event-loop/issues/251" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/event-loop/pull/251/hovercard" href="https://github.com/reactphp/event-loop/pull/251">#251</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1420556292" data-permission-text="Title is private" data-url="https://github.com/reactphp/event-loop/issues/261" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/event-loop/pull/261/hovercard" href="https://github.com/reactphp/event-loop/pull/261">#261</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1455236071" data-permission-text="Title is private" data-url="https://github.com/reactphp/event-loop/issues/262" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/event-loop/pull/262/hovercard" href="https://github.com/reactphp/event-loop/pull/262">#262</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/SimonFrings/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/SimonFrings">@SimonFrings</a>)</p>
+</li>
+</ul>]]></summary>
+    <updated>2023-05-05T10:11:40+00:00</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/reactphp/event-loop/releases/tag/v1.4.0"/>
+    <id>https://github.com/reactphp/event-loop/releases/tag/v1.4.0</id>
+    <author>
+      <name>SimonFrings</name>
+      <uri>https://github.com/SimonFrings</uri>
+    </author>
+  </entry>
   <entry>
     <title type="html"><![CDATA[Promise 2.10.0]]></title>
     <summary type="html"><![CDATA[<ul dir="auto">
@@ -287,72 +315,6 @@ skip memory tests when lowering memory limit fails and fix legacy HHVM build.<br
     <updated>2022-08-23T12:31:37+00:00</updated>
     <link rel="alternate" type="text/html" href="https://github.com/reactphp/http/releases/tag/v1.7.0"/>
     <id>https://github.com/reactphp/http/releases/tag/v1.7.0</id>
-    <author>
-      <name>clue</name>
-      <uri>https://github.com/clue</uri>
-    </author>
-  </entry>
-  <entry>
-    <title type="html"><![CDATA[Async 4.0.0]]></title>
-    <summary type="html"><![CDATA[<p dir="auto">A major new feature release, see <a href="https://clue.engineering/2022/announcing-reactphp-async" rel="nofollow"><strong>release announcement</strong></a>.</p>
-<ul dir="auto">
-<li>
-<p dir="auto">We'd like to emphasize that this component is production ready and battle-tested.<br>
-We plan to support all long-term support (LTS) releases for at least 24 months,<br>
-so you have a rock-solid foundation to build on top of.</p>
-</li>
-<li>
-<p dir="auto">The v4 release will be the way forward for this package. However, we will still<br>
-actively support v3 and v2 to provide a smooth upgrade path for those not yet<br>
-on PHP 8.1+. If you're using an older PHP version, you may use either version<br>
-which all provide a compatible API but may not take advantage of newer language<br>
-features. You may target multiple versions at the same time to support a wider range of<br>
-PHP versions:</p>
-<ul dir="auto">
-<li><a href="https://github.com/reactphp/async/tree/4.x"><code class="notranslate">4.x</code> branch</a> (PHP 8.1+)</li>
-<li><a href="https://github.com/reactphp/async/tree/3.x"><code class="notranslate">3.x</code> branch</a> (PHP 7.1+)</li>
-<li><a href="https://github.com/reactphp/async/tree/2.x"><code class="notranslate">2.x</code> branch</a> (PHP 5.3+)</li>
-</ul>
-</li>
-</ul>
-<p dir="auto">This update involves some major new features and a minor BC break over the<br>
-<code class="notranslate">v3.0.0</code> release. We've tried hard to avoid BC breaks where possible and<br>
-minimize impact otherwise. We expect that most consumers of this package will be<br>
-affected by BC breaks, but updating should take no longer than a few minutes.<br>
-See below for more details:</p>
-<ul dir="auto">
-<li>
-<p dir="auto">Feature / BC break: Require PHP 8.1+ and add <code class="notranslate">mixed</code> type declarations.<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1058282694" data-permission-text="Title is private" data-url="https://github.com/reactphp/async/issues/14" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/async/pull/14/hovercard" href="https://github.com/reactphp/async/pull/14">#14</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
-</li>
-<li>
-<p dir="auto">Feature: Add Fiber-based <code class="notranslate">async()</code> and <code class="notranslate">await()</code> functions.<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1059373289" data-permission-text="Title is private" data-url="https://github.com/reactphp/async/issues/15" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/async/pull/15/hovercard" href="https://github.com/reactphp/async/pull/15">#15</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1078951163" data-permission-text="Title is private" data-url="https://github.com/reactphp/async/issues/18" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/async/pull/18/hovercard" href="https://github.com/reactphp/async/pull/18">#18</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1084997709" data-permission-text="Title is private" data-url="https://github.com/reactphp/async/issues/19" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/async/pull/19/hovercard" href="https://github.com/reactphp/async/pull/19">#19</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1096040862" data-permission-text="Title is private" data-url="https://github.com/reactphp/async/issues/20" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/async/pull/20/hovercard" href="https://github.com/reactphp/async/pull/20">#20</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/WyriHaximus/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/WyriHaximus">@WyriHaximus</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1114001097" data-permission-text="Title is private" data-url="https://github.com/reactphp/async/issues/26" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/async/pull/26/hovercard" href="https://github.com/reactphp/async/pull/26">#26</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1129861537" data-permission-text="Title is private" data-url="https://github.com/reactphp/async/issues/28" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/async/pull/28/hovercard" href="https://github.com/reactphp/async/pull/28">#28</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1140166316" data-permission-text="Title is private" data-url="https://github.com/reactphp/async/issues/30" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/async/pull/30/hovercard" href="https://github.com/reactphp/async/pull/30">#30</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1142710604" data-permission-text="Title is private" data-url="https://github.com/reactphp/async/issues/32" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/async/pull/32/hovercard" href="https://github.com/reactphp/async/pull/32">#32</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1159520853" data-permission-text="Title is private" data-url="https://github.com/reactphp/async/issues/34" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/async/pull/34/hovercard" href="https://github.com/reactphp/async/pull/34">#34</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1288595016" data-permission-text="Title is private" data-url="https://github.com/reactphp/async/issues/55" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/async/pull/55/hovercard" href="https://github.com/reactphp/async/pull/55">#55</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1293863273" data-permission-text="Title is private" data-url="https://github.com/reactphp/async/issues/57" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/async/pull/57/hovercard" href="https://github.com/reactphp/async/pull/57">#57</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
-</li>
-<li>
-<p dir="auto">Project maintenance, rename <code class="notranslate">main</code> branch to <code class="notranslate">4.x</code> and update installation instructions.<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1135996500" data-permission-text="Title is private" data-url="https://github.com/reactphp/async/issues/29" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/async/pull/29/hovercard" href="https://github.com/reactphp/async/pull/29">#29</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
-</li>
-</ul>
-<p dir="auto">The following changes had to be ported to this release due to our branching<br>
-strategy, but also appeared in the <code class="notranslate">v3.0.0</code> release:</p>
-<ul dir="auto">
-<li>
-<p dir="auto">Feature: Support iterable type for <code class="notranslate">parallel()</code> + <code class="notranslate">series()</code> + <code class="notranslate">waterfall()</code>.<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1269755026" data-permission-text="Title is private" data-url="https://github.com/reactphp/async/issues/49" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/async/pull/49/hovercard" href="https://github.com/reactphp/async/pull/49">#49</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
-</li>
-<li>
-<p dir="auto">Feature: Forward compatibility with upcoming Promise v3.<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1268564969" data-permission-text="Title is private" data-url="https://github.com/reactphp/async/issues/48" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/async/pull/48/hovercard" href="https://github.com/reactphp/async/pull/48">#48</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
-</li>
-<li>
-<p dir="auto">Minor documentation improvements.<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1173398964" data-permission-text="Title is private" data-url="https://github.com/reactphp/async/issues/36" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/async/pull/36/hovercard" href="https://github.com/reactphp/async/pull/36">#36</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/SimonFrings/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/SimonFrings">@SimonFrings</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1276975461" data-permission-text="Title is private" data-url="https://github.com/reactphp/async/issues/51" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/async/pull/51/hovercard" href="https://github.com/reactphp/async/pull/51">#51</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/nhedger/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/nhedger">@nhedger</a>)</p>
-</li>
-</ul>]]></summary>
-    <updated>2022-07-11T14:21:12+00:00</updated>
-    <link rel="alternate" type="text/html" href="https://github.com/reactphp/async/releases/tag/v4.0.0"/>
-    <id>https://github.com/reactphp/async/releases/tag/v4.0.0</id>
     <author>
       <name>clue</name>
       <uri>https://github.com/clue</uri>
