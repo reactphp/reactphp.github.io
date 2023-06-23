@@ -96,7 +96,7 @@
                         Async
 
                         <span class="off-canvas-menu__version">
-                            v4.0.0
+                            v4.1.0
                         </span>
                     </a>
                 </li>
@@ -239,6 +239,7 @@ an event loop, it can be used with this library.</p>
 <li><a href="#async">async()</a></li>
 <li><a href="#await">await()</a></li>
 <li><a href="#coroutine">coroutine()</a></li>
+<li><a href="#delay">delay()</a></li>
 <li><a href="#parallel">parallel()</a></li>
 <li><a href="#series">series()</a></li>
 <li><a href="#waterfall">waterfall()</a></li>
@@ -385,15 +386,14 @@ primitives like this:</p>
 <p>The returned promise is implemented in such a way that it can be cancelled
 when it is still pending. Cancelling a pending promise will cancel any awaited
 promises inside that fiber or any nested fibers. As such, the following example
-will only output <code>ab</code> and cancel the pending <a href="https://reactphp.org/promise-timer/#sleep" rel="nofollow"><code>sleep()</code></a>.
+will only output <code>ab</code> and cancel the pending <a href="#delay"><code>delay()</code></a>.
 The <a href="#await"><code>await()</code></a> calls in this example would throw a <code>RuntimeException</code>
-from the cancelled <a href="https://reactphp.org/promise-timer/#sleep" rel="nofollow"><code>sleep()</code></a> call
-that bubbles up through the fibers.</p>
+from the cancelled <a href="#delay"><code>delay()</code></a> call that bubbles up through the fibers.</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>promise</span> = async(<span class="pl-k">static</span> <span class="pl-k">function</span> (): <span class="pl-smi">int</span> {
     <span class="pl-k">echo</span> <span class="pl-s">'a'</span>;
     await(async(<span class="pl-k">static</span> <span class="pl-k">function</span> (): <span class="pl-smi">void</span> {
         <span class="pl-k">echo</span> <span class="pl-s">'b'</span>;
-        await(<span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Promise</span>\<span class="pl-v">Timer</span>\sleep</span>(<span class="pl-c1">2</span>));
+        delay(<span class="pl-c1">2</span>);
         <span class="pl-k">echo</span> <span class="pl-s">'c'</span>;
     })());
     <span class="pl-k">echo</span> <span class="pl-s">'d'</span>;
@@ -538,8 +538,85 @@ like this:</p>
 }, <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">Exception</span></span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>) {
     <span class="pl-k">echo</span> <span class="pl-s">'Error: '</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
 });</pre></div>
+<h3><a id="delay" class="anchor" aria-hidden="true" href="#delay"><span aria-hidden="true" class="octicon octicon-link"></span></a>delay()</h3>
+<p>The <code>delay(float $seconds): void</code> function can be used to
+delay program execution for duration given in <code>$seconds</code>.</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Async</span>\delay</span>(<span class="pl-s1"><span class="pl-c1">$</span>seconds</span>);</pre></div>
+<p>This function will only return after the given number of <code>$seconds</code> have
+elapsed. If there are no other events attached to this loop, it will behave
+similar to PHP's <a href="https://www.php.net/manual/en/function.sleep.php" rel="nofollow"><code>sleep()</code> function</a>.</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-k">echo</span> <span class="pl-s">'a'</span>;
+<span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Async</span>\delay</span>(<span class="pl-c1">1.0</span>);
+<span class="pl-k">echo</span> <span class="pl-s">'b'</span>;
+
+<span class="pl-c">// prints "a" at t=0.0s</span>
+<span class="pl-c">// prints "b" at t=1.0s</span></pre></div>
+<p>Unlike PHP's <a href="https://www.php.net/manual/en/function.sleep.php" rel="nofollow"><code>sleep()</code> function</a>,
+this function may not necessarily halt execution of the entire process thread.
+Instead, it allows the event loop to run any other events attached to the
+same loop until the delay returns:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-k">echo</span> <span class="pl-s">'a'</span>;
+<span class="pl-v">Loop</span>::<span class="pl-en">addTimer</span>(<span class="pl-c1">1.0</span>, <span class="pl-k">function</span> (): <span class="pl-smi">void</span> {
+    <span class="pl-k">echo</span> <span class="pl-s">'b'</span>;
+});
+<span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Async</span>\delay</span>(<span class="pl-c1">3.0</span>);
+<span class="pl-k">echo</span> <span class="pl-s">'c'</span>;
+
+<span class="pl-c">// prints "a" at t=0.0s</span>
+<span class="pl-c">// prints "b" at t=1.0s</span>
+<span class="pl-c">// prints "c" at t=3.0s</span></pre></div>
+<p>This behavior is especially useful if you want to delay the program execution
+of a particular routine, such as when building a simple polling or retry
+mechanism:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-k">try</span> {
+    something();
+} <span class="pl-k">catch</span> (<span class="pl-smi"><span class="pl-smi">Throwable</span></span>) {
+    <span class="pl-c">// in case of error, retry after a short delay</span>
+    <span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Async</span>\delay</span>(<span class="pl-c1">1.0</span>);
+    something();
+}</pre></div>
+<p>Because this function only returns after some time has passed, it can be
+considered <em>blocking</em> from the perspective of the calling code. You can avoid
+this blocking behavior by wrapping it in an <a href="#async"><code>async()</code> function</a> call.
+Everything inside this function will still be blocked, but everything outside
+this function can be executed asynchronously without blocking:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-v">Loop</span>::<span class="pl-en">addTimer</span>(<span class="pl-c1">0.5</span>, <span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Async</span>\async</span>(<span class="pl-k">function</span> (): <span class="pl-smi">void</span> {
+    <span class="pl-k">echo</span> <span class="pl-s">'a'</span>;
+    <span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Async</span>\delay</span>(<span class="pl-c1">1.0</span>);
+    <span class="pl-k">echo</span> <span class="pl-s">'c'</span>;
+}));
+
+<span class="pl-v">Loop</span>::<span class="pl-en">addTimer</span>(<span class="pl-c1">1.0</span>, <span class="pl-k">function</span> (): <span class="pl-smi">void</span> {
+    <span class="pl-k">echo</span> <span class="pl-s">'b'</span>;
+});
+
+<span class="pl-c">// prints "a" at t=0.5s</span>
+<span class="pl-c">// prints "b" at t=1.0s</span>
+<span class="pl-c">// prints "c" at t=1.5s</span></pre></div>
+<p>See also the <a href="#async"><code>async()</code> function</a> for more details.</p>
+<p>Internally, the <code>$seconds</code> argument will be used as a timer for the loop so that
+it keeps running until this timer triggers. This implies that if you pass a
+really small (or negative) value, it will still start a timer and will thus
+trigger at the earliest possible time in the future.</p>
+<p>The function is implemented in such a way that it can be cancelled when it is
+running inside an <a href="#async"><code>async()</code> function</a>. Cancelling the resulting
+promise will clean up any pending timers and throw a <code>RuntimeException</code> from
+the pending delay which in turn would reject the resulting promise.</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>promise</span> = async(<span class="pl-k">function</span> (): <span class="pl-smi">void</span> {
+    <span class="pl-k">echo</span> <span class="pl-s">'a'</span>;
+    delay(<span class="pl-c1">3.0</span>);
+    <span class="pl-k">echo</span> <span class="pl-s">'b'</span>;
+})();
+
+<span class="pl-v">Loop</span>::<span class="pl-en">addTimer</span>(<span class="pl-c1">2.0</span>, <span class="pl-k">function</span> () <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>promise</span>): <span class="pl-smi">void</span> {
+    <span class="pl-s1"><span class="pl-c1">$</span>promise</span>-&gt;<span class="pl-en">cancel</span>();
+});
+
+<span class="pl-c">// prints "a" at t=0.0s</span>
+<span class="pl-c">// rejects $promise at t=2.0</span>
+<span class="pl-c">// never prints "b"</span></pre></div>
 <h3><a id="parallel" class="anchor" aria-hidden="true" href="#parallel"><span aria-hidden="true" class="octicon octicon-link"></span></a>parallel()</h3>
-<p>The <code>parallel(iterable&lt;callable():PromiseInterface&lt;mixed,Exception&gt;&gt; $tasks): PromiseInterface&lt;array&lt;mixed&gt;,Exception&gt;</code> function can be used
+<p>The <code>parallel(iterable&lt;callable():PromiseInterface&lt;mixed&gt;&gt; $tasks): PromiseInterface&lt;array&lt;mixed&gt;&gt;</code> function can be used
 like this:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-ent">&lt;?php</span>
 
@@ -576,7 +653,7 @@ like this:</p>
     <span class="pl-k">echo</span> <span class="pl-s">'Error: '</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
 });</pre></div>
 <h3><a id="series" class="anchor" aria-hidden="true" href="#series"><span aria-hidden="true" class="octicon octicon-link"></span></a>series()</h3>
-<p>The <code>series(iterable&lt;callable():PromiseInterface&lt;mixed,Exception&gt;&gt; $tasks): PromiseInterface&lt;array&lt;mixed&gt;,Exception&gt;</code> function can be used
+<p>The <code>series(iterable&lt;callable():PromiseInterface&lt;mixed&gt;&gt; $tasks): PromiseInterface&lt;array&lt;mixed&gt;&gt;</code> function can be used
 like this:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-ent">&lt;?php</span>
 
@@ -613,7 +690,7 @@ like this:</p>
     <span class="pl-k">echo</span> <span class="pl-s">'Error: '</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
 });</pre></div>
 <h3><a id="waterfall" class="anchor" aria-hidden="true" href="#waterfall"><span aria-hidden="true" class="octicon octicon-link"></span></a>waterfall()</h3>
-<p>The <code>waterfall(iterable&lt;callable(mixed=):PromiseInterface&lt;mixed,Exception&gt;&gt; $tasks): PromiseInterface&lt;mixed,Exception&gt;</code> function can be used
+<p>The <code>waterfall(iterable&lt;callable(mixed=):PromiseInterface&lt;mixed&gt;&gt; $tasks): PromiseInterface&lt;mixed&gt;</code> function can be used
 like this:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-ent">&lt;?php</span>
 
@@ -646,7 +723,7 @@ like this:</p>
 <a href="https://getcomposer.org/doc/00-intro.md" rel="nofollow">New to Composer?</a></p>
 <p>This project follows <a href="https://semver.org/" rel="nofollow">SemVer</a>.
 This will install the latest supported version from this branch:</p>
-<div class="highlight highlight-source-shell"><pre>composer require react/async:^4</pre></div>
+<div class="highlight highlight-source-shell"><pre>composer require react/async:^4.1</pre></div>
 <p>See also the <a href="changelog.html">CHANGELOG</a> for details about version upgrades.</p>
 <p>This project aims to run on any platform and thus does not require any PHP
 extensions and supports running on PHP 8.1+.
@@ -665,6 +742,8 @@ dependencies <a href="https://getcomposer.org/" rel="nofollow">through Composer<
 <div class="highlight highlight-source-shell"><pre>composer install</pre></div>
 <p>To run the test suite, go to the project root and run:</p>
 <div class="highlight highlight-source-shell"><pre>vendor/bin/phpunit</pre></div>
+<p>On top of this, we use PHPStan on max level to ensure type safety across the project:</p>
+<div class="highlight highlight-source-shell"><pre>vendor/bin/phpstan</pre></div>
 <h2><a id="license" class="anchor" aria-hidden="true" href="#license"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
 <p>MIT, see <a href="license.html">LICENSE file</a>.</p>
 <p>This project is heavily influenced by <a href="https://github.com/caolan/async">async.js</a>.</p>
@@ -676,7 +755,7 @@ dependencies <a href="https://getcomposer.org/" rel="nofollow">through Composer<
 
                             <div class="version-selector">
                                 <button class="version-selector__button version-selector__button--latest" data-ctrly="component-version-selector" data-version-selector-control>
-                                    v4.0.0
+                                    v4.1.0
 
                                     <i class="icon-chevron-down" aria-hidden="true"></i>
                                     <i class="icon-chevron-up" aria-hidden="true"></i>
@@ -692,6 +771,21 @@ dependencies <a href="https://getcomposer.org/" rel="nofollow">through Composer<
                                             </a>
                                         </li>
                                                                                                                                                                                                                     <li>
+                                                <a href="https://github.com/reactphp/async/tree/v3.1.0#readme" class="version-selector__version">
+                                                    v3.1.0
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
+                                                <a href="https://github.com/reactphp/async/tree/v2.1.0#readme" class="version-selector__version">
+                                                    v2.1.0
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
+                                                <a href="https://github.com/reactphp/async/tree/v4.0.0#readme" class="version-selector__version">
+                                                    v4.0.0
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
                                                 <a href="https://github.com/reactphp/async/tree/v3.0.0#readme" class="version-selector__version">
                                                     v3.0.0
                                                 </a>
@@ -731,19 +825,19 @@ dependencies <a href="https://getcomposer.org/" rel="nofollow">through Composer<
 
                         <h3 class="component-info__subtitle">Installation</h3>
 
-                        <div class="highlight highlight-source-shell"><pre>composer require react/async:^4.0.0</pre></div>
+                        <div class="highlight highlight-source-shell"><pre>composer require react/async:^4.1.0</pre></div>
 
                         <h3 class="component-info__subtitle">Contributors</h3>
 
                         <ul class="component-info__contributors">
                                                     <li>
                                 <a href="https://github.com/clue">
-                                    <img src="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=80 2x" alt="clue" title="clue (52 contributions)">
+                                    <img src="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=80 2x" alt="clue" title="clue (53 contributions)">
                                 </a>
                             </li>
                                                     <li>
                                 <a href="https://github.com/WyriHaximus">
-                                    <img src="https://avatars.githubusercontent.com/u/147145?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/147145?v=4&amp;s=80 2x" alt="WyriHaximus" title="WyriHaximus (33 contributions)">
+                                    <img src="https://avatars.githubusercontent.com/u/147145?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/147145?v=4&amp;s=80 2x" alt="WyriHaximus" title="WyriHaximus (34 contributions)">
                                 </a>
                             </li>
                                                     <li>
@@ -753,7 +847,7 @@ dependencies <a href="https://getcomposer.org/" rel="nofollow">through Composer<
                             </li>
                                                     <li>
                                 <a href="https://github.com/SimonFrings">
-                                    <img src="https://avatars.githubusercontent.com/u/44357440?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/44357440?v=4&amp;s=80 2x" alt="SimonFrings" title="SimonFrings (3 contribution)">
+                                    <img src="https://avatars.githubusercontent.com/u/44357440?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/44357440?v=4&amp;s=80 2x" alt="SimonFrings" title="SimonFrings (4 contribution)">
                                 </a>
                             </li>
                                                     <li>
@@ -780,7 +874,7 @@ dependencies <a href="https://getcomposer.org/" rel="nofollow">through Composer<
         <mask id="reactphp-async-participation-sparkline" x="0" y="0" width="320" height="40" >
             <polyline 
                 transform="translate(0, 40) scale(1,-1)"
-                points="0,2 6,4 12,3 18,2 24,1 30,1 36,1 42,1 48,2 54,2 60,1 66,1 72,1 78,1 84,1 90,1 96,1 102,1 108,4 114,2 120,1 126,1 132,1 138,1 144,3 150,1 156,1 162,1 168,1 174,1 180,1 186,3 192,1 198,1 204,1 210,1 216,1 222,1 228,1 234,1 240,1 246,1 252,1 258,1 264,1 270,1 276,1 282,1 288,1 294,1 300,1 306,2" 
+                points="0,4 6,3 12,2 18,1 24,1 30,1 36,1 42,2 48,2 54,1 60,1 66,1 72,1 78,1 84,1 90,1 96,1 102,4 108,2 114,1 120,1 126,1 132,1 138,3 144,1 150,1 156,1 162,1 168,1 174,1 180,3 186,1 192,1 198,1 204,1 210,1 216,1 222,1 228,1 234,1 240,1 246,1 252,2 258,1 264,1 270,1 276,1 282,1 288,1 294,1 300,2 306,3" 
                 fill="transparent" 
                 stroke="#40a977" 
                 stroke-width="2"

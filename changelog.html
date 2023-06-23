@@ -97,7 +97,7 @@
                         Async
 
                         <span class="off-canvas-menu__version">
-                            v4.0.0
+                            v4.1.0
                         </span>
                     </a>
                 </li>
@@ -222,7 +222,7 @@
 
 
             <ul class="toc">
-            <li><a href="#2023" title="Jump to year 2023 (6 releases)">2023</a></li>
+            <li><a href="#2023" title="Jump to year 2023 (9 releases)">2023</a></li>
             <li><a href="#2022" title="Jump to year 2022 (17 releases)">2022</a></li>
             <li><a href="#2021" title="Jump to year 2021 (25 releases)">2021</a></li>
             <li><a href="#2020" title="Jump to year 2020 (16 releases)">2020</a></li>
@@ -241,6 +241,114 @@
         2023
     </h2>
 
+    
+                        <h3>
+        <a id="async-410-2023-06-22" class="anchor" href="#async-410-2023-06-22" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        Async 4.1.0
+
+        <small>
+            (2023-06-22)
+            <a href="https://github.com/reactphp/async/releases/tag/v4.1.0" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul dir="auto">
+<li>
+<p dir="auto">Feature: Add new <code class="notranslate">delay()</code> function to delay program execution.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1478701897" data-permission-text="Title is private" data-url="https://github.com/reactphp/async/issues/69" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/async/pull/69/hovercard" href="https://github.com/reactphp/async/pull/69">#69</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+<div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-k">echo</span> <span class="pl-s">'a'</span>;
+<span class="pl-v">Loop</span>::<span class="pl-en">addTimer</span>(<span class="pl-c1">1.0</span>, <span class="pl-k">function</span> () {
+    <span class="pl-k">echo</span> <span class="pl-s">'b'</span>;
+});
+<span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Async</span>\delay</span>(<span class="pl-c1">3.0</span>);
+<span class="pl-k">echo</span> <span class="pl-s">'c'</span>;
+
+<span class="pl-c">// prints "a" at t=0.0s</span>
+<span class="pl-c">// prints "b" at t=1.0s</span>
+<span class="pl-c">// prints "c" at t=3.0s</span></pre></div>
+</li>
+<li>
+<p dir="auto">Update test suite, add PHPStan with <code class="notranslate">max</code> level and report failed assertions.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1423647528" data-permission-text="Title is private" data-url="https://github.com/reactphp/async/issues/66" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/async/pull/66/hovercard" href="https://github.com/reactphp/async/pull/66">#66</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1754990010" data-permission-text="Title is private" data-url="https://github.com/reactphp/async/issues/76" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/async/pull/76/hovercard" href="https://github.com/reactphp/async/pull/76">#76</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1338077591" data-permission-text="Title is private" data-url="https://github.com/reactphp/async/issues/61" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/async/pull/61/hovercard" href="https://github.com/reactphp/async/pull/61">#61</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1556166717" data-permission-text="Title is private" data-url="https://github.com/reactphp/async/issues/73" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/async/pull/73/hovercard" href="https://github.com/reactphp/async/pull/73">#73</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/WyriHaximus/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/WyriHaximus">@WyriHaximus</a>)</p>
+</li>
+</ul>
+
+    <hr>
+    
+                        <h3>
+        <a id="async-310-2023-06-22" class="anchor" href="#async-310-2023-06-22" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        Async 3.1.0
+
+        <small>
+            (2023-06-22)
+            <a href="https://github.com/reactphp/async/releases/tag/v3.1.0" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul dir="auto">
+<li>
+<p dir="auto">Feature: Add new <code class="notranslate">delay()</code> function to delay program execution.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1481843312" data-permission-text="Title is private" data-url="https://github.com/reactphp/async/issues/71" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/async/pull/71/hovercard" href="https://github.com/reactphp/async/pull/71">#71</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+<div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-k">echo</span> <span class="pl-s">'a'</span>;
+<span class="pl-v">Loop</span>::<span class="pl-en">addTimer</span>(<span class="pl-c1">1.0</span>, <span class="pl-k">function</span> () {
+    <span class="pl-k">echo</span> <span class="pl-s">'b'</span>;
+});
+<span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Async</span>\delay</span>(<span class="pl-c1">3.0</span>);
+<span class="pl-k">echo</span> <span class="pl-s">'c'</span>;
+
+<span class="pl-c">// prints "a" at t=0.0s</span>
+<span class="pl-c">// prints "b" at t=1.0s</span>
+<span class="pl-c">// prints "c" at t=3.0s</span></pre></div>
+</li>
+<li>
+<p dir="auto">Update test suite, add PHPStan with <code class="notranslate">max</code> level and report failed assertions.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1428762865" data-permission-text="Title is private" data-url="https://github.com/reactphp/async/issues/67" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/async/pull/67/hovercard" href="https://github.com/reactphp/async/pull/67">#67</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1756301247" data-permission-text="Title is private" data-url="https://github.com/reactphp/async/issues/77" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/async/pull/77/hovercard" href="https://github.com/reactphp/async/pull/77">#77</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1338077392" data-permission-text="Title is private" data-url="https://github.com/reactphp/async/issues/60" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/async/pull/60/hovercard" href="https://github.com/reactphp/async/pull/60">#60</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1556166750" data-permission-text="Title is private" data-url="https://github.com/reactphp/async/issues/74" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/async/pull/74/hovercard" href="https://github.com/reactphp/async/pull/74">#74</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/WyriHaximus/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/WyriHaximus">@WyriHaximus</a>)</p>
+</li>
+</ul>
+
+    <hr>
+    
+                        <h3>
+        <a id="async-210-2023-06-22" class="anchor" href="#async-210-2023-06-22" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        Async 2.1.0
+
+        <small>
+            (2023-06-22)
+            <a href="https://github.com/reactphp/async/releases/tag/v2.1.0" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul dir="auto">
+<li>
+<p dir="auto">Feature: Add new <code class="notranslate">delay()</code> function to delay program execution.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1481880823" data-permission-text="Title is private" data-url="https://github.com/reactphp/async/issues/72" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/async/pull/72/hovercard" href="https://github.com/reactphp/async/pull/72">#72</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+<div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-k">echo</span> <span class="pl-s">'a'</span>;
+<span class="pl-v">Loop</span>::<span class="pl-en">addTimer</span>(<span class="pl-c1">1.0</span>, <span class="pl-k">function</span> () {
+    <span class="pl-k">echo</span> <span class="pl-s">'b'</span>;
+});
+<span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Async</span>\delay</span>(<span class="pl-c1">3.0</span>);
+<span class="pl-k">echo</span> <span class="pl-s">'c'</span>;
+
+<span class="pl-c">// prints "a" at t=0.0s</span>
+<span class="pl-c">// prints "b" at t=1.0s</span>
+<span class="pl-c">// prints "c" at t=3.0s</span></pre></div>
+</li>
+<li>
+<p dir="auto">Update test suite, run tests on PHP 8.2 and report failed assertions.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1338077207" data-permission-text="Title is private" data-url="https://github.com/reactphp/async/issues/59" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/async/pull/59/hovercard" href="https://github.com/reactphp/async/pull/59">#59</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1556166783" data-permission-text="Title is private" data-url="https://github.com/reactphp/async/issues/75" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/async/pull/75/hovercard" href="https://github.com/reactphp/async/pull/75">#75</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/WyriHaximus/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/WyriHaximus">@WyriHaximus</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1428763691" data-permission-text="Title is private" data-url="https://github.com/reactphp/async/issues/68" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/async/pull/68/hovercard" href="https://github.com/reactphp/async/pull/68">#68</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+</li>
+</ul>
+
+    <hr>
     
                         <h3>
         <a id="stream-130-2023-06-16" class="anchor" href="#stream-130-2023-06-16" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
@@ -1321,11 +1429,12 @@ message should give the most relevant details for any connection issues:</p>
 (<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1022868983" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise-stream/issues/26" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise-stream/pull/26/hovercard" href="https://github.com/reactphp/promise-stream/pull/26">#26</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 <p dir="auto">For most common use cases this means that simply reporting the <code class="notranslate">Exception</code><br>
 message should give the most relevant details for any issues:</p>
-<div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Promise</span>\<span class="pl-v">Stream</span>\buffer</span>(<span class="pl-s1"><span class="pl-c1">$</span>stream</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-smi">string</span> <span class="pl-s1"><span class="pl-c1">$</span>contents</span>) {
-    <span class="pl-c">// …</span>
-}, <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">Exception</span></span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>) {
-    <span class="pl-k">echo</span> <span class="pl-s">'Error:'</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
-});</pre></div>
+<pre lang="php" class="notranslate"><code class="notranslate">React\Promise\Stream\buffer($stream)-&gt;then(function (string $contents) {
+    // …
+}, function (Exception $e) {
+    echo 'Error:' . $e-&gt;getMessage() . PHP_EOL;
+});
+</code></pre>
 </li>
 <li>
 <p dir="auto">Improve documentation, describe promise and stream data types.<br>
