@@ -179,7 +179,7 @@
                         PromiseStream
 
                         <span class="off-canvas-menu__version">
-                            v1.5.0
+                            v1.6.0
                         </span>
                     </a>
                 </li>
@@ -222,7 +222,7 @@
 
 
             <ul class="toc">
-            <li><a href="#2023" title="Jump to year 2023 (9 releases)">2023</a></li>
+            <li><a href="#2023" title="Jump to year 2023 (10 releases)">2023</a></li>
             <li><a href="#2022" title="Jump to year 2022 (17 releases)">2022</a></li>
             <li><a href="#2021" title="Jump to year 2021 (25 releases)">2021</a></li>
             <li><a href="#2020" title="Jump to year 2020 (16 releases)">2020</a></li>
@@ -241,6 +241,36 @@
         2023
     </h2>
 
+    
+                        <h3>
+        <a id="promisestream-160-2023-07-07" class="anchor" href="#promisestream-160-2023-07-07" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        PromiseStream 1.6.0
+
+        <small>
+            (2023-07-07)
+            <a href="https://github.com/reactphp/promise-stream/releases/tag/v1.6.0" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul dir="auto">
+<li>
+<p dir="auto">Feature: Update unwrapped stream to avoid unhandled promise rejections.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1793110495" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise-stream/issues/37" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise-stream/pull/37/hovercard" href="https://github.com/reactphp/promise-stream/pull/37">#37</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+</li>
+<li>
+<p dir="auto">Feature: Improve <code class="notranslate">first()</code> promise resolution to clean up any garbage references.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1628508215" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise-stream/issues/36" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise-stream/pull/36/hovercard" href="https://github.com/reactphp/promise-stream/pull/36">#36</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/lucasnetau/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/lucasnetau">@lucasnetau</a>)</p>
+</li>
+<li>
+<p dir="auto">Improve test suite and project setup and report failed assertions.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1447648259" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise-stream/issues/34" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise-stream/pull/34/hovercard" href="https://github.com/reactphp/promise-stream/pull/34">#34</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1551815839" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise-stream/issues/35" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise-stream/pull/35/hovercard" href="https://github.com/reactphp/promise-stream/pull/35">#35</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/WyriHaximus/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/WyriHaximus">@WyriHaximus</a>)</p>
+</li>
+</ul>
+
+    <hr>
     
                         <h3>
         <a id="async-410-2023-06-22" class="anchor" href="#async-410-2023-06-22" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
@@ -1429,12 +1459,11 @@ message should give the most relevant details for any connection issues:</p>
 (<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1022868983" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise-stream/issues/26" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise-stream/pull/26/hovercard" href="https://github.com/reactphp/promise-stream/pull/26">#26</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 <p dir="auto">For most common use cases this means that simply reporting the <code class="notranslate">Exception</code><br>
 message should give the most relevant details for any issues:</p>
-<pre lang="php" class="notranslate"><code class="notranslate">React\Promise\Stream\buffer($stream)-&gt;then(function (string $contents) {
-    // …
-}, function (Exception $e) {
-    echo 'Error:' . $e-&gt;getMessage() . PHP_EOL;
-});
-</code></pre>
+<div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Promise</span>\<span class="pl-v">Stream</span>\buffer</span>(<span class="pl-s1"><span class="pl-c1">$</span>stream</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-smi">string</span> <span class="pl-s1"><span class="pl-c1">$</span>contents</span>) {
+    <span class="pl-c">// …</span>
+}, <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">Exception</span></span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>) {
+    <span class="pl-k">echo</span> <span class="pl-s">'Error:'</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
+});</pre></div>
 </li>
 <li>
 <p dir="auto">Improve documentation, describe promise and stream data types.<br>
