@@ -88,7 +88,7 @@
                         Promise
 
                         <span class="off-canvas-menu__version">
-                            v2.10.0
+                            v3.0.0
                         </span>
                     </a>
                 </li>
@@ -221,7 +221,7 @@
                     <h1>Promise Changelog</h1>
 
     <ul class="toc">
-            <li><a href="#2023" title="Jump to year 2023 (1 release)">2023</a></li>
+            <li><a href="#2023" title="Jump to year 2023 (2 releases)">2023</a></li>
             <li><a href="#2022" title="Jump to year 2022 (1 release)">2022</a></li>
             <li><a href="#2020" title="Jump to year 2020 (1 release)">2020</a></li>
             <li><a href="#2019" title="Jump to year 2019 (1 release)">2019</a></li>
@@ -239,6 +239,162 @@
         2023
     </h2>
 
+    
+            <h3>
+        <a id="300-2023-07-11" class="anchor" href="#300-2023-07-11" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        3.0.0
+
+        <small>
+            (2023-07-11)
+            <a href="https://github.com/reactphp/promise/releases/tag/v3.0.0" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <p dir="auto">A major new feature release, see <a href="https://clue.engineering/2023/announcing-reactphp-promise-v3" rel="nofollow"><strong>release announcement</strong></a>.</p>
+<ul dir="auto">
+<li>
+<p dir="auto">We'd like to emphasize that this component is production ready and battle-tested.<br>
+We plan to support all long-term support (LTS) releases for at least 24 months,<br>
+so you have a rock-solid foundation to build on top of.</p>
+</li>
+<li>
+<p dir="auto">The v3 release will be the way forward for this package. However, we will still<br>
+actively support v2 and v1 to provide a smooth upgrade path for those not yet<br>
+on the latest versions.</p>
+</li>
+</ul>
+<p dir="auto">This update involves some major new features and a minor BC break over the<br>
+<code class="notranslate">v2.0.0</code> release. We've tried hard to avoid BC breaks where possible and<br>
+minimize impact otherwise. We expect that most consumers of this package will be<br>
+affected by BC breaks, but updating should take no longer than a few minutes.<br>
+See below for more details:</p>
+<ul dir="auto">
+<li>
+<p dir="auto">BC break: PHP 8.1+ recommended, PHP 7.1+ required.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="435220838" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/138" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/138/hovercard" href="https://github.com/reactphp/promise/pull/138">#138</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="503454885" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/149" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/149/hovercard" href="https://github.com/reactphp/promise/pull/149">#149</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/WyriHaximus/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/WyriHaximus">@WyriHaximus</a>)</p>
+</li>
+<li>
+<p dir="auto">Feature / BC break: The <code class="notranslate">PromiseInterface</code> now includes the functionality of the old <del><code class="notranslate">ExtendedPromiseInterface</code></del> and <del><code class="notranslate">CancellablePromiseInterface</code></del>.<br>
+Each promise now always includes the <code class="notranslate">then()</code>, <code class="notranslate">catch()</code>, <code class="notranslate">finally()</code> and <code class="notranslate">cancel()</code> methods.<br>
+The new <code class="notranslate">catch()</code> and <code class="notranslate">finally()</code> methods replace the deprecated <del><code class="notranslate">otherwise()</code></del> and <del><code class="notranslate">always()</code></del> methods which continue to exist for BC reasons.<br>
+The old <del><code class="notranslate">ExtendedPromiseInterface</code></del> and <del><code class="notranslate">CancellablePromiseInterface</code></del> are no longer needed and have been removed as a consequence.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="197011154" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/75" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/75/hovercard" href="https://github.com/reactphp/promise/pull/75">#75</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/jsor/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/jsor">@jsor</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1111820388" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/208" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/208/hovercard" href="https://github.com/reactphp/promise/pull/208">#208</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a> and <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/WyriHaximus/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/WyriHaximus">@WyriHaximus</a>)</p>
+<div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-c">// old (multiple interfaces may or may not be implemented)</span>
+assert(<span class="pl-s1"><span class="pl-c1">$</span>promise</span> instanceof <span class="pl-v">PromiseInterface</span>);
+assert(method_exists(<span class="pl-s1"><span class="pl-c1">$</span>promise</span>, <span class="pl-s">'then'</span>));
+<span class="pl-k">if</span> (<span class="pl-s1"><span class="pl-c1">$</span>promise</span> instanceof <span class="pl-v">ExtendedPromiseInterface</span>) { assert(method_exists(<span class="pl-s1"><span class="pl-c1">$</span>promise</span>, <span class="pl-s">'otherwise'</span>)); }
+<span class="pl-k">if</span> (<span class="pl-s1"><span class="pl-c1">$</span>promise</span> instanceof <span class="pl-v">ExtendedPromiseInterface</span>) { assert(method_exists(<span class="pl-s1"><span class="pl-c1">$</span>promise</span>, <span class="pl-s">'always'</span>)); }
+<span class="pl-k">if</span> (<span class="pl-s1"><span class="pl-c1">$</span>promise</span> instanceof <span class="pl-v">CancellablePromiseInterface</span>) { assert(method_exists(<span class="pl-s1"><span class="pl-c1">$</span>promise</span>, <span class="pl-s">'cancel'</span>)); }
+
+<span class="pl-c">// new (single PromiseInterface with all methods)</span>
+assert(<span class="pl-s1"><span class="pl-c1">$</span>promise</span> instanceof <span class="pl-v">PromiseInterface</span>);
+assert(method_exists(<span class="pl-s1"><span class="pl-c1">$</span>promise</span>, <span class="pl-s">'then'</span>));
+assert(method_exists(<span class="pl-s1"><span class="pl-c1">$</span>promise</span>, <span class="pl-s">'catch'</span>));
+assert(method_exists(<span class="pl-s1"><span class="pl-c1">$</span>promise</span>, <span class="pl-s">'finally'</span>));
+assert(method_exists(<span class="pl-s1"><span class="pl-c1">$</span>promise</span>, <span class="pl-s">'cancel'</span>));</pre></div>
+</li>
+<li>
+<p dir="auto">Feature / BC break: Improve type safety of promises. Require <code class="notranslate">mixed</code> fulfillment value argument and <code class="notranslate">Throwable</code> (or <code class="notranslate">Exception</code>) as rejection reason.<br>
+Add PHPStan template types to ensure strict types for <code class="notranslate">resolve(T $value): PromiseInterface&lt;T&gt;</code> and <code class="notranslate">reject(Throwable $reason): PromiseInterface&lt;never&gt;</code>.<br>
+It is no longer possible to resolve a promise without a value (use <code class="notranslate">null</code> instead) or reject a promise without a reason (use <code class="notranslate">Throwable</code> instead).<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="212537435" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/93" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/93/hovercard" href="https://github.com/reactphp/promise/pull/93">#93</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="442133247" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/141" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/141/hovercard" href="https://github.com/reactphp/promise/pull/141">#141</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="442355884" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/142" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/142/hovercard" href="https://github.com/reactphp/promise/pull/142">#142</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/jsor/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/jsor">@jsor</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="435220838" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/138" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/138/hovercard" href="https://github.com/reactphp/promise/pull/138">#138</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="503454885" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/149" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/149/hovercard" href="https://github.com/reactphp/promise/pull/149">#149</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1772846597" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/247" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/247/hovercard" href="https://github.com/reactphp/promise/pull/247">#247</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/WyriHaximus/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/WyriHaximus">@WyriHaximus</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1149271061" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/213" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/213/hovercard" href="https://github.com/reactphp/promise/pull/213">#213</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1765690467" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/246" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/246/hovercard" href="https://github.com/reactphp/promise/pull/246">#246</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+<div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-c">// old (arguments used to be optional)</span>
+<span class="pl-s1"><span class="pl-c1">$</span>promise</span> = resolve();
+<span class="pl-s1"><span class="pl-c1">$</span>promise</span> = reject();
+
+<span class="pl-c">// new (already supported before)</span>
+<span class="pl-s1"><span class="pl-c1">$</span>promise</span> = resolve(<span class="pl-c1">null</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>promise</span> = reject(<span class="pl-k">new</span> <span class="pl-v">RuntimeException</span>());</pre></div>
+</li>
+<li>
+<p dir="auto">Feature / BC break: Report all unhandled rejections by default and remove <del><code class="notranslate">done()</code></del> method.<br>
+Add new <code class="notranslate">set_rejection_handler()</code> function to set the global rejection handler for unhandled promise rejections.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1791714349" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/248" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/248/hovercard" href="https://github.com/reactphp/promise/pull/248">#248</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1797287944" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/249" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/249/hovercard" href="https://github.com/reactphp/promise/pull/249">#249</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1258040087" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/224" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/224/hovercard" href="https://github.com/reactphp/promise/pull/224">#224</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+<div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-c">// Unhandled promise rejection with RuntimeException: Unhandled in example.php:2</span>
+reject(<span class="pl-k">new</span> <span class="pl-v">RuntimeException</span>(<span class="pl-s">'Unhandled'</span>));</pre></div>
+</li>
+<li>
+<p dir="auto">BC break: Remove all deprecated APIs and reduce API surface.<br>
+Remove <del><code class="notranslate">some()</code></del>, <del><code class="notranslate">map()</code></del>, <del><code class="notranslate">reduce()</code></del> functions, use <code class="notranslate">any()</code> and <code class="notranslate">all()</code> functions instead.<br>
+Remove internal <del><code class="notranslate">FulfilledPromise</code></del> and <del><code class="notranslate">RejectedPromise</code></del> classes, use <code class="notranslate">resolve()</code> and <code class="notranslate">reject()</code> functions instead.<br>
+Remove legacy promise progress API (deprecated third argument to <code class="notranslate">then()</code> method) and deprecated <del><code class="notranslate">LazyPromise</code></del> class.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="91941425" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/32" data-hovercard-type="issue" data-hovercard-url="/reactphp/promise/issues/32/hovercard" href="https://github.com/reactphp/promise/issues/32">#32</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="252836323" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/98" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/98/hovercard" href="https://github.com/reactphp/promise/pull/98">#98</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/jsor/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/jsor">@jsor</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="577485347" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/164" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/164/hovercard" href="https://github.com/reactphp/promise/pull/164">#164</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1239129570" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/219" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/219/hovercard" href="https://github.com/reactphp/promise/pull/219">#219</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1239150668" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/220" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/220/hovercard" href="https://github.com/reactphp/promise/pull/220">#220</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+</li>
+<li>
+<p dir="auto">BC break: Make all classes final to encourage composition over inheritance.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="199368802" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/80" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/80/hovercard" href="https://github.com/reactphp/promise/pull/80">#80</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/jsor/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/jsor">@jsor</a>)</p>
+</li>
+<li>
+<p dir="auto">Feature / BC break: Require <code class="notranslate">array</code> (or <code class="notranslate">iterable</code>) type for <code class="notranslate">all()</code> + <code class="notranslate">race()</code> + <code class="notranslate">any()</code> functions and bring in line with ES6 specification.<br>
+These functions now require a single argument with a variable number of promises or values as input.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1267177011" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/225" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/225/hovercard" href="https://github.com/reactphp/promise/pull/225">#225</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="93223397" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/35" data-hovercard-type="issue" data-hovercard-url="/reactphp/promise/issues/35/hovercard" href="https://github.com/reactphp/promise/issues/35">#35</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/jsor/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/jsor">@jsor</a>)</p>
+</li>
+<li>
+<p dir="auto">Fix / BC break: Fix <code class="notranslate">race()</code> to return a forever pending promise when called with an empty <code class="notranslate">array</code> (or <code class="notranslate">iterable</code>) and bring in line with ES6 specification.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="200029511" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/83" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/83/hovercard" href="https://github.com/reactphp/promise/pull/83">#83</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/jsor/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/jsor">@jsor</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1267177011" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/225" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/225/hovercard" href="https://github.com/reactphp/promise/pull/225">#225</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+</li>
+<li>
+<p dir="auto">Minor performance improvements by initializing <code class="notranslate">Deferred</code> in the constructor and avoiding <code class="notranslate">call_user_func()</code> calls.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="527617650" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/151" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/151/hovercard" href="https://github.com/reactphp/promise/pull/151">#151</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/WyriHaximus/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/WyriHaximus">@WyriHaximus</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="648213199" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/171" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/171/hovercard" href="https://github.com/reactphp/promise/pull/171">#171</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/Kubo2/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/Kubo2">@Kubo2</a>)</p>
+</li>
+<li>
+<p dir="auto">Minor documentation improvements.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="289158295" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/110" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/110/hovercard" href="https://github.com/reactphp/promise/pull/110">#110</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/seregazhuk/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/seregazhuk">@seregazhuk</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="393694474" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/132" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/132/hovercard" href="https://github.com/reactphp/promise/pull/132">#132</a> by @CharlotteDunois, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="473333145" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/145" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/145/hovercard" href="https://github.com/reactphp/promise/pull/145">#145</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/danielecr/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/danielecr">@danielecr</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="684827338" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/178" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/178/hovercard" href="https://github.com/reactphp/promise/pull/178">#178</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/WyriHaximus/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/WyriHaximus">@WyriHaximus</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="879626361" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/189" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/189/hovercard" href="https://github.com/reactphp/promise/pull/189">#189</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/srdante/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/srdante">@srdante</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1132267511" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/212" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/212/hovercard" href="https://github.com/reactphp/promise/pull/212">#212</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1173386134" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/214" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/214/hovercard" href="https://github.com/reactphp/promise/pull/214">#214</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1420614273" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/239" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/239/hovercard" href="https://github.com/reactphp/promise/pull/239">#239</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1455243071" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/243" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/243/hovercard" href="https://github.com/reactphp/promise/pull/243">#243</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/SimonFrings/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/SimonFrings">@SimonFrings</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1286796040" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/231" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/231/hovercard" href="https://github.com/reactphp/promise/pull/231">#231</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/nhedger/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/nhedger">@nhedger</a>)</p>
+</li>
+</ul>
+<p dir="auto">The following changes had to be ported to this release due to our branching<br>
+strategy, but also appeared in the <a href="https://github.com/reactphp/promise/tree/2.x"><code class="notranslate">2.x</code> branch</a>:</p>
+<ul dir="auto">
+<li>
+<p dir="auto">Feature: Support union types and address deprecation of <code class="notranslate">ReflectionType::getClass()</code> (PHP 8+).<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1019915238" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/197" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/197/hovercard" href="https://github.com/reactphp/promise/pull/197">#197</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/cdosoftei/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/cdosoftei">@cdosoftei</a> and <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/SimonFrings/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/SimonFrings">@SimonFrings</a>)</p>
+</li>
+<li>
+<p dir="auto">Feature: Support intersection types (PHP 8.1+).<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1124215827" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/209" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/209/hovercard" href="https://github.com/reactphp/promise/pull/209">#209</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/bzikarsky/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/bzikarsky">@bzikarsky</a>)</p>
+</li>
+<li>
+<p dir="auto">Feature: Support DNS types (PHP 8.2+).<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1366714206" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/236" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/236/hovercard" href="https://github.com/reactphp/promise/pull/236">#236</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/nhedger/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/nhedger">@nhedger</a>)</p>
+</li>
+<li>
+<p dir="auto">Feature: Port all memory improvements from <code class="notranslate">2.x</code> to <code class="notranslate">3.x</code>.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="527609035" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/150" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/150/hovercard" href="https://github.com/reactphp/promise/pull/150">#150</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a> and <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/WyriHaximus/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/WyriHaximus">@WyriHaximus</a>)</p>
+</li>
+<li>
+<p dir="auto">Fix: Fix checking whether cancellable promise is an object and avoid possible warning.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="574791812" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/161" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/161/hovercard" href="https://github.com/reactphp/promise/pull/161">#161</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/smscr/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/smscr">@smscr</a>)</p>
+</li>
+<li>
+<p dir="auto">Improve performance by prefixing all global functions calls with \ to skip the look up and resolve process and go straight to the global function.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="396589399" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/134" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/134/hovercard" href="https://github.com/reactphp/promise/pull/134">#134</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/WyriHaximus/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/WyriHaximus">@WyriHaximus</a>)</p>
+</li>
+<li>
+<p dir="auto">Improve test suite, update PHPUnit and PHP versions and add <code class="notranslate">.gitattributes</code> to exclude dev files from exports.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="278459502" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/107" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/107/hovercard" href="https://github.com/reactphp/promise/pull/107">#107</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/carusogabriel/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/carusogabriel">@carusogabriel</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="503425850" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/148" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/148/hovercard" href="https://github.com/reactphp/promise/pull/148">#148</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1338078347" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/234" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/234/hovercard" href="https://github.com/reactphp/promise/pull/234">#234</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/WyriHaximus/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/WyriHaximus">@WyriHaximus</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="530656190" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/153" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/153/hovercard" href="https://github.com/reactphp/promise/pull/153">#153</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/reedy/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/reedy">@reedy</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="575277005" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/162" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/162/hovercard" href="https://github.com/reactphp/promise/pull/162">#162</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1282118016" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/230" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/230/hovercard" href="https://github.com/reactphp/promise/pull/230">#230</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1428774641" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/240" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/240/hovercard" href="https://github.com/reactphp/promise/pull/240">#240</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="659124949" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/173" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/173/hovercard" href="https://github.com/reactphp/promise/pull/173">#173</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="680164892" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/177" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/177/hovercard" href="https://github.com/reactphp/promise/pull/177">#177</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="803600766" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/185" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/185/hovercard" href="https://github.com/reactphp/promise/pull/185">#185</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1053750438" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/199" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/199/hovercard" href="https://github.com/reactphp/promise/pull/199">#199</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/SimonFrings/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/SimonFrings">@SimonFrings</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="983475924" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/193" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/193/hovercard" href="https://github.com/reactphp/promise/pull/193">#193</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/woodongwong/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/woodongwong">@woodongwong</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1124984896" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/210" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/210/hovercard" href="https://github.com/reactphp/promise/pull/210">#210</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/bzikarsky/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/bzikarsky">@bzikarsky</a>)</p>
+</li>
+</ul>
+<p dir="auto">The following changes were originally planned for this release but later reverted<br>
+and are not part of the final release:</p>
+<ul dir="auto">
+<li>
+<p dir="auto">Add iterative callback queue handler to avoid recursion (later removed to improve Fiber support).<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="73331799" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/28" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/28/hovercard" href="https://github.com/reactphp/promise/pull/28">#28</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="199755635" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/82" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/82/hovercard" href="https://github.com/reactphp/promise/pull/82">#82</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="203208306" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/86" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/86/hovercard" href="https://github.com/reactphp/promise/pull/86">#86</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/jsor/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/jsor">@jsor</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="560836528" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/158" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/158/hovercard" href="https://github.com/reactphp/promise/pull/158">#158</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/WyriHaximus/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/WyriHaximus">@WyriHaximus</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1282076200" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/229" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/229/hovercard" href="https://github.com/reactphp/promise/pull/229">#229</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1399373478" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/238" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/238/hovercard" href="https://github.com/reactphp/promise/pull/238">#238</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+</li>
+<li>
+<p dir="auto">Trigger an <code class="notranslate">E_USER_ERROR</code> instead of throwing an exception from <code class="notranslate">done()</code> (later removed entire <code class="notranslate">done()</code> method to globally report unhandled rejections).<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="252713609" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/97" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/97/hovercard" href="https://github.com/reactphp/promise/pull/97">#97</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/jsor/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/jsor">@jsor</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1258040087" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/224" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/224/hovercard" href="https://github.com/reactphp/promise/pull/224">#224</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1791714349" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/248" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/248/hovercard" href="https://github.com/reactphp/promise/pull/248">#248</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+</li>
+<li>
+<p dir="auto">Add type declarations for <code class="notranslate">some()</code> (later removed entire <code class="notranslate">some()</code> function).<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="649109118" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/172" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/172/hovercard" href="https://github.com/reactphp/promise/pull/172">#172</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/WyriHaximus/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/WyriHaximus">@WyriHaximus</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1239129570" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/219" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/219/hovercard" href="https://github.com/reactphp/promise/pull/219">#219</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+</li>
+</ul>
+
+    <hr>
     
             <h3>
         <a id="2100-2023-05-02" class="anchor" href="#2100-2023-05-02" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
@@ -294,23 +450,23 @@
 
     <ul dir="auto">
 <li>
-<p dir="auto">Feature: Support union types and address deprecation of <code class="notranslate">ReflectionType::getClass()</code> (PHP 8+).<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1027301171" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/198" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/198/hovercard" href="https://github.com/reactphp/promise/pull/198">#198</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/cdosoftei/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/cdosoftei">@cdosoftei</a> and <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/SimonFrings/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/SimonFrings">@SimonFrings</a>)</p>
-<div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-s1"><span class="pl-c1">$</span>promise</span>-&gt;<span class="pl-en">otherwise</span>(<span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">OverflowException</span></span>|<span class="pl-smi"><span class="pl-smi">UnderflowException</span></span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>) {
+<p dir="auto">Feature: Support union types and address deprecation of <code>ReflectionType::getClass()</code> (PHP 8+).<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1027301171" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/198" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/198/hovercard" href="https://github.com/reactphp/promise/pull/198">#198</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/cdosoftei/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/cdosoftei">@cdosoftei</a> and <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/SimonFrings/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/SimonFrings">@SimonFrings</a>)</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>promise</span>-&gt;<span class="pl-en">otherwise</span>(<span class="pl-k">function</span> (<span class="pl-v">OverflowException</span>|<span class="pl-smi">UnderflowException</span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>) {
     <span class="pl-k">echo</span> <span class="pl-s">'Error: '</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
 });</pre></div>
 </li>
 <li>
 <p dir="auto">Feature: Support intersection types (PHP 8.1+).<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1009515307" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/195" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/195/hovercard" href="https://github.com/reactphp/promise/pull/195">#195</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/bzikarsky/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/bzikarsky">@bzikarsky</a>)</p>
-<div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-s1"><span class="pl-c1">$</span>promise</span>-&gt;<span class="pl-en">otherwise</span>(<span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">OverflowException</span></span>&amp;<span class="pl-v">CacheException</span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>) {
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1009515307" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/195" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/195/hovercard" href="https://github.com/reactphp/promise/pull/195">#195</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/bzikarsky/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/bzikarsky">@bzikarsky</a>)</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>promise</span>-&gt;<span class="pl-en">otherwise</span>(<span class="pl-k">function</span> (<span class="pl-smi">OverflowException</span>&amp;<span class="pl-v">CacheException</span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>) {
     <span class="pl-k">echo</span> <span class="pl-s">'Error: '</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
 });</pre></div>
 </li>
 <li>
 <p dir="auto">Improve test suite, use GitHub actions for continuous integration (CI),<br>
 update to PHPUnit 9, and add full core team to the license.<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="661766650" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/174" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/174/hovercard" href="https://github.com/reactphp/promise/pull/174">#174</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="793368470" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/183" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/183/hovercard" href="https://github.com/reactphp/promise/pull/183">#183</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="804340937" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/186" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/186/hovercard" href="https://github.com/reactphp/promise/pull/186">#186</a>, and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1054806183" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/201" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/201/hovercard" href="https://github.com/reactphp/promise/pull/201">#201</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/SimonFrings/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/SimonFrings">@SimonFrings</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1132148813" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/211" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/211/hovercard" href="https://github.com/reactphp/promise/pull/211">#211</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="661766650" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/174" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/174/hovercard" href="https://github.com/reactphp/promise/pull/174">#174</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="793368470" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/183" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/183/hovercard" href="https://github.com/reactphp/promise/pull/183">#183</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="804340937" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/186" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/186/hovercard" href="https://github.com/reactphp/promise/pull/186">#186</a>, and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1054806183" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/201" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/201/hovercard" href="https://github.com/reactphp/promise/pull/201">#201</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/SimonFrings/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/SimonFrings">@SimonFrings</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1132148813" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/211" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/211/hovercard" href="https://github.com/reactphp/promise/pull/211">#211</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 </li>
 </ul>
 
@@ -334,11 +490,11 @@ update to PHPUnit 9, and add full core team to the license.<br>
         </small>
     </h3>
 
-    <ul dir="auto">
+    <ul>
 <li>
-<p dir="auto">Mark <code class="notranslate">FulfilledPromise</code>, <code class="notranslate">RejectedPromise</code> and <code class="notranslate">LazyPromise</code> as deprecated for Promise v2 (and remove for Promise v3).<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="459181492" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/143" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/143/hovercard" href="https://github.com/reactphp/promise/pull/143">#143</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="577487588" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/165" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/165/hovercard" href="https://github.com/reactphp/promise/pull/165">#165</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
-<div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-c">// deprecated</span>
+<p>Mark <code>FulfilledPromise</code>, <code>RejectedPromise</code> and <code>LazyPromise</code> as deprecated for Promise v2 (and remove for Promise v3).<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="459181492" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/143" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/143/hovercard" href="https://github.com/reactphp/promise/pull/143">#143</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="577487588" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/165" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/165/hovercard" href="https://github.com/reactphp/promise/pull/165">#165</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-c">// deprecated</span>
 <span class="pl-s1"><span class="pl-c1">$</span>fulfilled</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Promise</span>\<span class="pl-v">FulfilledPromise</span>(<span class="pl-s1"><span class="pl-c1">$</span>value</span>);
 <span class="pl-s1"><span class="pl-c1">$</span>rejected</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Promise</span>\<span class="pl-v">RejectedPromise</span>(<span class="pl-s1"><span class="pl-c1">$</span>reason</span>);
 
@@ -347,20 +503,20 @@ update to PHPUnit 9, and add full core team to the license.<br>
 <span class="pl-s1"><span class="pl-c1">$</span>rejected</span> = <span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Promise</span>\reject</span>(<span class="pl-s1"><span class="pl-c1">$</span>reason</span>);</pre></div>
 </li>
 <li>
-<p dir="auto">Fix: Fix checking whether cancellable promise is an object and avoid possible warning.<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="615161685" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/168" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/168/hovercard" href="https://github.com/reactphp/promise/pull/168">#168</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/smscr/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/smscr">@smscr</a> and <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/jsor/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/jsor">@jsor</a>)</p>
+<p>Fix: Fix checking whether cancellable promise is an object and avoid possible warning.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="615161685" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/168" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/168/hovercard" href="https://github.com/reactphp/promise/pull/168">#168</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/smscr/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/smscr">@smscr</a> and <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/jsor/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/jsor">@jsor</a>)</p>
 </li>
 <li>
-<p dir="auto">Improve documentation and add docblocks to functions and interfaces.<br>
+<p>Improve documentation and add docblocks to functions and interfaces.<br>
 (<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="396878297" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/135" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/135/hovercard" href="https://github.com/reactphp/promise/pull/135">#135</a> by @CharlotteDunois)</p>
 </li>
 <li>
-<p dir="auto">Add <code class="notranslate">.gitattributes</code> to exclude dev files from exports.<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="530762040" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/154" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/154/hovercard" href="https://github.com/reactphp/promise/pull/154">#154</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/reedy/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/reedy">@reedy</a>)</p>
+<p>Add <code>.gitattributes</code> to exclude dev files from exports.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="530762040" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/154" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/154/hovercard" href="https://github.com/reactphp/promise/pull/154">#154</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/reedy/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/reedy">@reedy</a>)</p>
 </li>
 <li>
-<p dir="auto">Improve test suite, run tests on PHP 7.4 and update PHPUnit test setup.<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="575313779" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/163" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/163/hovercard" href="https://github.com/reactphp/promise/pull/163">#163</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+<p>Improve test suite, run tests on PHP 7.4 and update PHPUnit test setup.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="575313779" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/163" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/163/hovercard" href="https://github.com/reactphp/promise/pull/163">#163</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 </li>
 </ul>
 
@@ -384,9 +540,9 @@ update to PHPUnit 9, and add full core team to the license.<br>
         </small>
     </h3>
 
-    <ul dir="auto">
-<li>Fix: file_exists warning when resolving with long strings. (<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="392998751" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/130" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/130/hovercard" href="https://github.com/reactphp/promise/pull/130">#130</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/sbesselsen/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/sbesselsen">@sbesselsen</a>)</li>
-<li>Improve performance by prefixing all global functions calls with \ to skip the look up and resolve process and go straight to the global function. (<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="396586706" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/133" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/133/hovercard" href="https://github.com/reactphp/promise/pull/133">#133</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/WyriHaximus/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/WyriHaximus">@WyriHaximus</a>)</li>
+    <ul>
+<li>Fix: file_exists warning when resolving with long strings. (<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="392998751" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/130" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/130/hovercard" href="https://github.com/reactphp/promise/pull/130">#130</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/sbesselsen/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/sbesselsen">@sbesselsen</a>)</li>
+<li>Improve performance by prefixing all global functions calls with \ to skip the look up and resolve process and go straight to the global function. (<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="396586706" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/133" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/133/hovercard" href="https://github.com/reactphp/promise/pull/133">#133</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/WyriHaximus/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/WyriHaximus">@WyriHaximus</a>)</li>
 </ul>
 
     <hr>
@@ -409,9 +565,9 @@ update to PHPUnit 9, and add full core team to the license.<br>
         </small>
     </h3>
 
-    <ul dir="auto">
+    <ul>
 <li>Feature: Improve memory consumption for pending promises by using static internal callbacks without binding to self.<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="331547631" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/124" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/124/hovercard" href="https://github.com/reactphp/promise/pull/124">#124</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</li>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="331547631" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/124" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/124/hovercard" href="https://github.com/reactphp/promise/pull/124">#124</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</li>
 </ul>
 
     <hr>
@@ -429,35 +585,35 @@ update to PHPUnit 9, and add full core team to the license.<br>
         </small>
     </h3>
 
-    <ul dir="auto">
+    <ul>
 <li>
-<p dir="auto">Feature: Significantly improve memory consumption and performance by only passing resolver args<br>
+<p>Feature: Significantly improve memory consumption and performance by only passing resolver args<br>
 to resolver and canceller if callback requires them. Also use static callbacks without<br>
 binding to promise, clean up canceller function reference when they are no longer<br>
 needed and hide resolver and canceller references from call stack on PHP 7+.<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="317258762" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/113" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/113/hovercard" href="https://github.com/reactphp/promise/pull/113">#113</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="317708225" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/115" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/115/hovercard" href="https://github.com/reactphp/promise/pull/115">#115</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="318735141" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/116" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/116/hovercard" href="https://github.com/reactphp/promise/pull/116">#116</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="320180339" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/117" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/117/hovercard" href="https://github.com/reactphp/promise/pull/117">#117</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="320317368" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/118" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/118/hovercard" href="https://github.com/reactphp/promise/pull/118">#118</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="320624682" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/119" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/119/hovercard" href="https://github.com/reactphp/promise/pull/119">#119</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="330889368" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/123" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/123/hovercard" href="https://github.com/reactphp/promise/pull/123">#123</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
-<p dir="auto">These changes combined mean that rejecting promises with an <code class="notranslate">Exception</code> should<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="317258762" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/113" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/113/hovercard" href="https://github.com/reactphp/promise/pull/113">#113</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="317708225" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/115" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/115/hovercard" href="https://github.com/reactphp/promise/pull/115">#115</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="318735141" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/116" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/116/hovercard" href="https://github.com/reactphp/promise/pull/116">#116</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="320180339" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/117" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/117/hovercard" href="https://github.com/reactphp/promise/pull/117">#117</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="320317368" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/118" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/118/hovercard" href="https://github.com/reactphp/promise/pull/118">#118</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="320624682" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/119" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/119/hovercard" href="https://github.com/reactphp/promise/pull/119">#119</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="330889368" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/123" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/123/hovercard" href="https://github.com/reactphp/promise/pull/123">#123</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+<p>These changes combined mean that rejecting promises with an <code>Exception</code> should<br>
 no longer cause any internal circular references which could cause some unexpected<br>
 memory growth in previous versions. By explicitly avoiding and explicitly<br>
 cleaning up said references, we can avoid relying on PHP's circular garbage collector<br>
 to kick in which significantly improves performance when rejecting many promises.</p>
 </li>
 <li>
-<p dir="auto">Mark legacy progress support / notification API as deprecated<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="316930555" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/112" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/112/hovercard" href="https://github.com/reactphp/promise/pull/112">#112</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+<p>Mark legacy progress support / notification API as deprecated<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="316930555" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/112" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/112/hovercard" href="https://github.com/reactphp/promise/pull/112">#112</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 </li>
 <li>
-<p dir="auto">Recommend rejecting promises by throwing an exception<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="317591712" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/114" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/114/hovercard" href="https://github.com/reactphp/promise/pull/114">#114</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/jsor/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/jsor">@jsor</a>)</p>
+<p>Recommend rejecting promises by throwing an exception<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="317591712" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/114" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/114/hovercard" href="https://github.com/reactphp/promise/pull/114">#114</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/jsor/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/jsor">@jsor</a>)</p>
 </li>
 <li>
-<p dir="auto">Improve documentation to properly instantiate LazyPromise<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="328515975" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/121" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/121/hovercard" href="https://github.com/reactphp/promise/pull/121">#121</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/holtkamp/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/holtkamp">@holtkamp</a>)</p>
+<p>Improve documentation to properly instantiate LazyPromise<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="328515975" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/121" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/121/hovercard" href="https://github.com/reactphp/promise/pull/121">#121</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/holtkamp/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/holtkamp">@holtkamp</a>)</p>
 </li>
 <li>
-<p dir="auto">Follower cancellation propagation was originally planned for this release<br>
+<p>Follower cancellation propagation was originally planned for this release<br>
 but has been reverted for now and is planned for a future release.<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="255393042" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/99" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/99/hovercard" href="https://github.com/reactphp/promise/pull/99">#99</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/jsor/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/jsor">@jsor</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="330649264" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/122" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/122/hovercard" href="https://github.com/reactphp/promise/pull/122">#122</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="255393042" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/99" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/99/hovercard" href="https://github.com/reactphp/promise/pull/99">#99</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/jsor/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/jsor">@jsor</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="330649264" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/122" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/122/hovercard" href="https://github.com/reactphp/promise/pull/122">#122</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 </li>
 </ul>
 
@@ -481,7 +637,7 @@ but has been reverted for now and is planned for a future release.<br>
         </small>
     </h3>
 
-    <ul dir="auto">
+    <ul>
 <li>Fix circular references when resolving with a promise which follows itself (<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="214984171" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/94" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/94/hovercard" href="https://github.com/reactphp/promise/pull/94">#94</a>).</li>
 </ul>
 
@@ -505,11 +661,11 @@ but has been reverted for now and is planned for a future release.<br>
         </small>
     </h3>
 
-    <ul dir="auto">
+    <ul>
 <li>
-<p dir="auto">Revert automatic cancellation of pending collection promises once the output promise resolves. This was introduced in <a class="commit-link" data-hovercard-type="commit" data-hovercard-url="https://github.com/reactphp/promise/commit/42d86b729204fe498688b1f4b47b4ec03482f152/hovercard" href="https://github.com/reactphp/promise/commit/42d86b729204fe498688b1f4b47b4ec03482f152"><tt>42d86b7</tt></a> (PR <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="93280218" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/36" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/36/hovercard" href="https://github.com/reactphp/promise/pull/36">#36</a>, released in <a href="https://github.com/reactphp/promise/releases/tag/v2.3.0">v2.3.0</a>) and was both unintended and backward incompatible.</p>
-<p dir="auto">If you need automatic cancellation, you can use something like:</p>
-<div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-k">function</span> <span class="pl-en">allAndCancel</span>(<span class="pl-smi">array</span> <span class="pl-s1"><span class="pl-c1">$</span>promises</span>)
+<p>Revert automatic cancellation of pending collection promises once the output promise resolves. This was introduced in <a class="commit-link" data-hovercard-type="commit" data-hovercard-url="https://github.com/reactphp/promise/commit/42d86b729204fe498688b1f4b47b4ec03482f152/hovercard" href="https://github.com/reactphp/promise/commit/42d86b729204fe498688b1f4b47b4ec03482f152"><tt>42d86b7</tt></a> (PR <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="93280218" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/36" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/36/hovercard" href="https://github.com/reactphp/promise/pull/36">#36</a>, released in <a href="https://github.com/reactphp/promise/releases/tag/v2.3.0">v2.3.0</a>) and was both unintended and backward incompatible.</p>
+<p>If you need automatic cancellation, you can use something like:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-k">function</span> <span class="pl-en">allAndCancel</span>(<span class="pl-smi">array</span> <span class="pl-s1"><span class="pl-c1">$</span>promises</span>)
 {
      <span class="pl-k">return</span> <span class="pl-en">\<span class="pl-v">React</span>\<span class="pl-v">Promise</span>\all</span>(<span class="pl-s1"><span class="pl-c1">$</span>promises</span>)
          -&gt;<span class="pl-en">always</span>(<span class="pl-k">function</span>() <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>promises</span>) {
@@ -522,10 +678,10 @@ but has been reverted for now and is planned for a future release.<br>
 }</pre></div>
 </li>
 <li>
-<p dir="auto"><code class="notranslate">all()</code> and <code class="notranslate">map()</code> functions now preserve the order of the array (<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="197142181" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/77" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/77/hovercard" href="https://github.com/reactphp/promise/pull/77">#77</a>).</p>
+<p><code>all()</code> and <code>map()</code> functions now preserve the order of the array (<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="197142181" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/77" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/77/hovercard" href="https://github.com/reactphp/promise/pull/77">#77</a>).</p>
 </li>
 <li>
-<p dir="auto">Fix circular references when resolving a promise with itself (<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="189175515" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/71" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/71/hovercard" href="https://github.com/reactphp/promise/pull/71">#71</a>).</p>
+<p>Fix circular references when resolving a promise with itself (<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="189175515" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/71" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/71/hovercard" href="https://github.com/reactphp/promise/pull/71">#71</a>).</p>
 </li>
 </ul>
 
@@ -544,8 +700,8 @@ but has been reverted for now and is planned for a future release.<br>
         </small>
     </h3>
 
-    <ul dir="auto">
-<li>Fix <code class="notranslate">some()</code> not cancelling pending promises when too much input promises reject (<a class="commit-link" data-hovercard-type="commit" data-hovercard-url="https://github.com/reactphp/promise/commit/16ff799a3a749dd79faff36c5f3cfc11825daa8b/hovercard" href="https://github.com/reactphp/promise/commit/16ff799a3a749dd79faff36c5f3cfc11825daa8b"><tt>16ff799</tt></a>).</li>
+    <ul>
+<li>Fix <code>some()</code> not cancelling pending promises when too much input promises reject (<a class="commit-link" data-hovercard-type="commit" data-hovercard-url="https://github.com/reactphp/promise/commit/16ff799a3a749dd79faff36c5f3cfc11825daa8b/hovercard" href="https://github.com/reactphp/promise/commit/16ff799a3a749dd79faff36c5f3cfc11825daa8b"><tt>16ff799</tt></a>).</li>
 </ul>
 
     <hr>
@@ -563,10 +719,10 @@ but has been reverted for now and is planned for a future release.<br>
         </small>
     </h3>
 
-    <ul dir="auto">
-<li>Support foreign thenables in <code class="notranslate">resolve()</code>.<br>
-Any object that provides a <code class="notranslate">then()</code> method is now assimilated to a trusted promise that follows the state of this thenable (<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="143505001" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/52" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/52/hovercard" href="https://github.com/reactphp/promise/pull/52">#52</a>).</li>
-<li>Fix <code class="notranslate">some()</code> and <code class="notranslate">any()</code> for input arrays containing not enough items (<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="93222181" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/34" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/34/hovercard" href="https://github.com/reactphp/promise/pull/34">#34</a>).</li>
+    <ul>
+<li>Support foreign thenables in <code>resolve()</code>.<br>
+Any object that provides a <code>then()</code> method is now assimilated to a trusted promise that follows the state of this thenable (<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="143505001" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/52" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/52/hovercard" href="https://github.com/reactphp/promise/pull/52">#52</a>).</li>
+<li>Fix <code>some()</code> and <code>any()</code> for input arrays containing not enough items (<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="93222181" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/34" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/34/hovercard" href="https://github.com/reactphp/promise/pull/34">#34</a>).</li>
 </ul>
 
     <hr>
@@ -584,9 +740,9 @@ Any object that provides a <code class="notranslate">then()</code> method is now
         </small>
     </h3>
 
-    <ul dir="auto">
+    <ul>
 <li>Allow cancellation of promises returned by functions working on promise collections (<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="93280218" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/36" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/36/hovercard" href="https://github.com/reactphp/promise/pull/36">#36</a>).</li>
-<li>Handle <code class="notranslate">\Throwable</code> in the same way as <code class="notranslate">\Exception</code> (<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="143319091" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/51" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/51/hovercard" href="https://github.com/reactphp/promise/pull/51">#51</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/joshdifabio/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/joshdifabio">@joshdifabio</a>).</li>
+<li>Handle <code>\Throwable</code> in the same way as <code>\Exception</code> (<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="143319091" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/51" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/51/hovercard" href="https://github.com/reactphp/promise/pull/51">#51</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/joshdifabio/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/joshdifabio">@joshdifabio</a>).</li>
 </ul>
 
     <hr>
@@ -604,8 +760,8 @@ Any object that provides a <code class="notranslate">then()</code> method is now
         </small>
     </h3>
 
-    <ul dir="auto">
-<li>Fix <code class="notranslate">DeferredPromise</code> to also implement the <code class="notranslate">CancellablePromiseInterface</code>.</li>
+    <ul>
+<li>Fix <code>DeferredPromise</code> to also implement the <code>CancellablePromiseInterface</code>.</li>
 </ul>
 
     <hr>
@@ -623,8 +779,8 @@ Any object that provides a <code class="notranslate">then()</code> method is now
         </small>
     </h3>
 
-    <p dir="auto">This release makes the API more compatible with 2.0 while preserving full backward compatibility.</p>
-<ul dir="auto">
+    <p>This release makes the API more compatible with 2.0 while preserving full backward compatibility.</p>
+<ul>
 <li>Introduce new CancellablePromiseInterface implemented by all promises.</li>
 <li>Add new .cancel() method (part of the CancellablePromiseInterface).</li>
 </ul>
@@ -644,8 +800,8 @@ Any object that provides a <code class="notranslate">then()</code> method is now
         </small>
     </h3>
 
-    <ul dir="auto">
-<li>Fix cancellation handlers called multiple times (<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="136235470" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/47" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/47/hovercard" href="https://github.com/reactphp/promise/pull/47">#47</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>).</li>
+    <ul>
+<li>Fix cancellation handlers called multiple times (<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="136235470" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/47" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/47/hovercard" href="https://github.com/reactphp/promise/pull/47">#47</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>).</li>
 </ul>
 
     <hr>
@@ -668,7 +824,7 @@ Any object that provides a <code class="notranslate">then()</code> method is now
         </small>
     </h3>
 
-    <ul dir="auto">
+    <ul>
 <li>Fix stack error when resolving a promise in its own fulfillment or rejection handlers.</li>
 </ul>
 
@@ -687,10 +843,10 @@ Any object that provides a <code class="notranslate">then()</code> method is now
         </small>
     </h3>
 
-    <p dir="auto">This release makes the API more compatible with 2.0 while preserving full backward compatibility.</p>
-<ul dir="auto">
-<li>Add <code class="notranslate">React\Promise\Promise</code> class.</li>
-<li>Move methods of <code class="notranslate">React\Promise\When</code> and <code class="notranslate">React\Promise\Util</code> to functions while keeping the classes as a proxy for BC.</li>
+    <p>This release makes the API more compatible with 2.0 while preserving full backward compatibility.</p>
+<ul>
+<li>Add <code>React\Promise\Promise</code> class.</li>
+<li>Move methods of <code>React\Promise\When</code> and <code>React\Promise\Util</code> to functions while keeping the classes as a proxy for BC.</li>
 </ul>
 
     <hr>
@@ -713,8 +869,8 @@ Any object that provides a <code class="notranslate">then()</code> method is now
         </small>
     </h3>
 
-    <p dir="auto">This release introduces the <a href="https://github.com/reactphp/promise/tree/v2.2.0#extendedpromiseinterface">ExtendedPromiseInterface</a>.</p>
-<p dir="auto">The ExtendedPromiseInterface extends the PromiseInterface with useful shortcut<br>
+    <p>This release introduces the <a href="https://github.com/reactphp/promise/tree/v2.2.0#extendedpromiseinterface">ExtendedPromiseInterface</a>.</p>
+<p>The ExtendedPromiseInterface extends the PromiseInterface with useful shortcut<br>
 and utility methods which are not part of the Promises/A specification.</p>
 
     <hr>
@@ -732,7 +888,7 @@ and utility methods which are not part of the Promises/A specification.</p>
         </small>
     </h3>
 
-    <p dir="auto">Introduce new <a href="https://github.com/reactphp/promise/tree/v2.1.0#cancellablepromiseinterface">CancellablePromiseInterface</a> implemented by all promises.</p>
+    <p>Introduce new <a href="https://github.com/reactphp/promise/tree/v2.1.0#cancellablepromiseinterface">CancellablePromiseInterface</a> implemented by all promises.</p>
 
     <hr>
         <h2>
@@ -754,8 +910,8 @@ and utility methods which are not part of the Promises/A specification.</p>
         </small>
     </h3>
 
-    <p dir="auto">New major release. The goal was to streamline the API and to make it more compliant with other promise libraries and especially with the new upcoming <a href="https://github.com/domenic/promises-unwrapping/">ES6 promises specification</a>.</p>
-<ul dir="auto">
+    <p>New major release. The goal was to streamline the API and to make it more compliant with other promise libraries and especially with the new upcoming <a href="https://github.com/domenic/promises-unwrapping/">ES6 promises specification</a>.</p>
+<ul>
 <li>Add standalone Promise class.</li>
 <li>Add new React\Promise\race() function.</li>
 <li>BC break: Bump minimum PHP version to PHP 5.4.</li>
@@ -781,10 +937,10 @@ and utility methods which are not part of the Promises/A specification.</p>
         </small>
     </h3>
 
-    <ul dir="auto">
+    <ul>
 <li>Trigger PHP errors when invalid callback is passed.</li>
 <li>Fully resolve rejection value before calling rejection handler.</li>
-<li>Add <code class="notranslate">When::lazy()</code> to create lazy promises which will be initialized once a consumer calls the <code class="notranslate">then()</code> method.</li>
+<li>Add <code>When::lazy()</code> to create lazy promises which will be initialized once a consumer calls the <code>then()</code> method.</li>
 </ul>
 
     <hr>
@@ -807,8 +963,8 @@ and utility methods which are not part of the Promises/A specification.</p>
         </small>
     </h3>
 
-    <ul dir="auto">
-<li>Add <code class="notranslate">PromisorInterface</code> for objects that have a <code class="notranslate">promise()</code> method.</li>
+    <ul>
+<li>Add <code>PromisorInterface</code> for objects that have a <code>promise()</code> method.</li>
 </ul>
 
     <hr>
@@ -826,9 +982,9 @@ and utility methods which are not part of the Promises/A specification.</p>
         </small>
     </h3>
 
-    <ul dir="auto">
-<li>Fix bug in <code class="notranslate">When::any()</code> not correctly unwrapping to a single result value</li>
-<li><code class="notranslate">$promiseOrValue</code> argument of <code class="notranslate">When::resolve()</code> and <code class="notranslate">When::reject()</code> is now optional</li>
+    <ul>
+<li>Fix bug in <code>When::any()</code> not correctly unwrapping to a single result value</li>
+<li><code>$promiseOrValue</code> argument of <code>When::resolve()</code> and <code>When::reject()</code> is now optional</li>
 </ul>
 
     <hr>
@@ -846,7 +1002,7 @@ and utility methods which are not part of the Promises/A specification.</p>
         </small>
     </h3>
 
-    <ul dir="auto">
+    <ul>
 <li>Prevent deep recursion which was reaching xdebug.max_nesting_level default of 100</li>
 </ul>
 
@@ -865,7 +1021,7 @@ and utility methods which are not part of the Promises/A specification.</p>
         </small>
     </h3>
 
-    <ul dir="auto">
+    <ul>
 <li>First tagged release</li>
 </ul>
 
@@ -887,7 +1043,7 @@ and utility methods which are not part of the Promises/A specification.</p>
 
                             <div class="version-selector">
                                 <button class="version-selector__button version-selector__button--latest" data-ctrly="component-version-selector" data-version-selector-control>
-                                    v2.10.0
+                                    v3.0.0
 
                                     <i class="icon-chevron-down" aria-hidden="true"></i>
                                     <i class="icon-chevron-up" aria-hidden="true"></i>
@@ -903,6 +1059,11 @@ and utility methods which are not part of the Promises/A specification.</p>
                                             </a>
                                         </li>
                                                                                                                                                                                                                     <li>
+                                                <a href="https://github.com/reactphp/promise/tree/v2.10.0#readme" class="version-selector__version">
+                                                    v2.10.0
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
                                                 <a href="https://github.com/reactphp/promise/tree/v2.9.0#readme" class="version-selector__version">
                                                     v2.9.0
                                                 </a>
@@ -1042,7 +1203,7 @@ and utility methods which are not part of the Promises/A specification.</p>
 
                         <h3 class="component-info__subtitle">Installation</h3>
 
-                        <div class="highlight highlight-source-shell"><pre>composer require react/promise:^2.10.0</pre></div>
+                        <div class="highlight highlight-source-shell"><pre>composer require react/promise:^3.0.0</pre></div>
 
                         <h3 class="component-info__subtitle">Contributors</h3>
 
@@ -1054,12 +1215,12 @@ and utility methods which are not part of the Promises/A specification.</p>
                             </li>
                                                     <li>
                                 <a href="https://github.com/WyriHaximus">
-                                    <img src="https://avatars.githubusercontent.com/u/147145?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/147145?v=4&amp;s=80 2x" alt="WyriHaximus" title="WyriHaximus (43 contributions)">
+                                    <img src="https://avatars.githubusercontent.com/u/147145?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/147145?v=4&amp;s=80 2x" alt="WyriHaximus" title="WyriHaximus (46 contributions)">
                                 </a>
                             </li>
                                                     <li>
                                 <a href="https://github.com/clue">
-                                    <img src="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=80 2x" alt="clue" title="clue (41 contributions)">
+                                    <img src="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=80 2x" alt="clue" title="clue (43 contributions)">
                                 </a>
                             </li>
                                                     <li>
@@ -1161,7 +1322,7 @@ and utility methods which are not part of the Promises/A specification.</p>
         <mask id="reactphp-promise-participation-sparkline" x="0" y="0" width="320" height="40" >
             <polyline 
                 transform="translate(0, 40) scale(1,-1)"
-                points="0,2 6,1 12,1 18,1 24,1 30,2 36,1 42,2 48,2 54,3 60,1 66,1 72,1 78,2 84,1 90,3 96,3 102,1 108,1 114,3 120,1 126,1 132,1 138,1 144,1 150,1 156,1 162,1 168,1 174,1 180,1 186,1 192,1 198,1 204,1 210,1 216,1 222,1 228,1 234,1 240,1 246,1 252,1 258,1 264,1 270,1 276,1 282,1 288,3 294,2 300,1 306,2" 
+                points="0,1 6,1 12,1 18,1 24,2 30,1 36,2 42,1 48,2 54,3 60,1 66,1 72,2 78,1 84,2 90,4 96,1 102,1 108,3 114,1 120,1 126,1 132,1 138,1 144,1 150,1 156,1 162,1 168,1 174,1 180,1 186,1 192,1 198,1 204,1 210,1 216,1 222,1 228,1 234,1 240,1 246,1 252,1 258,1 264,1 270,1 276,1 282,1 288,3 294,2 300,1 306,4" 
                 fill="transparent" 
                 stroke="#40a977" 
                 stroke-width="2"
