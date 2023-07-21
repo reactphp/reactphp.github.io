@@ -170,7 +170,7 @@
                         PromiseTimer
 
                         <span class="off-canvas-menu__version">
-                            v1.9.0
+                            v1.10.0
                         </span>
                     </a>
                 </li>
@@ -292,12 +292,12 @@
         </small>
     </h3>
 
-    <p>A major new feature release, see <a href="https://clue.engineering/2021/announcing-reactphp-default-loop" rel="nofollow"><strong>release announcement</strong></a>.</p>
-<ul>
+    <p dir="auto">A major new feature release, see <a href="https://clue.engineering/2021/announcing-reactphp-default-loop" rel="nofollow"><strong>release announcement</strong></a>.</p>
+<ul dir="auto">
 <li>
-<p>Feature: Simplify usage by supporting new <a href="https://reactphp.org/event-loop/#loop" rel="nofollow">default loop</a>.<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="936919236" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/159" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/159/hovercard" href="https://github.com/reactphp/stream/pull/159">#159</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-c">// old (still supported)</span>
+<p dir="auto">Feature: Simplify usage by supporting new <a href="https://reactphp.org/event-loop/#loop" rel="nofollow">default loop</a>.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="936919236" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/159" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/159/hovercard" href="https://github.com/reactphp/stream/pull/159">#159</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+<div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-c">// old (still supported)</span>
 <span class="pl-s1"><span class="pl-c1">$</span>stream</span> = <span class="pl-k">new</span> <span class="pl-v">ReadableResourceStream</span>(<span class="pl-s1"><span class="pl-c1">$</span>resource</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
 <span class="pl-s1"><span class="pl-c1">$</span>stream</span> = <span class="pl-k">new</span> <span class="pl-v">WritabeResourceStream</span>(<span class="pl-s1"><span class="pl-c1">$</span>resource</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
 <span class="pl-s1"><span class="pl-c1">$</span>stream</span> = <span class="pl-k">new</span> <span class="pl-v">DuplexResourceStream</span>(<span class="pl-s1"><span class="pl-c1">$</span>resource</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
@@ -308,9 +308,9 @@
 <span class="pl-s1"><span class="pl-c1">$</span>stream</span> = <span class="pl-k">new</span> <span class="pl-v">DuplexResourceStream</span>(<span class="pl-s1"><span class="pl-c1">$</span>resource</span>);</pre></div>
 </li>
 <li>
-<p>Improve test suite, use GitHub actions for continuous integration (CI),<br>
+<p dir="auto">Improve test suite, use GitHub actions for continuous integration (CI),<br>
 update PHPUnit config, run tests on PHP 8 and add full core team to the license.<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="659209093" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/153" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/153/hovercard" href="https://github.com/reactphp/stream/pull/153">#153</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="749753334" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/156" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/156/hovercard" href="https://github.com/reactphp/stream/pull/156">#156</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="804544351" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/157" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/157/hovercard" href="https://github.com/reactphp/stream/pull/157">#157</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/SimonFrings/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/SimonFrings">@SimonFrings</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="684846505" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/154" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/154/hovercard" href="https://github.com/reactphp/stream/pull/154">#154</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/WyriHaximus/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/WyriHaximus">@WyriHaximus</a>)</p>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="659209093" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/153" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/153/hovercard" href="https://github.com/reactphp/stream/pull/153">#153</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="749753334" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/156" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/156/hovercard" href="https://github.com/reactphp/stream/pull/156">#156</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="804544351" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/157" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/157/hovercard" href="https://github.com/reactphp/stream/pull/157">#157</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/SimonFrings/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/SimonFrings">@SimonFrings</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="684846505" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/154" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/154/hovercard" href="https://github.com/reactphp/stream/pull/154">#154</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/WyriHaximus/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/WyriHaximus">@WyriHaximus</a>)</p>
 </li>
 </ul>
 
@@ -334,19 +334,19 @@ update PHPUnit config, run tests on PHP 8 and add full core team to the license.
         </small>
     </h3>
 
-    <ul>
+    <ul dir="auto">
 <li>
-<p>Fix: Fix faulty write buffer behavior when sending large data chunks over TLS (Mac OS X only).<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="609798969" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/150" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/150/hovercard" href="https://github.com/reactphp/stream/pull/150">#150</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+<p dir="auto">Fix: Fix faulty write buffer behavior when sending large data chunks over TLS (Mac OS X only).<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="609798969" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/150" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/150/hovercard" href="https://github.com/reactphp/stream/pull/150">#150</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 </li>
 <li>
-<p>Minor code style improvements to fix phpstan analysis warnings and<br>
-add <code>.gitattributes</code> to exclude dev files from exports.<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="443419394" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/140" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/140/hovercard" href="https://github.com/reactphp/stream/pull/140">#140</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/flow-control/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/flow-control">@flow-control</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="530765542" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/144" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/144/hovercard" href="https://github.com/reactphp/stream/pull/144">#144</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/reedy/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/reedy">@reedy</a>)</p>
+<p dir="auto">Minor code style improvements to fix phpstan analysis warnings and<br>
+add <code class="notranslate">.gitattributes</code> to exclude dev files from exports.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="443419394" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/140" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/140/hovercard" href="https://github.com/reactphp/stream/pull/140">#140</a> by <a class="user-mention notranslate" data-hovercard-type="organization" data-hovercard-url="/orgs/flow-control/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/flow-control">@flow-control</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="530765542" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/144" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/144/hovercard" href="https://github.com/reactphp/stream/pull/144">#144</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/reedy/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/reedy">@reedy</a>)</p>
 </li>
 <li>
-<p>Improve test suite to run tests on PHP 7.4 and simplify test matrix.<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="547450197" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/147" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/147/hovercard" href="https://github.com/reactphp/stream/pull/147">#147</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+<p dir="auto">Improve test suite to run tests on PHP 7.4 and simplify test matrix.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="547450197" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/147" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/147/hovercard" href="https://github.com/reactphp/stream/pull/147">#147</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 </li>
 </ul>
 
@@ -370,18 +370,18 @@ add <code>.gitattributes</code> to exclude dev files from exports.<br>
         </small>
     </h3>
 
-    <ul>
+    <ul dir="auto">
 <li>
-<p>Improvement: Increase performance by optimizing global function and constant look ups.<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="371711734" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/137" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/137/hovercard" href="https://github.com/reactphp/stream/pull/137">#137</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/WyriHaximus/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/WyriHaximus">@WyriHaximus</a>)</p>
+<p dir="auto">Improvement: Increase performance by optimizing global function and constant look ups.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="371711734" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/137" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/137/hovercard" href="https://github.com/reactphp/stream/pull/137">#137</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/WyriHaximus/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/WyriHaximus">@WyriHaximus</a>)</p>
 </li>
 <li>
-<p>Travis: Test against PHP 7.3.<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="374435409" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/138" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/138/hovercard" href="https://github.com/reactphp/stream/pull/138">#138</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/WyriHaximus/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/WyriHaximus">@WyriHaximus</a>)</p>
+<p dir="auto">Travis: Test against PHP 7.3.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="374435409" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/138" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/138/hovercard" href="https://github.com/reactphp/stream/pull/138">#138</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/WyriHaximus/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/WyriHaximus">@WyriHaximus</a>)</p>
 </li>
 <li>
-<p>Fix: Ignore empty reads.<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="384006525" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/139" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/139/hovercard" href="https://github.com/reactphp/stream/pull/139">#139</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/WyriHaximus/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/WyriHaximus">@WyriHaximus</a>)</p>
+<p dir="auto">Fix: Ignore empty reads.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="384006525" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/139" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/139/hovercard" href="https://github.com/reactphp/stream/pull/139">#139</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/WyriHaximus/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/WyriHaximus">@WyriHaximus</a>)</p>
 </li>
 </ul>
 
@@ -405,14 +405,14 @@ add <code>.gitattributes</code> to exclude dev files from exports.<br>
         </small>
     </h3>
 
-    <ul>
+    <ul dir="auto">
 <li>First stable LTS release, now following <a href="https://semver.org/" rel="nofollow">SemVer</a>.<br>
 We'd like to emphasize that this component is production ready and battle-tested.<br>
 We plan to support all long-term support (LTS) releases for at least 24 months,<br>
 so you have a rock-solid foundation to build on top of.</li>
 </ul>
 <blockquote>
-<p>Contains no other changes, so it's actually fully compatible with the v0.7.7 release.</p>
+<p dir="auto">Contains no other changes, so it's actually fully compatible with the v0.7.7 release.</p>
 </blockquote>
 
     <hr>
@@ -430,11 +430,11 @@ so you have a rock-solid foundation to build on top of.</li>
         </small>
     </h3>
 
-    <ul>
+    <ul dir="auto">
 <li>Improve test suite by fixing forward compatibility with upcoming EventLoop<br>
 releases, avoid risky tests and add test group to skip integration tests<br>
 relying on internet connection and apply appropriate test timeouts.<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="284177347" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/128" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/128/hovercard" href="https://github.com/reactphp/stream/pull/128">#128</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="289951762" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/131" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/131/hovercard" href="https://github.com/reactphp/stream/pull/131">#131</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="289953509" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/132" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/132/hovercard" href="https://github.com/reactphp/stream/pull/132">#132</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</li>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="284177347" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/128" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/128/hovercard" href="https://github.com/reactphp/stream/pull/128">#128</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="289951762" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/131" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/131/hovercard" href="https://github.com/reactphp/stream/pull/131">#131</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="289953509" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/132" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/132/hovercard" href="https://github.com/reactphp/stream/pull/132">#132</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</li>
 </ul>
 
     <hr>
@@ -457,15 +457,15 @@ relying on internet connection and apply appropriate test timeouts.<br>
         </small>
     </h3>
 
-    <ul>
+    <ul dir="auto">
 <li>
-<p>Fix: Work around reading from unbuffered pipe stream in legacy PHP &lt; 5.4.28 and PHP &lt; 5.5.12<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="283633104" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/126" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/126/hovercard" href="https://github.com/reactphp/stream/pull/126">#126</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+<p dir="auto">Fix: Work around reading from unbuffered pipe stream in legacy PHP &lt; 5.4.28 and PHP &lt; 5.5.12<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="283633104" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/126" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/126/hovercard" href="https://github.com/reactphp/stream/pull/126">#126</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 </li>
 <li>
-<p>Improve test suite by simplifying test bootstrapping logic via Composer and<br>
+<p dir="auto">Improve test suite by simplifying test bootstrapping logic via Composer and<br>
 test against PHP 7.2<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="283873223" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/127" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/127/hovercard" href="https://github.com/reactphp/stream/pull/127">#127</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="278459875" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/124" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/124/hovercard" href="https://github.com/reactphp/stream/pull/124">#124</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/carusogabriel/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/carusogabriel">@carusogabriel</a>)</p>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="283873223" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/127" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/127/hovercard" href="https://github.com/reactphp/stream/pull/127">#127</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="278459875" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/124" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/124/hovercard" href="https://github.com/reactphp/stream/pull/124">#124</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/carusogabriel/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/carusogabriel">@carusogabriel</a>)</p>
 </li>
 </ul>
 
@@ -484,23 +484,23 @@ test against PHP 7.2<br>
         </small>
     </h3>
 
-    <ul>
+    <ul dir="auto">
 <li>
-<p>Fix: Igore excessive <code>fopen()</code> mode flags for <code>WritableResourceStream</code><br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="272511458" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/119" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/119/hovercard" href="https://github.com/reactphp/stream/pull/119">#119</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+<p dir="auto">Fix: Igore excessive <code class="notranslate">fopen()</code> mode flags for <code class="notranslate">WritableResourceStream</code><br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="272511458" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/119" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/119/hovercard" href="https://github.com/reactphp/stream/pull/119">#119</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 </li>
 <li>
-<p>Fix: Fix forward compatibility with upcoming EventLoop releases<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="272994745" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/121" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/121/hovercard" href="https://github.com/reactphp/stream/pull/121">#121</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+<p dir="auto">Fix: Fix forward compatibility with upcoming EventLoop releases<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="272994745" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/121" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/121/hovercard" href="https://github.com/reactphp/stream/pull/121">#121</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 </li>
 <li>
-<p>Restructure examples to ease getting started<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="275158598" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/123" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/123/hovercard" href="https://github.com/reactphp/stream/pull/123">#123</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+<p dir="auto">Restructure examples to ease getting started<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="275158598" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/123" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/123/hovercard" href="https://github.com/reactphp/stream/pull/123">#123</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 </li>
 <li>
-<p>Improve test suite by adding forward compatibility with PHPUnit 6 and<br>
+<p dir="auto">Improve test suite by adding forward compatibility with PHPUnit 6 and<br>
 ignore Mac OS X test failures for now until Travis tests work again<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="273193264" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/122" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/122/hovercard" href="https://github.com/reactphp/stream/pull/122">#122</a> by @gabriel-caruso and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="272570863" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/120" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/120/hovercard" href="https://github.com/reactphp/stream/pull/120">#120</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="273193264" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/122" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/122/hovercard" href="https://github.com/reactphp/stream/pull/122">#122</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/Gabriel-Caruso/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/Gabriel-Caruso">@Gabriel-Caruso</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="272570863" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/120" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/120/hovercard" href="https://github.com/reactphp/stream/pull/120">#120</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 </li>
 </ul>
 
@@ -519,21 +519,21 @@ ignore Mac OS X test failures for now until Travis tests work again<br>
         </small>
     </h3>
 
-    <ul>
+    <ul dir="auto">
 <li>
-<p>Fix: Remove event listeners from <code>CompositeStream</code> once closed and<br>
-remove undocumented left-over <code>close</code> event argument<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="264238876" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/116" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/116/hovercard" href="https://github.com/reactphp/stream/pull/116">#116</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+<p dir="auto">Fix: Remove event listeners from <code class="notranslate">CompositeStream</code> once closed and<br>
+remove undocumented left-over <code class="notranslate">close</code> event argument<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="264238876" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/116" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/116/hovercard" href="https://github.com/reactphp/stream/pull/116">#116</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 </li>
 <li>
-<p>Minor documentation improvements: Fix wrong class name in example,<br>
+<p dir="auto">Minor documentation improvements: Fix wrong class name in example,<br>
 fix typos in README and<br>
 fix forward compatibility with upcoming EventLoop releases in example<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="264138990" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/113" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/113/hovercard" href="https://github.com/reactphp/stream/pull/113">#113</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/docteurklein/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/docteurklein">@docteurklein</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="264187481" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/114" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/114/hovercard" href="https://github.com/reactphp/stream/pull/114">#114</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="264188803" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/115" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/115/hovercard" href="https://github.com/reactphp/stream/pull/115">#115</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="264138990" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/113" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/113/hovercard" href="https://github.com/reactphp/stream/pull/113">#113</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/docteurklein/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/docteurklein">@docteurklein</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="264187481" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/114" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/114/hovercard" href="https://github.com/reactphp/stream/pull/114">#114</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="264188803" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/115" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/115/hovercard" href="https://github.com/reactphp/stream/pull/115">#115</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 </li>
 <li>
-<p>Improve test suite by running against Mac OS X on Travis<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="263988542" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/112" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/112/hovercard" href="https://github.com/reactphp/stream/pull/112">#112</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+<p dir="auto">Improve test suite by running against Mac OS X on Travis<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="263988542" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/112" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/112/hovercard" href="https://github.com/reactphp/stream/pull/112">#112</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 </li>
 </ul>
 
@@ -552,13 +552,13 @@ fix forward compatibility with upcoming EventLoop releases in example<br>
         </small>
     </h3>
 
-    <ul>
+    <ul dir="auto">
 <li>Improvement: Support Événement 3.0 a long side 2.0 and 1.0<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="244938597" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/108" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/108/hovercard" href="https://github.com/reactphp/stream/pull/108">#108</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/WyriHaximus/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/WyriHaximus">@WyriHaximus</a>)</li>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="244938597" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/108" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/108/hovercard" href="https://github.com/reactphp/stream/pull/108">#108</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/WyriHaximus/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/WyriHaximus">@WyriHaximus</a>)</li>
 <li>Readme: Corrected loop initialization in usage example<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="245345376" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/109" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/109/hovercard" href="https://github.com/reactphp/stream/pull/109">#109</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/pulyavin/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/pulyavin">@pulyavin</a>)</li>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="245345376" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/109" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/109/hovercard" href="https://github.com/reactphp/stream/pull/109">#109</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/pulyavin/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/pulyavin">@pulyavin</a>)</li>
 <li>Travis: Lock linux distribution preventing future builds from breaking<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="248006392" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/110" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/110/hovercard" href="https://github.com/reactphp/stream/pull/110">#110</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</li>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="248006392" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/110" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/110/hovercard" href="https://github.com/reactphp/stream/pull/110">#110</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</li>
 </ul>
 
     <hr>
@@ -576,9 +576,9 @@ fix forward compatibility with upcoming EventLoop releases in example<br>
         </small>
     </h3>
 
-    <ul>
+    <ul dir="auto">
 <li>Bug fix: WritableResourceStream: Close the underlying stream when closing the stream.<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="235132297" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/107" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/107/hovercard" href="https://github.com/reactphp/stream/pull/107">#107</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/WyriHaximus/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/WyriHaximus">@WyriHaximus</a>)</li>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="235132297" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/107" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/107/hovercard" href="https://github.com/reactphp/stream/pull/107">#107</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/WyriHaximus/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/WyriHaximus">@WyriHaximus</a>)</li>
 </ul>
 
     <hr>
@@ -596,16 +596,16 @@ fix forward compatibility with upcoming EventLoop releases in example<br>
         </small>
     </h3>
 
-    <ul>
+    <ul dir="auto">
 <li>
-<p>Feature: Add optional <code>$writeChunkSize</code> parameter to limit maximum number of<br>
+<p dir="auto">Feature: Add optional <code class="notranslate">$writeChunkSize</code> parameter to limit maximum number of<br>
 bytes to write at once.<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="230037606" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/105" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/105/hovercard" href="https://github.com/reactphp/stream/pull/105">#105</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>stream</span> = <span class="pl-k">new</span> <span class="pl-v">WritableResourceStream</span>(<span class="pl-c1">STDOUT</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>, <span class="pl-c1">null</span>, <span class="pl-c1">8192</span>);</pre></div>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="230037606" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/105" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/105/hovercard" href="https://github.com/reactphp/stream/pull/105">#105</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+<div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-s1"><span class="pl-c1">$</span>stream</span> = <span class="pl-k">new</span> <span class="pl-v">WritableResourceStream</span>(<span class="pl-c1">STDOUT</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>, <span class="pl-c1">null</span>, <span class="pl-c1">8192</span>);</pre></div>
 </li>
 <li>
-<p>Ignore HHVM test failures for now until Travis tests work again<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="230042502" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/106" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/106/hovercard" href="https://github.com/reactphp/stream/pull/106">#106</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+<p dir="auto">Ignore HHVM test failures for now until Travis tests work again<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="230042502" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/106" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/106/hovercard" href="https://github.com/reactphp/stream/pull/106">#106</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 </li>
 </ul>
 
@@ -624,78 +624,78 @@ bytes to write at once.<br>
         </small>
     </h3>
 
-    <ul>
+    <ul dir="auto">
 <li>
-<p>Removed / BC break: Remove deprecated and unneeded functionality<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="156061344" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/45" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/45/hovercard" href="https://github.com/reactphp/stream/pull/45">#45</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="223630853" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/87" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/87/hovercard" href="https://github.com/reactphp/stream/pull/87">#87</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="224692249" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/90" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/90/hovercard" href="https://github.com/reactphp/stream/pull/90">#90</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="224725722" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/91" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/91/hovercard" href="https://github.com/reactphp/stream/pull/91">#91</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="224814479" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/93" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/93/hovercard" href="https://github.com/reactphp/stream/pull/93">#93</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
-<ul>
+<p dir="auto">Removed / BC break: Remove deprecated and unneeded functionality<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="156061344" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/45" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/45/hovercard" href="https://github.com/reactphp/stream/pull/45">#45</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="223630853" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/87" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/87/hovercard" href="https://github.com/reactphp/stream/pull/87">#87</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="224692249" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/90" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/90/hovercard" href="https://github.com/reactphp/stream/pull/90">#90</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="224725722" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/91" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/91/hovercard" href="https://github.com/reactphp/stream/pull/91">#91</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="224814479" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/93" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/93/hovercard" href="https://github.com/reactphp/stream/pull/93">#93</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+<ul dir="auto">
 <li>
-<p>Remove deprecated <code>Stream</code> class, use <code>DuplexResourceStream</code> instead<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="223630853" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/87" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/87/hovercard" href="https://github.com/reactphp/stream/pull/87">#87</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+<p dir="auto">Remove deprecated <code class="notranslate">Stream</code> class, use <code class="notranslate">DuplexResourceStream</code> instead<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="223630853" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/87" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/87/hovercard" href="https://github.com/reactphp/stream/pull/87">#87</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 </li>
 <li>
-<p>Remove public <code>$buffer</code> property, use new constructor parameters instead<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="224725722" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/91" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/91/hovercard" href="https://github.com/reactphp/stream/pull/91">#91</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+<p dir="auto">Remove public <code class="notranslate">$buffer</code> property, use new constructor parameters instead<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="224725722" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/91" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/91/hovercard" href="https://github.com/reactphp/stream/pull/91">#91</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 </li>
 <li>
-<p>Remove public <code>$stream</code> property from all resource streams<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="224692249" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/90" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/90/hovercard" href="https://github.com/reactphp/stream/pull/90">#90</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+<p dir="auto">Remove public <code class="notranslate">$stream</code> property from all resource streams<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="224692249" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/90" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/90/hovercard" href="https://github.com/reactphp/stream/pull/90">#90</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 </li>
 <li>
-<p>Remove undocumented and now unused <code>ReadableStream</code> and <code>WritableStream</code><br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="224814479" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/93" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/93/hovercard" href="https://github.com/reactphp/stream/pull/93">#93</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+<p dir="auto">Remove undocumented and now unused <code class="notranslate">ReadableStream</code> and <code class="notranslate">WritableStream</code><br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="224814479" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/93" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/93/hovercard" href="https://github.com/reactphp/stream/pull/93">#93</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 </li>
 <li>
-<p>Remove <code>BufferedSink</code><br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="156061344" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/45" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/45/hovercard" href="https://github.com/reactphp/stream/pull/45">#45</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+<p dir="auto">Remove <code class="notranslate">BufferedSink</code><br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="156061344" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/45" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/45/hovercard" href="https://github.com/reactphp/stream/pull/45">#45</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 </li>
 </ul>
 </li>
 <li>
-<p>Feature / BC break: Simplify <code>ThroughStream</code> by using data callback instead of<br>
-inheritance. It is now a direct implementation of <code>DuplexStreamInterface</code>.<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="223724023" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/88" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/88/hovercard" href="https://github.com/reactphp/stream/pull/88">#88</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="223771834" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/89" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/89/hovercard" href="https://github.com/reactphp/stream/pull/89">#89</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>through</span> = <span class="pl-k">new</span> <span class="pl-v">ThroughStream</span>(<span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>data</span>) {
-    <span class="pl-k">return</span> <span class="pl-en">json_encode</span>(<span class="pl-s1"><span class="pl-c1">$</span>data</span>) . <span class="pl-c1">PHP_EOL</span>;
+<p dir="auto">Feature / BC break: Simplify <code class="notranslate">ThroughStream</code> by using data callback instead of<br>
+inheritance. It is now a direct implementation of <code class="notranslate">DuplexStreamInterface</code>.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="223724023" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/88" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/88/hovercard" href="https://github.com/reactphp/stream/pull/88">#88</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="223771834" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/89" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/89/hovercard" href="https://github.com/reactphp/stream/pull/89">#89</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+<div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-s1"><span class="pl-c1">$</span>through</span> = <span class="pl-k">new</span> <span class="pl-v">ThroughStream</span>(<span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>data</span>) {
+    <span class="pl-k">return</span> json_encode(<span class="pl-s1"><span class="pl-c1">$</span>data</span>) . <span class="pl-c1">PHP_EOL</span>;
 });
-<span class="pl-s1"><span class="pl-c1">$</span>through</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'data'</span>, <span class="pl-s1"><span class="pl-c1">$</span><span class="pl-smi">this</span></span>-&gt;<span class="pl-en">expectCallableOnceWith</span>(<span class="pl-s">"[2, true]\n"</span>));
+<span class="pl-s1"><span class="pl-c1">$</span>through</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'data'</span>, <span class="pl-s1"><span class="pl-c1">$</span><span class="pl-smi">this</span></span>-&gt;<span class="pl-en">expectCallableOnceWith</span>("<span class="pl-s">[2, true]</span>\n"));
 
 <span class="pl-s1"><span class="pl-c1">$</span>through</span>-&gt;<span class="pl-en">write</span>(<span class="pl-en">array</span>(<span class="pl-c1">2</span>, <span class="pl-c1">true</span>));</pre></div>
 </li>
 <li>
-<p>Feature / BC break: The <code>CompositeStream</code> starts closed if either side is<br>
+<p dir="auto">Feature / BC break: The <code class="notranslate">CompositeStream</code> starts closed if either side is<br>
 already closed and forwards pause to pipe source on first write attempt.<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="225736993" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/96" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/96/hovercard" href="https://github.com/reactphp/stream/pull/96">#96</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="226223986" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/103" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/103/hovercard" href="https://github.com/reactphp/stream/pull/103">#103</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
-<p>If either side of the composite stream closes, it will also close the other<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="225736993" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/96" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/96/hovercard" href="https://github.com/reactphp/stream/pull/96">#96</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="226223986" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/103" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/103/hovercard" href="https://github.com/reactphp/stream/pull/103">#103</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+<p dir="auto">If either side of the composite stream closes, it will also close the other<br>
 side. We now also ensure that if either side is already closed during<br>
 instantiation, it will also close the other side.</p>
 </li>
 <li>
-<p>BC break: Mark all classes as <code>final</code> and<br>
-mark internal API as <code>private</code> to discourage inheritance<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="225213911" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/95" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/95/hovercard" href="https://github.com/reactphp/stream/pull/95">#95</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="225897746" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/99" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/99/hovercard" href="https://github.com/reactphp/stream/pull/99">#99</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+<p dir="auto">BC break: Mark all classes as <code class="notranslate">final</code> and<br>
+mark internal API as <code class="notranslate">private</code> to discourage inheritance<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="225213911" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/95" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/95/hovercard" href="https://github.com/reactphp/stream/pull/95">#95</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="225897746" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/99" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/99/hovercard" href="https://github.com/reactphp/stream/pull/99">#99</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 </li>
 <li>
-<p>Feature / BC break: Only emit <code>error</code> event for fatal errors<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="224740621" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/92" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/92/hovercard" href="https://github.com/reactphp/stream/pull/92">#92</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+<p dir="auto">Feature / BC break: Only emit <code class="notranslate">error</code> event for fatal errors<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="224740621" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/92" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/92/hovercard" href="https://github.com/reactphp/stream/pull/92">#92</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 <blockquote>
-<p>The <code>error</code> event was previously also allowed to be emitted for non-fatal<br>
+<p dir="auto">The <code class="notranslate">error</code> event was previously also allowed to be emitted for non-fatal<br>
 errors, but our implementations actually only ever emitted this as a fatal<br>
 error and then closed the stream.</p>
 </blockquote>
 </li>
 <li>
-<p>Feature: Explicitly allow custom events and exclude any semantics<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="225748501" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/97" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/97/hovercard" href="https://github.com/reactphp/stream/pull/97">#97</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+<p dir="auto">Feature: Explicitly allow custom events and exclude any semantics<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="225748501" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/97" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/97/hovercard" href="https://github.com/reactphp/stream/pull/97">#97</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 </li>
 <li>
-<p>Support legacy PHP 5.3 through PHP 7.1 and HHVM and improve usage documentation<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="225912432" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/100" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/100/hovercard" href="https://github.com/reactphp/stream/pull/100">#100</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="226073183" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/102" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/102/hovercard" href="https://github.com/reactphp/stream/pull/102">#102</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+<p dir="auto">Support legacy PHP 5.3 through PHP 7.1 and HHVM and improve usage documentation<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="225912432" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/100" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/100/hovercard" href="https://github.com/reactphp/stream/pull/100">#100</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="226073183" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/102" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/102/hovercard" href="https://github.com/reactphp/stream/pull/102">#102</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 </li>
 <li>
-<p>Actually require all dependencies so this is self-contained and improve<br>
+<p dir="auto">Actually require all dependencies so this is self-contained and improve<br>
 forward compatibility with EventLoop v1.0 and v0.5<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="225209246" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/94" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/94/hovercard" href="https://github.com/reactphp/stream/pull/94">#94</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="225752190" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/98" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/98/hovercard" href="https://github.com/reactphp/stream/pull/98">#98</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="225209246" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/94" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/94/hovercard" href="https://github.com/reactphp/stream/pull/94">#94</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="225752190" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/98" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/98/hovercard" href="https://github.com/reactphp/stream/pull/98">#98</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 </li>
 </ul>
 
@@ -714,54 +714,54 @@ forward compatibility with EventLoop v1.0 and v0.5<br>
         </small>
     </h3>
 
-    <ul>
+    <ul dir="auto">
 <li>
-<p>Feature / Fix / BC break: Add <code>DuplexResourceStream</code> and deprecate <code>Stream</code><br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="216772737" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/85" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/85/hovercard" href="https://github.com/reactphp/stream/pull/85">#85</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-c">// old (does still work for BC reasons)</span>
+<p dir="auto">Feature / Fix / BC break: Add <code class="notranslate">DuplexResourceStream</code> and deprecate <code class="notranslate">Stream</code><br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="216772737" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/85" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/85/hovercard" href="https://github.com/reactphp/stream/pull/85">#85</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+<div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-c">// old (does still work for BC reasons)</span>
 <span class="pl-s1"><span class="pl-c1">$</span>stream</span> = <span class="pl-k">new</span> <span class="pl-v">Stream</span>(<span class="pl-s1"><span class="pl-c1">$</span>connection</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
 
 <span class="pl-c">// new</span>
 <span class="pl-s1"><span class="pl-c1">$</span>stream</span> = <span class="pl-k">new</span> <span class="pl-v">DuplexResourceStream</span>(<span class="pl-s1"><span class="pl-c1">$</span>connection</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);</pre></div>
-<p>Note that the <code>DuplexResourceStream</code> now rejects read-only or write-only<br>
+<p dir="auto">Note that the <code class="notranslate">DuplexResourceStream</code> now rejects read-only or write-only<br>
 streams, so this may affect BC. If you want a read-only or write-only<br>
-resource, use <code>ReadableResourceStream</code> or <code>WritableResourceStream</code> instead of<br>
-<code>DuplexResourceStream</code>.</p>
+resource, use <code class="notranslate">ReadableResourceStream</code> or <code class="notranslate">WritableResourceStream</code> instead of<br>
+<code class="notranslate">DuplexResourceStream</code>.</p>
 <blockquote>
-<p>BC note: This class was previously called <code>Stream</code>. The <code>Stream</code> class still<br>
+<p dir="auto">BC note: This class was previously called <code class="notranslate">Stream</code>. The <code class="notranslate">Stream</code> class still<br>
 exists for BC reasons and will be removed in future versions of this package.</p>
 </blockquote>
 </li>
 <li>
-<p>Feature / BC break: Add <code>WritableResourceStream</code> (previously called <code>Buffer</code>)<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="215384123" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/84" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/84/hovercard" href="https://github.com/reactphp/stream/pull/84">#84</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-c">// old</span>
+<p dir="auto">Feature / BC break: Add <code class="notranslate">WritableResourceStream</code> (previously called <code class="notranslate">Buffer</code>)<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="215384123" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/84" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/84/hovercard" href="https://github.com/reactphp/stream/pull/84">#84</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+<div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-c">// old</span>
 <span class="pl-s1"><span class="pl-c1">$</span>stream</span> = <span class="pl-k">new</span> <span class="pl-v">Buffer</span>(<span class="pl-c1">STDOUT</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
 
 <span class="pl-c">// new</span>
 <span class="pl-s1"><span class="pl-c1">$</span>stream</span> = <span class="pl-k">new</span> <span class="pl-v">WritableResourceStream</span>(<span class="pl-c1">STDOUT</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);</pre></div>
 </li>
 <li>
-<p>Feature: Add <code>ReadableResourceStream</code><br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="215212874" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/83" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/83/hovercard" href="https://github.com/reactphp/stream/pull/83">#83</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>stream</span> = <span class="pl-k">new</span> <span class="pl-v">ReadableResourceStream</span>(<span class="pl-c1">STDIN</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);</pre></div>
+<p dir="auto">Feature: Add <code class="notranslate">ReadableResourceStream</code><br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="215212874" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/83" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/83/hovercard" href="https://github.com/reactphp/stream/pull/83">#83</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+<div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-s1"><span class="pl-c1">$</span>stream</span> = <span class="pl-k">new</span> <span class="pl-v">ReadableResourceStream</span>(<span class="pl-c1">STDIN</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);</pre></div>
 </li>
 <li>
-<p>Fix / BC Break: Enforce using non-blocking I/O<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="164077700" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/46" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/46/hovercard" href="https://github.com/reactphp/stream/pull/46">#46</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+<p dir="auto">Fix / BC Break: Enforce using non-blocking I/O<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="164077700" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/46" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/46/hovercard" href="https://github.com/reactphp/stream/pull/46">#46</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 <blockquote>
-<p>BC note: This is known to affect process pipes on Windows which do not<br>
+<p dir="auto">BC note: This is known to affect process pipes on Windows which do not<br>
 support non-blocking I/O and could thus block the whole EventLoop previously.</p>
 </blockquote>
 </li>
 <li>
-<p>Feature / Fix / BC break: Consistent semantics for<br>
-<code>DuplexStreamInterface::end()</code> to ensure it SHOULD also end readable side<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="216844641" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/86" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/86/hovercard" href="https://github.com/reactphp/stream/pull/86">#86</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+<p dir="auto">Feature / Fix / BC break: Consistent semantics for<br>
+<code class="notranslate">DuplexStreamInterface::end()</code> to ensure it SHOULD also end readable side<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="216844641" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/86" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/86/hovercard" href="https://github.com/reactphp/stream/pull/86">#86</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 </li>
 <li>
-<p>Fix: Do not use unbuffered reads on pipe streams for legacy PHP &lt; 5.4<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="213626959" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/80" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/80/hovercard" href="https://github.com/reactphp/stream/pull/80">#80</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+<p dir="auto">Fix: Do not use unbuffered reads on pipe streams for legacy PHP &lt; 5.4<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="213626959" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/80" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/80/hovercard" href="https://github.com/reactphp/stream/pull/80">#80</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 </li>
 </ul>
 
@@ -780,39 +780,39 @@ support non-blocking I/O and could thus block the whole EventLoop previously.</p
         </small>
     </h3>
 
-    <ul>
+    <ul dir="auto">
 <li>
-<p>Feature / BC break: Consistent <code>end</code> event semantics (EOF)<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="211713580" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/70" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/70/hovercard" href="https://github.com/reactphp/stream/pull/70">#70</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
-<p>The <code>end</code> event will now only be emitted for a <em>successful</em> end, not if the<br>
-stream closes due to an unrecoverable <code>error</code> event or if you call <code>close()</code><br>
+<p dir="auto">Feature / BC break: Consistent <code class="notranslate">end</code> event semantics (EOF)<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="211713580" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/70" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/70/hovercard" href="https://github.com/reactphp/stream/pull/70">#70</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+<p dir="auto">The <code class="notranslate">end</code> event will now only be emitted for a <em>successful</em> end, not if the<br>
+stream closes due to an unrecoverable <code class="notranslate">error</code> event or if you call <code class="notranslate">close()</code><br>
 explicitly.<br>
-If you want to detect when the stream closes (terminates), use the <code>close</code><br>
+If you want to detect when the stream closes (terminates), use the <code class="notranslate">close</code><br>
 event instead.</p>
 </li>
 <li>
-<p>BC break: Remove custom (undocumented) <code>full-drain</code> event from <code>Buffer</code><br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="188990819" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/63" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/63/hovercard" href="https://github.com/reactphp/stream/pull/63">#63</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="211677985" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/68" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/68/hovercard" href="https://github.com/reactphp/stream/pull/68">#68</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+<p dir="auto">BC break: Remove custom (undocumented) <code class="notranslate">full-drain</code> event from <code class="notranslate">Buffer</code><br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="188990819" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/63" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/63/hovercard" href="https://github.com/reactphp/stream/pull/63">#63</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="211677985" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/68" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/68/hovercard" href="https://github.com/reactphp/stream/pull/68">#68</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 <blockquote>
-<p>The <code>full-drain</code> event was undocumented and mostly used internally.<br>
+<p dir="auto">The <code class="notranslate">full-drain</code> event was undocumented and mostly used internally.<br>
 Relying on this event has attracted some low-quality code in the past, so<br>
 we've removed this from the public API in order to work out a better<br>
 solution instead.<br>
 If you want to detect when the buffer finishes flushing data to the stream,<br>
-you may want to look into its <code>end()</code> method or the <code>close</code> event instead.</p>
+you may want to look into its <code class="notranslate">end()</code> method or the <code class="notranslate">close</code> event instead.</p>
 </blockquote>
 </li>
 <li>
-<p>Feature / BC break: Consistent event semantics and documentation,<br>
+<p dir="auto">Feature / BC break: Consistent event semantics and documentation,<br>
 explicitly state <em>when</em> events will be emitted and <em>which</em> arguments they<br>
 receive.<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="212385051" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/73" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/73/hovercard" href="https://github.com/reactphp/stream/pull/73">#73</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="211682442" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/69" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/69/hovercard" href="https://github.com/reactphp/stream/pull/69">#69</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
-<p>The documentation now explicitly defines each event and its arguments.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="212385051" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/73" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/73/hovercard" href="https://github.com/reactphp/stream/pull/73">#73</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="211682442" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/69" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/69/hovercard" href="https://github.com/reactphp/stream/pull/69">#69</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+<p dir="auto">The documentation now explicitly defines each event and its arguments.<br>
 Custom events and event arguments are still supported.<br>
 Most notably, all defined events only receive inherently required event<br>
 arguments and no longer transmit the instance they are emitted on for<br>
 consistency and performance reasons.</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-c">// old (inconsistent and not supported by all implementations)</span>
+<div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-c">// old (inconsistent and not supported by all implementations)</span>
 <span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'data'</span>, <span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>data</span>, <span class="pl-s1"><span class="pl-c1">$</span>stream</span>) {
     <span class="pl-c">// process $data</span>
 });
@@ -822,7 +822,7 @@ consistency and performance reasons.</p>
     <span class="pl-c">// process $data</span>
 });</pre></div>
 <blockquote>
-<p>This mostly adds documentation (and thus some stricter, consistent<br>
+<p dir="auto">This mostly adds documentation (and thus some stricter, consistent<br>
 definitions) for the existing behavior, it does NOT define any major<br>
 changes otherwise.<br>
 Most existing code should be compatible with these changes, unless<br>
@@ -830,10 +830,10 @@ it relied on some undocumented/unintended semantics.</p>
 </blockquote>
 </li>
 <li>
-<p>Feature / BC break: Consistent method semantics and documentation<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="212223280" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/72" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/72/hovercard" href="https://github.com/reactphp/stream/pull/72">#72</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+<p dir="auto">Feature / BC break: Consistent method semantics and documentation<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="212223280" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/72" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/72/hovercard" href="https://github.com/reactphp/stream/pull/72">#72</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 <blockquote>
-<p>This mostly adds documentation (and thus some stricter, consistent<br>
+<p dir="auto">This mostly adds documentation (and thus some stricter, consistent<br>
 definitions) for the existing behavior, it does NOT define any major<br>
 changes otherwise.<br>
 Most existing code should be compatible with these changes, unless<br>
@@ -841,15 +841,15 @@ it relied on some undocumented/unintended semantics.</p>
 </blockquote>
 </li>
 <li>
-<p>Feature: Consistent <code>pipe()</code> semantics for closed and closing streams<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="211951382" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/71" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/71/hovercard" href="https://github.com/reactphp/stream/pull/71">#71</a> from <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
-<p>The source stream will now always be paused via <code>pause()</code> when the<br>
+<p dir="auto">Feature: Consistent <code class="notranslate">pipe()</code> semantics for closed and closing streams<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="211951382" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/71" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/71/hovercard" href="https://github.com/reactphp/stream/pull/71">#71</a> from <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+<p dir="auto">The source stream will now always be paused via <code class="notranslate">pause()</code> when the<br>
 destination stream closes. Also, properly stop piping if the source<br>
 stream closes and remove all event forwarding.</p>
 </li>
 <li>
-<p>Improve test suite by adding PHPUnit to <code>require-dev</code> and improving coverage.<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="212393784" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/74" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/74/hovercard" href="https://github.com/reactphp/stream/pull/74">#74</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="212408478" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/75" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/75/hovercard" href="https://github.com/reactphp/stream/pull/75">#75</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="207684806" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/66" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/66/hovercard" href="https://github.com/reactphp/stream/pull/66">#66</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/nawarian/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/nawarian">@nawarian</a>)</p>
+<p dir="auto">Improve test suite by adding PHPUnit to <code class="notranslate">require-dev</code> and improving coverage.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="212393784" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/74" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/74/hovercard" href="https://github.com/reactphp/stream/pull/74">#74</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="212408478" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/75" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/75/hovercard" href="https://github.com/reactphp/stream/pull/75">#75</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="207684806" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/66" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/66/hovercard" href="https://github.com/reactphp/stream/pull/66">#66</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/nawarian/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/nawarian">@nawarian</a>)</p>
 </li>
 </ul>
 
@@ -868,13 +868,13 @@ stream closes and remove all event forwarding.</p>
         </small>
     </h3>
 
-    <ul>
-<li>Feature: The <code>Buffer</code> can now be injected into the <code>Stream</code> (or be used standalone)<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="188990281" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/62" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/62/hovercard" href="https://github.com/reactphp/stream/pull/62">#62</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</li>
-<li>Fix: Forward <code>close</code> event only once for <code>CompositeStream</code> and <code>ThroughStream</code><br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="188985696" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/60" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/60/hovercard" href="https://github.com/reactphp/stream/pull/60">#60</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</li>
-<li>Fix: Consistent <code>close</code> event behavior for <code>Buffer</code><br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="188987403" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/61" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/61/hovercard" href="https://github.com/reactphp/stream/pull/61">#61</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</li>
+    <ul dir="auto">
+<li>Feature: The <code class="notranslate">Buffer</code> can now be injected into the <code class="notranslate">Stream</code> (or be used standalone)<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="188990281" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/62" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/62/hovercard" href="https://github.com/reactphp/stream/pull/62">#62</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</li>
+<li>Fix: Forward <code class="notranslate">close</code> event only once for <code class="notranslate">CompositeStream</code> and <code class="notranslate">ThroughStream</code><br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="188985696" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/60" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/60/hovercard" href="https://github.com/reactphp/stream/pull/60">#60</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</li>
+<li>Fix: Consistent <code class="notranslate">close</code> event behavior for <code class="notranslate">Buffer</code><br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="188987403" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/61" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/61/hovercard" href="https://github.com/reactphp/stream/pull/61">#61</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</li>
 </ul>
 
     <hr>
@@ -897,15 +897,15 @@ stream closes and remove all event forwarding.</p>
         </small>
     </h3>
 
-    <ul>
-<li>Feature: Support setting read buffer size to <code>null</code> (infinite)<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="140515904" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/42" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/42/hovercard" href="https://github.com/reactphp/stream/pull/42">#42</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</li>
-<li>Fix: Do not emit <code>full-drain</code> event if <code>Buffer</code> is closed during <code>drain</code> event<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="172324369" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/55" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/55/hovercard" href="https://github.com/reactphp/stream/pull/55">#55</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</li>
+    <ul dir="auto">
+<li>Feature: Support setting read buffer size to <code class="notranslate">null</code> (infinite)<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="140515904" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/42" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/42/hovercard" href="https://github.com/reactphp/stream/pull/42">#42</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</li>
+<li>Fix: Do not emit <code class="notranslate">full-drain</code> event if <code class="notranslate">Buffer</code> is closed during <code class="notranslate">drain</code> event<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="172324369" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/55" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/55/hovercard" href="https://github.com/reactphp/stream/pull/55">#55</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</li>
 <li>Vastly improved performance by factor of 10x to 20x.<br>
 Raise default buffer sizes to 64 KiB and simplify and improve error handling<br>
 and unneeded function calls.<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="172272805" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/53" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/53/hovercard" href="https://github.com/reactphp/stream/pull/53">#53</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="172324369" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/55" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/55/hovercard" href="https://github.com/reactphp/stream/pull/55">#55</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="172327657" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/56" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/56/hovercard" href="https://github.com/reactphp/stream/pull/56">#56</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</li>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="172272805" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/53" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/53/hovercard" href="https://github.com/reactphp/stream/pull/53">#53</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="172324369" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/55" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/55/hovercard" href="https://github.com/reactphp/stream/pull/55">#55</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="172327657" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/56" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/56/hovercard" href="https://github.com/reactphp/stream/pull/56">#56</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</li>
 </ul>
 
     <hr>
@@ -923,16 +923,16 @@ and unneeded function calls.<br>
         </small>
     </h3>
 
-    <ul>
-<li>Bug fix: Emit <code>error</code> event and close <code>Stream</code> when accessing the underlying<br>
+    <ul dir="auto">
+<li>Bug fix: Emit <code class="notranslate">error</code> event and close <code class="notranslate">Stream</code> when accessing the underlying<br>
 stream resource fails with a permanent error.<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="172138800" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/52" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/52/hovercard" href="https://github.com/reactphp/stream/pull/52">#52</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="138684703" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/40" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/40/hovercard" href="https://github.com/reactphp/stream/pull/40">#40</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="92505502" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/25" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/25/hovercard" href="https://github.com/reactphp/stream/pull/25">#25</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/lysenkobv/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/lysenkobv">@lysenkobv</a>)</li>
-<li>Bug fix: Do not emit empty <code>data</code> event if nothing has been read (stream reached EOF)<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="138682317" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/39" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/39/hovercard" href="https://github.com/reactphp/stream/pull/39">#39</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</li>
-<li>Bug fix: Ignore empty writes to <code>Buffer</code><br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="172136407" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/51" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/51/hovercard" href="https://github.com/reactphp/stream/pull/51">#51</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</li>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="172138800" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/52" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/52/hovercard" href="https://github.com/reactphp/stream/pull/52">#52</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="138684703" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/40" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/40/hovercard" href="https://github.com/reactphp/stream/pull/40">#40</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="92505502" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/25" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/25/hovercard" href="https://github.com/reactphp/stream/pull/25">#25</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/lysenkobv/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/lysenkobv">@lysenkobv</a>)</li>
+<li>Bug fix: Do not emit empty <code class="notranslate">data</code> event if nothing has been read (stream reached EOF)<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="138682317" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/39" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/39/hovercard" href="https://github.com/reactphp/stream/pull/39">#39</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</li>
+<li>Bug fix: Ignore empty writes to <code class="notranslate">Buffer</code><br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="172136407" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/51" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/51/hovercard" href="https://github.com/reactphp/stream/pull/51">#51</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</li>
 <li>Add benchmarking script to measure throughput in CI<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="138823476" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/41" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/41/hovercard" href="https://github.com/reactphp/stream/pull/41">#41</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</li>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="138823476" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/41" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/41/hovercard" href="https://github.com/reactphp/stream/pull/41">#41</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</li>
 </ul>
 
     <hr>
@@ -955,11 +955,11 @@ stream resource fails with a permanent error.<br>
         </small>
     </h3>
 
-    <ul>
-<li>Bug fix: Read buffer to 0 fixes error with libevent and large quantity of I/O (<a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/mbonneau/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/mbonneau">@mbonneau</a>)</li>
-<li>Bug fix: No double-write during drain call (<a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/arnaud-lb/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/arnaud-lb">@arnaud-lb</a>)</li>
-<li>Bug fix: Support HHVM (<a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</li>
-<li>Adjust compatibility to 5.3 (<a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</li>
+    <ul dir="auto">
+<li>Bug fix: Read buffer to 0 fixes error with libevent and large quantity of I/O (<a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/mbonneau/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/mbonneau">@mbonneau</a>)</li>
+<li>Bug fix: No double-write during drain call (<a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/arnaud-lb/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/arnaud-lb">@arnaud-lb</a>)</li>
+<li>Bug fix: Support HHVM (<a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</li>
+<li>Adjust compatibility to 5.3 (<a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</li>
 </ul>
 
     <hr>
@@ -982,7 +982,7 @@ stream resource fails with a permanent error.<br>
         </small>
     </h3>
 
-    <ul>
+    <ul dir="auto">
 <li>Added DuplexStreamInterface</li>
 <li>Stream sets stream resources to non-blocking</li>
 <li>Fixed potential race condition in pipe</li>
@@ -1003,7 +1003,7 @@ stream resource fails with a permanent error.<br>
         </small>
     </h3>
 
-    <ul>
+    <ul dir="auto">
 <li>Bug fix: v0.3.4 changes merged for v0.4.1</li>
 </ul>
 
@@ -1022,7 +1022,7 @@ stream resource fails with a permanent error.<br>
         </small>
     </h3>
 
-    <ul>
+    <ul dir="auto">
 <li>Bug fix: [Stream] Fixed 100% CPU spike from non-empty write buffer on closed stream</li>
 </ul>
 
@@ -1041,7 +1041,7 @@ stream resource fails with a permanent error.<br>
         </small>
     </h3>
 
-    <ul>
+    <ul dir="auto">
 <li>BC break: Bump minimum PHP version to PHP 5.4, remove 5.3 specific hacks</li>
 <li>BC break: Update to Evenement 2.0</li>
 <li>Dependency: Autoloading and filesystem structure now PSR-4 instead of PSR-0</li>
@@ -1067,7 +1067,7 @@ stream resource fails with a permanent error.<br>
         </small>
     </h3>
 
-    <ul>
+    <ul dir="auto">
 <li>Bug fix: [Stream] Correctly detect closed connections</li>
 </ul>
 
@@ -1086,7 +1086,7 @@ stream resource fails with a permanent error.<br>
         </small>
     </h3>
 
-    <ul>
+    <ul dir="auto">
 <li>Bug fix: [Stream] Make sure CompositeStream is closed properly</li>
 </ul>
 
@@ -1105,8 +1105,8 @@ stream resource fails with a permanent error.<br>
         </small>
     </h3>
 
-    <ul>
-<li>Bug fix: [Stream] Allow any <code>ReadableStreamInterface</code> on <code>BufferedSink::createPromise()</code></li>
+    <ul dir="auto">
+<li>Bug fix: [Stream] Allow any <code class="notranslate">ReadableStreamInterface</code> on <code class="notranslate">BufferedSink::createPromise()</code></li>
 </ul>
 
     <hr>
@@ -1124,7 +1124,7 @@ stream resource fails with a permanent error.<br>
         </small>
     </h3>
 
-    <ul>
+    <ul dir="auto">
 <li>Feature: [Stream] Factory method for BufferedSink</li>
 </ul>
 
@@ -1148,7 +1148,7 @@ stream resource fails with a permanent error.<br>
         </small>
     </h3>
 
-    <ul>
+    <ul dir="auto">
 <li>Version bump</li>
 </ul>
 
@@ -1167,8 +1167,8 @@ stream resource fails with a permanent error.<br>
         </small>
     </h3>
 
-    <ul>
-<li>Feature: Make BufferedSink trigger progress events on the promise (<a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/jsor/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/jsor">@jsor</a>)</li>
+    <ul dir="auto">
+<li>Feature: Make BufferedSink trigger progress events on the promise (<a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/jsor/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/jsor">@jsor</a>)</li>
 </ul>
 
     <hr>
@@ -1186,7 +1186,7 @@ stream resource fails with a permanent error.<br>
         </small>
     </h3>
 
-    <ul>
+    <ul dir="auto">
 <li>Feature: Added ThroughStream, CompositeStream, ReadableStream and WritableStream</li>
 <li>Feature: Added BufferedSink</li>
 </ul>
@@ -1206,7 +1206,7 @@ stream resource fails with a permanent error.<br>
         </small>
     </h3>
 
-    <ul>
+    <ul dir="auto">
 <li>Version bump</li>
 </ul>
 
@@ -1225,7 +1225,7 @@ stream resource fails with a permanent error.<br>
         </small>
     </h3>
 
-    <ul>
+    <ul dir="auto">
 <li>Version bump</li>
 </ul>
 
@@ -1244,8 +1244,8 @@ stream resource fails with a permanent error.<br>
         </small>
     </h3>
 
-    <ul>
-<li>Bug fix: Check for EOF in <code>Buffer::write()</code></li>
+    <ul dir="auto">
+<li>Bug fix: Check for EOF in <code class="notranslate">Buffer::write()</code></li>
 </ul>
 
     <hr>
@@ -1263,7 +1263,7 @@ stream resource fails with a permanent error.<br>
         </small>
     </h3>
 
-    <ul>
+    <ul dir="auto">
 <li>Version bump</li>
 </ul>
 
@@ -1282,7 +1282,7 @@ stream resource fails with a permanent error.<br>
         </small>
     </h3>
 
-    <ul>
+    <ul dir="auto">
 <li>Bug fix: Testing and functional against PHP &gt;= 5.3.3 and &lt;= 5.3.8</li>
 </ul>
 
@@ -1301,7 +1301,7 @@ stream resource fails with a permanent error.<br>
         </small>
     </h3>
 
-    <ul>
+    <ul dir="auto">
 <li>First tagged release</li>
 </ul>
 
@@ -1652,7 +1652,7 @@ stream resource fails with a permanent error.<br>
         <mask id="reactphp-stream-participation-sparkline" x="0" y="0" width="320" height="40" >
             <polyline 
                 transform="translate(0, 40) scale(1,-1)"
-                points="0,1 6,1 12,1 18,2 24,3 30,1 36,2 42,1 48,1 54,1 60,1 66,1 72,1 78,1 84,1 90,1 96,1 102,3 108,1 114,1 120,1 126,1 132,1 138,1 144,1 150,1 156,1 162,1 168,1 174,1 180,1 186,1 192,1 198,1 204,1 210,1 216,1 222,1 228,1 234,1 240,1 246,1 252,1 258,1 264,1 270,1 276,1 282,1 288,2 294,1 300,1 306,1" 
+                points="0,1 6,1 12,3 18,2 24,1 30,2 36,1 42,1 48,1 54,1 60,1 66,1 72,1 78,1 84,1 90,1 96,3 102,1 108,1 114,1 120,1 126,1 132,1 138,1 144,1 150,1 156,1 162,1 168,1 174,1 180,1 186,1 192,1 198,1 204,1 210,1 216,1 222,1 228,1 234,1 240,1 246,1 252,1 258,1 264,1 270,1 276,1 282,2 288,1 294,1 300,1 306,1" 
                 fill="transparent" 
                 stroke="#40a977" 
                 stroke-width="2"

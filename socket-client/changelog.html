@@ -170,7 +170,7 @@
                         PromiseTimer
 
                         <span class="off-canvas-menu__version">
-                            v1.9.0
+                            v1.10.0
                         </span>
                     </a>
                 </li>
@@ -249,16 +249,16 @@
 
     <ul>
 <li>
-<p>Feature / BC break: Add main <code>Connector</code> facade<br>
-(#93 by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
-<p>The new <code>Connector</code> class acts as a facade for all underlying connectors,<br>
+<p>Feature / BC break: Add main <code class="notranslate">Connector</code> facade<br>
+(#93 by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+<p>The new <code class="notranslate">Connector</code> class acts as a facade for all underlying connectors,<br>
 which are now marked as "advanced usage", but continue to work unchanged.<br>
 This now makes it trivially easy to create plaintext TCP/IP, secure TLS and<br>
 Unix domain socket (UDS) connection streams simply like this:</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>connector</span> = <span class="pl-k">new</span> <span class="pl-v">Connector</span>(<span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
+<div class="highlight highlight-text-html-php"><pre class="notranslate"><span class="pl-s1"><span class="pl-c1">$</span>connector</span> = <span class="pl-k">new</span> <span class="pl-v">Connector</span>(<span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
 
-<span class="pl-s1"><span class="pl-c1">$</span>connector</span>-&gt;<span class="pl-en">connect</span>(<span class="pl-s">'tls://google.com:443'</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-smi">ConnectionInterface</span> <span class="pl-s1"><span class="pl-c1">$</span>conn</span>) {
-    <span class="pl-s1"><span class="pl-c1">$</span>conn</span>-&gt;<span class="pl-en">write</span>(<span class="pl-s">"GET / HTTP/1.0\r\n\r\n"</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>connector</span>-&gt;<span class="pl-en">connect</span>(<span class="pl-s">'tls://google.com:443'</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">ConnectionInterface</span></span> <span class="pl-s1"><span class="pl-c1">$</span>conn</span>) {
+    <span class="pl-s1"><span class="pl-c1">$</span>conn</span>-&gt;<span class="pl-en">write</span>("<span class="pl-s">GET / HTTP/1.0</span>\r\n\r\n");
 });</pre></div>
 <p>Optionally, it accepts options to configure all underlying connectors, such<br>
 as using a custom DNS setup, timeout values and disabling certain protocols<br>
@@ -284,7 +284,7 @@ and much more. See the README for more details.</p>
     <ul>
 <li>Feature / Fix: Support SNI on legacy PHP &lt; 5.6 and add documentation for<br>
 supported PHP and HHVM versions.<br>
-(#90 and #91 by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</li>
+(#90 and #91 by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</li>
 </ul>
 
     <hr>
@@ -305,11 +305,11 @@ supported PHP and HHVM versions.<br>
     <ul>
 <li>
 <p>Feature: Forward compatibility with Stream v0.5 and upcoming v0.6<br>
-(#89 by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+(#89 by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 </li>
 <li>
 <p>Fix: Fix examples to use updated API<br>
-(#88 by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+(#88 by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 </li>
 </ul>
 
@@ -330,25 +330,25 @@ supported PHP and HHVM versions.<br>
 
     <ul>
 <li>
-<p>Feature / BC break: Use <code>connect($uri)</code> instead of <code>create($host, $port)</code><br>
-and resolve with a <code>ConnectionInterface</code> instead of <code>Stream</code><br>
+<p>Feature / BC break: Use <code class="notranslate">connect($uri)</code> instead of <code class="notranslate">create($host, $port)</code><br>
+and resolve with a <code class="notranslate">ConnectionInterface</code> instead of <code class="notranslate">Stream</code><br>
 and expose remote and local addresses through this interface<br>
-and remove superfluous and undocumented <code>ConnectionException</code>.<br>
-(#74, #82 and #84 by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-c">// old</span>
-<span class="pl-s1"><span class="pl-c1">$</span>connector</span>-&gt;<span class="pl-en">create</span>(<span class="pl-s">'google.com'</span>, <span class="pl-c1">80</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-smi">Stream</span> <span class="pl-s1"><span class="pl-c1">$</span>conn</span>) {
+and remove superfluous and undocumented <code class="notranslate">ConnectionException</code>.<br>
+(#74, #82 and #84 by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+<div class="highlight highlight-text-html-php"><pre class="notranslate"><span class="pl-c">// old</span>
+<span class="pl-s1"><span class="pl-c1">$</span>connector</span>-&gt;<span class="pl-en">create</span>(<span class="pl-s">'google.com'</span>, <span class="pl-c1">80</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">Stream</span></span> <span class="pl-s1"><span class="pl-c1">$</span>conn</span>) {
     <span class="pl-k">echo</span> <span class="pl-s">'Connected'</span> . <span class="pl-c1">PHP_EOL</span>;
-    <span class="pl-s1"><span class="pl-c1">$</span>conn</span>-&gt;<span class="pl-en">write</span>(<span class="pl-s">"GET / HTTP/1.0\r\n\r\n"</span>);
+    <span class="pl-s1"><span class="pl-c1">$</span>conn</span>-&gt;<span class="pl-en">write</span>("<span class="pl-s">GET / HTTP/1.0</span>\r\n\r\n");
 });
 
 <span class="pl-c">// new</span>
-<span class="pl-s1"><span class="pl-c1">$</span>connector</span>-&gt;<span class="pl-en">connect</span>(<span class="pl-s">'google.com:80'</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-smi">ConnectionInterface</span> <span class="pl-s1"><span class="pl-c1">$</span>conn</span>) {
+<span class="pl-s1"><span class="pl-c1">$</span>connector</span>-&gt;<span class="pl-en">connect</span>(<span class="pl-s">'google.com:80'</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">ConnectionInterface</span></span> <span class="pl-s1"><span class="pl-c1">$</span>conn</span>) {
     <span class="pl-k">echo</span> <span class="pl-s">'Connected to '</span> . <span class="pl-s1"><span class="pl-c1">$</span>conn</span>-&gt;<span class="pl-en">getRemoteAddress</span>() . <span class="pl-c1">PHP_EOL</span>;
-    <span class="pl-s1"><span class="pl-c1">$</span>conn</span>-&gt;<span class="pl-en">write</span>(<span class="pl-s">"GET / HTTP/1.0\r\n\r\n"</span>);
+    <span class="pl-s1"><span class="pl-c1">$</span>conn</span>-&gt;<span class="pl-en">write</span>("<span class="pl-s">GET / HTTP/1.0</span>\r\n\r\n");
 });</pre></div>
 <blockquote>
-<p>Note that both the old <code>Stream</code> and the new <code>ConnectionInterface</code> implement<br>
-the same underlying <code>DuplexStreamInterface</code>, so their streaming behavior is<br>
+<p>Note that both the old <code class="notranslate">Stream</code> and the new <code class="notranslate">ConnectionInterface</code> implement<br>
+the same underlying <code class="notranslate">DuplexStreamInterface</code>, so their streaming behavior is<br>
 actually equivalent.<br>
 In order to upgrade, simply use the new typehints.<br>
 Existing stream handlers should continue to work unchanged.</p>
@@ -356,10 +356,10 @@ Existing stream handlers should continue to work unchanged.</p>
 </li>
 <li>
 <p>Feature / BC break: All connectors now MUST offer cancellation support.<br>
-You can now rely on getting a rejected promise when calling <code>cancel()</code> on a<br>
+You can now rely on getting a rejected promise when calling <code class="notranslate">cancel()</code> on a<br>
 pending connection attempt.<br>
-(#79 by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-c">// old: promise resolution not enforced and thus unreliable</span>
+(#79 by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+<div class="highlight highlight-text-html-php"><pre class="notranslate"><span class="pl-c">// old: promise resolution not enforced and thus unreliable</span>
 <span class="pl-s1"><span class="pl-c1">$</span>promise</span> = <span class="pl-s1"><span class="pl-c1">$</span>connector</span>-&gt;<span class="pl-en">create</span>(<span class="pl-s1"><span class="pl-c1">$</span>host</span>, <span class="pl-s1"><span class="pl-c1">$</span>port</span>);
 <span class="pl-s1"><span class="pl-c1">$</span>promise</span>-&gt;<span class="pl-en">cancel</span>();
 <span class="pl-s1"><span class="pl-c1">$</span>promise</span>-&gt;<span class="pl-en">then</span>(<span class="pl-c">/* MAY still be called */</span>, <span class="pl-c">/* SHOULD be called */</span>);
@@ -370,15 +370,15 @@ pending connection attempt.<br>
 <span class="pl-s1"><span class="pl-c1">$</span>promise</span>-&gt;<span class="pl-en">then</span>(<span class="pl-c">/* MUST NOT be called */</span>, <span class="pl-c">/* MUST be called */</span>);</pre></div>
 <blockquote>
 <p>Note that this behavior is only mandatory for <em>pending</em> connection attempts.<br>
-Once the promise is settled (resolved), calling <code>cancel()</code> will have no effect.</p>
+Once the promise is settled (resolved), calling <code class="notranslate">cancel()</code> will have no effect.</p>
 </blockquote>
 </li>
 <li>
-<p>BC break: All connector classes are now marked <code>final</code><br>
-and you can no longer <code>extend</code> them<br>
+<p>BC break: All connector classes are now marked <code class="notranslate">final</code><br>
+and you can no longer <code class="notranslate">extend</code> them<br>
 (which was never documented or recommended anyway).<br>
 Please use composition instead of extension.<br>
-(#85 by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+(#85 by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 </li>
 </ul>
 
@@ -404,9 +404,9 @@ Please use composition instead of extension.<br>
 
     <ul>
 <li>Fix: Skip IPv6 tests if not supported by the system<br>
-(#76 by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</li>
-<li>Documentation for <code>ConnectorInterface</code><br>
-(#77 by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</li>
+(#76 by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</li>
+<li>Documentation for <code class="notranslate">ConnectorInterface</code><br>
+(#77 by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</li>
 </ul>
 
     <hr>
@@ -425,10 +425,10 @@ Please use composition instead of extension.<br>
     </h3>
 
     <ul>
-<li>Feature: Replace <code>SecureStream</code> with unlimited read buffer from react/stream v0.4.5<br>
-(#72 by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</li>
+<li>Feature: Replace <code class="notranslate">SecureStream</code> with unlimited read buffer from react/stream v0.4.5<br>
+(#72 by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</li>
 <li>Feature: Add examples<br>
-(#75 by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</li>
+(#75 by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</li>
 </ul>
 
     <hr>
@@ -450,7 +450,7 @@ Please use composition instead of extension.<br>
 You should consider upgrading to the v0.5 release.</p>
 <ul>
 <li>Fix: Always create empty stream context to prevent race condition leading to<br>
-CN mismatch on TLS enabled connections (#73 by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/WyriHaximus/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/WyriHaximus">@WyriHaximus</a>)</li>
+CN mismatch on TLS enabled connections (#73 by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/WyriHaximus/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/WyriHaximus">@WyriHaximus</a>)</li>
 </ul>
 
     <hr>
@@ -471,16 +471,16 @@ CN mismatch on TLS enabled connections (#73 by <a class="user-mention" data-hove
     <ul>
 <li>
 <p>Feature: Support Promise cancellation for all connectors<br>
-(#71 by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>promise</span> = <span class="pl-s1"><span class="pl-c1">$</span>connector</span>-&gt;<span class="pl-en">create</span>(<span class="pl-s1"><span class="pl-c1">$</span>host</span>, <span class="pl-s1"><span class="pl-c1">$</span>port</span>);
+(#71 by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+<div class="highlight highlight-text-html-php"><pre class="notranslate"><span class="pl-s1"><span class="pl-c1">$</span>promise</span> = <span class="pl-s1"><span class="pl-c1">$</span>connector</span>-&gt;<span class="pl-en">create</span>(<span class="pl-s1"><span class="pl-c1">$</span>host</span>, <span class="pl-s1"><span class="pl-c1">$</span>port</span>);
 
 <span class="pl-s1"><span class="pl-c1">$</span>promise</span>-&gt;<span class="pl-en">cancel</span>();</pre></div>
 </li>
 <li>
 <p>Feature: Add TimeoutConnector decorator<br>
-(#51 by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>timeout</span> = <span class="pl-k">new</span> <span class="pl-v">TimeoutConnector</span>(<span class="pl-s1"><span class="pl-c1">$</span>connector</span>, <span class="pl-c1">3.0</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
-<span class="pl-s1"><span class="pl-c1">$</span>timeout</span>-&gt;<span class="pl-en">create</span>(<span class="pl-s1"><span class="pl-c1">$</span>host</span>, <span class="pl-s1"><span class="pl-c1">$</span>port</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span>(<span class="pl-smi">Stream</span> <span class="pl-s1"><span class="pl-c1">$</span>stream</span>) {
+(#51 by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+<div class="highlight highlight-text-html-php"><pre class="notranslate"><span class="pl-s1"><span class="pl-c1">$</span>timeout</span> = <span class="pl-k">new</span> <span class="pl-v">TimeoutConnector</span>(<span class="pl-s1"><span class="pl-c1">$</span>connector</span>, <span class="pl-c1">3.0</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>timeout</span>-&gt;<span class="pl-en">create</span>(<span class="pl-s1"><span class="pl-c1">$</span>host</span>, <span class="pl-s1"><span class="pl-c1">$</span>port</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span>(<span class="pl-smi"><span class="pl-smi">Stream</span></span> <span class="pl-s1"><span class="pl-c1">$</span>stream</span>) {
     <span class="pl-c">// connection resolved within 3.0s</span>
 });</pre></div>
 </li>
@@ -504,8 +504,8 @@ CN mismatch on TLS enabled connections (#73 by <a class="user-mention" data-hove
     <p>This is a compatibility release that backports some changes from the v0.5<br>
 release branch. You should consider upgrading to the v0.5 release.</p>
 <ul>
-<li>Fix: PHP 5.6+ uses new SSL/TLS context options backported (#65 by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</li>
-<li>Fix: Move SSL/TLS context options to SecureConnector (#43 by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</li>
+<li>Fix: PHP 5.6+ uses new SSL/TLS context options backported (#65 by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</li>
+<li>Fix: Move SSL/TLS context options to SecureConnector (#43 by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</li>
 </ul>
 
     <hr>
@@ -526,14 +526,14 @@ release branch. You should consider upgrading to the v0.5 release.</p>
     <ul>
 <li>
 <p>Feature / BC break: Support Connector without DNS<br>
-(#46 by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
-<p>BC break: The <code>Connector</code> class now serves as a BC layer only.<br>
-The <code>TcpConnector</code> and <code>DnsConnector</code> classes replace its functionality.<br>
+(#46 by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+<p>BC break: The <code class="notranslate">Connector</code> class now serves as a BC layer only.<br>
+The <code class="notranslate">TcpConnector</code> and <code class="notranslate">DnsConnector</code> classes replace its functionality.<br>
 If you're merely <em>using</em> this class, then you're <em>recommended</em> to upgrade as<br>
 per the below snippet – existing code will still work unchanged.<br>
-If you're <code>extend</code>ing the <code>Connector</code> (generally not recommended), then you<br>
+If you're <code class="notranslate">extend</code>ing the <code class="notranslate">Connector</code> (generally not recommended), then you<br>
 may have to rework your class hierarchy.</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-c">// old (still supported, but marked deprecated)</span>
+<div class="highlight highlight-text-html-php"><pre class="notranslate"><span class="pl-c">// old (still supported, but marked deprecated)</span>
 <span class="pl-s1"><span class="pl-c1">$</span>connector</span> = <span class="pl-k">new</span> <span class="pl-v">Connector</span>(<span class="pl-s1"><span class="pl-c1">$</span>loop</span>, <span class="pl-s1"><span class="pl-c1">$</span>resolver</span>);
 
 <span class="pl-c">// new equivalent</span>
@@ -544,31 +544,31 @@ may have to rework your class hierarchy.</p>
 </li>
 <li>
 <p>Feature: Add socket and SSL/TLS context options to connectors<br>
-(#52 by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+(#52 by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 </li>
 <li>
 <p>Fix: PHP 5.6+ uses new SSL/TLS context options<br>
-(#61 by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+(#61 by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 </li>
 <li>
 <p>Fix: Move SSL/TLS context options to SecureConnector<br>
-(#43 by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+(#43 by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 </li>
 <li>
 <p>Fix: Fix error reporting for invalid addresses<br>
-(#47 by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+(#47 by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 </li>
 <li>
 <p>Fix: Close stream resource if connection fails<br>
-(#48 by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+(#48 by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 </li>
 <li>
 <p>First class support for PHP 5.3 through PHP 7 and HHVM<br>
-(#53, #54 by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+(#53, #54 by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 </li>
 <li>
 <p>Add integration tests for SSL/TLS sockets<br>
-(#62 by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+(#62 by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 </li>
 </ul>
 
@@ -593,9 +593,9 @@ may have to rework your class hierarchy.</p>
     </h3>
 
     <ul>
-<li>Feature: Add support for Unix domain sockets (UDS) (#41 by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</li>
-<li>Bugfix: Explicitly set supported TLS versions for PHP 5.6+ (#31 by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/WyriHaximus/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/WyriHaximus">@WyriHaximus</a>)</li>
-<li>Bugfix: Ignore SSL non-draining buffer workaround for PHP 5.6.8+ (#33 by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/alexmace/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/alexmace">@alexmace</a>)</li>
+<li>Feature: Add support for Unix domain sockets (UDS) (#41 by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</li>
+<li>Bugfix: Explicitly set supported TLS versions for PHP 5.6+ (#31 by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/WyriHaximus/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/WyriHaximus">@WyriHaximus</a>)</li>
+<li>Bugfix: Ignore SSL non-draining buffer workaround for PHP 5.6.8+ (#33 by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/alexmace/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/alexmace">@alexmace</a>)</li>
 </ul>
 
     <hr>
@@ -614,9 +614,9 @@ may have to rework your class hierarchy.</p>
     </h3>
 
     <ul>
-<li>Bugfix: Set peer name to hostname to correct security concern in PHP 5.6 (<a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/WyriHaximus/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/WyriHaximus">@WyriHaximus</a>)</li>
+<li>Bugfix: Set peer name to hostname to correct security concern in PHP 5.6 (<a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/WyriHaximus/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/WyriHaximus">@WyriHaximus</a>)</li>
 <li>Bugfix: Always wrap secure to pull buffer due to regression in PHP</li>
-<li>Bugfix: SecureStream extends Stream to match documentation preventing BC (<a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</li>
+<li>Bugfix: SecureStream extends Stream to match documentation preventing BC (<a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</li>
 </ul>
 
     <hr>
@@ -641,9 +641,9 @@ may have to rework your class hierarchy.</p>
 
     <p>Phergilicious: In honour of all the SSL bugs found by the <a href="https://github.com/phergie/phergie-irc-client-react">Phergie</a> project re-writing on top of React.</p>
 <ul>
-<li>Bugfix: Only toggle the stream crypto handshake once (<a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/DaveRandom/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/DaveRandom">@DaveRandom</a> and <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/rdlowrey/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/rdlowrey">@rdlowrey</a>)</li>
-<li>Bugfix: Workaround for ext-openssl buffering bug (<a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/DaveRandom/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/DaveRandom">@DaveRandom</a>)</li>
-<li>Bugfix: SNI fix for PHP &lt; 5.6 (<a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/DaveRandom/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/DaveRandom">@DaveRandom</a>)</li>
+<li>Bugfix: Only toggle the stream crypto handshake once (<a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/DaveRandom/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/DaveRandom">@DaveRandom</a> and <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/rdlowrey/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/rdlowrey">@rdlowrey</a>)</li>
+<li>Bugfix: Workaround for ext-openssl buffering bug (<a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/DaveRandom/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/DaveRandom">@DaveRandom</a>)</li>
+<li>Bugfix: SNI fix for PHP &lt; 5.6 (<a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/DaveRandom/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/DaveRandom">@DaveRandom</a>)</li>
 </ul>
 
     <hr>
@@ -689,7 +689,7 @@ may have to rework your class hierarchy.</p>
     </h3>
 
     <ul>
-<li>Feature: [SocketClient] Support connecting to IPv6 addresses (<a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</li>
+<li>Feature: [SocketClient] Support connecting to IPv6 addresses (<a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</li>
 </ul>
 
     <hr>
@@ -708,7 +708,7 @@ may have to rework your class hierarchy.</p>
     </h3>
 
     <ul>
-<li>Feature: [SocketClient] New SocketClient component extracted from HttpClient (<a class="user-mention" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</li>
+<li>Feature: [SocketClient] New SocketClient component extracted from HttpClient (<a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</li>
 </ul>
 
     <hr>
