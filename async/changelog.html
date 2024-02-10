@@ -70,7 +70,7 @@
                         EventLoop
 
                         <span class="off-canvas-menu__version">
-                            v1.4.0
+                            v1.5.0
                         </span>
                     </a>
                 </li>
@@ -88,7 +88,7 @@
                         Promise
 
                         <span class="off-canvas-menu__version">
-                            v3.0.0
+                            v3.1.0
                         </span>
                     </a>
                 </li>
@@ -97,7 +97,7 @@
                         Async
 
                         <span class="off-canvas-menu__version">
-                            v4.1.0
+                            v4.2.0
                         </span>
                     </a>
                 </li>
@@ -111,7 +111,7 @@
                         Socket
 
                         <span class="off-canvas-menu__version">
-                            v1.14.0
+                            v1.15.0
                         </span>
                     </a>
                 </li>
@@ -138,7 +138,7 @@
                         DNS
 
                         <span class="off-canvas-menu__version">
-                            v1.11.0
+                            v1.12.0
                         </span>
                     </a>
                 </li>
@@ -179,7 +179,7 @@
                         PromiseStream
 
                         <span class="off-canvas-menu__version">
-                            v1.6.0
+                            v1.7.0
                         </span>
                     </a>
                 </li>
@@ -221,7 +221,7 @@
                     <h1>Async Changelog</h1>
 
     <ul class="toc">
-            <li><a href="#2023" title="Jump to year 2023 (3 releases)">2023</a></li>
+            <li><a href="#2023" title="Jump to year 2023 (6 releases)">2023</a></li>
             <li><a href="#2022" title="Jump to year 2022 (3 releases)">2022</a></li>
             <li><a href="#2013" title="Jump to year 2013 (1 release)">2013</a></li>
         </ul>
@@ -231,6 +231,103 @@
         2023
     </h2>
 
+    
+            <h3>
+        <a id="420-2023-11-22" class="anchor" href="#420-2023-11-22" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        4.2.0
+
+        <small>
+            (2023-11-22)
+            <a href="https://github.com/reactphp/async/releases/tag/v4.2.0" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul dir="auto">
+<li>
+<p dir="auto">Feature: Add Promise v3 template types for all public functions.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1179100821" data-permission-text="Title is private" data-url="https://github.com/reactphp/async/issues/40" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/async/pull/40/hovercard" href="https://github.com/reactphp/async/pull/40">#40</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/WyriHaximus/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/WyriHaximus">@WyriHaximus</a>)</p>
+<p dir="auto">All our public APIs now use Promise v3 template types to guide IDEs and static<br>
+analysis tools (like PHPStan), helping with proper type usage and improving<br>
+code quality:</p>
+<div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate">assertType(<span class="pl-s">'bool'</span>, await(resolve(<span class="pl-c1">true</span>)));
+assertType(<span class="pl-s">'PromiseInterface&lt;bool&gt;'</span>, async(fn(): <span class="pl-smi">bool</span> =&gt; <span class="pl-c1">true</span>)());
+assertType(<span class="pl-s">'PromiseInterface&lt;bool&gt;'</span>, coroutine(fn(): <span class="pl-smi">bool</span> =&gt; <span class="pl-c1">true</span>));</pre></div>
+</li>
+<li>
+<p dir="auto">Feature: Full PHP 8.3 compatibility.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1967065483" data-permission-text="Title is private" data-url="https://github.com/reactphp/async/issues/81" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/async/pull/81/hovercard" href="https://github.com/reactphp/async/pull/81">#81</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+</li>
+<li>
+<p dir="auto">Update test suite to avoid unhandled promise rejections.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1791731613" data-permission-text="Title is private" data-url="https://github.com/reactphp/async/issues/79" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/async/pull/79/hovercard" href="https://github.com/reactphp/async/pull/79">#79</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+</li>
+</ul>
+
+    <hr>
+    
+            <h3>
+        <a id="320-2023-11-22" class="anchor" href="#320-2023-11-22" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        3.2.0
+
+        <small>
+            (2023-11-22)
+            <a href="https://github.com/reactphp/async/releases/tag/v3.2.0" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <p dir="auto">This release contains backported features from the Async v4.2.0 release for those<br>
+not yet on PHP 8.1+. Async v3 provides a compatible API, but may not take advantage<br>
+of newer language features. We encourage upgrading to the latest version when possible.</p>
+<ul dir="auto">
+<li>
+<p dir="auto">Feature: Add Promise v3 template types for all public functions.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1967070148" data-permission-text="Title is private" data-url="https://github.com/reactphp/async/issues/82" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/async/pull/82/hovercard" href="https://github.com/reactphp/async/pull/82">#82</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+<p dir="auto">All our public APIs now use Promise v3 template types to guide IDEs and static<br>
+analysis tools (like PHPStan), helping with proper type usage and improving<br>
+code quality:</p>
+<div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate">assertType(<span class="pl-s">'bool'</span>, await(resolve(<span class="pl-c1">true</span>)));
+assertType(<span class="pl-s">'PromiseInterface&lt;bool&gt;'</span>, coroutine(fn(): <span class="pl-smi">bool</span> =&gt; <span class="pl-c1">true</span>));</pre></div>
+</li>
+<li>
+<p dir="auto">Feature: Full PHP 8.3 compatibility.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1976051311" data-permission-text="Title is private" data-url="https://github.com/reactphp/async/issues/83" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/async/pull/83/hovercard" href="https://github.com/reactphp/async/pull/83">#83</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+</li>
+<li>
+<p dir="auto">Update test suite to avoid unhandled promise rejections.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1791739796" data-permission-text="Title is private" data-url="https://github.com/reactphp/async/issues/80" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/async/pull/80/hovercard" href="https://github.com/reactphp/async/pull/80">#80</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+</li>
+</ul>
+
+    <hr>
+    
+            <h3>
+        <a id="220-2023-11-22" class="anchor" href="#220-2023-11-22" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        2.2.0
+
+        <small>
+            (2023-11-22)
+            <a href="https://github.com/reactphp/async/releases/tag/v2.2.0" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <p dir="auto">This is a compatibility release to ensure a smooth upgrade path for those not yet<br>
+on Async v4 or v3. We encourage upgrading to the latest version when possible, as<br>
+Async v4 will be the way forward for this project.</p>
+<ul dir="auto">
+<li>Feature: Full PHP 8.3 compatibility.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1976062001" data-permission-text="Title is private" data-url="https://github.com/reactphp/async/issues/84" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/async/pull/84/hovercard" href="https://github.com/reactphp/async/pull/84">#84</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</li>
+</ul>
+
+    <hr>
     
             <h3>
         <a id="410-2023-06-22" class="anchor" href="#410-2023-06-22" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
@@ -589,7 +686,7 @@ Run tests on PHP 8.1, PHPUnit 9, switch to GitHub actions and clean up test suit
 
                             <div class="version-selector">
                                 <button class="version-selector__button version-selector__button--latest" data-ctrly="component-version-selector" data-version-selector-control>
-                                    v4.1.0
+                                    v4.2.0
 
                                     <i class="icon-chevron-down" aria-hidden="true"></i>
                                     <i class="icon-chevron-up" aria-hidden="true"></i>
@@ -605,6 +702,21 @@ Run tests on PHP 8.1, PHPUnit 9, switch to GitHub actions and clean up test suit
                                             </a>
                                         </li>
                                                                                                                                                                                                                     <li>
+                                                <a href="https://github.com/reactphp/async/tree/v3.2.0#readme" class="version-selector__version">
+                                                    v3.2.0
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
+                                                <a href="https://github.com/reactphp/async/tree/v2.2.0#readme" class="version-selector__version">
+                                                    v2.2.0
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
+                                                <a href="https://github.com/reactphp/async/tree/v4.1.0#readme" class="version-selector__version">
+                                                    v4.1.0
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
                                                 <a href="https://github.com/reactphp/async/tree/v3.1.0#readme" class="version-selector__version">
                                                     v3.1.0
                                                 </a>
@@ -659,19 +771,19 @@ Run tests on PHP 8.1, PHPUnit 9, switch to GitHub actions and clean up test suit
 
                         <h3 class="component-info__subtitle">Installation</h3>
 
-                        <div class="highlight highlight-source-shell"><pre>composer require react/async:^4.1.0</pre></div>
+                        <div class="highlight highlight-source-shell"><pre>composer require react/async:^4.2.0</pre></div>
 
                         <h3 class="component-info__subtitle">Contributors</h3>
 
                         <ul class="component-info__contributors">
                                                     <li>
                                 <a href="https://github.com/clue">
-                                    <img src="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=80 2x" alt="clue" title="clue (54 contributions)">
+                                    <img src="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=80 2x" alt="clue" title="clue (55 contributions)">
                                 </a>
                             </li>
                                                     <li>
                                 <a href="https://github.com/WyriHaximus">
-                                    <img src="https://avatars.githubusercontent.com/u/147145?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/147145?v=4&amp;s=80 2x" alt="WyriHaximus" title="WyriHaximus (35 contributions)">
+                                    <img src="https://avatars.githubusercontent.com/u/147145?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/147145?v=4&amp;s=80 2x" alt="WyriHaximus" title="WyriHaximus (38 contributions)">
                                 </a>
                             </li>
                                                     <li>
@@ -681,7 +793,7 @@ Run tests on PHP 8.1, PHPUnit 9, switch to GitHub actions and clean up test suit
                             </li>
                                                     <li>
                                 <a href="https://github.com/SimonFrings">
-                                    <img src="https://avatars.githubusercontent.com/u/44357440?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/44357440?v=4&amp;s=80 2x" alt="SimonFrings" title="SimonFrings (4 contribution)">
+                                    <img src="https://avatars.githubusercontent.com/u/44357440?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/44357440?v=4&amp;s=80 2x" alt="SimonFrings" title="SimonFrings (5 contribution)">
                                 </a>
                             </li>
                                                     <li>
@@ -708,7 +820,7 @@ Run tests on PHP 8.1, PHPUnit 9, switch to GitHub actions and clean up test suit
         <mask id="reactphp-async-participation-sparkline" x="0" y="0" width="320" height="40" >
             <polyline 
                 transform="translate(0, 40) scale(1,-1)"
-                points="0,1 6,1 12,1 18,1 24,1 30,1 36,1 42,1 48,4 54,2 60,1 66,1 72,1 78,1 84,3 90,1 96,1 102,1 108,1 114,1 120,1 126,3 132,1 138,1 144,1 150,1 156,1 162,1 168,1 174,1 180,1 186,1 192,1 198,2 204,1 210,1 216,1 222,1 228,1 234,1 240,1 246,2 252,3 258,1 264,2 270,2 276,1 282,1 288,1 294,1 300,1 306,1" 
+                points="0,1 6,1 12,1 18,1 24,1 30,1 36,1 42,1 48,1 54,2 60,1 66,1 72,1 78,1 84,1 90,1 96,1 102,2 108,3 114,1 120,3 126,1 132,1 138,1 144,1 150,1 156,1 162,1 168,1 174,1 180,1 186,1 192,1 198,2 204,1 210,1 216,2 222,2 228,1 234,1 240,2 246,1 252,1 258,1 264,1 270,1 276,1 282,1 288,1 294,1 300,1 306,1" 
                 fill="transparent" 
                 stroke="#40a977" 
                 stroke-width="2"

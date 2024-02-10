@@ -69,7 +69,7 @@
                         EventLoop
 
                         <span class="off-canvas-menu__version">
-                            v1.4.0
+                            v1.5.0
                         </span>
                     </a>
                 </li>
@@ -87,7 +87,7 @@
                         Promise
 
                         <span class="off-canvas-menu__version">
-                            v3.0.0
+                            v3.1.0
                         </span>
                     </a>
                 </li>
@@ -96,7 +96,7 @@
                         Async
 
                         <span class="off-canvas-menu__version">
-                            v4.1.0
+                            v4.2.0
                         </span>
                     </a>
                 </li>
@@ -110,7 +110,7 @@
                         Socket
 
                         <span class="off-canvas-menu__version">
-                            v1.14.0
+                            v1.15.0
                         </span>
                     </a>
                 </li>
@@ -137,7 +137,7 @@
                         DNS
 
                         <span class="off-canvas-menu__version">
-                            v1.11.0
+                            v1.12.0
                         </span>
                     </a>
                 </li>
@@ -178,7 +178,7 @@
                         PromiseStream
 
                         <span class="off-canvas-menu__version">
-                            v1.6.0
+                            v1.7.0
                         </span>
                     </a>
                 </li>
@@ -247,8 +247,8 @@ This means it's now more powerful and easier to use than ever:</p>
 Further development will take place in the updated
 <a href="../http/">react/http</a>,
 so you're highly recommended to upgrade as soon as possible.</p>
-<h1><a id="deprecated-httpclient" class="anchor" aria-hidden="true" href="#deprecated-httpclient"><span aria-hidden="true" class="octicon octicon-link"></span></a>Deprecated HttpClient</h1>
-<p><a href="https://travis-ci.org/reactphp/http-client" rel="nofollow"><img src="https://camo.githubusercontent.com/2a02c3766051ec6a83034f040b33310d14fd8c7e1d61679397859b20067a5667/68747470733a2f2f7472617669732d63692e6f72672f72656163747068702f687474702d636c69656e742e7376673f6272616e63683d6d6173746572" alt="Build Status" data-canonical-src="https://travis-ci.org/reactphp/http-client.svg?branch=master" style="max-width: 100%;"></a></p>
+<h1><a id="deprecated-httpclient" class="anchor" aria-hidden="true" tabindex="-1" href="#deprecated-httpclient"><span aria-hidden="true" class="octicon octicon-link"></span></a>Deprecated HttpClient</h1>
+<p><a href="https://travis-ci.org/reactphp/http-client" rel="nofollow"><img src="https://camo.githubusercontent.com/165e3a0764ce896284d746fd80b86689e12ba12d2bf13ab7daa223db99aa3cc4/68747470733a2f2f7472617669732d63692e6f72672f72656163747068702f687474702d636c69656e742e7376673f6272616e63683d6d6173746572" alt="Build Status" data-canonical-src="https://travis-ci.org/reactphp/http-client.svg?branch=master" style="max-width: 100%;"></a></p>
 <p>Event-driven, streaming HTTP client for <a href="https://reactphp.org" rel="nofollow">ReactPHP</a>.</p>
 <p><strong>Table of Contents</strong></p>
 <ul>
@@ -269,8 +269,8 @@ so you're highly recommended to upgrade as soon as possible.</p>
 <li><a href="#tests">Tests</a></li>
 <li><a href="#license">License</a></li>
 </ul>
-<h2><a id="basic-usage" class="anchor" aria-hidden="true" href="#basic-usage"><span aria-hidden="true" class="octicon octicon-link"></span></a>Basic usage</h2>
-<h3><a id="client" class="anchor" aria-hidden="true" href="#client"><span aria-hidden="true" class="octicon octicon-link"></span></a>Client</h3>
+<h2><a id="basic-usage" class="anchor" aria-hidden="true" tabindex="-1" href="#basic-usage"><span aria-hidden="true" class="octicon octicon-link"></span></a>Basic usage</h2>
+<h3><a id="client" class="anchor" aria-hidden="true" tabindex="-1" href="#client"><span aria-hidden="true" class="octicon octicon-link"></span></a>Client</h3>
 <p>The <code>Client</code> is responsible for communicating with HTTP servers, managing the
 connection state and sending your HTTP requests.
 It also registers everything with the main <a href="../event-loop/#usage"><code>EventLoop</code></a>.</p>
@@ -352,7 +352,7 @@ This will also be forwarded to the request and emit an <code>error</code> event 
 preceeded by an <code>error</code> event.
 This will also be forwarded to the request and emit a <code>close</code> event there.</li>
 </ul>
-<h3><a id="example" class="anchor" aria-hidden="true" href="#example"><span aria-hidden="true" class="octicon octicon-link"></span></a>Example</h3>
+<h3><a id="example" class="anchor" aria-hidden="true" tabindex="-1" href="#example"><span aria-hidden="true" class="octicon octicon-link"></span></a>Example</h3>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-ent">&lt;?php</span>
 
 <span class="pl-s1"><span class="pl-c1">$</span>loop</span> = <span class="pl-v">React</span>\<span class="pl-v">EventLoop</span>\<span class="pl-v">Factory</span>::<span class="pl-en">create</span>();
@@ -373,8 +373,8 @@ This will also be forwarded to the request and emit a <code>close</code> event t
 <span class="pl-s1"><span class="pl-c1">$</span>request</span>-&gt;<span class="pl-en">end</span>();
 <span class="pl-s1"><span class="pl-c1">$</span>loop</span>-&gt;<span class="pl-en">run</span>();</pre></div>
 <p>See also the <a href="https://github.com/reactphp/http-client/blob/v0.5.11/examples">examples</a>.</p>
-<h2><a id="advanced-usage" class="anchor" aria-hidden="true" href="#advanced-usage"><span aria-hidden="true" class="octicon octicon-link"></span></a>Advanced Usage</h2>
-<h3><a id="unix-domain-sockets" class="anchor" aria-hidden="true" href="#unix-domain-sockets"><span aria-hidden="true" class="octicon octicon-link"></span></a>Unix domain sockets</h3>
+<h2><a id="advanced-usage" class="anchor" aria-hidden="true" tabindex="-1" href="#advanced-usage"><span aria-hidden="true" class="octicon octicon-link"></span></a>Advanced Usage</h2>
+<h3><a id="unix-domain-sockets" class="anchor" aria-hidden="true" tabindex="-1" href="#unix-domain-sockets"><span aria-hidden="true" class="octicon octicon-link"></span></a>Unix domain sockets</h3>
 <p>By default, this library supports transport over plaintext TCP/IP and secure
 TLS connections for the <code>http://</code> and <code>https://</code> URI schemes respectively.
 This library also supports Unix domain sockets (UDS) when explicitly configured.</p>
@@ -390,7 +390,7 @@ no longer be used to establish the connection:</p>
 
 <span class="pl-s1"><span class="pl-c1">$</span>request</span> = <span class="pl-s1"><span class="pl-c1">$</span>client</span>-&gt;<span class="pl-en">request</span>(<span class="pl-s">'GET'</span>, <span class="pl-s">'http://localhost/info'</span>);</pre></div>
 <p>See also <a href="https://github.com/reactphp/http-client/blob/v0.5.11/examples/11-unix-domain-sockets.php">example #11</a>.</p>
-<h2><a id="install" class="anchor" aria-hidden="true" href="#install"><span aria-hidden="true" class="octicon octicon-link"></span></a>Install</h2>
+<h2><a id="install" class="anchor" aria-hidden="true" tabindex="-1" href="#install"><span aria-hidden="true" class="octicon octicon-link"></span></a>Install</h2>
 <p>The recommended way to install this library is <a href="https://getcomposer.org" rel="nofollow">through Composer</a>.
 <a href="https://getcomposer.org/doc/00-intro.md" rel="nofollow">New to Composer?</a></p>
 <p>This will install the latest supported version:</p>
@@ -400,7 +400,7 @@ no longer be used to establish the connection:</p>
 extensions and supports running on legacy PHP 5.3 through current PHP 7+ and
 HHVM.
 It's <em>highly recommended to use PHP 7+</em> for this project.</p>
-<h2><a id="tests" class="anchor" aria-hidden="true" href="#tests"><span aria-hidden="true" class="octicon octicon-link"></span></a>Tests</h2>
+<h2><a id="tests" class="anchor" aria-hidden="true" tabindex="-1" href="#tests"><span aria-hidden="true" class="octicon octicon-link"></span></a>Tests</h2>
 <p>To run the test suite, you first need to clone this repo and then install all
 dependencies <a href="https://getcomposer.org" rel="nofollow">through Composer</a>:</p>
 <div class="highlight highlight-source-shell"><pre>$ composer install</pre></div>
@@ -411,7 +411,7 @@ test HTTP requests against the online service <a href="http://httpbin.org" rel="
 on a stable internet connection.
 If you do not want to run these, they can simply be skipped like this:</p>
 <div class="highlight highlight-source-shell"><pre>$ php vendor/bin/phpunit --exclude-group internet</pre></div>
-<h2><a id="license" class="anchor" aria-hidden="true" href="#license"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
+<h2><a id="license" class="anchor" aria-hidden="true" tabindex="-1" href="#license"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
 <p>MIT, see <a href="license.html">LICENSE file</a>.</p>
                                 </main>
                 <aside class="sidebar" role="complementary">
@@ -677,13 +677,8 @@ If you do not want to run these, they can simply be skipped like this:</p>
                                 </a>
                             </li>
                                                     <li>
-                                <a href="https://github.com/dpovshed">
-                                    <img src="https://avatars.githubusercontent.com/u/786020?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/786020?v=4&amp;s=80 2x" alt="dpovshed" title="dpovshed (2 contribution)">
-                                </a>
-                            </li>
-                                                    <li>
-                                <a href="https://github.com/cursedcoder">
-                                    <img src="https://avatars.githubusercontent.com/u/899452?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/899452?v=4&amp;s=80 2x" alt="cursedcoder" title="cursedcoder (2 contribution)">
+                                <a href="https://github.com/djagya">
+                                    <img src="https://avatars.githubusercontent.com/u/2600431?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/2600431?v=4&amp;s=80 2x" alt="djagya" title="djagya (2 contribution)">
                                 </a>
                             </li>
                                                     <li>
@@ -692,8 +687,13 @@ If you do not want to run these, they can simply be skipped like this:</p>
                                 </a>
                             </li>
                                                     <li>
-                                <a href="https://github.com/djagya">
-                                    <img src="https://avatars.githubusercontent.com/u/2600431?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/2600431?v=4&amp;s=80 2x" alt="djagya" title="djagya (2 contribution)">
+                                <a href="https://github.com/cursedcoder">
+                                    <img src="https://avatars.githubusercontent.com/u/899452?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/899452?v=4&amp;s=80 2x" alt="cursedcoder" title="cursedcoder (2 contribution)">
+                                </a>
+                            </li>
+                                                    <li>
+                                <a href="https://github.com/dpovshed">
+                                    <img src="https://avatars.githubusercontent.com/u/786020?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/786020?v=4&amp;s=80 2x" alt="dpovshed" title="dpovshed (2 contribution)">
                                 </a>
                             </li>
                                                     <li>
