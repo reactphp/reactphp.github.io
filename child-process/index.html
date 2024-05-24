@@ -87,7 +87,7 @@
                         Promise
 
                         <span class="off-canvas-menu__version">
-                            v3.1.0
+                            v3.2.0
                         </span>
                     </a>
                 </li>
@@ -128,7 +128,7 @@
                         HTTP
 
                         <span class="off-canvas-menu__version">
-                            v1.9.0
+                            v1.10.0
                         </span>
                     </a>
                 </li>
@@ -219,7 +219,7 @@
                 <main class="main">
                                     <h1>ChildProcess</h1>
 
-                    
+                    <div class="markdown-heading"><h1 class="heading-element">ChildProcess</h1><a id="childprocess" class="anchor" aria-label="Permalink: ChildProcess" href="#childprocess"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p><a href="https://github.com/reactphp/child-process/actions"><img src="https://github.com/reactphp/child-process/actions/workflows/ci.yml/badge.svg" alt="CI status" style="max-width: 100%;"></a>
 <a href="https://packagist.org/packages/react/child-process" rel="nofollow"><img src="https://camo.githubusercontent.com/4624529d7ac3a09f7fd7897572c074e39782c336a0fb60fb940032daafba2495/68747470733a2f2f696d672e736869656c64732e696f2f7061636b61676973742f64742f72656163742f6368696c642d70726f636573733f636f6c6f723d626c7565266c6162656c3d696e7374616c6c732532306f6e2532305061636b6167697374" alt="installs on Packagist" data-canonical-src="https://img.shields.io/packagist/dt/react/child-process?color=blue&amp;label=installs%20on%20Packagist" style="max-width: 100%;"></a></p>
 <p>Event-driven library for executing child processes with
@@ -248,7 +248,7 @@ as <a href="../stream/">Streams</a>.</p>
 <li><a href="#tests">Tests</a></li>
 <li><a href="#license">License</a></li>
 </ul>
-<h2><a id="quickstart-example" class="anchor" aria-hidden="true" tabindex="-1" href="#quickstart-example"><span aria-hidden="true" class="octicon octicon-link"></span></a>Quickstart example</h2>
+<div class="markdown-heading"><h2 class="heading-element">Quickstart example</h2><a id="quickstart-example" class="anchor" aria-label="Permalink: Quickstart example" href="#quickstart-example"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>process</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">ChildProcess</span>\<span class="pl-v">Process</span>(<span class="pl-s">'echo foo'</span>);
 <span class="pl-s1"><span class="pl-c1">$</span>process</span>-&gt;<span class="pl-en">start</span>();
 
@@ -260,8 +260,8 @@ as <a href="../stream/">Streams</a>.</p>
     <span class="pl-k">echo</span> <span class="pl-s">'Process exited with code '</span> . <span class="pl-s1"><span class="pl-c1">$</span>exitCode</span> . <span class="pl-c1">PHP_EOL</span>;
 });</pre></div>
 <p>See also the <a href="https://github.com/reactphp/child-process/blob/v0.6.5/examples">examples</a>.</p>
-<h2><a id="process" class="anchor" aria-hidden="true" tabindex="-1" href="#process"><span aria-hidden="true" class="octicon octicon-link"></span></a>Process</h2>
-<h3><a id="stream-properties" class="anchor" aria-hidden="true" tabindex="-1" href="#stream-properties"><span aria-hidden="true" class="octicon octicon-link"></span></a>Stream Properties</h3>
+<div class="markdown-heading"><h2 class="heading-element">Process</h2><a id="process" class="anchor" aria-label="Permalink: Process" href="#process"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="markdown-heading"><h3 class="heading-element">Stream Properties</h3><a id="stream-properties" class="anchor" aria-label="Permalink: Stream Properties" href="#stream-properties"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>Once a process is started, its I/O streams will be constructed as instances of
 <code>React\Stream\ReadableStreamInterface</code> and <code>React\Stream\WritableStreamInterface</code>.
 Before <code>start()</code> is called, these properties are not set. Once a process terminates,
@@ -317,7 +317,7 @@ you can use any of their events and methods as usual:</p>
 <p>For more details, see the
 <a href="../stream/#readablestreaminterface"><code>ReadableStreamInterface</code></a> and
 <a href="../stream/#writablestreaminterface"><code>WritableStreamInterface</code></a>.</p>
-<h3><a id="command" class="anchor" aria-hidden="true" tabindex="-1" href="#command"><span aria-hidden="true" class="octicon octicon-link"></span></a>Command</h3>
+<div class="markdown-heading"><h3 class="heading-element">Command</h3><a id="command" class="anchor" aria-label="Permalink: Command" href="#command"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The <code>Process</code> class allows you to pass any kind of command line string:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>process</span> = <span class="pl-k">new</span> <span class="pl-v">Process</span>(<span class="pl-s">'echo test'</span>);
 <span class="pl-s1"><span class="pl-c1">$</span>process</span>-&gt;<span class="pl-en">start</span>();</pre></div>
@@ -406,7 +406,7 @@ If you pass a complete command line (or are unsure), you SHOULD most likely keep
 the wrapping shell.
 If you're running on Unix and you want to pass an invidual command only, you MAY
 want to consider prepending the command string with <code>exec</code> to avoid the wrapping shell.</p>
-<h3><a id="termination" class="anchor" aria-hidden="true" tabindex="-1" href="#termination"><span aria-hidden="true" class="octicon octicon-link"></span></a>Termination</h3>
+<div class="markdown-heading"><h3 class="heading-element">Termination</h3><a id="termination" class="anchor" aria-label="Permalink: Termination" href="#termination"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The <code>exit</code> event will be emitted whenever the process is no longer running.
 Event listeners will receive the exit code and termination signal as two
 arguments:</p>
@@ -479,7 +479,7 @@ For example, the following can be used to "soft-close" a <code>cat</code> proces
 properties actually allow some fine grained control over process termination,
 such as first trying a soft-close and then applying a force-close after a
 timeout.</p>
-<h3><a id="custom-pipes" class="anchor" aria-hidden="true" tabindex="-1" href="#custom-pipes"><span aria-hidden="true" class="octicon octicon-link"></span></a>Custom pipes</h3>
+<div class="markdown-heading"><h3 class="heading-element">Custom pipes</h3><a id="custom-pipes" class="anchor" aria-label="Permalink: Custom pipes" href="#custom-pipes"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>Following common Unix conventions, this library will start each child process
 with the three pipes matching the standard I/O streams by default. For more
 advanced use cases it may be useful to pass in custom pipes, such as explicitly
@@ -518,7 +518,7 @@ reference the pipes matching common Unix conventions. This library supports any
 number of pipes and additional file descriptors, but many common applications
 being run as a child process will expect that the parent process properly
 assigns these file descriptors.</p>
-<h3><a id="sigchild-compatibility" class="anchor" aria-hidden="true" tabindex="-1" href="#sigchild-compatibility"><span aria-hidden="true" class="octicon octicon-link"></span></a>Sigchild Compatibility</h3>
+<div class="markdown-heading"><h3 class="heading-element">Sigchild Compatibility</h3><a id="sigchild-compatibility" class="anchor" aria-label="Permalink: Sigchild Compatibility" href="#sigchild-compatibility"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>Internally, this project uses a work-around to improve compatibility when PHP
 has been compiled with the <code>--enable-sigchild</code> option. This should not affect most
 installations as this configure option is not used by default and many
@@ -545,7 +545,7 @@ Similarly, some distributions are known to omit the configure options from
 cases. You may then enable this  explicitly as given above.</p>
 <p><strong>Note:</strong> The original functionality was taken from Symfony's
 <a href="https://github.com/symfony/process">Process</a> compoment.</p>
-<h3><a id="windows-compatibility" class="anchor" aria-hidden="true" tabindex="-1" href="#windows-compatibility"><span aria-hidden="true" class="octicon octicon-link"></span></a>Windows Compatibility</h3>
+<div class="markdown-heading"><h3 class="heading-element">Windows Compatibility</h3><a id="windows-compatibility" class="anchor" aria-label="Permalink: Windows Compatibility" href="#windows-compatibility"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>Due to platform constraints, this library provides only limited support for
 spawning child processes on Windows. In particular, PHP does not allow accessing
 standard I/O pipes on Windows without blocking. As such, this project will not
@@ -681,7 +681,7 @@ particular, this means that shell built-in functions such as <code>echo hello</c
 <code>sleep 10</code> may have to be prefixed with an explicit shell command like this:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>process</span> = <span class="pl-k">new</span> <span class="pl-v">Process</span>(<span class="pl-s">'cmd /c echo hello'</span>, <span class="pl-c1">null</span>, <span class="pl-c1">null</span>, <span class="pl-s1"><span class="pl-c1">$</span>pipes</span>);
 <span class="pl-s1"><span class="pl-c1">$</span>process</span>-&gt;<span class="pl-en">start</span>();</pre></div>
-<h2><a id="install" class="anchor" aria-hidden="true" tabindex="-1" href="#install"><span aria-hidden="true" class="octicon octicon-link"></span></a>Install</h2>
+<div class="markdown-heading"><h2 class="heading-element">Install</h2><a id="install" class="anchor" aria-label="Permalink: Install" href="#install"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The recommended way to install this library is <a href="https://getcomposer.org/" rel="nofollow">through Composer</a>.
 <a href="https://getcomposer.org/doc/00-intro.md" rel="nofollow">New to Composer?</a></p>
 <p>This will install the latest supported version:</p>
@@ -691,13 +691,13 @@ particular, this means that shell built-in functions such as <code>echo hello</c
 extensions and supports running on legacy PHP 5.3 through current PHP 8+ and HHVM.
 It's <em>highly recommended to use the latest supported PHP version</em> for this project.</p>
 <p>See above note for limited <a href="#windows-compatibility">Windows Compatibility</a>.</p>
-<h2><a id="tests" class="anchor" aria-hidden="true" tabindex="-1" href="#tests"><span aria-hidden="true" class="octicon octicon-link"></span></a>Tests</h2>
+<div class="markdown-heading"><h2 class="heading-element">Tests</h2><a id="tests" class="anchor" aria-label="Permalink: Tests" href="#tests"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>To run the test suite, you first need to clone this repo and then install all
 dependencies <a href="https://getcomposer.org/" rel="nofollow">through Composer</a>:</p>
 <div class="highlight highlight-source-shell"><pre>composer install</pre></div>
 <p>To run the test suite, go to the project root and run:</p>
 <div class="highlight highlight-source-shell"><pre>vendor/bin/phpunit</pre></div>
-<h2><a id="license" class="anchor" aria-hidden="true" tabindex="-1" href="#license"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
+<div class="markdown-heading"><h2 class="heading-element">License</h2><a id="license" class="anchor" aria-label="Permalink: License" href="#license"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>MIT, see <a href="license.html">LICENSE file</a>.</p>
                                 </main>
                 <aside class="sidebar" role="complementary">
@@ -906,7 +906,7 @@ dependencies <a href="https://getcomposer.org/" rel="nofollow">through Composer<
         <mask id="reactphp-child-process-participation-sparkline" x="0" y="0" width="320" height="40" >
             <polyline 
                 transform="translate(0, 40) scale(1,-1)"
-                points="0,1 6,1 12,1 18,1 24,1 30,1 36,1 42,1 48,1 54,1 60,1 66,1 72,1 78,1 84,1 90,1 96,1 102,1 108,1 114,1 120,1 126,1 132,1 138,1 144,1 150,1 156,1 162,1 168,1 174,1 180,1 186,1 192,1 198,1 204,1 210,2 216,1 222,1 228,1 234,1 240,1 246,1 252,1 258,1 264,1 270,1 276,2 282,1 288,1 294,1 300,1 306,1" 
+                points="0,1 6,1 12,1 18,1 24,1 30,1 36,1 42,1 48,1 54,1 60,1 66,1 72,1 78,1 84,1 90,1 96,1 102,1 108,1 114,1 120,2 126,1 132,1 138,1 144,1 150,1 156,1 162,1 168,1 174,1 180,1 186,2 192,1 198,1 204,1 210,1 216,1 222,1 228,1 234,1 240,1 246,1 252,1 258,1 264,1 270,1 276,1 282,1 288,1 294,1 300,1 306,1" 
                 fill="transparent" 
                 stroke="#40a977" 
                 stroke-width="2"

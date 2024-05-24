@@ -87,7 +87,7 @@
                         Promise
 
                         <span class="off-canvas-menu__version">
-                            v3.1.0
+                            v3.2.0
                         </span>
                     </a>
                 </li>
@@ -128,7 +128,7 @@
                         HTTP
 
                         <span class="off-canvas-menu__version">
-                            v1.9.0
+                            v1.10.0
                         </span>
                     </a>
                 </li>
@@ -219,7 +219,7 @@
                 <main class="main">
                                     <h1>HTTP</h1>
 
-                    
+                    <div class="markdown-heading"><h1 class="heading-element">HTTP</h1><a id="http" class="anchor" aria-label="Permalink: HTTP" href="#http"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p><a href="https://github.com/reactphp/http/actions"><img src="https://github.com/reactphp/http/actions/workflows/ci.yml/badge.svg" alt="CI status" style="max-width: 100%;"></a>
 <a href="https://packagist.org/packages/react/http" rel="nofollow"><img src="https://camo.githubusercontent.com/b7cd02539c782d030ffaef539b5276bf887f4a6bc023d2601dc4cb481f4cb4c5/68747470733a2f2f696d672e736869656c64732e696f2f7061636b61676973742f64742f72656163742f687474703f636f6c6f723d626c7565266c6162656c3d696e7374616c6c732532306f6e2532305061636b6167697374" alt="installs on Packagist" data-canonical-src="https://img.shields.io/packagist/dt/react/http?color=blue&amp;label=installs%20on%20Packagist" style="max-width: 100%;"></a></p>
 <p>Event-driven, streaming HTTP client and server implementation for <a href="https://reactphp.org/" rel="nofollow">ReactPHP</a>.</p>
@@ -328,6 +328,7 @@ multiple concurrent HTTP requests without blocking.</p>
 </li>
 <li><a href="#request-1">Request</a></li>
 <li><a href="#serverrequest">ServerRequest</a></li>
+<li><a href="#uri">Uri</a></li>
 <li><a href="#responseexception">ResponseException</a></li>
 </ul>
 </li>
@@ -346,7 +347,7 @@ multiple concurrent HTTP requests without blocking.</p>
 <li><a href="#tests">Tests</a></li>
 <li><a href="#license">License</a></li>
 </ul>
-<h2><a id="quickstart-example" class="anchor" aria-hidden="true" tabindex="-1" href="#quickstart-example"><span aria-hidden="true" class="octicon octicon-link"></span></a>Quickstart example</h2>
+<div class="markdown-heading"><h2 class="heading-element">Quickstart example</h2><a id="quickstart-example" class="anchor" aria-label="Permalink: Quickstart example" href="#quickstart-example"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>Once <a href="#install">installed</a>, you can use the following code to access an
 HTTP web server and send some simple HTTP GET requests:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-ent">&lt;?php</span>
@@ -373,9 +374,9 @@ HTTP web server and send some simple HTTP GET requests:</p>
 
 <span class="pl-s1"><span class="pl-c1">$</span>socket</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">SocketServer</span>(<span class="pl-s">'127.0.0.1:8080'</span>);
 <span class="pl-s1"><span class="pl-c1">$</span>http</span>-&gt;<span class="pl-en">listen</span>(<span class="pl-s1"><span class="pl-c1">$</span>socket</span>);</pre></div>
-<p>See also the <a href="https://github.com/reactphp/http/blob/v1.9.0/examples/">examples</a>.</p>
-<h2><a id="client-usage" class="anchor" aria-hidden="true" tabindex="-1" href="#client-usage"><span aria-hidden="true" class="octicon octicon-link"></span></a>Client Usage</h2>
-<h3><a id="request-methods" class="anchor" aria-hidden="true" tabindex="-1" href="#request-methods"><span aria-hidden="true" class="octicon octicon-link"></span></a>Request methods</h3>
+<p>See also the <a href="https://github.com/reactphp/http/blob/v1.10.0/examples/">examples</a>.</p>
+<div class="markdown-heading"><h2 class="heading-element">Client Usage</h2><a id="client-usage" class="anchor" aria-label="Permalink: Client Usage" href="#client-usage"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="markdown-heading"><h3 class="heading-element">Request methods</h3><a id="request-methods" class="anchor" aria-label="Permalink: Request methods" href="#request-methods"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>Most importantly, this project provides a <a href="#browser"><code>Browser</code></a> object that
 offers several methods that resemble the HTTP protocol methods:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">get</span>(<span class="pl-s1"><span class="pl-c1">$</span>url</span>, array <span class="pl-s1"><span class="pl-c1">$</span>headers</span> = <span class="pl-en">array</span>());
@@ -405,7 +406,7 @@ use the <a href="#request"><code>request()</code></a> method.</p>
 <a href="https://www.php-fig.org/psr/psr-7/#33-psrhttpmessageresponseinterface" rel="nofollow">PSR-7 <code>ResponseInterface</code></a>
 or <em>rejects</em> with an <code>Exception</code>.
 Please see the following chapter about <a href="#promises">promises</a> for more details.</p>
-<h3><a id="promises" class="anchor" aria-hidden="true" tabindex="-1" href="#promises"><span aria-hidden="true" class="octicon octicon-link"></span></a>Promises</h3>
+<div class="markdown-heading"><h3 class="heading-element">Promises</h3><a id="promises" class="anchor" aria-label="Permalink: Promises" href="#promises"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>Sending requests is async (non-blocking), so you can actually send multiple
 requests in parallel.
 The <code>Browser</code> will respond to each request with a
@@ -434,7 +435,7 @@ This is easy to get started and works reasonably well for smaller responses
 <li>If you're expecting a big response body size (1 MiB or more, for example when downloading binary files) or</li>
 <li>If you're unsure about the response body size (better be safe than sorry when accessing arbitrary remote HTTP endpoints and the response body size is unknown in advance).</li>
 </ul>
-<h3><a id="cancellation" class="anchor" aria-hidden="true" tabindex="-1" href="#cancellation"><span aria-hidden="true" class="octicon octicon-link"></span></a>Cancellation</h3>
+<div class="markdown-heading"><h3 class="heading-element">Cancellation</h3><a id="cancellation" class="anchor" aria-label="Permalink: Cancellation" href="#cancellation"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The returned Promise is implemented in such a way that it can be cancelled
 when it is still pending.
 Cancelling a pending promise will reject its value with an Exception and
@@ -444,7 +445,7 @@ clean up any underlying resources.</p>
 <span class="pl-v">Loop</span>::<span class="pl-en">addTimer</span>(<span class="pl-c1">2.0</span>, <span class="pl-k">function</span> () <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>promise</span>) {
     <span class="pl-s1"><span class="pl-c1">$</span>promise</span>-&gt;<span class="pl-en">cancel</span>();
 });</pre></div>
-<h3><a id="timeouts" class="anchor" aria-hidden="true" tabindex="-1" href="#timeouts"><span aria-hidden="true" class="octicon octicon-link"></span></a>Timeouts</h3>
+<div class="markdown-heading"><h3 class="heading-element">Timeouts</h3><a id="timeouts" class="anchor" aria-label="Permalink: Timeouts" href="#timeouts"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>This library uses a very efficient HTTP implementation, so most HTTP requests
 should usually be completed in mere milliseconds. However, when sending HTTP
 requests over an unreliable network (the internet), there are a number of things
@@ -493,7 +494,7 @@ like this:</p>
         )
     )
 );</pre></div>
-<h3><a id="authentication" class="anchor" aria-hidden="true" tabindex="-1" href="#authentication"><span aria-hidden="true" class="octicon octicon-link"></span></a>Authentication</h3>
+<div class="markdown-heading"><h3 class="heading-element">Authentication</h3><a id="authentication" class="anchor" aria-label="Permalink: Authentication" href="#authentication"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>This library supports <a href="https://en.wikipedia.org/wiki/Basic_access_authentication" rel="nofollow">HTTP Basic Authentication</a>
 using the <code>Authorization: Basic …</code> request header or allows you to set an explicit
 <code>Authorization</code> request header.</p>
@@ -523,7 +524,7 @@ OAuth access tokens or JSON Web Tokens (JWT):</p>
 to any remote hosts by default. When following a redirect where the <code>Location</code>
 response header contains authentication details, these details will be sent for
 following requests. See also <a href="#redirects">redirects</a> below.</p>
-<h3><a id="redirects" class="anchor" aria-hidden="true" tabindex="-1" href="#redirects"><span aria-hidden="true" class="octicon octicon-link"></span></a>Redirects</h3>
+<div class="markdown-heading"><h3 class="heading-element">Redirects</h3><a id="redirects" class="anchor" aria-label="Permalink: Redirects" href="#redirects"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>By default, this library follows any redirects and obeys <code>3xx</code> (Redirection)
 status codes using the <code>Location</code> response header from the remote server.
 The promise will be fulfilled with the last response from the chain of redirects.</p>
@@ -559,7 +560,7 @@ responses as-is and apply custom redirection logic like this:</p>
     <span class="pl-k">echo</span> <span class="pl-s">'Error: '</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
 });</pre></div>
 <p>See also <a href="#withfollowredirects"><code>withFollowRedirects()</code></a> for more details.</p>
-<h3><a id="blocking" class="anchor" aria-hidden="true" tabindex="-1" href="#blocking"><span aria-hidden="true" class="octicon octicon-link"></span></a>Blocking</h3>
+<div class="markdown-heading"><h3 class="heading-element">Blocking</h3><a id="blocking" class="anchor" aria-label="Permalink: Blocking" href="#blocking"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>As stated above, this library provides you a powerful, async API by default.</p>
 <p>You can also integrate this into your traditional, blocking environment by using
 <a href="../async/">reactphp/async</a>. This allows you to simply
@@ -592,7 +593,7 @@ Please refer to <a href="../async/#readme">reactphp/async</a> for more details.<
 <p>Keep in mind the above remark about buffering the whole response message in memory.
 As an alternative, you may also see one of the following chapters for the
 <a href="#streaming-response">streaming API</a>.</p>
-<h3><a id="concurrency" class="anchor" aria-hidden="true" tabindex="-1" href="#concurrency"><span aria-hidden="true" class="octicon octicon-link"></span></a>Concurrency</h3>
+<div class="markdown-heading"><h3 class="heading-element">Concurrency</h3><a id="concurrency" class="anchor" aria-label="Permalink: Concurrency" href="#concurrency"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>As stated above, this library provides you a powerful, async API. Being able to
 send a large number of requests at once is one of the core features of this
 project. For instance, you can easily send 100 requests concurrently while
@@ -635,7 +636,7 @@ requests. If you're processing a very large input list (think millions of rows
 in a CSV or NDJSON file), you may want to look into using a streaming approach
 instead. See <a href="https://github.com/clue/reactphp-flux">clue/reactphp-flux</a> for
 more details.</p>
-<h3><a id="streaming-response" class="anchor" aria-hidden="true" tabindex="-1" href="#streaming-response"><span aria-hidden="true" class="octicon octicon-link"></span></a>Streaming response</h3>
+<div class="markdown-heading"><h3 class="heading-element">Streaming response</h3><a id="streaming-response" class="anchor" aria-label="Permalink: Streaming response" href="#streaming-response"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>All of the above examples assume you want to store the whole response body in memory.
 This is easy to get started and works reasonably well for smaller responses.</p>
 <p>However, there are several situations where it's usually a better idea to use a
@@ -677,8 +678,8 @@ as well as parts of the <a href="https://www.php-fig.org/psr/psr-7/#34-psrhttpme
 }, <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">Exception</span></span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>) {
     <span class="pl-k">echo</span> <span class="pl-s">'Error: '</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
 });</pre></div>
-<p>See also the <a href="https://github.com/reactphp/http/blob/v1.9.0/examples/91-client-benchmark-download.php">stream download benchmark example</a> and
-the <a href="https://github.com/reactphp/http/blob/v1.9.0/examples/21-client-request-streaming-to-stdout.php">stream forwarding example</a>.</p>
+<p>See also the <a href="https://github.com/reactphp/http/blob/v1.10.0/examples/91-client-benchmark-download.php">stream download benchmark example</a> and
+the <a href="https://github.com/reactphp/http/blob/v1.10.0/examples/21-client-request-streaming-to-stdout.php">stream forwarding example</a>.</p>
 <p>You can invoke the following methods on the message body:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>body</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s1"><span class="pl-c1">$</span>event</span>, <span class="pl-s1"><span class="pl-c1">$</span>callback</span>);
 <span class="pl-s1"><span class="pl-c1">$</span>body</span>-&gt;<span class="pl-en">eof</span>();
@@ -727,7 +728,7 @@ The resulting streaming code could look something like this:</p>
     <span class="pl-k">echo</span> <span class="pl-s">'Error: '</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
 });</pre></div>
 <p>See also the <a href="#requeststreaming"><code>requestStreaming()</code></a> method for more details.</p>
-<h3><a id="streaming-request" class="anchor" aria-hidden="true" tabindex="-1" href="#streaming-request"><span aria-hidden="true" class="octicon octicon-link"></span></a>Streaming request</h3>
+<div class="markdown-heading"><h3 class="heading-element">Streaming request</h3><a id="streaming-request" class="anchor" aria-label="Permalink: Streaming request" href="#streaming-request"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>Besides streaming the response body, you can also stream the request body.
 This can be useful if you want to send big POST requests (uploading files etc.)
 or process many outgoing streams at once.
@@ -751,7 +752,7 @@ matching <code>Content-Length</code> request header like so:</p>
 <p>If the streaming request body emits an <code>error</code> event or is explicitly closed
 without emitting a successful <code>end</code> event first, the request will automatically
 be closed and rejected.</p>
-<h3><a id="http-proxy" class="anchor" aria-hidden="true" tabindex="-1" href="#http-proxy"><span aria-hidden="true" class="octicon octicon-link"></span></a>HTTP proxy</h3>
+<div class="markdown-heading"><h3 class="heading-element">HTTP proxy</h3><a id="http-proxy" class="anchor" aria-label="Permalink: HTTP proxy" href="#http-proxy"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>You can also establish your outgoing connections through an HTTP CONNECT proxy server
 by adding a dependency to <a href="https://github.com/clue/reactphp-http-proxy">clue/reactphp-http-proxy</a>.</p>
 <p>HTTP CONNECT proxy servers (also commonly known as "HTTPS proxy" or "SSL proxy")
@@ -768,8 +769,8 @@ protocol, such as plain HTTP and TLS-encrypted HTTPS.</p>
 ));
 
 <span class="pl-s1"><span class="pl-c1">$</span>browser</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Browser</span>(<span class="pl-s1"><span class="pl-c1">$</span>connector</span>);</pre></div>
-<p>See also the <a href="https://github.com/reactphp/http/blob/v1.9.0/examples/11-client-http-proxy.php">HTTP proxy example</a>.</p>
-<h3><a id="socks-proxy" class="anchor" aria-hidden="true" tabindex="-1" href="#socks-proxy"><span aria-hidden="true" class="octicon octicon-link"></span></a>SOCKS proxy</h3>
+<p>See also the <a href="https://github.com/reactphp/http/blob/v1.10.0/examples/11-client-http-proxy.php">HTTP proxy example</a>.</p>
+<div class="markdown-heading"><h3 class="heading-element">SOCKS proxy</h3><a id="socks-proxy" class="anchor" aria-label="Permalink: SOCKS proxy" href="#socks-proxy"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>You can also establish your outgoing connections through a SOCKS proxy server
 by adding a dependency to <a href="https://github.com/clue/reactphp-socks">clue/reactphp-socks</a>.</p>
 <p>The SOCKS proxy protocol family (SOCKS5, SOCKS4 and SOCKS4a) is commonly used to
@@ -785,8 +786,8 @@ only, this can technically be used to tunnel any TCP/IP-based protocol.</p>
 ));
 
 <span class="pl-s1"><span class="pl-c1">$</span>browser</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Browser</span>(<span class="pl-s1"><span class="pl-c1">$</span>connector</span>);</pre></div>
-<p>See also the <a href="https://github.com/reactphp/http/blob/v1.9.0/examples/12-client-socks-proxy.php">SOCKS proxy example</a>.</p>
-<h3><a id="ssh-proxy" class="anchor" aria-hidden="true" tabindex="-1" href="#ssh-proxy"><span aria-hidden="true" class="octicon octicon-link"></span></a>SSH proxy</h3>
+<p>See also the <a href="https://github.com/reactphp/http/blob/v1.10.0/examples/12-client-socks-proxy.php">SOCKS proxy example</a>.</p>
+<div class="markdown-heading"><h3 class="heading-element">SSH proxy</h3><a id="ssh-proxy" class="anchor" aria-label="Permalink: SSH proxy" href="#ssh-proxy"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>You can also establish your outgoing connections through an SSH server
 by adding a dependency to <a href="https://github.com/clue/reactphp-ssh-proxy">clue/reactphp-ssh-proxy</a>.</p>
 <p><a href="https://en.wikipedia.org/wiki/Secure_Shell" rel="nofollow">Secure Shell (SSH)</a> is a secure
@@ -807,8 +808,8 @@ plain HTTP and TLS-encrypted HTTPS.</p>
 ));
 
 <span class="pl-s1"><span class="pl-c1">$</span>browser</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Browser</span>(<span class="pl-s1"><span class="pl-c1">$</span>connector</span>);</pre></div>
-<p>See also the <a href="https://github.com/reactphp/http/blob/v1.9.0/examples/13-client-ssh-proxy.php">SSH proxy example</a>.</p>
-<h3><a id="unix-domain-sockets" class="anchor" aria-hidden="true" tabindex="-1" href="#unix-domain-sockets"><span aria-hidden="true" class="octicon octicon-link"></span></a>Unix domain sockets</h3>
+<p>See also the <a href="https://github.com/reactphp/http/blob/v1.10.0/examples/13-client-ssh-proxy.php">SSH proxy example</a>.</p>
+<div class="markdown-heading"><h3 class="heading-element">Unix domain sockets</h3><a id="unix-domain-sockets" class="anchor" aria-label="Permalink: Unix domain sockets" href="#unix-domain-sockets"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>By default, this library supports transport over plaintext TCP/IP and secure
 TLS connections for the <code>http://</code> and <code>https://</code> URL schemes respectively.
 This library also supports Unix domain sockets (UDS) when explicitly configured.</p>
@@ -827,9 +828,9 @@ no longer be used to establish the connection:</p>
 }, <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">Exception</span></span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>) {
     <span class="pl-k">echo</span> <span class="pl-s">'Error: '</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
 });</pre></div>
-<p>See also the <a href="https://github.com/reactphp/http/blob/v1.9.0/examples/14-client-unix-domain-sockets.php">Unix Domain Sockets (UDS) example</a>.</p>
-<h2><a id="server-usage" class="anchor" aria-hidden="true" tabindex="-1" href="#server-usage"><span aria-hidden="true" class="octicon octicon-link"></span></a>Server Usage</h2>
-<h3><a id="httpserver" class="anchor" aria-hidden="true" tabindex="-1" href="#httpserver"><span aria-hidden="true" class="octicon octicon-link"></span></a>HttpServer</h3>
+<p>See also the <a href="https://github.com/reactphp/http/blob/v1.10.0/examples/14-client-unix-domain-sockets.php">Unix Domain Sockets (UDS) example</a>.</p>
+<div class="markdown-heading"><h2 class="heading-element">Server Usage</h2><a id="server-usage" class="anchor" aria-label="Permalink: Server Usage" href="#server-usage"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="markdown-heading"><h3 class="heading-element">HttpServer</h3><a id="httpserver" class="anchor" aria-label="Permalink: HttpServer" href="#httpserver"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p><a id="server"></a> </p>
 <p>The <code>React\Http\HttpServer</code> class is responsible for handling incoming connections and then
 processing each incoming HTTP request.</p>
@@ -865,7 +866,7 @@ in order to start a plaintext HTTP server like this:</p>
 <span class="pl-s1"><span class="pl-c1">$</span>socket</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">SocketServer</span>(<span class="pl-s">'0.0.0.0:8080'</span>);
 <span class="pl-s1"><span class="pl-c1">$</span>http</span>-&gt;<span class="pl-en">listen</span>(<span class="pl-s1"><span class="pl-c1">$</span>socket</span>);</pre></div>
 <p>See also the <a href="#listen"><code>listen()</code></a> method and the
-<a href="https://github.com/reactphp/http/blob/v1.9.0/examples/51-server-hello-world.php">hello world server example</a>
+<a href="https://github.com/reactphp/http/blob/v1.10.0/examples/51-server-hello-world.php">hello world server example</a>
 for more details.</p>
 <p>By default, the <code>HttpServer</code> buffers and parses the complete incoming HTTP
 request in memory. It will invoke the given request handler function when the
@@ -956,7 +957,7 @@ below for more details.</p>
 previous <code>Server</code> class in order to avoid any ambiguities.
 The previous name has been deprecated and should not be used anymore.</p>
 </blockquote>
-<h3><a id="listen" class="anchor" aria-hidden="true" tabindex="-1" href="#listen"><span aria-hidden="true" class="octicon octicon-link"></span></a>listen()</h3>
+<div class="markdown-heading"><h3 class="heading-element">listen()</h3><a id="listen" class="anchor" aria-label="Permalink: listen()" href="#listen"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The <code>listen(React\Socket\ServerInterface $socket): void</code> method can be used to
 start listening for HTTP requests on the given socket server instance.</p>
 <p>The given <a href="../socket/#serverinterface"><code>React\Socket\ServerInterface</code></a>
@@ -970,7 +971,7 @@ in order to start a plaintext HTTP server like this:</p>
 
 <span class="pl-s1"><span class="pl-c1">$</span>socket</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">SocketServer</span>(<span class="pl-s">'0.0.0.0:8080'</span>);
 <span class="pl-s1"><span class="pl-c1">$</span>http</span>-&gt;<span class="pl-en">listen</span>(<span class="pl-s1"><span class="pl-c1">$</span>socket</span>);</pre></div>
-<p>See also <a href="https://github.com/reactphp/http/blob/v1.9.0/examples/51-server-hello-world.php">hello world server example</a>
+<p>See also <a href="https://github.com/reactphp/http/blob/v1.10.0/examples/51-server-hello-world.php">hello world server example</a>
 for more details.</p>
 <p>This example will start listening for HTTP requests on the alternative
 HTTP port <code>8080</code> on all interfaces (publicly). As an alternative, it is
@@ -994,9 +995,9 @@ using a secure TLS listen address, a certificate file and optional
     )
 ));
 <span class="pl-s1"><span class="pl-c1">$</span>http</span>-&gt;<span class="pl-en">listen</span>(<span class="pl-s1"><span class="pl-c1">$</span>socket</span>);</pre></div>
-<p>See also <a href="https://github.com/reactphp/http/blob/v1.9.0/examples/61-server-hello-world-https.php">hello world HTTPS example</a>
+<p>See also <a href="https://github.com/reactphp/http/blob/v1.10.0/examples/61-server-hello-world-https.php">hello world HTTPS example</a>
 for more details.</p>
-<h3><a id="server-request" class="anchor" aria-hidden="true" tabindex="-1" href="#server-request"><span aria-hidden="true" class="octicon octicon-link"></span></a>Server Request</h3>
+<div class="markdown-heading"><h3 class="heading-element">Server Request</h3><a id="server-request" class="anchor" aria-label="Permalink: Server Request" href="#server-request"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>As seen above, the <a href="#httpserver"><code>HttpServer</code></a> class is responsible for handling
 incoming connections and then processing each incoming HTTP request.</p>
 <p>The request object will be processed once the request has
@@ -1018,7 +1019,7 @@ and will be passed to the callback function like this.</p>
 <a href="https://www.php-fig.org/psr/psr-7/#321-psrhttpmessageserverrequestinterface" rel="nofollow">PSR-7 <code>ServerRequestInterface</code></a>
 and
 <a href="https://www.php-fig.org/psr/psr-7/#32-psrhttpmessagerequestinterface" rel="nofollow">PSR-7 <code>RequestInterface</code></a>.</p>
-<h4><a id="request-parameters" class="anchor" aria-hidden="true" tabindex="-1" href="#request-parameters"><span aria-hidden="true" class="octicon octicon-link"></span></a>Request parameters</h4>
+<div class="markdown-heading"><h4 class="heading-element">Request parameters</h4><a id="request-parameters" class="anchor" aria-label="Permalink: Request parameters" href="#request-parameters"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The <code>getServerParams(): mixed[]</code> method can be used to
 get server-side parameters similar to the <code>$_SERVER</code> variable.
 The following parameters are currently available:</p>
@@ -1056,13 +1057,13 @@ Set to 'on' if the request used HTTPS, otherwise it won't be set</li>
         <span class="pl-s1"><span class="pl-c1">$</span>body</span>
     );
 });</pre></div>
-<p>See also <a href="https://github.com/reactphp/http/blob/v1.9.0/examples/53-server-whatsmyip.php">whatsmyip server example</a>.</p>
+<p>See also <a href="https://github.com/reactphp/http/blob/v1.10.0/examples/53-server-whatsmyip.php">whatsmyip server example</a>.</p>
 <blockquote>
 <p>Advanced: Note that address parameters will not be set if you're listening on
 a Unix domain socket (UDS) path as this protocol lacks the concept of
 host/port.</p>
 </blockquote>
-<h4><a id="query-parameters" class="anchor" aria-hidden="true" tabindex="-1" href="#query-parameters"><span aria-hidden="true" class="octicon octicon-link"></span></a>Query parameters</h4>
+<div class="markdown-heading"><h4 class="heading-element">Query parameters</h4><a id="query-parameters" class="anchor" aria-label="Permalink: Query parameters" href="#query-parameters"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The <code>getQueryParams(): array</code> method can be used to get the query parameters
 similiar to the <code>$_GET</code> variable.</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>http</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">HttpServer</span>(<span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi"><span class="pl-v">Psr</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">ServerRequestInterface</span></span></span> <span class="pl-s1"><span class="pl-c1">$</span>request</span>) {
@@ -1084,8 +1085,8 @@ The URL contains the query parameter <code>foo</code> with the value <code>bar</
 Use <a href="https://www.php.net/manual/en/function.htmlentities.php" rel="nofollow"><code>htmlentities</code></a>
 like in this example to prevent
 <a href="https://en.wikipedia.org/wiki/Cross-site_scripting" rel="nofollow">Cross-Site Scripting (abbreviated as XSS)</a>.</p>
-<p>See also <a href="https://github.com/reactphp/http/blob/v1.9.0/examples/54-server-query-parameter.php">server query parameters example</a>.</p>
-<h4><a id="request-body" class="anchor" aria-hidden="true" tabindex="-1" href="#request-body"><span aria-hidden="true" class="octicon octicon-link"></span></a>Request body</h4>
+<p>See also <a href="https://github.com/reactphp/http/blob/v1.10.0/examples/54-server-query-parameter.php">server query parameters example</a>.</p>
+<div class="markdown-heading"><h4 class="heading-element">Request body</h4><a id="request-body" class="anchor" aria-label="Permalink: Request body" href="#request-body"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>By default, the <a href="#httpserver"><code>Server</code></a> will buffer and parse the full request body
 in memory. This means the given request object includes the parsed request body
 and any file uploads.</p>
@@ -1114,7 +1115,7 @@ request headers (commonly used for <code>POST</code> requests for HTML form subm
         "<span class="pl-s">Hello </span><span class="pl-s1"><span class="pl-c1">$</span>name</span><span class="pl-s">!</span>\n"
     );
 });</pre></div>
-<p>See also <a href="https://github.com/reactphp/http/blob/v1.9.0/examples/62-server-form-upload.php">form upload example</a> for more details.</p>
+<p>See also <a href="https://github.com/reactphp/http/blob/v1.10.0/examples/62-server-form-upload.php">form upload example</a> for more details.</p>
 <p>The <code>getBody(): StreamInterface</code> method can be used to
 get the raw data from this request body, similar to
 <a href="https://www.php.net/manual/en/wrappers.php.php#wrappers.php.input" rel="nofollow">PHP's <code>php://input</code> stream</a>.
@@ -1132,7 +1133,7 @@ an XML (<code>Content-Type: application/xml</code>) request body (which is commo
         [<span class="pl-s">'message'</span> =&gt; "<span class="pl-s">Hello </span><span class="pl-s1"><span class="pl-c1">$</span>name</span><span class="pl-s">!</span>"]
     );
 });</pre></div>
-<p>See also <a href="https://github.com/reactphp/http/blob/v1.9.0/examples/59-server-json-api.php">JSON API server example</a> for more details.</p>
+<p>See also <a href="https://github.com/reactphp/http/blob/v1.10.0/examples/59-server-json-api.php">JSON API server example</a> for more details.</p>
 <p>The <code>getUploadedFiles(): array</code> method can be used to
 get the uploaded files in this request, similar to
 <a href="https://www.php.net/manual/en/reserved.variables.files.php" rel="nofollow">PHP's <code>$_FILES</code> variable</a>.
@@ -1148,7 +1149,7 @@ request header (commonly used for <code>POST</code> requests for HTML file uploa
         "<span class="pl-s">Uploaded </span><span class="pl-s1"><span class="pl-c1">$</span>name</span>\n"
     );
 });</pre></div>
-<p>See also <a href="https://github.com/reactphp/http/blob/v1.9.0/examples/62-server-form-upload.php">form upload server example</a> for more details.</p>
+<p>See also <a href="https://github.com/reactphp/http/blob/v1.10.0/examples/62-server-form-upload.php">form upload server example</a> for more details.</p>
 <p>The <code>getSize(): ?int</code> method can be used to
 get the size of the request body, similar to PHP's <code>$_SERVER['CONTENT_LENGTH']</code> variable.
 This method returns the complete size of the request body measured in number
@@ -1167,7 +1168,7 @@ additional <code>Expect: 100-continue</code> request header and wait before send
 intermediary <code>HTTP/1.1 100 Continue</code> response to the client. This ensures you
 will receive the request body without a delay as expected.</p>
 </blockquote>
-<h4><a id="streaming-incoming-request" class="anchor" aria-hidden="true" tabindex="-1" href="#streaming-incoming-request"><span aria-hidden="true" class="octicon octicon-link"></span></a>Streaming incoming request</h4>
+<div class="markdown-heading"><h4 class="heading-element">Streaming incoming request</h4><a id="streaming-incoming-request" class="anchor" aria-label="Permalink: Streaming incoming request" href="#streaming-incoming-request"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>If you're using the advanced <a href="#streamingrequestmiddleware"><code>StreamingRequestMiddleware</code></a>,
 the request object will be processed once the request headers have been received.
 This means that this happens irrespective of (i.e. <em>before</em>) receiving the
@@ -1235,7 +1236,7 @@ gives you access to the incoming request body as the individual chunks arrive:</
 );</pre></div>
 <p>The above example simply counts the number of bytes received in the request body.
 This can be used as a skeleton for buffering or processing the request body.</p>
-<p>See also <a href="https://github.com/reactphp/http/blob/v1.9.0/examples/63-server-streaming-request.php">streaming request server example</a> for more details.</p>
+<p>See also <a href="https://github.com/reactphp/http/blob/v1.10.0/examples/63-server-streaming-request.php">streaming request server example</a> for more details.</p>
 <p>The <code>data</code> event will be emitted whenever new data is available on the request
 body stream.
 The server also automatically takes care of decoding any incoming requests using
@@ -1286,7 +1287,7 @@ additional <code>Expect: 100-continue</code> request header and wait before send
 intermediary <code>HTTP/1.1 100 Continue</code> response to the client. This ensures you
 will receive the streaming request body without a delay as expected.</p>
 </blockquote>
-<h4><a id="request-method" class="anchor" aria-hidden="true" tabindex="-1" href="#request-method"><span aria-hidden="true" class="octicon octicon-link"></span></a>Request method</h4>
+<div class="markdown-heading"><h4 class="heading-element">Request method</h4><a id="request-method" class="anchor" aria-label="Permalink: Request method" href="#request-method"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>Note that the server supports <em>any</em> request method (including custom and non-
 standard ones) and all request-target formats defined in the HTTP specs for each
 respective method, including <em>normal</em> <code>origin-form</code> requests as well as
@@ -1314,7 +1315,7 @@ Note that if you want to handle this method, the client MAY send a different
 request-target than the <code>Host</code> header value (such as removing default ports)
 and the request-target MUST take precendence when forwarding.</p>
 </blockquote>
-<h4><a id="cookie-parameters" class="anchor" aria-hidden="true" tabindex="-1" href="#cookie-parameters"><span aria-hidden="true" class="octicon octicon-link"></span></a>Cookie parameters</h4>
+<div class="markdown-heading"><h4 class="heading-element">Cookie parameters</h4><a id="cookie-parameters" class="anchor" aria-label="Permalink: Cookie parameters" href="#cookie-parameters"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The <code>getCookieParams(): string[]</code> method can be used to
 get all cookies sent with the current request.</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>http</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">HttpServer</span>(<span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi"><span class="pl-v">Psr</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">ServerRequestInterface</span></span></span> <span class="pl-s1"><span class="pl-c1">$</span>request</span>) {
@@ -1338,8 +1339,8 @@ Note how the example uses the <code>urlencode()</code> function to encode
 non-alphanumeric characters.
 This encoding is also used internally when decoding the name and value of cookies
 (which is in line with other implementations, such as PHP's cookie functions).</p>
-<p>See also <a href="https://github.com/reactphp/http/blob/v1.9.0/examples/55-server-cookie-handling.php">cookie server example</a> for more details.</p>
-<h4><a id="invalid-request" class="anchor" aria-hidden="true" tabindex="-1" href="#invalid-request"><span aria-hidden="true" class="octicon octicon-link"></span></a>Invalid request</h4>
+<p>See also <a href="https://github.com/reactphp/http/blob/v1.10.0/examples/55-server-cookie-handling.php">cookie server example</a> for more details.</p>
+<div class="markdown-heading"><h4 class="heading-element">Invalid request</h4><a id="invalid-request" class="anchor" aria-label="Permalink: Invalid request" href="#invalid-request"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The <code>HttpServer</code> class supports both HTTP/1.1 and HTTP/1.0 request messages.
 If a client sends an invalid request message, uses an invalid HTTP
 protocol version or sends an invalid <code>Transfer-Encoding</code> request header value,
@@ -1353,7 +1354,7 @@ purposes like this:</p>
 <p>Note that the server will also emit an <code>error</code> event if you do not return a
 valid response object from your request handler function. See also
 <a href="#invalid-response">invalid response</a> for more details.</p>
-<h3><a id="server-response" class="anchor" aria-hidden="true" tabindex="-1" href="#server-response"><span aria-hidden="true" class="octicon octicon-link"></span></a>Server Response</h3>
+<div class="markdown-heading"><h3 class="heading-element">Server Response</h3><a id="server-response" class="anchor" aria-label="Permalink: Server Response" href="#server-response"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The callback function passed to the constructor of the <a href="#httpserver"><code>HttpServer</code></a> is
 responsible for processing the request and returning a response, which will be
 delivered to the client.</p>
@@ -1374,7 +1375,7 @@ In its most simple form, you can use it like this:</p>
 feel free to use any other implementation of the
 <a href="https://www.php-fig.org/psr/psr-7/#33-psrhttpmessageresponseinterface" rel="nofollow">PSR-7 <code>ResponseInterface</code></a>.
 See also the <a href="#response"><code>Response</code> class</a> for more details.</p>
-<h4><a id="deferred-response" class="anchor" aria-hidden="true" tabindex="-1" href="#deferred-response"><span aria-hidden="true" class="octicon octicon-link"></span></a>Deferred response</h4>
+<div class="markdown-heading"><h4 class="heading-element">Deferred response</h4><a id="deferred-response" class="anchor" aria-label="Permalink: Deferred response" href="#deferred-response"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The example above returns the response directly, because it needs
 no time to be processed.
 Using a database, the file system or long calculations
@@ -1406,7 +1407,7 @@ promise will automatically be cancelled.
 The promise cancellation handler can be used to clean up any pending resources
 allocated in this case (if applicable).
 If a promise is resolved after the client closes, it will simply be ignored.</p>
-<h4><a id="streaming-outgoing-response" class="anchor" aria-hidden="true" tabindex="-1" href="#streaming-outgoing-response"><span aria-hidden="true" class="octicon octicon-link"></span></a>Streaming outgoing response</h4>
+<div class="markdown-heading"><h4 class="heading-element">Streaming outgoing response</h4><a id="streaming-outgoing-response" class="anchor" aria-label="Permalink: Streaming outgoing response" href="#streaming-outgoing-response"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The <code>Response</code> class in this project supports to add an instance which implements the
 <a href="../stream/#readablestreaminterface">ReactPHP <code>ReadableStreamInterface</code></a>
 for the response body.
@@ -1479,7 +1480,7 @@ If you want to handle the <code>Upgrade: WebSocket</code> header, you will likel
 to look into using <a href="http://socketo.me/" rel="nofollow">Ratchet</a> instead.
 If you want to handle a custom protocol, you will likely want to look into the
 <a href="https://tools.ietf.org/html/rfc7230#section-6.7" rel="nofollow">HTTP specs</a> and also see
-<a href="https://github.com/reactphp/http/blob/v1.9.0/examples/">examples #81 and #82</a> for more details.
+<a href="https://github.com/reactphp/http/blob/v1.10.0/examples/">examples #81 and #82</a> for more details.
 In particular, the <code>101</code> (Switching Protocols) response code MUST NOT be used
 unless you send an <code>Upgrade</code> response header value that is also present in
 the corresponding HTTP/1.1 <code>Upgrade</code> request header value.
@@ -1499,9 +1500,9 @@ Note that while the HTTP specs make no use of the request body for <code>CONNECT
 requests, one may still be present. Normal request body processing applies
 here and the connection will only turn to "tunneling mode" after the request
 body has been processed (which should be empty in most cases).
-See also <a href="https://github.com/reactphp/http/blob/v1.9.0/examples/72-server-http-connect-proxy.php">HTTP CONNECT server example</a> for more details.</p>
+See also <a href="https://github.com/reactphp/http/blob/v1.10.0/examples/72-server-http-connect-proxy.php">HTTP CONNECT server example</a> for more details.</p>
 </blockquote>
-<h4><a id="response-length" class="anchor" aria-hidden="true" tabindex="-1" href="#response-length"><span aria-hidden="true" class="octicon octicon-link"></span></a>Response length</h4>
+<div class="markdown-heading"><h4 class="heading-element">Response length</h4><a id="response-length" class="anchor" aria-label="Permalink: Response length" href="#response-length"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>If the response body size is known, a <code>Content-Length</code> response header will be
 added automatically. This is the most common use case, for example when using
 a <code>string</code> response body like this:</p>
@@ -1545,7 +1546,7 @@ Note that a response to a <code>HEAD</code> request and any response with a <cod
 Modified) status code MAY include these headers even though
 the message does not contain a response body, because these header would apply
 to the message if the same request would have used an (unconditional) <code>GET</code>.</p>
-<h4><a id="invalid-response" class="anchor" aria-hidden="true" tabindex="-1" href="#invalid-response"><span aria-hidden="true" class="octicon octicon-link"></span></a>Invalid response</h4>
+<div class="markdown-heading"><h4 class="heading-element">Invalid response</h4><a id="invalid-response" class="anchor" aria-label="Permalink: Invalid response" href="#invalid-response"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>As stated above, each outgoing HTTP response is always represented by the
 <a href="https://www.php-fig.org/psr/psr-7/#33-psrhttpmessageresponseinterface" rel="nofollow">PSR-7 <code>ResponseInterface</code></a>.
 If your request handler function returns an invalid value or throws an
@@ -1572,7 +1573,7 @@ traces to the outside by default. It is usually recommended to catch any
 <code>Exception</code> or <code>Throwable</code> within your request handler function or alternatively
 use a <a href="#middleware"><code>middleware</code></a> to avoid this generic error handling and
 create your own HTTP response message instead.</p>
-<h4><a id="default-response-headers" class="anchor" aria-hidden="true" tabindex="-1" href="#default-response-headers"><span aria-hidden="true" class="octicon octicon-link"></span></a>Default response headers</h4>
+<div class="markdown-heading"><h4 class="heading-element">Default response headers</h4><a id="default-response-headers" class="anchor" aria-label="Permalink: Default response headers" href="#default-response-headers"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>When a response is returned from the request handler function, it will be
 processed by the <a href="#httpserver"><code>HttpServer</code></a> and then sent back to the client.</p>
 <p>A <code>Server: ReactPHP/1</code> response header will be added automatically. You can add
@@ -1628,14 +1629,14 @@ matching request header value and HTTP default header values. The server is
 responsible for handling the <code>Connection</code> response header, so you SHOULD NOT pass
 this response header yourself, unless you explicitly want to override the user's
 choice with a <code>Connection: close</code> response header.</p>
-<h3><a id="middleware" class="anchor" aria-hidden="true" tabindex="-1" href="#middleware"><span aria-hidden="true" class="octicon octicon-link"></span></a>Middleware</h3>
+<div class="markdown-heading"><h3 class="heading-element">Middleware</h3><a id="middleware" class="anchor" aria-label="Permalink: Middleware" href="#middleware"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>As documented above, the <a href="#httpserver"><code>HttpServer</code></a> accepts a single request handler
 argument that is responsible for processing an incoming HTTP request and then
 creating and returning an outgoing HTTP response.</p>
 <p>Many common use cases involve validating, processing, manipulating the incoming
 HTTP request before passing it to the final business logic request handler.
 As such, this project supports the concept of middleware request handlers.</p>
-<h4><a id="custom-middleware" class="anchor" aria-hidden="true" tabindex="-1" href="#custom-middleware"><span aria-hidden="true" class="octicon octicon-link"></span></a>Custom middleware</h4>
+<div class="markdown-heading"><h4 class="heading-element">Custom middleware</h4><a id="custom-middleware" class="anchor" aria-label="Permalink: Custom middleware" href="#custom-middleware"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>A middleware request handler is expected to adhere the following rules:</p>
 <ul>
 <li>It is a valid <code>callable</code>.</li>
@@ -1744,7 +1745,7 @@ handling logic (or logging etc.) by wrapping this in a
         <span class="pl-k">return</span> <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">Response</span>(<span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">Response</span>::<span class="pl-c1">STATUS_OK</span>);
     }
 );</pre></div>
-<h4><a id="third-party-middleware" class="anchor" aria-hidden="true" tabindex="-1" href="#third-party-middleware"><span aria-hidden="true" class="octicon octicon-link"></span></a>Third-Party Middleware</h4>
+<div class="markdown-heading"><h4 class="heading-element">Third-Party Middleware</h4><a id="third-party-middleware" class="anchor" aria-label="Permalink: Third-Party Middleware" href="#third-party-middleware"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>While this project does provide the means to <em>use</em> middleware implementations
 (see above), it does not aim to <em>define</em> how middleware implementations should
 look like. We realize that there's a vivid ecosystem of middleware
@@ -1770,8 +1771,8 @@ to create custom middleware. A non-exhaustive list of third-party middleware can
 be found at the <a href="https://github.com/reactphp/reactphp/wiki/Users#http-middleware">middleware wiki</a>.
 If you build or know a custom middleware, make sure to let the world know and
 feel free to add it to this list.</p>
-<h2><a id="api" class="anchor" aria-hidden="true" tabindex="-1" href="#api"><span aria-hidden="true" class="octicon octicon-link"></span></a>API</h2>
-<h3><a id="browser" class="anchor" aria-hidden="true" tabindex="-1" href="#browser"><span aria-hidden="true" class="octicon octicon-link"></span></a>Browser</h3>
+<div class="markdown-heading"><h2 class="heading-element">API</h2><a id="api" class="anchor" aria-label="Permalink: API" href="#api"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="markdown-heading"><h3 class="heading-element">Browser</h3><a id="browser" class="anchor" aria-label="Permalink: Browser" href="#browser"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The <code>React\Http\Browser</code> is responsible for sending HTTP requests to your HTTP server
 and keeps track of pending incoming HTTP responses.</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>browser</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Browser</span>();</pre></div>
@@ -1804,7 +1805,7 @@ given event loop instance.</p>
 <blockquote>
 <p>Note that the browser class is final and shouldn't be extended, it is likely to be marked final in a future release.</p>
 </blockquote>
-<h4><a id="get" class="anchor" aria-hidden="true" tabindex="-1" href="#get"><span aria-hidden="true" class="octicon octicon-link"></span></a>get()</h4>
+<div class="markdown-heading"><h4 class="heading-element">get()</h4><a id="get" class="anchor" aria-label="Permalink: get()" href="#get"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The <code>get(string $url, array $headers = array()): PromiseInterface&lt;ResponseInterface&gt;</code> method can be used to
 send an HTTP GET request.</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">get</span>(<span class="pl-s1"><span class="pl-c1">$</span>url</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi"><span class="pl-v">Psr</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">ResponseInterface</span></span></span> <span class="pl-s1"><span class="pl-c1">$</span>response</span>) {
@@ -1812,8 +1813,8 @@ send an HTTP GET request.</p>
 }, <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">Exception</span></span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>) {
     <span class="pl-k">echo</span> <span class="pl-s">'Error: '</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
 });</pre></div>
-<p>See also <a href="https://github.com/reactphp/http/blob/v1.9.0/examples/01-client-get-request.php">GET request client example</a>.</p>
-<h4><a id="post" class="anchor" aria-hidden="true" tabindex="-1" href="#post"><span aria-hidden="true" class="octicon octicon-link"></span></a>post()</h4>
+<p>See also <a href="https://github.com/reactphp/http/blob/v1.10.0/examples/01-client-get-request.php">GET request client example</a>.</p>
+<div class="markdown-heading"><h4 class="heading-element">post()</h4><a id="post" class="anchor" aria-label="Permalink: post()" href="#post"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The <code>post(string $url, array $headers = array(), string|ReadableStreamInterface $body = ''): PromiseInterface&lt;ResponseInterface&gt;</code> method can be used to
 send an HTTP POST request.</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">post</span>(
@@ -1827,7 +1828,7 @@ send an HTTP POST request.</p>
 }, <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">Exception</span></span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>) {
     <span class="pl-k">echo</span> <span class="pl-s">'Error: '</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
 });</pre></div>
-<p>See also <a href="https://github.com/reactphp/http/blob/v1.9.0/examples/04-client-post-json.php">POST JSON client example</a>.</p>
+<p>See also <a href="https://github.com/reactphp/http/blob/v1.10.0/examples/04-client-post-json.php">POST JSON client example</a>.</p>
 <p>This method is also commonly used to submit HTML form data:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>data</span> = [
     <span class="pl-s">'user'</span> =&gt; <span class="pl-s">'Alice'</span>,
@@ -1852,7 +1853,7 @@ matching <code>Content-Length</code> request header like so:</p>
 });
 
 <span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">post</span>(<span class="pl-s1"><span class="pl-c1">$</span>url</span>, <span class="pl-en">array</span>(<span class="pl-s">'Content-Length'</span> =&gt; <span class="pl-s">'11'</span>), <span class="pl-s1"><span class="pl-c1">$</span>body</span>);</pre></div>
-<h4><a id="head" class="anchor" aria-hidden="true" tabindex="-1" href="#head"><span aria-hidden="true" class="octicon octicon-link"></span></a>head()</h4>
+<div class="markdown-heading"><h4 class="heading-element">head()</h4><a id="head" class="anchor" aria-label="Permalink: head()" href="#head"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The <code>head(string $url, array $headers = array()): PromiseInterface&lt;ResponseInterface&gt;</code> method can be used to
 send an HTTP HEAD request.</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">head</span>(<span class="pl-s1"><span class="pl-c1">$</span>url</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi"><span class="pl-v">Psr</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">ResponseInterface</span></span></span> <span class="pl-s1"><span class="pl-c1">$</span>response</span>) {
@@ -1860,7 +1861,7 @@ send an HTTP HEAD request.</p>
 }, <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">Exception</span></span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>) {
     <span class="pl-k">echo</span> <span class="pl-s">'Error: '</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
 });</pre></div>
-<h4><a id="patch" class="anchor" aria-hidden="true" tabindex="-1" href="#patch"><span aria-hidden="true" class="octicon octicon-link"></span></a>patch()</h4>
+<div class="markdown-heading"><h4 class="heading-element">patch()</h4><a id="patch" class="anchor" aria-label="Permalink: patch()" href="#patch"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The <code>patch(string $url, array $headers = array(), string|ReadableStreamInterface $body = ''): PromiseInterface&lt;ResponseInterface&gt;</code> method can be used to
 send an HTTP PATCH request.</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">patch</span>(
@@ -1885,7 +1886,7 @@ matching <code>Content-Length</code> request header like so:</p>
 });
 
 <span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">patch</span>(<span class="pl-s1"><span class="pl-c1">$</span>url</span>, <span class="pl-en">array</span>(<span class="pl-s">'Content-Length'</span> =&gt; <span class="pl-s">'11'</span>), <span class="pl-s1"><span class="pl-c1">$</span>body</span>);</pre></div>
-<h4><a id="put" class="anchor" aria-hidden="true" tabindex="-1" href="#put"><span aria-hidden="true" class="octicon octicon-link"></span></a>put()</h4>
+<div class="markdown-heading"><h4 class="heading-element">put()</h4><a id="put" class="anchor" aria-label="Permalink: put()" href="#put"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The <code>put(string $url, array $headers = array(), string|ReadableStreamInterface $body = ''): PromiseInterface&lt;ResponseInterface&gt;</code> method can be used to
 send an HTTP PUT request.</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">put</span>(
@@ -1899,7 +1900,7 @@ send an HTTP PUT request.</p>
 }, <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">Exception</span></span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>) {
     <span class="pl-k">echo</span> <span class="pl-s">'Error: '</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
 });</pre></div>
-<p>See also <a href="https://github.com/reactphp/http/blob/v1.9.0/examples/05-client-put-xml.php">PUT XML client example</a>.</p>
+<p>See also <a href="https://github.com/reactphp/http/blob/v1.10.0/examples/05-client-put-xml.php">PUT XML client example</a>.</p>
 <p>This method will automatically add a matching <code>Content-Length</code> request
 header if the outgoing request body is a <code>string</code>. If you're using a
 streaming request body (<code>ReadableStreamInterface</code>), it will default to
@@ -1911,7 +1912,7 @@ matching <code>Content-Length</code> request header like so:</p>
 });
 
 <span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">put</span>(<span class="pl-s1"><span class="pl-c1">$</span>url</span>, <span class="pl-en">array</span>(<span class="pl-s">'Content-Length'</span> =&gt; <span class="pl-s">'11'</span>), <span class="pl-s1"><span class="pl-c1">$</span>body</span>);</pre></div>
-<h4><a id="delete" class="anchor" aria-hidden="true" tabindex="-1" href="#delete"><span aria-hidden="true" class="octicon octicon-link"></span></a>delete()</h4>
+<div class="markdown-heading"><h4 class="heading-element">delete()</h4><a id="delete" class="anchor" aria-label="Permalink: delete()" href="#delete"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The <code>delete(string $url, array $headers = array(), string|ReadableStreamInterface $body = ''): PromiseInterface&lt;ResponseInterface&gt;</code> method can be used to
 send an HTTP DELETE request.</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">delete</span>(<span class="pl-s1"><span class="pl-c1">$</span>url</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi"><span class="pl-v">Psr</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">ResponseInterface</span></span></span> <span class="pl-s1"><span class="pl-c1">$</span>response</span>) {
@@ -1919,7 +1920,7 @@ send an HTTP DELETE request.</p>
 }, <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">Exception</span></span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>) {
     <span class="pl-k">echo</span> <span class="pl-s">'Error: '</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
 });</pre></div>
-<h4><a id="request" class="anchor" aria-hidden="true" tabindex="-1" href="#request"><span aria-hidden="true" class="octicon octicon-link"></span></a>request()</h4>
+<div class="markdown-heading"><h4 class="heading-element">request()</h4><a id="request" class="anchor" aria-label="Permalink: request()" href="#request"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The <code>request(string $method, string $url, array $headers = array(), string|ReadableStreamInterface $body = ''): PromiseInterface&lt;ResponseInterface&gt;</code> method can be used to
 send an arbitrary HTTP request.</p>
 <p>The preferred way to send an HTTP request is by using the above
@@ -1946,7 +1947,7 @@ explicitly pass in a matching <code>Content-Length</code> request header like so
 });
 
 <span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">request</span>(<span class="pl-s">'POST'</span>, <span class="pl-s1"><span class="pl-c1">$</span>url</span>, <span class="pl-en">array</span>(<span class="pl-s">'Content-Length'</span> =&gt; <span class="pl-s">'11'</span>), <span class="pl-s1"><span class="pl-c1">$</span>body</span>);</pre></div>
-<h4><a id="requeststreaming" class="anchor" aria-hidden="true" tabindex="-1" href="#requeststreaming"><span aria-hidden="true" class="octicon octicon-link"></span></a>requestStreaming()</h4>
+<div class="markdown-heading"><h4 class="heading-element">requestStreaming()</h4><a id="requeststreaming" class="anchor" aria-label="Permalink: requestStreaming()" href="#requeststreaming"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The <code>requestStreaming(string $method, string $url, array $headers = array(), string|ReadableStreamInterface $body = ''): PromiseInterface&lt;ResponseInterface&gt;</code> method can be used to
 send an arbitrary HTTP request and receive a streaming response without buffering the response body.</p>
 <p>The preferred way to send an HTTP request is by using the above
@@ -1997,7 +1998,7 @@ explicitly pass in a matching <code>Content-Length</code> request header like so
 });
 
 <span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">requestStreaming</span>(<span class="pl-s">'POST'</span>, <span class="pl-s1"><span class="pl-c1">$</span>url</span>, <span class="pl-en">array</span>(<span class="pl-s">'Content-Length'</span> =&gt; <span class="pl-s">'11'</span>), <span class="pl-s1"><span class="pl-c1">$</span>body</span>);</pre></div>
-<h4><a id="withtimeout" class="anchor" aria-hidden="true" tabindex="-1" href="#withtimeout"><span aria-hidden="true" class="octicon octicon-link"></span></a>withTimeout()</h4>
+<div class="markdown-heading"><h4 class="heading-element">withTimeout()</h4><a id="withtimeout" class="anchor" aria-label="Permalink: withTimeout()" href="#withtimeout"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The <code>withTimeout(bool|number $timeout): Browser</code> method can be used to
 change the maximum timeout used for waiting for pending requests.</p>
 <p>You can pass in the number of seconds to use as a new timeout value:</p>
@@ -2012,7 +2013,7 @@ will respects PHP's <code>default_socket_timeout</code> setting (default 60s):</
 <p>Notice that the <a href="#browser"><code>Browser</code></a> is an immutable object, i.e. this
 method actually returns a <em>new</em> <a href="#browser"><code>Browser</code></a> instance with the
 given timeout value applied.</p>
-<h4><a id="withfollowredirects" class="anchor" aria-hidden="true" tabindex="-1" href="#withfollowredirects"><span aria-hidden="true" class="octicon octicon-link"></span></a>withFollowRedirects()</h4>
+<div class="markdown-heading"><h4 class="heading-element">withFollowRedirects()</h4><a id="withfollowredirects" class="anchor" aria-label="Permalink: withFollowRedirects()" href="#withfollowredirects"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The <code>withFollowRedirects(bool|int $followRedirects): Browser</code> method can be used to
 change how HTTP redirects will be followed.</p>
 <p>You can pass in the maximum number of redirects to follow:</p>
@@ -2046,7 +2047,7 @@ This defaults to following a maximum of 10 redirects:</p>
 <p>Notice that the <a href="#browser"><code>Browser</code></a> is an immutable object, i.e. this
 method actually returns a <em>new</em> <a href="#browser"><code>Browser</code></a> instance with the
 given redirect setting applied.</p>
-<h4><a id="withrejecterrorresponse" class="anchor" aria-hidden="true" tabindex="-1" href="#withrejecterrorresponse"><span aria-hidden="true" class="octicon octicon-link"></span></a>withRejectErrorResponse()</h4>
+<div class="markdown-heading"><h4 class="heading-element">withRejectErrorResponse()</h4><a id="withrejecterrorresponse" class="anchor" aria-label="Permalink: withRejectErrorResponse()" href="#withrejecterrorresponse"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The <code>withRejectErrorResponse(bool $obeySuccessCode): Browser</code> method can be used to
 change whether non-successful HTTP response status codes (4xx and 5xx) will be rejected.</p>
 <p>You can pass in a bool <code>false</code> to disable rejecting incoming responses
@@ -2080,7 +2081,7 @@ range with a <a href="#responseexception"><code>ResponseException</code></a>:</p
 <p>Notice that the <a href="#browser"><code>Browser</code></a> is an immutable object, i.e. this
 method actually returns a <em>new</em> <a href="#browser"><code>Browser</code></a> instance with the
 given setting applied.</p>
-<h4><a id="withbase" class="anchor" aria-hidden="true" tabindex="-1" href="#withbase"><span aria-hidden="true" class="octicon octicon-link"></span></a>withBase()</h4>
+<div class="markdown-heading"><h4 class="heading-element">withBase()</h4><a id="withbase" class="anchor" aria-label="Permalink: withBase()" href="#withbase"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The <code>withBase(string|null $baseUrl): Browser</code> method can be used to
 change the base URL used to resolve relative URLs to.</p>
 <p>If you configure a base URL, any requests to relative URLs will be
@@ -2102,7 +2103,7 @@ a request.</p>
 <code>$baseUrl</code> argument is not a valid URL.</p>
 <p>Notice that the <a href="#browser"><code>Browser</code></a> is an immutable object, i.e. the <code>withBase()</code> method
 actually returns a <em>new</em> <a href="#browser"><code>Browser</code></a> instance with the given base URL applied.</p>
-<h4><a id="withprotocolversion" class="anchor" aria-hidden="true" tabindex="-1" href="#withprotocolversion"><span aria-hidden="true" class="octicon octicon-link"></span></a>withProtocolVersion()</h4>
+<div class="markdown-heading"><h4 class="heading-element">withProtocolVersion()</h4><a id="withprotocolversion" class="anchor" aria-label="Permalink: withProtocolVersion()" href="#withprotocolversion"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The <code>withProtocolVersion(string $protocolVersion): Browser</code> method can be used to
 change the HTTP protocol version that will be used for all subsequent requests.</p>
 <p>All the above <a href="#request-methods">request methods</a> default to sending
@@ -2118,7 +2119,7 @@ can use this method:</p>
 <p>Notice that the <a href="#browser"><code>Browser</code></a> is an immutable object, i.e. this
 method actually returns a <em>new</em> <a href="#browser"><code>Browser</code></a> instance with the
 new protocol version applied.</p>
-<h4><a id="withresponsebuffer" class="anchor" aria-hidden="true" tabindex="-1" href="#withresponsebuffer"><span aria-hidden="true" class="octicon octicon-link"></span></a>withResponseBuffer()</h4>
+<div class="markdown-heading"><h4 class="heading-element">withResponseBuffer()</h4><a id="withresponsebuffer" class="anchor" aria-label="Permalink: withResponseBuffer()" href="#withresponsebuffer"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The <code>withResponseBuffer(int $maximumSize): Browser</code> method can be used to
 change the maximum size for buffering a response body.</p>
 <p>The preferred way to send an HTTP request is by using the above
@@ -2147,7 +2148,7 @@ this maximum buffer size setting has no effect on streaming responses.</p>
 <p>Notice that the <a href="#browser"><code>Browser</code></a> is an immutable object, i.e. this
 method actually returns a <em>new</em> <a href="#browser"><code>Browser</code></a> instance with the
 given setting applied.</p>
-<h4><a id="withheader" class="anchor" aria-hidden="true" tabindex="-1" href="#withheader"><span aria-hidden="true" class="octicon octicon-link"></span></a>withHeader()</h4>
+<div class="markdown-heading"><h4 class="heading-element">withHeader()</h4><a id="withheader" class="anchor" aria-label="Permalink: withHeader()" href="#withheader"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The <code>withHeader(string $header, string $value): Browser</code> method can be used to
 add a request header for all following requests.</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>browser</span> = <span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">withHeader</span>(<span class="pl-s">'User-Agent'</span>, <span class="pl-s">'ACME'</span>);
@@ -2156,7 +2157,7 @@ add a request header for all following requests.</p>
 <p>Note that the new header will overwrite any headers previously set with
 the same name (case-insensitive). Following requests will use these headers
 by default unless they are explicitly set for any requests.</p>
-<h4><a id="withoutheader" class="anchor" aria-hidden="true" tabindex="-1" href="#withoutheader"><span aria-hidden="true" class="octicon octicon-link"></span></a>withoutHeader()</h4>
+<div class="markdown-heading"><h4 class="heading-element">withoutHeader()</h4><a id="withoutheader" class="anchor" aria-label="Permalink: withoutHeader()" href="#withoutheader"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The <code>withoutHeader(string $header): Browser</code> method can be used to
 remove any default request headers previously set via
 the <a href="#withheader"><code>withHeader()</code> method</a>.</p>
@@ -2165,8 +2166,8 @@ the <a href="#withheader"><code>withHeader()</code> method</a>.</p>
 <span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">get</span>(<span class="pl-s1"><span class="pl-c1">$</span>url</span>)-&gt;<span class="pl-en">then</span>(…);</pre></div>
 <p>Note that this method only affects the headers which were set with the
 method <code>withHeader(string $header, string $value): Browser</code></p>
-<h3><a id="reacthttpmessage" class="anchor" aria-hidden="true" tabindex="-1" href="#reacthttpmessage"><span aria-hidden="true" class="octicon octicon-link"></span></a>React\Http\Message</h3>
-<h4><a id="response" class="anchor" aria-hidden="true" tabindex="-1" href="#response"><span aria-hidden="true" class="octicon octicon-link"></span></a>Response</h4>
+<div class="markdown-heading"><h3 class="heading-element">React\Http\Message</h3><a id="reacthttpmessage" class="anchor" aria-label="Permalink: React\Http\Message" href="#reacthttpmessage"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="markdown-heading"><h4 class="heading-element">Response</h4><a id="response" class="anchor" aria-label="Permalink: Response" href="#response"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The <code>React\Http\Message\Response</code> class can be used to
 represent an outgoing server response message.</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>response</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">Response</span>(
@@ -2187,11 +2188,10 @@ constants with the <code>STATUS_*</code> prefix. For instance, the <code>200 OK<
 <code>404 Not Found</code> status codes can used as <code>Response::STATUS_OK</code> and
 <code>Response::STATUS_NOT_FOUND</code> respectively.</p>
 <blockquote>
-<p>Internally, this implementation builds on top of an existing incoming
-response message and only adds required streaming support. This base class is
+<p>Internally, this implementation builds on top of a base class which is
 considered an implementation detail that may change in the future.</p>
 </blockquote>
-<h5><a id="html" class="anchor" aria-hidden="true" tabindex="-1" href="#html"><span aria-hidden="true" class="octicon octicon-link"></span></a>html()</h5>
+<div class="markdown-heading"><h5 class="heading-element">html()</h5><a id="html" class="anchor" aria-label="Permalink: html()" href="#html"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The static <code>html(string $html): Response</code> method can be used to
 create an HTML response.</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>html</span> =<span class="pl-s"> &lt;&lt;&lt;HTML</span>
@@ -2223,7 +2223,7 @@ object using the <code>Response</code> constructor:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>response</span> = <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">Response</span>::<span class="pl-en">html</span>(
     "<span class="pl-s">&lt;h1&gt;Error&lt;/h1&gt;</span>\n<span class="pl-s">&lt;p&gt;Invalid user name given.&lt;/p&gt;</span>\n"
 )-&gt;<span class="pl-en">withStatus</span>(<span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">Response</span>::<span class="pl-c1">STATUS_BAD_REQUEST</span>);</pre></div>
-<h5><a id="json" class="anchor" aria-hidden="true" tabindex="-1" href="#json"><span aria-hidden="true" class="octicon octicon-link"></span></a>json()</h5>
+<div class="markdown-heading"><h5 class="heading-element">json()</h5><a id="json" class="anchor" aria-label="Permalink: json()" href="#json"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The static <code>json(mixed $data): Response</code> method can be used to
 create a JSON response.</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>response</span> = <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">Response</span>::<span class="pl-en">json</span>([<span class="pl-s">'name'</span> =&gt; <span class="pl-s">'Alice'</span>]);</pre></div>
@@ -2257,7 +2257,7 @@ object using the <code>Response</code> constructor:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>response</span> = <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">Response</span>::<span class="pl-en">json</span>(
     [<span class="pl-s">'error'</span> =&gt; <span class="pl-s">'Invalid user name given'</span>]
 )-&gt;<span class="pl-en">withStatus</span>(<span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">Response</span>::<span class="pl-c1">STATUS_BAD_REQUEST</span>);</pre></div>
-<h5><a id="plaintext" class="anchor" aria-hidden="true" tabindex="-1" href="#plaintext"><span aria-hidden="true" class="octicon octicon-link"></span></a>plaintext()</h5>
+<div class="markdown-heading"><h5 class="heading-element">plaintext()</h5><a id="plaintext" class="anchor" aria-label="Permalink: plaintext()" href="#plaintext"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The static <code>plaintext(string $text): Response</code> method can be used to
 create a plaintext response.</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>response</span> = <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">Response</span>::<span class="pl-en">plaintext</span>("<span class="pl-s">Hello wörld!</span>\n");</pre></div>
@@ -2281,7 +2281,7 @@ object using the <code>Response</code> constructor:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>response</span> = <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">Response</span>::<span class="pl-en">plaintext</span>(
     "<span class="pl-s">Error: Invalid user name given.</span>\n"
 )-&gt;<span class="pl-en">withStatus</span>(<span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">Response</span>::<span class="pl-c1">STATUS_BAD_REQUEST</span>);</pre></div>
-<h5><a id="xml" class="anchor" aria-hidden="true" tabindex="-1" href="#xml"><span aria-hidden="true" class="octicon octicon-link"></span></a>xml()</h5>
+<div class="markdown-heading"><h5 class="heading-element">xml()</h5><a id="xml" class="anchor" aria-label="Permalink: xml()" href="#xml"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The static <code>xml(string $xml): Response</code> method can be used to
 create an XML response.</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>xml</span> =<span class="pl-s"> &lt;&lt;&lt;XML</span>
@@ -2314,7 +2314,7 @@ object using the <code>Response</code> constructor:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>response</span> = <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">Response</span>::<span class="pl-en">xml</span>(
     "<span class="pl-s">&lt;error&gt;&lt;message&gt;Invalid user name given.&lt;/message&gt;&lt;/error&gt;</span>\n"
 )-&gt;<span class="pl-en">withStatus</span>(<span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">Response</span>::<span class="pl-c1">STATUS_BAD_REQUEST</span>);</pre></div>
-<h4><a id="request-1" class="anchor" aria-hidden="true" tabindex="-1" href="#request-1"><span aria-hidden="true" class="octicon octicon-link"></span></a>Request</h4>
+<div class="markdown-heading"><h4 class="heading-element">Request</h4><a id="request-1" class="anchor" aria-label="Permalink: Request" href="#request-1"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The <code>React\Http\Message\Request</code> class can be used to
 respresent an outgoing HTTP request message.</p>
 <p>This class implements the
@@ -2325,11 +2325,10 @@ which extends the
 message for the HTTP client implementation. Likewise, you can also use this
 class with other HTTP client implementations and for tests.</p>
 <blockquote>
-<p>Internally, this implementation builds on top of an existing outgoing
-request message and only adds support for streaming. This base class is
+<p>Internally, this implementation builds on top of a base class which is
 considered an implementation detail that may change in the future.</p>
 </blockquote>
-<h4><a id="serverrequest" class="anchor" aria-hidden="true" tabindex="-1" href="#serverrequest"><span aria-hidden="true" class="octicon octicon-link"></span></a>ServerRequest</h4>
+<div class="markdown-heading"><h4 class="heading-element">ServerRequest</h4><a id="serverrequest" class="anchor" aria-label="Permalink: ServerRequest" href="#serverrequest"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The <code>React\Http\Message\ServerRequest</code> class can be used to
 respresent an incoming server request message.</p>
 <p>This class implements the
@@ -2342,11 +2341,18 @@ which in turn extends the
 Likewise, you can also use this class in test cases to test how your web
 application reacts to certain HTTP requests.</p>
 <blockquote>
-<p>Internally, this implementation builds on top of an existing outgoing
-request message and only adds required server methods. This base class is
+<p>Internally, this implementation builds on top of a base class which is
 considered an implementation detail that may change in the future.</p>
 </blockquote>
-<h4><a id="responseexception" class="anchor" aria-hidden="true" tabindex="-1" href="#responseexception"><span aria-hidden="true" class="octicon octicon-link"></span></a>ResponseException</h4>
+<div class="markdown-heading"><h4 class="heading-element">Uri</h4><a id="uri" class="anchor" aria-label="Permalink: Uri" href="#uri"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<p>The <code>React\Http\Message\Uri</code> class can be used to
+respresent a URI (or URL).</p>
+<p>This class implements the
+<a href="https://www.php-fig.org/psr/psr-7/#35-psrhttpmessageuriinterface" rel="nofollow">PSR-7 <code>UriInterface</code></a>.</p>
+<p>This is mostly used internally to represent the URI of each HTTP request
+message for our HTTP client and server implementations. Likewise, you may
+also use this class with other HTTP implementations and for tests.</p>
+<div class="markdown-heading"><h4 class="heading-element">ResponseException</h4><a id="responseexception" class="anchor" aria-label="Permalink: ResponseException" href="#responseexception"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The <code>React\Http\Message\ResponseException</code> is an <code>Exception</code> sub-class that will be used to reject
 a request promise if the remote server returns a non-success status code
 (anything but 2xx or 3xx).
@@ -2355,8 +2361,8 @@ You can control this behavior via the <a href="#withrejecterrorresponse"><code>w
 return the HTTP response status code.</p>
 <p>The <code>getResponse(): ResponseInterface</code> method can be used to
 access its underlying response object.</p>
-<h3><a id="reacthttpmiddleware" class="anchor" aria-hidden="true" tabindex="-1" href="#reacthttpmiddleware"><span aria-hidden="true" class="octicon octicon-link"></span></a>React\Http\Middleware</h3>
-<h4><a id="streamingrequestmiddleware" class="anchor" aria-hidden="true" tabindex="-1" href="#streamingrequestmiddleware"><span aria-hidden="true" class="octicon octicon-link"></span></a>StreamingRequestMiddleware</h4>
+<div class="markdown-heading"><h3 class="heading-element">React\Http\Middleware</h3><a id="reacthttpmiddleware" class="anchor" aria-label="Permalink: React\Http\Middleware" href="#reacthttpmiddleware"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="markdown-heading"><h4 class="heading-element">StreamingRequestMiddleware</h4><a id="streamingrequestmiddleware" class="anchor" aria-label="Permalink: StreamingRequestMiddleware" href="#streamingrequestmiddleware"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The <code>React\Http\Middleware\StreamingRequestMiddleware</code> can be used to
 process incoming requests with a streaming request body (without buffering).</p>
 <p>This allows you to process requests of any size without buffering the request
@@ -2404,7 +2410,7 @@ once:</p>
 request buffering behavior in the <code>HttpServer</code>. It does not implement any logic
 on its own.</p>
 </blockquote>
-<h4><a id="limitconcurrentrequestsmiddleware" class="anchor" aria-hidden="true" tabindex="-1" href="#limitconcurrentrequestsmiddleware"><span aria-hidden="true" class="octicon octicon-link"></span></a>LimitConcurrentRequestsMiddleware</h4>
+<div class="markdown-heading"><h4 class="heading-element">LimitConcurrentRequestsMiddleware</h4><a id="limitconcurrentrequestsmiddleware" class="anchor" aria-label="Permalink: LimitConcurrentRequestsMiddleware" href="#limitconcurrentrequestsmiddleware"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The <code>React\Http\Middleware\LimitConcurrentRequestsMiddleware</code> can be used to
 limit how many next handlers can be executed concurrently.</p>
 <p>If this middleware is invoked, it will check if the number of pending
@@ -2443,7 +2449,7 @@ processes one request after another without any concurrency:</p>
     <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Middleware</span>\<span class="pl-v">LimitConcurrentRequestsMiddleware</span>(<span class="pl-c1">1</span>), <span class="pl-c">// only execute 1 handler (no concurrency)</span>
     <span class="pl-s1"><span class="pl-c1">$</span>handler</span>
 );</pre></div>
-<h4><a id="requestbodybuffermiddleware" class="anchor" aria-hidden="true" tabindex="-1" href="#requestbodybuffermiddleware"><span aria-hidden="true" class="octicon octicon-link"></span></a>RequestBodyBufferMiddleware</h4>
+<div class="markdown-heading"><h4 class="heading-element">RequestBodyBufferMiddleware</h4><a id="requestbodybuffermiddleware" class="anchor" aria-label="Permalink: RequestBodyBufferMiddleware" href="#requestbodybuffermiddleware"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>One of the built-in middleware is the <code>React\Http\Middleware\RequestBodyBufferMiddleware</code> which
 can be used to buffer the whole incoming request body in memory.
 This can be useful if full PSR-7 compatibility is needed for the request handler
@@ -2487,7 +2493,7 @@ the total number of concurrent requests.</p>
         <span class="pl-k">return</span> <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">Response</span>(<span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">Response</span>::<span class="pl-c1">STATUS_OK</span>);
     },
 );</pre></div>
-<h4><a id="requestbodyparsermiddleware" class="anchor" aria-hidden="true" tabindex="-1" href="#requestbodyparsermiddleware"><span aria-hidden="true" class="octicon octicon-link"></span></a>RequestBodyParserMiddleware</h4>
+<div class="markdown-heading"><h4 class="heading-element">RequestBodyParserMiddleware</h4><a id="requestbodyparsermiddleware" class="anchor" aria-label="Permalink: RequestBodyParserMiddleware" href="#requestbodyparsermiddleware"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The <code>React\Http\Middleware\RequestBodyParserMiddleware</code> takes a fully buffered request body
 (generally from <a href="#requestbodybuffermiddleware"><code>RequestBodyBufferMiddleware</code></a>),
 and parses the form values and file uploads from the incoming HTTP request body.</p>
@@ -2539,7 +2545,7 @@ contents and persist this to your favorite data store.</p>
     <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Middleware</span>\<span class="pl-v">RequestBodyParserMiddleware</span>(),
     <span class="pl-s1"><span class="pl-c1">$</span>handler</span>
 );</pre></div>
-<p>See also <a href="https://github.com/reactphp/http/blob/v1.9.0/examples/62-server-form-upload.php">form upload server example</a> for more details.</p>
+<p>See also <a href="https://github.com/reactphp/http/blob/v1.10.0/examples/62-server-form-upload.php">form upload server example</a> for more details.</p>
 <p>By default, this middleware respects the
 <a href="https://www.php.net/manual/en/ini.core.php#ini.upload-max-filesize" rel="nofollow"><code>upload_max_filesize</code></a>
 (default <code>2M</code>) ini setting.
@@ -2593,18 +2599,18 @@ is left up to higher-level implementations.
 If you want to respect this setting, you have to check its value and
 effectively avoid using this middleware entirely.</p>
 </blockquote>
-<h2><a id="install" class="anchor" aria-hidden="true" tabindex="-1" href="#install"><span aria-hidden="true" class="octicon octicon-link"></span></a>Install</h2>
+<div class="markdown-heading"><h2 class="heading-element">Install</h2><a id="install" class="anchor" aria-label="Permalink: Install" href="#install"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The recommended way to install this library is <a href="https://getcomposer.org/" rel="nofollow">through Composer</a>.
 <a href="https://getcomposer.org/doc/00-intro.md" rel="nofollow">New to Composer?</a></p>
 <p>This project follows <a href="https://semver.org/" rel="nofollow">SemVer</a>.
 This will install the latest supported version:</p>
-<div class="highlight highlight-source-shell"><pre>composer require react/http:^1.9</pre></div>
+<div class="highlight highlight-source-shell"><pre>composer require react/http:^1.10</pre></div>
 <p>See also the <a href="changelog.html">CHANGELOG</a> for details about version upgrades.</p>
 <p>This project aims to run on any platform and thus does not require any PHP
 extensions and supports running on legacy PHP 5.3 through current PHP 8+ and
 HHVM.
 It's <em>highly recommended to use the latest supported PHP version</em> for this project.</p>
-<h2><a id="tests" class="anchor" aria-hidden="true" tabindex="-1" href="#tests"><span aria-hidden="true" class="octicon octicon-link"></span></a>Tests</h2>
+<div class="markdown-heading"><h2 class="heading-element">Tests</h2><a id="tests" class="anchor" aria-label="Permalink: Tests" href="#tests"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>To run the test suite, you first need to clone this repo and then install all
 dependencies <a href="https://getcomposer.org/" rel="nofollow">through Composer</a>:</p>
 <div class="highlight highlight-source-shell"><pre>composer install</pre></div>
@@ -2614,7 +2620,7 @@ dependencies <a href="https://getcomposer.org/" rel="nofollow">through Composer<
 on a stable internet connection.
 If you do not want to run these, they can simply be skipped like this:</p>
 <div class="highlight highlight-source-shell"><pre>vendor/bin/phpunit --exclude-group internet</pre></div>
-<h2><a id="license" class="anchor" aria-hidden="true" tabindex="-1" href="#license"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
+<div class="markdown-heading"><h2 class="heading-element">License</h2><a id="license" class="anchor" aria-label="Permalink: License" href="#license"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>MIT, see <a href="license.html">LICENSE file</a>.</p>
                                 </main>
                 <aside class="sidebar" role="complementary">
@@ -2624,7 +2630,7 @@ If you do not want to run these, they can simply be skipped like this:</p>
 
                             <div class="version-selector">
                                 <button class="version-selector__button version-selector__button--latest" data-ctrly="component-version-selector" data-version-selector-control>
-                                    v1.9.0
+                                    v1.10.0
 
                                     <i class="icon-chevron-down" aria-hidden="true"></i>
                                     <i class="icon-chevron-up" aria-hidden="true"></i>
@@ -2640,6 +2646,11 @@ If you do not want to run these, they can simply be skipped like this:</p>
                                             </a>
                                         </li>
                                                                                                                                                                                                                     <li>
+                                                <a href="https://github.com/reactphp/http/tree/v1.9.0#readme" class="version-selector__version">
+                                                    v1.9.0
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
                                                 <a href="https://github.com/reactphp/http/tree/v1.8.0#readme" class="version-selector__version">
                                                     v1.8.0
                                                 </a>
@@ -2849,19 +2860,19 @@ If you do not want to run these, they can simply be skipped like this:</p>
 
                         <h3 class="component-info__subtitle">Installation</h3>
 
-                        <div class="highlight highlight-source-shell"><pre>composer require react/http:^1.9.0</pre></div>
+                        <div class="highlight highlight-source-shell"><pre>composer require react/http:^1.10.0</pre></div>
 
                         <h3 class="component-info__subtitle">Contributors</h3>
 
                         <ul class="component-info__contributors">
                                                     <li>
                                 <a href="https://github.com/clue">
-                                    <img src="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=80 2x" alt="clue" title="clue (308 contributions)">
+                                    <img src="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=80 2x" alt="clue" title="clue (319 contributions)">
                                 </a>
                             </li>
                                                     <li>
                                 <a href="https://github.com/WyriHaximus">
-                                    <img src="https://avatars.githubusercontent.com/u/147145?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/147145?v=4&amp;s=80 2x" alt="WyriHaximus" title="WyriHaximus (206 contributions)">
+                                    <img src="https://avatars.githubusercontent.com/u/147145?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/147145?v=4&amp;s=80 2x" alt="WyriHaximus" title="WyriHaximus (215 contributions)">
                                 </a>
                             </li>
                                                     <li>
@@ -2891,7 +2902,7 @@ If you do not want to run these, they can simply be skipped like this:</p>
                             </li>
                                                     <li>
                                 <a href="https://github.com/SimonFrings">
-                                    <img src="https://avatars.githubusercontent.com/u/44357440?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/44357440?v=4&amp;s=80 2x" alt="SimonFrings" title="SimonFrings (16 contributions)">
+                                    <img src="https://avatars.githubusercontent.com/u/44357440?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/44357440?v=4&amp;s=80 2x" alt="SimonFrings" title="SimonFrings (19 contributions)">
                                 </a>
                             </li>
                                                     <li>
@@ -3018,7 +3029,7 @@ If you do not want to run these, they can simply be skipped like this:</p>
         <mask id="reactphp-http-participation-sparkline" x="0" y="0" width="320" height="40" >
             <polyline 
                 transform="translate(0, 40) scale(1,-1)"
-                points="0,2 6,1 12,3 18,1 24,1 30,1 36,1 42,1 48,2 54,3 60,2 66,1 72,1 78,1 84,1 90,1 96,1 102,1 108,1 114,2 120,3 126,2 132,1 138,1 144,1 150,1 156,1 162,1 168,1 174,1 180,1 186,2 192,1 198,1 204,1 210,1 216,1 222,1 228,1 234,1 240,2 246,1 252,1 258,1 264,1 270,1 276,1 282,1 288,1 294,1 300,1 306,1" 
+                points="0,1 6,1 12,1 18,1 24,2 30,1 36,4 42,1 48,1 54,1 60,1 66,1 72,1 78,1 84,1 90,1 96,3 102,1 108,1 114,1 120,1 126,1 132,1 138,1 144,1 150,2 156,1 162,1 168,1 174,1 180,1 186,1 192,1 198,1 204,1 210,1 216,1 222,1 228,3 234,2 240,1 246,6 252,4 258,9 264,1 270,1 276,1 282,1 288,1 294,1 300,2 306,2" 
                 fill="transparent" 
                 stroke="#40a977" 
                 stroke-width="2"

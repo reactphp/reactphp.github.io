@@ -87,7 +87,7 @@
                         Promise
 
                         <span class="off-canvas-menu__version">
-                            v3.1.0
+                            v3.2.0
                         </span>
                     </a>
                 </li>
@@ -128,7 +128,7 @@
                         HTTP
 
                         <span class="off-canvas-menu__version">
-                            v1.9.0
+                            v1.10.0
                         </span>
                     </a>
                 </li>
@@ -219,7 +219,7 @@
                 <main class="main">
                                     <h1>SocketClient</h1>
 
-                    
+                    <div class="markdown-heading"><h1 class="heading-element">SocketClient Component</h1><a id="socketclient-component" class="anchor" aria-label="Permalink: SocketClient Component" href="#socketclient-component"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p><a href="http://travis-ci.org/reactphp/socket-client" rel="nofollow"><img src="https://camo.githubusercontent.com/6ac1f022b516db3d7c2f2e97ea524925cb28769dd03514ad18c2fb9af219f4cc/68747470733a2f2f7365637572652e7472617669732d63692e6f72672f72656163747068702f736f636b65742d636c69656e742e706e673f6272616e63683d6d6173746572" alt="Build Status" data-canonical-src="https://secure.travis-ci.org/reactphp/socket-client.png?branch=master" style="max-width: 100%;"></a> <a href="https://codeclimate.com/github/reactphp/socket-client" rel="nofollow"><img src="https://camo.githubusercontent.com/8337bb5b696e1186a1ed358367ca4b26ceb75722b90e9b5bc1d788892efd950e/68747470733a2f2f636f6465636c696d6174652e636f6d2f6769746875622f72656163747068702f736f636b65742d636c69656e742f6261646765732f6770612e737667" alt="Code Climate" data-canonical-src="https://codeclimate.com/github/reactphp/socket-client/badges/gpa.svg" style="max-width: 100%;"></a></p>
 <p>Async, streaming plaintext TCP/IP and secure TLS based connections for <a href="https://reactphp.org/" rel="nofollow">ReactPHP</a></p>
 <p>You can think of this library as an async version of
@@ -267,8 +267,8 @@ handle multiple connections without blocking.</p>
 <li><a href="#tests">Tests</a></li>
 <li><a href="#license">License</a></li>
 </ul>
-<h2><a id="usage" class="anchor" aria-hidden="true" tabindex="-1" href="#usage"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h2>
-<h3><a id="connectorinterface" class="anchor" aria-hidden="true" tabindex="-1" href="#connectorinterface"><span aria-hidden="true" class="octicon octicon-link"></span></a>ConnectorInterface</h3>
+<div class="markdown-heading"><h2 class="heading-element">Usage</h2><a id="usage" class="anchor" aria-label="Permalink: Usage" href="#usage"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="markdown-heading"><h3 class="heading-element">ConnectorInterface</h3><a id="connectorinterface" class="anchor" aria-label="Permalink: ConnectorInterface" href="#connectorinterface"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The <code>ConnectorInterface</code> is responsible for providing an interface for
 establishing streaming connections, such as a normal TCP/IP connection.</p>
 <p>This is the main interface defined in this package and it is used throughout
@@ -279,7 +279,7 @@ TCP/IP connection to the underlying networking service.
 This is usually done via dependency injection, so it's fairly simple to actually
 swap this implementation against any other implementation of this interface.</p>
 <p>The interface only offers a single method:</p>
-<h4><a id="connect" class="anchor" aria-hidden="true" tabindex="-1" href="#connect"><span aria-hidden="true" class="octicon octicon-link"></span></a>connect()</h4>
+<div class="markdown-heading"><h4 class="heading-element">connect()</h4><a id="connect" class="anchor" aria-label="Permalink: connect()" href="#connect"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The <code>connect(string $uri): PromiseInterface&lt;ConnectionInterface, Exception&gt;</code> method
 can be used to create a streaming connection to the given remote address.</p>
 <p>It returns a <a href="../promise/">Promise</a> which either
@@ -301,7 +301,7 @@ resources and references as applicable:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>promise</span> = <span class="pl-s1"><span class="pl-c1">$</span>connector</span>-&gt;<span class="pl-en">connect</span>(<span class="pl-s1"><span class="pl-c1">$</span>uri</span>);
 
 <span class="pl-s1"><span class="pl-c1">$</span>promise</span>-&gt;<span class="pl-en">cancel</span>();</pre></div>
-<h3><a id="connectioninterface" class="anchor" aria-hidden="true" tabindex="-1" href="#connectioninterface"><span aria-hidden="true" class="octicon octicon-link"></span></a>ConnectionInterface</h3>
+<div class="markdown-heading"><h3 class="heading-element">ConnectionInterface</h3><a id="connectioninterface" class="anchor" aria-label="Permalink: ConnectionInterface" href="#connectioninterface"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The <code>ConnectionInterface</code> is used to represent any outgoing connection,
 such as a normal TCP/IP connection.</p>
 <p>An outgoing connection is a duplex stream (both readable and writable) that
@@ -343,7 +343,7 @@ you can use any of its events and methods as usual:</p>
 <span class="pl-c">// …</span></pre></div>
 <p>For more details, see the
 <a href="../stream/#duplexstreaminterface"><code>DuplexStreamInterface</code></a>.</p>
-<h4><a id="getremoteaddress" class="anchor" aria-hidden="true" tabindex="-1" href="#getremoteaddress"><span aria-hidden="true" class="octicon octicon-link"></span></a>getRemoteAddress()</h4>
+<div class="markdown-heading"><h4 class="heading-element">getRemoteAddress()</h4><a id="getremoteaddress" class="anchor" aria-label="Permalink: getRemoteAddress()" href="#getremoteaddress"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The <code>getRemoteAddress(): ?string</code> method can be used to
 return the remote address (IP and port) where this connection has been
 established to.</p>
@@ -357,7 +357,7 @@ use something like this:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>address</span> = <span class="pl-s1"><span class="pl-c1">$</span>connection</span>-&gt;<span class="pl-en">getRemoteAddress</span>();
 <span class="pl-s1"><span class="pl-c1">$</span>ip</span> = trim(parse_url(<span class="pl-s">'tcp://'</span> . <span class="pl-s1"><span class="pl-c1">$</span>address</span>, <span class="pl-c1">PHP_URL_HOST</span>), <span class="pl-s">'[]'</span>);
 <span class="pl-k">echo</span> <span class="pl-s">'Connected to '</span> . <span class="pl-s1"><span class="pl-c1">$</span>ip</span> . <span class="pl-c1">PHP_EOL</span>;</pre></div>
-<h4><a id="getlocaladdress" class="anchor" aria-hidden="true" tabindex="-1" href="#getlocaladdress"><span aria-hidden="true" class="octicon octicon-link"></span></a>getLocalAddress()</h4>
+<div class="markdown-heading"><h4 class="heading-element">getLocalAddress()</h4><a id="getlocaladdress" class="anchor" aria-label="Permalink: getLocalAddress()" href="#getlocaladdress"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The <code>getLocalAddress(): ?string</code> method can be used to
 return the full local address (IP and port) where this connection has been
 established from.</p>
@@ -371,7 +371,7 @@ so they should not be confused.</p>
 <p>If your system has multiple interfaces (e.g. a WAN and a LAN interface),
 you can use this method to find out which interface was actually
 used for this connection.</p>
-<h3><a id="connector" class="anchor" aria-hidden="true" tabindex="-1" href="#connector"><span aria-hidden="true" class="octicon octicon-link"></span></a>Connector</h3>
+<div class="markdown-heading"><h3 class="heading-element">Connector</h3><a id="connector" class="anchor" aria-label="Permalink: Connector" href="#connector"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The <code>Connector</code> class is the main class in this package that implements the
 <a href="#connectorinterface"><code>ConnectorInterface</code></a> and allows you to create streaming connections.</p>
 <p>You can use this connector to create any kind of streaming connections, such
@@ -541,8 +541,8 @@ explicitly pass a <code>tls://</code> connector like above instead.
 Internally, the <code>tcp://</code> and <code>tls://</code> connectors will always be wrapped by
 <code>TimeoutConnector</code>, unless you disable timeouts like in the above example.</p>
 </blockquote>
-<h2><a id="advanced-usage" class="anchor" aria-hidden="true" tabindex="-1" href="#advanced-usage"><span aria-hidden="true" class="octicon octicon-link"></span></a>Advanced Usage</h2>
-<h3><a id="tcpconnector" class="anchor" aria-hidden="true" tabindex="-1" href="#tcpconnector"><span aria-hidden="true" class="octicon octicon-link"></span></a>TcpConnector</h3>
+<div class="markdown-heading"><h2 class="heading-element">Advanced Usage</h2><a id="advanced-usage" class="anchor" aria-label="Permalink: Advanced Usage" href="#advanced-usage"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="markdown-heading"><h3 class="heading-element">TcpConnector</h3><a id="tcpconnector" class="anchor" aria-label="Permalink: TcpConnector" href="#tcpconnector"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The <code>React\SocketClient\TcpConnector</code> class implements the
 <a href="#connectorinterface"><code>ConnectorInterface</code></a> and allows you to create plaintext
 TCP/IP connections to any IP-port-combination:</p>
@@ -584,7 +584,7 @@ be used to set up the TLS peer name.
 This is used by the <code>SecureConnector</code> and <code>DnsConnector</code> to verify the peer
 name and can also be used if you want a custom TLS peer name.</p>
 </blockquote>
-<h3><a id="dnsconnector" class="anchor" aria-hidden="true" tabindex="-1" href="#dnsconnector"><span aria-hidden="true" class="octicon octicon-link"></span></a>DnsConnector</h3>
+<div class="markdown-heading"><h3 class="heading-element">DnsConnector</h3><a id="dnsconnector" class="anchor" aria-label="Permalink: DnsConnector" href="#dnsconnector"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The <code>DnsConnector</code> class implements the
 <a href="#connectorinterface"><code>ConnectorInterface</code></a> and allows you to create plaintext
 TCP/IP connections to any hostname-port-combination.</p>
@@ -622,7 +622,7 @@ hostname and is used by the <code>TcpConnector</code> to set up the TLS peer nam
 If a <code>hostname</code> is given explicitly, this query parameter will not be modified,
 which can be useful if you want a custom TLS peer name.</p>
 </blockquote>
-<h3><a id="secureconnector" class="anchor" aria-hidden="true" tabindex="-1" href="#secureconnector"><span aria-hidden="true" class="octicon octicon-link"></span></a>SecureConnector</h3>
+<div class="markdown-heading"><h3 class="heading-element">SecureConnector</h3><a id="secureconnector" class="anchor" aria-label="Permalink: SecureConnector" href="#secureconnector"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The <code>SecureConnector</code> class implements the
 <a href="#connectorinterface"><code>ConnectorInterface</code></a> and allows you to create secure
 TLS (formerly known as SSL) connections to any hostname-port-combination.</p>
@@ -661,7 +661,7 @@ Failing to do so may result in a TLS peer name mismatch error or some hard to
 trace race conditions, because all stream resources will use a single, shared
 <em>default context</em> resource otherwise.</p>
 </blockquote>
-<h3><a id="timeoutconnector" class="anchor" aria-hidden="true" tabindex="-1" href="#timeoutconnector"><span aria-hidden="true" class="octicon octicon-link"></span></a>TimeoutConnector</h3>
+<div class="markdown-heading"><h3 class="heading-element">TimeoutConnector</h3><a id="timeoutconnector" class="anchor" aria-label="Permalink: TimeoutConnector" href="#timeoutconnector"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The <code>TimeoutConnector</code> class implements the
 <a href="#connectorinterface"><code>ConnectorInterface</code></a> and allows you to add timeout
 handling to any existing connector instance.</p>
@@ -680,7 +680,7 @@ underlying connection attempt if it takes too long.</p>
 <span class="pl-s1"><span class="pl-c1">$</span>promise</span>-&gt;<span class="pl-en">cancel</span>();</pre></div>
 <p>Calling <code>cancel()</code> on a pending promise will cancel the underlying connection
 attempt, abort the timer and reject the resulting promise.</p>
-<h3><a id="unixconnector" class="anchor" aria-hidden="true" tabindex="-1" href="#unixconnector"><span aria-hidden="true" class="octicon octicon-link"></span></a>UnixConnector</h3>
+<div class="markdown-heading"><h3 class="heading-element">UnixConnector</h3><a id="unixconnector" class="anchor" aria-label="Permalink: UnixConnector" href="#unixconnector"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The <code>UnixConnector</code> class implements the
 <a href="#connectorinterface"><code>ConnectorInterface</code></a> and allows you to connect to
 Unix domain socket (UDS) paths like this:</p>
@@ -694,7 +694,7 @@ Unix domain socket (UDS) paths like this:</p>
 <p>Connecting to Unix domain sockets is an atomic operation, i.e. its promise will
 settle (either resolve or reject) immediately.
 As such, calling <code>cancel()</code> on the resulting promise has no effect.</p>
-<h2><a id="install" class="anchor" aria-hidden="true" tabindex="-1" href="#install"><span aria-hidden="true" class="octicon octicon-link"></span></a>Install</h2>
+<div class="markdown-heading"><h2 class="heading-element">Install</h2><a id="install" class="anchor" aria-label="Permalink: Install" href="#install"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The recommended way to install this library is <a href="http://getcomposer.org" rel="nofollow">through Composer</a>.
 <a href="http://getcomposer.org/doc/00-intro.md" rel="nofollow">New to Composer?</a></p>
 <p>This will install the latest supported version:</p>
@@ -726,13 +726,13 @@ As such, trying to create a secure TLS connections on affected versions will
 return a rejected promise instead.
 This issue is also covered by our test suite, which will skip related tests
 on affected versions.</p>
-<h2><a id="tests" class="anchor" aria-hidden="true" tabindex="-1" href="#tests"><span aria-hidden="true" class="octicon octicon-link"></span></a>Tests</h2>
+<div class="markdown-heading"><h2 class="heading-element">Tests</h2><a id="tests" class="anchor" aria-label="Permalink: Tests" href="#tests"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>To run the test suite, you first need to clone this repo and then install all
 dependencies <a href="http://getcomposer.org" rel="nofollow">through Composer</a>:</p>
 <div class="highlight highlight-source-shell"><pre>$ composer install</pre></div>
 <p>To run the test suite, go to the project root and run:</p>
 <div class="highlight highlight-source-shell"><pre>$ php vendor/bin/phpunit</pre></div>
-<h2><a id="license" class="anchor" aria-hidden="true" tabindex="-1" href="#license"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
+<div class="markdown-heading"><h2 class="heading-element">License</h2><a id="license" class="anchor" aria-label="Permalink: License" href="#license"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>MIT, see <a href="license.html">LICENSE file</a>.</p>
                                 </main>
                 <aside class="sidebar" role="complementary">

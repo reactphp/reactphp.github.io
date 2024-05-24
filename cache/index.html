@@ -87,7 +87,7 @@
                         Promise
 
                         <span class="off-canvas-menu__version">
-                            v3.1.0
+                            v3.2.0
                         </span>
                     </a>
                 </li>
@@ -128,7 +128,7 @@
                         HTTP
 
                         <span class="off-canvas-menu__version">
-                            v1.9.0
+                            v1.10.0
                         </span>
                     </a>
                 </li>
@@ -219,7 +219,7 @@
                 <main class="main">
                                     <h1>Cache</h1>
 
-                    
+                    <div class="markdown-heading"><h1 class="heading-element">Cache</h1><a id="cache" class="anchor" aria-label="Permalink: Cache" href="#cache"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p><a href="https://github.com/reactphp/cache/actions"><img src="https://github.com/reactphp/cache/actions/workflows/ci.yml/badge.svg" alt="CI status" style="max-width: 100%;"></a>
 <a href="https://packagist.org/packages/react/cache" rel="nofollow"><img src="https://camo.githubusercontent.com/8779ddc7db8bf2704b0c854ccf2ca81b3d1c02c7f682b13f6194f66a7e96a811/68747470733a2f2f696d672e736869656c64732e696f2f7061636b61676973742f64742f72656163742f63616368653f636f6c6f723d626c7565266c6162656c3d696e7374616c6c732532306f6e2532305061636b6167697374" alt="installs on Packagist" data-canonical-src="https://img.shields.io/packagist/dt/react/cache?color=blue&amp;label=installs%20on%20Packagist" style="max-width: 100%;"></a></p>
 <p>Async, <a href="../promise/">Promise</a>-based cache interface
@@ -265,12 +265,12 @@ but uses an interface more suited for async, non-blocking applications.</p>
 <li><a href="#tests">Tests</a></li>
 <li><a href="#license">License</a></li>
 </ul>
-<h2><a id="usage" class="anchor" aria-hidden="true" tabindex="-1" href="#usage"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h2>
-<h3><a id="cacheinterface" class="anchor" aria-hidden="true" tabindex="-1" href="#cacheinterface"><span aria-hidden="true" class="octicon octicon-link"></span></a>CacheInterface</h3>
+<div class="markdown-heading"><h2 class="heading-element">Usage</h2><a id="usage" class="anchor" aria-label="Permalink: Usage" href="#usage"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="markdown-heading"><h3 class="heading-element">CacheInterface</h3><a id="cacheinterface" class="anchor" aria-label="Permalink: CacheInterface" href="#cacheinterface"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The <code>CacheInterface</code> describes the main interface of this component.
 This allows consumers to type hint against the interface and third parties to
 provide alternate implementations.</p>
-<h4><a id="get" class="anchor" aria-hidden="true" tabindex="-1" href="#get"><span aria-hidden="true" class="octicon octicon-link"></span></a>get()</h4>
+<div class="markdown-heading"><h4 class="heading-element">get()</h4><a id="get" class="anchor" aria-label="Permalink: get()" href="#get"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The <code>get(string $key, mixed $default = null): PromiseInterface&lt;mixed&gt;</code> method can be used to
 retrieve an item from the cache.</p>
 <p>This method will resolve with the cached value on success or with the
@@ -283,7 +283,7 @@ considered a cache miss.</p>
 <p>This example fetches the value of the key <code>foo</code> and passes it to the
 <code>var_dump</code> function. You can use any of the composition provided by
 <a href="../promise/">promises</a>.</p>
-<h4><a id="set" class="anchor" aria-hidden="true" tabindex="-1" href="#set"><span aria-hidden="true" class="octicon octicon-link"></span></a>set()</h4>
+<div class="markdown-heading"><h4 class="heading-element">set()</h4><a id="set" class="anchor" aria-label="Permalink: set()" href="#set"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The <code>set(string $key, mixed $value, ?float $ttl = null): PromiseInterface&lt;bool&gt;</code> method can be used to
 store an item in the cache.</p>
 <p>This method will resolve with <code>true</code> on success or <code>false</code> when an error
@@ -314,7 +314,7 @@ that are subject to discontinuous time adjustments (time jumps).
 This means that if you store a cache item with a TTL of 30s and then
 adjust your system time forward by 20s, the cache item SHOULD still
 expire in 30s.</p>
-<h4><a id="delete" class="anchor" aria-hidden="true" tabindex="-1" href="#delete"><span aria-hidden="true" class="octicon octicon-link"></span></a>delete()</h4>
+<div class="markdown-heading"><h4 class="heading-element">delete()</h4><a id="delete" class="anchor" aria-label="Permalink: delete()" href="#delete"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The <code>delete(string $key): PromiseInterface&lt;bool&gt;</code> method can be used to
 delete an item from the cache.</p>
 <p>This method will resolve with <code>true</code> on success or <code>false</code> when an error
@@ -325,7 +325,7 @@ delete it, it may take a while.</p>
 <p>This example eventually deletes the key <code>foo</code> from the cache. As with
 <code>set()</code>, this may not happen instantly and a promise is returned to
 provide guarantees whether or not the item has been removed from cache.</p>
-<h4><a id="getmultiple" class="anchor" aria-hidden="true" tabindex="-1" href="#getmultiple"><span aria-hidden="true" class="octicon octicon-link"></span></a>getMultiple()</h4>
+<div class="markdown-heading"><h4 class="heading-element">getMultiple()</h4><a id="getmultiple" class="anchor" aria-label="Permalink: getMultiple()" href="#getmultiple"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The <code>getMultiple(string[] $keys, mixed $default = null): PromiseInterface&lt;array&gt;</code> method can be used to
 retrieve multiple cache items by their unique keys.</p>
 <p>This method will resolve with an array of cached values on success or with the
@@ -341,7 +341,7 @@ considered a cache miss.</p>
 <p>This example fetches the cache items for the <code>name</code> and <code>age</code> keys and
 prints some example output. You can use any of the composition provided
 by <a href="../promise/">promises</a>.</p>
-<h4><a id="setmultiple" class="anchor" aria-hidden="true" tabindex="-1" href="#setmultiple"><span aria-hidden="true" class="octicon octicon-link"></span></a>setMultiple()</h4>
+<div class="markdown-heading"><h4 class="heading-element">setMultiple()</h4><a id="setmultiple" class="anchor" aria-label="Permalink: setMultiple()" href="#setmultiple"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The <code>setMultiple(array $values, ?float $ttl = null): PromiseInterface&lt;bool&gt;</code> method can be used to
 persist a set of key =&gt; value pairs in the cache, with an optional TTL.</p>
 <p>This method will resolve with <code>true</code> on success or <code>false</code> when an error
@@ -355,7 +355,7 @@ see also <a href="#getmultiple"><code>getMultiple()</code></a>.</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>cache</span>-&gt;<span class="pl-en">setMultiple</span>(<span class="pl-en">array</span>(<span class="pl-s">'foo'</span> =&gt; <span class="pl-c1">1</span>, <span class="pl-s">'bar'</span> =&gt; <span class="pl-c1">2</span>), <span class="pl-c1">60</span>);</pre></div>
 <p>This example eventually sets the list of values - the key <code>foo</code> to <code>1</code> value
 and the key <code>bar</code> to <code>2</code>. If some of the keys already exist, they are overridden.</p>
-<h4><a id="deletemultiple" class="anchor" aria-hidden="true" tabindex="-1" href="#deletemultiple"><span aria-hidden="true" class="octicon octicon-link"></span></a>deleteMultiple()</h4>
+<div class="markdown-heading"><h4 class="heading-element">deleteMultiple()</h4><a id="deletemultiple" class="anchor" aria-label="Permalink: deleteMultiple()" href="#deletemultiple"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The <code>setMultiple(string[] $keys): PromiseInterface&lt;bool&gt;</code> method can be used to
 delete multiple cache items in a single operation.</p>
 <p>This method will resolve with <code>true</code> on success or <code>false</code> when an error
@@ -366,7 +366,7 @@ delete it, it may take a while.</p>
 <p>This example eventually deletes keys <code>foo</code>, <code>bar</code> and <code>baz</code> from the cache.
 As with <code>setMultiple()</code>, this may not happen instantly and a promise is returned to
 provide guarantees whether or not the item has been removed from cache.</p>
-<h4><a id="clear" class="anchor" aria-hidden="true" tabindex="-1" href="#clear"><span aria-hidden="true" class="octicon octicon-link"></span></a>clear()</h4>
+<div class="markdown-heading"><h4 class="heading-element">clear()</h4><a id="clear" class="anchor" aria-label="Permalink: clear()" href="#clear"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The <code>clear(): PromiseInterface&lt;bool&gt;</code> method can be used to
 wipe clean the entire cache.</p>
 <p>This method will resolve with <code>true</code> on success or <code>false</code> when an error
@@ -376,7 +376,7 @@ delete it, it may take a while.</p>
 <p>This example eventually deletes all keys from the cache. As with <code>deleteMultiple()</code>,
 this may not happen instantly and a promise is returned to provide guarantees
 whether or not all the items have been removed from cache.</p>
-<h4><a id="has" class="anchor" aria-hidden="true" tabindex="-1" href="#has"><span aria-hidden="true" class="octicon octicon-link"></span></a>has()</h4>
+<div class="markdown-heading"><h4 class="heading-element">has()</h4><a id="has" class="anchor" aria-label="Permalink: has()" href="#has"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The <code>has(string $key): PromiseInterface&lt;bool&gt;</code> method can be used to
 determine whether an item is present in the cache.</p>
 <p>This method will resolve with <code>true</code> on success or <code>false</code> when no item can be found
@@ -392,7 +392,7 @@ the result to the <code>var_dump</code> function. You can use any of the composi
 and not to be used within your live applications operations for get/set, as this method
 is subject to a race condition where your has() will return true and immediately after,
 another script can remove it making the state of your app out of date.</p>
-<h3><a id="arraycache" class="anchor" aria-hidden="true" tabindex="-1" href="#arraycache"><span aria-hidden="true" class="octicon octicon-link"></span></a>ArrayCache</h3>
+<div class="markdown-heading"><h3 class="heading-element">ArrayCache</h3><a id="arraycache" class="anchor" aria-label="Permalink: ArrayCache" href="#arraycache"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The <code>ArrayCache</code> provides an in-memory implementation of the <a href="#cacheinterface"><code>CacheInterface</code></a>.</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>cache</span> = <span class="pl-k">new</span> <span class="pl-v">ArrayCache</span>();
 
@@ -417,8 +417,8 @@ that are subject to discontinuous time adjustments (time jumps).
 This means that if you store a cache item with a TTL of 30s on PHP &lt; 7.3
 and then adjust your system time forward by 20s, the cache item may
 expire in 10s. See also <a href="#set"><code>set()</code></a> for more details.</p>
-<h2><a id="common-usage" class="anchor" aria-hidden="true" tabindex="-1" href="#common-usage"><span aria-hidden="true" class="octicon octicon-link"></span></a>Common usage</h2>
-<h3><a id="fallback-get" class="anchor" aria-hidden="true" tabindex="-1" href="#fallback-get"><span aria-hidden="true" class="octicon octicon-link"></span></a>Fallback get</h3>
+<div class="markdown-heading"><h2 class="heading-element">Common usage</h2><a id="common-usage" class="anchor" aria-label="Permalink: Common usage" href="#common-usage"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="markdown-heading"><h3 class="heading-element">Fallback get</h3><a id="fallback-get" class="anchor" aria-label="Permalink: Fallback get" href="#fallback-get"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>A common use case of caches is to attempt fetching a cached value and as a
 fallback retrieve it from the original data source if not found. Here is an
 example of that:</p>
@@ -439,7 +439,7 @@ key does not exist in the cache.</p>
 <p><code>getFooFromDb</code> can handle the missing key by returning a promise for the
 actual value from the database (or any other data source). As a result, this
 chain will correctly fall back, and provide the value in both cases.</p>
-<h3><a id="fallback-get-and-set" class="anchor" aria-hidden="true" tabindex="-1" href="#fallback-get-and-set"><span aria-hidden="true" class="octicon octicon-link"></span></a>Fallback get and set</h3>
+<div class="markdown-heading"><h3 class="heading-element">Fallback get and set</h3><a id="fallback-get-and-set" class="anchor" aria-label="Permalink: Fallback get and set" href="#fallback-get-and-set"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>To expand on the fallback get example, often you want to set the value on the
 cache after fetching it from the data source.</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>cache</span>
@@ -468,7 +468,7 @@ cache after fetching it from the data source.</p>
 }</pre></div>
 <p>By using chaining you can easily conditionally cache the value if it is
 fetched from the database.</p>
-<h2><a id="install" class="anchor" aria-hidden="true" tabindex="-1" href="#install"><span aria-hidden="true" class="octicon octicon-link"></span></a>Install</h2>
+<div class="markdown-heading"><h2 class="heading-element">Install</h2><a id="install" class="anchor" aria-label="Permalink: Install" href="#install"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The recommended way to install this library is <a href="https://getcomposer.org" rel="nofollow">through Composer</a>.
 <a href="https://getcomposer.org/doc/00-intro.md" rel="nofollow">New to Composer?</a></p>
 <p>This project follows <a href="https://semver.org/" rel="nofollow">SemVer</a>.
@@ -479,13 +479,13 @@ This will install the latest supported version:</p>
 extensions and supports running on legacy PHP 5.3 through current PHP 8+ and
 HHVM.
 It's <em>highly recommended to use PHP 7+</em> for this project.</p>
-<h2><a id="tests" class="anchor" aria-hidden="true" tabindex="-1" href="#tests"><span aria-hidden="true" class="octicon octicon-link"></span></a>Tests</h2>
+<div class="markdown-heading"><h2 class="heading-element">Tests</h2><a id="tests" class="anchor" aria-label="Permalink: Tests" href="#tests"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>To run the test suite, you first need to clone this repo and then install all
 dependencies <a href="https://getcomposer.org" rel="nofollow">through Composer</a>:</p>
 <div class="highlight highlight-source-shell"><pre>composer install</pre></div>
 <p>To run the test suite, go to the project root and run:</p>
 <div class="highlight highlight-source-shell"><pre>vendor/bin/phpunit</pre></div>
-<h2><a id="license" class="anchor" aria-hidden="true" tabindex="-1" href="#license"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
+<div class="markdown-heading"><h2 class="heading-element">License</h2><a id="license" class="anchor" aria-label="Permalink: License" href="#license"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>MIT, see <a href="license.html">LICENSE file</a>.</p>
                                 </main>
                 <aside class="sidebar" role="complementary">
@@ -597,12 +597,12 @@ dependencies <a href="https://getcomposer.org" rel="nofollow">through Composer</
                         <ul class="component-info__contributors">
                                                     <li>
                                 <a href="https://github.com/clue">
-                                    <img src="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=80 2x" alt="clue" title="clue (40 contributions)">
+                                    <img src="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=80 2x" alt="clue" title="clue (44 contributions)">
                                 </a>
                             </li>
                                                     <li>
                                 <a href="https://github.com/WyriHaximus">
-                                    <img src="https://avatars.githubusercontent.com/u/147145?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/147145?v=4&amp;s=80 2x" alt="WyriHaximus" title="WyriHaximus (32 contributions)">
+                                    <img src="https://avatars.githubusercontent.com/u/147145?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/147145?v=4&amp;s=80 2x" alt="WyriHaximus" title="WyriHaximus (35 contributions)">
                                 </a>
                             </li>
                                                     <li>
@@ -664,7 +664,7 @@ dependencies <a href="https://getcomposer.org" rel="nofollow">through Composer</
         <mask id="reactphp-cache-participation-sparkline" x="0" y="0" width="320" height="40" >
             <polyline 
                 transform="translate(0, 40) scale(1,-1)"
-                points="0,1 6,1 12,1 18,1 24,1 30,1 36,1 42,1 48,1 54,1 60,1 66,1 72,1 78,1 84,1 90,1 96,1 102,1 108,1 114,1 120,1 126,1 132,1 138,1 144,1 150,1 156,1 162,1 168,1 174,1 180,1 186,1 192,1 198,2 204,1 210,1 216,1 222,1 228,1 234,1 240,1 246,1 252,1 258,1 264,1 270,1 276,2 282,1 288,1 294,1 300,3 306,1" 
+                points="0,1 6,1 12,1 18,1 24,1 30,1 36,1 42,1 48,1 54,1 60,1 66,1 72,1 78,1 84,1 90,1 96,1 102,1 108,2 114,1 120,1 126,1 132,1 138,1 144,1 150,1 156,1 162,1 168,1 174,1 180,1 186,2 192,1 198,1 204,1 210,3 216,3 222,3 228,1 234,1 240,1 246,1 252,1 258,1 264,1 270,1 276,1 282,1 288,1 294,1 300,2 306,3" 
                 fill="transparent" 
                 stroke="#40a977" 
                 stroke-width="2"

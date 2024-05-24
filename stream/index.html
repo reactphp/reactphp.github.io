@@ -87,7 +87,7 @@
                         Promise
 
                         <span class="off-canvas-menu__version">
-                            v3.1.0
+                            v3.2.0
                         </span>
                     </a>
                 </li>
@@ -128,7 +128,7 @@
                         HTTP
 
                         <span class="off-canvas-menu__version">
-                            v1.9.0
+                            v1.10.0
                         </span>
                     </a>
                 </li>
@@ -219,7 +219,7 @@
                 <main class="main">
                                     <h1>Stream</h1>
 
-                    
+                    <div class="markdown-heading"><h1 class="heading-element">Stream</h1><a id="stream" class="anchor" aria-label="Permalink: Stream" href="#stream"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p><a href="https://github.com/reactphp/stream/actions"><img src="https://github.com/reactphp/stream/actions/workflows/ci.yml/badge.svg" alt="CI status" style="max-width: 100%;"></a>
 <a href="https://packagist.org/packages/react/stream" rel="nofollow"><img src="https://camo.githubusercontent.com/685402151b7ec1ba9fc0c8d082de962ee4a44b9f4d20b9a50335a4eaa45eb3d5/68747470733a2f2f696d672e736869656c64732e696f2f7061636b61676973742f64742f72656163742f73747265616d3f636f6c6f723d626c7565266c6162656c3d696e7374616c6c732532306f6e2532305061636b6167697374" alt="installs on Packagist" data-canonical-src="https://img.shields.io/packagist/dt/react/stream?color=blue&amp;label=installs%20on%20Packagist" style="max-width: 100%;"></a></p>
 <p>Event-driven readable and writable streams for non-blocking I/O in <a href="https://reactphp.org/" rel="nofollow">ReactPHP</a>.</p>
@@ -281,7 +281,7 @@ but have an interface more suited for async, non-blocking I/O.</p>
 <li><a href="#license">License</a></li>
 <li><a href="#more">More</a></li>
 </ul>
-<h2><a id="stream-usage" class="anchor" aria-hidden="true" tabindex="-1" href="#stream-usage"><span aria-hidden="true" class="octicon octicon-link"></span></a>Stream usage</h2>
+<div class="markdown-heading"><h2 class="heading-element">Stream usage</h2><a id="stream-usage" class="anchor" aria-label="Permalink: Stream usage" href="#stream-usage"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>ReactPHP uses the concept of "streams" throughout its ecosystem to provide a
 consistent higher-level abstraction for processing streams of arbitrary data
 contents and size.
@@ -302,7 +302,7 @@ it to any destination (sink).</p>
 <li><a href="#writablestreaminterface"><code>WritableStreamInterface</code></a></li>
 <li><a href="#duplexstreaminterface"><code>DuplexStreamInterface</code></a></li>
 </ul>
-<h3><a id="readablestreaminterface" class="anchor" aria-hidden="true" tabindex="-1" href="#readablestreaminterface"><span aria-hidden="true" class="octicon octicon-link"></span></a>ReadableStreamInterface</h3>
+<div class="markdown-heading"><h3 class="heading-element">ReadableStreamInterface</h3><a id="readablestreaminterface" class="anchor" aria-label="Permalink: ReadableStreamInterface" href="#readablestreaminterface"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The <code>ReadableStreamInterface</code> is responsible for providing an interface for
 read-only streams and the readable side of duplex streams.</p>
 <p>Besides defining a few methods, this interface also implements the
@@ -322,7 +322,7 @@ this low-level stream specification. Conformance with these event semantics
 is out of scope for this interface, so you may also have to refer to the
 documentation of such a higher-level implementation.</p>
 </blockquote>
-<h4><a id="data-event" class="anchor" aria-hidden="true" tabindex="-1" href="#data-event"><span aria-hidden="true" class="octicon octicon-link"></span></a>data event</h4>
+<div class="markdown-heading"><h4 class="heading-element">data event</h4><a id="data-event" class="anchor" aria-label="Permalink: data event" href="#data-event"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The <code>data</code> event will be emitted whenever some data was read/received
 from this source stream.
 The event receives a single mixed argument for incoming data.</p>
@@ -345,7 +345,7 @@ In other words, many lower-level protocols (such as TCP/IP) transfer the
 data in chunks that may be anywhere between single-byte values to several
 dozens of kilobytes. You may want to apply a higher-level protocol to
 these low-level data chunks in order to achieve proper message framing.</p>
-<h4><a id="end-event" class="anchor" aria-hidden="true" tabindex="-1" href="#end-event"><span aria-hidden="true" class="octicon octicon-link"></span></a>end event</h4>
+<div class="markdown-heading"><h4 class="heading-element">end event</h4><a id="end-event" class="anchor" aria-label="Permalink: end event" href="#end-event"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The <code>end</code> event will be emitted once the source stream has successfully
 reached the end of the stream (EOF).</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'end'</span>, <span class="pl-k">function</span> () {
@@ -372,7 +372,7 @@ a file handle was successfully read until reaching its end (EOF).</p>
 This event defines a successful end <em>reading</em> from a source stream, while
 the <code>end()</code> method defines <em>writing</em> a successful end to a destination
 stream.</p>
-<h4><a id="error-event" class="anchor" aria-hidden="true" tabindex="-1" href="#error-event"><span aria-hidden="true" class="octicon octicon-link"></span></a>error event</h4>
+<div class="markdown-heading"><h4 class="heading-element">error event</h4><a id="error-event" class="anchor" aria-label="Permalink: error event" href="#error-event"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The <code>error</code> event will be emitted once a fatal error occurs, usually while
 trying to read from this stream.
 The event receives a single <code>Exception</code> argument for the error instance.</p>
@@ -398,7 +398,7 @@ close (terminate) the stream in response.</p>
 how the writable side of the stream also implements an <code>error</code> event.
 In other words, an error may occur while either reading or writing the
 stream which should result in the same error processing.</p>
-<h4><a id="close-event" class="anchor" aria-hidden="true" tabindex="-1" href="#close-event"><span aria-hidden="true" class="octicon octicon-link"></span></a>close event</h4>
+<div class="markdown-heading"><h4 class="heading-element">close event</h4><a id="close-event" class="anchor" aria-label="Permalink: close event" href="#close-event"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The <code>close</code> event will be emitted once the stream closes (terminates).</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'close'</span>, <span class="pl-k">function</span> () {
     <span class="pl-k">echo</span> <span class="pl-s">'CLOSED'</span>;
@@ -421,7 +421,7 @@ how the writable side of the stream also implements a <code>close</code> event.
 In other words, after receiving this event, the stream MUST switch into
 non-writable AND non-readable mode, see also <code>isWritable()</code>.
 Note that this event should not be confused with the <code>end</code> event.</p>
-<h4><a id="isreadable" class="anchor" aria-hidden="true" tabindex="-1" href="#isreadable"><span aria-hidden="true" class="octicon octicon-link"></span></a>isReadable()</h4>
+<div class="markdown-heading"><h4 class="heading-element">isReadable()</h4><a id="isreadable" class="anchor" aria-label="Permalink: isReadable()" href="#isreadable"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The <code>isReadable(): bool</code> method can be used to
 check whether this stream is in a readable state (not closed already).</p>
 <p>This method can be used to check if the stream still accepts incoming
@@ -442,7 +442,7 @@ back to readable mode.</p>
 how the writable side of the stream also implements an <code>isWritable()</code>
 method. Unless this is a half-open duplex stream, they SHOULD usually
 have the same return value.</p>
-<h4><a id="pause" class="anchor" aria-hidden="true" tabindex="-1" href="#pause"><span aria-hidden="true" class="octicon octicon-link"></span></a>pause()</h4>
+<div class="markdown-heading"><h4 class="heading-element">pause()</h4><a id="pause" class="anchor" aria-label="Permalink: pause()" href="#pause"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The <code>pause(): void</code> method can be used to
 pause reading incoming data events.</p>
 <p>Removes the data source file descriptor from the event loop. This
@@ -461,7 +461,7 @@ stream MAY continue emitting <code>data</code> events.</p>
 <p>Note that both methods can be called any number of times, in particular
 calling <code>pause()</code> more than once SHOULD NOT have any effect.</p>
 <p>See also <code>resume()</code>.</p>
-<h4><a id="resume" class="anchor" aria-hidden="true" tabindex="-1" href="#resume"><span aria-hidden="true" class="octicon octicon-link"></span></a>resume()</h4>
+<div class="markdown-heading"><h4 class="heading-element">resume()</h4><a id="resume" class="anchor" aria-label="Permalink: resume()" href="#resume"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The <code>resume(): void</code> method can be used to
 resume reading incoming data events.</p>
 <p>Re-attach the data source after a previous <code>pause()</code>.</p>
@@ -473,7 +473,7 @@ resume reading incoming data events.</p>
 <p>Note that both methods can be called any number of times, in particular
 calling <code>resume()</code> without a prior <code>pause()</code> SHOULD NOT have any effect.</p>
 <p>See also <code>pause()</code>.</p>
-<h4><a id="pipe" class="anchor" aria-hidden="true" tabindex="-1" href="#pipe"><span aria-hidden="true" class="octicon octicon-link"></span></a>pipe()</h4>
+<div class="markdown-heading"><h4 class="heading-element">pipe()</h4><a id="pipe" class="anchor" aria-label="Permalink: pipe()" href="#pipe"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The <code>pipe(WritableStreamInterface $dest, array $options = [])</code> method can be used to
 pipe all the data from this readable source into the given writable destination.</p>
 <p>Automatically sends all incoming data to the destination.
@@ -509,7 +509,7 @@ active, it will also throttle (pause) the source stream:</p>
 <span class="pl-s1"><span class="pl-c1">$</span>dest</span>-&gt;<span class="pl-en">close</span>(); <span class="pl-c">// calls $source-&gt;pause()</span></pre></div>
 <p>Once the pipe is set up successfully, the destination stream MUST emit
 a <code>pipe</code> event with this source stream an event argument.</p>
-<h4><a id="close" class="anchor" aria-hidden="true" tabindex="-1" href="#close"><span aria-hidden="true" class="octicon octicon-link"></span></a>close()</h4>
+<div class="markdown-heading"><h4 class="heading-element">close()</h4><a id="close" class="anchor" aria-label="Permalink: close()" href="#close"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The <code>close(): void</code> method can be used to
 close the stream (forcefully).</p>
 <p>This method can be used to (forcefully) close the stream.</p>
@@ -530,7 +530,7 @@ how the writable side of the stream also implements a <code>close()</code> metho
 In other words, after calling this method, the stream MUST switch into
 non-writable AND non-readable mode, see also <code>isWritable()</code>.
 Note that this method should not be confused with the <code>end()</code> method.</p>
-<h3><a id="writablestreaminterface" class="anchor" aria-hidden="true" tabindex="-1" href="#writablestreaminterface"><span aria-hidden="true" class="octicon octicon-link"></span></a>WritableStreamInterface</h3>
+<div class="markdown-heading"><h3 class="heading-element">WritableStreamInterface</h3><a id="writablestreaminterface" class="anchor" aria-label="Permalink: WritableStreamInterface" href="#writablestreaminterface"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The <code>WritableStreamInterface</code> is responsible for providing an interface for
 write-only streams and the writable side of duplex streams.</p>
 <p>Besides defining a few methods, this interface also implements the
@@ -550,7 +550,7 @@ this low-level stream specification. Conformance with these event semantics
 is out of scope for this interface, so you may also have to refer to the
 documentation of such a higher-level implementation.</p>
 </blockquote>
-<h4><a id="drain-event" class="anchor" aria-hidden="true" tabindex="-1" href="#drain-event"><span aria-hidden="true" class="octicon octicon-link"></span></a>drain event</h4>
+<div class="markdown-heading"><h4 class="heading-element">drain event</h4><a id="drain-event" class="anchor" aria-label="Permalink: drain event" href="#drain-event"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The <code>drain</code> event will be emitted whenever the write buffer became full
 previously and is now ready to accept more data.</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'drain'</span>, <span class="pl-k">function</span> () <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>stream</span>) {
@@ -563,7 +563,7 @@ be zero times if the buffer never became full in the first place.
 This event SHOULD NOT be emitted if the buffer has not become full
 previously.</p>
 <p>This event is mostly used internally, see also <code>write()</code> for more details.</p>
-<h4><a id="pipe-event" class="anchor" aria-hidden="true" tabindex="-1" href="#pipe-event"><span aria-hidden="true" class="octicon octicon-link"></span></a>pipe event</h4>
+<div class="markdown-heading"><h4 class="heading-element">pipe event</h4><a id="pipe-event" class="anchor" aria-label="Permalink: pipe event" href="#pipe-event"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The <code>pipe</code> event will be emitted whenever a readable stream is <code>pipe()</code>d
 into this stream.
 The event receives a single <code>ReadableStreamInterface</code> argument for the
@@ -585,7 +585,7 @@ be zero times if no stream is ever piped into this stream.
 This event MUST NOT be emitted if either the source is not readable
 (closed already) or this destination is not writable (closed already).</p>
 <p>This event is mostly used internally, see also <code>pipe()</code> for more details.</p>
-<h4><a id="error-event-1" class="anchor" aria-hidden="true" tabindex="-1" href="#error-event-1"><span aria-hidden="true" class="octicon octicon-link"></span></a>error event</h4>
+<div class="markdown-heading"><h4 class="heading-element">error event</h4><a id="error-event-1" class="anchor" aria-label="Permalink: error event" href="#error-event-1"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The <code>error</code> event will be emitted once a fatal error occurs, usually while
 trying to write to this stream.
 The event receives a single <code>Exception</code> argument for the error instance.</p>
@@ -608,7 +608,7 @@ close (terminate) the stream in response.</p>
 how the readable side of the stream also implements an <code>error</code> event.
 In other words, an error may occur while either reading or writing the
 stream which should result in the same error processing.</p>
-<h4><a id="close-event-1" class="anchor" aria-hidden="true" tabindex="-1" href="#close-event-1"><span aria-hidden="true" class="octicon octicon-link"></span></a>close event</h4>
+<div class="markdown-heading"><h4 class="heading-element">close event</h4><a id="close-event-1" class="anchor" aria-label="Permalink: close event" href="#close-event-1"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The <code>close</code> event will be emitted once the stream closes (terminates).</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'close'</span>, <span class="pl-k">function</span> () {
     <span class="pl-k">echo</span> <span class="pl-s">'CLOSED'</span>;
@@ -630,7 +630,7 @@ how the readable side of the stream also implements a <code>close</code> event.
 In other words, after receiving this event, the stream MUST switch into
 non-writable AND non-readable mode, see also <code>isReadable()</code>.
 Note that this event should not be confused with the <code>end</code> event.</p>
-<h4><a id="iswritable" class="anchor" aria-hidden="true" tabindex="-1" href="#iswritable"><span aria-hidden="true" class="octicon octicon-link"></span></a>isWritable()</h4>
+<div class="markdown-heading"><h4 class="heading-element">isWritable()</h4><a id="iswritable" class="anchor" aria-label="Permalink: isWritable()" href="#iswritable"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The <code>isWritable(): bool</code> method can be used to
 check whether this stream is in a writable state (not closed already).</p>
 <p>This method can be used to check if the stream still accepts writing
@@ -650,7 +650,7 @@ back to writable mode.</p>
 how the readable side of the stream also implements an <code>isReadable()</code>
 method. Unless this is a half-open duplex stream, they SHOULD usually
 have the same return value.</p>
-<h4><a id="write" class="anchor" aria-hidden="true" tabindex="-1" href="#write"><span aria-hidden="true" class="octicon octicon-link"></span></a>write()</h4>
+<div class="markdown-heading"><h4 class="heading-element">write()</h4><a id="write" class="anchor" aria-label="Permalink: write()" href="#write"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The <code>write(mixed $data): bool</code> method can be used to
 write some data into the stream.</p>
 <p>A successful write MUST be confirmed with a boolean <code>true</code>, which means
@@ -686,7 +686,7 @@ In other words, many lower-level protocols (such as TCP/IP) transfer the
 data in chunks that may be anywhere between single-byte values to several
 dozens of kilobytes. You may want to apply a higher-level protocol to
 these low-level data chunks in order to achieve proper message framing.</p>
-<h4><a id="end" class="anchor" aria-hidden="true" tabindex="-1" href="#end"><span aria-hidden="true" class="octicon octicon-link"></span></a>end()</h4>
+<div class="markdown-heading"><h4 class="heading-element">end()</h4><a id="end" class="anchor" aria-label="Permalink: end()" href="#end"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The <code>end(mixed $data = null): void</code> method can be used to
 successfully end the stream (after optionally sending some final data).</p>
 <p>This method can be used to successfully end the stream, i.e. close
@@ -736,7 +736,7 @@ Streams MAY choose to use the <code>pause()</code> method logic for this, but
 special care may have to be taken to ensure a following call to the
 <code>resume()</code> method SHOULD NOT continue emitting readable events.</p>
 <p>Note that this method should not be confused with the <code>close()</code> method.</p>
-<h4><a id="close-1" class="anchor" aria-hidden="true" tabindex="-1" href="#close-1"><span aria-hidden="true" class="octicon octicon-link"></span></a>close()</h4>
+<div class="markdown-heading"><h4 class="heading-element">close()</h4><a id="close-1" class="anchor" aria-label="Permalink: close()" href="#close-1"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The <code>close(): void</code> method can be used to
 close the stream (forcefully).</p>
 <p>This method can be used to forcefully close the stream, i.e. close
@@ -768,7 +768,7 @@ stream in order to stop waiting for the stream to flush its final data.</p>
 how the readable side of the stream also implements a <code>close()</code> method.
 In other words, after calling this method, the stream MUST switch into
 non-writable AND non-readable mode, see also <code>isReadable()</code>.</p>
-<h3><a id="duplexstreaminterface" class="anchor" aria-hidden="true" tabindex="-1" href="#duplexstreaminterface"><span aria-hidden="true" class="octicon octicon-link"></span></a>DuplexStreamInterface</h3>
+<div class="markdown-heading"><h3 class="heading-element">DuplexStreamInterface</h3><a id="duplexstreaminterface" class="anchor" aria-label="Permalink: DuplexStreamInterface" href="#duplexstreaminterface"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The <code>DuplexStreamInterface</code> is responsible for providing an interface for
 duplex streams (both readable and writable).</p>
 <p>It builds on top of the existing interfaces for readable and writable streams
@@ -795,7 +795,7 @@ documentation of such a higher-level implementation.</p>
 </blockquote>
 <p>See also <a href="#readablestreaminterface"><code>ReadableStreamInterface</code></a> and
 <a href="#writablestreaminterface"><code>WritableStreamInterface</code></a> for more details.</p>
-<h2><a id="creating-streams" class="anchor" aria-hidden="true" tabindex="-1" href="#creating-streams"><span aria-hidden="true" class="octicon octicon-link"></span></a>Creating streams</h2>
+<div class="markdown-heading"><h2 class="heading-element">Creating streams</h2><a id="creating-streams" class="anchor" aria-label="Permalink: Creating streams" href="#creating-streams"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>ReactPHP uses the concept of "streams" throughout its ecosystem, so that
 many higher-level consumers of this package only deal with
 <a href="#stream-usage">stream usage</a>.
@@ -826,7 +826,7 @@ Additionally, the <code>fopen()</code> call will return a file handle on some pl
 which may or may not be supported by all EventLoop implementations.
 As an alternative, you may want to use higher-level libraries listed above.</p>
 </blockquote>
-<h3><a id="readableresourcestream" class="anchor" aria-hidden="true" tabindex="-1" href="#readableresourcestream"><span aria-hidden="true" class="octicon octicon-link"></span></a>ReadableResourceStream</h3>
+<div class="markdown-heading"><h3 class="heading-element">ReadableResourceStream</h3><a id="readableresourcestream" class="anchor" aria-label="Permalink: ReadableResourceStream" href="#readableresourcestream"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The <code>ReadableResourceStream</code> is a concrete implementation of the
 <a href="#readablestreaminterface"><code>ReadableStreamInterface</code></a> for PHP's stream resources.</p>
 <p>This can be used to represent a read-only resource like a file stream opened in
@@ -886,7 +886,7 @@ See <a href="https://github.com/reactphp/stream/issues/81">#81</a> for more deta
 <p>Changelog: As of v1.2.0 the <code>$loop</code> parameter can be omitted (or skipped with a
 <code>null</code> value) to use the <a href="../event-loop/#loop">default loop</a>.</p>
 </blockquote>
-<h3><a id="writableresourcestream" class="anchor" aria-hidden="true" tabindex="-1" href="#writableresourcestream"><span aria-hidden="true" class="octicon octicon-link"></span></a>WritableResourceStream</h3>
+<div class="markdown-heading"><h3 class="heading-element">WritableResourceStream</h3><a id="writableresourcestream" class="anchor" aria-label="Permalink: WritableResourceStream" href="#writableresourcestream"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The <code>WritableResourceStream</code> is a concrete implementation of the
 <a href="#writablestreaminterface"><code>WritableStreamInterface</code></a> for PHP's stream resources.</p>
 <p>This can be used to represent a write-only resource like a file stream opened in
@@ -944,7 +944,7 @@ underlying stream resource.</p>
 <p>Changelog: As of v1.2.0 the <code>$loop</code> parameter can be omitted (or skipped with a
 <code>null</code> value) to use the <a href="../event-loop/#loop">default loop</a>.</p>
 </blockquote>
-<h3><a id="duplexresourcestream" class="anchor" aria-hidden="true" tabindex="-1" href="#duplexresourcestream"><span aria-hidden="true" class="octicon octicon-link"></span></a>DuplexResourceStream</h3>
+<div class="markdown-heading"><h3 class="heading-element">DuplexResourceStream</h3><a id="duplexresourcestream" class="anchor" aria-label="Permalink: DuplexResourceStream" href="#duplexresourcestream"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The <code>DuplexResourceStream</code> is a concrete implementation of the
 <a href="#duplexstreaminterface"><code>DuplexStreamInterface</code></a> for PHP's stream resources.</p>
 <p>This can be used to represent a read-and-write resource like a file stream opened
@@ -1012,7 +1012,7 @@ This value SHOULD NOT be changed unless you know what you're doing.</p>
 <p>Changelog: As of v1.2.0 the <code>$loop</code> parameter can be omitted (or skipped with a
 <code>null</code> value) to use the <a href="../event-loop/#loop">default loop</a>.</p>
 </blockquote>
-<h3><a id="throughstream" class="anchor" aria-hidden="true" tabindex="-1" href="#throughstream"><span aria-hidden="true" class="octicon octicon-link"></span></a>ThroughStream</h3>
+<div class="markdown-heading"><h3 class="heading-element">ThroughStream</h3><a id="throughstream" class="anchor" aria-label="Permalink: ThroughStream" href="#throughstream"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The <code>ThroughStream</code> implements the
 <a href="#duplexstreaminterface"><code>DuplexStreamInterface</code></a> and will simply pass any data
 you write to it through to its readable end.</p>
@@ -1055,7 +1055,7 @@ the stream will emit an <code>error</code> event and then <a href="#close-1"><co
 <span class="pl-s1"><span class="pl-c1">$</span>through</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'data'</span>, <span class="pl-s1"><span class="pl-c1">$</span><span class="pl-smi">this</span></span>-&gt;<span class="pl-en">expectCallableNever</span>()));
 
 <span class="pl-s1"><span class="pl-c1">$</span>through</span>-&gt;<span class="pl-en">write</span>(<span class="pl-c1">2</span>);</pre></div>
-<h3><a id="compositestream" class="anchor" aria-hidden="true" tabindex="-1" href="#compositestream"><span aria-hidden="true" class="octicon octicon-link"></span></a>CompositeStream</h3>
+<div class="markdown-heading"><h3 class="heading-element">CompositeStream</h3><a id="compositestream" class="anchor" aria-label="Permalink: CompositeStream" href="#compositestream"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The <code>CompositeStream</code> implements the
 <a href="#duplexstreaminterface"><code>DuplexStreamInterface</code></a> and can be used to create a
 single duplex stream from two individual streams implementing
@@ -1083,7 +1083,7 @@ If either of the two input streams emits a <code>close</code> event, the duplex 
 will also close.
 If either of the two input streams is already closed while constructing the
 duplex stream, it will <code>close()</code> the other side and return a closed stream.</p>
-<h2><a id="usage" class="anchor" aria-hidden="true" tabindex="-1" href="#usage"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h2>
+<div class="markdown-heading"><h2 class="heading-element">Usage</h2><a id="usage" class="anchor" aria-label="Permalink: Usage" href="#usage"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The following example can be used to pipe the contents of a source file into
 a destination file without having to ever read the whole file into memory:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>source</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Stream</span>\<span class="pl-v">ReadableResourceStream</span>(fopen(<span class="pl-s">'source.txt'</span>, <span class="pl-s">'r'</span>));
@@ -1097,7 +1097,7 @@ inherently blocking and each call could potentially take several seconds.
 See also <a href="#creating-streams">creating streams</a> for more sophisticated
 examples.</p>
 </blockquote>
-<h2><a id="install" class="anchor" aria-hidden="true" tabindex="-1" href="#install"><span aria-hidden="true" class="octicon octicon-link"></span></a>Install</h2>
+<div class="markdown-heading"><h2 class="heading-element">Install</h2><a id="install" class="anchor" aria-label="Permalink: Install" href="#install"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The recommended way to install this library is <a href="https://getcomposer.org" rel="nofollow">through Composer</a>.
 <a href="https://getcomposer.org/doc/00-intro.md" rel="nofollow">New to Composer?</a></p>
 <p>This project follows <a href="https://semver.org/" rel="nofollow">SemVer</a>.
@@ -1108,7 +1108,7 @@ This will install the latest supported version:</p>
 extensions and supports running on legacy PHP 5.3 through current PHP 8+ and HHVM.
 It's <em>highly recommended to use PHP 7+</em> for this project due to its vast
 performance improvements.</p>
-<h2><a id="tests" class="anchor" aria-hidden="true" tabindex="-1" href="#tests"><span aria-hidden="true" class="octicon octicon-link"></span></a>Tests</h2>
+<div class="markdown-heading"><h2 class="heading-element">Tests</h2><a id="tests" class="anchor" aria-label="Permalink: Tests" href="#tests"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>To run the test suite, you first need to clone this repo and then install all
 dependencies <a href="https://getcomposer.org" rel="nofollow">through Composer</a>:</p>
 <div class="highlight highlight-source-shell"><pre>composer install</pre></div>
@@ -1118,9 +1118,9 @@ dependencies <a href="https://getcomposer.org" rel="nofollow">through Composer</
 on a stable internet connection.
 If you do not want to run these, they can simply be skipped like this:</p>
 <div class="highlight highlight-source-shell"><pre>vendor/bin/phpunit --exclude-group internet</pre></div>
-<h2><a id="license" class="anchor" aria-hidden="true" tabindex="-1" href="#license"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
+<div class="markdown-heading"><h2 class="heading-element">License</h2><a id="license" class="anchor" aria-label="Permalink: License" href="#license"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>MIT, see <a href="license.html">LICENSE file</a>.</p>
-<h2><a id="more" class="anchor" aria-hidden="true" tabindex="-1" href="#more"><span aria-hidden="true" class="octicon octicon-link"></span></a>More</h2>
+<div class="markdown-heading"><h2 class="heading-element">More</h2><a id="more" class="anchor" aria-label="Permalink: More" href="#more"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <ul>
 <li>See <a href="#creating-streams">creating streams</a> for more information on how streams
 are created in real-world applications.</li>
@@ -1358,12 +1358,12 @@ for a list of packages that use streams in real-world applications.</li>
                         <ul class="component-info__contributors">
                                                     <li>
                                 <a href="https://github.com/clue">
-                                    <img src="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=80 2x" alt="clue" title="clue (185 contributions)">
+                                    <img src="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=80 2x" alt="clue" title="clue (187 contributions)">
                                 </a>
                             </li>
                                                     <li>
                                 <a href="https://github.com/WyriHaximus">
-                                    <img src="https://avatars.githubusercontent.com/u/147145?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/147145?v=4&amp;s=80 2x" alt="WyriHaximus" title="WyriHaximus (69 contributions)">
+                                    <img src="https://avatars.githubusercontent.com/u/147145?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/147145?v=4&amp;s=80 2x" alt="WyriHaximus" title="WyriHaximus (75 contributions)">
                                 </a>
                             </li>
                                                     <li>
@@ -1465,7 +1465,7 @@ for a list of packages that use streams in real-world applications.</li>
         <mask id="reactphp-stream-participation-sparkline" x="0" y="0" width="320" height="40" >
             <polyline 
                 transform="translate(0, 40) scale(1,-1)"
-                points="0,1 6,1 12,1 18,1 24,1 30,1 36,1 42,1 48,1 54,1 60,1 66,1 72,1 78,1 84,1 90,1 96,1 102,2 108,1 114,1 120,1 126,1 132,1 138,1 144,1 150,1 156,1 162,1 168,1 174,1 180,1 186,3 192,3 198,1 204,1 210,1 216,1 222,1 228,1 234,1 240,1 246,1 252,1 258,1 264,1 270,1 276,1 282,1 288,1 294,1 300,3 306,1" 
+                points="0,1 6,1 12,1 18,2 24,1 30,1 36,1 42,1 48,1 54,1 60,1 66,1 72,1 78,1 84,1 90,1 96,2 102,4 108,1 114,1 120,1 126,1 132,1 138,1 144,1 150,1 156,1 162,1 168,1 174,1 180,1 186,1 192,1 198,1 204,1 210,3 216,1 222,1 228,1 234,4 240,1 246,1 252,1 258,1 264,1 270,1 276,1 282,1 288,1 294,1 300,4 306,3" 
                 fill="transparent" 
                 stroke="#40a977" 
                 stroke-width="2"
