@@ -1,11 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
   <title type="text">The combined changelog for all ReactPHP components.</title>
-  <updated>2024-06-13T14:18:32+00:00</updated>
+  <updated>2024-07-26T10:38:17+00:00</updated>
   <generator uri="http://framework.zend.com" version="2">Zend_Feed_Writer</generator>
   <link rel="alternate" type="text/html" href="https://reactphp.org/changelog.html"/>
   <link rel="self" type="application/atom+xml" href="https://reactphp.org/changelog.atom"/>
   <id>https://reactphp.org/changelog.html</id>
+  <entry>
+    <title type="html"><![CDATA[Socket 1.16.0]]></title>
+    <summary type="html"><![CDATA[<ul dir="auto">
+<li>Feature: Improve PHP 8.4+ support by avoiding implicitly nullable type declarations.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="2391389456" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/318" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/318/hovercard" href="https://github.com/reactphp/socket/pull/318">#318</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</li>
+</ul>]]></summary>
+    <updated>2024-07-26T10:38:17+00:00</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/reactphp/socket/releases/tag/v1.16.0"/>
+    <id>https://github.com/reactphp/socket/releases/tag/v1.16.0</id>
+    <author>
+      <name>clue</name>
+      <uri>https://github.com/clue</uri>
+    </author>
+  </entry>
   <entry>
     <title type="html"><![CDATA[DNS 1.13.0]]></title>
     <summary type="html"><![CDATA[<ul dir="auto">
@@ -212,36 +226,6 @@ the old RingCentral PSR-7 dependency, you can still install it like this:</p>
     <updated>2023-11-29T12:41:56+00:00</updated>
     <link rel="alternate" type="text/html" href="https://github.com/reactphp/dns/releases/tag/v1.12.0"/>
     <id>https://github.com/reactphp/dns/releases/tag/v1.12.0</id>
-    <author>
-      <name>SimonFrings</name>
-      <uri>https://github.com/SimonFrings</uri>
-    </author>
-  </entry>
-  <entry>
-    <title type="html"><![CDATA[Async 4.2.0]]></title>
-    <summary type="html"><![CDATA[<ul dir="auto">
-<li>
-<p dir="auto">Feature: Add Promise v3 template types for all public functions.<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1179100821" data-permission-text="Title is private" data-url="https://github.com/reactphp/async/issues/40" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/async/pull/40/hovercard" href="https://github.com/reactphp/async/pull/40">#40</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/WyriHaximus/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/WyriHaximus">@WyriHaximus</a> and <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
-<p dir="auto">All our public APIs now use Promise v3 template types to guide IDEs and static<br>
-analysis tools (like PHPStan), helping with proper type usage and improving<br>
-code quality:</p>
-<div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate">assertType(<span class="pl-s">'bool'</span>, await(resolve(<span class="pl-c1">true</span>)));
-assertType(<span class="pl-s">'PromiseInterface&lt;bool&gt;'</span>, async(fn(): <span class="pl-smi">bool</span> =&gt; <span class="pl-c1">true</span>)());
-assertType(<span class="pl-s">'PromiseInterface&lt;bool&gt;'</span>, coroutine(fn(): <span class="pl-smi">bool</span> =&gt; <span class="pl-c1">true</span>));</pre></div>
-</li>
-<li>
-<p dir="auto">Feature: Full PHP 8.3 compatibility.<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1967065483" data-permission-text="Title is private" data-url="https://github.com/reactphp/async/issues/81" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/async/pull/81/hovercard" href="https://github.com/reactphp/async/pull/81">#81</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
-</li>
-<li>
-<p dir="auto">Update test suite to avoid unhandled promise rejections.<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1791731613" data-permission-text="Title is private" data-url="https://github.com/reactphp/async/issues/79" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/async/pull/79/hovercard" href="https://github.com/reactphp/async/pull/79">#79</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
-</li>
-</ul>]]></summary>
-    <updated>2023-11-22T16:43:56+00:00</updated>
-    <link rel="alternate" type="text/html" href="https://github.com/reactphp/async/releases/tag/v4.2.0"/>
-    <id>https://github.com/reactphp/async/releases/tag/v4.2.0</id>
     <author>
       <name>SimonFrings</name>
       <uri>https://github.com/SimonFrings</uri>

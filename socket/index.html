@@ -110,7 +110,7 @@
                         Socket
 
                         <span class="off-canvas-menu__version">
-                            v1.15.0
+                            v1.16.0
                         </span>
                     </a>
                 </li>
@@ -320,7 +320,7 @@ handle multiple concurrent connections without blocking.</p>
         <span class="pl-s1"><span class="pl-c1">$</span>connection</span>-&gt;<span class="pl-en">close</span>();
     });
 });</pre></div>
-<p>See also the <a href="https://github.com/reactphp/socket/blob/v1.15.0/examples">examples</a>.</p>
+<p>See also the <a href="https://github.com/reactphp/socket/blob/v1.16.0/examples">examples</a>.</p>
 <p>Here's a client that outputs the output of said server and then attempts to
 send it a string:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>connector</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Connector</span>();
@@ -815,7 +815,7 @@ open connections.</p>
     <span class="pl-s1"><span class="pl-c1">$</span>connection</span>-&gt;<span class="pl-en">write</span>(<span class="pl-s">'hello there!'</span> . <span class="pl-c1">PHP_EOL</span>);
     …
 });</pre></div>
-<p>See also the <a href="https://github.com/reactphp/socket/blob/v1.15.0/examples">second example</a> for more details.</p>
+<p>See also the <a href="https://github.com/reactphp/socket/blob/v1.16.0/examples">second example</a> for more details.</p>
 <p>You have to pass a maximum number of open connections to ensure
 the server will automatically reject (close) connections once this limit
 is exceeded. In this case, it will emit an <code>error</code> event to inform about
@@ -1110,7 +1110,7 @@ TCP/IP connections to any IP-port-combination:</p>
     <span class="pl-s1"><span class="pl-c1">$</span>connection</span>-&gt;<span class="pl-en">write</span>(<span class="pl-s">'...'</span>);
     <span class="pl-s1"><span class="pl-c1">$</span>connection</span>-&gt;<span class="pl-en">end</span>();
 });</pre></div>
-<p>See also the <a href="https://github.com/reactphp/socket/blob/v1.15.0/examples">examples</a>.</p>
+<p>See also the <a href="https://github.com/reactphp/socket/blob/v1.16.0/examples">examples</a>.</p>
 <p>Pending connection attempts can be cancelled by cancelling its pending promise like so:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>promise</span> = <span class="pl-s1"><span class="pl-c1">$</span>tcpConnector</span>-&gt;<span class="pl-en">connect</span>(<span class="pl-s">'127.0.0.1:80'</span>);
 
@@ -1164,7 +1164,7 @@ underlying TCP/IP connection to the resolved target IP address.</p>
     <span class="pl-s1"><span class="pl-c1">$</span>connection</span>-&gt;<span class="pl-en">write</span>(<span class="pl-s">'...'</span>);
     <span class="pl-s1"><span class="pl-c1">$</span>connection</span>-&gt;<span class="pl-en">end</span>();
 });</pre></div>
-<p>See also the <a href="https://github.com/reactphp/socket/blob/v1.15.0/examples">examples</a>.</p>
+<p>See also the <a href="https://github.com/reactphp/socket/blob/v1.16.0/examples">examples</a>.</p>
 <p>Pending connection attempts can be cancelled by cancelling its pending promise like so:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>promise</span> = <span class="pl-s1"><span class="pl-c1">$</span>dnsConnector</span>-&gt;<span class="pl-en">connect</span>(<span class="pl-s">'www.google.com:80'</span>);
 
@@ -1206,7 +1206,7 @@ underlying TCP/IP connection to the resolved target IP address.</p>
     <span class="pl-s1"><span class="pl-c1">$</span>connection</span>-&gt;<span class="pl-en">write</span>(<span class="pl-s">'...'</span>);
     <span class="pl-s1"><span class="pl-c1">$</span>connection</span>-&gt;<span class="pl-en">end</span>();
 });</pre></div>
-<p>See also the <a href="https://github.com/reactphp/socket/blob/v1.15.0/examples">examples</a>.</p>
+<p>See also the <a href="https://github.com/reactphp/socket/blob/v1.16.0/examples">examples</a>.</p>
 <p>Pending connection attempts can be cancelled by cancelling its pending promise like so:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>promise</span> = <span class="pl-s1"><span class="pl-c1">$</span>dnsConnector</span>-&gt;<span class="pl-en">connect</span>(<span class="pl-s">'www.google.com:80'</span>);
 
@@ -1238,7 +1238,7 @@ stream.</p>
     <span class="pl-s1"><span class="pl-c1">$</span>connection</span>-&gt;<span class="pl-en">write</span>("<span class="pl-s">GET / HTTP/1.0</span>\r\n<span class="pl-s">Host: www.google.com</span>\r\n\r\n");
     <span class="pl-c1">.</span>.<span class="pl-c1">.</span>
 });</pre></div>
-<p>See also the <a href="https://github.com/reactphp/socket/blob/v1.15.0/examples">examples</a>.</p>
+<p>See also the <a href="https://github.com/reactphp/socket/blob/v1.16.0/examples">examples</a>.</p>
 <p>Pending connection attempts can be cancelled by cancelling its pending promise like so:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>promise</span> = <span class="pl-s1"><span class="pl-c1">$</span>secureConnector</span>-&gt;<span class="pl-en">connect</span>(<span class="pl-s">'www.google.com:443'</span>);
 
@@ -1285,7 +1285,7 @@ underlying connection attempt if it takes too long.</p>
 <span class="pl-s1"><span class="pl-c1">$</span>timeoutConnector</span>-&gt;<span class="pl-en">connect</span>(<span class="pl-s">'google.com:80'</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi"><span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">ConnectionInterface</span></span></span> <span class="pl-s1"><span class="pl-c1">$</span>connection</span>) {
     <span class="pl-c">// connection succeeded within 3.0 seconds</span>
 });</pre></div>
-<p>See also any of the <a href="https://github.com/reactphp/socket/blob/v1.15.0/examples">examples</a>.</p>
+<p>See also any of the <a href="https://github.com/reactphp/socket/blob/v1.16.0/examples">examples</a>.</p>
 <p>This class takes an optional <code>LoopInterface|null $loop</code> parameter that can be used to
 pass the event loop instance to use for this object. You can use a <code>null</code> value
 here in order to use the <a href="../event-loop/#loop">default loop</a>.
@@ -1340,7 +1340,7 @@ instead of connecting to a default address assumed by an higher-level API:</p>
 <a href="https://getcomposer.org/doc/00-intro.md" rel="nofollow">New to Composer?</a></p>
 <p>This project follows <a href="https://semver.org/" rel="nofollow">SemVer</a>.
 This will install the latest supported version:</p>
-<div class="highlight highlight-source-shell"><pre>composer require react/socket:^1.15</pre></div>
+<div class="highlight highlight-source-shell"><pre>composer require react/socket:^1.16</pre></div>
 <p>See also the <a href="changelog.html">CHANGELOG</a> for details about version upgrades.</p>
 <p>This project aims to run on any platform and thus does not require any PHP
 extensions and supports running on legacy PHP 5.3 through current PHP 8+ and HHVM.
@@ -1394,7 +1394,7 @@ If you do not want to run these, they can simply be skipped like this:</p>
 
                             <div class="version-selector">
                                 <button class="version-selector__button version-selector__button--latest" data-ctrly="component-version-selector" data-version-selector-control>
-                                    v1.15.0
+                                    v1.16.0
 
                                     <i class="icon-chevron-down" aria-hidden="true"></i>
                                     <i class="icon-chevron-up" aria-hidden="true"></i>
@@ -1410,6 +1410,11 @@ If you do not want to run these, they can simply be skipped like this:</p>
                                             </a>
                                         </li>
                                                                                                                                                                                                                     <li>
+                                                <a href="https://github.com/reactphp/socket/tree/v1.15.0#readme" class="version-selector__version">
+                                                    v1.15.0
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
                                                 <a href="https://github.com/reactphp/socket/tree/v1.14.0#readme" class="version-selector__version">
                                                     v1.14.0
                                                 </a>
@@ -1694,19 +1699,19 @@ If you do not want to run these, they can simply be skipped like this:</p>
 
                         <h3 class="component-info__subtitle">Installation</h3>
 
-                        <div class="highlight highlight-source-shell"><pre>composer require react/socket:^1.15.0</pre></div>
+                        <div class="highlight highlight-source-shell"><pre>composer require react/socket:^1.16.0</pre></div>
 
                         <h3 class="component-info__subtitle">Contributors</h3>
 
                         <ul class="component-info__contributors">
                                                     <li>
                                 <a href="https://github.com/clue">
-                                    <img src="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=80 2x" alt="clue" title="clue (383 contributions)">
+                                    <img src="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=80 2x" alt="clue" title="clue (384 contributions)">
                                 </a>
                             </li>
                                                     <li>
                                 <a href="https://github.com/WyriHaximus">
-                                    <img src="https://avatars.githubusercontent.com/u/147145?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/147145?v=4&amp;s=80 2x" alt="WyriHaximus" title="WyriHaximus (107 contributions)">
+                                    <img src="https://avatars.githubusercontent.com/u/147145?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/147145?v=4&amp;s=80 2x" alt="WyriHaximus" title="WyriHaximus (108 contributions)">
                                 </a>
                             </li>
                                                     <li>
@@ -1833,7 +1838,7 @@ If you do not want to run these, they can simply be skipped like this:</p>
         <mask id="reactphp-socket-participation-sparkline" x="0" y="0" width="320" height="40" >
             <polyline 
                 transform="translate(0, 40) scale(1,-1)"
-                points="0,1 6,2 12,1 18,4 24,1 30,1 36,2 42,2 48,1 54,1 60,2 66,1 72,1 78,1 84,4 90,1 96,1 102,1 108,1 114,3 120,1 126,1 132,1 138,1 144,1 150,3 156,2 162,1 168,1 174,1 180,1 186,1 192,1 198,1 204,3 210,1 216,1 222,1 228,1 234,1 240,1 246,1 252,1 258,1 264,1 270,1 276,1 282,1 288,2 294,3 300,3 306,1" 
+                points="0,2 6,2 12,1 18,1 24,2 30,1 36,1 42,1 48,4 54,1 60,1 66,1 72,1 78,3 84,1 90,1 96,1 102,1 108,1 114,3 120,2 126,1 132,1 138,1 144,1 150,1 156,1 162,1 168,3 174,1 180,1 186,1 192,1 198,1 204,1 210,1 216,1 222,1 228,1 234,1 240,1 246,2 252,4 258,1 264,3 270,1 276,1 282,1 288,1 294,1 300,1 306,2" 
                 fill="transparent" 
                 stroke="#40a977" 
                 stroke-width="2"
