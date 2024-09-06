@@ -119,7 +119,7 @@
                         Datagram
 
                         <span class="off-canvas-menu__version">
-                            v1.9.0
+                            v1.10.0
                         </span>
                     </a>
                 </li>
@@ -221,7 +221,7 @@
 
                     <div class="markdown-heading"><h1 class="heading-element">ChildProcess</h1><a id="childprocess" class="anchor" aria-label="Permalink: ChildProcess" href="#childprocess"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p><a href="https://github.com/reactphp/child-process/actions"><img src="https://github.com/reactphp/child-process/actions/workflows/ci.yml/badge.svg" alt="CI status" style="max-width: 100%;"></a>
-<a href="https://packagist.org/packages/react/child-process" rel="nofollow"><img src="https://camo.githubusercontent.com/4624529d7ac3a09f7fd7897572c074e39782c336a0fb60fb940032daafba2495/68747470733a2f2f696d672e736869656c64732e696f2f7061636b61676973742f64742f72656163742f6368696c642d70726f636573733f636f6c6f723d626c7565266c6162656c3d696e7374616c6c732532306f6e2532305061636b6167697374" alt="installs on Packagist" data-canonical-src="https://img.shields.io/packagist/dt/react/child-process?color=blue&amp;label=installs%20on%20Packagist" style="max-width: 100%;"></a></p>
+<a href="https://packagist.org/packages/react/child-process" rel="nofollow"><img src="https://camo.githubusercontent.com/8bbdda0220b26a7fb492dd00ac9f959ea7f1359aad95aadeb50e0b1f4ff03f3a/68747470733a2f2f696d672e736869656c64732e696f2f7061636b61676973742f64742f72656163742f6368696c642d70726f636573733f636f6c6f723d626c7565266c6162656c3d696e7374616c6c732532306f6e2532305061636b6167697374" alt="installs on Packagist" data-canonical-src="https://img.shields.io/packagist/dt/react/child-process?color=blue&amp;label=installs%20on%20Packagist" style="max-width: 100%;"></a></p>
 <p>Event-driven library for executing child processes with
 <a href="https://reactphp.org/" rel="nofollow">ReactPHP</a>.</p>
 <p>This library integrates <a href="http://php.net/manual/en/book.exec.php" rel="nofollow">Program Execution</a>
@@ -249,15 +249,15 @@ as <a href="../stream/">Streams</a>.</p>
 <li><a href="#license">License</a></li>
 </ul>
 <div class="markdown-heading"><h2 class="heading-element">Quickstart example</h2><a id="quickstart-example" class="anchor" aria-label="Permalink: Quickstart example" href="#quickstart-example"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>process</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">ChildProcess</span>\<span class="pl-v">Process</span>(<span class="pl-s">'echo foo'</span>);
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>process</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">ChildProcess</span>\<span class="pl-v">Process</span>(<span class="pl-s">'<span class="pl-s">echo foo</span>'</span>);
 <span class="pl-s1"><span class="pl-c1">$</span>process</span>-&gt;<span class="pl-en">start</span>();
 
-<span class="pl-s1"><span class="pl-c1">$</span>process</span>-&gt;<span class="pl-c1">stdout</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'data'</span>, <span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>chunk</span>) {
+<span class="pl-s1"><span class="pl-c1">$</span>process</span>-&gt;<span class="pl-c1">stdout</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'<span class="pl-s">data</span>'</span>, <span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>chunk</span>) {
     <span class="pl-k">echo</span> <span class="pl-s1"><span class="pl-c1">$</span>chunk</span>;
 });
 
-<span class="pl-s1"><span class="pl-c1">$</span>process</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'exit'</span>, <span class="pl-k">function</span>(<span class="pl-s1"><span class="pl-c1">$</span>exitCode</span>, <span class="pl-s1"><span class="pl-c1">$</span>termSignal</span>) {
-    <span class="pl-k">echo</span> <span class="pl-s">'Process exited with code '</span> . <span class="pl-s1"><span class="pl-c1">$</span>exitCode</span> . <span class="pl-c1">PHP_EOL</span>;
+<span class="pl-s1"><span class="pl-c1">$</span>process</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'<span class="pl-s">exit</span>'</span>, <span class="pl-k">function</span>(<span class="pl-s1"><span class="pl-c1">$</span>exitCode</span>, <span class="pl-s1"><span class="pl-c1">$</span>termSignal</span>) {
+    <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">Process exited with code </span>'</span> . <span class="pl-s1"><span class="pl-c1">$</span>exitCode</span> . <span class="pl-c1">PHP_EOL</span>;
 });</pre></div>
 <p>See also the <a href="https://github.com/reactphp/child-process/blob/v0.6.5/examples">examples</a>.</p>
 <div class="markdown-heading"><h2 class="heading-element">Process</h2><a id="process" class="anchor" aria-label="Permalink: Process" href="#process"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
@@ -295,20 +295,20 @@ you can use any of their events and methods as usual:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>process</span> = <span class="pl-k">new</span> <span class="pl-v">Process</span>(<span class="pl-s1"><span class="pl-c1">$</span>command</span>);
 <span class="pl-s1"><span class="pl-c1">$</span>process</span>-&gt;<span class="pl-en">start</span>();
 
-<span class="pl-s1"><span class="pl-c1">$</span>process</span>-&gt;<span class="pl-c1">stdout</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'data'</span>, <span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>chunk</span>) {
+<span class="pl-s1"><span class="pl-c1">$</span>process</span>-&gt;<span class="pl-c1">stdout</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'<span class="pl-s">data</span>'</span>, <span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>chunk</span>) {
     <span class="pl-k">echo</span> <span class="pl-s1"><span class="pl-c1">$</span>chunk</span>;
 });
 
-<span class="pl-s1"><span class="pl-c1">$</span>process</span>-&gt;<span class="pl-c1">stdout</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'end'</span>, <span class="pl-k">function</span> () {
-    <span class="pl-k">echo</span> <span class="pl-s">'ended'</span>;
+<span class="pl-s1"><span class="pl-c1">$</span>process</span>-&gt;<span class="pl-c1">stdout</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'<span class="pl-s">end</span>'</span>, <span class="pl-k">function</span> () {
+    <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">ended</span>'</span>;
 });
 
-<span class="pl-s1"><span class="pl-c1">$</span>process</span>-&gt;<span class="pl-c1">stdout</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'error'</span>, <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">Exception</span></span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>) {
-    <span class="pl-k">echo</span> <span class="pl-s">'error: '</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>();
+<span class="pl-s1"><span class="pl-c1">$</span>process</span>-&gt;<span class="pl-c1">stdout</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'<span class="pl-s">error</span>'</span>, <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">Exception</span></span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>) {
+    <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">error: </span>'</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>();
 });
 
-<span class="pl-s1"><span class="pl-c1">$</span>process</span>-&gt;<span class="pl-c1">stdout</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'close'</span>, <span class="pl-k">function</span> () {
-    <span class="pl-k">echo</span> <span class="pl-s">'closed'</span>;
+<span class="pl-s1"><span class="pl-c1">$</span>process</span>-&gt;<span class="pl-c1">stdout</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'<span class="pl-s">close</span>'</span>, <span class="pl-k">function</span> () {
+    <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">closed</span>'</span>;
 });
 
 <span class="pl-s1"><span class="pl-c1">$</span>process</span>-&gt;<span class="pl-c1">stdin</span>-&gt;<span class="pl-en">write</span>(<span class="pl-s1"><span class="pl-c1">$</span>data</span>);
@@ -319,7 +319,7 @@ you can use any of their events and methods as usual:</p>
 <a href="../stream/#writablestreaminterface"><code>WritableStreamInterface</code></a>.</p>
 <div class="markdown-heading"><h3 class="heading-element">Command</h3><a id="command" class="anchor" aria-label="Permalink: Command" href="#command"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The <code>Process</code> class allows you to pass any kind of command line string:</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>process</span> = <span class="pl-k">new</span> <span class="pl-v">Process</span>(<span class="pl-s">'echo test'</span>);
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>process</span> = <span class="pl-k">new</span> <span class="pl-v">Process</span>(<span class="pl-s">'<span class="pl-s">echo test</span>'</span>);
 <span class="pl-s1"><span class="pl-c1">$</span>process</span>-&gt;<span class="pl-en">start</span>();</pre></div>
 <p>The command line string usually consists of a whitespace-separated list with
 your main executable bin and any number of arguments. Special care should be
@@ -328,10 +328,10 @@ along. Likewise, keep in mind that especially on Windows, it is rather common to
 have path names containing spaces and other special characters. If you want to
 run a binary like this, you will have to ensure this is quoted as a single
 argument using <code>escapeshellarg()</code> like this:</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>bin</span> = <span class="pl-s">'C:\\Program files (x86)\\PHP\\php.exe'</span>;
-<span class="pl-s1"><span class="pl-c1">$</span>file</span> = <span class="pl-s">'C:\\Users\\me\\Desktop\\Application\\main.php'</span>;
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>bin</span> = <span class="pl-s">'<span class="pl-s">C:</span>\\<span class="pl-s">Program files (x86)</span>\\<span class="pl-s">PHP</span>\\<span class="pl-s">php.exe</span>'</span>;
+<span class="pl-s1"><span class="pl-c1">$</span>file</span> = <span class="pl-s">'<span class="pl-s">C:</span>\\<span class="pl-s">Users</span>\\<span class="pl-s">me</span>\\<span class="pl-s">Desktop</span>\\<span class="pl-s">Application</span>\\<span class="pl-s">main.php</span>'</span>;
 
-<span class="pl-s1"><span class="pl-c1">$</span>process</span> = <span class="pl-k">new</span> <span class="pl-v">Process</span>(escapeshellarg(<span class="pl-s1"><span class="pl-c1">$</span>bin</span>) . <span class="pl-s">' '</span> . escapeshellarg(<span class="pl-s1"><span class="pl-c1">$</span>file</span>));
+<span class="pl-s1"><span class="pl-c1">$</span>process</span> = <span class="pl-k">new</span> <span class="pl-v">Process</span>(<span class="pl-en">escapeshellarg</span>(<span class="pl-s1"><span class="pl-c1">$</span>bin</span>) . <span class="pl-s">'<span class="pl-s"> </span>'</span> . <span class="pl-en">escapeshellarg</span>(<span class="pl-s1"><span class="pl-c1">$</span>file</span>));
 <span class="pl-s1"><span class="pl-c1">$</span>process</span>-&gt;<span class="pl-en">start</span>();</pre></div>
 <p>By default, PHP will launch processes by wrapping the given command line string
 in a <code>sh</code> command on Unix, so that the first example will actually execute
@@ -343,7 +343,7 @@ launch multiple sub-commands using command chains (with <code>&amp;&amp;</code>,
 others) and allows you to redirect STDIO streams (with <code>2&gt;&amp;1</code> and family).
 This can be used to pass complete command lines and receive the resulting STDIO
 streams from the wrapping shell command like this:</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>process</span> = <span class="pl-k">new</span> <span class="pl-v">Process</span>(<span class="pl-s">'echo run &amp;&amp; demo || echo failed'</span>);
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>process</span> = <span class="pl-k">new</span> <span class="pl-v">Process</span>(<span class="pl-s">'<span class="pl-s">echo run &amp;&amp; demo || echo failed</span>'</span>);
 <span class="pl-s1"><span class="pl-c1">$</span>process</span>-&gt;<span class="pl-en">start</span>();</pre></div>
 <blockquote>
 <p>Note that <a href="#windows-compatibility">Windows support</a> is limited in that it
@@ -361,22 +361,22 @@ input/output with no way to discern the input/output of single sub-commands.</p>
 <p>If you want to discern the output of single sub-commands, you may want to
 implement some higher-level protocol logic, such as printing an explicit
 boundary between each sub-command like this:</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>process</span> = <span class="pl-k">new</span> <span class="pl-v">Process</span>(<span class="pl-s">'cat first &amp;&amp; echo --- &amp;&amp; cat second'</span>);
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>process</span> = <span class="pl-k">new</span> <span class="pl-v">Process</span>(<span class="pl-s">'<span class="pl-s">cat first &amp;&amp; echo --- &amp;&amp; cat second</span>'</span>);
 <span class="pl-s1"><span class="pl-c1">$</span>process</span>-&gt;<span class="pl-en">start</span>();</pre></div>
 <p>As an alternative, considering launching one process at a time and listening on
 its <code>exit</code> event to conditionally start the next process in the chain.
 This will give you an opportunity to configure the subsequent process I/O streams:</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>first</span> = <span class="pl-k">new</span> <span class="pl-v">Process</span>(<span class="pl-s">'cat first'</span>);
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>first</span> = <span class="pl-k">new</span> <span class="pl-v">Process</span>(<span class="pl-s">'<span class="pl-s">cat first</span>'</span>);
 <span class="pl-s1"><span class="pl-c1">$</span>first</span>-&gt;<span class="pl-en">start</span>();
 
-<span class="pl-s1"><span class="pl-c1">$</span>first</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'exit'</span>, <span class="pl-k">function</span> () {
-    <span class="pl-s1"><span class="pl-c1">$</span>second</span> = <span class="pl-k">new</span> <span class="pl-v">Process</span>(<span class="pl-s">'cat second'</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>first</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'<span class="pl-s">exit</span>'</span>, <span class="pl-k">function</span> () {
+    <span class="pl-s1"><span class="pl-c1">$</span>second</span> = <span class="pl-k">new</span> <span class="pl-v">Process</span>(<span class="pl-s">'<span class="pl-s">cat second</span>'</span>);
     <span class="pl-s1"><span class="pl-c1">$</span>second</span>-&gt;<span class="pl-en">start</span>();
 });</pre></div>
 <p>Keep in mind that PHP uses the shell wrapper for ALL command lines on Unix.
 While this may seem reasonable for more complex command lines, this actually
 also applies to running the most simple single command:</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>process</span> = <span class="pl-k">new</span> <span class="pl-v">Process</span>(<span class="pl-s">'yes'</span>);
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>process</span> = <span class="pl-k">new</span> <span class="pl-v">Process</span>(<span class="pl-s">'<span class="pl-s">yes</span>'</span>);
 <span class="pl-s1"><span class="pl-c1">$</span>process</span>-&gt;<span class="pl-en">start</span>();</pre></div>
 <p>This will actually spawn a command hierarchy similar to this on Unix:</p>
 <pre><code>5480 … \_ php example.php
@@ -389,7 +389,7 @@ in many cases.</p>
 <p>If you do not want this wrapping shell process to show up, you can simply
 prepend the command string with <code>exec</code> on Unix platforms, which will cause the
 wrapping shell process to be replaced by our process:</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>process</span> = <span class="pl-k">new</span> <span class="pl-v">Process</span>(<span class="pl-s">'exec yes'</span>);
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>process</span> = <span class="pl-k">new</span> <span class="pl-v">Process</span>(<span class="pl-s">'<span class="pl-s">exec yes</span>'</span>);
 <span class="pl-s1"><span class="pl-c1">$</span>process</span>-&gt;<span class="pl-en">start</span>();</pre></div>
 <p>This will show a resulting command hierarchy similar to this:</p>
 <pre><code>5480 … \_ php example.php
@@ -410,14 +410,14 @@ want to consider prepending the command string with <code>exec</code> to avoid t
 <p>The <code>exit</code> event will be emitted whenever the process is no longer running.
 Event listeners will receive the exit code and termination signal as two
 arguments:</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>process</span> = <span class="pl-k">new</span> <span class="pl-v">Process</span>(<span class="pl-s">'sleep 10'</span>);
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>process</span> = <span class="pl-k">new</span> <span class="pl-v">Process</span>(<span class="pl-s">'<span class="pl-s">sleep 10</span>'</span>);
 <span class="pl-s1"><span class="pl-c1">$</span>process</span>-&gt;<span class="pl-en">start</span>();
 
-<span class="pl-s1"><span class="pl-c1">$</span>process</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'exit'</span>, <span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>code</span>, <span class="pl-s1"><span class="pl-c1">$</span>term</span>) {
+<span class="pl-s1"><span class="pl-c1">$</span>process</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'<span class="pl-s">exit</span>'</span>, <span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>code</span>, <span class="pl-s1"><span class="pl-c1">$</span>term</span>) {
     <span class="pl-k">if</span> (<span class="pl-s1"><span class="pl-c1">$</span>term</span> === <span class="pl-c1">null</span>) {
-        <span class="pl-k">echo</span> <span class="pl-s">'exit with code '</span> . <span class="pl-s1"><span class="pl-c1">$</span>code</span> . <span class="pl-c1">PHP_EOL</span>;
+        <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">exit with code </span>'</span> . <span class="pl-s1"><span class="pl-c1">$</span>code</span> . <span class="pl-c1">PHP_EOL</span>;
     } <span class="pl-k">else</span> {
-        <span class="pl-k">echo</span> <span class="pl-s">'terminated with signal '</span> . <span class="pl-s1"><span class="pl-c1">$</span>term</span> . <span class="pl-c1">PHP_EOL</span>;
+        <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">terminated with signal </span>'</span> . <span class="pl-s1"><span class="pl-c1">$</span>term</span> . <span class="pl-c1">PHP_EOL</span>;
     }
 });</pre></div>
 <p>Note that <code>$code</code> is <code>null</code> if the process has terminated, but the exit
@@ -448,7 +448,7 @@ inherited to child processes and terminating the main process may not
 necessarily terminate the whole process tree.
 It is highly suggested that you explicitly <code>close()</code> all process pipes
 accordingly when terminating a process:</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>process</span> = <span class="pl-k">new</span> <span class="pl-v">Process</span>(<span class="pl-s">'sleep 10'</span>);
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>process</span> = <span class="pl-k">new</span> <span class="pl-v">Process</span>(<span class="pl-s">'<span class="pl-s">sleep 10</span>'</span>);
 <span class="pl-s1"><span class="pl-c1">$</span>process</span>-&gt;<span class="pl-en">start</span>();
 
 <span class="pl-v">Loop</span>::<span class="pl-en">addTimer</span>(<span class="pl-c1">2.0</span>, <span class="pl-k">function</span> () <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>process</span>) {
@@ -460,7 +460,7 @@ accordingly when terminating a process:</p>
 <p>For many simple programs these seamingly complicated steps can also be avoided
 by prefixing the command line with <code>exec</code> to avoid the wrapping shell and its
 inherited process pipes as <a href="#command">mentioned above</a>.</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>process</span> = <span class="pl-k">new</span> <span class="pl-v">Process</span>(<span class="pl-s">'exec sleep 10'</span>);
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>process</span> = <span class="pl-k">new</span> <span class="pl-v">Process</span>(<span class="pl-s">'<span class="pl-s">exec sleep 10</span>'</span>);
 <span class="pl-s1"><span class="pl-c1">$</span>process</span>-&gt;<span class="pl-en">start</span>();
 
 <span class="pl-v">Loop</span>::<span class="pl-en">addTimer</span>(<span class="pl-c1">2.0</span>, <span class="pl-k">function</span> () <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>process</span>) {
@@ -469,7 +469,7 @@ inherited process pipes as <a href="#command">mentioned above</a>.</p>
 <p>Many command line programs also wait for data on <code>STDIN</code> and terminate cleanly
 when this pipe is closed.
 For example, the following can be used to "soft-close" a <code>cat</code> process:</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>process</span> = <span class="pl-k">new</span> <span class="pl-v">Process</span>(<span class="pl-s">'cat'</span>);
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>process</span> = <span class="pl-k">new</span> <span class="pl-v">Process</span>(<span class="pl-s">'<span class="pl-s">cat</span>'</span>);
 <span class="pl-s1"><span class="pl-c1">$</span>process</span>-&gt;<span class="pl-en">start</span>();
 
 <span class="pl-v">Loop</span>::<span class="pl-en">addTimer</span>(<span class="pl-c1">2.0</span>, <span class="pl-k">function</span> () <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>process</span>) {
@@ -492,18 +492,18 @@ pass an array containing the file descriptor specification to the constructor
 like this:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>fds</span> = <span class="pl-en">array</span>(
     <span class="pl-c">// standard I/O pipes for stdin/stdout/stderr</span>
-    <span class="pl-c1">0</span> =&gt; <span class="pl-en">array</span>(<span class="pl-s">'pipe'</span>, <span class="pl-s">'r'</span>),
-    <span class="pl-c1">1</span> =&gt; <span class="pl-en">array</span>(<span class="pl-s">'pipe'</span>, <span class="pl-s">'w'</span>),
-    <span class="pl-c1">2</span> =&gt; <span class="pl-en">array</span>(<span class="pl-s">'pipe'</span>, <span class="pl-s">'w'</span>),
+    <span class="pl-c1">0</span> =&gt; <span class="pl-en">array</span>(<span class="pl-s">'<span class="pl-s">pipe</span>'</span>, <span class="pl-s">'<span class="pl-s">r</span>'</span>),
+    <span class="pl-c1">1</span> =&gt; <span class="pl-en">array</span>(<span class="pl-s">'<span class="pl-s">pipe</span>'</span>, <span class="pl-s">'<span class="pl-s">w</span>'</span>),
+    <span class="pl-c1">2</span> =&gt; <span class="pl-en">array</span>(<span class="pl-s">'<span class="pl-s">pipe</span>'</span>, <span class="pl-s">'<span class="pl-s">w</span>'</span>),
 
     <span class="pl-c">// example FDs for files or open resources</span>
-    <span class="pl-c1">4</span> =&gt; <span class="pl-en">array</span>(<span class="pl-s">'file'</span>, <span class="pl-s">'/dev/null'</span>, <span class="pl-s">'r'</span>),
-    <span class="pl-c1">6</span> =&gt; fopen(<span class="pl-s">'log.txt'</span>,<span class="pl-s">'a'</span>),
+    <span class="pl-c1">4</span> =&gt; <span class="pl-en">array</span>(<span class="pl-s">'<span class="pl-s">file</span>'</span>, <span class="pl-s">'<span class="pl-s">/dev/null</span>'</span>, <span class="pl-s">'<span class="pl-s">r</span>'</span>),
+    <span class="pl-c1">6</span> =&gt; <span class="pl-en">fopen</span>(<span class="pl-s">'<span class="pl-s">log.txt</span>'</span>,<span class="pl-s">'<span class="pl-s">a</span>'</span>),
     <span class="pl-c1">8</span> =&gt; <span class="pl-c1">STDERR</span>,
 
     <span class="pl-c">// example FDs for sockets</span>
-    <span class="pl-c1">10</span> =&gt; fsockopen(<span class="pl-s">'localhost'</span>, <span class="pl-c1">8080</span>),
-    <span class="pl-c1">12</span> =&gt; stream_socket_server(<span class="pl-s">'tcp://0.0.0.0:4711'</span>)
+    <span class="pl-c1">10</span> =&gt; <span class="pl-en">fsockopen</span>(<span class="pl-s">'<span class="pl-s">localhost</span>'</span>, <span class="pl-c1">8080</span>),
+    <span class="pl-c1">12</span> =&gt; <span class="pl-en">stream_socket_server</span>(<span class="pl-s">'<span class="pl-s">tcp://0.0.0.0:4711</span>'</span>)
 );
 
 <span class="pl-s1"><span class="pl-c1">$</span>process</span> = <span class="pl-k">new</span> <span class="pl-v">Process</span>(<span class="pl-s1"><span class="pl-c1">$</span>cmd</span>, <span class="pl-c1">null</span>, <span class="pl-c1">null</span>, <span class="pl-s1"><span class="pl-c1">$</span>fds</span>);
@@ -552,7 +552,7 @@ standard I/O pipes on Windows without blocking. As such, this project will not
 allow constructing a child process with the default process pipes and will
 instead throw a <code>LogicException</code> on Windows by default:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-c">// throws LogicException on Windows</span>
-<span class="pl-s1"><span class="pl-c1">$</span>process</span> = <span class="pl-k">new</span> <span class="pl-v">Process</span>(<span class="pl-s">'ping example.com'</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>process</span> = <span class="pl-k">new</span> <span class="pl-v">Process</span>(<span class="pl-s">'<span class="pl-s">ping example.com</span>'</span>);
 <span class="pl-s1"><span class="pl-c1">$</span>process</span>-&gt;<span class="pl-en">start</span>();</pre></div>
 <p>There are a number of alternatives and workarounds as detailed below if you want
 to run a child process on Windows, each with its own set of pros and cons:</p>
@@ -561,18 +561,18 @@ to run a child process on Windows, each with its own set of pros and cons:</p>
 <p>As of PHP 8, you can start the child process with <code>socket</code> pair descriptors
 in place of normal standard I/O pipes like this:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>process</span> = <span class="pl-k">new</span> <span class="pl-v">Process</span>(
-    <span class="pl-s">'ping example.com'</span>,
+    <span class="pl-s">'<span class="pl-s">ping example.com</span>'</span>,
     <span class="pl-c1">null</span>,
     <span class="pl-c1">null</span>,
     [
-        [<span class="pl-s">'socket'</span>],
-        [<span class="pl-s">'socket'</span>],
-        [<span class="pl-s">'socket'</span>]
+        [<span class="pl-s">'<span class="pl-s">socket</span>'</span>],
+        [<span class="pl-s">'<span class="pl-s">socket</span>'</span>],
+        [<span class="pl-s">'<span class="pl-s">socket</span>'</span>]
     ]
 );
 <span class="pl-s1"><span class="pl-c1">$</span>process</span>-&gt;<span class="pl-en">start</span>();
 
-<span class="pl-s1"><span class="pl-c1">$</span>process</span>-&gt;<span class="pl-c1">stdout</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'data'</span>, <span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>chunk</span>) {
+<span class="pl-s1"><span class="pl-c1">$</span>process</span>-&gt;<span class="pl-c1">stdout</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'<span class="pl-s">data</span>'</span>, <span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>chunk</span>) {
     <span class="pl-k">echo</span> <span class="pl-s1"><span class="pl-c1">$</span>chunk</span>;
 });</pre></div>
 <p>These <code>socket</code> pairs support non-blocking process I/O on any platform,
@@ -589,11 +589,11 @@ when you want to run this package on Windows.</p>
 <p>If you only care about the exit code of a child process to check if its
 execution was successful, you can use <a href="#custom-pipes">custom pipes</a> to omit
 any standard I/O pipes like this:</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>process</span> = <span class="pl-k">new</span> <span class="pl-v">Process</span>(<span class="pl-s">'ping example.com'</span>, <span class="pl-c1">null</span>, <span class="pl-c1">null</span>, <span class="pl-en">array</span>());
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>process</span> = <span class="pl-k">new</span> <span class="pl-v">Process</span>(<span class="pl-s">'<span class="pl-s">ping example.com</span>'</span>, <span class="pl-c1">null</span>, <span class="pl-c1">null</span>, <span class="pl-en">array</span>());
 <span class="pl-s1"><span class="pl-c1">$</span>process</span>-&gt;<span class="pl-en">start</span>();
 
-<span class="pl-s1"><span class="pl-c1">$</span>process</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'exit'</span>, <span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>exitcode</span>) {
-    <span class="pl-k">echo</span> <span class="pl-s">'exit with '</span> . <span class="pl-s1"><span class="pl-c1">$</span>exitcode</span> . <span class="pl-c1">PHP_EOL</span>;
+<span class="pl-s1"><span class="pl-c1">$</span>process</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'<span class="pl-s">exit</span>'</span>, <span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>exitcode</span>) {
+    <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">exit with </span>'</span> . <span class="pl-s1"><span class="pl-c1">$</span>exitcode</span> . <span class="pl-c1">PHP_EOL</span>;
 });</pre></div>
 <p>Similarly, this is also useful if your child process communicates over
 sockets with remote servers or even your parent process using the
@@ -605,22 +605,22 @@ process communicates with the parent process.</p>
 <p>If you only care about command output after the child process has been
 executed, you can use <a href="#custom-pipes">custom pipes</a> to configure file
 handles to be passed to the child process instead of pipes like this:</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>process</span> = <span class="pl-k">new</span> <span class="pl-v">Process</span>(<span class="pl-s">'ping example.com'</span>, <span class="pl-c1">null</span>, <span class="pl-c1">null</span>, <span class="pl-en">array</span>(
-    <span class="pl-en">array</span>(<span class="pl-s">'file'</span>, <span class="pl-s">'nul'</span>, <span class="pl-s">'r'</span>),
-    <span class="pl-s1"><span class="pl-c1">$</span>stdout</span> = tmpfile(),
-    <span class="pl-en">array</span>(<span class="pl-s">'file'</span>, <span class="pl-s">'nul'</span>, <span class="pl-s">'w'</span>)
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>process</span> = <span class="pl-k">new</span> <span class="pl-v">Process</span>(<span class="pl-s">'<span class="pl-s">ping example.com</span>'</span>, <span class="pl-c1">null</span>, <span class="pl-c1">null</span>, <span class="pl-en">array</span>(
+    <span class="pl-en">array</span>(<span class="pl-s">'<span class="pl-s">file</span>'</span>, <span class="pl-s">'<span class="pl-s">nul</span>'</span>, <span class="pl-s">'<span class="pl-s">r</span>'</span>),
+    <span class="pl-s1"><span class="pl-c1">$</span>stdout</span> = <span class="pl-en">tmpfile</span>(),
+    <span class="pl-en">array</span>(<span class="pl-s">'<span class="pl-s">file</span>'</span>, <span class="pl-s">'<span class="pl-s">nul</span>'</span>, <span class="pl-s">'<span class="pl-s">w</span>'</span>)
 ));
 <span class="pl-s1"><span class="pl-c1">$</span>process</span>-&gt;<span class="pl-en">start</span>();
 
-<span class="pl-s1"><span class="pl-c1">$</span>process</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'exit'</span>, <span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>exitcode</span>) <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>stdout</span>) {
-    <span class="pl-k">echo</span> <span class="pl-s">'exit with '</span> . <span class="pl-s1"><span class="pl-c1">$</span>exitcode</span> . <span class="pl-c1">PHP_EOL</span>;
+<span class="pl-s1"><span class="pl-c1">$</span>process</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'<span class="pl-s">exit</span>'</span>, <span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>exitcode</span>) <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>stdout</span>) {
+    <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">exit with </span>'</span> . <span class="pl-s1"><span class="pl-c1">$</span>exitcode</span> . <span class="pl-c1">PHP_EOL</span>;
 
     <span class="pl-c">// rewind to start and then read full file (demo only, this is blocking).</span>
     <span class="pl-c">// reading from shared file is only safe if you have some synchronization in place</span>
     <span class="pl-c">// or after the child process has terminated.</span>
-    rewind(<span class="pl-s1"><span class="pl-c1">$</span>stdout</span>);
-    <span class="pl-k">echo</span> stream_get_contents(<span class="pl-s1"><span class="pl-c1">$</span>stdout</span>);
-    fclose(<span class="pl-s1"><span class="pl-c1">$</span>stdout</span>);
+    <span class="pl-en">rewind</span>(<span class="pl-s1"><span class="pl-c1">$</span>stdout</span>);
+    <span class="pl-k">echo</span> <span class="pl-en">stream_get_contents</span>(<span class="pl-s1"><span class="pl-c1">$</span>stdout</span>);
+    <span class="pl-en">fclose</span>(<span class="pl-s1"><span class="pl-c1">$</span>stdout</span>);
 });</pre></div>
 <p>Note that this example uses <code>tmpfile()</code>/<code>fopen()</code> for illustration purposes only.
 This should not be used in a truly async program because the filesystem is
@@ -633,20 +633,20 @@ alternative.</p>
 you can use redirection to spawn an additional process to forward your
 standard I/O streams to a socket and use <a href="#custom-pipes">custom pipes</a> to
 omit any actual standard I/O pipes like this:</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Server</span>(<span class="pl-s">'127.0.0.1:0'</span>);
-<span class="pl-s1"><span class="pl-c1">$</span>server</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'connection'</span>, <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi"><span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">ConnectionInterface</span></span></span> <span class="pl-s1"><span class="pl-c1">$</span>connection</span>) {
-    <span class="pl-s1"><span class="pl-c1">$</span>connection</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'data'</span>, <span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>chunk</span>) {
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Server</span>(<span class="pl-s">'<span class="pl-s">127.0.0.1:0</span>'</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>server</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'<span class="pl-s">connection</span>'</span>, <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi"><span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">ConnectionInterface</span></span></span> <span class="pl-s1"><span class="pl-c1">$</span>connection</span>) {
+    <span class="pl-s1"><span class="pl-c1">$</span>connection</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'<span class="pl-s">data</span>'</span>, <span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>chunk</span>) {
         <span class="pl-k">echo</span> <span class="pl-s1"><span class="pl-c1">$</span>chunk</span>;
     });
 });
 
-<span class="pl-s1"><span class="pl-c1">$</span>command</span> = <span class="pl-s">'ping example.com | foobar '</span> . escapeshellarg(<span class="pl-s1"><span class="pl-c1">$</span>server</span>-&gt;<span class="pl-en">getAddress</span>());
+<span class="pl-s1"><span class="pl-c1">$</span>command</span> = <span class="pl-s">'<span class="pl-s">ping example.com | foobar </span>'</span> . <span class="pl-en">escapeshellarg</span>(<span class="pl-s1"><span class="pl-c1">$</span>server</span>-&gt;<span class="pl-en">getAddress</span>());
 <span class="pl-s1"><span class="pl-c1">$</span>process</span> = <span class="pl-k">new</span> <span class="pl-v">Process</span>(<span class="pl-s1"><span class="pl-c1">$</span>command</span>, <span class="pl-c1">null</span>, <span class="pl-c1">null</span>, <span class="pl-en">array</span>());
 <span class="pl-s1"><span class="pl-c1">$</span>process</span>-&gt;<span class="pl-en">start</span>();
 
-<span class="pl-s1"><span class="pl-c1">$</span>process</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'exit'</span>, <span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>exitcode</span>) <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>server</span>) {
+<span class="pl-s1"><span class="pl-c1">$</span>process</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'<span class="pl-s">exit</span>'</span>, <span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>exitcode</span>) <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>server</span>) {
     <span class="pl-s1"><span class="pl-c1">$</span>server</span>-&gt;<span class="pl-en">close</span>();
-    <span class="pl-k">echo</span> <span class="pl-s">'exit with '</span> . <span class="pl-s1"><span class="pl-c1">$</span>exitcode</span> . <span class="pl-c1">PHP_EOL</span>;
+    <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">exit with </span>'</span> . <span class="pl-s1"><span class="pl-c1">$</span>exitcode</span> . <span class="pl-c1">PHP_EOL</span>;
 });</pre></div>
 <p>Note how this will spawn another fictional <code>foobar</code> helper program to consume
 the standard output from the actual child process. This is in fact similar
@@ -655,14 +655,14 @@ but in this case does not require modification of the actual child process.</p>
 <p>In this example, the fictional <code>foobar</code> helper program can be implemented by
 simply consuming all data from standard input and forwarding it to a socket
 connection like this:</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>socket</span> = stream_socket_client(<span class="pl-s1"><span class="pl-c1">$</span>argv</span>[<span class="pl-c1">1</span>]);
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>socket</span> = <span class="pl-en">stream_socket_client</span>(<span class="pl-s1"><span class="pl-c1">$</span>argv</span>[<span class="pl-c1">1</span>]);
 <span class="pl-k">do</span> {
-    fwrite(<span class="pl-s1"><span class="pl-c1">$</span>socket</span>, <span class="pl-s1"><span class="pl-c1">$</span>data</span> = fread(<span class="pl-c1">STDIN</span>, <span class="pl-c1">8192</span>));
-} <span class="pl-k">while</span> (isset(<span class="pl-s1"><span class="pl-c1">$</span>data</span>[<span class="pl-c1">0</span>]));</pre></div>
+    <span class="pl-en">fwrite</span>(<span class="pl-s1"><span class="pl-c1">$</span>socket</span>, <span class="pl-s1"><span class="pl-c1">$</span>data</span> = <span class="pl-en">fread</span>(<span class="pl-c1">STDIN</span>, <span class="pl-c1">8192</span>));
+} <span class="pl-k">while</span> (<span class="pl-en">isset</span>(<span class="pl-s1"><span class="pl-c1">$</span>data</span>[<span class="pl-c1">0</span>]));</pre></div>
 <p>Accordingly, this example can also be run with plain PHP without having to
 rely on any external helper program like this:</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>code</span> = <span class="pl-s">'$s=stream_socket_client($argv[1]);do{fwrite($s,$d=fread(STDIN, 8192));}while(isset($d[0]));'</span>;
-<span class="pl-s1"><span class="pl-c1">$</span>command</span> = <span class="pl-s">'ping example.com | php -r '</span> . escapeshellarg(<span class="pl-s1"><span class="pl-c1">$</span>code</span>) . <span class="pl-s">' '</span> . escapeshellarg(<span class="pl-s1"><span class="pl-c1">$</span>server</span>-&gt;<span class="pl-en">getAddress</span>());
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>code</span> = <span class="pl-s">'<span class="pl-s">$s=stream_socket_client($argv[1]);do{fwrite($s,$d=fread(STDIN, 8192));}while(isset($d[0]));</span>'</span>;
+<span class="pl-s1"><span class="pl-c1">$</span>command</span> = <span class="pl-s">'<span class="pl-s">ping example.com | php -r </span>'</span> . <span class="pl-en">escapeshellarg</span>(<span class="pl-s1"><span class="pl-c1">$</span>code</span>) . <span class="pl-s">'<span class="pl-s"> </span>'</span> . <span class="pl-en">escapeshellarg</span>(<span class="pl-s1"><span class="pl-c1">$</span>server</span>-&gt;<span class="pl-en">getAddress</span>());
 <span class="pl-s1"><span class="pl-c1">$</span>process</span> = <span class="pl-k">new</span> <span class="pl-v">Process</span>(<span class="pl-s1"><span class="pl-c1">$</span>command</span>, <span class="pl-c1">null</span>, <span class="pl-c1">null</span>, <span class="pl-en">array</span>());
 <span class="pl-s1"><span class="pl-c1">$</span>process</span>-&gt;<span class="pl-en">start</span>();</pre></div>
 <p>See also <a href="https://github.com/reactphp/child-process/blob/v0.6.5/examples/23-forward-socket.php">example #23</a>.</p>
@@ -679,7 +679,7 @@ passed to the underlying Windows-API
 as-is and the process will not be launched in a wrapping shell by default. In
 particular, this means that shell built-in functions such as <code>echo hello</code> or
 <code>sleep 10</code> may have to be prefixed with an explicit shell command like this:</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>process</span> = <span class="pl-k">new</span> <span class="pl-v">Process</span>(<span class="pl-s">'cmd /c echo hello'</span>, <span class="pl-c1">null</span>, <span class="pl-c1">null</span>, <span class="pl-s1"><span class="pl-c1">$</span>pipes</span>);
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>process</span> = <span class="pl-k">new</span> <span class="pl-v">Process</span>(<span class="pl-s">'<span class="pl-s">cmd /c echo hello</span>'</span>, <span class="pl-c1">null</span>, <span class="pl-c1">null</span>, <span class="pl-s1"><span class="pl-c1">$</span>pipes</span>);
 <span class="pl-s1"><span class="pl-c1">$</span>process</span>-&gt;<span class="pl-en">start</span>();</pre></div>
 <div class="markdown-heading"><h2 class="heading-element">Install</h2><a id="install" class="anchor" aria-label="Permalink: Install" href="#install"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The recommended way to install this library is <a href="https://getcomposer.org/" rel="nofollow">through Composer</a>.
@@ -819,12 +819,12 @@ dependencies <a href="https://getcomposer.org/" rel="nofollow">through Composer<
                         <ul class="component-info__contributors">
                                                     <li>
                                 <a href="https://github.com/clue">
-                                    <img src="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=80 2x" alt="clue" title="clue (79 contributions)">
+                                    <img src="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=80 2x" alt="clue" title="clue (80 contributions)">
                                 </a>
                             </li>
                                                     <li>
                                 <a href="https://github.com/WyriHaximus">
-                                    <img src="https://avatars.githubusercontent.com/u/147145?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/147145?v=4&amp;s=80 2x" alt="WyriHaximus" title="WyriHaximus (56 contributions)">
+                                    <img src="https://avatars.githubusercontent.com/u/147145?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/147145?v=4&amp;s=80 2x" alt="WyriHaximus" title="WyriHaximus (57 contributions)">
                                 </a>
                             </li>
                                                     <li>
@@ -906,7 +906,7 @@ dependencies <a href="https://getcomposer.org/" rel="nofollow">through Composer<
         <mask id="reactphp-child-process-participation-sparkline" x="0" y="0" width="320" height="40" >
             <polyline 
                 transform="translate(0, 40) scale(1,-1)"
-                points="0,1 6,1 12,1 18,1 24,1 30,1 36,1 42,1 48,1 54,1 60,1 66,2 72,1 78,1 84,1 90,1 96,1 102,1 108,1 114,1 120,1 126,1 132,2 138,1 144,1 150,1 156,1 162,1 168,1 174,1 180,1 186,1 192,1 198,1 204,1 210,1 216,1 222,1 228,1 234,1 240,1 246,1 252,1 258,1 264,1 270,1 276,1 282,1 288,1 294,1 300,1 306,1" 
+                points="0,1 6,1 12,1 18,1 24,1 30,2 36,1 42,1 48,1 54,1 60,1 66,1 72,1 78,1 84,1 90,1 96,2 102,1 108,1 114,1 120,1 126,1 132,1 138,1 144,1 150,1 156,1 162,1 168,1 174,1 180,1 186,1 192,1 198,1 204,1 210,1 216,1 222,1 228,1 234,1 240,1 246,1 252,1 258,1 264,1 270,2 276,1 282,2 288,1 294,1 300,1 306,1" 
                 fill="transparent" 
                 stroke="#40a977" 
                 stroke-width="2"

@@ -119,7 +119,7 @@
                         Datagram
 
                         <span class="off-canvas-menu__version">
-                            v1.9.0
+                            v1.10.0
                         </span>
                     </a>
                 </li>
@@ -221,7 +221,7 @@
 
                     <div class="markdown-heading"><h1 class="heading-element">Stream</h1><a id="stream" class="anchor" aria-label="Permalink: Stream" href="#stream"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p><a href="https://github.com/reactphp/stream/actions"><img src="https://github.com/reactphp/stream/actions/workflows/ci.yml/badge.svg" alt="CI status" style="max-width: 100%;"></a>
-<a href="https://packagist.org/packages/react/stream" rel="nofollow"><img src="https://camo.githubusercontent.com/685402151b7ec1ba9fc0c8d082de962ee4a44b9f4d20b9a50335a4eaa45eb3d5/68747470733a2f2f696d672e736869656c64732e696f2f7061636b61676973742f64742f72656163742f73747265616d3f636f6c6f723d626c7565266c6162656c3d696e7374616c6c732532306f6e2532305061636b6167697374" alt="installs on Packagist" data-canonical-src="https://img.shields.io/packagist/dt/react/stream?color=blue&amp;label=installs%20on%20Packagist" style="max-width: 100%;"></a></p>
+<a href="https://packagist.org/packages/react/stream" rel="nofollow"><img src="https://camo.githubusercontent.com/e63a78f2693ba39c1eb90d9cf2b9952dca6fb068bced4249a795fd738916cfa2/68747470733a2f2f696d672e736869656c64732e696f2f7061636b61676973742f64742f72656163742f73747265616d3f636f6c6f723d626c7565266c6162656c3d696e7374616c6c732532306f6e2532305061636b6167697374" alt="installs on Packagist" data-canonical-src="https://img.shields.io/packagist/dt/react/stream?color=blue&amp;label=installs%20on%20Packagist" style="max-width: 100%;"></a></p>
 <p>Event-driven readable and writable streams for non-blocking I/O in <a href="https://reactphp.org/" rel="nofollow">ReactPHP</a>.</p>
 <p>In order to make the <a href="../event-loop/">EventLoop</a>
 easier to use, this component introduces the powerful concept of "streams".
@@ -326,7 +326,7 @@ documentation of such a higher-level implementation.</p>
 <p>The <code>data</code> event will be emitted whenever some data was read/received
 from this source stream.
 The event receives a single mixed argument for incoming data.</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'data'</span>, <span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>data</span>) {
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'<span class="pl-s">data</span>'</span>, <span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>data</span>) {
     <span class="pl-k">echo</span> <span class="pl-s1"><span class="pl-c1">$</span>data</span>;
 });</pre></div>
 <p>This event MAY be emitted any number of times, which may be zero times if
@@ -348,8 +348,8 @@ these low-level data chunks in order to achieve proper message framing.</p>
 <div class="markdown-heading"><h4 class="heading-element">end event</h4><a id="end-event" class="anchor" aria-label="Permalink: end event" href="#end-event"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The <code>end</code> event will be emitted once the source stream has successfully
 reached the end of the stream (EOF).</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'end'</span>, <span class="pl-k">function</span> () {
-    <span class="pl-k">echo</span> <span class="pl-s">'END'</span>;
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'<span class="pl-s">end</span>'</span>, <span class="pl-k">function</span> () {
+    <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">END</span>'</span>;
 });</pre></div>
 <p>This event SHOULD be emitted once or never at all, depending on whether
 a successful end was detected.
@@ -376,8 +376,8 @@ stream.</p>
 <p>The <code>error</code> event will be emitted once a fatal error occurs, usually while
 trying to read from this stream.
 The event receives a single <code>Exception</code> argument for the error instance.</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>server</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'error'</span>, <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">Exception</span></span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>) {
-    <span class="pl-k">echo</span> <span class="pl-s">'Error: '</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>server</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'<span class="pl-s">error</span>'</span>, <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">Exception</span></span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>) {
+    <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">Error: </span>'</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
 });</pre></div>
 <p>This event SHOULD be emitted once the stream detects a fatal error, such
 as a fatal transmission error or after an unexpected <code>data</code> or premature
@@ -400,8 +400,8 @@ In other words, an error may occur while either reading or writing the
 stream which should result in the same error processing.</p>
 <div class="markdown-heading"><h4 class="heading-element">close event</h4><a id="close-event" class="anchor" aria-label="Permalink: close event" href="#close-event"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The <code>close</code> event will be emitted once the stream closes (terminates).</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'close'</span>, <span class="pl-k">function</span> () {
-    <span class="pl-k">echo</span> <span class="pl-s">'CLOSED'</span>;
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'<span class="pl-s">close</span>'</span>, <span class="pl-k">function</span> () {
+    <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">CLOSED</span>'</span>;
 });</pre></div>
 <p>This event SHOULD be emitted once or never at all, depending on whether
 the stream ever terminates.
@@ -428,10 +428,10 @@ check whether this stream is in a readable state (not closed already).</p>
 data events or if it is ended or closed already.
 Once the stream is non-readable, no further <code>data</code> or <code>end</code> events SHOULD
 be emitted.</p>
-<div class="highlight highlight-text-html-php"><pre>assert(<span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">isReadable</span>() === <span class="pl-c1">false</span>);
+<div class="highlight highlight-text-html-php"><pre><span class="pl-en">assert</span>(<span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">isReadable</span>() === <span class="pl-c1">false</span>);
 
-<span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'data'</span>, assertNeverCalled());
-<span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'end'</span>, assertNeverCalled());</pre></div>
+<span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'<span class="pl-s">data</span>'</span>, <span class="pl-en">assertNeverCalled</span>());
+<span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'<span class="pl-s">end</span>'</span>, <span class="pl-en">assertNeverCalled</span>());</pre></div>
 <p>A successfully opened stream always MUST start in readable mode.</p>
 <p>Once the stream ends or closes, it MUST switch to non-readable mode.
 This can happen any time, explicitly through <code>close()</code> or
@@ -453,8 +453,8 @@ in paused state.</p>
 be emitted.</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">pause</span>();
 
-<span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'data'</span>, assertShouldNeverCalled());
-<span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'end'</span>, assertShouldNeverCalled());</pre></div>
+<span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'<span class="pl-s">data</span>'</span>, <span class="pl-en">assertShouldNeverCalled</span>());
+<span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'<span class="pl-s">end</span>'</span>, <span class="pl-en">assertShouldNeverCalled</span>());</pre></div>
 <p>This method is advisory-only, though generally not recommended, the
 stream MAY continue emitting <code>data</code> events.</p>
 <p>You can continue processing events by calling <code>resume()</code> again.</p>
@@ -488,13 +488,13 @@ set up chains of piped streams:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>source</span>-&gt;<span class="pl-en">pipe</span>(<span class="pl-s1"><span class="pl-c1">$</span>decodeGzip</span>)-&gt;<span class="pl-en">pipe</span>(<span class="pl-s1"><span class="pl-c1">$</span>filterBadWords</span>)-&gt;<span class="pl-en">pipe</span>(<span class="pl-s1"><span class="pl-c1">$</span>dest</span>);</pre></div>
 <p>By default, this will call <code>end()</code> on the destination stream once the
 source stream emits an <code>end</code> event. This can be disabled like this:</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>source</span>-&gt;<span class="pl-en">pipe</span>(<span class="pl-s1"><span class="pl-c1">$</span>dest</span>, <span class="pl-en">array</span>(<span class="pl-s">'end'</span> =&gt; <span class="pl-c1">false</span>));</pre></div>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>source</span>-&gt;<span class="pl-en">pipe</span>(<span class="pl-s1"><span class="pl-c1">$</span>dest</span>, <span class="pl-en">array</span>(<span class="pl-s">'<span class="pl-s">end</span>'</span> =&gt; <span class="pl-c1">false</span>));</pre></div>
 <p>Note that this only applies to the <code>end</code> event.
 If an <code>error</code> or explicit <code>close</code> event happens on the source stream,
 you'll have to manually close the destination stream:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>source</span>-&gt;<span class="pl-en">pipe</span>(<span class="pl-s1"><span class="pl-c1">$</span>dest</span>);
-<span class="pl-s1"><span class="pl-c1">$</span>source</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'close'</span>, <span class="pl-k">function</span> () <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>dest</span>) {
-    <span class="pl-s1"><span class="pl-c1">$</span>dest</span>-&gt;<span class="pl-en">end</span>(<span class="pl-s">'BYE!'</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>source</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'<span class="pl-s">close</span>'</span>, <span class="pl-k">function</span> () <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>dest</span>) {
+    <span class="pl-s1"><span class="pl-c1">$</span>dest</span>-&gt;<span class="pl-en">end</span>(<span class="pl-s">'<span class="pl-s">BYE!</span>'</span>);
 });</pre></div>
 <p>If the source stream is not readable (closed state), then this is a NO-OP.</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>source</span>-&gt;<span class="pl-en">close</span>();
@@ -521,10 +521,10 @@ if this method is called multiple times.</p>
 mode, see also <code>isReadable()</code>.
 This means that no further <code>data</code> or <code>end</code> events SHOULD be emitted.</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">close</span>();
-assert(<span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">isReadable</span>() === <span class="pl-c1">false</span>);
+<span class="pl-en">assert</span>(<span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">isReadable</span>() === <span class="pl-c1">false</span>);
 
-<span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'data'</span>, assertNeverCalled());
-<span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'end'</span>, assertNeverCalled());</pre></div>
+<span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'<span class="pl-s">data</span>'</span>, <span class="pl-en">assertNeverCalled</span>());
+<span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'<span class="pl-s">end</span>'</span>, <span class="pl-en">assertNeverCalled</span>());</pre></div>
 <p>If this stream is a <code>DuplexStreamInterface</code>, you should also notice
 how the writable side of the stream also implements a <code>close()</code> method.
 In other words, after calling this method, the stream MUST switch into
@@ -553,8 +553,8 @@ documentation of such a higher-level implementation.</p>
 <div class="markdown-heading"><h4 class="heading-element">drain event</h4><a id="drain-event" class="anchor" aria-label="Permalink: drain event" href="#drain-event"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The <code>drain</code> event will be emitted whenever the write buffer became full
 previously and is now ready to accept more data.</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'drain'</span>, <span class="pl-k">function</span> () <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>stream</span>) {
-    <span class="pl-k">echo</span> <span class="pl-s">'Stream is now ready to accept more data'</span>;
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'<span class="pl-s">drain</span>'</span>, <span class="pl-k">function</span> () <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>stream</span>) {
+    <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">Stream is now ready to accept more data</span>'</span>;
 });</pre></div>
 <p>This event SHOULD be emitted once every time the buffer became full
 previously and is now ready to accept more data.
@@ -568,11 +568,11 @@ previously.</p>
 into this stream.
 The event receives a single <code>ReadableStreamInterface</code> argument for the
 source stream.</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'pipe'</span>, <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">ReadableStreamInterface</span></span> <span class="pl-s1"><span class="pl-c1">$</span>source</span>) <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>stream</span>) {
-    <span class="pl-k">echo</span> <span class="pl-s">'Now receiving piped data'</span>;
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'<span class="pl-s">pipe</span>'</span>, <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">ReadableStreamInterface</span></span> <span class="pl-s1"><span class="pl-c1">$</span>source</span>) <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>stream</span>) {
+    <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">Now receiving piped data</span>'</span>;
 
     <span class="pl-c">// explicitly close target if source emits an error</span>
-    <span class="pl-s1"><span class="pl-c1">$</span>source</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'error'</span>, <span class="pl-k">function</span> () <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>stream</span>) {
+    <span class="pl-s1"><span class="pl-c1">$</span>source</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'<span class="pl-s">error</span>'</span>, <span class="pl-k">function</span> () <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>stream</span>) {
         <span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">close</span>();
     });
 });
@@ -589,8 +589,8 @@ This event MUST NOT be emitted if either the source is not readable
 <p>The <code>error</code> event will be emitted once a fatal error occurs, usually while
 trying to write to this stream.
 The event receives a single <code>Exception</code> argument for the error instance.</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'error'</span>, <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">Exception</span></span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>) {
-    <span class="pl-k">echo</span> <span class="pl-s">'Error: '</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'<span class="pl-s">error</span>'</span>, <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">Exception</span></span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>) {
+    <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">Error: </span>'</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
 });</pre></div>
 <p>This event SHOULD be emitted once the stream detects a fatal error, such
 as a fatal transmission error.
@@ -610,8 +610,8 @@ In other words, an error may occur while either reading or writing the
 stream which should result in the same error processing.</p>
 <div class="markdown-heading"><h4 class="heading-element">close event</h4><a id="close-event-1" class="anchor" aria-label="Permalink: close event" href="#close-event-1"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The <code>close</code> event will be emitted once the stream closes (terminates).</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'close'</span>, <span class="pl-k">function</span> () {
-    <span class="pl-k">echo</span> <span class="pl-s">'CLOSED'</span>;
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'<span class="pl-s">close</span>'</span>, <span class="pl-k">function</span> () {
+    <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">CLOSED</span>'</span>;
 });</pre></div>
 <p>This event SHOULD be emitted once or never at all, depending on whether
 the stream ever terminates.
@@ -636,10 +636,10 @@ check whether this stream is in a writable state (not closed already).</p>
 <p>This method can be used to check if the stream still accepts writing
 any data or if it is ended or closed already.
 Writing any data to a non-writable stream is a NO-OP:</p>
-<div class="highlight highlight-text-html-php"><pre>assert(<span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">isWritable</span>() === <span class="pl-c1">false</span>);
+<div class="highlight highlight-text-html-php"><pre><span class="pl-en">assert</span>(<span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">isWritable</span>() === <span class="pl-c1">false</span>);
 
-<span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">write</span>(<span class="pl-s">'end'</span>); <span class="pl-c">// NO-OP</span>
-<span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">end</span>(<span class="pl-s">'end'</span>); <span class="pl-c">// NO-OP</span></pre></div>
+<span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">write</span>(<span class="pl-s">'<span class="pl-s">end</span>'</span>); <span class="pl-c">// NO-OP</span>
+<span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">end</span>(<span class="pl-s">'<span class="pl-s">end</span>'</span>); <span class="pl-c">// NO-OP</span></pre></div>
 <p>A successfully opened stream always MUST start in writable mode.</p>
 <p>Once the stream ends or closes, it MUST switch to non-writable mode.
 This can happen any time, explicitly through <code>end()</code> or <code>close()</code> or
@@ -691,8 +691,8 @@ these low-level data chunks in order to achieve proper message framing.</p>
 successfully end the stream (after optionally sending some final data).</p>
 <p>This method can be used to successfully end the stream, i.e. close
 the stream after sending out all data that is currently buffered.</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">write</span>(<span class="pl-s">'hello'</span>);
-<span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">write</span>(<span class="pl-s">'world'</span>);
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">write</span>(<span class="pl-s">'<span class="pl-s">hello</span>'</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">write</span>(<span class="pl-s">'<span class="pl-s">world</span>'</span>);
 <span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">end</span>();</pre></div>
 <p>If there's no data currently buffered and nothing to be flushed, then
 this method MAY <code>close()</code> the stream immediately.</p>
@@ -712,19 +712,19 @@ before ending the stream. If a non-<code>null</code> value is given as <code>$da
 this method will behave just like calling <code>write($data)</code> before ending
 with no data.</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-c">// shorter version</span>
-<span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">end</span>(<span class="pl-s">'bye'</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">end</span>(<span class="pl-s">'<span class="pl-s">bye</span>'</span>);
 
 <span class="pl-c">// same as longer version</span>
-<span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">write</span>(<span class="pl-s">'bye'</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">write</span>(<span class="pl-s">'<span class="pl-s">bye</span>'</span>);
 <span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">end</span>();</pre></div>
 <p>After calling this method, the stream MUST switch into a non-writable
 mode, see also <code>isWritable()</code>.
 This means that no further writes are possible, so any additional
 <code>write()</code> or <code>end()</code> calls have no effect.</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">end</span>();
-assert(<span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">isWritable</span>() === <span class="pl-c1">false</span>);
+<span class="pl-en">assert</span>(<span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">isWritable</span>() === <span class="pl-c1">false</span>);
 
-<span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">write</span>(<span class="pl-s">'nope'</span>); <span class="pl-c">// NO-OP</span>
+<span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">write</span>(<span class="pl-s">'<span class="pl-s">nope</span>'</span>); <span class="pl-c">// NO-OP</span>
 <span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">end</span>(); <span class="pl-c">// NO-OP</span></pre></div>
 <p>If this stream is a <code>DuplexStreamInterface</code>, calling this method SHOULD
 also end its readable side, unless the stream supports half-open mode.
@@ -751,9 +751,9 @@ mode, see also <code>isWritable()</code>.
 This means that no further writes are possible, so any additional
 <code>write()</code> or <code>end()</code> calls have no effect.</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">close</span>();
-assert(<span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">isWritable</span>() === <span class="pl-c1">false</span>);
+<span class="pl-en">assert</span>(<span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">isWritable</span>() === <span class="pl-c1">false</span>);
 
-<span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">write</span>(<span class="pl-s">'nope'</span>); <span class="pl-c">// NO-OP</span>
+<span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">write</span>(<span class="pl-s">'<span class="pl-s">nope</span>'</span>); <span class="pl-c">// NO-OP</span>
 <span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">end</span>(); <span class="pl-c">// NO-OP</span></pre></div>
 <p>Note that this method should not be confused with the <code>end()</code> method.
 Unlike the <code>end()</code> method, this method does not take care of any existing
@@ -832,11 +832,11 @@ As an alternative, you may want to use higher-level libraries listed above.</p>
 <p>This can be used to represent a read-only resource like a file stream opened in
 readable mode or a stream such as <code>STDIN</code>:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>stream</span> = <span class="pl-k">new</span> <span class="pl-v">ReadableResourceStream</span>(<span class="pl-c1">STDIN</span>);
-<span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'data'</span>, <span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>chunk</span>) {
+<span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'<span class="pl-s">data</span>'</span>, <span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>chunk</span>) {
     <span class="pl-k">echo</span> <span class="pl-s1"><span class="pl-c1">$</span>chunk</span>;
 });
-<span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'end'</span>, <span class="pl-k">function</span> () {
-    <span class="pl-k">echo</span> <span class="pl-s">'END'</span>;
+<span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'<span class="pl-s">end</span>'</span>, <span class="pl-k">function</span> () {
+    <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">END</span>'</span>;
 });</pre></div>
 <p>See also <a href="#readablestreaminterface"><code>ReadableStreamInterface</code></a> for more details.</p>
 <p>The first parameter given to the constructor MUST be a valid stream resource
@@ -892,7 +892,7 @@ See <a href="https://github.com/reactphp/stream/issues/81">#81</a> for more deta
 <p>This can be used to represent a write-only resource like a file stream opened in
 writable mode or a stream such as <code>STDOUT</code> or <code>STDERR</code>:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>stream</span> = <span class="pl-k">new</span> <span class="pl-v">WritableResourceStream</span>(<span class="pl-c1">STDOUT</span>);
-<span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">write</span>(<span class="pl-s">'hello!'</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">write</span>(<span class="pl-s">'<span class="pl-s">hello!</span>'</span>);
 <span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">end</span>();</pre></div>
 <p>See also <a href="#writablestreaminterface"><code>WritableStreamInterface</code></a> for more details.</p>
 <p>The first parameter given to the constructor MUST be a valid stream resource
@@ -949,9 +949,9 @@ underlying stream resource.</p>
 <a href="#duplexstreaminterface"><code>DuplexStreamInterface</code></a> for PHP's stream resources.</p>
 <p>This can be used to represent a read-and-write resource like a file stream opened
 in read and write mode mode or a stream such as a TCP/IP connection:</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>conn</span> = stream_socket_client(<span class="pl-s">'tcp://google.com:80'</span>);
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>conn</span> = <span class="pl-en">stream_socket_client</span>(<span class="pl-s">'<span class="pl-s">tcp://google.com:80</span>'</span>);
 <span class="pl-s1"><span class="pl-c1">$</span>stream</span> = <span class="pl-k">new</span> <span class="pl-v">DuplexResourceStream</span>(<span class="pl-s1"><span class="pl-c1">$</span>conn</span>);
-<span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">write</span>(<span class="pl-s">'hello!'</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">write</span>(<span class="pl-s">'<span class="pl-s">hello!</span>'</span>);
 <span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">end</span>();</pre></div>
 <p>See also <a href="#duplexstreaminterface"><code>DuplexStreamInterface</code></a> for more details.</p>
 <p>The first parameter given to the constructor MUST be a valid stream resource
@@ -990,7 +990,7 @@ underlying stream resource.
 This should read until the stream resource is not readable anymore
 (i.e. underlying buffer drained), note that this does not neccessarily
 mean it reached EOF.</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>conn</span> = stream_socket_client(<span class="pl-s">'tcp://google.com:80'</span>);
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>conn</span> = <span class="pl-en">stream_socket_client</span>(<span class="pl-s">'<span class="pl-s">tcp://google.com:80</span>'</span>);
 <span class="pl-s1"><span class="pl-c1">$</span>stream</span> = <span class="pl-k">new</span> <span class="pl-v">DuplexResourceStream</span>(<span class="pl-s1"><span class="pl-c1">$</span>conn</span>, <span class="pl-c1">null</span>, <span class="pl-c1">8192</span>);</pre></div>
 <p>Any <code>write()</code> calls to this class will not be performed instantly, but will
 be performed asynchronously, once the EventLoop reports the stream resource is
@@ -1004,7 +1004,7 @@ You can use a <code>null</code> value here in order to apply its default value.
 This value SHOULD NOT be changed unless you know what you're doing.</p>
 <p>If you want to change the write buffer soft limit, you can pass an instance of
 <a href="#writableresourcestream"><code>WritableResourceStream</code></a> like this:</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>conn</span> = stream_socket_client(<span class="pl-s">'tcp://google.com:80'</span>);
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>conn</span> = <span class="pl-en">stream_socket_client</span>(<span class="pl-s">'<span class="pl-s">tcp://google.com:80</span>'</span>);
 <span class="pl-s1"><span class="pl-c1">$</span>buffer</span> = <span class="pl-k">new</span> <span class="pl-v">WritableResourceStream</span>(<span class="pl-s1"><span class="pl-c1">$</span>conn</span>, <span class="pl-c1">null</span>, <span class="pl-c1">8192</span>);
 <span class="pl-s1"><span class="pl-c1">$</span>stream</span> = <span class="pl-k">new</span> <span class="pl-v">DuplexResourceStream</span>(<span class="pl-s1"><span class="pl-c1">$</span>conn</span>, <span class="pl-c1">null</span>, <span class="pl-c1">null</span>, <span class="pl-s1"><span class="pl-c1">$</span>buffer</span>);</pre></div>
 <p>See also <a href="#writableresourcestream"><code>WritableResourceStream</code></a> for more details.</p>
@@ -1017,9 +1017,9 @@ This value SHOULD NOT be changed unless you know what you're doing.</p>
 <a href="#duplexstreaminterface"><code>DuplexStreamInterface</code></a> and will simply pass any data
 you write to it through to its readable end.</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>through</span> = <span class="pl-k">new</span> <span class="pl-v">ThroughStream</span>();
-<span class="pl-s1"><span class="pl-c1">$</span>through</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'data'</span>, <span class="pl-s1"><span class="pl-c1">$</span><span class="pl-smi">this</span></span>-&gt;<span class="pl-en">expectCallableOnceWith</span>(<span class="pl-s">'hello'</span>));
+<span class="pl-s1"><span class="pl-c1">$</span>through</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'<span class="pl-s">data</span>'</span>, <span class="pl-s1"><span class="pl-c1">$</span><span class="pl-smi">this</span></span>-&gt;<span class="pl-en">expectCallableOnceWith</span>(<span class="pl-s">'<span class="pl-s">hello</span>'</span>));
 
-<span class="pl-s1"><span class="pl-c1">$</span>through</span>-&gt;<span class="pl-en">write</span>(<span class="pl-s">'hello'</span>);</pre></div>
+<span class="pl-s1"><span class="pl-c1">$</span>through</span>-&gt;<span class="pl-en">write</span>(<span class="pl-s">'<span class="pl-s">hello</span>'</span>);</pre></div>
 <p>Similarly, the <a href="#end"><code>end()</code> method</a> will end the stream and emit an
 <a href="#end-event"><code>end</code> event</a> and then <a href="#close-1"><code>close()</code></a> the stream.
 The <a href="#close-1"><code>close()</code> method</a> will close the stream and emit a
@@ -1031,28 +1031,28 @@ Accordingly, this is can also be used in a <a href="#pipe"><code>pipe()</code></
 used to <em>filter</em> any data written to it. This function receives a single data
 argument as passed to the writable side and must return the data as it will be
 passed to its readable end:</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>through</span> = <span class="pl-k">new</span> <span class="pl-v">ThroughStream</span>(<span class="pl-s">'strtoupper'</span>);
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>through</span> = <span class="pl-k">new</span> <span class="pl-v">ThroughStream</span>(<span class="pl-s">'<span class="pl-s">strtoupper</span>'</span>);
 <span class="pl-s1"><span class="pl-c1">$</span>source</span>-&gt;<span class="pl-en">pipe</span>(<span class="pl-s1"><span class="pl-c1">$</span>through</span>)-&gt;<span class="pl-en">pipe</span>(<span class="pl-s1"><span class="pl-c1">$</span>dest</span>);</pre></div>
 <p>Note that this class makes no assumptions about any data types. This can be
 used to convert data, for example for transforming any structured data into
 a newline-delimited JSON (NDJSON) stream like this:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>through</span> = <span class="pl-k">new</span> <span class="pl-v">ThroughStream</span>(<span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>data</span>) {
-    <span class="pl-k">return</span> json_encode(<span class="pl-s1"><span class="pl-c1">$</span>data</span>) . <span class="pl-c1">PHP_EOL</span>;
+    <span class="pl-k">return</span> <span class="pl-en">json_encode</span>(<span class="pl-s1"><span class="pl-c1">$</span>data</span>) . <span class="pl-c1">PHP_EOL</span>;
 });
-<span class="pl-s1"><span class="pl-c1">$</span>through</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'data'</span>, <span class="pl-s1"><span class="pl-c1">$</span><span class="pl-smi">this</span></span>-&gt;<span class="pl-en">expectCallableOnceWith</span>("<span class="pl-s">[2, true]</span>\n"));
+<span class="pl-s1"><span class="pl-c1">$</span>through</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'<span class="pl-s">data</span>'</span>, <span class="pl-s1"><span class="pl-c1">$</span><span class="pl-smi">this</span></span>-&gt;<span class="pl-en">expectCallableOnceWith</span>(<span class="pl-s">"<span class="pl-s">[2, true]</span>\n"</span>));
 
 <span class="pl-s1"><span class="pl-c1">$</span>through</span>-&gt;<span class="pl-en">write</span>(<span class="pl-en">array</span>(<span class="pl-c1">2</span>, <span class="pl-c1">true</span>));</pre></div>
 <p>The callback function is allowed to throw an <code>Exception</code>. In this case,
 the stream will emit an <code>error</code> event and then <a href="#close-1"><code>close()</code></a> the stream.</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>through</span> = <span class="pl-k">new</span> <span class="pl-v">ThroughStream</span>(<span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>data</span>) {
-    <span class="pl-k">if</span> (!is_string(<span class="pl-s1"><span class="pl-c1">$</span>data</span>)) {
-        <span class="pl-k">throw</span> <span class="pl-k">new</span> \<span class="pl-v">UnexpectedValueException</span>(<span class="pl-s">'Only strings allowed'</span>);
+    <span class="pl-k">if</span> (!<span class="pl-en">is_string</span>(<span class="pl-s1"><span class="pl-c1">$</span>data</span>)) {
+        <span class="pl-k">throw</span> <span class="pl-k">new</span> \<span class="pl-v">UnexpectedValueException</span>(<span class="pl-s">'<span class="pl-s">Only strings allowed</span>'</span>);
     }
     <span class="pl-k">return</span> <span class="pl-s1"><span class="pl-c1">$</span>data</span>;
 });
-<span class="pl-s1"><span class="pl-c1">$</span>through</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'error'</span>, <span class="pl-s1"><span class="pl-c1">$</span><span class="pl-smi">this</span></span>-&gt;<span class="pl-en">expectCallableOnce</span>()));
-<span class="pl-s1"><span class="pl-c1">$</span>through</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'close'</span>, <span class="pl-s1"><span class="pl-c1">$</span><span class="pl-smi">this</span></span>-&gt;<span class="pl-en">expectCallableOnce</span>()));
-<span class="pl-s1"><span class="pl-c1">$</span>through</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'data'</span>, <span class="pl-s1"><span class="pl-c1">$</span><span class="pl-smi">this</span></span>-&gt;<span class="pl-en">expectCallableNever</span>()));
+<span class="pl-s1"><span class="pl-c1">$</span>through</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'<span class="pl-s">error</span>'</span>, <span class="pl-s1"><span class="pl-c1">$</span><span class="pl-smi">this</span></span>-&gt;<span class="pl-en">expectCallableOnce</span>()));
+<span class="pl-s1"><span class="pl-c1">$</span>through</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'<span class="pl-s">close</span>'</span>, <span class="pl-s1"><span class="pl-c1">$</span><span class="pl-smi">this</span></span>-&gt;<span class="pl-en">expectCallableOnce</span>()));
+<span class="pl-s1"><span class="pl-c1">$</span>through</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'<span class="pl-s">data</span>'</span>, <span class="pl-s1"><span class="pl-c1">$</span><span class="pl-smi">this</span></span>-&gt;<span class="pl-en">expectCallableNever</span>()));
 
 <span class="pl-s1"><span class="pl-c1">$</span>through</span>-&gt;<span class="pl-en">write</span>(<span class="pl-c1">2</span>);</pre></div>
 <div class="markdown-heading"><h3 class="heading-element">CompositeStream</h3><a id="compositestream" class="anchor" aria-label="Permalink: CompositeStream" href="#compositestream"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
@@ -1069,8 +1069,8 @@ more convenient to work with a single stream instance like this:</p>
 
 <span class="pl-s1"><span class="pl-c1">$</span>stdio</span> = <span class="pl-k">new</span> <span class="pl-v">CompositeStream</span>(<span class="pl-s1"><span class="pl-c1">$</span>stdin</span>, <span class="pl-s1"><span class="pl-c1">$</span>stdout</span>);
 
-<span class="pl-s1"><span class="pl-c1">$</span>stdio</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'data'</span>, <span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>chunk</span>) <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>stdio</span>) {
-    <span class="pl-s1"><span class="pl-c1">$</span>stdio</span>-&gt;<span class="pl-en">write</span>(<span class="pl-s">'You said: '</span> . <span class="pl-s1"><span class="pl-c1">$</span>chunk</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>stdio</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'<span class="pl-s">data</span>'</span>, <span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>chunk</span>) <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>stdio</span>) {
+    <span class="pl-s1"><span class="pl-c1">$</span>stdio</span>-&gt;<span class="pl-en">write</span>(<span class="pl-s">'<span class="pl-s">You said: </span>'</span> . <span class="pl-s1"><span class="pl-c1">$</span>chunk</span>);
 });</pre></div>
 <p>This is a well-behaving stream which forwards all stream events from the
 underlying streams and forwards all streams calls to the underlying streams.</p>
@@ -1086,8 +1086,8 @@ duplex stream, it will <code>close()</code> the other side and return a closed s
 <div class="markdown-heading"><h2 class="heading-element">Usage</h2><a id="usage" class="anchor" aria-label="Permalink: Usage" href="#usage"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The following example can be used to pipe the contents of a source file into
 a destination file without having to ever read the whole file into memory:</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>source</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Stream</span>\<span class="pl-v">ReadableResourceStream</span>(fopen(<span class="pl-s">'source.txt'</span>, <span class="pl-s">'r'</span>));
-<span class="pl-s1"><span class="pl-c1">$</span>dest</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Stream</span>\<span class="pl-v">WritableResourceStream</span>(fopen(<span class="pl-s">'destination.txt'</span>, <span class="pl-s">'w'</span>));
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>source</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Stream</span>\<span class="pl-v">ReadableResourceStream</span>(<span class="pl-en">fopen</span>(<span class="pl-s">'<span class="pl-s">source.txt</span>'</span>, <span class="pl-s">'<span class="pl-s">r</span>'</span>));
+<span class="pl-s1"><span class="pl-c1">$</span>dest</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Stream</span>\<span class="pl-v">WritableResourceStream</span>(<span class="pl-en">fopen</span>(<span class="pl-s">'<span class="pl-s">destination.txt</span>'</span>, <span class="pl-s">'<span class="pl-s">w</span>'</span>));
 
 <span class="pl-s1"><span class="pl-c1">$</span>source</span>-&gt;<span class="pl-en">pipe</span>(<span class="pl-s1"><span class="pl-c1">$</span>dest</span>);</pre></div>
 <blockquote>
@@ -1470,7 +1470,7 @@ for a list of packages that use streams in real-world applications.</li>
         <mask id="reactphp-stream-participation-sparkline" x="0" y="0" width="320" height="40" >
             <polyline 
                 transform="translate(0, 40) scale(1,-1)"
-                points="0,1 6,1 12,1 18,1 24,1 30,1 36,1 42,2 48,4 54,1 60,1 66,1 72,1 78,1 84,1 90,1 96,1 102,1 108,1 114,1 120,1 126,1 132,1 138,1 144,1 150,1 156,3 162,1 168,1 174,1 180,4 186,1 192,1 198,1 204,1 210,1 216,1 222,1 228,1 234,1 240,1 246,6 252,3 258,1 264,2 270,1 276,1 282,1 288,1 294,1 300,1 306,1" 
+                points="0,1 6,2 12,4 18,1 24,1 30,1 36,1 42,1 48,1 54,1 60,1 66,1 72,1 78,1 84,1 90,1 96,1 102,1 108,1 114,1 120,3 126,1 132,1 138,1 144,4 150,1 156,1 162,1 168,1 174,1 180,1 186,1 192,1 198,1 204,1 210,6 216,3 222,1 228,2 234,1 240,1 246,1 252,1 258,1 264,1 270,1 276,1 282,1 288,1 294,1 300,1 306,1" 
                 fill="transparent" 
                 stroke="#40a977" 
                 stroke-width="2"

@@ -120,7 +120,7 @@
                         Datagram
 
                         <span class="off-canvas-menu__version">
-                            v1.9.0
+                            v1.10.0
                         </span>
                     </a>
                 </li>
@@ -257,8 +257,8 @@ This now makes it trivially easy to create plaintext TCP/IP, secure TLS and<br>
 Unix domain socket (UDS) connection streams simply like this:</p>
 <div class="highlight highlight-text-html-php"><pre class="notranslate"><span class="pl-s1"><span class="pl-c1">$</span>connector</span> = <span class="pl-k">new</span> <span class="pl-v">Connector</span>(<span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
 
-<span class="pl-s1"><span class="pl-c1">$</span>connector</span>-&gt;<span class="pl-en">connect</span>(<span class="pl-s">'tls://google.com:443'</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">ConnectionInterface</span></span> <span class="pl-s1"><span class="pl-c1">$</span>conn</span>) {
-    <span class="pl-s1"><span class="pl-c1">$</span>conn</span>-&gt;<span class="pl-en">write</span>("<span class="pl-s">GET / HTTP/1.0</span>\r\n\r\n");
+<span class="pl-s1"><span class="pl-c1">$</span>connector</span>-&gt;<span class="pl-en">connect</span>(<span class="pl-s">'<span class="pl-s">tls://google.com:443</span>'</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">ConnectionInterface</span></span> <span class="pl-s1"><span class="pl-c1">$</span>conn</span>) {
+    <span class="pl-s1"><span class="pl-c1">$</span>conn</span>-&gt;<span class="pl-en">write</span>(<span class="pl-s">"<span class="pl-s">GET / HTTP/1.0</span>\r\n\r\n"</span>);
 });</pre></div>
 <p>Optionally, it accepts options to configure all underlying connectors, such<br>
 as using a custom DNS setup, timeout values and disabling certain protocols<br>
@@ -336,15 +336,15 @@ and expose remote and local addresses through this interface<br>
 and remove superfluous and undocumented <code class="notranslate">ConnectionException</code>.<br>
 (#74, #82 and #84 by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 <div class="highlight highlight-text-html-php"><pre class="notranslate"><span class="pl-c">// old</span>
-<span class="pl-s1"><span class="pl-c1">$</span>connector</span>-&gt;<span class="pl-en">create</span>(<span class="pl-s">'google.com'</span>, <span class="pl-c1">80</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">Stream</span></span> <span class="pl-s1"><span class="pl-c1">$</span>conn</span>) {
-    <span class="pl-k">echo</span> <span class="pl-s">'Connected'</span> . <span class="pl-c1">PHP_EOL</span>;
-    <span class="pl-s1"><span class="pl-c1">$</span>conn</span>-&gt;<span class="pl-en">write</span>("<span class="pl-s">GET / HTTP/1.0</span>\r\n\r\n");
+<span class="pl-s1"><span class="pl-c1">$</span>connector</span>-&gt;<span class="pl-en">create</span>(<span class="pl-s">'<span class="pl-s">google.com</span>'</span>, <span class="pl-c1">80</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">Stream</span></span> <span class="pl-s1"><span class="pl-c1">$</span>conn</span>) {
+    <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">Connected</span>'</span> . <span class="pl-c1">PHP_EOL</span>;
+    <span class="pl-s1"><span class="pl-c1">$</span>conn</span>-&gt;<span class="pl-en">write</span>(<span class="pl-s">"<span class="pl-s">GET / HTTP/1.0</span>\r\n\r\n"</span>);
 });
 
 <span class="pl-c">// new</span>
-<span class="pl-s1"><span class="pl-c1">$</span>connector</span>-&gt;<span class="pl-en">connect</span>(<span class="pl-s">'google.com:80'</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">ConnectionInterface</span></span> <span class="pl-s1"><span class="pl-c1">$</span>conn</span>) {
-    <span class="pl-k">echo</span> <span class="pl-s">'Connected to '</span> . <span class="pl-s1"><span class="pl-c1">$</span>conn</span>-&gt;<span class="pl-en">getRemoteAddress</span>() . <span class="pl-c1">PHP_EOL</span>;
-    <span class="pl-s1"><span class="pl-c1">$</span>conn</span>-&gt;<span class="pl-en">write</span>("<span class="pl-s">GET / HTTP/1.0</span>\r\n\r\n");
+<span class="pl-s1"><span class="pl-c1">$</span>connector</span>-&gt;<span class="pl-en">connect</span>(<span class="pl-s">'<span class="pl-s">google.com:80</span>'</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">ConnectionInterface</span></span> <span class="pl-s1"><span class="pl-c1">$</span>conn</span>) {
+    <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">Connected to </span>'</span> . <span class="pl-s1"><span class="pl-c1">$</span>conn</span>-&gt;<span class="pl-en">getRemoteAddress</span>() . <span class="pl-c1">PHP_EOL</span>;
+    <span class="pl-s1"><span class="pl-c1">$</span>conn</span>-&gt;<span class="pl-en">write</span>(<span class="pl-s">"<span class="pl-s">GET / HTTP/1.0</span>\r\n\r\n"</span>);
 });</pre></div>
 <blockquote>
 <p>Note that both the old <code class="notranslate">Stream</code> and the new <code class="notranslate">ConnectionInterface</code> implement<br>

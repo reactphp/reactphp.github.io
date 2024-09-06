@@ -120,7 +120,7 @@
                         Datagram
 
                         <span class="off-canvas-menu__version">
-                            v1.9.0
+                            v1.10.0
                         </span>
                     </a>
                 </li>
@@ -221,6 +221,7 @@
                     <h1>Datagram Changelog</h1>
 
     <ul class="toc">
+            <li><a href="#2024" title="Jump to year 2024 (1 release)">2024</a></li>
             <li><a href="#2022" title="Jump to year 2022 (1 release)">2022</a></li>
             <li><a href="#2021" title="Jump to year 2021 (3 releases)">2021</a></li>
             <li><a href="#2019" title="Jump to year 2019 (1 release)">2019</a></li>
@@ -232,6 +233,37 @@
         </ul>
 
     <h2>
+        <a id="2024" class="anchor" href="#2024" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+        2024
+    </h2>
+
+    
+            <h3>
+        <a id="1100-2024-09-06" class="anchor" href="#1100-2024-09-06" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        1.10.0
+
+        <small>
+            (2024-09-06)
+            <a href="https://github.com/reactphp/datagram/releases/tag/v1.10.0" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul dir="auto">
+<li>
+<p dir="auto">Feature: Improve PHP 8.4+ support by avoiding implicitly nullable type declarations.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="2459171223" data-permission-text="Title is private" data-url="https://github.com/reactphp/datagram/issues/59" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/datagram/pull/59/hovercard" href="https://github.com/reactphp/datagram/pull/59">#59</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+</li>
+<li>
+<p dir="auto">Feature: Full PHP 8.3 compatibility.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="2055072875" data-permission-text="Title is private" data-url="https://github.com/reactphp/datagram/issues/57" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/datagram/pull/57/hovercard" href="https://github.com/reactphp/datagram/pull/57">#57</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+</li>
+</ul>
+
+    <hr>
+        <h2>
         <a id="2022" class="anchor" href="#2022" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
         2022
     </h2>
@@ -429,7 +461,7 @@ nameserver config on all supported platforms<br>
 such as a corporate DNS server or when using Docker containers, will now<br>
 work as expected across all platforms with no changes required:</p>
 <div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-s1"><span class="pl-c1">$</span>factory</span> = <span class="pl-k">new</span> <span class="pl-v">Factory</span>(<span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
-<span class="pl-s1"><span class="pl-c1">$</span>factory</span>-&gt;<span class="pl-en">createClient</span>(<span class="pl-s">'intranet.example:5353'</span>);</pre></div>
+<span class="pl-s1"><span class="pl-c1">$</span>factory</span>-&gt;<span class="pl-en">createClient</span>(<span class="pl-s">'<span class="pl-s">intranet.example:5353</span>'</span>);</pre></div>
 </li>
 <li>
 <p dir="auto">Improve README<br>
@@ -466,7 +498,7 @@ and update DNS dependency to support hosts file on all platforms<br>
 those used for Docker containers) will now work as expected across all<br>
 platforms with no changes required:</p>
 <div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-s1"><span class="pl-c1">$</span>factory</span> = <span class="pl-k">new</span> <span class="pl-v">Factory</span>(<span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
-<span class="pl-s1"><span class="pl-c1">$</span>factory</span>-&gt;<span class="pl-en">createClient</span>(<span class="pl-s">'localhost:5353'</span>);</pre></div>
+<span class="pl-s1"><span class="pl-c1">$</span>factory</span>-&gt;<span class="pl-en">createClient</span>(<span class="pl-s">'<span class="pl-s">localhost:5353</span>'</span>);</pre></div>
 </li>
 </ul>
 
@@ -624,7 +656,7 @@ Upgrading from clue/datagram v0.5.0? Use namespace <code class="notranslate">Rea
 
                             <div class="version-selector">
                                 <button class="version-selector__button version-selector__button--latest" data-ctrly="component-version-selector" data-version-selector-control>
-                                    v1.9.0
+                                    v1.10.0
 
                                     <i class="icon-chevron-down" aria-hidden="true"></i>
                                     <i class="icon-chevron-up" aria-hidden="true"></i>
@@ -640,6 +672,11 @@ Upgrading from clue/datagram v0.5.0? Use namespace <code class="notranslate">Rea
                                             </a>
                                         </li>
                                                                                                                                                                                                                     <li>
+                                                <a href="https://github.com/reactphp/datagram/tree/v1.9.0#readme" class="version-selector__version">
+                                                    v1.9.0
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
                                                 <a href="https://github.com/reactphp/datagram/tree/v1.8.0#readme" class="version-selector__version">
                                                     v1.8.0
                                                 </a>
@@ -719,19 +756,19 @@ Upgrading from clue/datagram v0.5.0? Use namespace <code class="notranslate">Rea
 
                         <h3 class="component-info__subtitle">Installation</h3>
 
-                        <div class="highlight highlight-source-shell"><pre>composer require react/datagram:^1.9.0</pre></div>
+                        <div class="highlight highlight-source-shell"><pre>composer require react/datagram:^1.10.0</pre></div>
 
                         <h3 class="component-info__subtitle">Contributors</h3>
 
                         <ul class="component-info__contributors">
                                                     <li>
                                 <a href="https://github.com/clue">
-                                    <img src="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=80 2x" alt="clue" title="clue (181 contributions)">
+                                    <img src="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=80 2x" alt="clue" title="clue (183 contributions)">
                                 </a>
                             </li>
                                                     <li>
                                 <a href="https://github.com/WyriHaximus">
-                                    <img src="https://avatars.githubusercontent.com/u/147145?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/147145?v=4&amp;s=80 2x" alt="WyriHaximus" title="WyriHaximus (29 contributions)">
+                                    <img src="https://avatars.githubusercontent.com/u/147145?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/147145?v=4&amp;s=80 2x" alt="WyriHaximus" title="WyriHaximus (30 contributions)">
                                 </a>
                             </li>
                                                     <li>
@@ -793,7 +830,7 @@ Upgrading from clue/datagram v0.5.0? Use namespace <code class="notranslate">Rea
         <mask id="reactphp-datagram-participation-sparkline" x="0" y="0" width="320" height="40" >
             <polyline 
                 transform="translate(0, 40) scale(1,-1)"
-                points="0,1 6,1 12,1 18,1 24,1 30,1 36,1 42,2 48,1 54,1 60,1 66,1 72,1 78,1 84,1 90,1 96,1 102,1 108,1 114,1 120,1 126,1 132,2 138,1 144,1 150,1 156,1 162,1 168,1 174,1 180,1 186,1 192,1 198,1 204,1 210,1 216,1 222,1 228,1 234,1 240,1 246,1 252,1 258,1 264,1 270,1 276,1 282,1 288,1 294,1 300,1 306,1" 
+                points="0,1 6,2 12,1 18,1 24,1 30,1 36,1 42,1 48,1 54,1 60,1 66,1 72,1 78,1 84,1 90,1 96,2 102,1 108,1 114,1 120,1 126,1 132,1 138,1 144,1 150,1 156,1 162,1 168,1 174,1 180,1 186,1 192,1 198,1 204,1 210,1 216,1 222,1 228,2 234,1 240,1 246,1 252,1 258,1 264,1 270,1 276,1 282,1 288,1 294,1 300,1 306,2" 
                 fill="transparent" 
                 stroke="#40a977" 
                 stroke-width="2"

@@ -120,7 +120,7 @@
                         Datagram
 
                         <span class="off-canvas-menu__version">
-                            v1.9.0
+                            v1.10.0
                         </span>
                     </a>
                 </li>
@@ -222,7 +222,7 @@
 
 
             <ul class="toc">
-            <li><a href="#2024" title="Jump to year 2024 (7 releases)">2024</a></li>
+            <li><a href="#2024" title="Jump to year 2024 (8 releases)">2024</a></li>
             <li><a href="#2023" title="Jump to year 2023 (23 releases)">2023</a></li>
             <li><a href="#2022" title="Jump to year 2022 (17 releases)">2022</a></li>
             <li><a href="#2021" title="Jump to year 2021 (25 releases)">2021</a></li>
@@ -242,6 +242,32 @@
         2024
     </h2>
 
+    
+                        <h3>
+        <a id="datagram-1100-2024-09-06" class="anchor" href="#datagram-1100-2024-09-06" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        Datagram 1.10.0
+
+        <small>
+            (2024-09-06)
+            <a href="https://github.com/reactphp/datagram/releases/tag/v1.10.0" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul dir="auto">
+<li>
+<p dir="auto">Feature: Improve PHP 8.4+ support by avoiding implicitly nullable type declarations.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="2459171223" data-permission-text="Title is private" data-url="https://github.com/reactphp/datagram/issues/59" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/datagram/pull/59/hovercard" href="https://github.com/reactphp/datagram/pull/59">#59</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+</li>
+<li>
+<p dir="auto">Feature: Full PHP 8.3 compatibility.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="2055072875" data-permission-text="Title is private" data-url="https://github.com/reactphp/datagram/issues/57" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/datagram/pull/57/hovercard" href="https://github.com/reactphp/datagram/pull/57">#57</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+</li>
+</ul>
+
+    <hr>
     
                         <h3>
         <a id="socket-1160-2024-07-26" class="anchor" href="#socket-1160-2024-07-26" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
@@ -553,9 +579,9 @@ the old RingCentral PSR-7 dependency, you can still install it like this:</p>
 <p dir="auto">All our public APIs now use Promise v3 template types to guide IDEs and static<br>
 analysis tools (like PHPStan), helping with proper type usage and improving<br>
 code quality:</p>
-<div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate">assertType(<span class="pl-s">'bool'</span>, await(resolve(<span class="pl-c1">true</span>)));
-assertType(<span class="pl-s">'PromiseInterface&lt;bool&gt;'</span>, async(fn(): <span class="pl-smi">bool</span> =&gt; <span class="pl-c1">true</span>)());
-assertType(<span class="pl-s">'PromiseInterface&lt;bool&gt;'</span>, coroutine(fn(): <span class="pl-smi">bool</span> =&gt; <span class="pl-c1">true</span>));</pre></div>
+<div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-en">assertType</span>(<span class="pl-s">'<span class="pl-s">bool</span>'</span>, <span class="pl-en">await</span>(<span class="pl-en">resolve</span>(<span class="pl-c1">true</span>)));
+<span class="pl-en">assertType</span>(<span class="pl-s">'<span class="pl-s">PromiseInterface&lt;bool&gt;</span>'</span>, <span class="pl-en">async</span>(fn(): <span class="pl-smi">bool</span> =&gt; <span class="pl-c1">true</span>)());
+<span class="pl-en">assertType</span>(<span class="pl-s">'<span class="pl-s">PromiseInterface&lt;bool&gt;</span>'</span>, <span class="pl-en">coroutine</span>(fn(): <span class="pl-smi">bool</span> =&gt; <span class="pl-c1">true</span>));</pre></div>
 </li>
 <li>
 <p dir="auto">Feature: Full PHP 8.3 compatibility.<br>
@@ -592,8 +618,8 @@ of newer language features. We encourage upgrading to the latest version when po
 <p dir="auto">All our public APIs now use Promise v3 template types to guide IDEs and static<br>
 analysis tools (like PHPStan), helping with proper type usage and improving<br>
 code quality:</p>
-<div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate">assertType(<span class="pl-s">'bool'</span>, await(resolve(<span class="pl-c1">true</span>)));
-assertType(<span class="pl-s">'PromiseInterface&lt;bool&gt;'</span>, coroutine(fn(): <span class="pl-smi">bool</span> =&gt; <span class="pl-c1">true</span>));</pre></div>
+<div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-en">assertType</span>(<span class="pl-s">'<span class="pl-s">bool</span>'</span>, <span class="pl-en">await</span>(<span class="pl-en">resolve</span>(<span class="pl-c1">true</span>)));
+<span class="pl-en">assertType</span>(<span class="pl-s">'<span class="pl-s">PromiseInterface&lt;bool&gt;</span>'</span>, <span class="pl-en">coroutine</span>(fn(): <span class="pl-smi">bool</span> =&gt; <span class="pl-c1">true</span>));</pre></div>
 </li>
 <li>
 <p dir="auto">Feature: Full PHP 8.3 compatibility.<br>
@@ -842,18 +868,18 @@ The new <code class="notranslate">catch()</code> and <code class="notranslate">f
 The old <del><code class="notranslate">ExtendedPromiseInterface</code></del> and <del><code class="notranslate">CancellablePromiseInterface</code></del> are no longer needed and have been removed as a consequence.<br>
 (<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="197011154" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/75" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/75/hovercard" href="https://github.com/reactphp/promise/pull/75">#75</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/jsor/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/jsor">@jsor</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1111820388" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/208" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/208/hovercard" href="https://github.com/reactphp/promise/pull/208">#208</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a> and <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/WyriHaximus/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/WyriHaximus">@WyriHaximus</a>)</p>
 <div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-c">// old (multiple interfaces may or may not be implemented)</span>
-assert(<span class="pl-s1"><span class="pl-c1">$</span>promise</span> instanceof <span class="pl-v">PromiseInterface</span>);
-assert(method_exists(<span class="pl-s1"><span class="pl-c1">$</span>promise</span>, <span class="pl-s">'then'</span>));
-<span class="pl-k">if</span> (<span class="pl-s1"><span class="pl-c1">$</span>promise</span> instanceof <span class="pl-v">ExtendedPromiseInterface</span>) { assert(method_exists(<span class="pl-s1"><span class="pl-c1">$</span>promise</span>, <span class="pl-s">'otherwise'</span>)); }
-<span class="pl-k">if</span> (<span class="pl-s1"><span class="pl-c1">$</span>promise</span> instanceof <span class="pl-v">ExtendedPromiseInterface</span>) { assert(method_exists(<span class="pl-s1"><span class="pl-c1">$</span>promise</span>, <span class="pl-s">'always'</span>)); }
-<span class="pl-k">if</span> (<span class="pl-s1"><span class="pl-c1">$</span>promise</span> instanceof <span class="pl-v">CancellablePromiseInterface</span>) { assert(method_exists(<span class="pl-s1"><span class="pl-c1">$</span>promise</span>, <span class="pl-s">'cancel'</span>)); }
+<span class="pl-en">assert</span>(<span class="pl-s1"><span class="pl-c1">$</span>promise</span> instanceof <span class="pl-v">PromiseInterface</span>);
+<span class="pl-en">assert</span>(<span class="pl-en">method_exists</span>(<span class="pl-s1"><span class="pl-c1">$</span>promise</span>, <span class="pl-s">'<span class="pl-s">then</span>'</span>));
+<span class="pl-k">if</span> (<span class="pl-s1"><span class="pl-c1">$</span>promise</span> instanceof <span class="pl-v">ExtendedPromiseInterface</span>) { <span class="pl-en">assert</span>(<span class="pl-en">method_exists</span>(<span class="pl-s1"><span class="pl-c1">$</span>promise</span>, <span class="pl-s">'<span class="pl-s">otherwise</span>'</span>)); }
+<span class="pl-k">if</span> (<span class="pl-s1"><span class="pl-c1">$</span>promise</span> instanceof <span class="pl-v">ExtendedPromiseInterface</span>) { <span class="pl-en">assert</span>(<span class="pl-en">method_exists</span>(<span class="pl-s1"><span class="pl-c1">$</span>promise</span>, <span class="pl-s">'<span class="pl-s">always</span>'</span>)); }
+<span class="pl-k">if</span> (<span class="pl-s1"><span class="pl-c1">$</span>promise</span> instanceof <span class="pl-v">CancellablePromiseInterface</span>) { <span class="pl-en">assert</span>(<span class="pl-en">method_exists</span>(<span class="pl-s1"><span class="pl-c1">$</span>promise</span>, <span class="pl-s">'<span class="pl-s">cancel</span>'</span>)); }
 
 <span class="pl-c">// new (single PromiseInterface with all methods)</span>
-assert(<span class="pl-s1"><span class="pl-c1">$</span>promise</span> instanceof <span class="pl-v">PromiseInterface</span>);
-assert(method_exists(<span class="pl-s1"><span class="pl-c1">$</span>promise</span>, <span class="pl-s">'then'</span>));
-assert(method_exists(<span class="pl-s1"><span class="pl-c1">$</span>promise</span>, <span class="pl-s">'catch'</span>));
-assert(method_exists(<span class="pl-s1"><span class="pl-c1">$</span>promise</span>, <span class="pl-s">'finally'</span>));
-assert(method_exists(<span class="pl-s1"><span class="pl-c1">$</span>promise</span>, <span class="pl-s">'cancel'</span>));</pre></div>
+<span class="pl-en">assert</span>(<span class="pl-s1"><span class="pl-c1">$</span>promise</span> instanceof <span class="pl-v">PromiseInterface</span>);
+<span class="pl-en">assert</span>(<span class="pl-en">method_exists</span>(<span class="pl-s1"><span class="pl-c1">$</span>promise</span>, <span class="pl-s">'<span class="pl-s">then</span>'</span>));
+<span class="pl-en">assert</span>(<span class="pl-en">method_exists</span>(<span class="pl-s1"><span class="pl-c1">$</span>promise</span>, <span class="pl-s">'<span class="pl-s">catch</span>'</span>));
+<span class="pl-en">assert</span>(<span class="pl-en">method_exists</span>(<span class="pl-s1"><span class="pl-c1">$</span>promise</span>, <span class="pl-s">'<span class="pl-s">finally</span>'</span>));
+<span class="pl-en">assert</span>(<span class="pl-en">method_exists</span>(<span class="pl-s1"><span class="pl-c1">$</span>promise</span>, <span class="pl-s">'<span class="pl-s">cancel</span>'</span>));</pre></div>
 </li>
 <li>
 <p dir="auto">Feature / BC break: Improve type safety of promises. Require <code class="notranslate">mixed</code> fulfillment value argument and <code class="notranslate">Throwable</code> (or <code class="notranslate">Exception</code>) as rejection reason.<br>
@@ -861,19 +887,19 @@ Add PHPStan template types to ensure strict types for <code class="notranslate">
 It is no longer possible to resolve a promise without a value (use <code class="notranslate">null</code> instead) or reject a promise without a reason (use <code class="notranslate">Throwable</code> instead).<br>
 (<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="212537435" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/93" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/93/hovercard" href="https://github.com/reactphp/promise/pull/93">#93</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="442133247" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/141" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/141/hovercard" href="https://github.com/reactphp/promise/pull/141">#141</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="442355884" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/142" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/142/hovercard" href="https://github.com/reactphp/promise/pull/142">#142</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/jsor/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/jsor">@jsor</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="435220838" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/138" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/138/hovercard" href="https://github.com/reactphp/promise/pull/138">#138</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="503454885" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/149" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/149/hovercard" href="https://github.com/reactphp/promise/pull/149">#149</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1772846597" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/247" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/247/hovercard" href="https://github.com/reactphp/promise/pull/247">#247</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/WyriHaximus/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/WyriHaximus">@WyriHaximus</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1149271061" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/213" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/213/hovercard" href="https://github.com/reactphp/promise/pull/213">#213</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1765690467" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/246" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/246/hovercard" href="https://github.com/reactphp/promise/pull/246">#246</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 <div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-c">// old (arguments used to be optional)</span>
-<span class="pl-s1"><span class="pl-c1">$</span>promise</span> = resolve();
-<span class="pl-s1"><span class="pl-c1">$</span>promise</span> = reject();
+<span class="pl-s1"><span class="pl-c1">$</span>promise</span> = <span class="pl-en">resolve</span>();
+<span class="pl-s1"><span class="pl-c1">$</span>promise</span> = <span class="pl-en">reject</span>();
 
 <span class="pl-c">// new (already supported before)</span>
-<span class="pl-s1"><span class="pl-c1">$</span>promise</span> = resolve(<span class="pl-c1">null</span>);
-<span class="pl-s1"><span class="pl-c1">$</span>promise</span> = reject(<span class="pl-k">new</span> <span class="pl-v">RuntimeException</span>());</pre></div>
+<span class="pl-s1"><span class="pl-c1">$</span>promise</span> = <span class="pl-en">resolve</span>(<span class="pl-c1">null</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>promise</span> = <span class="pl-en">reject</span>(<span class="pl-k">new</span> <span class="pl-v">RuntimeException</span>());</pre></div>
 </li>
 <li>
 <p dir="auto">Feature / BC break: Report all unhandled rejections by default and remove <del><code class="notranslate">done()</code></del> method.<br>
 Add new <code class="notranslate">set_rejection_handler()</code> function to set the global rejection handler for unhandled promise rejections.<br>
 (<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1791714349" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/248" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/248/hovercard" href="https://github.com/reactphp/promise/pull/248">#248</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1797287944" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/249" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/249/hovercard" href="https://github.com/reactphp/promise/pull/249">#249</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1258040087" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/224" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/224/hovercard" href="https://github.com/reactphp/promise/pull/224">#224</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 <div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-c">// Unhandled promise rejection with RuntimeException: Unhandled in example.php:2</span>
-reject(<span class="pl-k">new</span> <span class="pl-v">RuntimeException</span>(<span class="pl-s">'Unhandled'</span>));</pre></div>
+<span class="pl-en">reject</span>(<span class="pl-k">new</span> <span class="pl-v">RuntimeException</span>(<span class="pl-s">'<span class="pl-s">Unhandled</span>'</span>));</pre></div>
 </li>
 <li>
 <p dir="auto">BC break: Remove all deprecated APIs and reduce API surface.<br>
@@ -1002,12 +1028,12 @@ and are not part of the final release:</p>
 <li>
 <p dir="auto">Feature: Add new <code class="notranslate">delay()</code> function to delay program execution.<br>
 (<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1478701897" data-permission-text="Title is private" data-url="https://github.com/reactphp/async/issues/69" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/async/pull/69/hovercard" href="https://github.com/reactphp/async/pull/69">#69</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1761027660" data-permission-text="Title is private" data-url="https://github.com/reactphp/async/issues/78" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/async/pull/78/hovercard" href="https://github.com/reactphp/async/pull/78">#78</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
-<div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-k">echo</span> <span class="pl-s">'a'</span>;
+<div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">a</span>'</span>;
 <span class="pl-v">Loop</span>::<span class="pl-en">addTimer</span>(<span class="pl-c1">1.0</span>, <span class="pl-k">function</span> () {
-    <span class="pl-k">echo</span> <span class="pl-s">'b'</span>;
+    <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">b</span>'</span>;
 });
 <span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Async</span>\delay</span>(<span class="pl-c1">3.0</span>);
-<span class="pl-k">echo</span> <span class="pl-s">'c'</span>;
+<span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">c</span>'</span>;
 
 <span class="pl-c">// prints "a" at t=0.0s</span>
 <span class="pl-c">// prints "b" at t=1.0s</span>
@@ -1038,12 +1064,12 @@ and are not part of the final release:</p>
 <li>
 <p dir="auto">Feature: Add new <code class="notranslate">delay()</code> function to delay program execution.<br>
 (<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1481843312" data-permission-text="Title is private" data-url="https://github.com/reactphp/async/issues/71" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/async/pull/71/hovercard" href="https://github.com/reactphp/async/pull/71">#71</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
-<div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-k">echo</span> <span class="pl-s">'a'</span>;
+<div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">a</span>'</span>;
 <span class="pl-v">Loop</span>::<span class="pl-en">addTimer</span>(<span class="pl-c1">1.0</span>, <span class="pl-k">function</span> () {
-    <span class="pl-k">echo</span> <span class="pl-s">'b'</span>;
+    <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">b</span>'</span>;
 });
 <span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Async</span>\delay</span>(<span class="pl-c1">3.0</span>);
-<span class="pl-k">echo</span> <span class="pl-s">'c'</span>;
+<span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">c</span>'</span>;
 
 <span class="pl-c">// prints "a" at t=0.0s</span>
 <span class="pl-c">// prints "b" at t=1.0s</span>
@@ -1074,12 +1100,12 @@ and are not part of the final release:</p>
 <li>
 <p dir="auto">Feature: Add new <code class="notranslate">delay()</code> function to delay program execution.<br>
 (<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1481880823" data-permission-text="Title is private" data-url="https://github.com/reactphp/async/issues/72" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/async/pull/72/hovercard" href="https://github.com/reactphp/async/pull/72">#72</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
-<div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-k">echo</span> <span class="pl-s">'a'</span>;
+<div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">a</span>'</span>;
 <span class="pl-v">Loop</span>::<span class="pl-en">addTimer</span>(<span class="pl-c1">1.0</span>, <span class="pl-k">function</span> () {
-    <span class="pl-k">echo</span> <span class="pl-s">'b'</span>;
+    <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">b</span>'</span>;
 });
 <span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Async</span>\delay</span>(<span class="pl-c1">3.0</span>);
-<span class="pl-k">echo</span> <span class="pl-s">'c'</span>;
+<span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">c</span>'</span>;
 
 <span class="pl-c">// prints "a" at t=0.0s</span>
 <span class="pl-c">// prints "b" at t=1.0s</span>
@@ -1280,8 +1306,8 @@ connection and repeating the TLS handshake for secure HTTPS requests.</p>
 <div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-s1"><span class="pl-c1">$</span>browser</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Browser</span>();
 
 <span class="pl-c">// Up to 300% faster! HTTP keep-alive is enabled by default</span>
-<span class="pl-s1"><span class="pl-c1">$</span>response</span> = <span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Async</span>\await</span>(<span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">get</span>(<span class="pl-s">'https://httpbingo.org/redirect/6'</span>));
-assert(<span class="pl-s1"><span class="pl-c1">$</span>response</span> instanceof <span class="pl-v">Psr</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">ResponseInterface</span>);</pre></div>
+<span class="pl-s1"><span class="pl-c1">$</span>response</span> = <span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Async</span>\await</span>(<span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">get</span>(<span class="pl-s">'<span class="pl-s">https://httpbingo.org/redirect/6</span>'</span>));
+<span class="pl-en">assert</span>(<span class="pl-s1"><span class="pl-c1">$</span>response</span> instanceof <span class="pl-v">Psr</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">ResponseInterface</span>);</pre></div>
 </li>
 <li>
 <p dir="auto">Feature: Add <code class="notranslate">Request</code> class to represent outgoing HTTP request message.<br>
@@ -1398,7 +1424,7 @@ assert(<span class="pl-s1"><span class="pl-c1">$</span>response</span> instanceo
 <p dir="auto">Feature: Support for default request headers.<br>
 (<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1284092777" data-permission-text="Title is private" data-url="https://github.com/reactphp/http/issues/461" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/http/pull/461/hovercard" href="https://github.com/reactphp/http/pull/461">#461</a> by @51imyy)</p>
 <div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-s1"><span class="pl-c1">$</span>browser</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Browser</span>();
-<span class="pl-s1"><span class="pl-c1">$</span>browser</span> = <span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">withHeader</span>(<span class="pl-s">'User-Agent'</span>, <span class="pl-s">'ACME'</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>browser</span> = <span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">withHeader</span>(<span class="pl-s">'<span class="pl-s">User-Agent</span>'</span>, <span class="pl-s">'<span class="pl-s">ACME</span>'</span>);
 
 <span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">get</span>(<span class="pl-s1"><span class="pl-c1">$</span>url</span>)-&gt;<span class="pl-en">then</span>(…);</pre></div>
 </li>
@@ -1920,14 +1946,14 @@ Run tests on PHP 8.1, PHPUnit 9, switch to GitHub actions and clean up test suit
 <p dir="auto">Feature: Support union types and address deprecation of <code class="notranslate">ReflectionType::getClass()</code> (PHP 8+).<br>
 (<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1027301171" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/198" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/198/hovercard" href="https://github.com/reactphp/promise/pull/198">#198</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/cdosoftei/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/cdosoftei">@cdosoftei</a> and <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/SimonFrings/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/SimonFrings">@SimonFrings</a>)</p>
 <div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-s1"><span class="pl-c1">$</span>promise</span>-&gt;<span class="pl-en">otherwise</span>(<span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">OverflowException</span></span>|<span class="pl-smi"><span class="pl-smi">UnderflowException</span></span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>) {
-    <span class="pl-k">echo</span> <span class="pl-s">'Error: '</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
+    <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">Error: </span>'</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
 });</pre></div>
 </li>
 <li>
 <p dir="auto">Feature: Support intersection types (PHP 8.1+).<br>
 (<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1009515307" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/195" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/195/hovercard" href="https://github.com/reactphp/promise/pull/195">#195</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/bzikarsky/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/bzikarsky">@bzikarsky</a>)</p>
-<div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-s1"><span class="pl-c1">$</span>promise</span>-&gt;<span class="pl-en">otherwise</span>(<span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">OverflowException</span></span>&amp;<span class="pl-v">CacheException</span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>) {
-    <span class="pl-k">echo</span> <span class="pl-s">'Error: '</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
+<div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-s1"><span class="pl-c1">$</span>promise</span>-&gt;<span class="pl-en">otherwise</span>(<span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">OverflowException</span></span>&amp;<span class="pl-smi"><span class="pl-smi">CacheException</span></span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>) {
+    <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">Error: </span>'</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
 });</pre></div>
 </li>
 <li>
@@ -1956,10 +1982,10 @@ update to PHPUnit 9, and add full core team to the license.<br>
 <li>
 <p dir="auto">Feature: Add factory methods for common HTML/JSON/plaintext/XML response types.<br>
 (<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1122815462" data-permission-text="Title is private" data-url="https://github.com/reactphp/http/issues/439" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/http/pull/439/hovercard" href="https://github.com/reactphp/http/pull/439">#439</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
-<div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-s1"><span class="pl-c1">$</span>response</span> = <span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Response</span>\html</span>("<span class="pl-s">&lt;h1&gt;Hello wörld!&lt;/h1&gt;</span>\n");
-<span class="pl-s1"><span class="pl-c1">$</span>response</span> = <span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Response</span>\json</span>([<span class="pl-s">'message'</span> =&gt; <span class="pl-s">'Hello wörld!'</span>]);
-<span class="pl-s1"><span class="pl-c1">$</span>response</span> = <span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Response</span>\plaintext</span>("<span class="pl-s">Hello wörld!</span>\n");
-<span class="pl-s1"><span class="pl-c1">$</span>response</span> = <span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Response</span>\xml</span>("<span class="pl-s">&lt;message&gt;Hello wörld!&lt;/message&gt;</span>\n");</pre></div>
+<div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-s1"><span class="pl-c1">$</span>response</span> = <span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Response</span>\html</span>(<span class="pl-s">"<span class="pl-s">&lt;h1&gt;Hello wörld!&lt;/h1&gt;</span>\n"</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>response</span> = <span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Response</span>\json</span>([<span class="pl-s">'<span class="pl-s">message</span>'</span> =&gt; <span class="pl-s">'<span class="pl-s">Hello wörld!</span>'</span>]);
+<span class="pl-s1"><span class="pl-c1">$</span>response</span> = <span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Response</span>\plaintext</span>(<span class="pl-s">"<span class="pl-s">Hello wörld!</span>\n"</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>response</span> = <span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Response</span>\xml</span>(<span class="pl-s">"<span class="pl-s">&lt;message&gt;Hello wörld!&lt;/message&gt;</span>\n"</span>);</pre></div>
 </li>
 <li>
 <p dir="auto">Feature: Expose all status code constants via <code class="notranslate">Response</code> class.<br>
@@ -2121,7 +2147,7 @@ by refactoring <code class="notranslate">Parser</code> to avoid assigning dynami
 <li>
 <p dir="auto">Feature: Support listening on existing file descriptors (FDs) with <code class="notranslate">SocketServer</code>.<br>
 (<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="977977806" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/269" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/269/hovercard" href="https://github.com/reactphp/socket/pull/269">#269</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
-<div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-s1"><span class="pl-c1">$</span>socket</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">SocketSever</span>(<span class="pl-s">'php://fd/3'</span>);</pre></div>
+<div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-s1"><span class="pl-c1">$</span>socket</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">SocketSever</span>(<span class="pl-s">'<span class="pl-s">php://fd/3</span>'</span>);</pre></div>
 <p dir="auto">This is particularly useful when using <a href="https://www.freedesktop.org/software/systemd/man/systemd.socket.html" rel="nofollow">systemd socket activation</a> like this:</p>
 <div class="highlight highlight-source-shell" dir="auto"><pre class="notranslate">$ systemd-socket-activate -l 8000 php examples/03-http-server.php php://fd/3</pre></div>
 </li>
@@ -2142,7 +2168,7 @@ message should give the most relevant details for any connection issues:</p>
 <span class="pl-s1"><span class="pl-c1">$</span>connector</span>-&gt;<span class="pl-en">connect</span>(<span class="pl-s1"><span class="pl-c1">$</span>uri</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi"><span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">ConnectionInterface</span></span></span> <span class="pl-s1"><span class="pl-c1">$</span>conn</span>) {
     <span class="pl-c">// …</span>
 }, <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">Exception</span></span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>) {
-    <span class="pl-k">echo</span> <span class="pl-s">'Error:'</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
+    <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">Error:</span>'</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
 });</pre></div>
 </li>
 <li>
@@ -2175,7 +2201,7 @@ message should give the most relevant details for any issues:</p>
 <div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Promise</span>\<span class="pl-v">Stream</span>\buffer</span>(<span class="pl-s1"><span class="pl-c1">$</span>stream</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-smi">string</span> <span class="pl-s1"><span class="pl-c1">$</span>contents</span>) {
     <span class="pl-c">// …</span>
 }, <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">Exception</span></span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>) {
-    <span class="pl-k">echo</span> <span class="pl-s">'Error:'</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
+    <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">Error:</span>'</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
 });</pre></div>
 </li>
 <li>
@@ -2256,7 +2282,7 @@ to avoid any ambiguities with regards to the new <code class="notranslate">Socke
 
 <span class="pl-c">// new</span>
 <span class="pl-s1"><span class="pl-c1">$</span>http</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">HttpServer</span>(<span class="pl-s1"><span class="pl-c1">$</span>handler</span>);
-<span class="pl-s1"><span class="pl-c1">$</span>http</span>-&gt;<span class="pl-en">listen</span>(<span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">SocketServer</span>(<span class="pl-s">'127.0.0.1:8080'</span>));</pre></div>
+<span class="pl-s1"><span class="pl-c1">$</span>http</span>-&gt;<span class="pl-en">listen</span>(<span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">SocketServer</span>(<span class="pl-s">'<span class="pl-s">127.0.0.1:8080</span>'</span>));</pre></div>
 </li>
 </ul>
 
@@ -2285,15 +2311,15 @@ The previous name has been deprecated and should not be used anymore.<br>
 In its most basic form, the deprecated <code class="notranslate">Server</code> can now be considered an alias for new <code class="notranslate">SocketServer</code>.</p>
 <div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-c">// deprecated</span>
 <span class="pl-s1"><span class="pl-c1">$</span>socket</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Server</span>(<span class="pl-c1">0</span>);
-<span class="pl-s1"><span class="pl-c1">$</span>socket</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Server</span>(<span class="pl-s">'127.0.0.1:8000'</span>);
-<span class="pl-s1"><span class="pl-c1">$</span>socket</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Server</span>(<span class="pl-s">'127.0.0.1:8000'</span>, <span class="pl-c1">null</span>, <span class="pl-s1"><span class="pl-c1">$</span>context</span>);
-<span class="pl-s1"><span class="pl-c1">$</span>socket</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Server</span>(<span class="pl-s">'127.0.0.1:8000'</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>, <span class="pl-s1"><span class="pl-c1">$</span>context</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>socket</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Server</span>(<span class="pl-s">'<span class="pl-s">127.0.0.1:8000</span>'</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>socket</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Server</span>(<span class="pl-s">'<span class="pl-s">127.0.0.1:8000</span>'</span>, <span class="pl-c1">null</span>, <span class="pl-s1"><span class="pl-c1">$</span>context</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>socket</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Server</span>(<span class="pl-s">'<span class="pl-s">127.0.0.1:8000</span>'</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>, <span class="pl-s1"><span class="pl-c1">$</span>context</span>);
 
 <span class="pl-c">// new</span>
-<span class="pl-s1"><span class="pl-c1">$</span>socket</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">SocketServer</span>(<span class="pl-s">'127.0.0.1:0'</span>);
-<span class="pl-s1"><span class="pl-c1">$</span>socket</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">SocketServer</span>(<span class="pl-s">'127.0.0.1:8000'</span>);
-<span class="pl-s1"><span class="pl-c1">$</span>socket</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">SocketServer</span>(<span class="pl-s">'127.0.0.1:8000'</span>, <span class="pl-s1"><span class="pl-c1">$</span>context</span>);
-<span class="pl-s1"><span class="pl-c1">$</span>socket</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">SocketServer</span>(<span class="pl-s">'127.0.0.1:8000'</span>, <span class="pl-s1"><span class="pl-c1">$</span>context</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);</pre></div>
+<span class="pl-s1"><span class="pl-c1">$</span>socket</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">SocketServer</span>(<span class="pl-s">'<span class="pl-s">127.0.0.1:0</span>'</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>socket</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">SocketServer</span>(<span class="pl-s">'<span class="pl-s">127.0.0.1:8000</span>'</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>socket</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">SocketServer</span>(<span class="pl-s">'<span class="pl-s">127.0.0.1:8000</span>'</span>, <span class="pl-s1"><span class="pl-c1">$</span>context</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>socket</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">SocketServer</span>(<span class="pl-s">'<span class="pl-s">127.0.0.1:8000</span>'</span>, <span class="pl-s1"><span class="pl-c1">$</span>context</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);</pre></div>
 </li>
 <li>
 <p dir="auto">Feature: Update <code class="notranslate">Connector</code> signature to take optional <code class="notranslate">$context</code> as first argument.<br>
@@ -2333,14 +2359,14 @@ In its most basic form, both signatures are compatible.</p>
 <p dir="auto">Feature: Simplify usage by supporting new <a href="https://reactphp.org/event-loop/#loop" rel="nofollow">default loop</a>.<br>
 (<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="937625116" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise-timer/issues/46" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise-timer/pull/46/hovercard" href="https://github.com/reactphp/promise-timer/pull/46">#46</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 <div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-c">// old (still supported)</span>
-<span class="pl-s1"><span class="pl-c1">$</span>promise</span> = timeout(<span class="pl-s1"><span class="pl-c1">$</span>promise</span>, <span class="pl-s1"><span class="pl-c1">$</span>time</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
-<span class="pl-s1"><span class="pl-c1">$</span>promise</span> = resolve(<span class="pl-s1"><span class="pl-c1">$</span>time</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
-<span class="pl-s1"><span class="pl-c1">$</span>promise</span> = reject(<span class="pl-s1"><span class="pl-c1">$</span>time</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>promise</span> = <span class="pl-en">timeout</span>(<span class="pl-s1"><span class="pl-c1">$</span>promise</span>, <span class="pl-s1"><span class="pl-c1">$</span>time</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>promise</span> = <span class="pl-en">resolve</span>(<span class="pl-s1"><span class="pl-c1">$</span>time</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>promise</span> = <span class="pl-en">reject</span>(<span class="pl-s1"><span class="pl-c1">$</span>time</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
 
 <span class="pl-c">// new (using default loop)</span>
-<span class="pl-s1"><span class="pl-c1">$</span>promise</span> = timeout(<span class="pl-s1"><span class="pl-c1">$</span>promise</span>, <span class="pl-s1"><span class="pl-c1">$</span>time</span>);
-<span class="pl-s1"><span class="pl-c1">$</span>promise</span> = resolve(<span class="pl-s1"><span class="pl-c1">$</span>time</span>);
-<span class="pl-s1"><span class="pl-c1">$</span>promise</span> = reject(<span class="pl-s1"><span class="pl-c1">$</span>time</span>);</pre></div>
+<span class="pl-s1"><span class="pl-c1">$</span>promise</span> = <span class="pl-en">timeout</span>(<span class="pl-s1"><span class="pl-c1">$</span>promise</span>, <span class="pl-s1"><span class="pl-c1">$</span>time</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>promise</span> = <span class="pl-en">resolve</span>(<span class="pl-s1"><span class="pl-c1">$</span>time</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>promise</span> = <span class="pl-en">reject</span>(<span class="pl-s1"><span class="pl-c1">$</span>time</span>);</pre></div>
 </li>
 <li>
 <p dir="auto">Improve test suite, use GitHub actions for continuous integration (CI),<br>
@@ -2458,11 +2484,11 @@ update PHPUnit config, run tests on PHP 8 and add full core team to the license.
 <p dir="auto">Feature: Simplify usage by supporting new <a href="https://reactphp.org/event-loop/#loop" rel="nofollow">default loop</a>.<br>
 (<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="939800316" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/260" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/260/hovercard" href="https://github.com/reactphp/socket/pull/260">#260</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 <div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-c">// old (still supported)</span>
-<span class="pl-s1"><span class="pl-c1">$</span>socket</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Server</span>(<span class="pl-s">'127.0.0.1:8080'</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>socket</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Server</span>(<span class="pl-s">'<span class="pl-s">127.0.0.1:8080</span>'</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
 <span class="pl-s1"><span class="pl-c1">$</span>connector</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Connector</span>(<span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
 
 <span class="pl-c">// new (using default loop)</span>
-<span class="pl-s1"><span class="pl-c1">$</span>socket</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Server</span>(<span class="pl-s">'127.0.0.1:8080'</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>socket</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Server</span>(<span class="pl-s">'<span class="pl-s">127.0.0.1:8080</span>'</span>);
 <span class="pl-s1"><span class="pl-c1">$</span>connector</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Connector</span>();</pre></div>
 </li>
 </ul>
@@ -2558,12 +2584,12 @@ update PHPUnit config, run tests on PHP 8 and add full core team to the license.
 It provides all methods that exist on the <code class="notranslate">LoopInterface</code> as static methods and<br>
 will automatically execute the loop at the end of the program:</p>
 <div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-s1"><span class="pl-c1">$</span>timer</span> = <span class="pl-v">Loop</span>::<span class="pl-en">addPeriodicTimer</span>(<span class="pl-c1">0.1</span>, <span class="pl-k">function</span> () {
-    <span class="pl-k">echo</span> <span class="pl-s">'Tick'</span> . <span class="pl-c1">PHP_EOL</span>;
+    <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">Tick</span>'</span> . <span class="pl-c1">PHP_EOL</span>;
 });
 
 <span class="pl-v">Loop</span>::<span class="pl-en">addTimer</span>(<span class="pl-c1">1.0</span>, <span class="pl-k">function</span> () <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>timer</span>) {
     <span class="pl-v">Loop</span>::<span class="pl-en">cancelTimer</span>(<span class="pl-s1"><span class="pl-c1">$</span>timer</span>);
-    <span class="pl-k">echo</span> <span class="pl-s">'Done'</span> . <span class="pl-c1">PHP_EOL</span>;
+    <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">Done</span>'</span> . <span class="pl-c1">PHP_EOL</span>;
 });</pre></div>
 <p dir="auto">The explicit loop instructions are still valid and may still be useful in some applications,<br>
 especially for a transition period towards the more concise style.<br>
@@ -2677,13 +2703,13 @@ Add new <code class="notranslate">FallbackExecutor</code> and use fallback DNS s
 (<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="926863800" data-permission-text="Title is private" data-url="https://github.com/reactphp/dns/issues/179" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/dns/pull/179/hovercard" href="https://github.com/reactphp/dns/pull/179">#179</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="929436114" data-permission-text="Title is private" data-url="https://github.com/reactphp/dns/issues/180" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/dns/pull/180/hovercard" href="https://github.com/reactphp/dns/pull/180">#180</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 <div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-c">// old (still supported)</span>
 <span class="pl-s1"><span class="pl-c1">$</span>config</span> = <span class="pl-v">React</span>\<span class="pl-v">Dns</span>\<span class="pl-v">Config</span>\<span class="pl-v">Config</span>::<span class="pl-en">loadSystemConfigBlocking</span>();
-<span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-s1"><span class="pl-c1">$</span>config</span>-&gt;<span class="pl-c1">nameservers</span> ? reset(<span class="pl-s1"><span class="pl-c1">$</span>config</span>-&gt;<span class="pl-c1">nameservers</span>) : <span class="pl-s">'8.8.8.8'</span>;
+<span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-s1"><span class="pl-c1">$</span>config</span>-&gt;<span class="pl-c1">nameservers</span> ? <span class="pl-en">reset</span>(<span class="pl-s1"><span class="pl-c1">$</span>config</span>-&gt;<span class="pl-c1">nameservers</span>) : <span class="pl-s">'<span class="pl-s">8.8.8.8</span>'</span>;
 <span class="pl-s1"><span class="pl-c1">$</span>resolver</span> = <span class="pl-s1"><span class="pl-c1">$</span>factory</span>-&gt;<span class="pl-en">create</span>(<span class="pl-s1"><span class="pl-c1">$</span>server</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
 
 <span class="pl-c">// new</span>
 <span class="pl-s1"><span class="pl-c1">$</span>config</span> = <span class="pl-v">React</span>\<span class="pl-v">Dns</span>\<span class="pl-v">Config</span>\<span class="pl-v">Config</span>::<span class="pl-en">loadSystemConfigBlocking</span>();
 <span class="pl-k">if</span> (!<span class="pl-s1"><span class="pl-c1">$</span>config</span>-&gt;<span class="pl-c1">nameservers</span>) {
-    <span class="pl-s1"><span class="pl-c1">$</span>config</span>-&gt;<span class="pl-c1">nameservers</span>[] = <span class="pl-s">'8.8.8.8'</span>;
+    <span class="pl-s1"><span class="pl-c1">$</span>config</span>-&gt;<span class="pl-c1">nameservers</span>[] = <span class="pl-s">'<span class="pl-s">8.8.8.8</span>'</span>;
 }
 <span class="pl-s1"><span class="pl-c1">$</span>resolver</span> = <span class="pl-s1"><span class="pl-c1">$</span>factory</span>-&gt;<span class="pl-en">create</span>(<span class="pl-s1"><span class="pl-c1">$</span>config</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);</pre></div>
 </li>
@@ -3116,10 +3142,10 @@ change <code class="notranslate">Server</code> to accept variadic middleware han
 expose <code class="notranslate">ServerRequest</code> class to <code class="notranslate">React\Http\Message\ServerRequest</code>.<br>
 (<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="653929433" data-permission-text="Title is private" data-url="https://github.com/reactphp/http/issues/370" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/http/pull/370/hovercard" href="https://github.com/reactphp/http/pull/370">#370</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 <div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-c">// old</span>
-<span class="pl-s1"><span class="pl-c1">$</span>response</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Response</span>(<span class="pl-c1">200</span>, [], <span class="pl-s">'Hello!'</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>response</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Response</span>(<span class="pl-c1">200</span>, [], <span class="pl-s">'<span class="pl-s">Hello!</span>'</span>);
 
 <span class="pl-c">// new</span>
-<span class="pl-s1"><span class="pl-c1">$</span>response</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">Response</span>(<span class="pl-c1">200</span>, [], <span class="pl-s">'Hello!'</span>);</pre></div>
+<span class="pl-s1"><span class="pl-c1">$</span>response</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">Response</span>(<span class="pl-c1">200</span>, [], <span class="pl-s">'<span class="pl-s">Hello!</span>'</span>);</pre></div>
 </li>
 <li>
 <p dir="auto">Feature / BC break: Add <code class="notranslate">StreamingRequestMiddleware</code> to stream incoming requests, mark <code class="notranslate">StreamingServer</code> as internal.<br>
@@ -4256,7 +4282,7 @@ underlying socket error. Similarly, lost/dropped connections during a TLS<br>
 handshake will now report a lost connection instead of an empty error reason.</p>
 <p dir="auto">For most common use cases this means that simply reporting the <code class="notranslate">Exception</code><br>
 message should give the most relevant details for any connection issues:</p>
-<div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-s1"><span class="pl-c1">$</span>promise</span> = <span class="pl-s1"><span class="pl-c1">$</span>connector</span>-&gt;<span class="pl-en">connect</span>(<span class="pl-s">'tls://example.com:443'</span>);
+<div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-s1"><span class="pl-c1">$</span>promise</span> = <span class="pl-s1"><span class="pl-c1">$</span>connector</span>-&gt;<span class="pl-en">connect</span>(<span class="pl-s">'<span class="pl-s">tls://example.com:443</span>'</span>);
 <span class="pl-s1"><span class="pl-c1">$</span>promise</span>-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">ConnectionInterface</span></span> <span class="pl-s1"><span class="pl-c1">$</span>conn</span>) <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>loop</span>) {
     <span class="pl-c">// …</span>
 }, <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">Exception</span></span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>) {
@@ -4389,8 +4415,8 @@ so you have a rock-solid foundation to build on top of.</li>
 <li>
 <p dir="auto">Feature: Add <code class="notranslate">resolveAll()</code> method to support custom query types in <code class="notranslate">Resolver</code>.<br>
 (<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="336884718" data-permission-text="Title is private" data-url="https://github.com/reactphp/dns/issues/110" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/dns/pull/110/hovercard" href="https://github.com/reactphp/dns/pull/110">#110</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a> and <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/WyriHaximus/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/WyriHaximus">@WyriHaximus</a>)</p>
-<div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-s1"><span class="pl-c1">$</span>resolver</span>-&gt;<span class="pl-en">resolveAll</span>(<span class="pl-s">'reactphp.org'</span>, <span class="pl-v">Message</span>::<span class="pl-c1">TYPE_AAAA</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>ips</span>) {
-    <span class="pl-k">echo</span> <span class="pl-s">'IPv6 addresses for reactphp.org '</span> . implode(<span class="pl-s">', '</span>, <span class="pl-s1"><span class="pl-c1">$</span>ips</span>) . <span class="pl-c1">PHP_EOL</span>;
+<div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-s1"><span class="pl-c1">$</span>resolver</span>-&gt;<span class="pl-en">resolveAll</span>(<span class="pl-s">'<span class="pl-s">reactphp.org</span>'</span>, <span class="pl-v">Message</span>::<span class="pl-c1">TYPE_AAAA</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>ips</span>) {
+    <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">IPv6 addresses for reactphp.org </span>'</span> . <span class="pl-en">implode</span>(<span class="pl-s">'<span class="pl-s">, </span>'</span>, <span class="pl-s1"><span class="pl-c1">$</span>ips</span>) . <span class="pl-c1">PHP_EOL</span>;
 });</pre></div>
 </li>
 <li>
@@ -4823,7 +4849,7 @@ providing backwards compatibility with the last release.</p>
 <code class="notranslate">LoopInterface::addSignal()</code> and <code class="notranslate">LoopInterface::removeSignal()</code> methods.<br>
 (<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="245468234" data-permission-text="Title is private" data-url="https://github.com/reactphp/event-loop/issues/104" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/event-loop/pull/104/hovercard" href="https://github.com/reactphp/event-loop/pull/104">#104</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/WyriHaximus/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/WyriHaximus">@WyriHaximus</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="265329808" data-permission-text="Title is private" data-url="https://github.com/reactphp/event-loop/issues/111" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/event-loop/pull/111/hovercard" href="https://github.com/reactphp/event-loop/pull/111">#111</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="294792335" data-permission-text="Title is private" data-url="https://github.com/reactphp/event-loop/issues/150" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/event-loop/pull/150/hovercard" href="https://github.com/reactphp/event-loop/pull/150">#150</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 <div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-s1"><span class="pl-c1">$</span>loop</span>-&gt;<span class="pl-en">addSignal</span>(<span class="pl-c1">SIGINT</span>, <span class="pl-k">function</span> () {
-    <span class="pl-k">echo</span> <span class="pl-s">'CTRL-C'</span>;
+    <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">CTRL-C</span>'</span>;
 });</pre></div>
 </li>
 <li>
@@ -4865,16 +4891,16 @@ and remove all <code class="notranslate">callable</code> type hints for consiste
 <p dir="auto">Remove unneeded <code class="notranslate">TimerInterface::setData()</code> and <code class="notranslate">TimerInterface::getData()</code>,<br>
 use closure binding to add arbitrary data to timer instead:</p>
 <div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-c">// old (limited setData() and getData() only allows single variable)</span>
-<span class="pl-s1"><span class="pl-c1">$</span>name</span> = <span class="pl-s">'Tester'</span>;
+<span class="pl-s1"><span class="pl-c1">$</span>name</span> = <span class="pl-s">'<span class="pl-s">Tester</span>'</span>;
 <span class="pl-s1"><span class="pl-c1">$</span>timer</span> = <span class="pl-s1"><span class="pl-c1">$</span>loop</span>-&gt;<span class="pl-en">addTimer</span>(<span class="pl-c1">1.0</span>, <span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>timer</span>) {
-    <span class="pl-k">echo</span> <span class="pl-s">'Hello '</span> . <span class="pl-s1"><span class="pl-c1">$</span>timer</span>-&gt;<span class="pl-en">getData</span>() . <span class="pl-c1">PHP_EOL</span>;
+    <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">Hello </span>'</span> . <span class="pl-s1"><span class="pl-c1">$</span>timer</span>-&gt;<span class="pl-en">getData</span>() . <span class="pl-c1">PHP_EOL</span>;
 });
 <span class="pl-s1"><span class="pl-c1">$</span>timer</span>-&gt;<span class="pl-en">setData</span>(<span class="pl-s1"><span class="pl-c1">$</span>name</span>);
 
 <span class="pl-c">// already supported before: closure binding allows any number of variables</span>
-<span class="pl-s1"><span class="pl-c1">$</span>name</span> = <span class="pl-s">'Tester'</span>;
+<span class="pl-s1"><span class="pl-c1">$</span>name</span> = <span class="pl-s">'<span class="pl-s">Tester</span>'</span>;
 <span class="pl-s1"><span class="pl-c1">$</span>loop</span>-&gt;<span class="pl-en">addTimer</span>(<span class="pl-c1">1.0</span>, <span class="pl-k">function</span> () <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>name</span>) {
-    <span class="pl-k">echo</span> <span class="pl-s">'Hello '</span> . <span class="pl-s1"><span class="pl-c1">$</span>name</span> . <span class="pl-c1">PHP_EOL</span>;
+    <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">Hello </span>'</span> . <span class="pl-s1"><span class="pl-c1">$</span>name</span> . <span class="pl-c1">PHP_EOL</span>;
 });</pre></div>
 <p dir="auto">Remove unneeded <code class="notranslate">TimerInterface::getLoop()</code>, use closure binding instead:</p>
 <div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-c">// old (getLoop() called on timer instance)</span>
@@ -4899,10 +4925,10 @@ use closure binding to add arbitrary data to timer instead:</p>
 <p dir="auto">BC break: Move <code class="notranslate">TimerInterface</code> one level up to <code class="notranslate">React\EventLoop\TimerInterface</code>.<br>
 (<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="283022277" data-permission-text="Title is private" data-url="https://github.com/reactphp/event-loop/issues/138" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/event-loop/pull/138/hovercard" href="https://github.com/reactphp/event-loop/pull/138">#138</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/WyriHaximus/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/WyriHaximus">@WyriHaximus</a>)</p>
 <div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-c">// old (notice obsolete "Timer" namespace)</span>
-assert(<span class="pl-s1"><span class="pl-c1">$</span>timer</span> instanceof <span class="pl-v">React</span>\<span class="pl-v">EventLoop</span>\<span class="pl-v">Timer</span>\<span class="pl-v">TimerInterface</span>);
+<span class="pl-en">assert</span>(<span class="pl-s1"><span class="pl-c1">$</span>timer</span> instanceof <span class="pl-v">React</span>\<span class="pl-v">EventLoop</span>\<span class="pl-v">Timer</span>\<span class="pl-v">TimerInterface</span>);
 
 <span class="pl-c">// new</span>
-assert(<span class="pl-s1"><span class="pl-c1">$</span>timer</span> instanceof <span class="pl-v">React</span>\<span class="pl-v">EventLoop</span>\<span class="pl-v">TimerInterface</span>);</pre></div>
+<span class="pl-en">assert</span>(<span class="pl-s1"><span class="pl-c1">$</span>timer</span> instanceof <span class="pl-v">React</span>\<span class="pl-v">EventLoop</span>\<span class="pl-v">TimerInterface</span>);</pre></div>
 </li>
 <li>
 <p dir="auto">BC break: Remove unneeded <code class="notranslate">LoopInterface::nextTick()</code> (and internal <code class="notranslate">NextTickQueue</code>),<br>
@@ -4910,12 +4936,12 @@ use <code class="notranslate">LoopInterface::futureTick()</code> instead.<br>
 (<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="85954441" data-permission-text="Title is private" data-url="https://github.com/reactphp/event-loop/issues/30" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/event-loop/pull/30/hovercard" href="https://github.com/reactphp/event-loop/pull/30">#30</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 <div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-c">// old (removed)</span>
 <span class="pl-s1"><span class="pl-c1">$</span>loop</span>-&gt;<span class="pl-en">nextTick</span>(<span class="pl-k">function</span> () {
-    <span class="pl-k">echo</span> <span class="pl-s">'tick'</span>;
+    <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">tick</span>'</span>;
 });
 
 <span class="pl-c">// already supported before</span>
 <span class="pl-s1"><span class="pl-c1">$</span>loop</span>-&gt;<span class="pl-en">futureTick</span>(<span class="pl-k">function</span> () {
-    <span class="pl-k">echo</span> <span class="pl-s">'tick'</span>;
+    <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">tick</span>'</span>;
 });</pre></div>
 </li>
 <li>
@@ -5045,7 +5071,7 @@ nameserver config on all supported platforms<br>
 such as a corporate DNS server or when using Docker containers, will now<br>
 work as expected across all platforms with no changes required:</p>
 <div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-s1"><span class="pl-c1">$</span>factory</span> = <span class="pl-k">new</span> <span class="pl-v">Factory</span>(<span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
-<span class="pl-s1"><span class="pl-c1">$</span>factory</span>-&gt;<span class="pl-en">createClient</span>(<span class="pl-s">'intranet.example:5353'</span>);</pre></div>
+<span class="pl-s1"><span class="pl-c1">$</span>factory</span>-&gt;<span class="pl-en">createClient</span>(<span class="pl-s">'<span class="pl-s">intranet.example:5353</span>'</span>);</pre></div>
 </li>
 <li>
 <p dir="auto">Improve README<br>
@@ -5078,7 +5104,7 @@ nameserver config on all supported platforms<br>
 such as a corporate DNS server or when using Docker containers, will now<br>
 work as expected across all platforms with no changes required:</p>
 <div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-s1"><span class="pl-c1">$</span>connector</span> = <span class="pl-k">new</span> <span class="pl-v">Connector</span>(<span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
-<span class="pl-s1"><span class="pl-c1">$</span>connector</span>-&gt;<span class="pl-en">connect</span>(<span class="pl-s">'intranet.example:80'</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>connection</span>) {
+<span class="pl-s1"><span class="pl-c1">$</span>connector</span>-&gt;<span class="pl-en">connect</span>(<span class="pl-s">'<span class="pl-s">intranet.example:80</span>'</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>connection</span>) {
     <span class="pl-c">// …</span>
 });</pre></div>
 </li>
@@ -5106,7 +5132,7 @@ and support parsing DNS config on all supported platforms<br>
 (<code class="notranslate">/etc/resolv.conf</code> on Unix/Linux/Mac and WMIC on Windows)<br>
 (<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="294840998" data-permission-text="Title is private" data-url="https://github.com/reactphp/dns/issues/92" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/dns/pull/92/hovercard" href="https://github.com/reactphp/dns/pull/92">#92</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="300023271" data-permission-text="Title is private" data-url="https://github.com/reactphp/dns/issues/93" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/dns/pull/93/hovercard" href="https://github.com/reactphp/dns/pull/93">#93</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="300261492" data-permission-text="Title is private" data-url="https://github.com/reactphp/dns/issues/94" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/dns/pull/94/hovercard" href="https://github.com/reactphp/dns/pull/94">#94</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="300425527" data-permission-text="Title is private" data-url="https://github.com/reactphp/dns/issues/95" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/dns/pull/95/hovercard" href="https://github.com/reactphp/dns/pull/95">#95</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 <div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-s1"><span class="pl-c1">$</span>config</span> = <span class="pl-v">Config</span>::<span class="pl-en">loadSystemConfigBlocking</span>();
-<span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-s1"><span class="pl-c1">$</span>config</span>-&gt;<span class="pl-c1">nameservers</span> ? reset(<span class="pl-s1"><span class="pl-c1">$</span>config</span>-&gt;<span class="pl-c1">nameservers</span>) : <span class="pl-s">'8.8.8.8'</span>;</pre></div>
+<span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-s1"><span class="pl-c1">$</span>config</span>-&gt;<span class="pl-c1">nameservers</span> ? <span class="pl-en">reset</span>(<span class="pl-s1"><span class="pl-c1">$</span>config</span>-&gt;<span class="pl-c1">nameservers</span>) : <span class="pl-s">'<span class="pl-s">8.8.8.8</span>'</span>;</pre></div>
 </li>
 <li>
 <p dir="auto">Remove unneeded cyclic dependency on react/socket<br>
@@ -5252,8 +5278,8 @@ support for legacy SSLv2/SSLv3. As of PHP 5.6+ you can also explicitly<br>
 choose the TLS version you want to negotiate with the remote side:</p>
 <div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-c">// new: now supports 'crypto_method` context parameter for all classes</span>
 <span class="pl-s1"><span class="pl-c1">$</span>connector</span> = <span class="pl-k">new</span> <span class="pl-v">Connector</span>(<span class="pl-s1"><span class="pl-c1">$</span>loop</span>, <span class="pl-en">array</span>(
-    <span class="pl-s">'tls'</span> =&gt; <span class="pl-en">array</span>(
-        <span class="pl-s">'crypto_method'</span> =&gt; <span class="pl-v">STREAM_CRYPTO_METHOD_TLSv1_2_CLIENT</span>
+    <span class="pl-s">'<span class="pl-s">tls</span>'</span> =&gt; <span class="pl-en">array</span>(
+        <span class="pl-s">'<span class="pl-s">crypto_method</span>'</span> =&gt; <span class="pl-v">STREAM_CRYPTO_METHOD_TLSv1_2_CLIENT</span>
     )
 ));</pre></div>
 </li>
@@ -5561,7 +5587,7 @@ explicitly use the advanced <code class="notranslate">StreamingServer</code> to 
 <div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-c">// new: middleware request handler arrays</span>
 <span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">Server</span>(<span class="pl-en">array</span>(
     <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">ServerRequestInterface</span></span> <span class="pl-s1"><span class="pl-c1">$</span>request</span>, <span class="pl-smi">callable</span> <span class="pl-s1"><span class="pl-c1">$</span>next</span>) {
-        <span class="pl-s1"><span class="pl-c1">$</span>request</span> = <span class="pl-s1"><span class="pl-c1">$</span>request</span>-&gt;<span class="pl-en">withHeader</span>(<span class="pl-s">'Processed'</span>, time());
+        <span class="pl-s1"><span class="pl-c1">$</span>request</span> = <span class="pl-s1"><span class="pl-c1">$</span>request</span>-&gt;<span class="pl-en">withHeader</span>(<span class="pl-s">'<span class="pl-s">Processed</span>'</span>, <span class="pl-en">time</span>());
         <span class="pl-k">return</span> <span class="pl-s1"><span class="pl-c1">$</span>next</span>(<span class="pl-s1"><span class="pl-c1">$</span>request</span>);
     },
     <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">ServerRequestInterface</span></span> <span class="pl-s1"><span class="pl-c1">$</span>request</span>) {
@@ -5588,7 +5614,7 @@ ini setting by default and allows explicit configuration.<br>
 <div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-c">// new: buffer up to 10 requests with 8 MiB each</span>
 <span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">StreamingServer</span>(<span class="pl-en">array</span>(
     <span class="pl-k">new</span> <span class="pl-v">LimitConcurrentRequestsMiddleware</span>(<span class="pl-c1">10</span>),
-    <span class="pl-k">new</span> <span class="pl-v">RequestBodyBufferMiddleware</span>(<span class="pl-s">'8M'</span>),
+    <span class="pl-k">new</span> <span class="pl-v">RequestBodyBufferMiddleware</span>(<span class="pl-s">'<span class="pl-s">8M</span>'</span>),
     <span class="pl-s1"><span class="pl-c1">$</span>handler</span>
 ));</pre></div>
 </li>
@@ -5602,8 +5628,8 @@ This feature mimics PHP's default behavior and respects its ini settings and<br>
 <span class="pl-c">// and limit to 4 uploads with 2 MiB each</span>
 <span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">StreamingServer</span>(<span class="pl-en">array</span>(
     <span class="pl-k">new</span> <span class="pl-v">LimitConcurrentRequestsMiddleware</span>(<span class="pl-c1">10</span>),
-    <span class="pl-k">new</span> <span class="pl-v">RequestBodyBufferMiddleware</span>(<span class="pl-s">'8M'</span>),
-    <span class="pl-k">new</span> <span class="pl-v">RequestBodyParserMiddleware</span>(<span class="pl-s">'2M'</span>, <span class="pl-c1">4</span>)
+    <span class="pl-k">new</span> <span class="pl-v">RequestBodyBufferMiddleware</span>(<span class="pl-s">'<span class="pl-s">8M</span>'</span>),
+    <span class="pl-k">new</span> <span class="pl-v">RequestBodyParserMiddleware</span>(<span class="pl-s">'<span class="pl-s">2M</span>'</span>, <span class="pl-c1">4</span>)
     <span class="pl-s1"><span class="pl-c1">$</span>handler</span>
 ));</pre></div>
 </li>
@@ -5717,10 +5743,10 @@ ignore Mac OS X test failures for now until Travis tests work again<br>
 and add advanced <code class="notranslate">UnixServer</code> class.<br>
 (<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="263643414" data-permission-text="Title is private" data-url="https://github.com/reactphp/socket/issues/120" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/120/hovercard" href="https://github.com/reactphp/socket/pull/120">#120</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/andig/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/andig">@andig</a>)</p>
 <div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-c">// new: Server now supports "unix://" scheme</span>
-<span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">Server</span>(<span class="pl-s">'unix:///tmp/server.sock'</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">Server</span>(<span class="pl-s">'<span class="pl-s">unix:///tmp/server.sock</span>'</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
 
 <span class="pl-c">// new: advanced usage</span>
-<span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">UnixServer</span>(<span class="pl-s">'/tmp/server.sock'</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);</pre></div>
+<span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">UnixServer</span>(<span class="pl-s">'<span class="pl-s">/tmp/server.sock</span>'</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);</pre></div>
 </li>
 <li>
 <p dir="auto">Restructure examples to ease getting started<br>
@@ -5868,7 +5894,7 @@ and update DNS dependency to support hosts file on all platforms<br>
 those used for Docker containers) will now work as expected across all<br>
 platforms with no changes required:</p>
 <div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-s1"><span class="pl-c1">$</span>factory</span> = <span class="pl-k">new</span> <span class="pl-v">Factory</span>(<span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
-<span class="pl-s1"><span class="pl-c1">$</span>factory</span>-&gt;<span class="pl-en">createClient</span>(<span class="pl-s">'localhost:5353'</span>);</pre></div>
+<span class="pl-s1"><span class="pl-c1">$</span>factory</span>-&gt;<span class="pl-en">createClient</span>(<span class="pl-s">'<span class="pl-s">localhost:5353</span>'</span>);</pre></div>
 </li>
 </ul>
 
@@ -5915,12 +5941,12 @@ platforms with no changes required:</p>
 when you want to explicitly connect to a Unix domain socket (UDS) path<br>
 instead of connecting to a default address assumed by an higher-level API:</p>
 <div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-s1"><span class="pl-c1">$</span>connector</span> = <span class="pl-k">new</span> <span class="pl-v">FixedUriConnector</span>(
-    <span class="pl-s">'unix:///var/run/docker.sock'</span>,
+    <span class="pl-s">'<span class="pl-s">unix:///var/run/docker.sock</span>'</span>,
     <span class="pl-k">new</span> <span class="pl-v">UnixConnector</span>(<span class="pl-s1"><span class="pl-c1">$</span>loop</span>)
 );
 
 <span class="pl-c">// destination will be ignored, actually connects to Unix domain socket</span>
-<span class="pl-s1"><span class="pl-c1">$</span>promise</span> = <span class="pl-s1"><span class="pl-c1">$</span>connector</span>-&gt;<span class="pl-en">connect</span>(<span class="pl-s">'localhost:80'</span>);</pre></div>
+<span class="pl-s1"><span class="pl-c1">$</span>promise</span> = <span class="pl-s1"><span class="pl-c1">$</span>connector</span>-&gt;<span class="pl-en">connect</span>(<span class="pl-s">'<span class="pl-s">localhost:80</span>'</span>);</pre></div>
 </li>
 </ul>
 
@@ -5992,8 +6018,8 @@ instead of connecting to a default address assumed by an higher-level API:</p>
 <p dir="auto">This means that HTTP requests to hosts such as <code class="notranslate">localhost</code> will now work as<br>
 expected across all platforms with no changes required:</p>
 <div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-s1"><span class="pl-c1">$</span>client</span> = <span class="pl-k">new</span> <span class="pl-v">Client</span>(<span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
-<span class="pl-s1"><span class="pl-c1">$</span>request</span> = <span class="pl-s1"><span class="pl-c1">$</span>client</span>-&gt;<span class="pl-en">request</span>(<span class="pl-s">'GET'</span>, <span class="pl-s">'http://localhost/'</span>);
-<span class="pl-s1"><span class="pl-c1">$</span>request</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'response'</span>, <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">Response</span></span> <span class="pl-s1"><span class="pl-c1">$</span>response</span>) {
+<span class="pl-s1"><span class="pl-c1">$</span>request</span> = <span class="pl-s1"><span class="pl-c1">$</span>client</span>-&gt;<span class="pl-en">request</span>(<span class="pl-s">'<span class="pl-s">GET</span>'</span>, <span class="pl-s">'<span class="pl-s">http://localhost/</span>'</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>request</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'<span class="pl-s">response</span>'</span>, <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">Response</span></span> <span class="pl-s1"><span class="pl-c1">$</span>response</span>) {
     <span class="pl-c">// …</span>
 });
 <span class="pl-s1"><span class="pl-c1">$</span>request</span>-&gt;<span class="pl-en">end</span>();</pre></div>
@@ -6022,7 +6048,7 @@ expected across all platforms with no changes required:</p>
 <p dir="auto">This means that connecting to hosts such as <code class="notranslate">localhost</code> will now work as<br>
 expected across all platforms with no changes required:</p>
 <div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-s1"><span class="pl-c1">$</span>connector</span> = <span class="pl-k">new</span> <span class="pl-v">Connector</span>(<span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
-<span class="pl-s1"><span class="pl-c1">$</span>connector</span>-&gt;<span class="pl-en">connect</span>(<span class="pl-s">'localhost:8080'</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>connection</span>) {
+<span class="pl-s1"><span class="pl-c1">$</span>connector</span>-&gt;<span class="pl-en">connect</span>(<span class="pl-s">'<span class="pl-s">localhost:8080</span>'</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>connection</span>) {
     <span class="pl-c">// …</span>
 });</pre></div>
 </li>
@@ -6049,8 +6075,8 @@ expected across all platforms with no changes required:</p>
 (<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="250600914" data-permission-text="Title is private" data-url="https://github.com/reactphp/dns/issues/75" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/dns/pull/75/hovercard" href="https://github.com/reactphp/dns/pull/75">#75</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="252074853" data-permission-text="Title is private" data-url="https://github.com/reactphp/dns/issues/76" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/dns/pull/76/hovercard" href="https://github.com/reactphp/dns/pull/76">#76</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="252438414" data-permission-text="Title is private" data-url="https://github.com/reactphp/dns/issues/77" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/dns/pull/77/hovercard" href="https://github.com/reactphp/dns/pull/77">#77</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 <p dir="auto">This means that resolving hosts such as <code class="notranslate">localhost</code> will now work as<br>
 expected across all platforms with no changes required:</p>
-<div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-s1"><span class="pl-c1">$</span>resolver</span>-&gt;<span class="pl-en">resolve</span>(<span class="pl-s">'localhost'</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>ip</span>) {
-    <span class="pl-k">echo</span> <span class="pl-s">'IP: '</span> . <span class="pl-s1"><span class="pl-c1">$</span>ip</span>;
+<div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-s1"><span class="pl-c1">$</span>resolver</span>-&gt;<span class="pl-en">resolve</span>(<span class="pl-s">'<span class="pl-s">localhost</span>'</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>ip</span>) {
+    <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">IP: </span>'</span> . <span class="pl-s1"><span class="pl-c1">$</span>ip</span>;
 });</pre></div>
 <p dir="auto">The new <code class="notranslate">HostsExecutor</code> exists for advanced usage and is otherwise used<br>
 internally for this feature.</p>
@@ -6475,16 +6501,16 @@ PSR-7 <code class="notranslate">ResponseInterface</code> in return for the reque
 (<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="214687443" data-permission-text="Title is private" data-url="https://github.com/reactphp/http/issues/146" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/http/pull/146/hovercard" href="https://github.com/reactphp/http/pull/146">#146</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="217026459" data-permission-text="Title is private" data-url="https://github.com/reactphp/http/issues/152" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/http/pull/152/hovercard" href="https://github.com/reactphp/http/pull/152">#152</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="222915507" data-permission-text="Title is private" data-url="https://github.com/reactphp/http/issues/170" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/http/pull/170/hovercard" href="https://github.com/reactphp/http/pull/170">#170</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/legionth/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/legionth">@legionth</a>)</p>
 <div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-c">// old</span>
 <span class="pl-s1"><span class="pl-c1">$</span>app</span> = <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">Request</span></span> <span class="pl-s1"><span class="pl-c1">$</span>request</span>, <span class="pl-smi"><span class="pl-smi">Response</span></span> <span class="pl-s1"><span class="pl-c1">$</span>response</span>) {
-    <span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">writeHead</span>(<span class="pl-c1">200</span>, <span class="pl-en">array</span>(<span class="pl-s">'Content-Type'</span> =&gt; <span class="pl-s">'text/plain'</span>));
-    <span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">end</span>("<span class="pl-s">Hello world!</span>\n");
+    <span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">writeHead</span>(<span class="pl-c1">200</span>, <span class="pl-en">array</span>(<span class="pl-s">'<span class="pl-s">Content-Type</span>'</span> =&gt; <span class="pl-s">'<span class="pl-s">text/plain</span>'</span>));
+    <span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">end</span>(<span class="pl-s">"<span class="pl-s">Hello world!</span>\n"</span>);
 };
 
 <span class="pl-c">// new</span>
 <span class="pl-s1"><span class="pl-c1">$</span>app</span> = <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">ServerRequestInterface</span></span> <span class="pl-s1"><span class="pl-c1">$</span>request</span>) {
     <span class="pl-k">return</span> <span class="pl-k">new</span> <span class="pl-v">Response</span>(
         <span class="pl-c1">200</span>,
-        <span class="pl-en">array</span>(<span class="pl-s">'Content-Type'</span> =&gt; <span class="pl-s">'text/plain'</span>),
-        "<span class="pl-s">Hello world!</span>\n"
+        <span class="pl-en">array</span>(<span class="pl-s">'<span class="pl-s">Content-Type</span>'</span> =&gt; <span class="pl-s">'<span class="pl-s">text/plain</span>'</span>),
+        <span class="pl-s">"<span class="pl-s">Hello world!</span>\n"</span>
     );
 };</pre></div>
 <p dir="auto">A <code class="notranslate">Content-Length</code> header will automatically be included if the size can be<br>
@@ -6505,7 +6531,7 @@ unknown in advance.</p>
 <div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-c">// old</span>
 <span class="pl-s1"><span class="pl-c1">$</span>app</span> = <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">Request</span></span> <span class="pl-s1"><span class="pl-c1">$</span>request</span>, <span class="pl-smi"><span class="pl-smi">Response</span></span> <span class="pl-s1"><span class="pl-c1">$</span>response</span>) <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>db</span>) {
     <span class="pl-s1"><span class="pl-c1">$</span>db</span>-&gt;<span class="pl-en">query</span>()-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>result</span>) <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>response</span>) {
-        <span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">writeHead</span>(<span class="pl-c1">200</span>, <span class="pl-en">array</span>(<span class="pl-s">'Content-Type'</span> =&gt; <span class="pl-s">'text/plain'</span>));
+        <span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">writeHead</span>(<span class="pl-c1">200</span>, <span class="pl-en">array</span>(<span class="pl-s">'<span class="pl-s">Content-Type</span>'</span> =&gt; <span class="pl-s">'<span class="pl-s">text/plain</span>'</span>));
         <span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">end</span>(<span class="pl-s1"><span class="pl-c1">$</span>result</span>);
     });
 };
@@ -6515,7 +6541,7 @@ unknown in advance.</p>
     <span class="pl-k">return</span> <span class="pl-s1"><span class="pl-c1">$</span>db</span>-&gt;<span class="pl-en">query</span>()-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>result</span>) {
         <span class="pl-k">return</span> <span class="pl-k">new</span> <span class="pl-v">Response</span>(
             <span class="pl-c1">200</span>,
-            <span class="pl-en">array</span>(<span class="pl-s">'Content-Type'</span> =&gt; <span class="pl-s">'text/plain'</span>),
+            <span class="pl-en">array</span>(<span class="pl-s">'<span class="pl-s">Content-Type</span>'</span> =&gt; <span class="pl-s">'<span class="pl-s">text/plain</span>'</span>),
             <span class="pl-s1"><span class="pl-c1">$</span>result</span>
         );
     });
@@ -6530,7 +6556,7 @@ defined in PSR-7.<br>
 <div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-s1"><span class="pl-c1">$</span>app</span> = <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">ServerRequestInterface</span></span> <span class="pl-s1"><span class="pl-c1">$</span>request</span>) {
     <span class="pl-k">return</span> <span class="pl-k">new</span> <span class="pl-v">Response</span>(
         <span class="pl-c1">200</span>,
-        <span class="pl-en">array</span>(<span class="pl-s">'Content-Type'</span> =&gt; <span class="pl-s">'text/plain'</span>),
+        <span class="pl-en">array</span>(<span class="pl-s">'<span class="pl-s">Content-Type</span>'</span> =&gt; <span class="pl-s">'<span class="pl-s">text/plain</span>'</span>),
         <span class="pl-s1"><span class="pl-c1">$</span>request</span>-&gt;<span class="pl-en">getUri</span>()-&gt;<span class="pl-en">getScheme</span>()
     );
 };</pre></div>
@@ -6552,7 +6578,7 @@ use <code class="notranslate">listen()</code> method to support multiple listeni
 (<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="206161976" data-permission-text="Title is private" data-url="https://github.com/reactphp/http/issues/97" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/http/pull/97/hovercard" href="https://github.com/reactphp/http/pull/97">#97</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/legionth/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/legionth">@legionth</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="231876511" data-permission-text="Title is private" data-url="https://github.com/reactphp/http/issues/193" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/http/pull/193/hovercard" href="https://github.com/reactphp/http/pull/193">#193</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 <div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-c">// old</span>
 <span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">Server</span>(<span class="pl-s1"><span class="pl-c1">$</span>socket</span>);
-<span class="pl-s1"><span class="pl-c1">$</span>server</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'request'</span>, <span class="pl-s1"><span class="pl-c1">$</span>app</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>server</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'<span class="pl-s">request</span>'</span>, <span class="pl-s1"><span class="pl-c1">$</span>app</span>);
 
 <span class="pl-c">// new</span>
 <span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">Server</span>(<span class="pl-s1"><span class="pl-c1">$</span>app</span>);
@@ -6607,7 +6633,7 @@ encoding and ignoring HHVM test failures until Travis tests work again.<br>
 has been given.</p>
 <div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-c">// old</span>
 <span class="pl-s1"><span class="pl-c1">$</span>dnsResolverFactory</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Dns</span>\<span class="pl-v">Resolver</span>\<span class="pl-v">Factory</span>();
-<span class="pl-s1"><span class="pl-c1">$</span>dnsResolver</span> = <span class="pl-s1"><span class="pl-c1">$</span>dnsResolverFactory</span>-&gt;<span class="pl-en">createCached</span>(<span class="pl-s">'8.8.8.8'</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>dnsResolver</span> = <span class="pl-s1"><span class="pl-c1">$</span>dnsResolverFactory</span>-&gt;<span class="pl-en">createCached</span>(<span class="pl-s">'<span class="pl-s">8.8.8.8</span>'</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
 <span class="pl-s1"><span class="pl-c1">$</span>factory</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">HttpClient</span>\<span class="pl-v">Factory</span>();
 <span class="pl-s1"><span class="pl-c1">$</span>client</span> = <span class="pl-s1"><span class="pl-c1">$</span>factory</span>-&gt;<span class="pl-en">create</span>(<span class="pl-s1"><span class="pl-c1">$</span>loop</span>, <span class="pl-s1"><span class="pl-c1">$</span>dnsResolver</span>);
 
@@ -6792,9 +6818,9 @@ such as plaintext TCP/IP or secure TLS connection streams.</p>
 inheritance. It is now a direct implementation of <code class="notranslate">DuplexStreamInterface</code>.<br>
 (<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="223724023" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/88" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/88/hovercard" href="https://github.com/reactphp/stream/pull/88">#88</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="223771834" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/89" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/89/hovercard" href="https://github.com/reactphp/stream/pull/89">#89</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 <div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-s1"><span class="pl-c1">$</span>through</span> = <span class="pl-k">new</span> <span class="pl-v">ThroughStream</span>(<span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>data</span>) {
-    <span class="pl-k">return</span> json_encode(<span class="pl-s1"><span class="pl-c1">$</span>data</span>) . <span class="pl-c1">PHP_EOL</span>;
+    <span class="pl-k">return</span> <span class="pl-en">json_encode</span>(<span class="pl-s1"><span class="pl-c1">$</span>data</span>) . <span class="pl-c1">PHP_EOL</span>;
 });
-<span class="pl-s1"><span class="pl-c1">$</span>through</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'data'</span>, <span class="pl-s1"><span class="pl-c1">$</span><span class="pl-smi">this</span></span>-&gt;<span class="pl-en">expectCallableOnceWith</span>("<span class="pl-s">[2, true]</span>\n"));
+<span class="pl-s1"><span class="pl-c1">$</span>through</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'<span class="pl-s">data</span>'</span>, <span class="pl-s1"><span class="pl-c1">$</span><span class="pl-smi">this</span></span>-&gt;<span class="pl-en">expectCallableOnceWith</span>(<span class="pl-s">"<span class="pl-s">[2, true]</span>\n"</span>));
 
 <span class="pl-s1"><span class="pl-c1">$</span>through</span>-&gt;<span class="pl-en">write</span>(<span class="pl-en">array</span>(<span class="pl-c1">2</span>, <span class="pl-c1">true</span>));</pre></div>
 </li>
@@ -6971,8 +6997,8 @@ forward compatibility with EventLoop v1.0 and v0.5<br>
 <p dir="auto">This means that this package now provides async, streaming plaintext TCP/IP<br>
 and secure TLS socket server and client connections for ReactPHP.</p>
 <div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-s1"><span class="pl-c1">$</span>connector</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Connector</span>(<span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
-<span class="pl-s1"><span class="pl-c1">$</span>connector</span>-&gt;<span class="pl-en">connect</span>(<span class="pl-s">'google.com:80'</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">ConnectionInterface</span></span> <span class="pl-s1"><span class="pl-c1">$</span>conn</span>) {
-    <span class="pl-s1"><span class="pl-c1">$</span>connection</span>-&gt;<span class="pl-en">write</span>(<span class="pl-s">'…'</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>connector</span>-&gt;<span class="pl-en">connect</span>(<span class="pl-s">'<span class="pl-s">google.com:80</span>'</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">ConnectionInterface</span></span> <span class="pl-s1"><span class="pl-c1">$</span>conn</span>) {
+    <span class="pl-s1"><span class="pl-c1">$</span>connection</span>-&gt;<span class="pl-en">write</span>(<span class="pl-s">'<span class="pl-s">…</span>'</span>);
 });</pre></div>
 <p dir="auto">Accordingly, the <code class="notranslate">ConnectionInterface</code> is now used to represent both incoming<br>
 server side connections as well as outgoing client side connections.</p>
@@ -6983,14 +7009,14 @@ other changes, so you can simply update your code to use the updated namespace<b
 like this:</p>
 <div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-c">// old from SocketClient component and namespace</span>
 <span class="pl-s1"><span class="pl-c1">$</span>connector</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">SocketClient</span>\<span class="pl-v">Connector</span>(<span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
-<span class="pl-s1"><span class="pl-c1">$</span>connector</span>-&gt;<span class="pl-en">connect</span>(<span class="pl-s">'google.com:80'</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">ConnectionInterface</span></span> <span class="pl-s1"><span class="pl-c1">$</span>conn</span>) {
-    <span class="pl-s1"><span class="pl-c1">$</span>connection</span>-&gt;<span class="pl-en">write</span>(<span class="pl-s">'…'</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>connector</span>-&gt;<span class="pl-en">connect</span>(<span class="pl-s">'<span class="pl-s">google.com:80</span>'</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">ConnectionInterface</span></span> <span class="pl-s1"><span class="pl-c1">$</span>conn</span>) {
+    <span class="pl-s1"><span class="pl-c1">$</span>connection</span>-&gt;<span class="pl-en">write</span>(<span class="pl-s">'<span class="pl-s">…</span>'</span>);
 });
 
 <span class="pl-c">// new</span>
 <span class="pl-s1"><span class="pl-c1">$</span>connector</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Connector</span>(<span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
-<span class="pl-s1"><span class="pl-c1">$</span>connector</span>-&gt;<span class="pl-en">connect</span>(<span class="pl-s">'google.com:80'</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">ConnectionInterface</span></span> <span class="pl-s1"><span class="pl-c1">$</span>conn</span>) {
-    <span class="pl-s1"><span class="pl-c1">$</span>connection</span>-&gt;<span class="pl-en">write</span>(<span class="pl-s">'…'</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>connector</span>-&gt;<span class="pl-en">connect</span>(<span class="pl-s">'<span class="pl-s">google.com:80</span>'</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">ConnectionInterface</span></span> <span class="pl-s1"><span class="pl-c1">$</span>conn</span>) {
+    <span class="pl-s1"><span class="pl-c1">$</span>connection</span>-&gt;<span class="pl-en">write</span>(<span class="pl-s">'<span class="pl-s">…</span>'</span>);
 });</pre></div>
 </li>
 </ul>
@@ -7017,8 +7043,8 @@ like this:</p>
 <div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">Server</span>(<span class="pl-c1">0</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
 <span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">LimitingServer</span>(<span class="pl-s1"><span class="pl-c1">$</span>server</span>, <span class="pl-c1">100</span>);
 
-<span class="pl-s1"><span class="pl-c1">$</span>server</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'connection'</span>, <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">ConnectionInterface</span></span> <span class="pl-s1"><span class="pl-c1">$</span>connection</span>) {
-    <span class="pl-s1"><span class="pl-c1">$</span>connection</span>-&gt;<span class="pl-en">write</span>(<span class="pl-s">'hello there!'</span> . <span class="pl-c1">PHP_EOL</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>server</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'<span class="pl-s">connection</span>'</span>, <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">ConnectionInterface</span></span> <span class="pl-s1"><span class="pl-c1">$</span>connection</span>) {
+    <span class="pl-s1"><span class="pl-c1">$</span>connection</span>-&gt;<span class="pl-en">write</span>(<span class="pl-s">'<span class="pl-s">hello there!</span>'</span> . <span class="pl-c1">PHP_EOL</span>);
     …
 });</pre></div>
 </li>
@@ -7060,8 +7086,8 @@ This now makes it trivially easy to create plaintext TCP/IP, secure TLS and<br>
 Unix domain socket (UDS) connection streams simply like this:</p>
 <div class="highlight highlight-text-html-php"><pre class="notranslate"><span class="pl-s1"><span class="pl-c1">$</span>connector</span> = <span class="pl-k">new</span> <span class="pl-v">Connector</span>(<span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
 
-<span class="pl-s1"><span class="pl-c1">$</span>connector</span>-&gt;<span class="pl-en">connect</span>(<span class="pl-s">'tls://google.com:443'</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">ConnectionInterface</span></span> <span class="pl-s1"><span class="pl-c1">$</span>conn</span>) {
-    <span class="pl-s1"><span class="pl-c1">$</span>conn</span>-&gt;<span class="pl-en">write</span>("<span class="pl-s">GET / HTTP/1.0</span>\r\n\r\n");
+<span class="pl-s1"><span class="pl-c1">$</span>connector</span>-&gt;<span class="pl-en">connect</span>(<span class="pl-s">'<span class="pl-s">tls://google.com:443</span>'</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">ConnectionInterface</span></span> <span class="pl-s1"><span class="pl-c1">$</span>conn</span>) {
+    <span class="pl-s1"><span class="pl-c1">$</span>conn</span>-&gt;<span class="pl-en">write</span>(<span class="pl-s">"<span class="pl-s">GET / HTTP/1.0</span>\r\n\r\n"</span>);
 });</pre></div>
 <p>Optionally, it accepts options to configure all underlying connectors, such<br>
 as using a custom DNS setup, timeout values and disabling certain protocols<br>
@@ -7343,22 +7369,22 @@ delimiting requests with an explicit <code class="notranslate">Content-Length</c
 and those with an empty request message body.</p>
 <p dir="auto">These streaming semantics are compatible with previous Stream v0.5, future<br>
 compatible with v0.5 and upcoming v0.6 versions and can be used like this:</p>
-<div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-s1"><span class="pl-c1">$</span>http</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'request'</span>, <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">Request</span></span> <span class="pl-s1"><span class="pl-c1">$</span>request</span>, <span class="pl-smi"><span class="pl-smi">Response</span></span> <span class="pl-s1"><span class="pl-c1">$</span>response</span>) {
+<div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-s1"><span class="pl-c1">$</span>http</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'<span class="pl-s">request</span>'</span>, <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">Request</span></span> <span class="pl-s1"><span class="pl-c1">$</span>request</span>, <span class="pl-smi"><span class="pl-smi">Response</span></span> <span class="pl-s1"><span class="pl-c1">$</span>response</span>) {
     <span class="pl-s1"><span class="pl-c1">$</span>contentLength</span> = <span class="pl-c1">0</span>;
-    <span class="pl-s1"><span class="pl-c1">$</span>request</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'data'</span>, <span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>data</span>) <span class="pl-k">use</span> (&amp;<span class="pl-s1"><span class="pl-c1">$</span>contentLength</span>) {
-        <span class="pl-s1"><span class="pl-c1">$</span>contentLength</span> += strlen(<span class="pl-s1"><span class="pl-c1">$</span>data</span>);
+    <span class="pl-s1"><span class="pl-c1">$</span>request</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'<span class="pl-s">data</span>'</span>, <span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>data</span>) <span class="pl-k">use</span> (&amp;<span class="pl-s1"><span class="pl-c1">$</span>contentLength</span>) {
+        <span class="pl-s1"><span class="pl-c1">$</span>contentLength</span> += <span class="pl-en">strlen</span>(<span class="pl-s1"><span class="pl-c1">$</span>data</span>);
     });
 
-    <span class="pl-s1"><span class="pl-c1">$</span>request</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'end'</span>, <span class="pl-k">function</span> () <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>response</span>, &amp;<span class="pl-s1"><span class="pl-c1">$</span>contentLength</span>){
-        <span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">writeHead</span>(<span class="pl-c1">200</span>, <span class="pl-en">array</span>(<span class="pl-s">'Content-Type'</span> =&gt; <span class="pl-s">'text/plain'</span>));
-        <span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">end</span>("<span class="pl-s">The length of the submitted request body is: </span>" . <span class="pl-s1"><span class="pl-c1">$</span>contentLength</span>);
+    <span class="pl-s1"><span class="pl-c1">$</span>request</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'<span class="pl-s">end</span>'</span>, <span class="pl-k">function</span> () <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>response</span>, &amp;<span class="pl-s1"><span class="pl-c1">$</span>contentLength</span>){
+        <span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">writeHead</span>(<span class="pl-c1">200</span>, <span class="pl-en">array</span>(<span class="pl-s">'<span class="pl-s">Content-Type</span>'</span> =&gt; <span class="pl-s">'<span class="pl-s">text/plain</span>'</span>));
+        <span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">end</span>(<span class="pl-s">"<span class="pl-s">The length of the submitted request body is: </span>"</span> . <span class="pl-s1"><span class="pl-c1">$</span>contentLength</span>);
     });
 
     <span class="pl-c">// an error occured</span>
     <span class="pl-c">// e.g. on invalid chunked encoded data or an unexpected 'end' event </span>
-    <span class="pl-s1"><span class="pl-c1">$</span>request</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'error'</span>, <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">\<span class="pl-v">Exception</span></span></span> <span class="pl-s1"><span class="pl-c1">$</span>exception</span>) <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>response</span>, &amp;<span class="pl-s1"><span class="pl-c1">$</span>contentLength</span>) {
-        <span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">writeHead</span>(<span class="pl-c1">400</span>, <span class="pl-en">array</span>(<span class="pl-s">'Content-Type'</span> =&gt; <span class="pl-s">'text/plain'</span>));
-        <span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">end</span>("<span class="pl-s">An error occured while reading at length: </span>" . <span class="pl-s1"><span class="pl-c1">$</span>contentLength</span>);
+    <span class="pl-s1"><span class="pl-c1">$</span>request</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'<span class="pl-s">error</span>'</span>, <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">\<span class="pl-v">Exception</span></span></span> <span class="pl-s1"><span class="pl-c1">$</span>exception</span>) <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>response</span>, &amp;<span class="pl-s1"><span class="pl-c1">$</span>contentLength</span>) {
+        <span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">writeHead</span>(<span class="pl-c1">400</span>, <span class="pl-en">array</span>(<span class="pl-s">'<span class="pl-s">Content-Type</span>'</span> =&gt; <span class="pl-s">'<span class="pl-s">text/plain</span>'</span>));
+        <span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">end</span>(<span class="pl-s">"<span class="pl-s">An error occured while reading at length: </span>"</span> . <span class="pl-s1"><span class="pl-c1">$</span>contentLength</span>);
     });
 });</pre></div>
 <p dir="auto">Similarly, the <code class="notranslate">Request</code> and <code class="notranslate">Response</code> now strictly follow the<br>
@@ -7453,12 +7479,12 @@ Most notably, all defined events only receive inherently required event<br>
 arguments and no longer transmit the instance they are emitted on for<br>
 consistency and performance reasons.</p>
 <div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-c">// old (inconsistent and not supported by all implementations)</span>
-<span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'data'</span>, <span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>data</span>, <span class="pl-s1"><span class="pl-c1">$</span>stream</span>) {
+<span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'<span class="pl-s">data</span>'</span>, <span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>data</span>, <span class="pl-s1"><span class="pl-c1">$</span>stream</span>) {
     <span class="pl-c">// process $data</span>
 });
 
 <span class="pl-c">// new (consistent throughout the whole ecosystem)</span>
-<span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'data'</span>, <span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>data</span>) <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>stream</span>) {
+<span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'<span class="pl-s">data</span>'</span>, <span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>data</span>) <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>stream</span>) {
     <span class="pl-c">// process $data</span>
 });</pre></div>
 <blockquote>
@@ -7558,15 +7584,15 @@ and expose remote and local addresses through this interface<br>
 and remove superfluous and undocumented <code class="notranslate">ConnectionException</code>.<br>
 (#74, #82 and #84 by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 <div class="highlight highlight-text-html-php"><pre class="notranslate"><span class="pl-c">// old</span>
-<span class="pl-s1"><span class="pl-c1">$</span>connector</span>-&gt;<span class="pl-en">create</span>(<span class="pl-s">'google.com'</span>, <span class="pl-c1">80</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">Stream</span></span> <span class="pl-s1"><span class="pl-c1">$</span>conn</span>) {
-    <span class="pl-k">echo</span> <span class="pl-s">'Connected'</span> . <span class="pl-c1">PHP_EOL</span>;
-    <span class="pl-s1"><span class="pl-c1">$</span>conn</span>-&gt;<span class="pl-en">write</span>("<span class="pl-s">GET / HTTP/1.0</span>\r\n\r\n");
+<span class="pl-s1"><span class="pl-c1">$</span>connector</span>-&gt;<span class="pl-en">create</span>(<span class="pl-s">'<span class="pl-s">google.com</span>'</span>, <span class="pl-c1">80</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">Stream</span></span> <span class="pl-s1"><span class="pl-c1">$</span>conn</span>) {
+    <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">Connected</span>'</span> . <span class="pl-c1">PHP_EOL</span>;
+    <span class="pl-s1"><span class="pl-c1">$</span>conn</span>-&gt;<span class="pl-en">write</span>(<span class="pl-s">"<span class="pl-s">GET / HTTP/1.0</span>\r\n\r\n"</span>);
 });
 
 <span class="pl-c">// new</span>
-<span class="pl-s1"><span class="pl-c1">$</span>connector</span>-&gt;<span class="pl-en">connect</span>(<span class="pl-s">'google.com:80'</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">ConnectionInterface</span></span> <span class="pl-s1"><span class="pl-c1">$</span>conn</span>) {
-    <span class="pl-k">echo</span> <span class="pl-s">'Connected to '</span> . <span class="pl-s1"><span class="pl-c1">$</span>conn</span>-&gt;<span class="pl-en">getRemoteAddress</span>() . <span class="pl-c1">PHP_EOL</span>;
-    <span class="pl-s1"><span class="pl-c1">$</span>conn</span>-&gt;<span class="pl-en">write</span>("<span class="pl-s">GET / HTTP/1.0</span>\r\n\r\n");
+<span class="pl-s1"><span class="pl-c1">$</span>connector</span>-&gt;<span class="pl-en">connect</span>(<span class="pl-s">'<span class="pl-s">google.com:80</span>'</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">ConnectionInterface</span></span> <span class="pl-s1"><span class="pl-c1">$</span>conn</span>) {
+    <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">Connected to </span>'</span> . <span class="pl-s1"><span class="pl-c1">$</span>conn</span>-&gt;<span class="pl-en">getRemoteAddress</span>() . <span class="pl-c1">PHP_EOL</span>;
+    <span class="pl-s1"><span class="pl-c1">$</span>conn</span>-&gt;<span class="pl-en">write</span>(<span class="pl-s">"<span class="pl-s">GET / HTTP/1.0</span>\r\n\r\n"</span>);
 });</pre></div>
 <blockquote>
 <p>Note that both the old <code class="notranslate">Stream</code> and the new <code class="notranslate">ConnectionInterface</code> implement<br>
@@ -7636,17 +7662,17 @@ add secure HTTPS server support<br>
 (<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="205507446" data-permission-text="Title is private" data-url="https://github.com/reactphp/http/issues/90" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/http/pull/90/hovercard" href="https://github.com/reactphp/http/pull/90">#90</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="208097779" data-permission-text="Title is private" data-url="https://github.com/reactphp/http/issues/119" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/http/pull/119/hovercard" href="https://github.com/reactphp/http/pull/119">#119</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 <div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-c">// old plaintext HTTP server</span>
 <span class="pl-s1"><span class="pl-c1">$</span>socket</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Server</span>(<span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
-<span class="pl-s1"><span class="pl-c1">$</span>socket</span>-&gt;<span class="pl-en">listen</span>(<span class="pl-c1">8080</span>, <span class="pl-s">'127.0.0.1'</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>socket</span>-&gt;<span class="pl-en">listen</span>(<span class="pl-c1">8080</span>, <span class="pl-s">'<span class="pl-s">127.0.0.1</span>'</span>);
 <span class="pl-s1"><span class="pl-c1">$</span>http</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Server</span>(<span class="pl-s1"><span class="pl-c1">$</span>socket</span>);
 
 <span class="pl-c">// new plaintext HTTP server</span>
-<span class="pl-s1"><span class="pl-c1">$</span>socket</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Server</span>(<span class="pl-s">'127.0.0.1:8080'</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>socket</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Server</span>(<span class="pl-s">'<span class="pl-s">127.0.0.1:8080</span>'</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
 <span class="pl-s1"><span class="pl-c1">$</span>http</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Server</span>(<span class="pl-s1"><span class="pl-c1">$</span>socket</span>);
 
 <span class="pl-c">// new secure HTTPS server</span>
-<span class="pl-s1"><span class="pl-c1">$</span>socket</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Server</span>(<span class="pl-s">'127.0.0.1:8080'</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>socket</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Server</span>(<span class="pl-s">'<span class="pl-s">127.0.0.1:8080</span>'</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
 <span class="pl-s1"><span class="pl-c1">$</span>socket</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">SecureServer</span>(<span class="pl-s1"><span class="pl-c1">$</span>socket</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>, <span class="pl-en">array</span>(
-    <span class="pl-s">'local_cert'</span> =&gt; __DIR__ . <span class="pl-s">'/localhost.pem'</span>
+    <span class="pl-s">'<span class="pl-s">local_cert</span>'</span> =&gt; <span class="pl-c1">__DIR__</span> . <span class="pl-s">'<span class="pl-s">/localhost.pem</span>'</span>
 ));
 <span class="pl-s1"><span class="pl-c1">$</span>http</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Server</span>(<span class="pl-s1"><span class="pl-c1">$</span>socket</span>);</pre></div>
 </li>
@@ -7688,18 +7714,18 @@ and replace <code class="notranslate">ConnectionException</code> with <code clas
 the listening host:</p>
 <div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-c">// old</span>
 <span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">Server</span>(<span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
-<span class="pl-s1"><span class="pl-c1">$</span>server</span>-&gt;<span class="pl-en">listen</span>(<span class="pl-c1">8080</span>, <span class="pl-s">'127.0.0.1'</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>server</span>-&gt;<span class="pl-en">listen</span>(<span class="pl-c1">8080</span>, <span class="pl-s">'<span class="pl-s">127.0.0.1</span>'</span>);
 
 <span class="pl-c">// new</span>
-<span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">Server</span>(<span class="pl-s">'127.0.0.1:8080'</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);</pre></div>
+<span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">Server</span>(<span class="pl-s">'<span class="pl-s">127.0.0.1:8080</span>'</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);</pre></div>
 <p dir="auto">Trying to start listening on (DNS) host names will now throw an<br>
 <code class="notranslate">InvalidArgumentException</code>, use IP addresses instead:</p>
 <div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-c">// old</span>
 <span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">Server</span>(<span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
-<span class="pl-s1"><span class="pl-c1">$</span>server</span>-&gt;<span class="pl-en">listen</span>(<span class="pl-c1">8080</span>, <span class="pl-s">'localhost'</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>server</span>-&gt;<span class="pl-en">listen</span>(<span class="pl-c1">8080</span>, <span class="pl-s">'<span class="pl-s">localhost</span>'</span>);
 
 <span class="pl-c">// new</span>
-<span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">Server</span>(<span class="pl-s">'127.0.0.1:8080'</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);</pre></div>
+<span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">Server</span>(<span class="pl-s">'<span class="pl-s">127.0.0.1:8080</span>'</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);</pre></div>
 <p dir="auto">If trying to listen fails (such as if port is already in use or port below<br>
 1024 may require root access etc.), it will now throw a <code class="notranslate">RuntimeException</code>,<br>
 the <code class="notranslate">ConnectionException</code> class has been removed:</p>
@@ -7772,10 +7798,10 @@ Please use composition instead of extension.<br>
 <p dir="auto">Feature: Add request header accessors (à la PSR-7)<br>
 (<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="206525234" data-permission-text="Title is private" data-url="https://github.com/reactphp/http/issues/103" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/http/pull/103/hovercard" href="https://github.com/reactphp/http/pull/103">#103</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 <div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-c">// get value of host header</span>
-<span class="pl-s1"><span class="pl-c1">$</span>host</span> = <span class="pl-s1"><span class="pl-c1">$</span>request</span>-&gt;<span class="pl-en">getHeaderLine</span>(<span class="pl-s">'Host'</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>host</span> = <span class="pl-s1"><span class="pl-c1">$</span>request</span>-&gt;<span class="pl-en">getHeaderLine</span>(<span class="pl-s">'<span class="pl-s">Host</span>'</span>);
 
 <span class="pl-c">// get list of all cookie headers</span>
-<span class="pl-s1"><span class="pl-c1">$</span>cookies</span> = <span class="pl-s1"><span class="pl-c1">$</span>request</span>-&gt;<span class="pl-en">getHeader</span>(<span class="pl-s">'Cookie'</span>);</pre></div>
+<span class="pl-s1"><span class="pl-c1">$</span>cookies</span> = <span class="pl-s1"><span class="pl-c1">$</span>request</span>-&gt;<span class="pl-en">getHeader</span>(<span class="pl-s">'<span class="pl-s">Cookie</span>'</span>);</pre></div>
 </li>
 <li>
 <p dir="auto">Feature: Forward <code class="notranslate">pause()</code> and <code class="notranslate">resume()</code> from <code class="notranslate">Request</code> to underlying connection<br>
@@ -7796,7 +7822,7 @@ we no longer apply chunked transfer encoding with mixed-case <code class="notran
 <span class="pl-s1"><span class="pl-c1">$</span>request</span>-&gt;<span class="pl-en">expectsContinue</span>();
 
 <span class="pl-c">// now works just like properly-cased header</span>
-<span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">writeHead</span>(<span class="pl-s1"><span class="pl-c1">$</span>status</span>, <span class="pl-en">array</span>(<span class="pl-s">'content-length'</span> =&gt; <span class="pl-c1">0</span>));</pre></div>
+<span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">writeHead</span>(<span class="pl-s1"><span class="pl-c1">$</span>status</span>, <span class="pl-en">array</span>(<span class="pl-s">'<span class="pl-s">content-length</span>'</span> =&gt; <span class="pl-c1">0</span>));</pre></div>
 </li>
 <li>
 <p dir="auto">Fix: Do not emit empty <code class="notranslate">data</code> events and ignore empty writes in order to<br>
@@ -8375,11 +8401,11 @@ stream resource fails with a permanent error.<br>
 <div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-s1"><span class="pl-c1">$</span>factory</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Dns</span>\<span class="pl-v">Resolver</span>\<span class="pl-v">Factory</span>();
 
 <span class="pl-s1"><span class="pl-c1">$</span>cache</span> = <span class="pl-k">new</span> <span class="pl-v">MyCustomCacheInstance</span>();
-<span class="pl-s1"><span class="pl-c1">$</span>resolver</span> = <span class="pl-s1"><span class="pl-c1">$</span>factory</span>-&gt;<span class="pl-en">createCached</span>(<span class="pl-s">'8.8.8.8'</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>, <span class="pl-s1"><span class="pl-c1">$</span>cache</span>);</pre></div>
+<span class="pl-s1"><span class="pl-c1">$</span>resolver</span> = <span class="pl-s1"><span class="pl-c1">$</span>factory</span>-&gt;<span class="pl-en">createCached</span>(<span class="pl-s">'<span class="pl-s">8.8.8.8</span>'</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>, <span class="pl-s1"><span class="pl-c1">$</span>cache</span>);</pre></div>
 </li>
 <li>
 <p dir="auto">Feature: Support Promise cancellation (<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="137350421" data-permission-text="Title is private" data-url="https://github.com/reactphp/dns/issues/35" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/dns/pull/35/hovercard" href="https://github.com/reactphp/dns/pull/35">#35</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
-<div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-s1"><span class="pl-c1">$</span>promise</span> = <span class="pl-s1"><span class="pl-c1">$</span>resolver</span>-&gt;<span class="pl-en">resolve</span>(<span class="pl-s">'reactphp.org'</span>);
+<div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-s1"><span class="pl-c1">$</span>promise</span> = <span class="pl-s1"><span class="pl-c1">$</span>resolver</span>-&gt;<span class="pl-en">resolve</span>(<span class="pl-s">'<span class="pl-s">reactphp.org</span>'</span>);
 
 <span class="pl-s1"><span class="pl-c1">$</span>promise</span>-&gt;<span class="pl-en">cancel</span>();</pre></div>
 </li>

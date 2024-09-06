@@ -119,7 +119,7 @@
                         Datagram
 
                         <span class="off-canvas-menu__version">
-                            v1.9.0
+                            v1.10.0
                         </span>
                     </a>
                 </li>
@@ -221,21 +221,21 @@
 
                     <div class="markdown-heading"><h1 class="heading-element">Datagram</h1><a id="datagram" class="anchor" aria-label="Permalink: Datagram" href="#datagram"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p><a href="https://github.com/reactphp/datagram/actions"><img src="https://github.com/reactphp/datagram/actions/workflows/ci.yml/badge.svg" alt="CI status" style="max-width: 100%;"></a>
-<a href="https://packagist.org/packages/react/datagram" rel="nofollow"><img src="https://camo.githubusercontent.com/5dae05ddeaf5ebfbbef162ebe9e3e4231c94c77e62c08cc701520c725ae6d660/68747470733a2f2f696d672e736869656c64732e696f2f7061636b61676973742f64742f72656163742f646174616772616d3f636f6c6f723d626c7565266c6162656c3d696e7374616c6c732532306f6e2532305061636b6167697374" alt="installs on Packagist" data-canonical-src="https://img.shields.io/packagist/dt/react/datagram?color=blue&amp;label=installs%20on%20Packagist" style="max-width: 100%;"></a></p>
+<a href="https://packagist.org/packages/react/datagram" rel="nofollow"><img src="https://camo.githubusercontent.com/9db994520bf91eb8ee9cb52e30e6ddeb5205934a2c85b6b5934baa1f02f4b6f7/68747470733a2f2f696d672e736869656c64732e696f2f7061636b61676973742f64742f72656163742f646174616772616d3f636f6c6f723d626c7565266c6162656c3d696e7374616c6c732532306f6e2532305061636b6167697374" alt="installs on Packagist" data-canonical-src="https://img.shields.io/packagist/dt/react/datagram?color=blue&amp;label=installs%20on%20Packagist" style="max-width: 100%;"></a></p>
 <p>Event-driven UDP datagram socket client and server for <a href="https://reactphp.org" rel="nofollow">ReactPHP</a>.</p>
 <div class="markdown-heading"><h2 class="heading-element">Quickstart example</h2><a id="quickstart-example" class="anchor" aria-label="Permalink: Quickstart example" href="#quickstart-example"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>Once <a href="#install">installed</a>, you can use the following code to connect to an UDP server listening on
 <code>localhost:1234</code> and send and receive UDP datagrams:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>factory</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Datagram</span>\<span class="pl-v">Factory</span>();
 
-<span class="pl-s1"><span class="pl-c1">$</span>factory</span>-&gt;<span class="pl-en">createClient</span>(<span class="pl-s">'localhost:1234'</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi"><span class="pl-v">React</span>\<span class="pl-v">Datagram</span>\<span class="pl-v">Socket</span></span></span> <span class="pl-s1"><span class="pl-c1">$</span>client</span>) {
-    <span class="pl-s1"><span class="pl-c1">$</span>client</span>-&gt;<span class="pl-en">send</span>(<span class="pl-s">'first'</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>factory</span>-&gt;<span class="pl-en">createClient</span>(<span class="pl-s">'<span class="pl-s">localhost:1234</span>'</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi"><span class="pl-v">React</span>\<span class="pl-v">Datagram</span>\<span class="pl-v">Socket</span></span></span> <span class="pl-s1"><span class="pl-c1">$</span>client</span>) {
+    <span class="pl-s1"><span class="pl-c1">$</span>client</span>-&gt;<span class="pl-en">send</span>(<span class="pl-s">'<span class="pl-s">first</span>'</span>);
 
-    <span class="pl-s1"><span class="pl-c1">$</span>client</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'message'</span>, <span class="pl-k">function</span>(<span class="pl-s1"><span class="pl-c1">$</span>message</span>, <span class="pl-s1"><span class="pl-c1">$</span>serverAddress</span>, <span class="pl-s1"><span class="pl-c1">$</span>client</span>) {
-        <span class="pl-k">echo</span> <span class="pl-s">'received "'</span> . <span class="pl-s1"><span class="pl-c1">$</span>message</span> . <span class="pl-s">'" from '</span> . <span class="pl-s1"><span class="pl-c1">$</span>serverAddress</span>. <span class="pl-c1">PHP_EOL</span>;
+    <span class="pl-s1"><span class="pl-c1">$</span>client</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'<span class="pl-s">message</span>'</span>, <span class="pl-k">function</span>(<span class="pl-s1"><span class="pl-c1">$</span>message</span>, <span class="pl-s1"><span class="pl-c1">$</span>serverAddress</span>, <span class="pl-s1"><span class="pl-c1">$</span>client</span>) {
+        <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">received "</span>'</span> . <span class="pl-s1"><span class="pl-c1">$</span>message</span> . <span class="pl-s">'<span class="pl-s">" from </span>'</span> . <span class="pl-s1"><span class="pl-c1">$</span>serverAddress</span>. <span class="pl-c1">PHP_EOL</span>;
     });
 });</pre></div>
-<p>See also the <a href="https://github.com/reactphp/datagram/blob/v1.9.0/examples">examples</a>.</p>
+<p>See also the <a href="https://github.com/reactphp/datagram/blob/v1.10.0/examples">examples</a>.</p>
 <div class="markdown-heading"><h2 class="heading-element">Usage</h2><a id="usage" class="anchor" aria-label="Permalink: Usage" href="#usage"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>This library's API is modelled after node.js's API for
 <a href="https://nodejs.org/api/dgram.html" rel="nofollow">UDP / Datagram Sockets (dgram.Socket)</a>.</p>
@@ -244,7 +244,7 @@
 <a href="https://getcomposer.org/doc/00-intro.md" rel="nofollow">New to Composer?</a></p>
 <p>This project follows <a href="https://semver.org/" rel="nofollow">SemVer</a>.
 This will install the latest supported version:</p>
-<div class="highlight highlight-source-shell"><pre>composer require react/datagram:^1.9</pre></div>
+<div class="highlight highlight-source-shell"><pre>composer require react/datagram:^1.10</pre></div>
 <p>See also the <a href="changelog.html">CHANGELOG</a> for details about version upgrades.</p>
 <p>This project aims to run on any platform and thus does not require any PHP
 extensions and supports running on legacy PHP 5.3 through current PHP 8+ and
@@ -266,7 +266,7 @@ dependencies <a href="https://getcomposer.org/" rel="nofollow">through Composer<
 
                             <div class="version-selector">
                                 <button class="version-selector__button version-selector__button--latest" data-ctrly="component-version-selector" data-version-selector-control>
-                                    v1.9.0
+                                    v1.10.0
 
                                     <i class="icon-chevron-down" aria-hidden="true"></i>
                                     <i class="icon-chevron-up" aria-hidden="true"></i>
@@ -282,6 +282,11 @@ dependencies <a href="https://getcomposer.org/" rel="nofollow">through Composer<
                                             </a>
                                         </li>
                                                                                                                                                                                                                     <li>
+                                                <a href="https://github.com/reactphp/datagram/tree/v1.9.0#readme" class="version-selector__version">
+                                                    v1.9.0
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
                                                 <a href="https://github.com/reactphp/datagram/tree/v1.8.0#readme" class="version-selector__version">
                                                     v1.8.0
                                                 </a>
@@ -361,19 +366,19 @@ dependencies <a href="https://getcomposer.org/" rel="nofollow">through Composer<
 
                         <h3 class="component-info__subtitle">Installation</h3>
 
-                        <div class="highlight highlight-source-shell"><pre>composer require react/datagram:^1.9.0</pre></div>
+                        <div class="highlight highlight-source-shell"><pre>composer require react/datagram:^1.10.0</pre></div>
 
                         <h3 class="component-info__subtitle">Contributors</h3>
 
                         <ul class="component-info__contributors">
                                                     <li>
                                 <a href="https://github.com/clue">
-                                    <img src="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=80 2x" alt="clue" title="clue (181 contributions)">
+                                    <img src="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=80 2x" alt="clue" title="clue (183 contributions)">
                                 </a>
                             </li>
                                                     <li>
                                 <a href="https://github.com/WyriHaximus">
-                                    <img src="https://avatars.githubusercontent.com/u/147145?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/147145?v=4&amp;s=80 2x" alt="WyriHaximus" title="WyriHaximus (29 contributions)">
+                                    <img src="https://avatars.githubusercontent.com/u/147145?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/147145?v=4&amp;s=80 2x" alt="WyriHaximus" title="WyriHaximus (30 contributions)">
                                 </a>
                             </li>
                                                     <li>
@@ -435,7 +440,7 @@ dependencies <a href="https://getcomposer.org/" rel="nofollow">through Composer<
         <mask id="reactphp-datagram-participation-sparkline" x="0" y="0" width="320" height="40" >
             <polyline 
                 transform="translate(0, 40) scale(1,-1)"
-                points="0,1 6,1 12,1 18,1 24,1 30,1 36,1 42,2 48,1 54,1 60,1 66,1 72,1 78,1 84,1 90,1 96,1 102,1 108,1 114,1 120,1 126,1 132,2 138,1 144,1 150,1 156,1 162,1 168,1 174,1 180,1 186,1 192,1 198,1 204,1 210,1 216,1 222,1 228,1 234,1 240,1 246,1 252,1 258,1 264,1 270,1 276,1 282,1 288,1 294,1 300,1 306,1" 
+                points="0,1 6,2 12,1 18,1 24,1 30,1 36,1 42,1 48,1 54,1 60,1 66,1 72,1 78,1 84,1 90,1 96,2 102,1 108,1 114,1 120,1 126,1 132,1 138,1 144,1 150,1 156,1 162,1 168,1 174,1 180,1 186,1 192,1 198,1 204,1 210,1 216,1 222,1 228,2 234,1 240,1 246,1 252,1 258,1 264,1 270,1 276,1 282,1 288,1 294,1 300,1 306,2" 
                 fill="transparent" 
                 stroke="#40a977" 
                 stroke-width="2"

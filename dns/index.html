@@ -119,7 +119,7 @@
                         Datagram
 
                         <span class="off-canvas-menu__version">
-                            v1.9.0
+                            v1.10.0
                         </span>
                     </a>
                 </li>
@@ -221,7 +221,7 @@
 
                     <div class="markdown-heading"><h1 class="heading-element">DNS</h1><a id="dns" class="anchor" aria-label="Permalink: DNS" href="#dns"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p><a href="https://github.com/reactphp/dns/actions"><img src="https://github.com/reactphp/dns/actions/workflows/ci.yml/badge.svg" alt="CI status" style="max-width: 100%;"></a>
-<a href="https://packagist.org/packages/react/dns" rel="nofollow"><img src="https://camo.githubusercontent.com/da8e0189de0c3c63626255f9f87afdaacb7def49b7e8eda4c88408ebc371ad28/68747470733a2f2f696d672e736869656c64732e696f2f7061636b61676973742f64742f72656163742f646e733f636f6c6f723d626c7565266c6162656c3d696e7374616c6c732532306f6e2532305061636b6167697374" alt="installs on Packagist" data-canonical-src="https://img.shields.io/packagist/dt/react/dns?color=blue&amp;label=installs%20on%20Packagist" style="max-width: 100%;"></a></p>
+<a href="https://packagist.org/packages/react/dns" rel="nofollow"><img src="https://camo.githubusercontent.com/6b77c16f663c04240223c2fa9618d1dfd960efc0763b9293dca12e19c11649f2/68747470733a2f2f696d672e736869656c64732e696f2f7061636b61676973742f64742f72656163742f646e733f636f6c6f723d626c7565266c6162656c3d696e7374616c6c732532306f6e2532305061636b6167697374" alt="installs on Packagist" data-canonical-src="https://img.shields.io/packagist/dt/react/dns?color=blue&amp;label=installs%20on%20Packagist" style="max-width: 100%;"></a></p>
 <p>Async DNS resolver for <a href="https://reactphp.org/" rel="nofollow">ReactPHP</a>.</p>
 <p>The main point of the DNS component is to provide async DNS resolution.
 However, it is really a toolkit for working with DNS messages, and could
@@ -262,14 +262,14 @@ factory. All you need to give it is a nameserver, then you can start resolving
 names, baby!</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>config</span> = <span class="pl-v">React</span>\<span class="pl-v">Dns</span>\<span class="pl-v">Config</span>\<span class="pl-v">Config</span>::<span class="pl-en">loadSystemConfigBlocking</span>();
 <span class="pl-k">if</span> (!<span class="pl-s1"><span class="pl-c1">$</span>config</span>-&gt;<span class="pl-c1">nameservers</span>) {
-    <span class="pl-s1"><span class="pl-c1">$</span>config</span>-&gt;<span class="pl-c1">nameservers</span>[] = <span class="pl-s">'8.8.8.8'</span>;
+    <span class="pl-s1"><span class="pl-c1">$</span>config</span>-&gt;<span class="pl-c1">nameservers</span>[] = <span class="pl-s">'<span class="pl-s">8.8.8.8</span>'</span>;
 }
 
 <span class="pl-s1"><span class="pl-c1">$</span>factory</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Dns</span>\<span class="pl-v">Resolver</span>\<span class="pl-v">Factory</span>();
 <span class="pl-s1"><span class="pl-c1">$</span>dns</span> = <span class="pl-s1"><span class="pl-c1">$</span>factory</span>-&gt;<span class="pl-en">create</span>(<span class="pl-s1"><span class="pl-c1">$</span>config</span>);
 
-<span class="pl-s1"><span class="pl-c1">$</span>dns</span>-&gt;<span class="pl-en">resolve</span>(<span class="pl-s">'igor.io'</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>ip</span>) {
-    <span class="pl-k">echo</span> "<span class="pl-s">Host: </span><span class="pl-s1"><span class="pl-c1">$</span>ip</span>\n";
+<span class="pl-s1"><span class="pl-c1">$</span>dns</span>-&gt;<span class="pl-en">resolve</span>(<span class="pl-s">'<span class="pl-s">igor.io</span>'</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>ip</span>) {
+    <span class="pl-k">echo</span> <span class="pl-s">"<span class="pl-s">Host: </span><span class="pl-s1"><span class="pl-c1">$</span>ip</span>\n"</span>;
 });</pre></div>
 <p>See also the <a href="https://github.com/reactphp/dns/blob/v1.13.0/examples">first example</a>.</p>
 <p>The <code>Config</code> class can be used to load the system default config. This is an
@@ -290,20 +290,20 @@ and not repeatedly while it is running.</p>
 <p>You can cache results by configuring the resolver to use a <code>CachedExecutor</code>:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>config</span> = <span class="pl-v">React</span>\<span class="pl-v">Dns</span>\<span class="pl-v">Config</span>\<span class="pl-v">Config</span>::<span class="pl-en">loadSystemConfigBlocking</span>();
 <span class="pl-k">if</span> (!<span class="pl-s1"><span class="pl-c1">$</span>config</span>-&gt;<span class="pl-c1">nameservers</span>) {
-    <span class="pl-s1"><span class="pl-c1">$</span>config</span>-&gt;<span class="pl-c1">nameservers</span>[] = <span class="pl-s">'8.8.8.8'</span>;
+    <span class="pl-s1"><span class="pl-c1">$</span>config</span>-&gt;<span class="pl-c1">nameservers</span>[] = <span class="pl-s">'<span class="pl-s">8.8.8.8</span>'</span>;
 }
 
 <span class="pl-s1"><span class="pl-c1">$</span>factory</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Dns</span>\<span class="pl-v">Resolver</span>\<span class="pl-v">Factory</span>();
 <span class="pl-s1"><span class="pl-c1">$</span>dns</span> = <span class="pl-s1"><span class="pl-c1">$</span>factory</span>-&gt;<span class="pl-en">createCached</span>(<span class="pl-s1"><span class="pl-c1">$</span>config</span>);
 
-<span class="pl-s1"><span class="pl-c1">$</span>dns</span>-&gt;<span class="pl-en">resolve</span>(<span class="pl-s">'igor.io'</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>ip</span>) {
-    <span class="pl-k">echo</span> "<span class="pl-s">Host: </span><span class="pl-s1"><span class="pl-c1">$</span>ip</span>\n";
+<span class="pl-s1"><span class="pl-c1">$</span>dns</span>-&gt;<span class="pl-en">resolve</span>(<span class="pl-s">'<span class="pl-s">igor.io</span>'</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>ip</span>) {
+    <span class="pl-k">echo</span> <span class="pl-s">"<span class="pl-s">Host: </span><span class="pl-s1"><span class="pl-c1">$</span>ip</span>\n"</span>;
 });
 
 <span class="pl-c1">.</span>.<span class="pl-c1">.</span>
 
-<span class="pl-s1"><span class="pl-c1">$</span>dns</span>-&gt;<span class="pl-en">resolve</span>(<span class="pl-s">'igor.io'</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>ip</span>) {
-    <span class="pl-k">echo</span> "<span class="pl-s">Host: </span><span class="pl-s1"><span class="pl-c1">$</span>ip</span>\n";
+<span class="pl-s1"><span class="pl-c1">$</span>dns</span>-&gt;<span class="pl-en">resolve</span>(<span class="pl-s">'<span class="pl-s">igor.io</span>'</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>ip</span>) {
+    <span class="pl-k">echo</span> <span class="pl-s">"<span class="pl-s">Host: </span><span class="pl-s1"><span class="pl-c1">$</span>ip</span>\n"</span>;
 });</pre></div>
 <p>If the first call returns before the second, only one query will be executed.
 The second result will be served from an in memory cache.
@@ -315,15 +315,15 @@ have to be looked up multiple times.</p>
 <p>You can also specify a custom cache implementing <a href="../cache/"><code>CacheInterface</code></a> to handle the record cache instead:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>cache</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Cache</span>\<span class="pl-v">ArrayCache</span>();
 <span class="pl-s1"><span class="pl-c1">$</span>factory</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Dns</span>\<span class="pl-v">Resolver</span>\<span class="pl-v">Factory</span>();
-<span class="pl-s1"><span class="pl-c1">$</span>dns</span> = <span class="pl-s1"><span class="pl-c1">$</span>factory</span>-&gt;<span class="pl-en">createCached</span>(<span class="pl-s">'8.8.8.8'</span>, <span class="pl-c1">null</span>, <span class="pl-s1"><span class="pl-c1">$</span>cache</span>);</pre></div>
+<span class="pl-s1"><span class="pl-c1">$</span>dns</span> = <span class="pl-s1"><span class="pl-c1">$</span>factory</span>-&gt;<span class="pl-en">createCached</span>(<span class="pl-s">'<span class="pl-s">8.8.8.8</span>'</span>, <span class="pl-c1">null</span>, <span class="pl-s1"><span class="pl-c1">$</span>cache</span>);</pre></div>
 <p>See also the wiki for possible <a href="https://github.com/reactphp/react/wiki/Users#cache-implementations">cache implementations</a>.</p>
 <div class="markdown-heading"><h2 class="heading-element">ResolverInterface</h2><a id="resolverinterface" class="anchor" aria-label="Permalink: ResolverInterface" href="#resolverinterface"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p><a id="resolver"></a></p>
 <div class="markdown-heading"><h3 class="heading-element">resolve()</h3><a id="resolve" class="anchor" aria-label="Permalink: resolve()" href="#resolve"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The <code>resolve(string $domain): PromiseInterface&lt;string&gt;</code> method can be used to
 resolve the given $domain name to a single IPv4 address (type <code>A</code> query).</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>resolver</span>-&gt;<span class="pl-en">resolve</span>(<span class="pl-s">'reactphp.org'</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>ip</span>) {
-    <span class="pl-k">echo</span> <span class="pl-s">'IP for reactphp.org is '</span> . <span class="pl-s1"><span class="pl-c1">$</span>ip</span> . <span class="pl-c1">PHP_EOL</span>;
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>resolver</span>-&gt;<span class="pl-en">resolve</span>(<span class="pl-s">'<span class="pl-s">reactphp.org</span>'</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>ip</span>) {
+    <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">IP for reactphp.org is </span>'</span> . <span class="pl-s1"><span class="pl-c1">$</span>ip</span> . <span class="pl-c1">PHP_EOL</span>;
 });</pre></div>
 <p>This is one of the main methods in this package. It sends a DNS query
 for the given $domain name to your DNS server and returns a single IP
@@ -339,18 +339,18 @@ message and code can be used to check for the response code.</p>
 <p>If the DNS communication fails and the server does not respond with a
 valid response message, this message will reject with an <code>Exception</code>.</p>
 <p>Pending DNS queries can be cancelled by cancelling its pending promise like so:</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>promise</span> = <span class="pl-s1"><span class="pl-c1">$</span>resolver</span>-&gt;<span class="pl-en">resolve</span>(<span class="pl-s">'reactphp.org'</span>);
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>promise</span> = <span class="pl-s1"><span class="pl-c1">$</span>resolver</span>-&gt;<span class="pl-en">resolve</span>(<span class="pl-s">'<span class="pl-s">reactphp.org</span>'</span>);
 
 <span class="pl-s1"><span class="pl-c1">$</span>promise</span>-&gt;<span class="pl-en">cancel</span>();</pre></div>
 <div class="markdown-heading"><h3 class="heading-element">resolveAll()</h3><a id="resolveall" class="anchor" aria-label="Permalink: resolveAll()" href="#resolveall"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The <code>resolveAll(string $host, int $type): PromiseInterface&lt;array&gt;</code> method can be used to
 resolve all record values for the given $domain name and query $type.</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>resolver</span>-&gt;<span class="pl-en">resolveAll</span>(<span class="pl-s">'reactphp.org'</span>, <span class="pl-v">Message</span>::<span class="pl-c1">TYPE_A</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>ips</span>) {
-    <span class="pl-k">echo</span> <span class="pl-s">'IPv4 addresses for reactphp.org '</span> . implode(<span class="pl-s">', '</span>, <span class="pl-s1"><span class="pl-c1">$</span>ips</span>) . <span class="pl-c1">PHP_EOL</span>;
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>resolver</span>-&gt;<span class="pl-en">resolveAll</span>(<span class="pl-s">'<span class="pl-s">reactphp.org</span>'</span>, <span class="pl-v">Message</span>::<span class="pl-c1">TYPE_A</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>ips</span>) {
+    <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">IPv4 addresses for reactphp.org </span>'</span> . <span class="pl-en">implode</span>(<span class="pl-s">'<span class="pl-s">, </span>'</span>, <span class="pl-s1"><span class="pl-c1">$</span>ips</span>) . <span class="pl-c1">PHP_EOL</span>;
 });
 
-<span class="pl-s1"><span class="pl-c1">$</span>resolver</span>-&gt;<span class="pl-en">resolveAll</span>(<span class="pl-s">'reactphp.org'</span>, <span class="pl-v">Message</span>::<span class="pl-c1">TYPE_AAAA</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>ips</span>) {
-    <span class="pl-k">echo</span> <span class="pl-s">'IPv6 addresses for reactphp.org '</span> . implode(<span class="pl-s">', '</span>, <span class="pl-s1"><span class="pl-c1">$</span>ips</span>) . <span class="pl-c1">PHP_EOL</span>;
+<span class="pl-s1"><span class="pl-c1">$</span>resolver</span>-&gt;<span class="pl-en">resolveAll</span>(<span class="pl-s">'<span class="pl-s">reactphp.org</span>'</span>, <span class="pl-v">Message</span>::<span class="pl-c1">TYPE_AAAA</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>ips</span>) {
+    <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">IPv6 addresses for reactphp.org </span>'</span> . <span class="pl-en">implode</span>(<span class="pl-s">'<span class="pl-s">, </span>'</span>, <span class="pl-s1"><span class="pl-c1">$</span>ips</span>) . <span class="pl-c1">PHP_EOL</span>;
 });</pre></div>
 <p>This is one of the main methods in this package. It sends a DNS query
 for the given $domain name to your DNS server and returns a list with all
@@ -370,7 +370,7 @@ message and code can be used to check for the response code.</p>
 <p>If the DNS communication fails and the server does not respond with a
 valid response message, this message will reject with an <code>Exception</code>.</p>
 <p>Pending DNS queries can be cancelled by cancelling its pending promise like so:</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>promise</span> = <span class="pl-s1"><span class="pl-c1">$</span>resolver</span>-&gt;<span class="pl-en">resolveAll</span>(<span class="pl-s">'reactphp.org'</span>, <span class="pl-v">Message</span>::<span class="pl-c1">TYPE_AAAA</span>);
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>promise</span> = <span class="pl-s1"><span class="pl-c1">$</span>resolver</span>-&gt;<span class="pl-en">resolveAll</span>(<span class="pl-s">'<span class="pl-s">reactphp.org</span>'</span>, <span class="pl-v">Message</span>::<span class="pl-c1">TYPE_AAAA</span>);
 
 <span class="pl-s1"><span class="pl-c1">$</span>promise</span>-&gt;<span class="pl-en">cancel</span>();</pre></div>
 <div class="markdown-heading"><h2 class="heading-element">Advanced Usage</h2><a id="advanced-usage" class="anchor" aria-label="Permalink: Advanced Usage" href="#advanced-usage"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
@@ -381,15 +381,15 @@ send DNS queries over a UDP transport.</p>
 internally by the <code>Resolver</code> for the actual message transport.</p>
 <p>For more advanced usages one can utilize this class directly.
 The following example looks up the <code>IPv6</code> address for <code>igor.io</code>.</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>executor</span> = <span class="pl-k">new</span> <span class="pl-v">UdpTransportExecutor</span>(<span class="pl-s">'8.8.8.8:53'</span>);
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>executor</span> = <span class="pl-k">new</span> <span class="pl-v">UdpTransportExecutor</span>(<span class="pl-s">'<span class="pl-s">8.8.8.8:53</span>'</span>);
 
 <span class="pl-s1"><span class="pl-c1">$</span>executor</span>-&gt;<span class="pl-en">query</span>(
     <span class="pl-k">new</span> <span class="pl-v">Query</span>(<span class="pl-s1"><span class="pl-c1">$</span>name</span>, <span class="pl-v">Message</span>::<span class="pl-c1">TYPE_AAAA</span>, <span class="pl-v">Message</span>::<span class="pl-c1">CLASS_IN</span>)
 )-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">Message</span></span> <span class="pl-s1"><span class="pl-c1">$</span>message</span>) {
     <span class="pl-k">foreach</span> (<span class="pl-s1"><span class="pl-c1">$</span>message</span>-&gt;<span class="pl-c1">answers</span> <span class="pl-k">as</span> <span class="pl-s1"><span class="pl-c1">$</span>answer</span>) {
-        <span class="pl-k">echo</span> <span class="pl-s">'IPv6: '</span> . <span class="pl-s1"><span class="pl-c1">$</span>answer</span>-&gt;<span class="pl-c1">data</span> . <span class="pl-c1">PHP_EOL</span>;
+        <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">IPv6: </span>'</span> . <span class="pl-s1"><span class="pl-c1">$</span>answer</span>-&gt;<span class="pl-c1">data</span> . <span class="pl-c1">PHP_EOL</span>;
     }
-}, <span class="pl-s">'printf'</span>);</pre></div>
+}, <span class="pl-s">'<span class="pl-s">printf</span>'</span>);</pre></div>
 <p>See also the <a href="https://github.com/reactphp/dns/blob/v1.13.0/examples">fourth example</a>.</p>
 <p>Note that this executor does not implement a timeout, so you will very likely
 want to use this in combination with a <code>TimeoutExecutor</code> like this:</p>
@@ -434,15 +434,15 @@ send DNS queries over a TCP/IP stream transport.</p>
 <p>This is one of the main classes that send a DNS query to your DNS server.</p>
 <p>For more advanced usages one can utilize this class directly.
 The following example looks up the <code>IPv6</code> address for <code>reactphp.org</code>.</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>executor</span> = <span class="pl-k">new</span> <span class="pl-v">TcpTransportExecutor</span>(<span class="pl-s">'8.8.8.8:53'</span>);
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>executor</span> = <span class="pl-k">new</span> <span class="pl-v">TcpTransportExecutor</span>(<span class="pl-s">'<span class="pl-s">8.8.8.8:53</span>'</span>);
 
 <span class="pl-s1"><span class="pl-c1">$</span>executor</span>-&gt;<span class="pl-en">query</span>(
     <span class="pl-k">new</span> <span class="pl-v">Query</span>(<span class="pl-s1"><span class="pl-c1">$</span>name</span>, <span class="pl-v">Message</span>::<span class="pl-c1">TYPE_AAAA</span>, <span class="pl-v">Message</span>::<span class="pl-c1">CLASS_IN</span>)
 )-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">Message</span></span> <span class="pl-s1"><span class="pl-c1">$</span>message</span>) {
     <span class="pl-k">foreach</span> (<span class="pl-s1"><span class="pl-c1">$</span>message</span>-&gt;<span class="pl-c1">answers</span> <span class="pl-k">as</span> <span class="pl-s1"><span class="pl-c1">$</span>answer</span>) {
-        <span class="pl-k">echo</span> <span class="pl-s">'IPv6: '</span> . <span class="pl-s1"><span class="pl-c1">$</span>answer</span>-&gt;<span class="pl-c1">data</span> . <span class="pl-c1">PHP_EOL</span>;
+        <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">IPv6: </span>'</span> . <span class="pl-s1"><span class="pl-c1">$</span>answer</span>-&gt;<span class="pl-c1">data</span> . <span class="pl-c1">PHP_EOL</span>;
     }
-}, <span class="pl-s">'printf'</span>);</pre></div>
+}, <span class="pl-s">'<span class="pl-s">printf</span>'</span>);</pre></div>
 <p>See also <a href="https://github.com/reactphp/dns/blob/v1.13.0/examples">example #92</a>.</p>
 <p>Note that this executor does not implement a timeout, so you will very likely
 want to use this in combination with a <code>TimeoutExecutor</code> like this:</p>
@@ -495,9 +495,9 @@ The following example looks up the <code>IPv6</code> address for <code>reactphp.
     <span class="pl-k">new</span> <span class="pl-v">Query</span>(<span class="pl-s1"><span class="pl-c1">$</span>name</span>, <span class="pl-v">Message</span>::<span class="pl-c1">TYPE_AAAA</span>, <span class="pl-v">Message</span>::<span class="pl-c1">CLASS_IN</span>)
 )-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">Message</span></span> <span class="pl-s1"><span class="pl-c1">$</span>message</span>) {
     <span class="pl-k">foreach</span> (<span class="pl-s1"><span class="pl-c1">$</span>message</span>-&gt;<span class="pl-c1">answers</span> <span class="pl-k">as</span> <span class="pl-s1"><span class="pl-c1">$</span>answer</span>) {
-        <span class="pl-k">echo</span> <span class="pl-s">'IPv6: '</span> . <span class="pl-s1"><span class="pl-c1">$</span>answer</span>-&gt;<span class="pl-c1">data</span> . <span class="pl-c1">PHP_EOL</span>;
+        <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">IPv6: </span>'</span> . <span class="pl-s1"><span class="pl-c1">$</span>answer</span>-&gt;<span class="pl-c1">data</span> . <span class="pl-c1">PHP_EOL</span>;
     }
-}, <span class="pl-s">'printf'</span>);</pre></div>
+}, <span class="pl-s">'<span class="pl-s">printf</span>'</span>);</pre></div>
 <p>Note that this executor only implements the logic to select the correct
 transport for the given DNS query. Implementing the correct transport logic,
 implementing timeouts and any retry logic is left up to the given executors,
@@ -522,11 +522,11 @@ If you also want to take entries from your hosts file into account, you may
 use this code:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>hosts</span> = \<span class="pl-v">React</span>\<span class="pl-v">Dns</span>\<span class="pl-v">Config</span>\<span class="pl-v">HostsFile</span>::<span class="pl-en">loadFromPathBlocking</span>();
 
-<span class="pl-s1"><span class="pl-c1">$</span>executor</span> = <span class="pl-k">new</span> <span class="pl-v">UdpTransportExecutor</span>(<span class="pl-s">'8.8.8.8:53'</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>executor</span> = <span class="pl-k">new</span> <span class="pl-v">UdpTransportExecutor</span>(<span class="pl-s">'<span class="pl-s">8.8.8.8:53</span>'</span>);
 <span class="pl-s1"><span class="pl-c1">$</span>executor</span> = <span class="pl-k">new</span> <span class="pl-v">HostsFileExecutor</span>(<span class="pl-s1"><span class="pl-c1">$</span>hosts</span>, <span class="pl-s1"><span class="pl-c1">$</span>executor</span>);
 
 <span class="pl-s1"><span class="pl-c1">$</span>executor</span>-&gt;<span class="pl-en">query</span>(
-    <span class="pl-k">new</span> <span class="pl-v">Query</span>(<span class="pl-s">'localhost'</span>, <span class="pl-v">Message</span>::<span class="pl-c1">TYPE_A</span>, <span class="pl-v">Message</span>::<span class="pl-c1">CLASS_IN</span>)
+    <span class="pl-k">new</span> <span class="pl-v">Query</span>(<span class="pl-s">'<span class="pl-s">localhost</span>'</span>, <span class="pl-v">Message</span>::<span class="pl-c1">TYPE_A</span>, <span class="pl-v">Message</span>::<span class="pl-c1">CLASS_IN</span>)
 );</pre></div>
 <div class="markdown-heading"><h2 class="heading-element">Install</h2><a id="install" class="anchor" aria-label="Permalink: Install" href="#install"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The recommended way to install this library is <a href="https://getcomposer.org/" rel="nofollow">through Composer</a>.
@@ -910,7 +910,7 @@ If you do not want to run these, they can simply be skipped like this:</p>
         <mask id="reactphp-dns-participation-sparkline" x="0" y="0" width="320" height="40" >
             <polyline 
                 transform="translate(0, 40) scale(1,-1)"
-                points="0,1 6,1 12,1 18,1 24,1 30,1 36,1 42,1 48,1 54,2 60,2 66,1 72,3 78,1 84,1 90,1 96,1 102,2 108,1 114,1 120,1 126,1 132,1 138,1 144,1 150,1 156,1 162,2 168,2 174,1 180,4 186,1 192,1 198,1 204,1 210,1 216,1 222,1 228,1 234,1 240,1 246,1 252,3 258,1 264,2 270,1 276,1 282,1 288,1 294,1 300,1 306,1" 
+                points="0,1 6,1 12,1 18,2 24,2 30,1 36,3 42,1 48,1 54,1 60,1 66,2 72,1 78,1 84,1 90,1 96,1 102,1 108,1 114,1 120,1 126,2 132,2 138,1 144,4 150,1 156,1 162,1 168,1 174,1 180,1 186,1 192,1 198,1 204,1 210,1 216,3 222,1 228,2 234,1 240,1 246,1 252,1 258,1 264,1 270,1 276,1 282,1 288,1 294,1 300,1 306,1" 
                 fill="transparent" 
                 stroke="#40a977" 
                 stroke-width="2"

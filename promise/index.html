@@ -119,7 +119,7 @@
                         Datagram
 
                         <span class="off-canvas-menu__version">
-                            v1.9.0
+                            v1.10.0
                         </span>
                     </a>
                 </li>
@@ -223,7 +223,7 @@
 <p>A lightweight implementation of
 <a href="http://wiki.commonjs.org/wiki/Promises/A" rel="nofollow">CommonJS Promises/A</a> for PHP.</p>
 <p><a href="https://github.com/reactphp/promise/actions"><img src="https://github.com/reactphp/promise/workflows/CI/badge.svg" alt="CI status" style="max-width: 100%;"></a>
-<a href="https://packagist.org/packages/react/promise" rel="nofollow"><img src="https://camo.githubusercontent.com/b105b17088989ce28dc10e6e206390eb28e6b4eae466798b2164080f0b74314a/68747470733a2f2f696d672e736869656c64732e696f2f7061636b61676973742f64742f72656163742f70726f6d6973653f636f6c6f723d626c7565266c6162656c3d696e7374616c6c732532306f6e2532305061636b6167697374" alt="installs on Packagist" data-canonical-src="https://img.shields.io/packagist/dt/react/promise?color=blue&amp;label=installs%20on%20Packagist" style="max-width: 100%;"></a></p>
+<a href="https://packagist.org/packages/react/promise" rel="nofollow"><img src="https://camo.githubusercontent.com/6c4da0732636c917b677a46214c069844b215d952971bb1a98818581e5d31d9e/68747470733a2f2f696d672e736869656c64732e696f2f7061636b61676973742f64742f72656163742f70726f6d6973653f636f6c6f723d626c7565266c6162656c3d696e7374616c6c732532306f6e2532305061636b6167697374" alt="installs on Packagist" data-canonical-src="https://img.shields.io/packagist/dt/react/promise?color=blue&amp;label=installs%20on%20Packagist" style="max-width: 100%;"></a></p>
 <div class="markdown-heading"><h2 class="heading-element">Table of Contents</h2><a id="table-of-contents" class="anchor" aria-label="Permalink: Table of Contents" href="#table-of-contents"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <ol>
 <li><a href="#introduction">Introduction</a></li>
@@ -416,17 +416,17 @@ with <code>catch()</code>, <code>finally()</code> allows you to write code that 
 synchronous catch/finally pair.</p>
 <p>Consider the following synchronous code:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-k">try</span> {
-    <span class="pl-k">return</span> doSomething();
+    <span class="pl-k">return</span> <span class="pl-en">doSomething</span>();
 } <span class="pl-k">catch</span> (<span class="pl-smi"><span class="pl-smi">\<span class="pl-v">Throwable</span></span></span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>) {
-    <span class="pl-k">return</span> handleError(<span class="pl-s1"><span class="pl-c1">$</span>e</span>);
+    <span class="pl-k">return</span> <span class="pl-en">handleError</span>(<span class="pl-s1"><span class="pl-c1">$</span>e</span>);
 } <span class="pl-k">finally</span> {
-    cleanup();
+    <span class="pl-en">cleanup</span>();
 }</pre></div>
 <p>Similar asynchronous code (with <code>doSomething()</code> that returns a promise) can be
 written:</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-k">return</span> doSomething()
-    -&gt;<span class="pl-en">catch</span>(<span class="pl-s">'handleError'</span>)
-    -&gt;<span class="pl-en">finally</span>(<span class="pl-s">'cleanup'</span>);</pre></div>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-k">return</span> <span class="pl-en">doSomething</span>()
+    -&gt;<span class="pl-en">catch</span>(<span class="pl-s">'<span class="pl-s">handleError</span>'</span>)
+    -&gt;<span class="pl-en">finally</span>(<span class="pl-s">'<span class="pl-s">cleanup</span>'</span>);</pre></div>
 <div class="markdown-heading"><h4 class="heading-element">PromiseInterface::cancel()</h4><a id="promiseinterfacecancel" class="anchor" aria-label="Permalink: PromiseInterface::cancel()" href="#promiseinterfacecancel"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>promise</span>-&gt;<span class="pl-en">cancel</span>();</pre></div>
 <p>The <code>cancel()</code> method notifies the creator of the promise that there is no
@@ -466,7 +466,7 @@ between versions. It is an alias for:</p>
     <span class="pl-c">// Cancel/abort any running operations like network connections, streams etc.</span>
 
     <span class="pl-c">// Reject promise by throwing an exception</span>
-    <span class="pl-k">throw</span> <span class="pl-k">new</span> <span class="pl-v">Exception</span>(<span class="pl-s">'Promise cancelled'</span>);
+    <span class="pl-k">throw</span> <span class="pl-k">new</span> <span class="pl-v">Exception</span>(<span class="pl-s">'<span class="pl-s">Promise cancelled</span>'</span>);
 };
 
 <span class="pl-s1"><span class="pl-c1">$</span>promise</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Promise</span>\<span class="pl-v">Promise</span>(<span class="pl-s1"><span class="pl-c1">$</span>resolver</span>, <span class="pl-s1"><span class="pl-c1">$</span>canceller</span>);</pre></div>
@@ -505,9 +505,9 @@ and can be consumed like any other promise:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>promise</span> = <span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Promise</span>\resolve</span>(<span class="pl-c1">42</span>);
 
 <span class="pl-s1"><span class="pl-c1">$</span>promise</span>-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-smi">int</span> <span class="pl-s1"><span class="pl-c1">$</span>result</span>): <span class="pl-smi">void</span> {
-    var_dump(<span class="pl-s1"><span class="pl-c1">$</span>result</span>);
+    <span class="pl-en">var_dump</span>(<span class="pl-s1"><span class="pl-c1">$</span>result</span>);
 }, <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">\<span class="pl-v">Throwable</span></span></span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>): <span class="pl-smi">void</span> {
-    <span class="pl-k">echo</span> <span class="pl-s">'Error: '</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
+    <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">Error: </span>'</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
 });</pre></div>
 <div class="markdown-heading"><h4 class="heading-element">reject()</h4><a id="reject" class="anchor" aria-label="Permalink: reject()" href="#reject"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>promise</span> = <span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Promise</span>\reject</span>(\<span class="pl-v">Throwable</span> <span class="pl-s1"><span class="pl-c1">$</span>reason</span>);</pre></div>
@@ -518,12 +518,12 @@ both user land <a href="https://www.php.net/manual/en/class.exception.php" rel="
 reject a promise, any language error or user land exception can be used to reject a promise.</p>
 <p>The resulting <code>$promise</code> implements the <a href="#promiseinterface"><code>PromiseInterface</code></a>
 and can be consumed like any other promise:</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>promise</span> = <span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Promise</span>\reject</span>(<span class="pl-k">new</span> <span class="pl-v">RuntimeException</span>(<span class="pl-s">'Request failed'</span>));
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>promise</span> = <span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Promise</span>\reject</span>(<span class="pl-k">new</span> <span class="pl-v">RuntimeException</span>(<span class="pl-s">'<span class="pl-s">Request failed</span>'</span>));
 
 <span class="pl-s1"><span class="pl-c1">$</span>promise</span>-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-smi">int</span> <span class="pl-s1"><span class="pl-c1">$</span>result</span>): <span class="pl-smi">void</span> {
-    var_dump(<span class="pl-s1"><span class="pl-c1">$</span>result</span>);
+    <span class="pl-en">var_dump</span>(<span class="pl-s1"><span class="pl-c1">$</span>result</span>);
 }, <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">\<span class="pl-v">Throwable</span></span></span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>): <span class="pl-smi">void</span> {
-    <span class="pl-k">echo</span> <span class="pl-s">'Error: '</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
+    <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">Error: </span>'</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
 });</pre></div>
 <p>Note that rejected promises should always be handled similar to how any
 exceptions should always be caught in a <code>try</code> + <code>catch</code> block. If you remove the
@@ -531,7 +531,7 @@ last reference to a rejected promise that has not been handled, it will
 report an unhandled promise rejection:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-k">function</span> <span class="pl-en">incorrect</span>(): <span class="pl-smi">int</span>
 {
-     <span class="pl-s1"><span class="pl-c1">$</span>promise</span> = <span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Promise</span>\reject</span>(<span class="pl-k">new</span> <span class="pl-v">RuntimeException</span>(<span class="pl-s">'Request failed'</span>));
+     <span class="pl-s1"><span class="pl-c1">$</span>promise</span> = <span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Promise</span>\reject</span>(<span class="pl-k">new</span> <span class="pl-v">RuntimeException</span>(<span class="pl-s">'<span class="pl-s">Request failed</span>'</span>));
 
      <span class="pl-c">// Commented out: No rejection handler registered here.</span>
      <span class="pl-c">// $promise-&gt;then(null, function (\Throwable $e): void { /* ignore */ });</span>
@@ -543,7 +543,7 @@ report an unhandled promise rejection:</p>
 
 <span class="pl-c">// Calling this function will log an error message plus its stack trace:</span>
 <span class="pl-c">// Unhandled promise rejection with RuntimeException: Request failed in example.php:10</span>
-incorrect();</pre></div>
+<span class="pl-en">incorrect</span>();</pre></div>
 <p>A rejected promise will be considered "handled" if you catch the rejection
 reason with either the <a href="#promiseinterfacethen"><code>then()</code> method</a>, the
 <a href="#promiseinterfacecatch"><code>catch()</code> method</a>, or the
@@ -595,7 +595,7 @@ default promise rejection handler.</p>
 <p>The default promise rejection handler will log an error message plus its stack
 trace:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-c">// Unhandled promise rejection with RuntimeException: Unhandled in example.php:2</span>
-<span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Promise</span>\reject</span>(<span class="pl-k">new</span> <span class="pl-v">RuntimeException</span>(<span class="pl-s">'Unhandled'</span>));</pre></div>
+<span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Promise</span>\reject</span>(<span class="pl-k">new</span> <span class="pl-v">RuntimeException</span>(<span class="pl-s">'<span class="pl-s">Unhandled</span>'</span>));</pre></div>
 <p>The promise rejection handler may be used to use customize the log message or
 write to custom log targets. As a rule of thumb, this function should only be
 used as a last resort and promise rejections are best handled with either the
@@ -610,7 +610,7 @@ See also the <a href="#reject"><code>reject()</code> function</a> for more detai
     <span class="pl-s1"><span class="pl-c1">$</span>deferred</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Promise</span>\<span class="pl-v">Deferred</span>();
 
     <span class="pl-c">// Execute a Node.js-style function using the callback pattern</span>
-    computeAwesomeResultAsynchronously(<span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">\<span class="pl-v">Throwable</span></span></span> <span class="pl-s1"><span class="pl-c1">$</span>error</span>, <span class="pl-s1"><span class="pl-c1">$</span>result</span>) <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>deferred</span>) {
+    <span class="pl-en">computeAwesomeResultAsynchronously</span>(<span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">\<span class="pl-v">Throwable</span></span></span> <span class="pl-s1"><span class="pl-c1">$</span>error</span>, <span class="pl-s1"><span class="pl-c1">$</span>result</span>) <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>deferred</span>) {
         <span class="pl-k">if</span> (<span class="pl-s1"><span class="pl-c1">$</span>error</span>) {
             <span class="pl-s1"><span class="pl-c1">$</span>deferred</span>-&gt;<span class="pl-en">reject</span>(<span class="pl-s1"><span class="pl-c1">$</span>error</span>);
         } <span class="pl-k">else</span> {
@@ -622,7 +622,7 @@ See also the <a href="#reject"><code>reject()</code> function</a> for more detai
     <span class="pl-k">return</span> <span class="pl-s1"><span class="pl-c1">$</span>deferred</span>-&gt;<span class="pl-en">promise</span>();
 }
 
-getAwesomeResultPromise()
+<span class="pl-en">getAwesomeResultPromise</span>()
     -&gt;<span class="pl-en">then</span>(
         <span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>value</span>) {
             <span class="pl-c">// Deferred resolved, do something with $value</span>
@@ -666,7 +666,7 @@ value of the previous handler. This creates a promise "pipeline".</p>
         <span class="pl-c">// $x === 4</span>
         <span class="pl-c">// This handler receives the return value of the</span>
         <span class="pl-c">// previous handler.</span>
-        <span class="pl-k">echo</span> <span class="pl-s">'Resolve '</span> . <span class="pl-s1"><span class="pl-c1">$</span>x</span>;
+        <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">Resolve </span>'</span> . <span class="pl-s1"><span class="pl-c1">$</span>x</span>;
     });
 
 <span class="pl-s1"><span class="pl-c1">$</span>deferred</span>-&gt;<span class="pl-en">resolve</span>(<span class="pl-c1">1</span>); <span class="pl-c">// Prints "Resolve 4"</span></pre></div>
@@ -693,7 +693,7 @@ When you catch an exception, you must rethrow for it to propagate.</p>
         );
     })
     -&gt;<span class="pl-en">catch</span>(<span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>x</span>) {
-        <span class="pl-k">echo</span> <span class="pl-s">'Reject '</span> . <span class="pl-s1"><span class="pl-c1">$</span>x</span>-&gt;<span class="pl-en">getMessage</span>(); <span class="pl-c">// 3</span>
+        <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">Reject </span>'</span> . <span class="pl-s1"><span class="pl-c1">$</span>x</span>-&gt;<span class="pl-en">getMessage</span>(); <span class="pl-c">// 3</span>
     });
 
 <span class="pl-s1"><span class="pl-c1">$</span>deferred</span>-&gt;<span class="pl-en">resolve</span>(<span class="pl-c1">1</span>);  <span class="pl-c">// Prints "Reject 3"</span></pre></div>
@@ -715,7 +715,7 @@ rejections will still forward handler results in a predictable way.</p>
         <span class="pl-k">return</span> <span class="pl-s1"><span class="pl-c1">$</span>x</span>-&gt;<span class="pl-en">getMessage</span>() + <span class="pl-c1">1</span>;
     })
     -&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>x</span>) {
-        <span class="pl-k">echo</span> <span class="pl-s">'Mixed '</span> . <span class="pl-s1"><span class="pl-c1">$</span>x</span>; <span class="pl-c">// 4</span>
+        <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">Mixed </span>'</span> . <span class="pl-s1"><span class="pl-c1">$</span>x</span>; <span class="pl-c">// 4</span>
     });
 
 <span class="pl-s1"><span class="pl-c1">$</span>deferred</span>-&gt;<span class="pl-en">resolve</span>(<span class="pl-c1">1</span>);  <span class="pl-c">// Prints "Mixed 4"</span></pre></div>
@@ -1075,7 +1075,7 @@ by <a href="https://github.com/briancavalier">Brian Cavalier</a>.</p>
         <mask id="reactphp-promise-participation-sparkline" x="0" y="0" width="320" height="40" >
             <polyline 
                 transform="translate(0, 40) scale(1,-1)"
-                points="0,1 6,1 12,1 18,1 24,4 30,1 36,4 42,2 48,1 54,1 60,1 66,1 72,2 78,1 84,2 90,2 96,1 102,1 108,1 114,1 120,1 126,1 132,1 138,1 144,1 150,1 156,1 162,1 168,1 174,1 180,1 186,1 192,1 198,2 204,1 210,1 216,1 222,1 228,1 234,1 240,1 246,2 252,5 258,2 264,1 270,1 276,1 282,1 288,1 294,1 300,1 306,1" 
+                points="0,4 6,2 12,1 18,1 24,1 30,1 36,2 42,1 48,2 54,2 60,1 66,1 72,1 78,1 84,1 90,1 96,1 102,1 108,1 114,1 120,1 126,1 132,1 138,1 144,1 150,1 156,1 162,2 168,1 174,1 180,1 186,1 192,1 198,1 204,1 210,2 216,5 222,2 228,1 234,1 240,1 246,1 252,1 258,1 264,1 270,1 276,1 282,1 288,1 294,1 300,1 306,1" 
                 fill="transparent" 
                 stroke="#40a977" 
                 stroke-width="2"

@@ -120,7 +120,7 @@
                         Datagram
 
                         <span class="off-canvas-menu__version">
-                            v1.9.0
+                            v1.10.0
                         </span>
                     </a>
                 </li>
@@ -327,8 +327,8 @@ connection and repeating the TLS handshake for secure HTTPS requests.</p>
 <div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-s1"><span class="pl-c1">$</span>browser</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Browser</span>();
 
 <span class="pl-c">// Up to 300% faster! HTTP keep-alive is enabled by default</span>
-<span class="pl-s1"><span class="pl-c1">$</span>response</span> = <span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Async</span>\await</span>(<span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">get</span>(<span class="pl-s">'https://httpbingo.org/redirect/6'</span>));
-assert(<span class="pl-s1"><span class="pl-c1">$</span>response</span> instanceof <span class="pl-v">Psr</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">ResponseInterface</span>);</pre></div>
+<span class="pl-s1"><span class="pl-c1">$</span>response</span> = <span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Async</span>\await</span>(<span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">get</span>(<span class="pl-s">'<span class="pl-s">https://httpbingo.org/redirect/6</span>'</span>));
+<span class="pl-en">assert</span>(<span class="pl-s1"><span class="pl-c1">$</span>response</span> instanceof <span class="pl-v">Psr</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">ResponseInterface</span>);</pre></div>
 </li>
 <li>
 <p dir="auto">Feature: Add <code class="notranslate">Request</code> class to represent outgoing HTTP request message.<br>
@@ -373,7 +373,7 @@ assert(<span class="pl-s1"><span class="pl-c1">$</span>response</span> instanceo
 <p dir="auto">Feature: Support for default request headers.<br>
 (<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1284092777" data-permission-text="Title is private" data-url="https://github.com/reactphp/http/issues/461" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/http/pull/461/hovercard" href="https://github.com/reactphp/http/pull/461">#461</a> by @51imyy)</p>
 <div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-s1"><span class="pl-c1">$</span>browser</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Browser</span>();
-<span class="pl-s1"><span class="pl-c1">$</span>browser</span> = <span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">withHeader</span>(<span class="pl-s">'User-Agent'</span>, <span class="pl-s">'ACME'</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>browser</span> = <span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">withHeader</span>(<span class="pl-s">'<span class="pl-s">User-Agent</span>'</span>, <span class="pl-s">'<span class="pl-s">ACME</span>'</span>);
 
 <span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">get</span>(<span class="pl-s1"><span class="pl-c1">$</span>url</span>)-&gt;<span class="pl-en">then</span>(…);</pre></div>
 </li>
@@ -448,10 +448,10 @@ skip memory tests when lowering memory limit fails and fix legacy HHVM build.<br
 <li>
 <p dir="auto">Feature: Add factory methods for common HTML/JSON/plaintext/XML response types.<br>
 (<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1122815462" data-permission-text="Title is private" data-url="https://github.com/reactphp/http/issues/439" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/http/pull/439/hovercard" href="https://github.com/reactphp/http/pull/439">#439</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
-<div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-s1"><span class="pl-c1">$</span>response</span> = <span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Response</span>\html</span>("<span class="pl-s">&lt;h1&gt;Hello wörld!&lt;/h1&gt;</span>\n");
-<span class="pl-s1"><span class="pl-c1">$</span>response</span> = <span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Response</span>\json</span>([<span class="pl-s">'message'</span> =&gt; <span class="pl-s">'Hello wörld!'</span>]);
-<span class="pl-s1"><span class="pl-c1">$</span>response</span> = <span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Response</span>\plaintext</span>("<span class="pl-s">Hello wörld!</span>\n");
-<span class="pl-s1"><span class="pl-c1">$</span>response</span> = <span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Response</span>\xml</span>("<span class="pl-s">&lt;message&gt;Hello wörld!&lt;/message&gt;</span>\n");</pre></div>
+<div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-s1"><span class="pl-c1">$</span>response</span> = <span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Response</span>\html</span>(<span class="pl-s">"<span class="pl-s">&lt;h1&gt;Hello wörld!&lt;/h1&gt;</span>\n"</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>response</span> = <span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Response</span>\json</span>([<span class="pl-s">'<span class="pl-s">message</span>'</span> =&gt; <span class="pl-s">'<span class="pl-s">Hello wörld!</span>'</span>]);
+<span class="pl-s1"><span class="pl-c1">$</span>response</span> = <span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Response</span>\plaintext</span>(<span class="pl-s">"<span class="pl-s">Hello wörld!</span>\n"</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>response</span> = <span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Response</span>\xml</span>(<span class="pl-s">"<span class="pl-s">&lt;message&gt;Hello wörld!&lt;/message&gt;</span>\n"</span>);</pre></div>
 </li>
 <li>
 <p dir="auto">Feature: Expose all status code constants via <code class="notranslate">Response</code> class.<br>
@@ -533,7 +533,7 @@ to avoid any ambiguities with regards to the new <code class="notranslate">Socke
 
 <span class="pl-c">// new</span>
 <span class="pl-s1"><span class="pl-c1">$</span>http</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">HttpServer</span>(<span class="pl-s1"><span class="pl-c1">$</span>handler</span>);
-<span class="pl-s1"><span class="pl-c1">$</span>http</span>-&gt;<span class="pl-en">listen</span>(<span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">SocketServer</span>(<span class="pl-s">'127.0.0.1:8080'</span>));</pre></div>
+<span class="pl-s1"><span class="pl-c1">$</span>http</span>-&gt;<span class="pl-en">listen</span>(<span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">SocketServer</span>(<span class="pl-s">'<span class="pl-s">127.0.0.1:8080</span>'</span>));</pre></div>
 </li>
 </ul>
 
@@ -735,10 +735,10 @@ change <code class="notranslate">Server</code> to accept variadic middleware han
 expose <code class="notranslate">ServerRequest</code> class to <code class="notranslate">React\Http\Message\ServerRequest</code>.<br>
 (<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="653929433" data-permission-text="Title is private" data-url="https://github.com/reactphp/http/issues/370" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/http/pull/370/hovercard" href="https://github.com/reactphp/http/pull/370">#370</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 <div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-c">// old</span>
-<span class="pl-s1"><span class="pl-c1">$</span>response</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Response</span>(<span class="pl-c1">200</span>, [], <span class="pl-s">'Hello!'</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>response</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Response</span>(<span class="pl-c1">200</span>, [], <span class="pl-s">'<span class="pl-s">Hello!</span>'</span>);
 
 <span class="pl-c">// new</span>
-<span class="pl-s1"><span class="pl-c1">$</span>response</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">Response</span>(<span class="pl-c1">200</span>, [], <span class="pl-s">'Hello!'</span>);</pre></div>
+<span class="pl-s1"><span class="pl-c1">$</span>response</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">Response</span>(<span class="pl-c1">200</span>, [], <span class="pl-s">'<span class="pl-s">Hello!</span>'</span>);</pre></div>
 </li>
 <li>
 <p dir="auto">Feature / BC break: Add <code class="notranslate">StreamingRequestMiddleware</code> to stream incoming requests, mark <code class="notranslate">StreamingServer</code> as internal.<br>
@@ -1066,7 +1066,7 @@ explicitly use the advanced <code class="notranslate">StreamingServer</code> to 
 <div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-c">// new: middleware request handler arrays</span>
 <span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">Server</span>(<span class="pl-en">array</span>(
     <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">ServerRequestInterface</span></span> <span class="pl-s1"><span class="pl-c1">$</span>request</span>, <span class="pl-smi">callable</span> <span class="pl-s1"><span class="pl-c1">$</span>next</span>) {
-        <span class="pl-s1"><span class="pl-c1">$</span>request</span> = <span class="pl-s1"><span class="pl-c1">$</span>request</span>-&gt;<span class="pl-en">withHeader</span>(<span class="pl-s">'Processed'</span>, time());
+        <span class="pl-s1"><span class="pl-c1">$</span>request</span> = <span class="pl-s1"><span class="pl-c1">$</span>request</span>-&gt;<span class="pl-en">withHeader</span>(<span class="pl-s">'<span class="pl-s">Processed</span>'</span>, <span class="pl-en">time</span>());
         <span class="pl-k">return</span> <span class="pl-s1"><span class="pl-c1">$</span>next</span>(<span class="pl-s1"><span class="pl-c1">$</span>request</span>);
     },
     <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">ServerRequestInterface</span></span> <span class="pl-s1"><span class="pl-c1">$</span>request</span>) {
@@ -1093,7 +1093,7 @@ ini setting by default and allows explicit configuration.<br>
 <div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-c">// new: buffer up to 10 requests with 8 MiB each</span>
 <span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">StreamingServer</span>(<span class="pl-en">array</span>(
     <span class="pl-k">new</span> <span class="pl-v">LimitConcurrentRequestsMiddleware</span>(<span class="pl-c1">10</span>),
-    <span class="pl-k">new</span> <span class="pl-v">RequestBodyBufferMiddleware</span>(<span class="pl-s">'8M'</span>),
+    <span class="pl-k">new</span> <span class="pl-v">RequestBodyBufferMiddleware</span>(<span class="pl-s">'<span class="pl-s">8M</span>'</span>),
     <span class="pl-s1"><span class="pl-c1">$</span>handler</span>
 ));</pre></div>
 </li>
@@ -1107,8 +1107,8 @@ This feature mimics PHP's default behavior and respects its ini settings and<br>
 <span class="pl-c">// and limit to 4 uploads with 2 MiB each</span>
 <span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">StreamingServer</span>(<span class="pl-en">array</span>(
     <span class="pl-k">new</span> <span class="pl-v">LimitConcurrentRequestsMiddleware</span>(<span class="pl-c1">10</span>),
-    <span class="pl-k">new</span> <span class="pl-v">RequestBodyBufferMiddleware</span>(<span class="pl-s">'8M'</span>),
-    <span class="pl-k">new</span> <span class="pl-v">RequestBodyParserMiddleware</span>(<span class="pl-s">'2M'</span>, <span class="pl-c1">4</span>)
+    <span class="pl-k">new</span> <span class="pl-v">RequestBodyBufferMiddleware</span>(<span class="pl-s">'<span class="pl-s">8M</span>'</span>),
+    <span class="pl-k">new</span> <span class="pl-v">RequestBodyParserMiddleware</span>(<span class="pl-s">'<span class="pl-s">2M</span>'</span>, <span class="pl-c1">4</span>)
     <span class="pl-s1"><span class="pl-c1">$</span>handler</span>
 ));</pre></div>
 </li>
@@ -1263,16 +1263,16 @@ PSR-7 <code class="notranslate">ResponseInterface</code> in return for the reque
 (<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="214687443" data-permission-text="Title is private" data-url="https://github.com/reactphp/http/issues/146" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/http/pull/146/hovercard" href="https://github.com/reactphp/http/pull/146">#146</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="217026459" data-permission-text="Title is private" data-url="https://github.com/reactphp/http/issues/152" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/http/pull/152/hovercard" href="https://github.com/reactphp/http/pull/152">#152</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="222915507" data-permission-text="Title is private" data-url="https://github.com/reactphp/http/issues/170" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/http/pull/170/hovercard" href="https://github.com/reactphp/http/pull/170">#170</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/legionth/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/legionth">@legionth</a>)</p>
 <div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-c">// old</span>
 <span class="pl-s1"><span class="pl-c1">$</span>app</span> = <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">Request</span></span> <span class="pl-s1"><span class="pl-c1">$</span>request</span>, <span class="pl-smi"><span class="pl-smi">Response</span></span> <span class="pl-s1"><span class="pl-c1">$</span>response</span>) {
-    <span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">writeHead</span>(<span class="pl-c1">200</span>, <span class="pl-en">array</span>(<span class="pl-s">'Content-Type'</span> =&gt; <span class="pl-s">'text/plain'</span>));
-    <span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">end</span>("<span class="pl-s">Hello world!</span>\n");
+    <span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">writeHead</span>(<span class="pl-c1">200</span>, <span class="pl-en">array</span>(<span class="pl-s">'<span class="pl-s">Content-Type</span>'</span> =&gt; <span class="pl-s">'<span class="pl-s">text/plain</span>'</span>));
+    <span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">end</span>(<span class="pl-s">"<span class="pl-s">Hello world!</span>\n"</span>);
 };
 
 <span class="pl-c">// new</span>
 <span class="pl-s1"><span class="pl-c1">$</span>app</span> = <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">ServerRequestInterface</span></span> <span class="pl-s1"><span class="pl-c1">$</span>request</span>) {
     <span class="pl-k">return</span> <span class="pl-k">new</span> <span class="pl-v">Response</span>(
         <span class="pl-c1">200</span>,
-        <span class="pl-en">array</span>(<span class="pl-s">'Content-Type'</span> =&gt; <span class="pl-s">'text/plain'</span>),
-        "<span class="pl-s">Hello world!</span>\n"
+        <span class="pl-en">array</span>(<span class="pl-s">'<span class="pl-s">Content-Type</span>'</span> =&gt; <span class="pl-s">'<span class="pl-s">text/plain</span>'</span>),
+        <span class="pl-s">"<span class="pl-s">Hello world!</span>\n"</span>
     );
 };</pre></div>
 <p dir="auto">A <code class="notranslate">Content-Length</code> header will automatically be included if the size can be<br>
@@ -1293,7 +1293,7 @@ unknown in advance.</p>
 <div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-c">// old</span>
 <span class="pl-s1"><span class="pl-c1">$</span>app</span> = <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">Request</span></span> <span class="pl-s1"><span class="pl-c1">$</span>request</span>, <span class="pl-smi"><span class="pl-smi">Response</span></span> <span class="pl-s1"><span class="pl-c1">$</span>response</span>) <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>db</span>) {
     <span class="pl-s1"><span class="pl-c1">$</span>db</span>-&gt;<span class="pl-en">query</span>()-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>result</span>) <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>response</span>) {
-        <span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">writeHead</span>(<span class="pl-c1">200</span>, <span class="pl-en">array</span>(<span class="pl-s">'Content-Type'</span> =&gt; <span class="pl-s">'text/plain'</span>));
+        <span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">writeHead</span>(<span class="pl-c1">200</span>, <span class="pl-en">array</span>(<span class="pl-s">'<span class="pl-s">Content-Type</span>'</span> =&gt; <span class="pl-s">'<span class="pl-s">text/plain</span>'</span>));
         <span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">end</span>(<span class="pl-s1"><span class="pl-c1">$</span>result</span>);
     });
 };
@@ -1303,7 +1303,7 @@ unknown in advance.</p>
     <span class="pl-k">return</span> <span class="pl-s1"><span class="pl-c1">$</span>db</span>-&gt;<span class="pl-en">query</span>()-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>result</span>) {
         <span class="pl-k">return</span> <span class="pl-k">new</span> <span class="pl-v">Response</span>(
             <span class="pl-c1">200</span>,
-            <span class="pl-en">array</span>(<span class="pl-s">'Content-Type'</span> =&gt; <span class="pl-s">'text/plain'</span>),
+            <span class="pl-en">array</span>(<span class="pl-s">'<span class="pl-s">Content-Type</span>'</span> =&gt; <span class="pl-s">'<span class="pl-s">text/plain</span>'</span>),
             <span class="pl-s1"><span class="pl-c1">$</span>result</span>
         );
     });
@@ -1318,7 +1318,7 @@ defined in PSR-7.<br>
 <div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-s1"><span class="pl-c1">$</span>app</span> = <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">ServerRequestInterface</span></span> <span class="pl-s1"><span class="pl-c1">$</span>request</span>) {
     <span class="pl-k">return</span> <span class="pl-k">new</span> <span class="pl-v">Response</span>(
         <span class="pl-c1">200</span>,
-        <span class="pl-en">array</span>(<span class="pl-s">'Content-Type'</span> =&gt; <span class="pl-s">'text/plain'</span>),
+        <span class="pl-en">array</span>(<span class="pl-s">'<span class="pl-s">Content-Type</span>'</span> =&gt; <span class="pl-s">'<span class="pl-s">text/plain</span>'</span>),
         <span class="pl-s1"><span class="pl-c1">$</span>request</span>-&gt;<span class="pl-en">getUri</span>()-&gt;<span class="pl-en">getScheme</span>()
     );
 };</pre></div>
@@ -1340,7 +1340,7 @@ use <code class="notranslate">listen()</code> method to support multiple listeni
 (<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="206161976" data-permission-text="Title is private" data-url="https://github.com/reactphp/http/issues/97" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/http/pull/97/hovercard" href="https://github.com/reactphp/http/pull/97">#97</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/legionth/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/legionth">@legionth</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="231876511" data-permission-text="Title is private" data-url="https://github.com/reactphp/http/issues/193" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/http/pull/193/hovercard" href="https://github.com/reactphp/http/pull/193">#193</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 <div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-c">// old</span>
 <span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">Server</span>(<span class="pl-s1"><span class="pl-c1">$</span>socket</span>);
-<span class="pl-s1"><span class="pl-c1">$</span>server</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'request'</span>, <span class="pl-s1"><span class="pl-c1">$</span>app</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>server</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'<span class="pl-s">request</span>'</span>, <span class="pl-s1"><span class="pl-c1">$</span>app</span>);
 
 <span class="pl-c">// new</span>
 <span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-k">new</span> <span class="pl-v">Server</span>(<span class="pl-s1"><span class="pl-c1">$</span>app</span>);
@@ -1398,22 +1398,22 @@ delimiting requests with an explicit <code class="notranslate">Content-Length</c
 and those with an empty request message body.</p>
 <p dir="auto">These streaming semantics are compatible with previous Stream v0.5, future<br>
 compatible with v0.5 and upcoming v0.6 versions and can be used like this:</p>
-<div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-s1"><span class="pl-c1">$</span>http</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'request'</span>, <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">Request</span></span> <span class="pl-s1"><span class="pl-c1">$</span>request</span>, <span class="pl-smi"><span class="pl-smi">Response</span></span> <span class="pl-s1"><span class="pl-c1">$</span>response</span>) {
+<div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-s1"><span class="pl-c1">$</span>http</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'<span class="pl-s">request</span>'</span>, <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">Request</span></span> <span class="pl-s1"><span class="pl-c1">$</span>request</span>, <span class="pl-smi"><span class="pl-smi">Response</span></span> <span class="pl-s1"><span class="pl-c1">$</span>response</span>) {
     <span class="pl-s1"><span class="pl-c1">$</span>contentLength</span> = <span class="pl-c1">0</span>;
-    <span class="pl-s1"><span class="pl-c1">$</span>request</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'data'</span>, <span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>data</span>) <span class="pl-k">use</span> (&amp;<span class="pl-s1"><span class="pl-c1">$</span>contentLength</span>) {
-        <span class="pl-s1"><span class="pl-c1">$</span>contentLength</span> += strlen(<span class="pl-s1"><span class="pl-c1">$</span>data</span>);
+    <span class="pl-s1"><span class="pl-c1">$</span>request</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'<span class="pl-s">data</span>'</span>, <span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>data</span>) <span class="pl-k">use</span> (&amp;<span class="pl-s1"><span class="pl-c1">$</span>contentLength</span>) {
+        <span class="pl-s1"><span class="pl-c1">$</span>contentLength</span> += <span class="pl-en">strlen</span>(<span class="pl-s1"><span class="pl-c1">$</span>data</span>);
     });
 
-    <span class="pl-s1"><span class="pl-c1">$</span>request</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'end'</span>, <span class="pl-k">function</span> () <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>response</span>, &amp;<span class="pl-s1"><span class="pl-c1">$</span>contentLength</span>){
-        <span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">writeHead</span>(<span class="pl-c1">200</span>, <span class="pl-en">array</span>(<span class="pl-s">'Content-Type'</span> =&gt; <span class="pl-s">'text/plain'</span>));
-        <span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">end</span>("<span class="pl-s">The length of the submitted request body is: </span>" . <span class="pl-s1"><span class="pl-c1">$</span>contentLength</span>);
+    <span class="pl-s1"><span class="pl-c1">$</span>request</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'<span class="pl-s">end</span>'</span>, <span class="pl-k">function</span> () <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>response</span>, &amp;<span class="pl-s1"><span class="pl-c1">$</span>contentLength</span>){
+        <span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">writeHead</span>(<span class="pl-c1">200</span>, <span class="pl-en">array</span>(<span class="pl-s">'<span class="pl-s">Content-Type</span>'</span> =&gt; <span class="pl-s">'<span class="pl-s">text/plain</span>'</span>));
+        <span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">end</span>(<span class="pl-s">"<span class="pl-s">The length of the submitted request body is: </span>"</span> . <span class="pl-s1"><span class="pl-c1">$</span>contentLength</span>);
     });
 
     <span class="pl-c">// an error occured</span>
     <span class="pl-c">// e.g. on invalid chunked encoded data or an unexpected 'end' event </span>
-    <span class="pl-s1"><span class="pl-c1">$</span>request</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'error'</span>, <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">\<span class="pl-v">Exception</span></span></span> <span class="pl-s1"><span class="pl-c1">$</span>exception</span>) <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>response</span>, &amp;<span class="pl-s1"><span class="pl-c1">$</span>contentLength</span>) {
-        <span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">writeHead</span>(<span class="pl-c1">400</span>, <span class="pl-en">array</span>(<span class="pl-s">'Content-Type'</span> =&gt; <span class="pl-s">'text/plain'</span>));
-        <span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">end</span>("<span class="pl-s">An error occured while reading at length: </span>" . <span class="pl-s1"><span class="pl-c1">$</span>contentLength</span>);
+    <span class="pl-s1"><span class="pl-c1">$</span>request</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'<span class="pl-s">error</span>'</span>, <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">\<span class="pl-v">Exception</span></span></span> <span class="pl-s1"><span class="pl-c1">$</span>exception</span>) <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>response</span>, &amp;<span class="pl-s1"><span class="pl-c1">$</span>contentLength</span>) {
+        <span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">writeHead</span>(<span class="pl-c1">400</span>, <span class="pl-en">array</span>(<span class="pl-s">'<span class="pl-s">Content-Type</span>'</span> =&gt; <span class="pl-s">'<span class="pl-s">text/plain</span>'</span>));
+        <span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">end</span>(<span class="pl-s">"<span class="pl-s">An error occured while reading at length: </span>"</span> . <span class="pl-s1"><span class="pl-c1">$</span>contentLength</span>);
     });
 });</pre></div>
 <p dir="auto">Similarly, the <code class="notranslate">Request</code> and <code class="notranslate">Response</code> now strictly follow the<br>
@@ -1472,17 +1472,17 @@ add secure HTTPS server support<br>
 (<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="205507446" data-permission-text="Title is private" data-url="https://github.com/reactphp/http/issues/90" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/http/pull/90/hovercard" href="https://github.com/reactphp/http/pull/90">#90</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="208097779" data-permission-text="Title is private" data-url="https://github.com/reactphp/http/issues/119" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/http/pull/119/hovercard" href="https://github.com/reactphp/http/pull/119">#119</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 <div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-c">// old plaintext HTTP server</span>
 <span class="pl-s1"><span class="pl-c1">$</span>socket</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Server</span>(<span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
-<span class="pl-s1"><span class="pl-c1">$</span>socket</span>-&gt;<span class="pl-en">listen</span>(<span class="pl-c1">8080</span>, <span class="pl-s">'127.0.0.1'</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>socket</span>-&gt;<span class="pl-en">listen</span>(<span class="pl-c1">8080</span>, <span class="pl-s">'<span class="pl-s">127.0.0.1</span>'</span>);
 <span class="pl-s1"><span class="pl-c1">$</span>http</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Server</span>(<span class="pl-s1"><span class="pl-c1">$</span>socket</span>);
 
 <span class="pl-c">// new plaintext HTTP server</span>
-<span class="pl-s1"><span class="pl-c1">$</span>socket</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Server</span>(<span class="pl-s">'127.0.0.1:8080'</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>socket</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Server</span>(<span class="pl-s">'<span class="pl-s">127.0.0.1:8080</span>'</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
 <span class="pl-s1"><span class="pl-c1">$</span>http</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Server</span>(<span class="pl-s1"><span class="pl-c1">$</span>socket</span>);
 
 <span class="pl-c">// new secure HTTPS server</span>
-<span class="pl-s1"><span class="pl-c1">$</span>socket</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Server</span>(<span class="pl-s">'127.0.0.1:8080'</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>socket</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Server</span>(<span class="pl-s">'<span class="pl-s">127.0.0.1:8080</span>'</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
 <span class="pl-s1"><span class="pl-c1">$</span>socket</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">SecureServer</span>(<span class="pl-s1"><span class="pl-c1">$</span>socket</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>, <span class="pl-en">array</span>(
-    <span class="pl-s">'local_cert'</span> =&gt; __DIR__ . <span class="pl-s">'/localhost.pem'</span>
+    <span class="pl-s">'<span class="pl-s">local_cert</span>'</span> =&gt; <span class="pl-c1">__DIR__</span> . <span class="pl-s">'<span class="pl-s">/localhost.pem</span>'</span>
 ));
 <span class="pl-s1"><span class="pl-c1">$</span>http</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Server</span>(<span class="pl-s1"><span class="pl-c1">$</span>socket</span>);</pre></div>
 </li>
@@ -1513,10 +1513,10 @@ remove unneeded <code class="notranslate">ServerInterface</code><br>
 <p dir="auto">Feature: Add request header accessors (à la PSR-7)<br>
 (<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="206525234" data-permission-text="Title is private" data-url="https://github.com/reactphp/http/issues/103" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/http/pull/103/hovercard" href="https://github.com/reactphp/http/pull/103">#103</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 <div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-c">// get value of host header</span>
-<span class="pl-s1"><span class="pl-c1">$</span>host</span> = <span class="pl-s1"><span class="pl-c1">$</span>request</span>-&gt;<span class="pl-en">getHeaderLine</span>(<span class="pl-s">'Host'</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>host</span> = <span class="pl-s1"><span class="pl-c1">$</span>request</span>-&gt;<span class="pl-en">getHeaderLine</span>(<span class="pl-s">'<span class="pl-s">Host</span>'</span>);
 
 <span class="pl-c">// get list of all cookie headers</span>
-<span class="pl-s1"><span class="pl-c1">$</span>cookies</span> = <span class="pl-s1"><span class="pl-c1">$</span>request</span>-&gt;<span class="pl-en">getHeader</span>(<span class="pl-s">'Cookie'</span>);</pre></div>
+<span class="pl-s1"><span class="pl-c1">$</span>cookies</span> = <span class="pl-s1"><span class="pl-c1">$</span>request</span>-&gt;<span class="pl-en">getHeader</span>(<span class="pl-s">'<span class="pl-s">Cookie</span>'</span>);</pre></div>
 </li>
 <li>
 <p dir="auto">Feature: Forward <code class="notranslate">pause()</code> and <code class="notranslate">resume()</code> from <code class="notranslate">Request</code> to underlying connection<br>
@@ -1537,7 +1537,7 @@ we no longer apply chunked transfer encoding with mixed-case <code class="notran
 <span class="pl-s1"><span class="pl-c1">$</span>request</span>-&gt;<span class="pl-en">expectsContinue</span>();
 
 <span class="pl-c">// now works just like properly-cased header</span>
-<span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">writeHead</span>(<span class="pl-s1"><span class="pl-c1">$</span>status</span>, <span class="pl-en">array</span>(<span class="pl-s">'content-length'</span> =&gt; <span class="pl-c1">0</span>));</pre></div>
+<span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">writeHead</span>(<span class="pl-s1"><span class="pl-c1">$</span>status</span>, <span class="pl-en">array</span>(<span class="pl-s">'<span class="pl-s">content-length</span>'</span> =&gt; <span class="pl-c1">0</span>));</pre></div>
 </li>
 <li>
 <p dir="auto">Fix: Do not emit empty <code class="notranslate">data</code> events and ignore empty writes in order to<br>
@@ -2078,12 +2078,12 @@ and replacing unneeded test stubs<br>
                         <ul class="component-info__contributors">
                                                     <li>
                                 <a href="https://github.com/clue">
-                                    <img src="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=80 2x" alt="clue" title="clue (324 contributions)">
+                                    <img src="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=80 2x" alt="clue" title="clue (325 contributions)">
                                 </a>
                             </li>
                                                     <li>
                                 <a href="https://github.com/WyriHaximus">
-                                    <img src="https://avatars.githubusercontent.com/u/147145?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/147145?v=4&amp;s=80 2x" alt="WyriHaximus" title="WyriHaximus (218 contributions)">
+                                    <img src="https://avatars.githubusercontent.com/u/147145?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/147145?v=4&amp;s=80 2x" alt="WyriHaximus" title="WyriHaximus (220 contributions)">
                                 </a>
                             </li>
                                                     <li>
@@ -2172,48 +2172,23 @@ and replacing unneeded test stubs<br>
                                 </a>
                             </li>
                                                     <li>
-                                <a href="https://github.com/51imyyy">
-                                    <img src="https://avatars.githubusercontent.com/u/83275941?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/83275941?v=4&amp;s=80 2x" alt="51imyyy" title="51imyyy (1 contribution)">
+                                <a href="https://github.com/e3betht">
+                                    <img src="https://avatars.githubusercontent.com/u/1811561?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/1811561?v=4&amp;s=80 2x" alt="e3betht" title="e3betht (1 contribution)">
                                 </a>
                             </li>
                                                     <li>
-                                <a href="https://github.com/beaucollins">
-                                    <img src="https://avatars.githubusercontent.com/u/19795?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/19795?v=4&amp;s=80 2x" alt="beaucollins" title="beaucollins (1 contribution)">
+                                <a href="https://github.com/ojhaujjwal">
+                                    <img src="https://avatars.githubusercontent.com/u/4995501?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/4995501?v=4&amp;s=80 2x" alt="ojhaujjwal" title="ojhaujjwal (1 contribution)">
                                 </a>
                             </li>
                                                     <li>
-                                <a href="https://github.com/christoph-kluge">
-                                    <img src="https://avatars.githubusercontent.com/u/1446269?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/1446269?v=4&amp;s=80 2x" alt="christoph-kluge" title="christoph-kluge (1 contribution)">
+                                <a href="https://github.com/mrsimonbennett">
+                                    <img src="https://avatars.githubusercontent.com/u/1471305?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/1471305?v=4&amp;s=80 2x" alt="mrsimonbennett" title="mrsimonbennett (1 contribution)">
                                 </a>
                             </li>
                                                     <li>
-                                <a href="https://github.com/dinooo13">
-                                    <img src="https://avatars.githubusercontent.com/u/44942030?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/44942030?v=4&amp;s=80 2x" alt="dinooo13" title="dinooo13 (1 contribution)">
-                                </a>
-                            </li>
-                                                    <li>
-                                <a href="https://github.com/fritz-gerneth">
-                                    <img src="https://avatars.githubusercontent.com/u/1294731?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/1294731?v=4&amp;s=80 2x" alt="fritz-gerneth" title="fritz-gerneth (1 contribution)">
-                                </a>
-                            </li>
-                                                    <li>
-                                <a href="https://github.com/greevex">
-                                    <img src="https://avatars.githubusercontent.com/u/148401?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/148401?v=4&amp;s=80 2x" alt="greevex" title="greevex (1 contribution)">
-                                </a>
-                            </li>
-                                                    <li>
-                                <a href="https://github.com/jorrit">
-                                    <img src="https://avatars.githubusercontent.com/u/521449?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/521449?v=4&amp;s=80 2x" alt="jorrit" title="jorrit (1 contribution)">
-                                </a>
-                            </li>
-                                                    <li>
-                                <a href="https://github.com/marenzo">
-                                    <img src="https://avatars.githubusercontent.com/u/1208453?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/1208453?v=4&amp;s=80 2x" alt="marenzo" title="marenzo (1 contribution)">
-                                </a>
-                            </li>
-                                                    <li>
-                                <a href="https://github.com/nhedger">
-                                    <img src="https://avatars.githubusercontent.com/u/649677?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/649677?v=4&amp;s=80 2x" alt="nhedger" title="nhedger (1 contribution)">
+                                <a href="https://github.com/reedy">
+                                    <img src="https://avatars.githubusercontent.com/u/67615?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/67615?v=4&amp;s=80 2x" alt="reedy" title="reedy (1 contribution)">
                                 </a>
                             </li>
                                                     <li>
@@ -2222,8 +2197,33 @@ and replacing unneeded test stubs<br>
                                 </a>
                             </li>
                                                     <li>
-                                <a href="https://github.com/reedy">
-                                    <img src="https://avatars.githubusercontent.com/u/67615?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/67615?v=4&amp;s=80 2x" alt="reedy" title="reedy (1 contribution)">
+                                <a href="https://github.com/nhedger">
+                                    <img src="https://avatars.githubusercontent.com/u/649677?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/649677?v=4&amp;s=80 2x" alt="nhedger" title="nhedger (1 contribution)">
+                                </a>
+                            </li>
+                                                    <li>
+                                <a href="https://github.com/marenzo">
+                                    <img src="https://avatars.githubusercontent.com/u/1208453?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/1208453?v=4&amp;s=80 2x" alt="marenzo" title="marenzo (1 contribution)">
+                                </a>
+                            </li>
+                                                    <li>
+                                <a href="https://github.com/jorrit">
+                                    <img src="https://avatars.githubusercontent.com/u/521449?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/521449?v=4&amp;s=80 2x" alt="jorrit" title="jorrit (1 contribution)">
+                                </a>
+                            </li>
+                                                    <li>
+                                <a href="https://github.com/lucasnetau">
+                                    <img src="https://avatars.githubusercontent.com/u/9331242?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/9331242?v=4&amp;s=80 2x" alt="lucasnetau" title="lucasnetau (1 contribution)">
+                                </a>
+                            </li>
+                                                    <li>
+                                <a href="https://github.com/greevex">
+                                    <img src="https://avatars.githubusercontent.com/u/148401?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/148401?v=4&amp;s=80 2x" alt="greevex" title="greevex (1 contribution)">
+                                </a>
+                            </li>
+                                                    <li>
+                                <a href="https://github.com/fritz-gerneth">
+                                    <img src="https://avatars.githubusercontent.com/u/1294731?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/1294731?v=4&amp;s=80 2x" alt="fritz-gerneth" title="fritz-gerneth (1 contribution)">
                                 </a>
                             </li>
                                                 </ul>
@@ -2240,7 +2240,7 @@ and replacing unneeded test stubs<br>
         <mask id="reactphp-http-participation-sparkline" x="0" y="0" width="320" height="40" >
             <polyline 
                 transform="translate(0, 40) scale(1,-1)"
-                points="0,1 6,1 12,1 18,1 24,1 30,1 36,1 42,3 48,2 54,2 60,1 66,1 72,1 78,1 84,1 90,1 96,2 102,1 108,1 114,1 120,1 126,1 132,1 138,1 144,1 150,1 156,1 162,1 168,1 174,3 180,2 186,1 192,6 198,4 204,9 210,1 216,1 222,1 228,1 234,1 240,1 246,2 252,2 258,6 264,2 270,1 276,1 282,1 288,1 294,1 300,1 306,1" 
+                points="0,1 6,3 12,2 18,2 24,1 30,1 36,1 42,1 48,1 54,1 60,2 66,1 72,1 78,1 84,1 90,1 96,1 102,1 108,1 114,1 120,1 126,1 132,1 138,3 144,2 150,1 156,6 162,4 168,9 174,1 180,1 186,1 192,1 198,1 204,1 210,2 216,2 222,6 228,2 234,2 240,1 246,1 252,1 258,2 264,1 270,1 276,1 282,1 288,1 294,2 300,2 306,1" 
                 fill="transparent" 
                 stroke="#40a977" 
                 stroke-width="2"

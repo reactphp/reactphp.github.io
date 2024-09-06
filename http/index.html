@@ -119,7 +119,7 @@
                         Datagram
 
                         <span class="off-canvas-menu__version">
-                            v1.9.0
+                            v1.10.0
                         </span>
                     </a>
                 </li>
@@ -221,7 +221,7 @@
 
                     <div class="markdown-heading"><h1 class="heading-element">HTTP</h1><a id="http" class="anchor" aria-label="Permalink: HTTP" href="#http"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p><a href="https://github.com/reactphp/http/actions"><img src="https://github.com/reactphp/http/actions/workflows/ci.yml/badge.svg" alt="CI status" style="max-width: 100%;"></a>
-<a href="https://packagist.org/packages/react/http" rel="nofollow"><img src="https://camo.githubusercontent.com/b7cd02539c782d030ffaef539b5276bf887f4a6bc023d2601dc4cb481f4cb4c5/68747470733a2f2f696d672e736869656c64732e696f2f7061636b61676973742f64742f72656163742f687474703f636f6c6f723d626c7565266c6162656c3d696e7374616c6c732532306f6e2532305061636b6167697374" alt="installs on Packagist" data-canonical-src="https://img.shields.io/packagist/dt/react/http?color=blue&amp;label=installs%20on%20Packagist" style="max-width: 100%;"></a></p>
+<a href="https://packagist.org/packages/react/http" rel="nofollow"><img src="https://camo.githubusercontent.com/3c77bd631328ff8ceaaadf84752cc87f88b8691a1f70d93c3b07aaffec4754f3/68747470733a2f2f696d672e736869656c64732e696f2f7061636b61676973742f64742f72656163742f687474703f636f6c6f723d626c7565266c6162656c3d696e7374616c6c732532306f6e2532305061636b6167697374" alt="installs on Packagist" data-canonical-src="https://img.shields.io/packagist/dt/react/http?color=blue&amp;label=installs%20on%20Packagist" style="max-width: 100%;"></a></p>
 <p>Event-driven, streaming HTTP client and server implementation for <a href="https://reactphp.org/" rel="nofollow">ReactPHP</a>.</p>
 <p>This HTTP library provides re-usable implementations for an HTTP client and
 server based on ReactPHP's <a href="../socket/"><code>Socket</code></a> and
@@ -352,27 +352,27 @@ multiple concurrent HTTP requests without blocking.</p>
 HTTP web server and send some simple HTTP GET requests:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-ent">&lt;?php</span>
 
-<span class="pl-k">require</span> __DIR__ . <span class="pl-s">'/vendor/autoload.php'</span>;
+<span class="pl-k">require</span> <span class="pl-c1">__DIR__</span> . <span class="pl-s">'<span class="pl-s">/vendor/autoload.php</span>'</span>;
 
 <span class="pl-s1"><span class="pl-c1">$</span>client</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Browser</span>();
 
-<span class="pl-s1"><span class="pl-c1">$</span>client</span>-&gt;<span class="pl-en">get</span>(<span class="pl-s">'http://www.google.com/'</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi"><span class="pl-v">Psr</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">ResponseInterface</span></span></span> <span class="pl-s1"><span class="pl-c1">$</span>response</span>) {
-    var_dump(<span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">getHeaders</span>(), (<span class="pl-smi">string</span>)<span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">getBody</span>());
+<span class="pl-s1"><span class="pl-c1">$</span>client</span>-&gt;<span class="pl-en">get</span>(<span class="pl-s">'<span class="pl-s">http://www.google.com/</span>'</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi"><span class="pl-v">Psr</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">ResponseInterface</span></span></span> <span class="pl-s1"><span class="pl-c1">$</span>response</span>) {
+    <span class="pl-en">var_dump</span>(<span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">getHeaders</span>(), (<span class="pl-smi">string</span>)<span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">getBody</span>());
 }, <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">Exception</span></span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>) {
-    <span class="pl-k">echo</span> <span class="pl-s">'Error: '</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
+    <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">Error: </span>'</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
 });</pre></div>
 <p>This is an HTTP server which responds with <code>Hello World!</code> to every request.</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-ent">&lt;?php</span>
 
-<span class="pl-k">require</span> __DIR__ . <span class="pl-s">'/vendor/autoload.php'</span>;
+<span class="pl-k">require</span> <span class="pl-c1">__DIR__</span> . <span class="pl-s">'<span class="pl-s">/vendor/autoload.php</span>'</span>;
 
 <span class="pl-s1"><span class="pl-c1">$</span>http</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">HttpServer</span>(<span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi"><span class="pl-v">Psr</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">ServerRequestInterface</span></span></span> <span class="pl-s1"><span class="pl-c1">$</span>request</span>) {
     <span class="pl-k">return</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">Response</span>::<span class="pl-en">plaintext</span>(
-        "<span class="pl-s">Hello World!</span>\n"
+        <span class="pl-s">"<span class="pl-s">Hello World!</span>\n"</span>
     );
 });
 
-<span class="pl-s1"><span class="pl-c1">$</span>socket</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">SocketServer</span>(<span class="pl-s">'127.0.0.1:8080'</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>socket</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">SocketServer</span>(<span class="pl-s">'<span class="pl-s">127.0.0.1:8080</span>'</span>);
 <span class="pl-s1"><span class="pl-c1">$</span>http</span>-&gt;<span class="pl-en">listen</span>(<span class="pl-s1"><span class="pl-c1">$</span>socket</span>);</pre></div>
 <p>See also the <a href="https://github.com/reactphp/http/blob/v1.10.0/examples/">examples</a>.</p>
 <div class="markdown-heading"><h2 class="heading-element">Client Usage</h2><a id="client-usage" class="anchor" aria-label="Permalink: Client Usage" href="#client-usage"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
@@ -417,10 +417,10 @@ interface that makes it easy to react to when an HTTP request is completed
 (i.e. either successfully fulfilled or rejected with an error):</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">get</span>(<span class="pl-s1"><span class="pl-c1">$</span>url</span>)-&gt;<span class="pl-en">then</span>(
     <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi"><span class="pl-v">Psr</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">ResponseInterface</span></span></span> <span class="pl-s1"><span class="pl-c1">$</span>response</span>) {
-        var_dump(<span class="pl-s">'Response received'</span>, <span class="pl-s1"><span class="pl-c1">$</span>response</span>);
+        <span class="pl-en">var_dump</span>(<span class="pl-s">'<span class="pl-s">Response received</span>'</span>, <span class="pl-s1"><span class="pl-c1">$</span>response</span>);
     },
     <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">Exception</span></span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>) {
-        <span class="pl-k">echo</span> <span class="pl-s">'Error: '</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
+        <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">Error: </span>'</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
     }
 );</pre></div>
 <p>If this looks strange to you, you can also use the more traditional <a href="#blocking">blocking API</a>.</p>
@@ -465,9 +465,9 @@ value in seconds like this:</p>
 
 <span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">get</span>(<span class="pl-s1"><span class="pl-c1">$</span>url</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi"><span class="pl-v">Psr</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">ResponseInterface</span></span></span> <span class="pl-s1"><span class="pl-c1">$</span>response</span>) {
     <span class="pl-c">// response received within 10 seconds maximum</span>
-    var_dump(<span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">getHeaders</span>());
+    <span class="pl-en">var_dump</span>(<span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">getHeaders</span>());
 }, <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">Exception</span></span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>) {
-    <span class="pl-k">echo</span> <span class="pl-s">'Error: '</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
+    <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">Error: </span>'</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
 });</pre></div>
 <p>Similarly, you can use a bool <code>false</code> to not apply a timeout at all
 or use a bool <code>true</code> value to restore the default handling.
@@ -490,7 +490,7 @@ like this:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>browser</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Browser</span>(
     <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Connector</span>(
         <span class="pl-en">array</span>(
-            <span class="pl-s">'timeout'</span> =&gt; <span class="pl-c1">5</span>
+            <span class="pl-s">'<span class="pl-s">timeout</span>'</span> =&gt; <span class="pl-c1">5</span>
         )
     )
 );</pre></div>
@@ -504,7 +504,7 @@ status code which will reject the request by default (see also the
 <a href="#withrejecterrorresponse"><code>withRejectErrorResponse()</code> method</a> below).</p>
 <p>In order to pass authentication details, you can simply pass the username and
 password as part of the request URL like this:</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>promise</span> = <span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">get</span>(<span class="pl-s">'https://user:pass@example.com/api'</span>);</pre></div>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>promise</span> = <span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">get</span>(<span class="pl-s">'<span class="pl-s">https://user:pass@example.com/api</span>'</span>);</pre></div>
 <p>Note that special characters in the authentication details have to be
 percent-encoded, see also <a href="https://www.php.net/manual/en/function.rawurlencode.php" rel="nofollow"><code>rawurlencode()</code></a>.
 This example will automatically pass the base64-encoded authentication details
@@ -512,12 +512,12 @@ using the outgoing <code>Authorization: Basic …</code> request header. If the 
 you're talking to requires any other authentication scheme, you can also pass
 this header explicitly. This is common when using (RESTful) HTTP APIs that use
 OAuth access tokens or JSON Web Tokens (JWT):</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>token</span> = <span class="pl-s">'abc123'</span>;
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>token</span> = <span class="pl-s">'<span class="pl-s">abc123</span>'</span>;
 
 <span class="pl-s1"><span class="pl-c1">$</span>promise</span> = <span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">get</span>(
-    <span class="pl-s">'https://example.com/api'</span>,
+    <span class="pl-s">'<span class="pl-s">https://example.com/api</span>'</span>,
     <span class="pl-en">array</span>(
-        <span class="pl-s">'Authorization'</span> =&gt; <span class="pl-s">'Bearer '</span> . <span class="pl-s1"><span class="pl-c1">$</span>token</span>
+        <span class="pl-s">'<span class="pl-s">Authorization</span>'</span> =&gt; <span class="pl-s">'<span class="pl-s">Bearer </span>'</span> . <span class="pl-s1"><span class="pl-c1">$</span>token</span>
     )
 );</pre></div>
 <p>When following redirects, the <code>Authorization</code> request header will never be sent
@@ -530,9 +530,9 @@ status codes using the <code>Location</code> response header from the remote ser
 The promise will be fulfilled with the last response from the chain of redirects.</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">get</span>(<span class="pl-s1"><span class="pl-c1">$</span>url</span>, <span class="pl-s1"><span class="pl-c1">$</span>headers</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi"><span class="pl-v">Psr</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">ResponseInterface</span></span></span> <span class="pl-s1"><span class="pl-c1">$</span>response</span>) {
     <span class="pl-c">// the final response will end up here</span>
-    var_dump(<span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">getHeaders</span>());
+    <span class="pl-en">var_dump</span>(<span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">getHeaders</span>());
 }, <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">Exception</span></span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>) {
-    <span class="pl-k">echo</span> <span class="pl-s">'Error: '</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
+    <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">Error: </span>'</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
 });</pre></div>
 <p>Any redirected requests will follow the semantics of the original request and
 will include the same request headers as the original request except for those
@@ -555,9 +555,9 @@ responses as-is and apply custom redirection logic like this:</p>
 
 <span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">get</span>(<span class="pl-s1"><span class="pl-c1">$</span>url</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi"><span class="pl-v">Psr</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">ResponseInterface</span></span></span> <span class="pl-s1"><span class="pl-c1">$</span>response</span>) {
     <span class="pl-c">// any redirects will now end up here</span>
-    var_dump(<span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">getHeaders</span>());
+    <span class="pl-en">var_dump</span>(<span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">getHeaders</span>());
 }, <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">Exception</span></span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>) {
-    <span class="pl-k">echo</span> <span class="pl-s">'Error: '</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
+    <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">Error: </span>'</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
 });</pre></div>
 <p>See also <a href="#withfollowredirects"><code>withFollowRedirects()</code></a> for more details.</p>
 <div class="markdown-heading"><h3 class="heading-element">Blocking</h3><a id="blocking" class="anchor" aria-label="Permalink: Blocking" href="#blocking"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
@@ -569,10 +569,10 @@ await async HTTP requests like this:</p>
 
 <span class="pl-s1"><span class="pl-c1">$</span>browser</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Browser</span>();
 
-<span class="pl-s1"><span class="pl-c1">$</span>promise</span> = <span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">get</span>(<span class="pl-s">'http://example.com/'</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>promise</span> = <span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">get</span>(<span class="pl-s">'<span class="pl-s">http://example.com/</span>'</span>);
 
 <span class="pl-k">try</span> {
-    <span class="pl-s1"><span class="pl-c1">$</span>response</span> = await(<span class="pl-s1"><span class="pl-c1">$</span>promise</span>);
+    <span class="pl-s1"><span class="pl-c1">$</span>response</span> = <span class="pl-en">await</span>(<span class="pl-s1"><span class="pl-c1">$</span>promise</span>);
     <span class="pl-c">// response successfully received</span>
 } <span class="pl-k">catch</span> (<span class="pl-smi"><span class="pl-smi">Exception</span></span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>) {
     <span class="pl-c">// an error occurred while performing the request</span>
@@ -582,11 +582,11 @@ await async HTTP requests like this:</p>
 <span class="pl-k">use</span> <span class="pl-k">function</span> <span class="pl-v">React</span>\<span class="pl-v">Promise</span>\all;
 
 <span class="pl-s1"><span class="pl-c1">$</span>promises</span> = <span class="pl-en">array</span>(
-    <span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">get</span>(<span class="pl-s">'http://example.com/'</span>),
-    <span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">get</span>(<span class="pl-s">'http://www.example.org/'</span>),
+    <span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">get</span>(<span class="pl-s">'<span class="pl-s">http://example.com/</span>'</span>),
+    <span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">get</span>(<span class="pl-s">'<span class="pl-s">http://www.example.org/</span>'</span>),
 );
 
-<span class="pl-s1"><span class="pl-c1">$</span>responses</span> = await(all(<span class="pl-s1"><span class="pl-c1">$</span>promises</span>));</pre></div>
+<span class="pl-s1"><span class="pl-c1">$</span>responses</span> = <span class="pl-en">await</span>(<span class="pl-en">all</span>(<span class="pl-s1"><span class="pl-c1">$</span>promises</span>));</pre></div>
 <p>This is made possible thanks to fibers available in PHP 8.1+ and our
 compatibility API that also works on all supported PHP versions.
 Please refer to <a href="../async/#readme">reactphp/async</a> for more details.</p>
@@ -605,9 +605,9 @@ from your side.</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-c">// watch out if array contains many elements</span>
 <span class="pl-k">foreach</span> (<span class="pl-s1"><span class="pl-c1">$</span>urls</span> <span class="pl-k">as</span> <span class="pl-s1"><span class="pl-c1">$</span>url</span>) {
     <span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">get</span>(<span class="pl-s1"><span class="pl-c1">$</span>url</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi"><span class="pl-v">Psr</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">ResponseInterface</span></span></span> <span class="pl-s1"><span class="pl-c1">$</span>response</span>) {
-        var_dump(<span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">getHeaders</span>());
+        <span class="pl-en">var_dump</span>(<span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">getHeaders</span>());
     }, <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">Exception</span></span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>) {
-        <span class="pl-k">echo</span> <span class="pl-s">'Error: '</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
+        <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">Error: </span>'</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
     });
 }</pre></div>
 <p>As a consequence, it's usually recommended to limit concurrency on the sending
@@ -622,9 +622,9 @@ in-memory queue to concurrently do many (but not too many) things at once:</p>
 
 <span class="pl-k">foreach</span> (<span class="pl-s1"><span class="pl-c1">$</span>urls</span> <span class="pl-k">as</span> <span class="pl-s1"><span class="pl-c1">$</span>url</span>) {
     <span class="pl-s1"><span class="pl-c1">$</span>q</span>(<span class="pl-s1"><span class="pl-c1">$</span>url</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi"><span class="pl-v">Psr</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">ResponseInterface</span></span></span> <span class="pl-s1"><span class="pl-c1">$</span>response</span>) {
-        var_dump(<span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">getHeaders</span>());
+        <span class="pl-en">var_dump</span>(<span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">getHeaders</span>());
     }, <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">Exception</span></span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>) {
-        <span class="pl-k">echo</span> <span class="pl-s">'Error: '</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
+        <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">Error: </span>'</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
     });
 }</pre></div>
 <p>Additional requests that exceed the concurrency limit will automatically be
@@ -659,24 +659,24 @@ which can be used to access the response message parameters as usual.
 You can access the message body as usual, however it now also
 implements <a href="../stream/#readablestreaminterface">ReactPHP's <code>ReadableStreamInterface</code></a>
 as well as parts of the <a href="https://www.php-fig.org/psr/psr-7/#34-psrhttpmessagestreaminterface" rel="nofollow">PSR-7 <code>StreamInterface</code></a>.</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">requestStreaming</span>(<span class="pl-s">'GET'</span>, <span class="pl-s1"><span class="pl-c1">$</span>url</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi"><span class="pl-v">Psr</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">ResponseInterface</span></span></span> <span class="pl-s1"><span class="pl-c1">$</span>response</span>) {
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">requestStreaming</span>(<span class="pl-s">'<span class="pl-s">GET</span>'</span>, <span class="pl-s1"><span class="pl-c1">$</span>url</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi"><span class="pl-v">Psr</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">ResponseInterface</span></span></span> <span class="pl-s1"><span class="pl-c1">$</span>response</span>) {
     <span class="pl-s1"><span class="pl-c1">$</span>body</span> = <span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">getBody</span>();
-    assert(<span class="pl-s1"><span class="pl-c1">$</span>body</span> instanceof <span class="pl-v">Psr</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">StreamInterface</span>);
-    assert(<span class="pl-s1"><span class="pl-c1">$</span>body</span> instanceof <span class="pl-v">React</span>\<span class="pl-v">Stream</span>\<span class="pl-v">ReadableStreamInterface</span>);
+    <span class="pl-en">assert</span>(<span class="pl-s1"><span class="pl-c1">$</span>body</span> instanceof <span class="pl-v">Psr</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">StreamInterface</span>);
+    <span class="pl-en">assert</span>(<span class="pl-s1"><span class="pl-c1">$</span>body</span> instanceof <span class="pl-v">React</span>\<span class="pl-v">Stream</span>\<span class="pl-v">ReadableStreamInterface</span>);
 
-    <span class="pl-s1"><span class="pl-c1">$</span>body</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'data'</span>, <span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>chunk</span>) {
+    <span class="pl-s1"><span class="pl-c1">$</span>body</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'<span class="pl-s">data</span>'</span>, <span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>chunk</span>) {
         <span class="pl-k">echo</span> <span class="pl-s1"><span class="pl-c1">$</span>chunk</span>;
     });
 
-    <span class="pl-s1"><span class="pl-c1">$</span>body</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'error'</span>, <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">Exception</span></span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>) {
-        <span class="pl-k">echo</span> <span class="pl-s">'Error: '</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
+    <span class="pl-s1"><span class="pl-c1">$</span>body</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'<span class="pl-s">error</span>'</span>, <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">Exception</span></span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>) {
+        <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">Error: </span>'</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
     });
 
-    <span class="pl-s1"><span class="pl-c1">$</span>body</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'close'</span>, <span class="pl-k">function</span> () {
-        <span class="pl-k">echo</span> <span class="pl-s">'[DONE]'</span> . <span class="pl-c1">PHP_EOL</span>;
+    <span class="pl-s1"><span class="pl-c1">$</span>body</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'<span class="pl-s">close</span>'</span>, <span class="pl-k">function</span> () {
+        <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">[DONE]</span>'</span> . <span class="pl-c1">PHP_EOL</span>;
     });
 }, <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">Exception</span></span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>) {
-    <span class="pl-k">echo</span> <span class="pl-s">'Error: '</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
+    <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">Error: </span>'</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
 });</pre></div>
 <p>See also the <a href="https://github.com/reactphp/http/blob/v1.10.0/examples/91-client-benchmark-download.php">stream download benchmark example</a> and
 the <a href="https://github.com/reactphp/http/blob/v1.10.0/examples/21-client-request-streaming-to-stdout.php">stream forwarding example</a>.</p>
@@ -714,18 +714,18 @@ The resulting streaming code could look something like this:</p>
 
 <span class="pl-k">function</span> <span class="pl-en">download</span>(<span class="pl-smi"><span class="pl-smi">Browser</span></span> <span class="pl-s1"><span class="pl-c1">$</span>browser</span>, <span class="pl-smi">string</span> <span class="pl-s1"><span class="pl-c1">$</span>url</span>): <span class="pl-smi"><span class="pl-smi"><span class="pl-v">React</span>\<span class="pl-v">Stream</span>\<span class="pl-v">ReadableStreamInterface</span></span></span> {
     <span class="pl-k">return</span> <span class="pl-en"><span class="pl-v">Stream</span>\unwrapReadable</span>(
-        <span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">requestStreaming</span>(<span class="pl-s">'GET'</span>, <span class="pl-s1"><span class="pl-c1">$</span>url</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi"><span class="pl-v">Psr</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">ResponseInterface</span></span></span> <span class="pl-s1"><span class="pl-c1">$</span>response</span>) {
+        <span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">requestStreaming</span>(<span class="pl-s">'<span class="pl-s">GET</span>'</span>, <span class="pl-s1"><span class="pl-c1">$</span>url</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi"><span class="pl-v">Psr</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">ResponseInterface</span></span></span> <span class="pl-s1"><span class="pl-c1">$</span>response</span>) {
             <span class="pl-k">return</span> <span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">getBody</span>();
         })
     );
 }
 
-<span class="pl-s1"><span class="pl-c1">$</span>stream</span> = download(<span class="pl-s1"><span class="pl-c1">$</span>browser</span>, <span class="pl-s1"><span class="pl-c1">$</span>url</span>);
-<span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'data'</span>, <span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>data</span>) {
+<span class="pl-s1"><span class="pl-c1">$</span>stream</span> = <span class="pl-en">download</span>(<span class="pl-s1"><span class="pl-c1">$</span>browser</span>, <span class="pl-s1"><span class="pl-c1">$</span>url</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'<span class="pl-s">data</span>'</span>, <span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>data</span>) {
     <span class="pl-k">echo</span> <span class="pl-s1"><span class="pl-c1">$</span>data</span>;
 });
-<span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'error'</span>, <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">Exception</span></span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>) {
-    <span class="pl-k">echo</span> <span class="pl-s">'Error: '</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
+<span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'<span class="pl-s">error</span>'</span>, <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">Exception</span></span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>) {
+    <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">Error: </span>'</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
 });</pre></div>
 <p>See also the <a href="#requeststreaming"><code>requestStreaming()</code></a> method for more details.</p>
 <div class="markdown-heading"><h3 class="heading-element">Streaming request</h3><a id="streaming-request" class="anchor" aria-label="Permalink: Streaming request" href="#streaming-request"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
@@ -736,19 +736,19 @@ Instead of passing the body as a string, you can simply pass an instance
 implementing <a href="../stream/#readablestreaminterface">ReactPHP's <code>ReadableStreamInterface</code></a>
 to the <a href="#request-methods">request methods</a> like this:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">post</span>(<span class="pl-s1"><span class="pl-c1">$</span>url</span>, <span class="pl-en">array</span>(), <span class="pl-s1"><span class="pl-c1">$</span>stream</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi"><span class="pl-v">Psr</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">ResponseInterface</span></span></span> <span class="pl-s1"><span class="pl-c1">$</span>response</span>) {
-    <span class="pl-k">echo</span> <span class="pl-s">'Successfully sent.'</span>;
+    <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">Successfully sent.</span>'</span>;
 }, <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">Exception</span></span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>) {
-    <span class="pl-k">echo</span> <span class="pl-s">'Error: '</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
+    <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">Error: </span>'</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
 });</pre></div>
 <p>If you're using a streaming request body (<code>React\Stream\ReadableStreamInterface</code>), it will
 default to using <code>Transfer-Encoding: chunked</code> or you have to explicitly pass in a
 matching <code>Content-Length</code> request header like so:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>body</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Stream</span>\<span class="pl-v">ThroughStream</span>();
 <span class="pl-v">Loop</span>::<span class="pl-en">addTimer</span>(<span class="pl-c1">1.0</span>, <span class="pl-k">function</span> () <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>body</span>) {
-    <span class="pl-s1"><span class="pl-c1">$</span>body</span>-&gt;<span class="pl-en">end</span>("<span class="pl-s">hello world</span>");
+    <span class="pl-s1"><span class="pl-c1">$</span>body</span>-&gt;<span class="pl-en">end</span>(<span class="pl-s">"<span class="pl-s">hello world</span>"</span>);
 });
 
-<span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">post</span>(<span class="pl-s1"><span class="pl-c1">$</span>url</span>, <span class="pl-en">array</span>(<span class="pl-s">'Content-Length'</span> =&gt; <span class="pl-s">'11'</span>), <span class="pl-s1"><span class="pl-c1">$</span>body</span>);</pre></div>
+<span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">post</span>(<span class="pl-s1"><span class="pl-c1">$</span>url</span>, <span class="pl-en">array</span>(<span class="pl-s">'<span class="pl-s">Content-Length</span>'</span> =&gt; <span class="pl-s">'<span class="pl-s">11</span>'</span>), <span class="pl-s1"><span class="pl-c1">$</span>body</span>);</pre></div>
 <p>If the streaming request body emits an <code>error</code> event or is explicitly closed
 without emitting a successful <code>end</code> event first, the request will automatically
 be closed and rejected.</p>
@@ -761,11 +761,11 @@ conceal the origin address (anonymity) or to circumvent address blocking
 (geoblocking). While many (public) HTTP CONNECT proxy servers often limit this
 to HTTPS port <code>443</code> only, this can technically be used to tunnel any TCP/IP-based
 protocol, such as plain HTTP and TLS-encrypted HTTPS.</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>proxy</span> = <span class="pl-k">new</span> <span class="pl-v">Clue</span>\<span class="pl-v">React</span>\<span class="pl-v">HttpProxy</span>\<span class="pl-v">ProxyConnector</span>(<span class="pl-s">'127.0.0.1:8080'</span>);
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>proxy</span> = <span class="pl-k">new</span> <span class="pl-v">Clue</span>\<span class="pl-v">React</span>\<span class="pl-v">HttpProxy</span>\<span class="pl-v">ProxyConnector</span>(<span class="pl-s">'<span class="pl-s">127.0.0.1:8080</span>'</span>);
 
 <span class="pl-s1"><span class="pl-c1">$</span>connector</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Connector</span>(<span class="pl-en">array</span>(
-    <span class="pl-s">'tcp'</span> =&gt; <span class="pl-s1"><span class="pl-c1">$</span>proxy</span>,
-    <span class="pl-s">'dns'</span> =&gt; <span class="pl-c1">false</span>
+    <span class="pl-s">'<span class="pl-s">tcp</span>'</span> =&gt; <span class="pl-s1"><span class="pl-c1">$</span>proxy</span>,
+    <span class="pl-s">'<span class="pl-s">dns</span>'</span> =&gt; <span class="pl-c1">false</span>
 ));
 
 <span class="pl-s1"><span class="pl-c1">$</span>browser</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Browser</span>(<span class="pl-s1"><span class="pl-c1">$</span>connector</span>);</pre></div>
@@ -778,11 +778,11 @@ tunnel HTTP(S) traffic through an intermediary ("proxy"), to conceal the origin
 address (anonymity) or to circumvent address blocking (geoblocking). While many
 (public) SOCKS proxy servers often limit this to HTTP(S) port <code>80</code> and <code>443</code>
 only, this can technically be used to tunnel any TCP/IP-based protocol.</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>proxy</span> = <span class="pl-k">new</span> <span class="pl-v">Clue</span>\<span class="pl-v">React</span>\<span class="pl-v">Socks</span>\<span class="pl-v">Client</span>(<span class="pl-s">'127.0.0.1:1080'</span>);
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>proxy</span> = <span class="pl-k">new</span> <span class="pl-v">Clue</span>\<span class="pl-v">React</span>\<span class="pl-v">Socks</span>\<span class="pl-v">Client</span>(<span class="pl-s">'<span class="pl-s">127.0.0.1:1080</span>'</span>);
 
 <span class="pl-s1"><span class="pl-c1">$</span>connector</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Connector</span>(<span class="pl-en">array</span>(
-    <span class="pl-s">'tcp'</span> =&gt; <span class="pl-s1"><span class="pl-c1">$</span>proxy</span>,
-    <span class="pl-s">'dns'</span> =&gt; <span class="pl-c1">false</span>
+    <span class="pl-s">'<span class="pl-s">tcp</span>'</span> =&gt; <span class="pl-s1"><span class="pl-c1">$</span>proxy</span>,
+    <span class="pl-s">'<span class="pl-s">dns</span>'</span> =&gt; <span class="pl-c1">false</span>
 ));
 
 <span class="pl-s1"><span class="pl-c1">$</span>browser</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Browser</span>(<span class="pl-s1"><span class="pl-c1">$</span>connector</span>);</pre></div>
@@ -800,11 +800,11 @@ conceal the origin address (anonymity) or to circumvent address blocking
 IMAP etc.), allows you to access local services that are otherwise not accessible
 from the outside (database behind firewall) and as such can also be used for
 plain HTTP and TLS-encrypted HTTPS.</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>proxy</span> = <span class="pl-k">new</span> <span class="pl-v">Clue</span>\<span class="pl-v">React</span>\<span class="pl-v">SshProxy</span>\<span class="pl-v">SshSocksConnector</span>(<span class="pl-s">'alice@example.com'</span>);
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>proxy</span> = <span class="pl-k">new</span> <span class="pl-v">Clue</span>\<span class="pl-v">React</span>\<span class="pl-v">SshProxy</span>\<span class="pl-v">SshSocksConnector</span>(<span class="pl-s">'<span class="pl-s">alice@example.com</span>'</span>);
 
 <span class="pl-s1"><span class="pl-c1">$</span>connector</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Connector</span>(<span class="pl-en">array</span>(
-    <span class="pl-s">'tcp'</span> =&gt; <span class="pl-s1"><span class="pl-c1">$</span>proxy</span>,
-    <span class="pl-s">'dns'</span> =&gt; <span class="pl-c1">false</span>
+    <span class="pl-s">'<span class="pl-s">tcp</span>'</span> =&gt; <span class="pl-s1"><span class="pl-c1">$</span>proxy</span>,
+    <span class="pl-s">'<span class="pl-s">dns</span>'</span> =&gt; <span class="pl-c1">false</span>
 ));
 
 <span class="pl-s1"><span class="pl-c1">$</span>browser</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Browser</span>(<span class="pl-s1"><span class="pl-c1">$</span>connector</span>);</pre></div>
@@ -817,16 +817,16 @@ This library also supports Unix domain sockets (UDS) when explicitly configured.
 override the destination URL so that the hostname given in the request URL will
 no longer be used to establish the connection:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>connector</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">FixedUriConnector</span>(
-    <span class="pl-s">'unix:///var/run/docker.sock'</span>,
+    <span class="pl-s">'<span class="pl-s">unix:///var/run/docker.sock</span>'</span>,
     <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">UnixConnector</span>()
 );
 
 <span class="pl-s1"><span class="pl-c1">$</span>browser</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Browser</span>(<span class="pl-s1"><span class="pl-c1">$</span>connector</span>);
 
-<span class="pl-s1"><span class="pl-c1">$</span>client</span>-&gt;<span class="pl-en">get</span>(<span class="pl-s">'http://localhost/info'</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi"><span class="pl-v">Psr</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">ResponseInterface</span></span></span> <span class="pl-s1"><span class="pl-c1">$</span>response</span>) {
-    var_dump(<span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">getHeaders</span>(), (<span class="pl-smi">string</span>)<span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">getBody</span>());
+<span class="pl-s1"><span class="pl-c1">$</span>client</span>-&gt;<span class="pl-en">get</span>(<span class="pl-s">'<span class="pl-s">http://localhost/info</span>'</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi"><span class="pl-v">Psr</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">ResponseInterface</span></span></span> <span class="pl-s1"><span class="pl-c1">$</span>response</span>) {
+    <span class="pl-en">var_dump</span>(<span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">getHeaders</span>(), (<span class="pl-smi">string</span>)<span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">getBody</span>());
 }, <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">Exception</span></span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>) {
-    <span class="pl-k">echo</span> <span class="pl-s">'Error: '</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
+    <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">Error: </span>'</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
 });</pre></div>
 <p>See also the <a href="https://github.com/reactphp/http/blob/v1.10.0/examples/14-client-unix-domain-sockets.php">Unix Domain Sockets (UDS) example</a>.</p>
 <div class="markdown-heading"><h2 class="heading-element">Server Usage</h2><a id="server-usage" class="anchor" aria-label="Permalink: Server Usage" href="#server-usage"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
@@ -840,7 +840,7 @@ the constructor and will be invoked with the respective <a href="#server-request
 object and expects a <a href="#server-response">response</a> object in return:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>http</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">HttpServer</span>(<span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi"><span class="pl-v">Psr</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">ServerRequestInterface</span></span></span> <span class="pl-s1"><span class="pl-c1">$</span>request</span>) {
     <span class="pl-k">return</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">Response</span>::<span class="pl-en">plaintext</span>(
-        "<span class="pl-s">Hello World!</span>\n"
+        <span class="pl-s">"<span class="pl-s">Hello World!</span>\n"</span>
     );
 });</pre></div>
 <p>Each incoming HTTP request message is always represented by the
@@ -863,7 +863,7 @@ chapter. In its most simple form, you can attach this to a
 in order to start a plaintext HTTP server like this:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>http</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">HttpServer</span>(<span class="pl-s1"><span class="pl-c1">$</span>handler</span>);
 
-<span class="pl-s1"><span class="pl-c1">$</span>socket</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">SocketServer</span>(<span class="pl-s">'0.0.0.0:8080'</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>socket</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">SocketServer</span>(<span class="pl-s">'<span class="pl-s">0.0.0.0:8080</span>'</span>);
 <span class="pl-s1"><span class="pl-c1">$</span>http</span>-&gt;<span class="pl-en">listen</span>(<span class="pl-s1"><span class="pl-c1">$</span>socket</span>);</pre></div>
 <p>See also the <a href="#listen"><code>listen()</code></a> method and the
 <a href="https://github.com/reactphp/http/blob/v1.10.0/examples/51-server-hello-world.php">hello world server example</a>
@@ -969,7 +969,7 @@ messages. In its most common form, you can attach this to a
 in order to start a plaintext HTTP server like this:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>http</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">HttpServer</span>(<span class="pl-s1"><span class="pl-c1">$</span>handler</span>);
 
-<span class="pl-s1"><span class="pl-c1">$</span>socket</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">SocketServer</span>(<span class="pl-s">'0.0.0.0:8080'</span>);
+<span class="pl-s1"><span class="pl-c1">$</span>socket</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">SocketServer</span>(<span class="pl-s">'<span class="pl-s">0.0.0.0:8080</span>'</span>);
 <span class="pl-s1"><span class="pl-c1">$</span>http</span>-&gt;<span class="pl-en">listen</span>(<span class="pl-s1"><span class="pl-c1">$</span>socket</span>);</pre></div>
 <p>See also <a href="https://github.com/reactphp/http/blob/v1.10.0/examples/51-server-hello-world.php">hello world server example</a>
 for more details.</p>
@@ -989,9 +989,9 @@ using a secure TLS listen address, a certificate file and optional
 <code>passphrase</code> like this:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>http</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">HttpServer</span>(<span class="pl-s1"><span class="pl-c1">$</span>handler</span>);
 
-<span class="pl-s1"><span class="pl-c1">$</span>socket</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">SocketServer</span>(<span class="pl-s">'tls://0.0.0.0:8443'</span>, <span class="pl-en">array</span>(
-    <span class="pl-s">'tls'</span> =&gt; <span class="pl-en">array</span>(
-        <span class="pl-s">'local_cert'</span> =&gt; __DIR__ . <span class="pl-s">'/localhost.pem'</span>
+<span class="pl-s1"><span class="pl-c1">$</span>socket</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">SocketServer</span>(<span class="pl-s">'<span class="pl-s">tls://0.0.0.0:8443</span>'</span>, <span class="pl-en">array</span>(
+    <span class="pl-s">'<span class="pl-s">tls</span>'</span> =&gt; <span class="pl-en">array</span>(
+        <span class="pl-s">'<span class="pl-s">local_cert</span>'</span> =&gt; <span class="pl-c1">__DIR__</span> . <span class="pl-s">'<span class="pl-s">/localhost.pem</span>'</span>
     )
 ));
 <span class="pl-s1"><span class="pl-c1">$</span>http</span>-&gt;<span class="pl-en">listen</span>(<span class="pl-s1"><span class="pl-c1">$</span>socket</span>);</pre></div>
@@ -1008,8 +1008,8 @@ which in turn extends the
 <a href="https://www.php-fig.org/psr/psr-7/#32-psrhttpmessagerequestinterface" rel="nofollow">PSR-7 <code>RequestInterface</code></a>
 and will be passed to the callback function like this.</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>http</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">HttpServer</span>(<span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi"><span class="pl-v">Psr</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">ServerRequestInterface</span></span></span> <span class="pl-s1"><span class="pl-c1">$</span>request</span>) {
-   <span class="pl-s1"><span class="pl-c1">$</span>body</span> = "<span class="pl-s">The method of the request is: </span>" . <span class="pl-s1"><span class="pl-c1">$</span>request</span>-&gt;<span class="pl-en">getMethod</span>() . "\n";
-   <span class="pl-s1"><span class="pl-c1">$</span>body</span> .= "<span class="pl-s">The requested path is: </span>" . <span class="pl-s1"><span class="pl-c1">$</span>request</span>-&gt;<span class="pl-en">getUri</span>()-&gt;<span class="pl-en">getPath</span>() . "\n";
+   <span class="pl-s1"><span class="pl-c1">$</span>body</span> = <span class="pl-s">"<span class="pl-s">The method of the request is: </span>"</span> . <span class="pl-s1"><span class="pl-c1">$</span>request</span>-&gt;<span class="pl-en">getMethod</span>() . <span class="pl-s">"\n"</span>;
+   <span class="pl-s1"><span class="pl-c1">$</span>body</span> .= <span class="pl-s">"<span class="pl-s">The requested path is: </span>"</span> . <span class="pl-s1"><span class="pl-c1">$</span>request</span>-&gt;<span class="pl-en">getUri</span>()-&gt;<span class="pl-en">getPath</span>() . <span class="pl-s">"\n"</span>;
 
    <span class="pl-k">return</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">Response</span>::<span class="pl-en">plaintext</span>(
        <span class="pl-s1"><span class="pl-c1">$</span>body</span>
@@ -1051,7 +1051,7 @@ as float similar to <code>microtime(true)</code>
 Set to 'on' if the request used HTTPS, otherwise it won't be set</li>
 </ul>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>http</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">HttpServer</span>(<span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi"><span class="pl-v">Psr</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">ServerRequestInterface</span></span></span> <span class="pl-s1"><span class="pl-c1">$</span>request</span>) {
-    <span class="pl-s1"><span class="pl-c1">$</span>body</span> = "<span class="pl-s">Your IP is: </span>" . <span class="pl-s1"><span class="pl-c1">$</span>request</span>-&gt;<span class="pl-en">getServerParams</span>()[<span class="pl-s">'REMOTE_ADDR'</span>] . "\n";
+    <span class="pl-s1"><span class="pl-c1">$</span>body</span> = <span class="pl-s">"<span class="pl-s">Your IP is: </span>"</span> . <span class="pl-s1"><span class="pl-c1">$</span>request</span>-&gt;<span class="pl-en">getServerParams</span>()[<span class="pl-s">'<span class="pl-s">REMOTE_ADDR</span>'</span>] . <span class="pl-s">"\n"</span>;
 
     <span class="pl-k">return</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">Response</span>::<span class="pl-en">plaintext</span>(
         <span class="pl-s1"><span class="pl-c1">$</span>body</span>
@@ -1069,11 +1069,11 @@ similiar to the <code>$_GET</code> variable.</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>http</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">HttpServer</span>(<span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi"><span class="pl-v">Psr</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">ServerRequestInterface</span></span></span> <span class="pl-s1"><span class="pl-c1">$</span>request</span>) {
     <span class="pl-s1"><span class="pl-c1">$</span>queryParams</span> = <span class="pl-s1"><span class="pl-c1">$</span>request</span>-&gt;<span class="pl-en">getQueryParams</span>();
 
-    <span class="pl-s1"><span class="pl-c1">$</span>body</span> = <span class="pl-s">'The query parameter "foo" is not set. Click the following link '</span>;
-    <span class="pl-s1"><span class="pl-c1">$</span>body</span> .= <span class="pl-s">'&lt;a href="/?foo=bar"&gt;to use query parameter in your request&lt;/a&gt;'</span>;
+    <span class="pl-s1"><span class="pl-c1">$</span>body</span> = <span class="pl-s">'<span class="pl-s">The query parameter "foo" is not set. Click the following link </span>'</span>;
+    <span class="pl-s1"><span class="pl-c1">$</span>body</span> .= <span class="pl-s">'<span class="pl-s">&lt;a href="/?foo=bar"&gt;to use query parameter in your request&lt;/a&gt;</span>'</span>;
 
-    <span class="pl-k">if</span> (isset(<span class="pl-s1"><span class="pl-c1">$</span>queryParams</span>[<span class="pl-s">'foo'</span>])) {
-        <span class="pl-s1"><span class="pl-c1">$</span>body</span> = <span class="pl-s">'The value of "foo" is: '</span> . htmlspecialchars(<span class="pl-s1"><span class="pl-c1">$</span>queryParams</span>[<span class="pl-s">'foo'</span>]);
+    <span class="pl-k">if</span> (<span class="pl-en">isset</span>(<span class="pl-s1"><span class="pl-c1">$</span>queryParams</span>[<span class="pl-s">'<span class="pl-s">foo</span>'</span>])) {
+        <span class="pl-s1"><span class="pl-c1">$</span>body</span> = <span class="pl-s">'<span class="pl-s">The value of "foo" is: </span>'</span> . <span class="pl-en">htmlspecialchars</span>(<span class="pl-s1"><span class="pl-c1">$</span>queryParams</span>[<span class="pl-s">'<span class="pl-s">foo</span>'</span>]);
     }
 
     <span class="pl-k">return</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">Response</span>::<span class="pl-en">html</span>(
@@ -1109,10 +1109,10 @@ By default, this method will only return parsed data for requests using
 <code>Content-Type: application/x-www-form-urlencoded</code> or <code>Content-Type: multipart/form-data</code>
 request headers (commonly used for <code>POST</code> requests for HTML form submission data).</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>http</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">HttpServer</span>(<span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi"><span class="pl-v">Psr</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">ServerRequestInterface</span></span></span> <span class="pl-s1"><span class="pl-c1">$</span>request</span>) {
-    <span class="pl-s1"><span class="pl-c1">$</span>name</span> = <span class="pl-s1"><span class="pl-c1">$</span>request</span>-&gt;<span class="pl-en">getParsedBody</span>()[<span class="pl-s">'name'</span>] ?? <span class="pl-s">'anonymous'</span>;
+    <span class="pl-s1"><span class="pl-c1">$</span>name</span> = <span class="pl-s1"><span class="pl-c1">$</span>request</span>-&gt;<span class="pl-en">getParsedBody</span>()[<span class="pl-s">'<span class="pl-s">name</span>'</span>] ?? <span class="pl-s">'<span class="pl-s">anonymous</span>'</span>;
 
     <span class="pl-k">return</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">Response</span>::<span class="pl-en">plaintext</span>(
-        "<span class="pl-s">Hello </span><span class="pl-s1"><span class="pl-c1">$</span>name</span><span class="pl-s">!</span>\n"
+        <span class="pl-s">"<span class="pl-s">Hello </span><span class="pl-s1"><span class="pl-c1">$</span>name</span><span class="pl-s">!</span>\n"</span>
     );
 });</pre></div>
 <p>See also <a href="https://github.com/reactphp/http/blob/v1.10.0/examples/62-server-form-upload.php">form upload example</a> for more details.</p>
@@ -1126,11 +1126,11 @@ otherwise be parsed by default, such as a JSON (<code>Content-Type: application/
 an XML (<code>Content-Type: application/xml</code>) request body (which is commonly used for
 <code>POST</code>, <code>PUT</code> or <code>PATCH</code> requests in JSON-based or RESTful/RESTish APIs).</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>http</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">HttpServer</span>(<span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi"><span class="pl-v">Psr</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">ServerRequestInterface</span></span></span> <span class="pl-s1"><span class="pl-c1">$</span>request</span>) {
-    <span class="pl-s1"><span class="pl-c1">$</span>data</span> = json_decode((<span class="pl-smi">string</span>)<span class="pl-s1"><span class="pl-c1">$</span>request</span>-&gt;<span class="pl-en">getBody</span>());
-    <span class="pl-s1"><span class="pl-c1">$</span>name</span> = <span class="pl-s1"><span class="pl-c1">$</span>data</span>-&gt;<span class="pl-c1">name</span> ?? <span class="pl-s">'anonymous'</span>;
+    <span class="pl-s1"><span class="pl-c1">$</span>data</span> = <span class="pl-en">json_decode</span>((<span class="pl-smi">string</span>)<span class="pl-s1"><span class="pl-c1">$</span>request</span>-&gt;<span class="pl-en">getBody</span>());
+    <span class="pl-s1"><span class="pl-c1">$</span>name</span> = <span class="pl-s1"><span class="pl-c1">$</span>data</span>-&gt;<span class="pl-c1">name</span> ?? <span class="pl-s">'<span class="pl-s">anonymous</span>'</span>;
 
     <span class="pl-k">return</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">Response</span>::<span class="pl-en">json</span>(
-        [<span class="pl-s">'message'</span> =&gt; "<span class="pl-s">Hello </span><span class="pl-s1"><span class="pl-c1">$</span>name</span><span class="pl-s">!</span>"]
+        [<span class="pl-s">'<span class="pl-s">message</span>'</span> =&gt; <span class="pl-s">"<span class="pl-s">Hello </span><span class="pl-s1"><span class="pl-c1">$</span>name</span><span class="pl-s">!</span>"</span>]
     );
 });</pre></div>
 <p>See also <a href="https://github.com/reactphp/http/blob/v1.10.0/examples/59-server-json-api.php">JSON API server example</a> for more details.</p>
@@ -1143,10 +1143,10 @@ This array will only be filled when using the <code>Content-Type: multipart/form
 request header (commonly used for <code>POST</code> requests for HTML file uploads).</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>http</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">HttpServer</span>(<span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi"><span class="pl-v">Psr</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">ServerRequestInterface</span></span></span> <span class="pl-s1"><span class="pl-c1">$</span>request</span>) {
     <span class="pl-s1"><span class="pl-c1">$</span>files</span> = <span class="pl-s1"><span class="pl-c1">$</span>request</span>-&gt;<span class="pl-en">getUploadedFiles</span>();
-    <span class="pl-s1"><span class="pl-c1">$</span>name</span> = isset(<span class="pl-s1"><span class="pl-c1">$</span>files</span>[<span class="pl-s">'avatar'</span>]) ? <span class="pl-s1"><span class="pl-c1">$</span>files</span>[<span class="pl-s">'avatar'</span>]-&gt;<span class="pl-en">getClientFilename</span>() : <span class="pl-s">'nothing'</span>;
+    <span class="pl-s1"><span class="pl-c1">$</span>name</span> = <span class="pl-en">isset</span>(<span class="pl-s1"><span class="pl-c1">$</span>files</span>[<span class="pl-s">'<span class="pl-s">avatar</span>'</span>]) ? <span class="pl-s1"><span class="pl-c1">$</span>files</span>[<span class="pl-s">'<span class="pl-s">avatar</span>'</span>]-&gt;<span class="pl-en">getClientFilename</span>() : <span class="pl-s">'<span class="pl-s">nothing</span>'</span>;
 
     <span class="pl-k">return</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">Response</span>::<span class="pl-en">plaintext</span>(
-        "<span class="pl-s">Uploaded </span><span class="pl-s1"><span class="pl-c1">$</span>name</span>\n"
+        <span class="pl-s">"<span class="pl-s">Uploaded </span><span class="pl-s1"><span class="pl-c1">$</span>name</span>\n"</span>
     );
 });</pre></div>
 <p>See also <a href="https://github.com/reactphp/http/blob/v1.10.0/examples/62-server-form-upload.php">form upload server example</a> for more details.</p>
@@ -1210,25 +1210,25 @@ gives you access to the incoming request body as the individual chunks arrive:</
     <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Middleware</span>\<span class="pl-v">StreamingRequestMiddleware</span>(),
     <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi"><span class="pl-v">Psr</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">ServerRequestInterface</span></span></span> <span class="pl-s1"><span class="pl-c1">$</span>request</span>) {
         <span class="pl-s1"><span class="pl-c1">$</span>body</span> = <span class="pl-s1"><span class="pl-c1">$</span>request</span>-&gt;<span class="pl-en">getBody</span>();
-        assert(<span class="pl-s1"><span class="pl-c1">$</span>body</span> instanceof <span class="pl-v">Psr</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">StreamInterface</span>);
-        assert(<span class="pl-s1"><span class="pl-c1">$</span>body</span> instanceof <span class="pl-v">React</span>\<span class="pl-v">Stream</span>\<span class="pl-v">ReadableStreamInterface</span>);
+        <span class="pl-en">assert</span>(<span class="pl-s1"><span class="pl-c1">$</span>body</span> instanceof <span class="pl-v">Psr</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">StreamInterface</span>);
+        <span class="pl-en">assert</span>(<span class="pl-s1"><span class="pl-c1">$</span>body</span> instanceof <span class="pl-v">React</span>\<span class="pl-v">Stream</span>\<span class="pl-v">ReadableStreamInterface</span>);
 
         <span class="pl-k">return</span> <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Promise</span>\<span class="pl-v">Promise</span>(<span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>resolve</span>, <span class="pl-s1"><span class="pl-c1">$</span>reject</span>) <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>body</span>) {
             <span class="pl-s1"><span class="pl-c1">$</span>bytes</span> = <span class="pl-c1">0</span>;
-            <span class="pl-s1"><span class="pl-c1">$</span>body</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'data'</span>, <span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>data</span>) <span class="pl-k">use</span> (&amp;<span class="pl-s1"><span class="pl-c1">$</span>bytes</span>) {
-                <span class="pl-s1"><span class="pl-c1">$</span>bytes</span> += strlen(<span class="pl-s1"><span class="pl-c1">$</span>data</span>);
+            <span class="pl-s1"><span class="pl-c1">$</span>body</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'<span class="pl-s">data</span>'</span>, <span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>data</span>) <span class="pl-k">use</span> (&amp;<span class="pl-s1"><span class="pl-c1">$</span>bytes</span>) {
+                <span class="pl-s1"><span class="pl-c1">$</span>bytes</span> += <span class="pl-en">strlen</span>(<span class="pl-s1"><span class="pl-c1">$</span>data</span>);
             });
 
-            <span class="pl-s1"><span class="pl-c1">$</span>body</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'end'</span>, <span class="pl-k">function</span> () <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>resolve</span>, &amp;<span class="pl-s1"><span class="pl-c1">$</span>bytes</span>){
+            <span class="pl-s1"><span class="pl-c1">$</span>body</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'<span class="pl-s">end</span>'</span>, <span class="pl-k">function</span> () <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>resolve</span>, &amp;<span class="pl-s1"><span class="pl-c1">$</span>bytes</span>){
                 <span class="pl-s1"><span class="pl-c1">$</span>resolve</span>(<span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">Response</span>::<span class="pl-en">plaintext</span>(
-                    "<span class="pl-s">Received </span><span class="pl-s1"><span class="pl-c1">$</span>bytes</span><span class="pl-s"> bytes</span>\n"
+                    <span class="pl-s">"<span class="pl-s">Received </span><span class="pl-s1"><span class="pl-c1">$</span>bytes</span><span class="pl-s"> bytes</span>\n"</span>
                 ));
             });
 
             <span class="pl-c">// an error occures e.g. on invalid chunked encoded data or an unexpected 'end' event</span>
-            <span class="pl-s1"><span class="pl-c1">$</span>body</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'error'</span>, <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">Exception</span></span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>) <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>resolve</span>, &amp;<span class="pl-s1"><span class="pl-c1">$</span>bytes</span>) {
+            <span class="pl-s1"><span class="pl-c1">$</span>body</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'<span class="pl-s">error</span>'</span>, <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">Exception</span></span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>) <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>resolve</span>, &amp;<span class="pl-s1"><span class="pl-c1">$</span>bytes</span>) {
                 <span class="pl-s1"><span class="pl-c1">$</span>resolve</span>(<span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">Response</span>::<span class="pl-en">plaintext</span>(
-                    "<span class="pl-s">Encountered error after </span><span class="pl-s1"><span class="pl-c1">$</span>bytes</span><span class="pl-s"> bytes: </span>{<span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>()}\n"
+                    <span class="pl-s">"<span class="pl-s">Encountered error after </span><span class="pl-s1"><span class="pl-c1">$</span>bytes</span><span class="pl-s"> bytes: </span>{<span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>()}\n"</span>
                 )-&gt;<span class="pl-en">withStatus</span>(<span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">Response</span>::<span class="pl-c1">STATUS_BAD_REQUEST</span>));
             });
         });
@@ -1265,8 +1265,8 @@ may be unknown (<code>null</code>) when using <code>Transfer-Encoding: chunked</
     <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi"><span class="pl-v">Psr</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">ServerRequestInterface</span></span></span> <span class="pl-s1"><span class="pl-c1">$</span>request</span>) {
         <span class="pl-s1"><span class="pl-c1">$</span>size</span> = <span class="pl-s1"><span class="pl-c1">$</span>request</span>-&gt;<span class="pl-en">getBody</span>()-&gt;<span class="pl-en">getSize</span>();
         <span class="pl-k">if</span> (<span class="pl-s1"><span class="pl-c1">$</span>size</span> === <span class="pl-c1">null</span>) {
-            <span class="pl-s1"><span class="pl-c1">$</span>body</span> = "<span class="pl-s">The request does not contain an explicit length. </span>";
-            <span class="pl-s1"><span class="pl-c1">$</span>body</span> .= "<span class="pl-s">This example does not accept chunked transfer encoding.</span>\n";
+            <span class="pl-s1"><span class="pl-c1">$</span>body</span> = <span class="pl-s">"<span class="pl-s">The request does not contain an explicit length. </span>"</span>;
+            <span class="pl-s1"><span class="pl-c1">$</span>body</span> .= <span class="pl-s">"<span class="pl-s">This example does not accept chunked transfer encoding.</span>\n"</span>;
 
             <span class="pl-k">return</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">Response</span>::<span class="pl-en">plaintext</span>(
                 <span class="pl-s1"><span class="pl-c1">$</span>body</span>
@@ -1274,7 +1274,7 @@ may be unknown (<code>null</code>) when using <code>Transfer-Encoding: chunked</
         }
 
         <span class="pl-k">return</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">Response</span>::<span class="pl-en">plaintext</span>(
-            "<span class="pl-s">Request body size: </span>" . <span class="pl-s1"><span class="pl-c1">$</span>size</span> . "<span class="pl-s"> bytes</span>\n"
+            <span class="pl-s">"<span class="pl-s">Request body size: </span>"</span> . <span class="pl-s1"><span class="pl-c1">$</span>size</span> . <span class="pl-s">"<span class="pl-s"> bytes</span>\n"</span>
         );
     }
 );</pre></div>
@@ -1319,10 +1319,10 @@ and the request-target MUST take precendence when forwarding.</p>
 <p>The <code>getCookieParams(): string[]</code> method can be used to
 get all cookies sent with the current request.</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>http</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">HttpServer</span>(<span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi"><span class="pl-v">Psr</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">ServerRequestInterface</span></span></span> <span class="pl-s1"><span class="pl-c1">$</span>request</span>) {
-    <span class="pl-s1"><span class="pl-c1">$</span>key</span> = <span class="pl-s">'greeting'</span>;
+    <span class="pl-s1"><span class="pl-c1">$</span>key</span> = <span class="pl-s">'<span class="pl-s">greeting</span>'</span>;
 
-    <span class="pl-k">if</span> (isset(<span class="pl-s1"><span class="pl-c1">$</span>request</span>-&gt;<span class="pl-en">getCookieParams</span>()[<span class="pl-s1"><span class="pl-c1">$</span>key</span>])) {
-        <span class="pl-s1"><span class="pl-c1">$</span>body</span> = "<span class="pl-s">Your cookie value is: </span>" . <span class="pl-s1"><span class="pl-c1">$</span>request</span>-&gt;<span class="pl-en">getCookieParams</span>()[<span class="pl-s1"><span class="pl-c1">$</span>key</span>] . "\n";
+    <span class="pl-k">if</span> (<span class="pl-en">isset</span>(<span class="pl-s1"><span class="pl-c1">$</span>request</span>-&gt;<span class="pl-en">getCookieParams</span>()[<span class="pl-s1"><span class="pl-c1">$</span>key</span>])) {
+        <span class="pl-s1"><span class="pl-c1">$</span>body</span> = <span class="pl-s">"<span class="pl-s">Your cookie value is: </span>"</span> . <span class="pl-s1"><span class="pl-c1">$</span>request</span>-&gt;<span class="pl-en">getCookieParams</span>()[<span class="pl-s1"><span class="pl-c1">$</span>key</span>] . <span class="pl-s">"\n"</span>;
 
         <span class="pl-k">return</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">Response</span>::<span class="pl-en">plaintext</span>(
             <span class="pl-s1"><span class="pl-c1">$</span>body</span>
@@ -1330,8 +1330,8 @@ get all cookies sent with the current request.</p>
     }
 
     <span class="pl-k">return</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">Response</span>::<span class="pl-en">plaintext</span>(
-        "<span class="pl-s">Your cookie has been set.</span>\n"
-    )-&gt;<span class="pl-en">withHeader</span>(<span class="pl-s">'Set-Cookie'</span>, <span class="pl-s1"><span class="pl-c1">$</span>key</span> . <span class="pl-s">'='</span> . urlencode(<span class="pl-s">'Hello world!'</span>));
+        <span class="pl-s">"<span class="pl-s">Your cookie has been set.</span>\n"</span>
+    )-&gt;<span class="pl-en">withHeader</span>(<span class="pl-s">'<span class="pl-s">Set-Cookie</span>'</span>, <span class="pl-s1"><span class="pl-c1">$</span>key</span> . <span class="pl-s">'<span class="pl-s">=</span>'</span> . <span class="pl-en">urlencode</span>(<span class="pl-s">'<span class="pl-s">Hello world!</span>'</span>));
 });</pre></div>
 <p>The above example will try to set a cookie on first access and
 will try to print the cookie value on all subsequent tries.
@@ -1348,8 +1348,8 @@ the server will automatically send a <code>400</code> (Bad Request) HTTP error r
 to the client and close the connection.
 On top of this, it will emit an <code>error</code> event that can be used for logging
 purposes like this:</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>http</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'error'</span>, <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">Exception</span></span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>) {
-    <span class="pl-k">echo</span> <span class="pl-s">'Error: '</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>http</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'<span class="pl-s">error</span>'</span>, <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">Exception</span></span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>) {
+    <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">Error: </span>'</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
 });</pre></div>
 <p>Note that the server will also emit an <code>error</code> event if you do not return a
 valid response object from your request handler function. See also
@@ -1368,7 +1368,7 @@ which resolves with a <a href="https://www.php-fig.org/psr/psr-7/#33-psrhttpmess
 In its most simple form, you can use it like this:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>http</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">HttpServer</span>(<span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi"><span class="pl-v">Psr</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">ServerRequestInterface</span></span></span> <span class="pl-s1"><span class="pl-c1">$</span>request</span>) {
     <span class="pl-k">return</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">Response</span>::<span class="pl-en">plaintext</span>(
-        "<span class="pl-s">Hello World!</span>\n"
+        <span class="pl-s">"<span class="pl-s">Hello World!</span>\n"</span>
     );
 });</pre></div>
 <p>We use this <a href="#response"><code>Response</code> class</a> throughout our project examples, but
@@ -1393,7 +1393,7 @@ This example shows how such a long-term action could look like:</p>
 
     <span class="pl-k">return</span> <span class="pl-s1"><span class="pl-c1">$</span>promise</span>-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> () { 
         <span class="pl-k">return</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">Response</span>::<span class="pl-en">plaintext</span>(
-            "<span class="pl-s">Hello World!</span>"
+            <span class="pl-s">"<span class="pl-s">Hello World!</span>"</span>
         );
     });
 });</pre></div>
@@ -1420,7 +1420,7 @@ may only support strings.</p>
 
     <span class="pl-c">// send some data every once in a while with periodic timer</span>
     <span class="pl-s1"><span class="pl-c1">$</span>timer</span> = <span class="pl-v">Loop</span>::<span class="pl-en">addPeriodicTimer</span>(<span class="pl-c1">0.5</span>, <span class="pl-k">function</span> () <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>stream</span>) {
-        <span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">write</span>(microtime(<span class="pl-c1">true</span>) . <span class="pl-c1">PHP_EOL</span>);
+        <span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">write</span>(<span class="pl-en">microtime</span>(<span class="pl-c1">true</span>) . <span class="pl-c1">PHP_EOL</span>);
     });
 
     <span class="pl-c">// end stream after a few seconds</span>
@@ -1430,7 +1430,7 @@ may only support strings.</p>
     });
 
     <span class="pl-c">// stop timer if stream is closed (such as when connection is closed)</span>
-    <span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'close'</span>, <span class="pl-k">function</span> () <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>timer</span>, <span class="pl-s1"><span class="pl-c1">$</span>timeout</span>) {
+    <span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'<span class="pl-s">close</span>'</span>, <span class="pl-k">function</span> () <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>timer</span>, <span class="pl-s1"><span class="pl-c1">$</span>timeout</span>) {
         <span class="pl-v">Loop</span>::<span class="pl-en">cancelTimer</span>(<span class="pl-s1"><span class="pl-c1">$</span>timer</span>);
         <span class="pl-v">Loop</span>::<span class="pl-en">cancelTimer</span>(<span class="pl-s1"><span class="pl-c1">$</span>timeout</span>);
     });
@@ -1438,7 +1438,7 @@ may only support strings.</p>
     <span class="pl-k">return</span> <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">Response</span>(
         <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">Response</span>::<span class="pl-c1">STATUS_OK</span>,
         <span class="pl-en">array</span>(
-            <span class="pl-s">'Content-Type'</span> =&gt; <span class="pl-s">'text/plain'</span>
+            <span class="pl-s">'<span class="pl-s">Content-Type</span>'</span> =&gt; <span class="pl-s">'<span class="pl-s">text/plain</span>'</span>
         ),
         <span class="pl-s1"><span class="pl-c1">$</span>stream</span>
     );
@@ -1508,7 +1508,7 @@ added automatically. This is the most common use case, for example when using
 a <code>string</code> response body like this:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>http</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">HttpServer</span>(<span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi"><span class="pl-v">Psr</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">ServerRequestInterface</span></span></span> <span class="pl-s1"><span class="pl-c1">$</span>request</span>) {
     <span class="pl-k">return</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">Response</span>::<span class="pl-en">plaintext</span>(
-        "<span class="pl-s">Hello World!</span>\n"
+        <span class="pl-s">"<span class="pl-s">Hello World!</span>\n"</span>
     );
 });</pre></div>
 <p>If the response body size is unknown, a <code>Content-Length</code> response header can not
@@ -1521,14 +1521,14 @@ of your streaming response body, you MAY want to specify it explicitly like this
     <span class="pl-s1"><span class="pl-c1">$</span>stream</span> = <span class="pl-k">new</span> <span class="pl-v">ThroughStream</span>();
 
     <span class="pl-v">Loop</span>::<span class="pl-en">addTimer</span>(<span class="pl-c1">2.0</span>, <span class="pl-k">function</span> () <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>stream</span>) {
-        <span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">end</span>("<span class="pl-s">Hello World!</span>\n");
+        <span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">end</span>(<span class="pl-s">"<span class="pl-s">Hello World!</span>\n"</span>);
     });
 
     <span class="pl-k">return</span> <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">Response</span>(
         <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">Response</span>::<span class="pl-c1">STATUS_OK</span>,
         <span class="pl-en">array</span>(
-            <span class="pl-s">'Content-Length'</span> =&gt; <span class="pl-s">'13'</span>,
-            <span class="pl-s">'Content-Type'</span> =&gt; <span class="pl-s">'text/plain'</span>,
+            <span class="pl-s">'<span class="pl-s">Content-Length</span>'</span> =&gt; <span class="pl-s">'<span class="pl-s">13</span>'</span>,
+            <span class="pl-s">'<span class="pl-s">Content-Type</span>'</span> =&gt; <span class="pl-s">'<span class="pl-s">text/plain</span>'</span>,
         ),
         <span class="pl-s1"><span class="pl-c1">$</span>stream</span>
     );
@@ -1554,10 +1554,10 @@ unhandled <code>Exception</code> or <code>Throwable</code>, the server will auto
 (Internal Server Error) HTTP error response to the client.
 On top of this, it will emit an <code>error</code> event that can be used for logging
 purposes like this:</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>http</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'error'</span>, <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">Exception</span></span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>) {
-    <span class="pl-k">echo</span> <span class="pl-s">'Error: '</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>http</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'<span class="pl-s">error</span>'</span>, <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">Exception</span></span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>) {
+    <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">Error: </span>'</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
     <span class="pl-k">if</span> (<span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getPrevious</span>() !== <span class="pl-c1">null</span>) {
-        <span class="pl-k">echo</span> <span class="pl-s">'Previous: '</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getPrevious</span>()-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
+        <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">Previous: </span>'</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getPrevious</span>()-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
     }
 });</pre></div>
 <p>Note that the server will also emit an <code>error</code> event if the client sends an
@@ -1582,7 +1582,7 @@ a custom <code>Server</code> response header like this:</p>
     <span class="pl-k">return</span> <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">Response</span>(
         <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">Response</span>::<span class="pl-c1">STATUS_OK</span>,
         <span class="pl-en">array</span>(
-            <span class="pl-s">'Server'</span> =&gt; <span class="pl-s">'PHP/3'</span>
+            <span class="pl-s">'<span class="pl-s">Server</span>'</span> =&gt; <span class="pl-s">'<span class="pl-s">PHP/3</span>'</span>
         )
     );
 });</pre></div>
@@ -1593,7 +1593,7 @@ string value like this:</p>
     <span class="pl-k">return</span> <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">Response</span>(
         <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">Response</span>::<span class="pl-c1">STATUS_OK</span>,
         <span class="pl-en">array</span>(
-            <span class="pl-s">'Server'</span> =&gt; <span class="pl-s">''</span>
+            <span class="pl-s">'<span class="pl-s">Server</span>'</span> =&gt; <span class="pl-s">''</span>
         )
     );
 });</pre></div>
@@ -1604,7 +1604,7 @@ like this:</p>
     <span class="pl-k">return</span> <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">Response</span>(
         <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">Response</span>::<span class="pl-c1">STATUS_OK</span>,
         <span class="pl-en">array</span>(
-            <span class="pl-s">'Date'</span> =&gt; gmdate(<span class="pl-s">'D, d M Y H:i:s \G\M\T'</span>)
+            <span class="pl-s">'<span class="pl-s">Date</span>'</span> =&gt; <span class="pl-en">gmdate</span>(<span class="pl-s">'<span class="pl-s">D, d M Y H:i:s \G\M\T</span>'</span>)
         )
     );
 });</pre></div>
@@ -1615,7 +1615,7 @@ like this:</p>
     <span class="pl-k">return</span> <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">Response</span>(
         <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">Response</span>::<span class="pl-c1">STATUS_OK</span>,
         <span class="pl-en">array</span>(
-            <span class="pl-s">'Date'</span> =&gt; <span class="pl-s">''</span>
+            <span class="pl-s">'<span class="pl-s">Date</span>'</span> =&gt; <span class="pl-s">''</span>
         )
     );
 });</pre></div>
@@ -1690,7 +1690,7 @@ The following example adds a middleware request handler that adds the current ti
 header (<code>Request-Time</code>) and a final request handler that always returns a <code>200 OK</code> status code without a body:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>http</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">HttpServer</span>(
     <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi"><span class="pl-v">Psr</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">ServerRequestInterface</span></span></span> <span class="pl-s1"><span class="pl-c1">$</span>request</span>, <span class="pl-smi">callable</span> <span class="pl-s1"><span class="pl-c1">$</span>next</span>) {
-        <span class="pl-s1"><span class="pl-c1">$</span>request</span> = <span class="pl-s1"><span class="pl-c1">$</span>request</span>-&gt;<span class="pl-en">withHeader</span>(<span class="pl-s">'Request-Time'</span>, time());
+        <span class="pl-s1"><span class="pl-c1">$</span>request</span> = <span class="pl-s1"><span class="pl-c1">$</span>request</span>-&gt;<span class="pl-en">withHeader</span>(<span class="pl-s">'<span class="pl-s">Request-Time</span>'</span>, <span class="pl-en">time</span>());
         <span class="pl-k">return</span> <span class="pl-s1"><span class="pl-c1">$</span>next</span>(<span class="pl-s1"><span class="pl-c1">$</span>request</span>);
     },
     <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi"><span class="pl-v">Psr</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">ServerRequestInterface</span></span></span> <span class="pl-s1"><span class="pl-c1">$</span>request</span>) {
@@ -1713,7 +1713,7 @@ In order to simplify handling both paths, you can simply wrap this in a
     <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi"><span class="pl-v">Psr</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">ServerRequestInterface</span></span></span> <span class="pl-s1"><span class="pl-c1">$</span>request</span>, <span class="pl-smi">callable</span> <span class="pl-s1"><span class="pl-c1">$</span>next</span>) {
         <span class="pl-s1"><span class="pl-c1">$</span>promise</span> = <span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Promise</span>\resolve</span>(<span class="pl-s1"><span class="pl-c1">$</span>next</span>(<span class="pl-s1"><span class="pl-c1">$</span>request</span>));
         <span class="pl-k">return</span> <span class="pl-s1"><span class="pl-c1">$</span>promise</span>-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">ResponseInterface</span></span> <span class="pl-s1"><span class="pl-c1">$</span>response</span>) {
-            <span class="pl-k">return</span> <span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">withHeader</span>(<span class="pl-s">'Content-Type'</span>, <span class="pl-s">'text/html'</span>);
+            <span class="pl-k">return</span> <span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">withHeader</span>(<span class="pl-s">'<span class="pl-s">Content-Type</span>'</span>, <span class="pl-s">'<span class="pl-s">text/html</span>'</span>);
         });
     },
     <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi"><span class="pl-v">Psr</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">ServerRequestInterface</span></span></span> <span class="pl-s1"><span class="pl-c1">$</span>request</span>) {
@@ -1734,13 +1734,13 @@ handling logic (or logging etc.) by wrapping this in a
         });
         <span class="pl-k">return</span> <span class="pl-s1"><span class="pl-c1">$</span>promise</span>-&gt;<span class="pl-en">then</span>(<span class="pl-c1">null</span>, <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">Exception</span></span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>) {
             <span class="pl-k">return</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">Response</span>::<span class="pl-en">plaintext</span>(
-                <span class="pl-s">'Internal error: '</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . "\n"
+                <span class="pl-s">'<span class="pl-s">Internal error: </span>'</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-s">"\n"</span>
             )-&gt;<span class="pl-en">withStatus</span>(<span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">Response</span>::<span class="pl-c1">STATUS_INTERNAL_SERVER_ERROR</span>);
         });
     },
     <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi"><span class="pl-v">Psr</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">ServerRequestInterface</span></span></span> <span class="pl-s1"><span class="pl-c1">$</span>request</span>) {
-        <span class="pl-k">if</span> (mt_rand(<span class="pl-c1">0</span>, <span class="pl-c1">1</span>) === <span class="pl-c1">1</span>) {
-            <span class="pl-k">throw</span> <span class="pl-k">new</span> <span class="pl-v">RuntimeException</span>(<span class="pl-s">'Database error'</span>);
+        <span class="pl-k">if</span> (<span class="pl-en">mt_rand</span>(<span class="pl-c1">0</span>, <span class="pl-c1">1</span>) === <span class="pl-c1">1</span>) {
+            <span class="pl-k">throw</span> <span class="pl-k">new</span> <span class="pl-v">RuntimeException</span>(<span class="pl-s">'<span class="pl-s">Database error</span>'</span>);
         }
         <span class="pl-k">return</span> <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">Response</span>(<span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">Response</span>::<span class="pl-c1">STATUS_OK</span>);
     }
@@ -1780,19 +1780,19 @@ and keeps track of pending incoming HTTP responses.</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-c">// constructor signature as of v1.5.0</span>
 <span class="pl-s1"><span class="pl-c1">$</span>browser</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Browser</span>(?<span class="pl-v">ConnectorInterface</span> <span class="pl-s1"><span class="pl-c1">$</span>connector</span> = <span class="pl-c1">null</span>, ?<span class="pl-v">LoopInterface</span> <span class="pl-s1"><span class="pl-c1">$</span>loop</span> = <span class="pl-c1">null</span>);
 
-<span class="pl-c">// legacy constructor signature before v1.5.0</span>
+// legacy constructor signature before v1.<span class="pl-c1">5.0</span>
 <span class="pl-s1"><span class="pl-c1">$</span>browser</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Browser</span>(?<span class="pl-v">LoopInterface</span> <span class="pl-s1"><span class="pl-c1">$</span>loop</span> = <span class="pl-c1">null</span>, ?<span class="pl-v">ConnectorInterface</span> <span class="pl-s1"><span class="pl-c1">$</span>connector</span> = <span class="pl-c1">null</span>);</pre></div>
 <p>If you need custom connector settings (DNS resolution, TLS parameters, timeouts,
 proxy servers etc.), you can explicitly pass a custom instance of the
 <a href="../socket/#connectorinterface"><code>ConnectorInterface</code></a>:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>connector</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Connector</span>(<span class="pl-en">array</span>(
-    <span class="pl-s">'dns'</span> =&gt; <span class="pl-s">'127.0.0.1'</span>,
-    <span class="pl-s">'tcp'</span> =&gt; <span class="pl-en">array</span>(
-        <span class="pl-s">'bindto'</span> =&gt; <span class="pl-s">'192.168.10.1:0'</span>
+    <span class="pl-s">'<span class="pl-s">dns</span>'</span> =&gt; <span class="pl-s">'<span class="pl-s">127.0.0.1</span>'</span>,
+    <span class="pl-s">'<span class="pl-s">tcp</span>'</span> =&gt; <span class="pl-en">array</span>(
+        <span class="pl-s">'<span class="pl-s">bindto</span>'</span> =&gt; <span class="pl-s">'<span class="pl-s">192.168.10.1:0</span>'</span>
     ),
-    <span class="pl-s">'tls'</span> =&gt; <span class="pl-en">array</span>(
-        <span class="pl-s">'verify_peer'</span> =&gt; <span class="pl-c1">false</span>,
-        <span class="pl-s">'verify_peer_name'</span> =&gt; <span class="pl-c1">false</span>
+    <span class="pl-s">'<span class="pl-s">tls</span>'</span> =&gt; <span class="pl-en">array</span>(
+        <span class="pl-s">'<span class="pl-s">verify_peer</span>'</span> =&gt; <span class="pl-c1">false</span>,
+        <span class="pl-s">'<span class="pl-s">verify_peer_name</span>'</span> =&gt; <span class="pl-c1">false</span>
     )
 ));
 
@@ -1809,9 +1809,9 @@ given event loop instance.</p>
 <p>The <code>get(string $url, array $headers = array()): PromiseInterface&lt;ResponseInterface&gt;</code> method can be used to
 send an HTTP GET request.</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">get</span>(<span class="pl-s1"><span class="pl-c1">$</span>url</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi"><span class="pl-v">Psr</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">ResponseInterface</span></span></span> <span class="pl-s1"><span class="pl-c1">$</span>response</span>) {
-    var_dump((<span class="pl-smi">string</span>)<span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">getBody</span>());
+    <span class="pl-en">var_dump</span>((<span class="pl-smi">string</span>)<span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">getBody</span>());
 }, <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">Exception</span></span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>) {
-    <span class="pl-k">echo</span> <span class="pl-s">'Error: '</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
+    <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">Error: </span>'</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
 });</pre></div>
 <p>See also <a href="https://github.com/reactphp/http/blob/v1.10.0/examples/01-client-get-request.php">GET request client example</a>.</p>
 <div class="markdown-heading"><h4 class="heading-element">post()</h4><a id="post" class="anchor" aria-label="Permalink: post()" href="#post"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
@@ -1820,27 +1820,27 @@ send an HTTP POST request.</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">post</span>(
     <span class="pl-s1"><span class="pl-c1">$</span>url</span>,
     [
-        <span class="pl-s">'Content-Type'</span> =&gt; <span class="pl-s">'application/json'</span>
+        <span class="pl-s">'<span class="pl-s">Content-Type</span>'</span> =&gt; <span class="pl-s">'<span class="pl-s">application/json</span>'</span>
     ],
-    json_encode(<span class="pl-s1"><span class="pl-c1">$</span>data</span>)
+    <span class="pl-en">json_encode</span>(<span class="pl-s1"><span class="pl-c1">$</span>data</span>)
 )-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi"><span class="pl-v">Psr</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">ResponseInterface</span></span></span> <span class="pl-s1"><span class="pl-c1">$</span>response</span>) {
-    var_dump(json_decode((<span class="pl-smi">string</span>)<span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">getBody</span>()));
+    <span class="pl-en">var_dump</span>(<span class="pl-en">json_decode</span>((<span class="pl-smi">string</span>)<span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">getBody</span>()));
 }, <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">Exception</span></span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>) {
-    <span class="pl-k">echo</span> <span class="pl-s">'Error: '</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
+    <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">Error: </span>'</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
 });</pre></div>
 <p>See also <a href="https://github.com/reactphp/http/blob/v1.10.0/examples/04-client-post-json.php">POST JSON client example</a>.</p>
 <p>This method is also commonly used to submit HTML form data:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>data</span> = [
-    <span class="pl-s">'user'</span> =&gt; <span class="pl-s">'Alice'</span>,
-    <span class="pl-s">'password'</span> =&gt; <span class="pl-s">'secret'</span>
+    <span class="pl-s">'<span class="pl-s">user</span>'</span> =&gt; <span class="pl-s">'<span class="pl-s">Alice</span>'</span>,
+    <span class="pl-s">'<span class="pl-s">password</span>'</span> =&gt; <span class="pl-s">'<span class="pl-s">secret</span>'</span>
 ];
 
 <span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">post</span>(
     <span class="pl-s1"><span class="pl-c1">$</span>url</span>,
     [
-        <span class="pl-s">'Content-Type'</span> =&gt; <span class="pl-s">'application/x-www-form-urlencoded'</span>
+        <span class="pl-s">'<span class="pl-s">Content-Type</span>'</span> =&gt; <span class="pl-s">'<span class="pl-s">application/x-www-form-urlencoded</span>'</span>
     ],
-    http_build_query(<span class="pl-s1"><span class="pl-c1">$</span>data</span>)
+    <span class="pl-en">http_build_query</span>(<span class="pl-s1"><span class="pl-c1">$</span>data</span>)
 );</pre></div>
 <p>This method will automatically add a matching <code>Content-Length</code> request
 header if the outgoing request body is a <code>string</code>. If you're using a
@@ -1849,17 +1849,17 @@ using <code>Transfer-Encoding: chunked</code> or you have to explicitly pass in 
 matching <code>Content-Length</code> request header like so:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>body</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Stream</span>\<span class="pl-v">ThroughStream</span>();
 <span class="pl-v">Loop</span>::<span class="pl-en">addTimer</span>(<span class="pl-c1">1.0</span>, <span class="pl-k">function</span> () <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>body</span>) {
-    <span class="pl-s1"><span class="pl-c1">$</span>body</span>-&gt;<span class="pl-en">end</span>("<span class="pl-s">hello world</span>");
+    <span class="pl-s1"><span class="pl-c1">$</span>body</span>-&gt;<span class="pl-en">end</span>(<span class="pl-s">"<span class="pl-s">hello world</span>"</span>);
 });
 
-<span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">post</span>(<span class="pl-s1"><span class="pl-c1">$</span>url</span>, <span class="pl-en">array</span>(<span class="pl-s">'Content-Length'</span> =&gt; <span class="pl-s">'11'</span>), <span class="pl-s1"><span class="pl-c1">$</span>body</span>);</pre></div>
+<span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">post</span>(<span class="pl-s1"><span class="pl-c1">$</span>url</span>, <span class="pl-en">array</span>(<span class="pl-s">'<span class="pl-s">Content-Length</span>'</span> =&gt; <span class="pl-s">'<span class="pl-s">11</span>'</span>), <span class="pl-s1"><span class="pl-c1">$</span>body</span>);</pre></div>
 <div class="markdown-heading"><h4 class="heading-element">head()</h4><a id="head" class="anchor" aria-label="Permalink: head()" href="#head"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The <code>head(string $url, array $headers = array()): PromiseInterface&lt;ResponseInterface&gt;</code> method can be used to
 send an HTTP HEAD request.</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">head</span>(<span class="pl-s1"><span class="pl-c1">$</span>url</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi"><span class="pl-v">Psr</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">ResponseInterface</span></span></span> <span class="pl-s1"><span class="pl-c1">$</span>response</span>) {
-    var_dump(<span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">getHeaders</span>());
+    <span class="pl-en">var_dump</span>(<span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">getHeaders</span>());
 }, <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">Exception</span></span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>) {
-    <span class="pl-k">echo</span> <span class="pl-s">'Error: '</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
+    <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">Error: </span>'</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
 });</pre></div>
 <div class="markdown-heading"><h4 class="heading-element">patch()</h4><a id="patch" class="anchor" aria-label="Permalink: patch()" href="#patch"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The <code>patch(string $url, array $headers = array(), string|ReadableStreamInterface $body = ''): PromiseInterface&lt;ResponseInterface&gt;</code> method can be used to
@@ -1867,13 +1867,13 @@ send an HTTP PATCH request.</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">patch</span>(
     <span class="pl-s1"><span class="pl-c1">$</span>url</span>,
     [
-        <span class="pl-s">'Content-Type'</span> =&gt; <span class="pl-s">'application/json'</span>
+        <span class="pl-s">'<span class="pl-s">Content-Type</span>'</span> =&gt; <span class="pl-s">'<span class="pl-s">application/json</span>'</span>
     ],
-    json_encode(<span class="pl-s1"><span class="pl-c1">$</span>data</span>)
+    <span class="pl-en">json_encode</span>(<span class="pl-s1"><span class="pl-c1">$</span>data</span>)
 )-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi"><span class="pl-v">Psr</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">ResponseInterface</span></span></span> <span class="pl-s1"><span class="pl-c1">$</span>response</span>) {
-    var_dump(json_decode((<span class="pl-smi">string</span>)<span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">getBody</span>()));
+    <span class="pl-en">var_dump</span>(<span class="pl-en">json_decode</span>((<span class="pl-smi">string</span>)<span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">getBody</span>()));
 }, <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">Exception</span></span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>) {
-    <span class="pl-k">echo</span> <span class="pl-s">'Error: '</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
+    <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">Error: </span>'</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
 });</pre></div>
 <p>This method will automatically add a matching <code>Content-Length</code> request
 header if the outgoing request body is a <code>string</code>. If you're using a
@@ -1882,23 +1882,23 @@ using <code>Transfer-Encoding: chunked</code> or you have to explicitly pass in 
 matching <code>Content-Length</code> request header like so:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>body</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Stream</span>\<span class="pl-v">ThroughStream</span>();
 <span class="pl-v">Loop</span>::<span class="pl-en">addTimer</span>(<span class="pl-c1">1.0</span>, <span class="pl-k">function</span> () <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>body</span>) {
-    <span class="pl-s1"><span class="pl-c1">$</span>body</span>-&gt;<span class="pl-en">end</span>("<span class="pl-s">hello world</span>");
+    <span class="pl-s1"><span class="pl-c1">$</span>body</span>-&gt;<span class="pl-en">end</span>(<span class="pl-s">"<span class="pl-s">hello world</span>"</span>);
 });
 
-<span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">patch</span>(<span class="pl-s1"><span class="pl-c1">$</span>url</span>, <span class="pl-en">array</span>(<span class="pl-s">'Content-Length'</span> =&gt; <span class="pl-s">'11'</span>), <span class="pl-s1"><span class="pl-c1">$</span>body</span>);</pre></div>
+<span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">patch</span>(<span class="pl-s1"><span class="pl-c1">$</span>url</span>, <span class="pl-en">array</span>(<span class="pl-s">'<span class="pl-s">Content-Length</span>'</span> =&gt; <span class="pl-s">'<span class="pl-s">11</span>'</span>), <span class="pl-s1"><span class="pl-c1">$</span>body</span>);</pre></div>
 <div class="markdown-heading"><h4 class="heading-element">put()</h4><a id="put" class="anchor" aria-label="Permalink: put()" href="#put"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The <code>put(string $url, array $headers = array(), string|ReadableStreamInterface $body = ''): PromiseInterface&lt;ResponseInterface&gt;</code> method can be used to
 send an HTTP PUT request.</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">put</span>(
     <span class="pl-s1"><span class="pl-c1">$</span>url</span>,
     [
-        <span class="pl-s">'Content-Type'</span> =&gt; <span class="pl-s">'text/xml'</span>
+        <span class="pl-s">'<span class="pl-s">Content-Type</span>'</span> =&gt; <span class="pl-s">'<span class="pl-s">text/xml</span>'</span>
     ],
     <span class="pl-s1"><span class="pl-c1">$</span>xml</span>-&gt;<span class="pl-en">asXML</span>()
 )-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi"><span class="pl-v">Psr</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">ResponseInterface</span></span></span> <span class="pl-s1"><span class="pl-c1">$</span>response</span>) {
-    var_dump((<span class="pl-smi">string</span>)<span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">getBody</span>());
+    <span class="pl-en">var_dump</span>((<span class="pl-smi">string</span>)<span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">getBody</span>());
 }, <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">Exception</span></span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>) {
-    <span class="pl-k">echo</span> <span class="pl-s">'Error: '</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
+    <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">Error: </span>'</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
 });</pre></div>
 <p>See also <a href="https://github.com/reactphp/http/blob/v1.10.0/examples/05-client-put-xml.php">PUT XML client example</a>.</p>
 <p>This method will automatically add a matching <code>Content-Length</code> request
@@ -1908,17 +1908,17 @@ using <code>Transfer-Encoding: chunked</code> or you have to explicitly pass in 
 matching <code>Content-Length</code> request header like so:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>body</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Stream</span>\<span class="pl-v">ThroughStream</span>();
 <span class="pl-v">Loop</span>::<span class="pl-en">addTimer</span>(<span class="pl-c1">1.0</span>, <span class="pl-k">function</span> () <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>body</span>) {
-    <span class="pl-s1"><span class="pl-c1">$</span>body</span>-&gt;<span class="pl-en">end</span>("<span class="pl-s">hello world</span>");
+    <span class="pl-s1"><span class="pl-c1">$</span>body</span>-&gt;<span class="pl-en">end</span>(<span class="pl-s">"<span class="pl-s">hello world</span>"</span>);
 });
 
-<span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">put</span>(<span class="pl-s1"><span class="pl-c1">$</span>url</span>, <span class="pl-en">array</span>(<span class="pl-s">'Content-Length'</span> =&gt; <span class="pl-s">'11'</span>), <span class="pl-s1"><span class="pl-c1">$</span>body</span>);</pre></div>
+<span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">put</span>(<span class="pl-s1"><span class="pl-c1">$</span>url</span>, <span class="pl-en">array</span>(<span class="pl-s">'<span class="pl-s">Content-Length</span>'</span> =&gt; <span class="pl-s">'<span class="pl-s">11</span>'</span>), <span class="pl-s1"><span class="pl-c1">$</span>body</span>);</pre></div>
 <div class="markdown-heading"><h4 class="heading-element">delete()</h4><a id="delete" class="anchor" aria-label="Permalink: delete()" href="#delete"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The <code>delete(string $url, array $headers = array(), string|ReadableStreamInterface $body = ''): PromiseInterface&lt;ResponseInterface&gt;</code> method can be used to
 send an HTTP DELETE request.</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">delete</span>(<span class="pl-s1"><span class="pl-c1">$</span>url</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi"><span class="pl-v">Psr</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">ResponseInterface</span></span></span> <span class="pl-s1"><span class="pl-c1">$</span>response</span>) {
-    var_dump((<span class="pl-smi">string</span>)<span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">getBody</span>());
+    <span class="pl-en">var_dump</span>((<span class="pl-smi">string</span>)<span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">getBody</span>());
 }, <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">Exception</span></span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>) {
-    <span class="pl-k">echo</span> <span class="pl-s">'Error: '</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
+    <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">Error: </span>'</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
 });</pre></div>
 <div class="markdown-heading"><h4 class="heading-element">request()</h4><a id="request" class="anchor" aria-label="Permalink: request()" href="#request"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The <code>request(string $method, string $url, array $headers = array(), string|ReadableStreamInterface $body = ''): PromiseInterface&lt;ResponseInterface&gt;</code> method can be used to
@@ -1928,10 +1928,10 @@ send an arbitrary HTTP request.</p>
 method to send an HTTP <code>GET</code> request.</p>
 <p>As an alternative, if you want to use a custom HTTP request method, you
 can use this method:</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">request</span>(<span class="pl-s">'OPTIONS'</span>, <span class="pl-s1"><span class="pl-c1">$</span>url</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi"><span class="pl-v">Psr</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">ResponseInterface</span></span></span> <span class="pl-s1"><span class="pl-c1">$</span>response</span>) {
-    var_dump((<span class="pl-smi">string</span>)<span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">getBody</span>());
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">request</span>(<span class="pl-s">'<span class="pl-s">OPTIONS</span>'</span>, <span class="pl-s1"><span class="pl-c1">$</span>url</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi"><span class="pl-v">Psr</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">ResponseInterface</span></span></span> <span class="pl-s1"><span class="pl-c1">$</span>response</span>) {
+    <span class="pl-en">var_dump</span>((<span class="pl-smi">string</span>)<span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">getBody</span>());
 }, <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">Exception</span></span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>) {
-    <span class="pl-k">echo</span> <span class="pl-s">'Error: '</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
+    <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">Error: </span>'</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
 });</pre></div>
 <p>This method will automatically add a matching <code>Content-Length</code> request
 header if the size of the outgoing request body is known and non-empty.
@@ -1943,10 +1943,10 @@ will default to using <code>Transfer-Encoding: chunked</code> or you have to
 explicitly pass in a matching <code>Content-Length</code> request header like so:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>body</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Stream</span>\<span class="pl-v">ThroughStream</span>();
 <span class="pl-v">Loop</span>::<span class="pl-en">addTimer</span>(<span class="pl-c1">1.0</span>, <span class="pl-k">function</span> () <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>body</span>) {
-    <span class="pl-s1"><span class="pl-c1">$</span>body</span>-&gt;<span class="pl-en">end</span>("<span class="pl-s">hello world</span>");
+    <span class="pl-s1"><span class="pl-c1">$</span>body</span>-&gt;<span class="pl-en">end</span>(<span class="pl-s">"<span class="pl-s">hello world</span>"</span>);
 });
 
-<span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">request</span>(<span class="pl-s">'POST'</span>, <span class="pl-s1"><span class="pl-c1">$</span>url</span>, <span class="pl-en">array</span>(<span class="pl-s">'Content-Length'</span> =&gt; <span class="pl-s">'11'</span>), <span class="pl-s1"><span class="pl-c1">$</span>body</span>);</pre></div>
+<span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">request</span>(<span class="pl-s">'<span class="pl-s">POST</span>'</span>, <span class="pl-s1"><span class="pl-c1">$</span>url</span>, <span class="pl-en">array</span>(<span class="pl-s">'<span class="pl-s">Content-Length</span>'</span> =&gt; <span class="pl-s">'<span class="pl-s">11</span>'</span>), <span class="pl-s1"><span class="pl-c1">$</span>body</span>);</pre></div>
 <div class="markdown-heading"><h4 class="heading-element">requestStreaming()</h4><a id="requeststreaming" class="anchor" aria-label="Permalink: requestStreaming()" href="#requeststreaming"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The <code>requestStreaming(string $method, string $url, array $headers = array(), string|ReadableStreamInterface $body = ''): PromiseInterface&lt;ResponseInterface&gt;</code> method can be used to
 send an arbitrary HTTP request and receive a streaming response without buffering the response body.</p>
@@ -1962,24 +1962,24 @@ the same HTTP message API, but does not buffer the response body in
 memory. It only processes the response body in small chunks as data is
 received and forwards this data through <a href="../stream/">ReactPHP's Stream API</a>.
 This works for (any number of) responses of arbitrary sizes.</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">requestStreaming</span>(<span class="pl-s">'GET'</span>, <span class="pl-s1"><span class="pl-c1">$</span>url</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi"><span class="pl-v">Psr</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">ResponseInterface</span></span></span> <span class="pl-s1"><span class="pl-c1">$</span>response</span>) {
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">requestStreaming</span>(<span class="pl-s">'<span class="pl-s">GET</span>'</span>, <span class="pl-s1"><span class="pl-c1">$</span>url</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi"><span class="pl-v">Psr</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">ResponseInterface</span></span></span> <span class="pl-s1"><span class="pl-c1">$</span>response</span>) {
     <span class="pl-s1"><span class="pl-c1">$</span>body</span> = <span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">getBody</span>();
-    assert(<span class="pl-s1"><span class="pl-c1">$</span>body</span> instanceof <span class="pl-v">Psr</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">StreamInterface</span>);
-    assert(<span class="pl-s1"><span class="pl-c1">$</span>body</span> instanceof <span class="pl-v">React</span>\<span class="pl-v">Stream</span>\<span class="pl-v">ReadableStreamInterface</span>);
+    <span class="pl-en">assert</span>(<span class="pl-s1"><span class="pl-c1">$</span>body</span> instanceof <span class="pl-v">Psr</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">StreamInterface</span>);
+    <span class="pl-en">assert</span>(<span class="pl-s1"><span class="pl-c1">$</span>body</span> instanceof <span class="pl-v">React</span>\<span class="pl-v">Stream</span>\<span class="pl-v">ReadableStreamInterface</span>);
 
-    <span class="pl-s1"><span class="pl-c1">$</span>body</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'data'</span>, <span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>chunk</span>) {
+    <span class="pl-s1"><span class="pl-c1">$</span>body</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'<span class="pl-s">data</span>'</span>, <span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>chunk</span>) {
         <span class="pl-k">echo</span> <span class="pl-s1"><span class="pl-c1">$</span>chunk</span>;
     });
 
-    <span class="pl-s1"><span class="pl-c1">$</span>body</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'error'</span>, <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">Exception</span></span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>) {
-        <span class="pl-k">echo</span> <span class="pl-s">'Error: '</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
+    <span class="pl-s1"><span class="pl-c1">$</span>body</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'<span class="pl-s">error</span>'</span>, <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">Exception</span></span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>) {
+        <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">Error: </span>'</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
     });
 
-    <span class="pl-s1"><span class="pl-c1">$</span>body</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'close'</span>, <span class="pl-k">function</span> () {
-        <span class="pl-k">echo</span> <span class="pl-s">'[DONE]'</span> . <span class="pl-c1">PHP_EOL</span>;
+    <span class="pl-s1"><span class="pl-c1">$</span>body</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'<span class="pl-s">close</span>'</span>, <span class="pl-k">function</span> () {
+        <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">[DONE]</span>'</span> . <span class="pl-c1">PHP_EOL</span>;
     });
 }, <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">Exception</span></span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>) {
-    <span class="pl-k">echo</span> <span class="pl-s">'Error: '</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
+    <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">Error: </span>'</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
 });</pre></div>
 <p>See also <a href="../stream/#readablestreaminterface">ReactPHP's <code>ReadableStreamInterface</code></a>
 and the <a href="#streaming-response">streaming response</a> for more details,
@@ -1994,10 +1994,10 @@ will default to using <code>Transfer-Encoding: chunked</code> or you have to
 explicitly pass in a matching <code>Content-Length</code> request header like so:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>body</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Stream</span>\<span class="pl-v">ThroughStream</span>();
 <span class="pl-v">Loop</span>::<span class="pl-en">addTimer</span>(<span class="pl-c1">1.0</span>, <span class="pl-k">function</span> () <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>body</span>) {
-    <span class="pl-s1"><span class="pl-c1">$</span>body</span>-&gt;<span class="pl-en">end</span>("<span class="pl-s">hello world</span>");
+    <span class="pl-s1"><span class="pl-c1">$</span>body</span>-&gt;<span class="pl-en">end</span>(<span class="pl-s">"<span class="pl-s">hello world</span>"</span>);
 });
 
-<span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">requestStreaming</span>(<span class="pl-s">'POST'</span>, <span class="pl-s1"><span class="pl-c1">$</span>url</span>, <span class="pl-en">array</span>(<span class="pl-s">'Content-Length'</span> =&gt; <span class="pl-s">'11'</span>), <span class="pl-s1"><span class="pl-c1">$</span>body</span>);</pre></div>
+<span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">requestStreaming</span>(<span class="pl-s">'<span class="pl-s">POST</span>'</span>, <span class="pl-s1"><span class="pl-c1">$</span>url</span>, <span class="pl-en">array</span>(<span class="pl-s">'<span class="pl-s">Content-Length</span>'</span> =&gt; <span class="pl-s">'<span class="pl-s">11</span>'</span>), <span class="pl-s1"><span class="pl-c1">$</span>body</span>);</pre></div>
 <div class="markdown-heading"><h4 class="heading-element">withTimeout()</h4><a id="withtimeout" class="anchor" aria-label="Permalink: withTimeout()" href="#withtimeout"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The <code>withTimeout(bool|number $timeout): Browser</code> method can be used to
 change the maximum timeout used for waiting for pending requests.</p>
@@ -2025,9 +2025,9 @@ redirects encountered:</p>
 
 <span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">get</span>(<span class="pl-s1"><span class="pl-c1">$</span>url</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi"><span class="pl-v">Psr</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">ResponseInterface</span></span></span> <span class="pl-s1"><span class="pl-c1">$</span>response</span>) {
     <span class="pl-c">// only non-redirected responses will now end up here</span>
-    var_dump(<span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">getHeaders</span>());
+    <span class="pl-en">var_dump</span>(<span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">getHeaders</span>());
 }, <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">Exception</span></span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>) {
-    <span class="pl-k">echo</span> <span class="pl-s">'Error: '</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
+    <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">Error: </span>'</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
 });</pre></div>
 <p>You can pass in a bool <code>false</code> to disable following any redirects. In
 this case, requests will resolve with the redirection response instead
@@ -2036,9 +2036,9 @@ of following the <code>Location</code> response header:</p>
 
 <span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">get</span>(<span class="pl-s1"><span class="pl-c1">$</span>url</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi"><span class="pl-v">Psr</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">ResponseInterface</span></span></span> <span class="pl-s1"><span class="pl-c1">$</span>response</span>) {
     <span class="pl-c">// any redirects will now end up here</span>
-    var_dump(<span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">getHeaderLine</span>(<span class="pl-s">'Location'</span>));
+    <span class="pl-en">var_dump</span>(<span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">getHeaderLine</span>(<span class="pl-s">'<span class="pl-s">Location</span>'</span>));
 }, <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">Exception</span></span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>) {
-    <span class="pl-k">echo</span> <span class="pl-s">'Error: '</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
+    <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">Error: </span>'</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
 });</pre></div>
 <p>You can pass in a bool <code>true</code> to re-enable default redirect handling.
 This defaults to following a maximum of 10 redirects:</p>
@@ -2057,9 +2057,9 @@ resolve with the response message indicating an error condition:</p>
 
 <span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">get</span>(<span class="pl-s1"><span class="pl-c1">$</span>url</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi"><span class="pl-v">Psr</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">ResponseInterface</span></span></span> <span class="pl-s1"><span class="pl-c1">$</span>response</span>) {
     <span class="pl-c">// any HTTP response will now end up here</span>
-    var_dump(<span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">getStatusCode</span>(), <span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">getReasonPhrase</span>());
+    <span class="pl-en">var_dump</span>(<span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">getStatusCode</span>(), <span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">getReasonPhrase</span>());
 }, <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">Exception</span></span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>) {
-    <span class="pl-k">echo</span> <span class="pl-s">'Error: '</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
+    <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">Error: </span>'</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
 });</pre></div>
 <p>You can pass in a bool <code>true</code> to re-enable default status code handling.
 This defaults to rejecting any response status codes in the 4xx or 5xx
@@ -2068,14 +2068,14 @@ range with a <a href="#responseexception"><code>ResponseException</code></a>:</p
 
 <span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">get</span>(<span class="pl-s1"><span class="pl-c1">$</span>url</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi"><span class="pl-v">Psr</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">ResponseInterface</span></span></span> <span class="pl-s1"><span class="pl-c1">$</span>response</span>) {
     <span class="pl-c">// any successful HTTP response will now end up here</span>
-    var_dump(<span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">getStatusCode</span>(), <span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">getReasonPhrase</span>());
+    <span class="pl-en">var_dump</span>(<span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">getStatusCode</span>(), <span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">getReasonPhrase</span>());
 }, <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">Exception</span></span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>) {
     <span class="pl-k">if</span> (<span class="pl-s1"><span class="pl-c1">$</span>e</span> instanceof <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">ResponseException</span>) {
         <span class="pl-c">// any HTTP response error message will now end up here</span>
         <span class="pl-s1"><span class="pl-c1">$</span>response</span> = <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getResponse</span>();
-        var_dump(<span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">getStatusCode</span>(), <span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">getReasonPhrase</span>());
+        <span class="pl-en">var_dump</span>(<span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">getStatusCode</span>(), <span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">getReasonPhrase</span>());
     } <span class="pl-k">else</span> {
-        <span class="pl-k">echo</span> <span class="pl-s">'Error: '</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
+        <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">Error: </span>'</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
     }
 });</pre></div>
 <p>Notice that the <a href="#browser"><code>Browser</code></a> is an immutable object, i.e. this
@@ -2089,10 +2089,10 @@ processed by first resolving this relative to the given absolute base
 URL. This supports resolving relative path references (like <code>../</code> etc.).
 This is particularly useful for (RESTful) API calls where all endpoints
 (URLs) are located under a common base URL.</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>browser</span> = <span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">withBase</span>(<span class="pl-s">'http://api.example.com/v3/'</span>);
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>browser</span> = <span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">withBase</span>(<span class="pl-s">'<span class="pl-s">http://api.example.com/v3/</span>'</span>);
 
 <span class="pl-c">// will request http://api.example.com/v3/users</span>
-<span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">get</span>(<span class="pl-s">'users'</span>)-&gt;<span class="pl-en">then</span>(…);</pre></div>
+<span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">get</span>(<span class="pl-s">'<span class="pl-s">users</span>'</span>)-&gt;<span class="pl-en">then</span>(…);</pre></div>
 <p>You can pass in a <code>null</code> base URL to return a new instance that does not
 use a base URL:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>browser</span> = <span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">withBase</span>(<span class="pl-c1">null</span>);</pre></div>
@@ -2113,7 +2113,7 @@ servers. As such, there should rarely be a need to explicitly change this
 protocol version.</p>
 <p>If you want to explicitly use the legacy HTTP/1.0 protocol version, you
 can use this method:</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>browser</span> = <span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">withProtocolVersion</span>(<span class="pl-s">'1.0'</span>);
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>browser</span> = <span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">withProtocolVersion</span>(<span class="pl-s">'<span class="pl-s">1.0</span>'</span>);
 
 <span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">get</span>(<span class="pl-s1"><span class="pl-c1">$</span>url</span>)-&gt;<span class="pl-en">then</span>(…);</pre></div>
 <p>Notice that the <a href="#browser"><code>Browser</code></a> is an immutable object, i.e. this
@@ -2134,9 +2134,9 @@ response body exceeds this maximum size, the request will be rejected.</p>
 
 <span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">get</span>(<span class="pl-s1"><span class="pl-c1">$</span>url</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi"><span class="pl-v">Psr</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">ResponseInterface</span></span></span> <span class="pl-s1"><span class="pl-c1">$</span>response</span>) {
     <span class="pl-c">// response body will not exceed 1 MiB</span>
-    var_dump(<span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">getHeaders</span>(), (<span class="pl-smi">string</span>) <span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">getBody</span>());
+    <span class="pl-en">var_dump</span>(<span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">getHeaders</span>(), (<span class="pl-smi">string</span>) <span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">getBody</span>());
 }, <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">Exception</span></span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>) {
-    <span class="pl-k">echo</span> <span class="pl-s">'Error: '</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
+    <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">Error: </span>'</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
 });</pre></div>
 <p>Note that the response body buffer has to be kept in memory for each
 pending request until its transfer is completed and it will only be freed
@@ -2151,7 +2151,7 @@ given setting applied.</p>
 <div class="markdown-heading"><h4 class="heading-element">withHeader()</h4><a id="withheader" class="anchor" aria-label="Permalink: withHeader()" href="#withheader"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The <code>withHeader(string $header, string $value): Browser</code> method can be used to
 add a request header for all following requests.</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>browser</span> = <span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">withHeader</span>(<span class="pl-s">'User-Agent'</span>, <span class="pl-s">'ACME'</span>);
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>browser</span> = <span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">withHeader</span>(<span class="pl-s">'<span class="pl-s">User-Agent</span>'</span>, <span class="pl-s">'<span class="pl-s">ACME</span>'</span>);
 
 <span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">get</span>(<span class="pl-s1"><span class="pl-c1">$</span>url</span>)-&gt;<span class="pl-en">then</span>(…);</pre></div>
 <p>Note that the new header will overwrite any headers previously set with
@@ -2161,7 +2161,7 @@ by default unless they are explicitly set for any requests.</p>
 <p>The <code>withoutHeader(string $header): Browser</code> method can be used to
 remove any default request headers previously set via
 the <a href="#withheader"><code>withHeader()</code> method</a>.</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>browser</span> = <span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">withoutHeader</span>(<span class="pl-s">'User-Agent'</span>);
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>browser</span> = <span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">withoutHeader</span>(<span class="pl-s">'<span class="pl-s">User-Agent</span>'</span>);
 
 <span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">get</span>(<span class="pl-s1"><span class="pl-c1">$</span>url</span>)-&gt;<span class="pl-en">then</span>(…);</pre></div>
 <p>Note that this method only affects the headers which were set with the
@@ -2173,9 +2173,9 @@ represent an outgoing server response message.</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>response</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">Response</span>(
     <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">Response</span>::<span class="pl-c1">STATUS_OK</span>,
     <span class="pl-en">array</span>(
-        <span class="pl-s">'Content-Type'</span> =&gt; <span class="pl-s">'text/html'</span>
+        <span class="pl-s">'<span class="pl-s">Content-Type</span>'</span> =&gt; <span class="pl-s">'<span class="pl-s">text/html</span>'</span>
     ),
-    "<span class="pl-s">&lt;html&gt;Hello world!&lt;/html&gt;</span>\n"
+    <span class="pl-s">"<span class="pl-s">&lt;html&gt;Hello world!&lt;/html&gt;</span>\n"</span>
 );</pre></div>
 <p>This class implements the
 <a href="https://www.php-fig.org/psr/psr-7/#33-psrhttpmessageresponseinterface" rel="nofollow">PSR-7 <code>ResponseInterface</code></a>
@@ -2194,11 +2194,11 @@ considered an implementation detail that may change in the future.</p>
 <div class="markdown-heading"><h5 class="heading-element">html()</h5><a id="html" class="anchor" aria-label="Permalink: html()" href="#html"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The static <code>html(string $html): Response</code> method can be used to
 create an HTML response.</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>html</span> =<span class="pl-s"> &lt;&lt;&lt;HTML</span>
-<span class="pl-s">&lt;!doctype html&gt;</span>
-<span class="pl-s">&lt;html&gt;</span>
-<span class="pl-s">&lt;body&gt;Hello wörld!&lt;/body&gt;</span>
-<span class="pl-s">&lt;/html&gt;</span>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>html</span> = <span class="pl-s">&lt;&lt;&lt;HTML<span class="pl-s"></span></span>
+<span class="pl-s"><span class="pl-s"><span class="pl-s">&lt;!doctype html&gt;</span></span></span>
+<span class="pl-s"><span class="pl-s"><span class="pl-s">&lt;html&gt;</span></span></span>
+<span class="pl-s"><span class="pl-s"><span class="pl-s">&lt;body&gt;Hello wörld!&lt;/body&gt;</span></span></span>
+<span class="pl-s"><span class="pl-s"><span class="pl-s">&lt;/html&gt;</span></span></span>
 <span class="pl-s"></span>
 <span class="pl-s">HTML</span>;
 
@@ -2221,12 +2221,12 @@ headers, you can manipulate the returned response object using the
 provided PSR-7 methods or directly instantiate a custom HTTP response
 object using the <code>Response</code> constructor:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>response</span> = <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">Response</span>::<span class="pl-en">html</span>(
-    "<span class="pl-s">&lt;h1&gt;Error&lt;/h1&gt;</span>\n<span class="pl-s">&lt;p&gt;Invalid user name given.&lt;/p&gt;</span>\n"
+    <span class="pl-s">"<span class="pl-s">&lt;h1&gt;Error&lt;/h1&gt;</span>\n<span class="pl-s">&lt;p&gt;Invalid user name given.&lt;/p&gt;</span>\n"</span>
 )-&gt;<span class="pl-en">withStatus</span>(<span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">Response</span>::<span class="pl-c1">STATUS_BAD_REQUEST</span>);</pre></div>
 <div class="markdown-heading"><h5 class="heading-element">json()</h5><a id="json" class="anchor" aria-label="Permalink: json()" href="#json"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The static <code>json(mixed $data): Response</code> method can be used to
 create a JSON response.</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>response</span> = <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">Response</span>::<span class="pl-en">json</span>([<span class="pl-s">'name'</span> =&gt; <span class="pl-s">'Alice'</span>]);</pre></div>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>response</span> = <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">Response</span>::<span class="pl-en">json</span>([<span class="pl-s">'<span class="pl-s">name</span>'</span> =&gt; <span class="pl-s">'<span class="pl-s">Alice</span>'</span>]);</pre></div>
 <p>This is a convenient shortcut method that returns the equivalent of this:</p>
 <pre><code>$response = new React\Http\Message\Response(
     React\Http\Message\Response::STATUS_OK,
@@ -2255,12 +2255,12 @@ headers, you can manipulate the returned response object using the
 provided PSR-7 methods or directly instantiate a custom HTTP response
 object using the <code>Response</code> constructor:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>response</span> = <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">Response</span>::<span class="pl-en">json</span>(
-    [<span class="pl-s">'error'</span> =&gt; <span class="pl-s">'Invalid user name given'</span>]
+    [<span class="pl-s">'<span class="pl-s">error</span>'</span> =&gt; <span class="pl-s">'<span class="pl-s">Invalid user name given</span>'</span>]
 )-&gt;<span class="pl-en">withStatus</span>(<span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">Response</span>::<span class="pl-c1">STATUS_BAD_REQUEST</span>);</pre></div>
 <div class="markdown-heading"><h5 class="heading-element">plaintext()</h5><a id="plaintext" class="anchor" aria-label="Permalink: plaintext()" href="#plaintext"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The static <code>plaintext(string $text): Response</code> method can be used to
 create a plaintext response.</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>response</span> = <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">Response</span>::<span class="pl-en">plaintext</span>("<span class="pl-s">Hello wörld!</span>\n");</pre></div>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>response</span> = <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">Response</span>::<span class="pl-en">plaintext</span>(<span class="pl-s">"<span class="pl-s">Hello wörld!</span>\n"</span>);</pre></div>
 <p>This is a convenient shortcut method that returns the equivalent of this:</p>
 <pre><code>$response = new React\Http\Message\Response(
     React\Http\Message\Response::STATUS_OK,
@@ -2279,16 +2279,16 @@ headers, you can manipulate the returned response object using the
 provided PSR-7 methods or directly instantiate a custom HTTP response
 object using the <code>Response</code> constructor:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>response</span> = <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">Response</span>::<span class="pl-en">plaintext</span>(
-    "<span class="pl-s">Error: Invalid user name given.</span>\n"
+    <span class="pl-s">"<span class="pl-s">Error: Invalid user name given.</span>\n"</span>
 )-&gt;<span class="pl-en">withStatus</span>(<span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">Response</span>::<span class="pl-c1">STATUS_BAD_REQUEST</span>);</pre></div>
 <div class="markdown-heading"><h5 class="heading-element">xml()</h5><a id="xml" class="anchor" aria-label="Permalink: xml()" href="#xml"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The static <code>xml(string $xml): Response</code> method can be used to
 create an XML response.</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>xml</span> =<span class="pl-s"> &lt;&lt;&lt;XML</span>
-<span class="pl-s">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
-<span class="pl-s">&lt;body&gt;</span>
-<span class="pl-s">    &lt;greeting&gt;Hello wörld!&lt;/greeting&gt;</span>
-<span class="pl-s">&lt;/body&gt;</span>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>xml</span> = <span class="pl-s">&lt;&lt;&lt;XML<span class="pl-s"></span></span>
+<span class="pl-s"><span class="pl-s"><span class="pl-s">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span></span></span>
+<span class="pl-s"><span class="pl-s"><span class="pl-s">&lt;body&gt;</span></span></span>
+<span class="pl-s"><span class="pl-s"><span class="pl-s">    &lt;greeting&gt;Hello wörld!&lt;/greeting&gt;</span></span></span>
+<span class="pl-s"><span class="pl-s"><span class="pl-s">&lt;/body&gt;</span></span></span>
 <span class="pl-s"></span>
 <span class="pl-s">XML</span>;
 
@@ -2312,7 +2312,7 @@ headers, you can manipulate the returned response object using the
 provided PSR-7 methods or directly instantiate a custom HTTP response
 object using the <code>Response</code> constructor:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>response</span> = <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">Response</span>::<span class="pl-en">xml</span>(
-    "<span class="pl-s">&lt;error&gt;&lt;message&gt;Invalid user name given.&lt;/message&gt;&lt;/error&gt;</span>\n"
+    <span class="pl-s">"<span class="pl-s">&lt;error&gt;&lt;message&gt;Invalid user name given.&lt;/message&gt;&lt;/error&gt;</span>\n"</span>
 )-&gt;<span class="pl-en">withStatus</span>(<span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">Response</span>::<span class="pl-c1">STATUS_BAD_REQUEST</span>);</pre></div>
 <div class="markdown-heading"><h4 class="heading-element">Request</h4><a id="request-1" class="anchor" aria-label="Permalink: Request" href="#request-1"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The <code>React\Http\Message\Request</code> class can be used to
@@ -2373,19 +2373,19 @@ that emit chunks of incoming data as it is received:</p>
     <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Middleware</span>\<span class="pl-v">StreamingRequestMiddleware</span>(),
     <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi"><span class="pl-v">Psr</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">ServerRequestInterface</span></span></span> <span class="pl-s1"><span class="pl-c1">$</span>request</span>) {
         <span class="pl-s1"><span class="pl-c1">$</span>body</span> = <span class="pl-s1"><span class="pl-c1">$</span>request</span>-&gt;<span class="pl-en">getBody</span>();
-        assert(<span class="pl-s1"><span class="pl-c1">$</span>body</span> instanceof <span class="pl-v">Psr</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">StreamInterface</span>);
-        assert(<span class="pl-s1"><span class="pl-c1">$</span>body</span> instanceof <span class="pl-v">React</span>\<span class="pl-v">Stream</span>\<span class="pl-v">ReadableStreamInterface</span>);
+        <span class="pl-en">assert</span>(<span class="pl-s1"><span class="pl-c1">$</span>body</span> instanceof <span class="pl-v">Psr</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">StreamInterface</span>);
+        <span class="pl-en">assert</span>(<span class="pl-s1"><span class="pl-c1">$</span>body</span> instanceof <span class="pl-v">React</span>\<span class="pl-v">Stream</span>\<span class="pl-v">ReadableStreamInterface</span>);
 
         <span class="pl-k">return</span> <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Promise</span>\<span class="pl-v">Promise</span>(<span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>resolve</span>) <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>body</span>) {
             <span class="pl-s1"><span class="pl-c1">$</span>bytes</span> = <span class="pl-c1">0</span>;
-            <span class="pl-s1"><span class="pl-c1">$</span>body</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'data'</span>, <span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>chunk</span>) <span class="pl-k">use</span> (&amp;<span class="pl-s1"><span class="pl-c1">$</span>bytes</span>) {
+            <span class="pl-s1"><span class="pl-c1">$</span>body</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'<span class="pl-s">data</span>'</span>, <span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>chunk</span>) <span class="pl-k">use</span> (&amp;<span class="pl-s1"><span class="pl-c1">$</span>bytes</span>) {
                 <span class="pl-s1"><span class="pl-c1">$</span>bytes</span> += <span class="pl-en">\count</span>(<span class="pl-s1"><span class="pl-c1">$</span>chunk</span>);
             });
-            <span class="pl-s1"><span class="pl-c1">$</span>body</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'close'</span>, <span class="pl-k">function</span> () <span class="pl-k">use</span> (&amp;<span class="pl-s1"><span class="pl-c1">$</span>bytes</span>, <span class="pl-s1"><span class="pl-c1">$</span>resolve</span>) {
+            <span class="pl-s1"><span class="pl-c1">$</span>body</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'<span class="pl-s">close</span>'</span>, <span class="pl-k">function</span> () <span class="pl-k">use</span> (&amp;<span class="pl-s1"><span class="pl-c1">$</span>bytes</span>, <span class="pl-s1"><span class="pl-c1">$</span>resolve</span>) {
                 <span class="pl-s1"><span class="pl-c1">$</span>resolve</span>(<span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">Response</span>(
                     <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">Response</span>::<span class="pl-c1">STATUS_OK</span>,
                     [],
-                    "<span class="pl-s">Received </span><span class="pl-s1"><span class="pl-c1">$</span>bytes</span><span class="pl-s"> bytes</span>\n"
+                    <span class="pl-s">"<span class="pl-s">Received </span><span class="pl-s1"><span class="pl-c1">$</span>bytes</span><span class="pl-s"> bytes</span>\n"</span>
                 ));
             });
         });
@@ -2513,28 +2513,28 @@ contents and persist this to your favorite data store.</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>handler</span> = <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi"><span class="pl-v">Psr</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">ServerRequestInterface</span></span></span> <span class="pl-s1"><span class="pl-c1">$</span>request</span>) {
     <span class="pl-c">// If any, parsed form fields are now available from $request-&gt;getParsedBody()</span>
     <span class="pl-s1"><span class="pl-c1">$</span>body</span> = <span class="pl-s1"><span class="pl-c1">$</span>request</span>-&gt;<span class="pl-en">getParsedBody</span>();
-    <span class="pl-s1"><span class="pl-c1">$</span>name</span> = isset(<span class="pl-s1"><span class="pl-c1">$</span>body</span>[<span class="pl-s">'name'</span>]) ? <span class="pl-s1"><span class="pl-c1">$</span>body</span>[<span class="pl-s">'name'</span>] : <span class="pl-s">'unnamed'</span>;
+    <span class="pl-s1"><span class="pl-c1">$</span>name</span> = <span class="pl-en">isset</span>(<span class="pl-s1"><span class="pl-c1">$</span>body</span>[<span class="pl-s">'<span class="pl-s">name</span>'</span>]) ? <span class="pl-s1"><span class="pl-c1">$</span>body</span>[<span class="pl-s">'<span class="pl-s">name</span>'</span>] : <span class="pl-s">'<span class="pl-s">unnamed</span>'</span>;
 
     <span class="pl-s1"><span class="pl-c1">$</span>files</span> = <span class="pl-s1"><span class="pl-c1">$</span>request</span>-&gt;<span class="pl-en">getUploadedFiles</span>();
-    <span class="pl-s1"><span class="pl-c1">$</span>avatar</span> = isset(<span class="pl-s1"><span class="pl-c1">$</span>files</span>[<span class="pl-s">'avatar'</span>]) ? <span class="pl-s1"><span class="pl-c1">$</span>files</span>[<span class="pl-s">'avatar'</span>] : <span class="pl-c1">null</span>;
+    <span class="pl-s1"><span class="pl-c1">$</span>avatar</span> = <span class="pl-en">isset</span>(<span class="pl-s1"><span class="pl-c1">$</span>files</span>[<span class="pl-s">'<span class="pl-s">avatar</span>'</span>]) ? <span class="pl-s1"><span class="pl-c1">$</span>files</span>[<span class="pl-s">'<span class="pl-s">avatar</span>'</span>] : <span class="pl-c1">null</span>;
     <span class="pl-k">if</span> (<span class="pl-s1"><span class="pl-c1">$</span>avatar</span> instanceof <span class="pl-v">Psr</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">UploadedFileInterface</span>) {
         <span class="pl-k">if</span> (<span class="pl-s1"><span class="pl-c1">$</span>avatar</span>-&gt;<span class="pl-en">getError</span>() === <span class="pl-c1">UPLOAD_ERR_OK</span>) {
-            <span class="pl-s1"><span class="pl-c1">$</span>uploaded</span> = <span class="pl-s1"><span class="pl-c1">$</span>avatar</span>-&gt;<span class="pl-en">getSize</span>() . <span class="pl-s">' bytes'</span>;
+            <span class="pl-s1"><span class="pl-c1">$</span>uploaded</span> = <span class="pl-s1"><span class="pl-c1">$</span>avatar</span>-&gt;<span class="pl-en">getSize</span>() . <span class="pl-s">'<span class="pl-s"> bytes</span>'</span>;
         } <span class="pl-k">elseif</span> (<span class="pl-s1"><span class="pl-c1">$</span>avatar</span>-&gt;<span class="pl-en">getError</span>() === <span class="pl-c1">UPLOAD_ERR_INI_SIZE</span>) {
-            <span class="pl-s1"><span class="pl-c1">$</span>uploaded</span> = <span class="pl-s">'file too large'</span>;
+            <span class="pl-s1"><span class="pl-c1">$</span>uploaded</span> = <span class="pl-s">'<span class="pl-s">file too large</span>'</span>;
         } <span class="pl-k">else</span> {
-            <span class="pl-s1"><span class="pl-c1">$</span>uploaded</span> = <span class="pl-s">'with error'</span>;
+            <span class="pl-s1"><span class="pl-c1">$</span>uploaded</span> = <span class="pl-s">'<span class="pl-s">with error</span>'</span>;
         }
     } <span class="pl-k">else</span> {
-        <span class="pl-s1"><span class="pl-c1">$</span>uploaded</span> = <span class="pl-s">'nothing'</span>;
+        <span class="pl-s1"><span class="pl-c1">$</span>uploaded</span> = <span class="pl-s">'<span class="pl-s">nothing</span>'</span>;
     }
 
     <span class="pl-k">return</span> <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">Response</span>(
         <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">Response</span>::<span class="pl-c1">STATUS_OK</span>,
         <span class="pl-en">array</span>(
-            <span class="pl-s">'Content-Type'</span> =&gt; <span class="pl-s">'text/plain'</span>
+            <span class="pl-s">'<span class="pl-s">Content-Type</span>'</span> =&gt; <span class="pl-s">'<span class="pl-s">text/plain</span>'</span>
         ),
-        <span class="pl-s1"><span class="pl-c1">$</span>name</span> . <span class="pl-s">' uploaded '</span> . <span class="pl-s1"><span class="pl-c1">$</span>uploaded</span>
+        <span class="pl-s1"><span class="pl-c1">$</span>name</span> . <span class="pl-s">'<span class="pl-s"> uploaded </span>'</span> . <span class="pl-s1"><span class="pl-c1">$</span>uploaded</span>
     );
 };
 
@@ -2867,12 +2867,12 @@ If you do not want to run these, they can simply be skipped like this:</p>
                         <ul class="component-info__contributors">
                                                     <li>
                                 <a href="https://github.com/clue">
-                                    <img src="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=80 2x" alt="clue" title="clue (324 contributions)">
+                                    <img src="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=80 2x" alt="clue" title="clue (325 contributions)">
                                 </a>
                             </li>
                                                     <li>
                                 <a href="https://github.com/WyriHaximus">
-                                    <img src="https://avatars.githubusercontent.com/u/147145?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/147145?v=4&amp;s=80 2x" alt="WyriHaximus" title="WyriHaximus (218 contributions)">
+                                    <img src="https://avatars.githubusercontent.com/u/147145?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/147145?v=4&amp;s=80 2x" alt="WyriHaximus" title="WyriHaximus (220 contributions)">
                                 </a>
                             </li>
                                                     <li>
@@ -2961,48 +2961,23 @@ If you do not want to run these, they can simply be skipped like this:</p>
                                 </a>
                             </li>
                                                     <li>
-                                <a href="https://github.com/51imyyy">
-                                    <img src="https://avatars.githubusercontent.com/u/83275941?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/83275941?v=4&amp;s=80 2x" alt="51imyyy" title="51imyyy (1 contribution)">
+                                <a href="https://github.com/e3betht">
+                                    <img src="https://avatars.githubusercontent.com/u/1811561?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/1811561?v=4&amp;s=80 2x" alt="e3betht" title="e3betht (1 contribution)">
                                 </a>
                             </li>
                                                     <li>
-                                <a href="https://github.com/beaucollins">
-                                    <img src="https://avatars.githubusercontent.com/u/19795?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/19795?v=4&amp;s=80 2x" alt="beaucollins" title="beaucollins (1 contribution)">
+                                <a href="https://github.com/ojhaujjwal">
+                                    <img src="https://avatars.githubusercontent.com/u/4995501?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/4995501?v=4&amp;s=80 2x" alt="ojhaujjwal" title="ojhaujjwal (1 contribution)">
                                 </a>
                             </li>
                                                     <li>
-                                <a href="https://github.com/christoph-kluge">
-                                    <img src="https://avatars.githubusercontent.com/u/1446269?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/1446269?v=4&amp;s=80 2x" alt="christoph-kluge" title="christoph-kluge (1 contribution)">
+                                <a href="https://github.com/mrsimonbennett">
+                                    <img src="https://avatars.githubusercontent.com/u/1471305?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/1471305?v=4&amp;s=80 2x" alt="mrsimonbennett" title="mrsimonbennett (1 contribution)">
                                 </a>
                             </li>
                                                     <li>
-                                <a href="https://github.com/dinooo13">
-                                    <img src="https://avatars.githubusercontent.com/u/44942030?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/44942030?v=4&amp;s=80 2x" alt="dinooo13" title="dinooo13 (1 contribution)">
-                                </a>
-                            </li>
-                                                    <li>
-                                <a href="https://github.com/fritz-gerneth">
-                                    <img src="https://avatars.githubusercontent.com/u/1294731?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/1294731?v=4&amp;s=80 2x" alt="fritz-gerneth" title="fritz-gerneth (1 contribution)">
-                                </a>
-                            </li>
-                                                    <li>
-                                <a href="https://github.com/greevex">
-                                    <img src="https://avatars.githubusercontent.com/u/148401?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/148401?v=4&amp;s=80 2x" alt="greevex" title="greevex (1 contribution)">
-                                </a>
-                            </li>
-                                                    <li>
-                                <a href="https://github.com/jorrit">
-                                    <img src="https://avatars.githubusercontent.com/u/521449?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/521449?v=4&amp;s=80 2x" alt="jorrit" title="jorrit (1 contribution)">
-                                </a>
-                            </li>
-                                                    <li>
-                                <a href="https://github.com/marenzo">
-                                    <img src="https://avatars.githubusercontent.com/u/1208453?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/1208453?v=4&amp;s=80 2x" alt="marenzo" title="marenzo (1 contribution)">
-                                </a>
-                            </li>
-                                                    <li>
-                                <a href="https://github.com/nhedger">
-                                    <img src="https://avatars.githubusercontent.com/u/649677?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/649677?v=4&amp;s=80 2x" alt="nhedger" title="nhedger (1 contribution)">
+                                <a href="https://github.com/reedy">
+                                    <img src="https://avatars.githubusercontent.com/u/67615?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/67615?v=4&amp;s=80 2x" alt="reedy" title="reedy (1 contribution)">
                                 </a>
                             </li>
                                                     <li>
@@ -3011,8 +2986,33 @@ If you do not want to run these, they can simply be skipped like this:</p>
                                 </a>
                             </li>
                                                     <li>
-                                <a href="https://github.com/reedy">
-                                    <img src="https://avatars.githubusercontent.com/u/67615?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/67615?v=4&amp;s=80 2x" alt="reedy" title="reedy (1 contribution)">
+                                <a href="https://github.com/nhedger">
+                                    <img src="https://avatars.githubusercontent.com/u/649677?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/649677?v=4&amp;s=80 2x" alt="nhedger" title="nhedger (1 contribution)">
+                                </a>
+                            </li>
+                                                    <li>
+                                <a href="https://github.com/marenzo">
+                                    <img src="https://avatars.githubusercontent.com/u/1208453?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/1208453?v=4&amp;s=80 2x" alt="marenzo" title="marenzo (1 contribution)">
+                                </a>
+                            </li>
+                                                    <li>
+                                <a href="https://github.com/jorrit">
+                                    <img src="https://avatars.githubusercontent.com/u/521449?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/521449?v=4&amp;s=80 2x" alt="jorrit" title="jorrit (1 contribution)">
+                                </a>
+                            </li>
+                                                    <li>
+                                <a href="https://github.com/lucasnetau">
+                                    <img src="https://avatars.githubusercontent.com/u/9331242?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/9331242?v=4&amp;s=80 2x" alt="lucasnetau" title="lucasnetau (1 contribution)">
+                                </a>
+                            </li>
+                                                    <li>
+                                <a href="https://github.com/greevex">
+                                    <img src="https://avatars.githubusercontent.com/u/148401?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/148401?v=4&amp;s=80 2x" alt="greevex" title="greevex (1 contribution)">
+                                </a>
+                            </li>
+                                                    <li>
+                                <a href="https://github.com/fritz-gerneth">
+                                    <img src="https://avatars.githubusercontent.com/u/1294731?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/1294731?v=4&amp;s=80 2x" alt="fritz-gerneth" title="fritz-gerneth (1 contribution)">
                                 </a>
                             </li>
                                                 </ul>
@@ -3029,7 +3029,7 @@ If you do not want to run these, they can simply be skipped like this:</p>
         <mask id="reactphp-http-participation-sparkline" x="0" y="0" width="320" height="40" >
             <polyline 
                 transform="translate(0, 40) scale(1,-1)"
-                points="0,1 6,1 12,1 18,1 24,1 30,1 36,1 42,3 48,2 54,2 60,1 66,1 72,1 78,1 84,1 90,1 96,2 102,1 108,1 114,1 120,1 126,1 132,1 138,1 144,1 150,1 156,1 162,1 168,1 174,3 180,2 186,1 192,6 198,4 204,9 210,1 216,1 222,1 228,1 234,1 240,1 246,2 252,2 258,6 264,2 270,1 276,1 282,1 288,1 294,1 300,1 306,1" 
+                points="0,1 6,3 12,2 18,2 24,1 30,1 36,1 42,1 48,1 54,1 60,2 66,1 72,1 78,1 84,1 90,1 96,1 102,1 108,1 114,1 120,1 126,1 132,1 138,3 144,2 150,1 156,6 162,4 168,9 174,1 180,1 186,1 192,1 198,1 204,1 210,2 216,2 222,6 228,2 234,2 240,1 246,1 252,1 258,2 264,1 270,1 276,1 282,1 288,1 294,2 300,2 306,1" 
                 fill="transparent" 
                 stroke="#40a977" 
                 stroke-width="2"
