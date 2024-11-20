@@ -1,11 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
   <title type="text">The combined changelog for all ReactPHP components.</title>
-  <updated>2024-09-06T11:22:53+00:00</updated>
+  <updated>2024-11-20T15:24:33+00:00</updated>
   <generator uri="http://framework.zend.com" version="2">Zend_Feed_Writer</generator>
   <link rel="alternate" type="text/html" href="https://reactphp.org/changelog.html"/>
   <link rel="self" type="application/atom+xml" href="https://reactphp.org/changelog.atom"/>
   <id>https://reactphp.org/changelog.html</id>
+  <entry>
+    <title type="html"><![CDATA[HTTP 1.11.0]]></title>
+    <summary type="html"><![CDATA[<ul dir="auto">
+<li>
+<p dir="auto">Feature: Improve PHP 8.4+ support by avoiding implicitly nullable types.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="2457549358" data-permission-text="Title is private" data-url="https://github.com/reactphp/http/issues/537" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/http/pull/537/hovercard" href="https://github.com/reactphp/http/pull/537">#537</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+</li>
+<li>
+<p dir="auto">Feature: Allow underscore character in Uri host.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="2256286600" data-permission-text="Title is private" data-url="https://github.com/reactphp/http/issues/524" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/http/pull/524/hovercard" href="https://github.com/reactphp/http/pull/524">#524</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/lulhum/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/lulhum">@lulhum</a>)</p>
+</li>
+<li>
+<p dir="auto">Improve test suite to fix expected error code when ext-sockets is not enabled.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="2488379954" data-permission-text="Title is private" data-url="https://github.com/reactphp/http/issues/539" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/http/pull/539/hovercard" href="https://github.com/reactphp/http/pull/539">#539</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/WyriHaximus/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/WyriHaximus">@WyriHaximus</a>)</p>
+</li>
+</ul>]]></summary>
+    <updated>2024-11-20T15:24:33+00:00</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/reactphp/http/releases/tag/v1.11.0"/>
+    <id>https://github.com/reactphp/http/releases/tag/v1.11.0</id>
+    <author>
+      <name>clue</name>
+      <uri>https://github.com/clue</uri>
+    </author>
+  </entry>
   <entry>
     <title type="html"><![CDATA[Datagram 1.10.0]]></title>
     <summary type="html"><![CDATA[<ul dir="auto">
@@ -206,26 +230,6 @@ the old RingCentral PSR-7 dependency, you can still install it like this:</p>
     <updated>2023-12-15T11:03:25+00:00</updated>
     <link rel="alternate" type="text/html" href="https://github.com/reactphp/socket/releases/tag/v1.15.0"/>
     <id>https://github.com/reactphp/socket/releases/tag/v1.15.0</id>
-    <author>
-      <name>SimonFrings</name>
-      <uri>https://github.com/SimonFrings</uri>
-    </author>
-  </entry>
-  <entry>
-    <title type="html"><![CDATA[PromiseStream 1.7.0]]></title>
-    <summary type="html"><![CDATA[<ul dir="auto">
-<li>
-<p dir="auto">Feature: Full PHP 8.3 compatibility.<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="2037502456" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise-stream/issues/39" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise-stream/pull/39/hovercard" href="https://github.com/reactphp/promise-stream/pull/39">#39</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
-</li>
-<li>
-<p dir="auto">Update test suite and collect all garbage cycles.<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1796654435" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise-stream/issues/38" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise-stream/pull/38/hovercard" href="https://github.com/reactphp/promise-stream/pull/38">#38</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="2037502456" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise-stream/issues/39" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise-stream/pull/39/hovercard" href="https://github.com/reactphp/promise-stream/pull/39">#39</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
-</li>
-</ul>]]></summary>
-    <updated>2023-12-13T11:32:33+00:00</updated>
-    <link rel="alternate" type="text/html" href="https://github.com/reactphp/promise-stream/releases/tag/v1.7.0"/>
-    <id>https://github.com/reactphp/promise-stream/releases/tag/v1.7.0</id>
     <author>
       <name>SimonFrings</name>
       <uri>https://github.com/SimonFrings</uri>
