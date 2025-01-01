@@ -153,7 +153,7 @@
                         ChildProcess
 
                         <span class="off-canvas-menu__version">
-                            v0.6.5
+                            v0.6.6
                         </span>
                     </a>
                 </li>
@@ -240,8 +240,8 @@
 
 <span class="pl-k">require</span> <span class="pl-c1">__DIR__</span> . <span class="pl-s">'<span class="pl-s">/vendor/autoload.php</span>'</span>;
 
-<span class="pl-s1"><span class="pl-c1">$</span>http</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">HttpServer</span>(<span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi"><span class="pl-v">Psr</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">ServerRequestInterface</span></span></span> <span class="pl-s1"><span class="pl-c1">$</span>request</span>) {
-    <span class="pl-k">return</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">Response</span>::<span class="pl-en">plaintext</span>(
+<span class="pl-s1"><span class="pl-c1">$</span>http</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">HttpServer</span>(<span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-v">Psr</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-smi">ServerRequestInterface</span></span> <span class="pl-s1"><span class="pl-c1">$</span>request</span>) {
+    <span class="pl-k">return</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\Response::<span class="pl-en">plaintext</span>(
         <span class="pl-s">"<span class="pl-s">Hello World!</span>\n"</span>
     );
 });

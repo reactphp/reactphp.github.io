@@ -161,7 +161,7 @@
                         ChildProcess
 
                         <span class="off-canvas-menu__version">
-                            v0.6.5
+                            v0.6.6
                         </span>
                     </a>
                 </li>
@@ -454,12 +454,12 @@ by refactoring <code class="notranslate">Parser</code> to avoid assigning dynami
 Add new <code class="notranslate">FallbackExecutor</code> and use fallback DNS servers when <code class="notranslate">Config</code> lists multiple servers.<br>
 (<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="926863800" data-permission-text="Title is private" data-url="https://github.com/reactphp/dns/issues/179" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/dns/pull/179/hovercard" href="https://github.com/reactphp/dns/pull/179">#179</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="929436114" data-permission-text="Title is private" data-url="https://github.com/reactphp/dns/issues/180" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/dns/pull/180/hovercard" href="https://github.com/reactphp/dns/pull/180">#180</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 <div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-c">// old (still supported)</span>
-<span class="pl-s1"><span class="pl-c1">$</span>config</span> = <span class="pl-v">React</span>\<span class="pl-v">Dns</span>\<span class="pl-v">Config</span>\<span class="pl-v">Config</span>::<span class="pl-en">loadSystemConfigBlocking</span>();
+<span class="pl-s1"><span class="pl-c1">$</span>config</span> = <span class="pl-v">React</span>\<span class="pl-v">Dns</span>\<span class="pl-v">Config</span>\Config::<span class="pl-en">loadSystemConfigBlocking</span>();
 <span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-s1"><span class="pl-c1">$</span>config</span>-&gt;<span class="pl-c1">nameservers</span> ? <span class="pl-en">reset</span>(<span class="pl-s1"><span class="pl-c1">$</span>config</span>-&gt;<span class="pl-c1">nameservers</span>) : <span class="pl-s">'<span class="pl-s">8.8.8.8</span>'</span>;
 <span class="pl-s1"><span class="pl-c1">$</span>resolver</span> = <span class="pl-s1"><span class="pl-c1">$</span>factory</span>-&gt;<span class="pl-en">create</span>(<span class="pl-s1"><span class="pl-c1">$</span>server</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
 
 <span class="pl-c">// new</span>
-<span class="pl-s1"><span class="pl-c1">$</span>config</span> = <span class="pl-v">React</span>\<span class="pl-v">Dns</span>\<span class="pl-v">Config</span>\<span class="pl-v">Config</span>::<span class="pl-en">loadSystemConfigBlocking</span>();
+<span class="pl-s1"><span class="pl-c1">$</span>config</span> = <span class="pl-v">React</span>\<span class="pl-v">Dns</span>\<span class="pl-v">Config</span>\Config::<span class="pl-en">loadSystemConfigBlocking</span>();
 <span class="pl-k">if</span> (!<span class="pl-s1"><span class="pl-c1">$</span>config</span>-&gt;<span class="pl-c1">nameservers</span>) {
     <span class="pl-s1"><span class="pl-c1">$</span>config</span>-&gt;<span class="pl-c1">nameservers</span>[] = <span class="pl-s">'<span class="pl-s">8.8.8.8</span>'</span>;
 }
@@ -854,7 +854,7 @@ malformed record data or malformed compressed domain name labels.<br>
 <li>
 <p dir="auto">Feature: Add <code class="notranslate">resolveAll()</code> method to support custom query types in <code class="notranslate">Resolver</code>.<br>
 (<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="336884718" data-permission-text="Title is private" data-url="https://github.com/reactphp/dns/issues/110" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/dns/pull/110/hovercard" href="https://github.com/reactphp/dns/pull/110">#110</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a> and <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/WyriHaximus/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/WyriHaximus">@WyriHaximus</a>)</p>
-<div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-s1"><span class="pl-c1">$</span>resolver</span>-&gt;<span class="pl-en">resolveAll</span>(<span class="pl-s">'<span class="pl-s">reactphp.org</span>'</span>, <span class="pl-v">Message</span>::<span class="pl-c1">TYPE_AAAA</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>ips</span>) {
+<div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-s1"><span class="pl-c1">$</span>resolver</span>-&gt;<span class="pl-en">resolveAll</span>(<span class="pl-s">'<span class="pl-s">reactphp.org</span>'</span>, Message::<span class="pl-c1">TYPE_AAAA</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>ips</span>) {
     <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">IPv6 addresses for reactphp.org </span>'</span> . <span class="pl-en">implode</span>(<span class="pl-s">'<span class="pl-s">, </span>'</span>, <span class="pl-s1"><span class="pl-c1">$</span>ips</span>) . <span class="pl-c1">PHP_EOL</span>;
 });</pre></div>
 </li>
@@ -928,7 +928,7 @@ to avoid cache poisoning attacks and deprecate legacy <code class="notranslate">
 and support parsing DNS config on all supported platforms<br>
 (<code class="notranslate">/etc/resolv.conf</code> on Unix/Linux/Mac and WMIC on Windows)<br>
 (<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="294840998" data-permission-text="Title is private" data-url="https://github.com/reactphp/dns/issues/92" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/dns/pull/92/hovercard" href="https://github.com/reactphp/dns/pull/92">#92</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="300023271" data-permission-text="Title is private" data-url="https://github.com/reactphp/dns/issues/93" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/dns/pull/93/hovercard" href="https://github.com/reactphp/dns/pull/93">#93</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="300261492" data-permission-text="Title is private" data-url="https://github.com/reactphp/dns/issues/94" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/dns/pull/94/hovercard" href="https://github.com/reactphp/dns/pull/94">#94</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="300425527" data-permission-text="Title is private" data-url="https://github.com/reactphp/dns/issues/95" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/dns/pull/95/hovercard" href="https://github.com/reactphp/dns/pull/95">#95</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
-<div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-s1"><span class="pl-c1">$</span>config</span> = <span class="pl-v">Config</span>::<span class="pl-en">loadSystemConfigBlocking</span>();
+<div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-s1"><span class="pl-c1">$</span>config</span> = Config::<span class="pl-en">loadSystemConfigBlocking</span>();
 <span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-s1"><span class="pl-c1">$</span>config</span>-&gt;<span class="pl-c1">nameservers</span> ? <span class="pl-en">reset</span>(<span class="pl-s1"><span class="pl-c1">$</span>config</span>-&gt;<span class="pl-c1">nameservers</span>) : <span class="pl-s">'<span class="pl-s">8.8.8.8</span>'</span>;</pre></div>
 </li>
 <li>
@@ -1813,7 +1813,7 @@ code re-use for upcoming versions.<br>
         <mask id="reactphp-dns-participation-sparkline" x="0" y="0" width="320" height="40" >
             <polyline 
                 transform="translate(0, 40) scale(1,-1)"
-                points="0,1 6,2 12,1 18,1 24,1 30,1 36,1 42,1 48,1 54,1 60,1 66,3 72,1 78,4 84,1 90,1 96,1 102,1 108,1 114,1 120,1 126,1 132,1 138,1 144,1 150,2 156,2 162,1 168,2 174,1 180,1 186,1 192,1 198,1 204,1 210,1 216,1 222,1 228,1 234,1 240,1 246,1 252,1 258,1 264,1 270,1 276,1 282,1 288,1 294,1 300,1 306,1" 
+                points="0,1 6,1 12,1 18,1 24,1 30,3 36,1 42,4 48,1 54,1 60,1 66,1 72,1 78,1 84,1 90,1 96,1 102,1 108,1 114,2 120,2 126,1 132,2 138,1 144,1 150,1 156,1 162,1 168,1 174,1 180,1 186,1 192,1 198,1 204,1 210,1 216,1 222,1 228,1 234,1 240,1 246,1 252,1 258,1 264,1 270,1 276,1 282,1 288,1 294,1 300,1 306,1" 
                 fill="transparent" 
                 stroke="#40a977" 
                 stroke-width="2"

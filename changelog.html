@@ -161,7 +161,7 @@
                         ChildProcess
 
                         <span class="off-canvas-menu__version">
-                            v0.6.5
+                            v0.6.6
                         </span>
                     </a>
                 </li>
@@ -222,6 +222,7 @@
 
 
             <ul class="toc">
+            <li><a href="#2025" title="Jump to year 2025 (1 release)">2025</a></li>
             <li><a href="#2024" title="Jump to year 2024 (9 releases)">2024</a></li>
             <li><a href="#2023" title="Jump to year 2023 (23 releases)">2023</a></li>
             <li><a href="#2022" title="Jump to year 2022 (17 releases)">2022</a></li>
@@ -238,6 +239,39 @@
         </ul>
 
     <h2>
+        <a id="2025" class="anchor" href="#2025" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+        2025
+    </h2>
+
+    
+                        <h3>
+        <a id="childprocess-066-2025-01-01" class="anchor" href="#childprocess-066-2025-01-01" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        ChildProcess 0.6.6
+
+        <small>
+            (2025-01-01)
+            <a href="https://github.com/reactphp/child-process/releases/tag/v0.6.6" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <p dir="auto">This is a compatibility release that contains backported features from the <code class="notranslate">0.7.x</code> branch.<br>
+Once v0.7 is released, it will be the way forward for this project.</p>
+<ul dir="auto">
+<li>
+<p dir="auto">Feature: Improve PHP 8.4+ support by avoiding implicitly nullable types.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="2760629514" data-permission-text="Title is private" data-url="https://github.com/reactphp/child-process/issues/114" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/child-process/pull/114/hovercard" href="https://github.com/reactphp/child-process/pull/114">#114</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+</li>
+<li>
+<p dir="auto">Improve test suite to run tests on latest PHP versions and report failed assertions.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="2757698782" data-permission-text="Title is private" data-url="https://github.com/reactphp/child-process/issues/113" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/child-process/pull/113/hovercard" href="https://github.com/reactphp/child-process/pull/113">#113</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+</li>
+</ul>
+
+    <hr>
+        <h2>
         <a id="2024" class="anchor" href="#2024" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
         2024
     </h2>
@@ -610,8 +644,8 @@ the old RingCentral PSR-7 dependency, you can still install it like this:</p>
 analysis tools (like PHPStan), helping with proper type usage and improving<br>
 code quality:</p>
 <div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-en">assertType</span>(<span class="pl-s">'<span class="pl-s">bool</span>'</span>, <span class="pl-en">await</span>(<span class="pl-en">resolve</span>(<span class="pl-c1">true</span>)));
-<span class="pl-en">assertType</span>(<span class="pl-s">'<span class="pl-s">PromiseInterface&lt;bool&gt;</span>'</span>, <span class="pl-en">async</span>(fn(): <span class="pl-smi">bool</span> =&gt; <span class="pl-c1">true</span>)());
-<span class="pl-en">assertType</span>(<span class="pl-s">'<span class="pl-s">PromiseInterface&lt;bool&gt;</span>'</span>, <span class="pl-en">coroutine</span>(fn(): <span class="pl-smi">bool</span> =&gt; <span class="pl-c1">true</span>));</pre></div>
+<span class="pl-en">assertType</span>(<span class="pl-s">'<span class="pl-s">PromiseInterface&lt;bool&gt;</span>'</span>, <span class="pl-en">async</span>(<span class="pl-k">fn</span>(): <span class="pl-smi">bool</span> =&gt; <span class="pl-c1">true</span>)());
+<span class="pl-en">assertType</span>(<span class="pl-s">'<span class="pl-s">PromiseInterface&lt;bool&gt;</span>'</span>, <span class="pl-en">coroutine</span>(<span class="pl-k">fn</span>(): <span class="pl-smi">bool</span> =&gt; <span class="pl-c1">true</span>));</pre></div>
 </li>
 <li>
 <p dir="auto">Feature: Full PHP 8.3 compatibility.<br>
@@ -649,7 +683,7 @@ of newer language features. We encourage upgrading to the latest version when po
 analysis tools (like PHPStan), helping with proper type usage and improving<br>
 code quality:</p>
 <div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-en">assertType</span>(<span class="pl-s">'<span class="pl-s">bool</span>'</span>, <span class="pl-en">await</span>(<span class="pl-en">resolve</span>(<span class="pl-c1">true</span>)));
-<span class="pl-en">assertType</span>(<span class="pl-s">'<span class="pl-s">PromiseInterface&lt;bool&gt;</span>'</span>, <span class="pl-en">coroutine</span>(fn(): <span class="pl-smi">bool</span> =&gt; <span class="pl-c1">true</span>));</pre></div>
+<span class="pl-en">assertType</span>(<span class="pl-s">'<span class="pl-s">PromiseInterface&lt;bool&gt;</span>'</span>, <span class="pl-en">coroutine</span>(<span class="pl-k">fn</span>(): <span class="pl-smi">bool</span> =&gt; <span class="pl-c1">true</span>));</pre></div>
 </li>
 <li>
 <p dir="auto">Feature: Full PHP 8.3 compatibility.<br>
@@ -898,14 +932,14 @@ The new <code class="notranslate">catch()</code> and <code class="notranslate">f
 The old <del><code class="notranslate">ExtendedPromiseInterface</code></del> and <del><code class="notranslate">CancellablePromiseInterface</code></del> are no longer needed and have been removed as a consequence.<br>
 (<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="197011154" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/75" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/75/hovercard" href="https://github.com/reactphp/promise/pull/75">#75</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/jsor/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/jsor">@jsor</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1111820388" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/208" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/208/hovercard" href="https://github.com/reactphp/promise/pull/208">#208</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a> and <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/WyriHaximus/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/WyriHaximus">@WyriHaximus</a>)</p>
 <div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-c">// old (multiple interfaces may or may not be implemented)</span>
-<span class="pl-en">assert</span>(<span class="pl-s1"><span class="pl-c1">$</span>promise</span> instanceof <span class="pl-v">PromiseInterface</span>);
+<span class="pl-en">assert</span>(<span class="pl-s1"><span class="pl-c1">$</span>promise</span> <span class="pl-k">instanceof</span> PromiseInterface);
 <span class="pl-en">assert</span>(<span class="pl-en">method_exists</span>(<span class="pl-s1"><span class="pl-c1">$</span>promise</span>, <span class="pl-s">'<span class="pl-s">then</span>'</span>));
-<span class="pl-k">if</span> (<span class="pl-s1"><span class="pl-c1">$</span>promise</span> instanceof <span class="pl-v">ExtendedPromiseInterface</span>) { <span class="pl-en">assert</span>(<span class="pl-en">method_exists</span>(<span class="pl-s1"><span class="pl-c1">$</span>promise</span>, <span class="pl-s">'<span class="pl-s">otherwise</span>'</span>)); }
-<span class="pl-k">if</span> (<span class="pl-s1"><span class="pl-c1">$</span>promise</span> instanceof <span class="pl-v">ExtendedPromiseInterface</span>) { <span class="pl-en">assert</span>(<span class="pl-en">method_exists</span>(<span class="pl-s1"><span class="pl-c1">$</span>promise</span>, <span class="pl-s">'<span class="pl-s">always</span>'</span>)); }
-<span class="pl-k">if</span> (<span class="pl-s1"><span class="pl-c1">$</span>promise</span> instanceof <span class="pl-v">CancellablePromiseInterface</span>) { <span class="pl-en">assert</span>(<span class="pl-en">method_exists</span>(<span class="pl-s1"><span class="pl-c1">$</span>promise</span>, <span class="pl-s">'<span class="pl-s">cancel</span>'</span>)); }
+<span class="pl-k">if</span> (<span class="pl-s1"><span class="pl-c1">$</span>promise</span> <span class="pl-k">instanceof</span> ExtendedPromiseInterface) { <span class="pl-en">assert</span>(<span class="pl-en">method_exists</span>(<span class="pl-s1"><span class="pl-c1">$</span>promise</span>, <span class="pl-s">'<span class="pl-s">otherwise</span>'</span>)); }
+<span class="pl-k">if</span> (<span class="pl-s1"><span class="pl-c1">$</span>promise</span> <span class="pl-k">instanceof</span> ExtendedPromiseInterface) { <span class="pl-en">assert</span>(<span class="pl-en">method_exists</span>(<span class="pl-s1"><span class="pl-c1">$</span>promise</span>, <span class="pl-s">'<span class="pl-s">always</span>'</span>)); }
+<span class="pl-k">if</span> (<span class="pl-s1"><span class="pl-c1">$</span>promise</span> <span class="pl-k">instanceof</span> CancellablePromiseInterface) { <span class="pl-en">assert</span>(<span class="pl-en">method_exists</span>(<span class="pl-s1"><span class="pl-c1">$</span>promise</span>, <span class="pl-s">'<span class="pl-s">cancel</span>'</span>)); }
 
 <span class="pl-c">// new (single PromiseInterface with all methods)</span>
-<span class="pl-en">assert</span>(<span class="pl-s1"><span class="pl-c1">$</span>promise</span> instanceof <span class="pl-v">PromiseInterface</span>);
+<span class="pl-en">assert</span>(<span class="pl-s1"><span class="pl-c1">$</span>promise</span> <span class="pl-k">instanceof</span> PromiseInterface);
 <span class="pl-en">assert</span>(<span class="pl-en">method_exists</span>(<span class="pl-s1"><span class="pl-c1">$</span>promise</span>, <span class="pl-s">'<span class="pl-s">then</span>'</span>));
 <span class="pl-en">assert</span>(<span class="pl-en">method_exists</span>(<span class="pl-s1"><span class="pl-c1">$</span>promise</span>, <span class="pl-s">'<span class="pl-s">catch</span>'</span>));
 <span class="pl-en">assert</span>(<span class="pl-en">method_exists</span>(<span class="pl-s1"><span class="pl-c1">$</span>promise</span>, <span class="pl-s">'<span class="pl-s">finally</span>'</span>));
@@ -1059,7 +1093,7 @@ and are not part of the final release:</p>
 <p dir="auto">Feature: Add new <code class="notranslate">delay()</code> function to delay program execution.<br>
 (<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1478701897" data-permission-text="Title is private" data-url="https://github.com/reactphp/async/issues/69" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/async/pull/69/hovercard" href="https://github.com/reactphp/async/pull/69">#69</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1761027660" data-permission-text="Title is private" data-url="https://github.com/reactphp/async/issues/78" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/async/pull/78/hovercard" href="https://github.com/reactphp/async/pull/78">#78</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 <div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">a</span>'</span>;
-<span class="pl-v">Loop</span>::<span class="pl-en">addTimer</span>(<span class="pl-c1">1.0</span>, <span class="pl-k">function</span> () {
+Loop::<span class="pl-en">addTimer</span>(<span class="pl-c1">1.0</span>, <span class="pl-k">function</span> () {
     <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">b</span>'</span>;
 });
 <span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Async</span>\delay</span>(<span class="pl-c1">3.0</span>);
@@ -1095,7 +1129,7 @@ and are not part of the final release:</p>
 <p dir="auto">Feature: Add new <code class="notranslate">delay()</code> function to delay program execution.<br>
 (<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1481843312" data-permission-text="Title is private" data-url="https://github.com/reactphp/async/issues/71" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/async/pull/71/hovercard" href="https://github.com/reactphp/async/pull/71">#71</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 <div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">a</span>'</span>;
-<span class="pl-v">Loop</span>::<span class="pl-en">addTimer</span>(<span class="pl-c1">1.0</span>, <span class="pl-k">function</span> () {
+Loop::<span class="pl-en">addTimer</span>(<span class="pl-c1">1.0</span>, <span class="pl-k">function</span> () {
     <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">b</span>'</span>;
 });
 <span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Async</span>\delay</span>(<span class="pl-c1">3.0</span>);
@@ -1131,7 +1165,7 @@ and are not part of the final release:</p>
 <p dir="auto">Feature: Add new <code class="notranslate">delay()</code> function to delay program execution.<br>
 (<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1481880823" data-permission-text="Title is private" data-url="https://github.com/reactphp/async/issues/72" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/async/pull/72/hovercard" href="https://github.com/reactphp/async/pull/72">#72</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 <div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">a</span>'</span>;
-<span class="pl-v">Loop</span>::<span class="pl-en">addTimer</span>(<span class="pl-c1">1.0</span>, <span class="pl-k">function</span> () {
+Loop::<span class="pl-en">addTimer</span>(<span class="pl-c1">1.0</span>, <span class="pl-k">function</span> () {
     <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">b</span>'</span>;
 });
 <span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Async</span>\delay</span>(<span class="pl-c1">3.0</span>);
@@ -1337,7 +1371,7 @@ connection and repeating the TLS handshake for secure HTTPS requests.</p>
 
 <span class="pl-c">// Up to 300% faster! HTTP keep-alive is enabled by default</span>
 <span class="pl-s1"><span class="pl-c1">$</span>response</span> = <span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Async</span>\await</span>(<span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">get</span>(<span class="pl-s">'<span class="pl-s">https://httpbingo.org/redirect/6</span>'</span>));
-<span class="pl-en">assert</span>(<span class="pl-s1"><span class="pl-c1">$</span>response</span> instanceof <span class="pl-v">Psr</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">ResponseInterface</span>);</pre></div>
+<span class="pl-en">assert</span>(<span class="pl-s1"><span class="pl-c1">$</span>response</span> <span class="pl-k">instanceof</span> <span class="pl-v">Psr</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\ResponseInterface);</pre></div>
 </li>
 <li>
 <p dir="auto">Feature: Add <code class="notranslate">Request</code> class to represent outgoing HTTP request message.<br>
@@ -2021,11 +2055,11 @@ update to PHPUnit 9, and add full core team to the license.<br>
 <p dir="auto">Feature: Expose all status code constants via <code class="notranslate">Response</code> class.<br>
 (<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1046707387" data-permission-text="Title is private" data-url="https://github.com/reactphp/http/issues/432" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/http/pull/432/hovercard" href="https://github.com/reactphp/http/pull/432">#432</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 <div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-s1"><span class="pl-c1">$</span>response</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">Response</span>(
-    <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">Response</span>::<span class="pl-c1">STATUS_OK</span>, <span class="pl-c">// 200 OK</span>
+    <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\Response::<span class="pl-c1">STATUS_OK</span>, <span class="pl-c">// 200 OK</span>
     …
 );
 <span class="pl-s1"><span class="pl-c1">$</span>response</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">Response</span>(
-    <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">Response</span>::<span class="pl-c1">STATUS_NOT_FOUND</span>, <span class="pl-c">// 404 Not Found</span>
+    <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\Response::<span class="pl-c1">STATUS_NOT_FOUND</span>, <span class="pl-c">// 404 Not Found</span>
     …
 );</pre></div>
 </li>
@@ -2195,7 +2229,7 @@ scheme and hostname used in all error messages.</p>
 <p dir="auto">For most common use cases this means that simply reporting the <code class="notranslate">Exception</code><br>
 message should give the most relevant details for any connection issues:</p>
 <div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-s1"><span class="pl-c1">$</span>connector</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">Connector</span>();
-<span class="pl-s1"><span class="pl-c1">$</span>connector</span>-&gt;<span class="pl-en">connect</span>(<span class="pl-s1"><span class="pl-c1">$</span>uri</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi"><span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-v">ConnectionInterface</span></span></span> <span class="pl-s1"><span class="pl-c1">$</span>conn</span>) {
+<span class="pl-s1"><span class="pl-c1">$</span>connector</span>-&gt;<span class="pl-en">connect</span>(<span class="pl-s1"><span class="pl-c1">$</span>uri</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-v">React</span>\<span class="pl-v">Socket</span>\<span class="pl-smi">ConnectionInterface</span></span> <span class="pl-s1"><span class="pl-c1">$</span>conn</span>) {
     <span class="pl-c">// …</span>
 }, <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">Exception</span></span> <span class="pl-s1"><span class="pl-c1">$</span>e</span>) {
     <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">Error:</span>'</span> . <span class="pl-s1"><span class="pl-c1">$</span>e</span>-&gt;<span class="pl-en">getMessage</span>() . <span class="pl-c1">PHP_EOL</span>;
@@ -2613,22 +2647,22 @@ update PHPUnit config, run tests on PHP 8 and add full core team to the license.
 <p dir="auto">The <code class="notranslate">Loop</code> class exists as a convenient global accessor for the event loop.<br>
 It provides all methods that exist on the <code class="notranslate">LoopInterface</code> as static methods and<br>
 will automatically execute the loop at the end of the program:</p>
-<div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-s1"><span class="pl-c1">$</span>timer</span> = <span class="pl-v">Loop</span>::<span class="pl-en">addPeriodicTimer</span>(<span class="pl-c1">0.1</span>, <span class="pl-k">function</span> () {
+<div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-s1"><span class="pl-c1">$</span>timer</span> = Loop::<span class="pl-en">addPeriodicTimer</span>(<span class="pl-c1">0.1</span>, <span class="pl-k">function</span> () {
     <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">Tick</span>'</span> . <span class="pl-c1">PHP_EOL</span>;
 });
 
-<span class="pl-v">Loop</span>::<span class="pl-en">addTimer</span>(<span class="pl-c1">1.0</span>, <span class="pl-k">function</span> () <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>timer</span>) {
-    <span class="pl-v">Loop</span>::<span class="pl-en">cancelTimer</span>(<span class="pl-s1"><span class="pl-c1">$</span>timer</span>);
+Loop::<span class="pl-en">addTimer</span>(<span class="pl-c1">1.0</span>, <span class="pl-k">function</span> () <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>timer</span>) {
+    Loop::<span class="pl-en">cancelTimer</span>(<span class="pl-s1"><span class="pl-c1">$</span>timer</span>);
     <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">Done</span>'</span> . <span class="pl-c1">PHP_EOL</span>;
 });</pre></div>
 <p dir="auto">The explicit loop instructions are still valid and may still be useful in some applications,<br>
 especially for a transition period towards the more concise style.<br>
 The <code class="notranslate">Loop::get()</code> method can be used to get the currently active event loop instance.</p>
 <div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-c">// deprecated</span>
-<span class="pl-s1"><span class="pl-c1">$</span>loop</span> = <span class="pl-v">React</span>\<span class="pl-v">EventLoop</span>\<span class="pl-v">Factory</span>::<span class="pl-en">create</span>();
+<span class="pl-s1"><span class="pl-c1">$</span>loop</span> = <span class="pl-v">React</span>\<span class="pl-v">EventLoop</span>\Factory::<span class="pl-en">create</span>();
 
 <span class="pl-c">// new</span>
-<span class="pl-s1"><span class="pl-c1">$</span>loop</span> = <span class="pl-v">React</span>\<span class="pl-v">EventLoop</span>\<span class="pl-v">Loop</span>::<span class="pl-en">get</span>();</pre></div>
+<span class="pl-s1"><span class="pl-c1">$</span>loop</span> = <span class="pl-v">React</span>\<span class="pl-v">EventLoop</span>\Loop::<span class="pl-en">get</span>();</pre></div>
 </li>
 <li>
 <p dir="auto">Minor documentation improvements and mark legacy extensions as deprecated.<br>
@@ -2732,12 +2766,12 @@ used as a very basic DNS load balancing mechanism.</p>
 Add new <code class="notranslate">FallbackExecutor</code> and use fallback DNS servers when <code class="notranslate">Config</code> lists multiple servers.<br>
 (<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="926863800" data-permission-text="Title is private" data-url="https://github.com/reactphp/dns/issues/179" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/dns/pull/179/hovercard" href="https://github.com/reactphp/dns/pull/179">#179</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="929436114" data-permission-text="Title is private" data-url="https://github.com/reactphp/dns/issues/180" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/dns/pull/180/hovercard" href="https://github.com/reactphp/dns/pull/180">#180</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 <div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-c">// old (still supported)</span>
-<span class="pl-s1"><span class="pl-c1">$</span>config</span> = <span class="pl-v">React</span>\<span class="pl-v">Dns</span>\<span class="pl-v">Config</span>\<span class="pl-v">Config</span>::<span class="pl-en">loadSystemConfigBlocking</span>();
+<span class="pl-s1"><span class="pl-c1">$</span>config</span> = <span class="pl-v">React</span>\<span class="pl-v">Dns</span>\<span class="pl-v">Config</span>\Config::<span class="pl-en">loadSystemConfigBlocking</span>();
 <span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-s1"><span class="pl-c1">$</span>config</span>-&gt;<span class="pl-c1">nameservers</span> ? <span class="pl-en">reset</span>(<span class="pl-s1"><span class="pl-c1">$</span>config</span>-&gt;<span class="pl-c1">nameservers</span>) : <span class="pl-s">'<span class="pl-s">8.8.8.8</span>'</span>;
 <span class="pl-s1"><span class="pl-c1">$</span>resolver</span> = <span class="pl-s1"><span class="pl-c1">$</span>factory</span>-&gt;<span class="pl-en">create</span>(<span class="pl-s1"><span class="pl-c1">$</span>server</span>, <span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
 
 <span class="pl-c">// new</span>
-<span class="pl-s1"><span class="pl-c1">$</span>config</span> = <span class="pl-v">React</span>\<span class="pl-v">Dns</span>\<span class="pl-v">Config</span>\<span class="pl-v">Config</span>::<span class="pl-en">loadSystemConfigBlocking</span>();
+<span class="pl-s1"><span class="pl-c1">$</span>config</span> = <span class="pl-v">React</span>\<span class="pl-v">Dns</span>\<span class="pl-v">Config</span>\Config::<span class="pl-en">loadSystemConfigBlocking</span>();
 <span class="pl-k">if</span> (!<span class="pl-s1"><span class="pl-c1">$</span>config</span>-&gt;<span class="pl-c1">nameservers</span>) {
     <span class="pl-s1"><span class="pl-c1">$</span>config</span>-&gt;<span class="pl-c1">nameservers</span>[] = <span class="pl-s">'<span class="pl-s">8.8.8.8</span>'</span>;
 }
@@ -3142,7 +3176,7 @@ minutes. See below for more details:</p>
 <p dir="auto">Feature: Add async HTTP client implementation.<br>
 (<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="652472422" data-permission-text="Title is private" data-url="https://github.com/reactphp/http/issues/368" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/http/pull/368/hovercard" href="https://github.com/reactphp/http/pull/368">#368</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 <div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-s1"><span class="pl-c1">$</span>browser</span> = <span class="pl-k">new</span> <span class="pl-v">React</span>\<span class="pl-v">Http</span>\<span class="pl-v">Browser</span>(<span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
-<span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">get</span>(<span class="pl-s1"><span class="pl-c1">$</span>url</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi"><span class="pl-v">Psr</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-v">ResponseInterface</span></span></span> <span class="pl-s1"><span class="pl-c1">$</span>response</span>) {
+<span class="pl-s1"><span class="pl-c1">$</span>browser</span>-&gt;<span class="pl-en">get</span>(<span class="pl-s1"><span class="pl-c1">$</span>url</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-v">Psr</span>\<span class="pl-v">Http</span>\<span class="pl-v">Message</span>\<span class="pl-smi">ResponseInterface</span></span> <span class="pl-s1"><span class="pl-c1">$</span>response</span>) {
     <span class="pl-k">echo</span> <span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">getBody</span>();
 });</pre></div>
 <p dir="auto">The code has been imported as-is from <a href="https://github.com/clue/reactphp-buzz">clue/reactphp-buzz v2.9.0</a>,<br>
@@ -4127,7 +4161,7 @@ following changelog entry if you're looking for Windows support.</p>
 <p dir="auto">Feature / BC break: Improve sigchild compatibility and support explicit configuration.<br>
 (<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="384374501" data-permission-text="Title is private" data-url="https://github.com/reactphp/child-process/issues/63" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/child-process/pull/63/hovercard" href="https://github.com/reactphp/child-process/pull/63">#63</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 <div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-c">// advanced: not recommended by default</span>
-<span class="pl-v">Process</span>::<span class="pl-en">setSigchildEnabled</span>(<span class="pl-c1">true</span>);</pre></div>
+Process::<span class="pl-en">setSigchildEnabled</span>(<span class="pl-c1">true</span>);</pre></div>
 <blockquote>
 <p dir="auto">BC note: The old public sigchild methods have been removed, but its<br>
 practical impact is believed to be relatively small due to the automatic detection.</p>
@@ -4445,7 +4479,7 @@ so you have a rock-solid foundation to build on top of.</li>
 <li>
 <p dir="auto">Feature: Add <code class="notranslate">resolveAll()</code> method to support custom query types in <code class="notranslate">Resolver</code>.<br>
 (<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="336884718" data-permission-text="Title is private" data-url="https://github.com/reactphp/dns/issues/110" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/dns/pull/110/hovercard" href="https://github.com/reactphp/dns/pull/110">#110</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a> and <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/WyriHaximus/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/WyriHaximus">@WyriHaximus</a>)</p>
-<div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-s1"><span class="pl-c1">$</span>resolver</span>-&gt;<span class="pl-en">resolveAll</span>(<span class="pl-s">'<span class="pl-s">reactphp.org</span>'</span>, <span class="pl-v">Message</span>::<span class="pl-c1">TYPE_AAAA</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>ips</span>) {
+<div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-s1"><span class="pl-c1">$</span>resolver</span>-&gt;<span class="pl-en">resolveAll</span>(<span class="pl-s">'<span class="pl-s">reactphp.org</span>'</span>, Message::<span class="pl-c1">TYPE_AAAA</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>ips</span>) {
     <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">IPv6 addresses for reactphp.org </span>'</span> . <span class="pl-en">implode</span>(<span class="pl-s">'<span class="pl-s">, </span>'</span>, <span class="pl-s1"><span class="pl-c1">$</span>ips</span>) . <span class="pl-c1">PHP_EOL</span>;
 });</pre></div>
 </li>
@@ -4955,10 +4989,10 @@ use closure binding to add arbitrary data to timer instead:</p>
 <p dir="auto">BC break: Move <code class="notranslate">TimerInterface</code> one level up to <code class="notranslate">React\EventLoop\TimerInterface</code>.<br>
 (<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="283022277" data-permission-text="Title is private" data-url="https://github.com/reactphp/event-loop/issues/138" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/event-loop/pull/138/hovercard" href="https://github.com/reactphp/event-loop/pull/138">#138</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/WyriHaximus/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/WyriHaximus">@WyriHaximus</a>)</p>
 <div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-c">// old (notice obsolete "Timer" namespace)</span>
-<span class="pl-en">assert</span>(<span class="pl-s1"><span class="pl-c1">$</span>timer</span> instanceof <span class="pl-v">React</span>\<span class="pl-v">EventLoop</span>\<span class="pl-v">Timer</span>\<span class="pl-v">TimerInterface</span>);
+<span class="pl-en">assert</span>(<span class="pl-s1"><span class="pl-c1">$</span>timer</span> <span class="pl-k">instanceof</span> <span class="pl-v">React</span>\<span class="pl-v">EventLoop</span>\<span class="pl-v">Timer</span>\TimerInterface);
 
 <span class="pl-c">// new</span>
-<span class="pl-en">assert</span>(<span class="pl-s1"><span class="pl-c1">$</span>timer</span> instanceof <span class="pl-v">React</span>\<span class="pl-v">EventLoop</span>\<span class="pl-v">TimerInterface</span>);</pre></div>
+<span class="pl-en">assert</span>(<span class="pl-s1"><span class="pl-c1">$</span>timer</span> <span class="pl-k">instanceof</span> <span class="pl-v">React</span>\<span class="pl-v">EventLoop</span>\TimerInterface);</pre></div>
 </li>
 <li>
 <p dir="auto">BC break: Remove unneeded <code class="notranslate">LoopInterface::nextTick()</code> (and internal <code class="notranslate">NextTickQueue</code>),<br>
@@ -5161,7 +5195,7 @@ work as expected across all platforms with no changes required:</p>
 and support parsing DNS config on all supported platforms<br>
 (<code class="notranslate">/etc/resolv.conf</code> on Unix/Linux/Mac and WMIC on Windows)<br>
 (<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="294840998" data-permission-text="Title is private" data-url="https://github.com/reactphp/dns/issues/92" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/dns/pull/92/hovercard" href="https://github.com/reactphp/dns/pull/92">#92</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="300023271" data-permission-text="Title is private" data-url="https://github.com/reactphp/dns/issues/93" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/dns/pull/93/hovercard" href="https://github.com/reactphp/dns/pull/93">#93</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="300261492" data-permission-text="Title is private" data-url="https://github.com/reactphp/dns/issues/94" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/dns/pull/94/hovercard" href="https://github.com/reactphp/dns/pull/94">#94</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="300425527" data-permission-text="Title is private" data-url="https://github.com/reactphp/dns/issues/95" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/dns/pull/95/hovercard" href="https://github.com/reactphp/dns/pull/95">#95</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
-<div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-s1"><span class="pl-c1">$</span>config</span> = <span class="pl-v">Config</span>::<span class="pl-en">loadSystemConfigBlocking</span>();
+<div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-s1"><span class="pl-c1">$</span>config</span> = Config::<span class="pl-en">loadSystemConfigBlocking</span>();
 <span class="pl-s1"><span class="pl-c1">$</span>server</span> = <span class="pl-s1"><span class="pl-c1">$</span>config</span>-&gt;<span class="pl-c1">nameservers</span> ? <span class="pl-en">reset</span>(<span class="pl-s1"><span class="pl-c1">$</span>config</span>-&gt;<span class="pl-c1">nameservers</span>) : <span class="pl-s">'<span class="pl-s">8.8.8.8</span>'</span>;</pre></div>
 </li>
 <li>
@@ -5309,7 +5343,7 @@ choose the TLS version you want to negotiate with the remote side:</p>
 <div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-c">// new: now supports 'crypto_method` context parameter for all classes</span>
 <span class="pl-s1"><span class="pl-c1">$</span>connector</span> = <span class="pl-k">new</span> <span class="pl-v">Connector</span>(<span class="pl-s1"><span class="pl-c1">$</span>loop</span>, <span class="pl-en">array</span>(
     <span class="pl-s">'<span class="pl-s">tls</span>'</span> =&gt; <span class="pl-en">array</span>(
-        <span class="pl-s">'<span class="pl-s">crypto_method</span>'</span> =&gt; <span class="pl-v">STREAM_CRYPTO_METHOD_TLSv1_2_CLIENT</span>
+        <span class="pl-s">'<span class="pl-s">crypto_method</span>'</span> =&gt; STREAM_CRYPTO_METHOD_TLSv1_2_CLIENT
     )
 ));</pre></div>
 </li>
@@ -5660,7 +5694,7 @@ This feature mimics PHP's default behavior and respects its ini settings and<br>
     <span class="pl-k">new</span> <span class="pl-v">LimitConcurrentRequestsMiddleware</span>(<span class="pl-c1">10</span>),
     <span class="pl-k">new</span> <span class="pl-v">RequestBodyBufferMiddleware</span>(<span class="pl-s">'<span class="pl-s">8M</span>'</span>),
     <span class="pl-k">new</span> <span class="pl-v">RequestBodyParserMiddleware</span>(<span class="pl-s">'<span class="pl-s">2M</span>'</span>, <span class="pl-c1">4</span>)
-    <span class="pl-s1"><span class="pl-c1">$</span>handler</span>
+    <span class="pl-c1">$</span>handler
 ));</pre></div>
 </li>
 <li>
@@ -7412,7 +7446,7 @@ compatible with v0.5 and upcoming v0.6 versions and can be used like this:</p>
 
     <span class="pl-c">// an error occured</span>
     <span class="pl-c">// e.g. on invalid chunked encoded data or an unexpected 'end' event </span>
-    <span class="pl-s1"><span class="pl-c1">$</span>request</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'<span class="pl-s">error</span>'</span>, <span class="pl-k">function</span> (<span class="pl-smi"><span class="pl-smi">\<span class="pl-v">Exception</span></span></span> <span class="pl-s1"><span class="pl-c1">$</span>exception</span>) <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>response</span>, &amp;<span class="pl-s1"><span class="pl-c1">$</span>contentLength</span>) {
+    <span class="pl-s1"><span class="pl-c1">$</span>request</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'<span class="pl-s">error</span>'</span>, <span class="pl-k">function</span> (<span class="pl-smi">\<span class="pl-smi">Exception</span></span> <span class="pl-s1"><span class="pl-c1">$</span>exception</span>) <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>response</span>, &amp;<span class="pl-s1"><span class="pl-c1">$</span>contentLength</span>) {
         <span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">writeHead</span>(<span class="pl-c1">400</span>, <span class="pl-en">array</span>(<span class="pl-s">'<span class="pl-s">Content-Type</span>'</span> =&gt; <span class="pl-s">'<span class="pl-s">text/plain</span>'</span>));
         <span class="pl-s1"><span class="pl-c1">$</span>response</span>-&gt;<span class="pl-en">end</span>(<span class="pl-s">"<span class="pl-s">An error occured while reading at length: </span>"</span> . <span class="pl-s1"><span class="pl-c1">$</span>contentLength</span>);
     });
@@ -8100,7 +8134,7 @@ You should consider upgrading to the v0.4 release branch.</p>
      <span class="pl-k">return</span> <span class="pl-en">\<span class="pl-v">React</span>\<span class="pl-v">Promise</span>\all</span>(<span class="pl-s1"><span class="pl-c1">$</span>promises</span>)
          -&gt;<span class="pl-en">always</span>(<span class="pl-k">function</span>() <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>promises</span>) {
              <span class="pl-k">foreach</span> (<span class="pl-s1"><span class="pl-c1">$</span>promises</span> <span class="pl-k">as</span> <span class="pl-s1"><span class="pl-c1">$</span>promise</span>) {
-                 <span class="pl-k">if</span> (<span class="pl-s1"><span class="pl-c1">$</span>promise</span> instanceof \<span class="pl-v">React</span>\<span class="pl-v">Promise</span>\<span class="pl-v">CancellablePromiseInterface</span>) {
+                 <span class="pl-k">if</span> (<span class="pl-s1"><span class="pl-c1">$</span>promise</span> <span class="pl-k">instanceof</span> \<span class="pl-v">React</span>\<span class="pl-v">Promise</span>\CancellablePromiseInterface) {
                      <span class="pl-s1"><span class="pl-c1">$</span>promise</span>-&gt;<span class="pl-en">cancel</span>();
                  }
              }

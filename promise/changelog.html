@@ -161,7 +161,7 @@
                         ChildProcess
 
                         <span class="off-canvas-menu__version">
-                            v0.6.5
+                            v0.6.6
                         </span>
                     </a>
                 </li>
@@ -402,14 +402,14 @@ The new <code class="notranslate">catch()</code> and <code class="notranslate">f
 The old <del><code class="notranslate">ExtendedPromiseInterface</code></del> and <del><code class="notranslate">CancellablePromiseInterface</code></del> are no longer needed and have been removed as a consequence.<br>
 (<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="197011154" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/75" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/75/hovercard" href="https://github.com/reactphp/promise/pull/75">#75</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/jsor/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/jsor">@jsor</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1111820388" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise/issues/208" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/208/hovercard" href="https://github.com/reactphp/promise/pull/208">#208</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a> and <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/WyriHaximus/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/WyriHaximus">@WyriHaximus</a>)</p>
 <div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-c">// old (multiple interfaces may or may not be implemented)</span>
-<span class="pl-en">assert</span>(<span class="pl-s1"><span class="pl-c1">$</span>promise</span> instanceof <span class="pl-v">PromiseInterface</span>);
+<span class="pl-en">assert</span>(<span class="pl-s1"><span class="pl-c1">$</span>promise</span> <span class="pl-k">instanceof</span> PromiseInterface);
 <span class="pl-en">assert</span>(<span class="pl-en">method_exists</span>(<span class="pl-s1"><span class="pl-c1">$</span>promise</span>, <span class="pl-s">'<span class="pl-s">then</span>'</span>));
-<span class="pl-k">if</span> (<span class="pl-s1"><span class="pl-c1">$</span>promise</span> instanceof <span class="pl-v">ExtendedPromiseInterface</span>) { <span class="pl-en">assert</span>(<span class="pl-en">method_exists</span>(<span class="pl-s1"><span class="pl-c1">$</span>promise</span>, <span class="pl-s">'<span class="pl-s">otherwise</span>'</span>)); }
-<span class="pl-k">if</span> (<span class="pl-s1"><span class="pl-c1">$</span>promise</span> instanceof <span class="pl-v">ExtendedPromiseInterface</span>) { <span class="pl-en">assert</span>(<span class="pl-en">method_exists</span>(<span class="pl-s1"><span class="pl-c1">$</span>promise</span>, <span class="pl-s">'<span class="pl-s">always</span>'</span>)); }
-<span class="pl-k">if</span> (<span class="pl-s1"><span class="pl-c1">$</span>promise</span> instanceof <span class="pl-v">CancellablePromiseInterface</span>) { <span class="pl-en">assert</span>(<span class="pl-en">method_exists</span>(<span class="pl-s1"><span class="pl-c1">$</span>promise</span>, <span class="pl-s">'<span class="pl-s">cancel</span>'</span>)); }
+<span class="pl-k">if</span> (<span class="pl-s1"><span class="pl-c1">$</span>promise</span> <span class="pl-k">instanceof</span> ExtendedPromiseInterface) { <span class="pl-en">assert</span>(<span class="pl-en">method_exists</span>(<span class="pl-s1"><span class="pl-c1">$</span>promise</span>, <span class="pl-s">'<span class="pl-s">otherwise</span>'</span>)); }
+<span class="pl-k">if</span> (<span class="pl-s1"><span class="pl-c1">$</span>promise</span> <span class="pl-k">instanceof</span> ExtendedPromiseInterface) { <span class="pl-en">assert</span>(<span class="pl-en">method_exists</span>(<span class="pl-s1"><span class="pl-c1">$</span>promise</span>, <span class="pl-s">'<span class="pl-s">always</span>'</span>)); }
+<span class="pl-k">if</span> (<span class="pl-s1"><span class="pl-c1">$</span>promise</span> <span class="pl-k">instanceof</span> CancellablePromiseInterface) { <span class="pl-en">assert</span>(<span class="pl-en">method_exists</span>(<span class="pl-s1"><span class="pl-c1">$</span>promise</span>, <span class="pl-s">'<span class="pl-s">cancel</span>'</span>)); }
 
 <span class="pl-c">// new (single PromiseInterface with all methods)</span>
-<span class="pl-en">assert</span>(<span class="pl-s1"><span class="pl-c1">$</span>promise</span> instanceof <span class="pl-v">PromiseInterface</span>);
+<span class="pl-en">assert</span>(<span class="pl-s1"><span class="pl-c1">$</span>promise</span> <span class="pl-k">instanceof</span> PromiseInterface);
 <span class="pl-en">assert</span>(<span class="pl-en">method_exists</span>(<span class="pl-s1"><span class="pl-c1">$</span>promise</span>, <span class="pl-s">'<span class="pl-s">then</span>'</span>));
 <span class="pl-en">assert</span>(<span class="pl-en">method_exists</span>(<span class="pl-s1"><span class="pl-c1">$</span>promise</span>, <span class="pl-s">'<span class="pl-s">catch</span>'</span>));
 <span class="pl-en">assert</span>(<span class="pl-en">method_exists</span>(<span class="pl-s1"><span class="pl-c1">$</span>promise</span>, <span class="pl-s">'<span class="pl-s">finally</span>'</span>));
@@ -789,7 +789,7 @@ but has been reverted for now and is planned for a future release.<br>
      <span class="pl-k">return</span> <span class="pl-en">\<span class="pl-v">React</span>\<span class="pl-v">Promise</span>\all</span>(<span class="pl-s1"><span class="pl-c1">$</span>promises</span>)
          -&gt;<span class="pl-en">always</span>(<span class="pl-k">function</span>() <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>promises</span>) {
              <span class="pl-k">foreach</span> (<span class="pl-s1"><span class="pl-c1">$</span>promises</span> <span class="pl-k">as</span> <span class="pl-s1"><span class="pl-c1">$</span>promise</span>) {
-                 <span class="pl-k">if</span> (<span class="pl-s1"><span class="pl-c1">$</span>promise</span> instanceof \<span class="pl-v">React</span>\<span class="pl-v">Promise</span>\<span class="pl-v">CancellablePromiseInterface</span>) {
+                 <span class="pl-k">if</span> (<span class="pl-s1"><span class="pl-c1">$</span>promise</span> <span class="pl-k">instanceof</span> \<span class="pl-v">React</span>\<span class="pl-v">Promise</span>\CancellablePromiseInterface) {
                      <span class="pl-s1"><span class="pl-c1">$</span>promise</span>-&gt;<span class="pl-en">cancel</span>();
                  }
              }
@@ -1481,7 +1481,7 @@ and utility methods which are not part of the Promises/A specification.</p>
         <mask id="reactphp-promise-participation-sparkline" x="0" y="0" width="320" height="40" >
             <polyline 
                 transform="translate(0, 40) scale(1,-1)"
-                points="0,1 6,1 12,1 18,1 24,1 30,1 36,1 42,1 48,1 54,1 60,1 66,1 72,1 78,1 84,1 90,1 96,2 102,1 108,1 114,1 120,1 126,1 132,1 138,1 144,1 150,2 156,6 162,1 168,1 174,1 180,1 186,1 192,1 198,1 204,1 210,1 216,1 222,1 228,1 234,1 240,1 246,1 252,1 258,1 264,1 270,1 276,1 282,1 288,1 294,1 300,2 306,2" 
+                points="0,1 6,1 12,1 18,1 24,1 30,1 36,1 42,1 48,1 54,1 60,2 66,1 72,1 78,1 84,1 90,1 96,1 102,1 108,1 114,2 120,6 126,1 132,1 138,1 144,1 150,1 156,1 162,1 168,1 174,1 180,1 186,1 192,1 198,1 204,1 210,1 216,1 222,1 228,1 234,1 240,1 246,1 252,1 258,1 264,2 270,2 276,1 282,1 288,1 294,1 300,1 306,1" 
                 fill="transparent" 
                 stroke="#40a977" 
                 stroke-width="2"
