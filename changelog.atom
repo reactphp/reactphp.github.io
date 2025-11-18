@@ -1,11 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
   <title type="text">The combined changelog for all ReactPHP components.</title>
-  <updated>2025-11-17T20:46:53+00:00</updated>
+  <updated>2025-11-18T19:34:41+00:00</updated>
   <generator uri="http://framework.zend.com" version="2">Zend_Feed_Writer</generator>
   <link rel="alternate" type="text/html" href="https://reactphp.org/changelog.html"/>
   <link rel="self" type="application/atom+xml" href="https://reactphp.org/changelog.atom"/>
   <id>https://reactphp.org/changelog.html</id>
+  <entry>
+    <title type="html"><![CDATA[DNS 1.14.0]]></title>
+    <summary type="html"><![CDATA[<ul dir="auto">
+<li>
+<p dir="auto">Feature: Improve PHP 8.5+ support by avoiding deprecated <code class="notranslate">setAccessible()</code> calls.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="3285722584" data-permission-text="Title is private" data-url="https://github.com/reactphp/dns/issues/238" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/dns/pull/238/hovercard" href="https://github.com/reactphp/dns/pull/238">#238</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/W0rma/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/W0rma">@W0rma</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="3615524269" data-permission-text="Title is private" data-url="https://github.com/reactphp/dns/issues/243" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/dns/pull/243/hovercard" href="https://github.com/reactphp/dns/pull/243">#243</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/WyriHaximus/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/WyriHaximus">@WyriHaximus</a>)</p>
+</li>
+<li>
+<p dir="auto">Improve test suite, update test environment and increase query count in excessive TCP query tests.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="3354219753" data-permission-text="Title is private" data-url="https://github.com/reactphp/dns/issues/239" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/dns/pull/239/hovercard" href="https://github.com/reactphp/dns/pull/239">#239</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="3354481446" data-permission-text="Title is private" data-url="https://github.com/reactphp/dns/issues/240" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/dns/pull/240/hovercard" href="https://github.com/reactphp/dns/pull/240">#240</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/WyriHaximus/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/WyriHaximus">@WyriHaximus</a>)</p>
+</li>
+</ul>]]></summary>
+    <updated>2025-11-18T19:34:41+00:00</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/reactphp/dns/releases/tag/v1.14.0"/>
+    <id>https://github.com/reactphp/dns/releases/tag/v1.14.0</id>
+    <author>
+      <name>clue</name>
+      <uri>https://github.com/clue</uri>
+    </author>
+  </entry>
   <entry>
     <title type="html"><![CDATA[EventLoop 1.6.0]]></title>
     <summary type="html"><![CDATA[<ul dir="auto">
@@ -177,26 +197,6 @@ Once v0.7 is released, it will be the way forward for this project.</p>
     <updated>2024-06-04T14:41:10+00:00</updated>
     <link rel="alternate" type="text/html" href="https://github.com/reactphp/async/releases/tag/v4.3.0"/>
     <id>https://github.com/reactphp/async/releases/tag/v4.3.0</id>
-    <author>
-      <name>SimonFrings</name>
-      <uri>https://github.com/SimonFrings</uri>
-    </author>
-  </entry>
-  <entry>
-    <title type="html"><![CDATA[PromiseTimer 1.11.0]]></title>
-    <summary type="html"><![CDATA[<ul dir="auto">
-<li>
-<p dir="auto">Feature: Improve PHP 8.4+ support by avoiding implicitly nullable type declarations.<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="2310753291" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise-timer/issues/70" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise-timer/pull/70/hovercard" href="https://github.com/reactphp/promise-timer/pull/70">#70</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
-</li>
-<li>
-<p dir="auto">Feature: Full PHP 8.3 compatibility.<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="2055087305" data-permission-text="Title is private" data-url="https://github.com/reactphp/promise-timer/issues/68" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise-timer/pull/68/hovercard" href="https://github.com/reactphp/promise-timer/pull/68">#68</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
-</li>
-</ul>]]></summary>
-    <updated>2024-06-04T14:28:47+00:00</updated>
-    <link rel="alternate" type="text/html" href="https://github.com/reactphp/promise-timer/releases/tag/v1.11.0"/>
-    <id>https://github.com/reactphp/promise-timer/releases/tag/v1.11.0</id>
     <author>
       <name>SimonFrings</name>
       <uri>https://github.com/SimonFrings</uri>
