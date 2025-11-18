@@ -69,7 +69,7 @@
                         EventLoop
 
                         <span class="off-canvas-menu__version">
-                            v1.5.0
+                            v1.6.0
                         </span>
                     </a>
                 </li>
@@ -87,7 +87,7 @@
                         Promise
 
                         <span class="off-canvas-menu__version">
-                            v3.2.0
+                            v3.3.0
                         </span>
                     </a>
                 </li>
@@ -221,9 +221,17 @@
 
                     <div class="markdown-heading"><h1 class="heading-element">Cache</h1><a id="cache" class="anchor" aria-label="Permalink: Cache" href="#cache"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p><a href="https://github.com/reactphp/cache/actions"><img src="https://github.com/reactphp/cache/actions/workflows/ci.yml/badge.svg" alt="CI status" style="max-width: 100%;"></a>
-<a href="https://packagist.org/packages/react/cache" rel="nofollow"><img src="https://camo.githubusercontent.com/44416321678c98d32e1404b782eb0afb51ec2b485570c9b959ed7b791e2dd8a7/68747470733a2f2f696d672e736869656c64732e696f2f7061636b61676973742f64742f72656163742f63616368653f636f6c6f723d626c7565266c6162656c3d696e7374616c6c732532306f6e2532305061636b6167697374" alt="installs on Packagist" data-canonical-src="https://img.shields.io/packagist/dt/react/cache?color=blue&amp;label=installs%20on%20Packagist" style="max-width: 100%;"></a></p>
+<a href="https://packagist.org/packages/react/cache" rel="nofollow"><img src="https://camo.githubusercontent.com/c7f8bd9a3e6ae4ea8063f5c03d1dd93dd4523c90c31f6ed8e61e78efc0a7e2c9/68747470733a2f2f696d672e736869656c64732e696f2f7061636b61676973742f64742f72656163742f63616368653f636f6c6f723d626c7565266c6162656c3d696e7374616c6c732532306f6e2532305061636b6167697374" alt="installs on Packagist" data-canonical-src="https://img.shields.io/packagist/dt/react/cache?color=blue&amp;label=installs%20on%20Packagist" style="max-width: 100%;"></a></p>
 <p>Async, <a href="../promise/">Promise</a>-based cache interface
 for <a href="https://reactphp.org/" rel="nofollow">ReactPHP</a>.</p>
+<blockquote>
+<p><strong>Development version:</strong> This branch contains the code for the upcoming v3
+release. For the code of the current stable v1 release, check out the
+<a href="https://github.com/reactphp/cache/tree/1.x"><code>1.x</code> branch</a>.</p>
+<p>The upcoming v3 release will be the way forward for this package. However,
+we will still actively support v1 for those not yet on the latest version.
+See also <a href="#install">installation instructions</a> for more details.</p>
+</blockquote>
 <p>The cache component provides a
 <a href="../promise/">Promise</a>-based
 <a href="#cacheinterface"><code>CacheInterface</code></a> and an in-memory <a href="#arraycache"><code>ArrayCache</code></a>
@@ -326,15 +334,16 @@ delete it, it may take a while.</p>
 <code>set()</code>, this may not happen instantly and a promise is returned to
 provide guarantees whether or not the item has been removed from cache.</p>
 <div class="markdown-heading"><h4 class="heading-element">getMultiple()</h4><a id="getmultiple" class="anchor" aria-label="Permalink: getMultiple()" href="#getmultiple"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<p>The <code>getMultiple(string[] $keys, mixed $default = null): PromiseInterface&lt;array&gt;</code> method can be used to
+<p>The <code>getMultiple(iterable&lt;string&gt; $keys, mixed $default = null): PromiseInterface&lt;iterable&lt;string,mixed&gt;&gt;</code> method can be used to
 retrieve multiple cache items by their unique keys.</p>
 <p>This method will resolve with an array of cached values on success or with the
 given <code>$default</code> value when an item can not be found or when an error occurs.
 Similarly, an expired cache item (once the time-to-live is expired) is
 considered a cache miss.</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>cache</span>-&gt;<span class="pl-en">getMultiple</span>(<span class="pl-en">array</span>(<span class="pl-s">'<span class="pl-s">name</span>'</span>, <span class="pl-s">'<span class="pl-s">age</span>'</span>))-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-smi">array</span> <span class="pl-s1"><span class="pl-c1">$</span>values</span>) {
-    <span class="pl-s1"><span class="pl-c1">$</span>name</span> = <span class="pl-s1"><span class="pl-c1">$</span>values</span>[<span class="pl-s">'<span class="pl-s">name</span>'</span>] ?? <span class="pl-s">'<span class="pl-s">User</span>'</span>;
-    <span class="pl-s1"><span class="pl-c1">$</span>age</span> = <span class="pl-s1"><span class="pl-c1">$</span>values</span>[<span class="pl-s">'<span class="pl-s">age</span>'</span>] ?? <span class="pl-s">'<span class="pl-s">n/a</span>'</span>;
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>cache</span>-&gt;<span class="pl-en">getMultiple</span>([<span class="pl-s">'<span class="pl-s">name</span>'</span>, <span class="pl-s">'<span class="pl-s">age</span>'</span>])-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-smi">iterable</span> <span class="pl-s1"><span class="pl-c1">$</span>values</span>): <span class="pl-smi">void</span> {
+    <span class="pl-s1"><span class="pl-c1">$</span>array</span> = <span class="pl-en">is_array</span>(<span class="pl-s1"><span class="pl-c1">$</span>values</span>) ? <span class="pl-s1"><span class="pl-c1">$</span>values</span> : <span class="pl-en">iterator_to_array</span>(<span class="pl-s1"><span class="pl-c1">$</span>values</span>);
+    <span class="pl-s1"><span class="pl-c1">$</span>name</span> = <span class="pl-s1"><span class="pl-c1">$</span>array</span>[<span class="pl-s">'<span class="pl-s">name</span>'</span>] ?? <span class="pl-s">'<span class="pl-s">User</span>'</span>;
+    <span class="pl-s1"><span class="pl-c1">$</span>age</span> = <span class="pl-s1"><span class="pl-c1">$</span>array</span>[<span class="pl-s">'<span class="pl-s">age</span>'</span>] ?? <span class="pl-s">'<span class="pl-s">n/a</span>'</span>;
 
     <span class="pl-k">echo</span> <span class="pl-s1"><span class="pl-c1">$</span>name</span> . <span class="pl-s">'<span class="pl-s"> is </span>'</span> . <span class="pl-s1"><span class="pl-c1">$</span>age</span> . <span class="pl-c1">PHP_EOL</span>;
 });</pre></div>
@@ -342,7 +351,7 @@ considered a cache miss.</p>
 prints some example output. You can use any of the composition provided
 by <a href="../promise/">promises</a>.</p>
 <div class="markdown-heading"><h4 class="heading-element">setMultiple()</h4><a id="setmultiple" class="anchor" aria-label="Permalink: setMultiple()" href="#setmultiple"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<p>The <code>setMultiple(array $values, ?float $ttl = null): PromiseInterface&lt;bool&gt;</code> method can be used to
+<p>The <code>setMultiple(iterable&lt;string,mixed&gt; $values, ?float $ttl = null): PromiseInterface&lt;bool&gt;</code> method can be used to
 persist a set of key =&gt; value pairs in the cache, with an optional TTL.</p>
 <p>This method will resolve with <code>true</code> on success or <code>false</code> when an error
 occurs. If the cache implementation has to go over the network to store
@@ -352,17 +361,17 @@ for these cache items. If this parameter is omitted (or <code>null</code>), thes
 will stay in the cache for as long as the underlying implementation
 supports. Trying to access an expired cache items results in a cache miss,
 see also <a href="#getmultiple"><code>getMultiple()</code></a>.</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>cache</span>-&gt;<span class="pl-en">setMultiple</span>(<span class="pl-en">array</span>(<span class="pl-s">'<span class="pl-s">foo</span>'</span> =&gt; <span class="pl-c1">1</span>, <span class="pl-s">'<span class="pl-s">bar</span>'</span> =&gt; <span class="pl-c1">2</span>), <span class="pl-c1">60</span>);</pre></div>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>cache</span>-&gt;<span class="pl-en">setMultiple</span>([<span class="pl-s">'<span class="pl-s">foo</span>'</span> =&gt; <span class="pl-c1">1</span>, <span class="pl-s">'<span class="pl-s">bar</span>'</span> =&gt; <span class="pl-c1">2</span>], <span class="pl-c1">60</span>);</pre></div>
 <p>This example eventually sets the list of values - the key <code>foo</code> to <code>1</code> value
 and the key <code>bar</code> to <code>2</code>. If some of the keys already exist, they are overridden.</p>
 <div class="markdown-heading"><h4 class="heading-element">deleteMultiple()</h4><a id="deletemultiple" class="anchor" aria-label="Permalink: deleteMultiple()" href="#deletemultiple"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<p>The <code>setMultiple(string[] $keys): PromiseInterface&lt;bool&gt;</code> method can be used to
+<p>The <code>setMultiple(iterable&lt;string&gt; $keys): PromiseInterface&lt;bool&gt;</code> method can be used to
 delete multiple cache items in a single operation.</p>
 <p>This method will resolve with <code>true</code> on success or <code>false</code> when an error
 occurs. When no items for <code>$keys</code> are found in the cache, it also resolves
 to <code>true</code>. If the cache implementation has to go over the network to
 delete it, it may take a while.</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>cache</span>-&gt;deleteMultiple(array(<span class="pl-s">'<span class="pl-s">foo</span>'</span>, <span class="pl-s">'<span class="pl-s">bar, </span>'</span>baz'));</pre></div>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">$</span>cache</span>-&gt;<span class="pl-en">deleteMultiple</span>([<span class="pl-s">'<span class="pl-s">foo</span>'</span>, <span class="pl-s">'<span class="pl-s">bar, </span>'</span>baz']);</pre></div>
 <p>This example eventually deletes keys <code>foo</code>, <code>bar</code> and <code>baz</code> from the cache.
 As with <code>setMultiple()</code>, this may not happen instantly and a promise is returned to
 provide guarantees whether or not the item has been removed from cache.</p>
@@ -457,7 +466,7 @@ cache after fetching it from the data source.</p>
 {
     <span class="pl-k">return</span> <span class="pl-s1"><span class="pl-c1">$</span><span class="pl-smi">this</span></span>-&gt;<span class="pl-c1">db</span>
         -&gt;<span class="pl-en">get</span>(<span class="pl-s">'<span class="pl-s">foo</span>'</span>)
-        -&gt;<span class="pl-en">then</span>(<span class="pl-en">array</span>(<span class="pl-s1"><span class="pl-c1">$</span><span class="pl-smi">this</span></span>, <span class="pl-s">'<span class="pl-s">cacheFooFromDb</span>'</span>));
+        -&gt;<span class="pl-en">then</span>([<span class="pl-s1"><span class="pl-c1">$</span><span class="pl-smi">this</span></span>, <span class="pl-s">'<span class="pl-s">cacheFooFromDb</span>'</span>]);
 }
 
 <span class="pl-k">public</span> <span class="pl-k">function</span> <span class="pl-en">cacheFooFromDb</span>(<span class="pl-s1"><span class="pl-c1">$</span>foo</span>)
@@ -471,20 +480,21 @@ fetched from the database.</p>
 <div class="markdown-heading"><h2 class="heading-element">Install</h2><a id="install" class="anchor" aria-label="Permalink: Install" href="#install"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>The recommended way to install this library is <a href="https://getcomposer.org" rel="nofollow">through Composer</a>.
 <a href="https://getcomposer.org/doc/00-intro.md" rel="nofollow">New to Composer?</a></p>
-<p>This project follows <a href="https://semver.org/" rel="nofollow">SemVer</a>.
-This will install the latest supported version:</p>
-<div class="highlight highlight-source-shell"><pre>composer require react/cache:^1.2</pre></div>
+<p>Once released, this project will follow <a href="https://semver.org/" rel="nofollow">SemVer</a>.
+At the moment, this will install the latest development version:</p>
+<div class="highlight highlight-source-shell"><pre>composer require react/cache:^3@dev</pre></div>
 <p>See also the <a href="changelog.html">CHANGELOG</a> for details about version upgrades.</p>
 <p>This project aims to run on any platform and thus does not require any PHP
-extensions and supports running on legacy PHP 5.3 through current PHP 8+ and
-HHVM.
-It's <em>highly recommended to use PHP 7+</em> for this project.</p>
+extensions and supports running on PHP 7.1 through current PHP 8+.
+It's <em>highly recommended to use the latest supported PHP version</em> for this project.</p>
 <div class="markdown-heading"><h2 class="heading-element">Tests</h2><a id="tests" class="anchor" aria-label="Permalink: Tests" href="#tests"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>To run the test suite, you first need to clone this repo and then install all
 dependencies <a href="https://getcomposer.org" rel="nofollow">through Composer</a>:</p>
 <div class="highlight highlight-source-shell"><pre>composer install</pre></div>
 <p>To run the test suite, go to the project root and run:</p>
 <div class="highlight highlight-source-shell"><pre>vendor/bin/phpunit</pre></div>
+<p>On top of this, we use PHPStan on max level to ensure type safety across the project:</p>
+<div class="highlight highlight-source-shell"><pre>vendor/bin/phpstan</pre></div>
 <div class="markdown-heading"><h2 class="heading-element">License</h2><a id="license" class="anchor" aria-label="Permalink: License" href="#license"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
 <p>MIT, see <a href="license.html">LICENSE file</a>.</p>
                                 </main>
@@ -597,12 +607,12 @@ dependencies <a href="https://getcomposer.org" rel="nofollow">through Composer</
                         <ul class="component-info__contributors">
                                                     <li>
                                 <a href="https://github.com/clue">
-                                    <img src="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=80 2x" alt="clue" title="clue (45 contributions)">
+                                    <img src="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/776829?v=4&amp;s=80 2x" alt="clue" title="clue (48 contributions)">
                                 </a>
                             </li>
                                                     <li>
                                 <a href="https://github.com/WyriHaximus">
-                                    <img src="https://avatars.githubusercontent.com/u/147145?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/147145?v=4&amp;s=80 2x" alt="WyriHaximus" title="WyriHaximus (36 contributions)">
+                                    <img src="https://avatars.githubusercontent.com/u/147145?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/147145?v=4&amp;s=80 2x" alt="WyriHaximus" title="WyriHaximus (38 contributions)">
                                 </a>
                             </li>
                                                     <li>
@@ -641,6 +651,11 @@ dependencies <a href="https://getcomposer.org" rel="nofollow">through Composer</
                                 </a>
                             </li>
                                                     <li>
+                                <a href="https://github.com/PaulRotmann">
+                                    <img src="https://avatars.githubusercontent.com/u/85174210?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/85174210?v=4&amp;s=80 2x" alt="PaulRotmann" title="PaulRotmann (1 contribution)">
+                                </a>
+                            </li>
+                                                    <li>
                                 <a href="https://github.com/reedy">
                                     <img src="https://avatars.githubusercontent.com/u/67615?v=4&amp;s=40" srcset="https://avatars.githubusercontent.com/u/67615?v=4&amp;s=80 2x" alt="reedy" title="reedy (1 contribution)">
                                 </a>
@@ -664,7 +679,7 @@ dependencies <a href="https://getcomposer.org" rel="nofollow">through Composer</
         <mask id="reactphp-cache-participation-sparkline" x="0" y="0" width="320" height="40" >
             <polyline 
                 transform="translate(0, 40) scale(1,-1)"
-                points="0,2 6,1 12,1 18,2 24,4 30,3 36,1 42,1 48,1 54,1 60,1 66,1 72,1 78,1 84,1 90,1 96,1 102,1 108,1 114,5 120,1 126,2 132,1 138,1 144,1 150,1 156,1 162,1 168,1 174,1 180,1 186,1 192,1 198,1 204,1 210,1 216,1 222,1 228,1 234,1 240,1 246,1 252,1 258,1 264,1 270,1 276,1 282,1 288,1 294,1 300,1 306,1" 
+                points="0,1 6,1 12,1 18,1 24,1 30,1 36,2 42,1 48,1 54,1 60,1 66,1 72,1 78,1 84,1 90,1 96,1 102,1 108,2 114,2 120,1 126,1 132,1 138,1 144,1 150,1 156,1 162,1 168,1 174,1 180,1 186,1 192,1 198,1 204,1 210,1 216,1 222,1 228,1 234,1 240,1 246,1 252,1 258,1 264,1 270,1 276,1 282,3 288,1 294,1 300,1 306,1" 
                 fill="transparent" 
                 stroke="#40a977" 
                 stroke-width="2"
