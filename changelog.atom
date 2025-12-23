@@ -1,11 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
   <title type="text">The combined changelog for all ReactPHP components.</title>
-  <updated>2025-11-19T20:47:49+00:00</updated>
+  <updated>2025-12-23T15:25:31+00:00</updated>
   <generator uri="http://framework.zend.com" version="2">Zend_Feed_Writer</generator>
   <link rel="alternate" type="text/html" href="https://reactphp.org/changelog.html"/>
   <link rel="self" type="application/atom+xml" href="https://reactphp.org/changelog.atom"/>
   <id>https://reactphp.org/changelog.html</id>
+  <entry>
+    <title type="html"><![CDATA[ChildProcess 0.6.7]]></title>
+    <summary type="html"><![CDATA[<p dir="auto">Just in time for the holidays, we are happy to announce the release of <code class="notranslate">v0.6.7</code>! 🎄🎉</p>
+<p dir="auto">This is a compatibility release that contains backported features from the <code class="notranslate">0.7.x</code> branch.<br>
+Once v0.7 is released, it will be the way forward for this project.</p>
+<ul dir="auto">
+<li>Feature: Improve PHP 8.5+ support by replacing binary cast with string cast.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="3708232063" data-permission-text="Title is private" data-url="https://github.com/reactphp/child-process/issues/119" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/child-process/pull/119/hovercard" href="https://github.com/reactphp/child-process/pull/119">#119</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/kubawerlos/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/kubawerlos">@kubawerlos</a> and <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/WyriHaximus/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/WyriHaximus">@WyriHaximus</a>)</li>
+</ul>]]></summary>
+    <updated>2025-12-23T15:25:31+00:00</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/reactphp/child-process/releases/tag/v0.6.7"/>
+    <id>https://github.com/reactphp/child-process/releases/tag/v0.6.7</id>
+    <author>
+      <name>clue</name>
+      <uri>https://github.com/clue</uri>
+    </author>
+  </entry>
   <entry>
     <title type="html"><![CDATA[Socket 1.17.0]]></title>
     <summary type="html"><![CDATA[<ul dir="auto">
@@ -169,30 +186,6 @@ Once v0.7 is released, it will be the way forward for this project.</p>
     <updated>2024-06-13T14:18:32+00:00</updated>
     <link rel="alternate" type="text/html" href="https://github.com/reactphp/dns/releases/tag/v1.13.0"/>
     <id>https://github.com/reactphp/dns/releases/tag/v1.13.0</id>
-    <author>
-      <name>SimonFrings</name>
-      <uri>https://github.com/SimonFrings</uri>
-    </author>
-  </entry>
-  <entry>
-    <title type="html"><![CDATA[Stream 1.4.0]]></title>
-    <summary type="html"><![CDATA[<ul dir="auto">
-<li>
-<p dir="auto">Feature: Improve PHP 8.4+ support by avoiding implicitly nullable type declarations.<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="2302680382" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/179" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/179/hovercard" href="https://github.com/reactphp/stream/pull/179">#179</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
-</li>
-<li>
-<p dir="auto">Feature: Full PHP 8.3 compatibility.<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1910309476" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/172" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/172/hovercard" href="https://github.com/reactphp/stream/pull/172">#172</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
-</li>
-<li>
-<p dir="auto">Fix: Fix <code class="notranslate">drain</code> event of <code class="notranslate">ThroughStream</code> to handle potential race condition.<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="1910171633" data-permission-text="Title is private" data-url="https://github.com/reactphp/stream/issues/171" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/171/hovercard" href="https://github.com/reactphp/stream/pull/171">#171</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
-</li>
-</ul>]]></summary>
-    <updated>2024-06-11T12:45:43+00:00</updated>
-    <link rel="alternate" type="text/html" href="https://github.com/reactphp/stream/releases/tag/v1.4.0"/>
-    <id>https://github.com/reactphp/stream/releases/tag/v1.4.0</id>
     <author>
       <name>SimonFrings</name>
       <uri>https://github.com/SimonFrings</uri>
