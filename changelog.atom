@@ -13,7 +13,7 @@
 <li>
 <p dir="auto">Security fix: This release fixes a high severity security issue in ReactPHP's HTTP client and server components<br>
 that affects all versions between <code class="notranslate">v0.6.0</code> and <code class="notranslate">v1.11.0</code>. All users are encouraged to upgrade immediately.<br>
-(GHSA-x424-64qh-5j54 reported and fixed by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/jsifuentes/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/jsifuentes">@jsifuentes</a>)</p>
+(GHSA-x424-64qh-5j54 reported by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/jsifuentes/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/jsifuentes">@jsifuentes</a> and <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/raiFork/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/raiFork">@raiFork</a> and fixed by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/jsifuentes/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/jsifuentes">@jsifuentes</a> and <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/clue/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 </li>
 <li>
 <p dir="auto">Security fix: This release fixes a high severity security issue in ReactPHP's HTTP client component<br>
