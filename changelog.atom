@@ -9,7 +9,7 @@
   <entry>
     <title type="html"><![CDATA[HTTP 1.12.0]]></title>
     <summary type="html"><![CDATA[<ul dir="auto">
-<li>Feature: Support PSR-7 v2 along side v1<br>
+<li>Feature: Support PSR-7 v2 alongside v1<br>
 (<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="4321539563" data-permission-text="Title is private" data-url="https://github.com/reactphp/http/issues/549" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/http/pull/549/hovercard" href="https://github.com/reactphp/http/pull/549">#549</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/WyriHaximus/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/WyriHaximus">@WyriHaximus</a>)</li>
 </ul>]]></summary>
     <updated>2026-11-03T06:19:40+00:00</updated>

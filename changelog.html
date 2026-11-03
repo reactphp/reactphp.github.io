@@ -236,7 +236,7 @@
     </h3>
 
     <ul dir="auto">
-<li>Feature: Support PSR-7 v2 along side v1<br>
+<li>Feature: Support PSR-7 v2 alongside v1<br>
 (<a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="4321539563" data-permission-text="Title is private" data-url="https://github.com/reactphp/http/issues/549" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/http/pull/549/hovercard" href="https://github.com/reactphp/http/pull/549">#549</a> by <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/WyriHaximus/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/WyriHaximus">@WyriHaximus</a>)</li>
 </ul>
 
@@ -5324,10 +5324,11 @@ nameserver config on all supported platforms<br>
 <p dir="auto">This means that connecting to hosts that are managed by a local DNS server,<br>
 such as a corporate DNS server or when using Docker containers, will now<br>
 work as expected across all platforms with no changes required:</p>
-<div class="highlight highlight-text-html-php" dir="auto"><pre class="notranslate"><span class="pl-s1"><span class="pl-c1">$</span>connector</span> = <span class="pl-k">new</span> <span class="pl-v">Connector</span>(<span class="pl-s1"><span class="pl-c1">$</span>loop</span>);
-<span class="pl-s1"><span class="pl-c1">$</span>connector</span>-&gt;<span class="pl-en">connect</span>(<span class="pl-s">'<span class="pl-s">intranet.example:80</span>'</span>)-&gt;<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>connection</span>) {
-    <span class="pl-c">// …</span>
-});</pre></div>
+<pre lang="php" class="notranslate"><code class="notranslate">$connector = new Connector($loop);
+$connector-&gt;connect('intranet.example:80')-&gt;then(function ($connection) {
+    // …
+});
+</code></pre>
 </li>
 </ul>
 
