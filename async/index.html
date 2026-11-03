@@ -128,7 +128,7 @@
                         HTTP
 
                         <span class="off-canvas-menu__version">
-                            v1.11.1
+                            v1.12.0
                         </span>
                     </a>
                 </li>
@@ -249,13 +249,13 @@ perspective of the calling code. You can avoid this blocking behavior by
 wrapping it in an <code>async()</code> function call. Everything inside this function
 will still be blocked, but everything outside this function can be executed
 asynchronously without blocking:</p>
-<div class="highlight highlight-text-html-php"><pre>Loop::<span class="pl-en">addTimer</span>(<span class="pl-c1">0.5</span>, <span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Async</span>\async</span>(<span class="pl-k">function</span> () {
+<div class="highlight highlight-text-html-php"><pre><span class="pl-smi">Loop</span>::<span class="pl-en">addTimer</span>(<span class="pl-c1">0.5</span>, <span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Async</span>\async</span>(<span class="pl-k">function</span> () {
     <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">a</span>'</span>;
     <span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Async</span>\await</span>(<span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Promise</span>\<span class="pl-v">Timer</span>\sleep</span>(<span class="pl-c1">1.0</span>));
     <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">c</span>'</span>;
 }));
 
-Loop::<span class="pl-en">addTimer</span>(<span class="pl-c1">1.0</span>, <span class="pl-k">function</span> () {
+<span class="pl-smi">Loop</span>::<span class="pl-en">addTimer</span>(<span class="pl-c1">1.0</span>, <span class="pl-k">function</span> () {
     <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">b</span>'</span>;
 });
 
@@ -266,13 +266,13 @@ Loop::<span class="pl-en">addTimer</span>(<span class="pl-c1">1.0</span>, <span 
 <p>Note that this function only works in tandem with the <a href="#await"><code>await()</code> function</a>.
 In particular, this function does not "magically" make any blocking function
 non-blocking:</p>
-<div class="highlight highlight-text-html-php"><pre>Loop::<span class="pl-en">addTimer</span>(<span class="pl-c1">0.5</span>, <span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Async</span>\async</span>(<span class="pl-k">function</span> () {
+<div class="highlight highlight-text-html-php"><pre><span class="pl-smi">Loop</span>::<span class="pl-en">addTimer</span>(<span class="pl-c1">0.5</span>, <span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Async</span>\async</span>(<span class="pl-k">function</span> () {
     <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">a</span>'</span>;
     <span class="pl-en">sleep</span>(<span class="pl-c1">1</span>); <span class="pl-c">// broken: using PHP's blocking sleep() for demonstration purposes</span>
     <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">c</span>'</span>;
 }));
 
-Loop::<span class="pl-en">addTimer</span>(<span class="pl-c1">1.0</span>, <span class="pl-k">function</span> () {
+<span class="pl-smi">Loop</span>::<span class="pl-en">addTimer</span>(<span class="pl-c1">1.0</span>, <span class="pl-k">function</span> () {
     <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">b</span>'</span>;
 });
 
@@ -288,7 +288,7 @@ callback). For this reason, it returns a new function wrapping the given
 <code>$function</code> instead of directly invoking it and returning its value.</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-k">use</span> <span class="pl-k">function</span> <span class="pl-v">React</span>\<span class="pl-v">Async</span>\<span class="pl-en">async</span>;
 
-Loop::<span class="pl-en">addTimer</span>(<span class="pl-c1">1.0</span>, <span class="pl-en">async</span>(<span class="pl-k">function</span> () { … }));
+<span class="pl-smi">Loop</span>::<span class="pl-en">addTimer</span>(<span class="pl-c1">1.0</span>, <span class="pl-en">async</span>(<span class="pl-k">function</span> () { … }));
 <span class="pl-s1"><span class="pl-c1">$</span>connection</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'<span class="pl-s">close</span>'</span>, <span class="pl-en">async</span>(<span class="pl-k">function</span> () { … }));
 <span class="pl-s1"><span class="pl-c1">$</span>stream</span>-&gt;<span class="pl-en">on</span>(<span class="pl-s">'<span class="pl-s">data</span>'</span>, <span class="pl-en">async</span>(<span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>data</span>) { … }));
 <span class="pl-s1"><span class="pl-c1">$</span>promise</span>-&gt;<span class="pl-en">then</span>(<span class="pl-en">async</span>(<span class="pl-k">function</span> (<span class="pl-smi">int</span> <span class="pl-s1"><span class="pl-c1">$</span>result</span>) { … }));</pre></div>
@@ -390,13 +390,13 @@ can be considered <em>blocking</em> from the perspective of the calling code.
 You can avoid this blocking behavior by wrapping it in an <a href="#async"><code>async()</code> function</a>
 call. Everything inside this function will still be blocked, but everything
 outside this function can be executed asynchronously without blocking:</p>
-<div class="highlight highlight-text-html-php"><pre>Loop::<span class="pl-en">addTimer</span>(<span class="pl-c1">0.5</span>, <span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Async</span>\async</span>(<span class="pl-k">function</span> () {
+<div class="highlight highlight-text-html-php"><pre><span class="pl-smi">Loop</span>::<span class="pl-en">addTimer</span>(<span class="pl-c1">0.5</span>, <span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Async</span>\async</span>(<span class="pl-k">function</span> () {
     <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">a</span>'</span>;
     <span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Async</span>\await</span>(<span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Promise</span>\<span class="pl-v">Timer</span>\sleep</span>(<span class="pl-c1">1.0</span>));
     <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">c</span>'</span>;
 }));
 
-Loop::<span class="pl-en">addTimer</span>(<span class="pl-c1">1.0</span>, <span class="pl-k">function</span> () {
+<span class="pl-smi">Loop</span>::<span class="pl-en">addTimer</span>(<span class="pl-c1">1.0</span>, <span class="pl-k">function</span> () {
     <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">b</span>'</span>;
 });
 
@@ -533,7 +533,7 @@ this function may not necessarily halt execution of the entire process thread.
 Instead, it allows the event loop to run any other events attached to the
 same loop until the delay returns:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">a</span>'</span>;
-Loop::<span class="pl-en">addTimer</span>(<span class="pl-c1">1.0</span>, <span class="pl-k">function</span> (): <span class="pl-smi">void</span> {
+<span class="pl-smi">Loop</span>::<span class="pl-en">addTimer</span>(<span class="pl-c1">1.0</span>, <span class="pl-k">function</span> (): <span class="pl-smi">void</span> {
     <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">b</span>'</span>;
 });
 <span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Async</span>\delay</span>(<span class="pl-c1">3.0</span>);
@@ -557,13 +557,13 @@ considered <em>blocking</em> from the perspective of the calling code. You can a
 this blocking behavior by wrapping it in an <a href="#async"><code>async()</code> function</a> call.
 Everything inside this function will still be blocked, but everything outside
 this function can be executed asynchronously without blocking:</p>
-<div class="highlight highlight-text-html-php"><pre>Loop::<span class="pl-en">addTimer</span>(<span class="pl-c1">0.5</span>, <span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Async</span>\async</span>(<span class="pl-k">function</span> (): <span class="pl-smi">void</span> {
+<div class="highlight highlight-text-html-php"><pre><span class="pl-smi">Loop</span>::<span class="pl-en">addTimer</span>(<span class="pl-c1">0.5</span>, <span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Async</span>\async</span>(<span class="pl-k">function</span> (): <span class="pl-smi">void</span> {
     <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">a</span>'</span>;
     <span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Async</span>\delay</span>(<span class="pl-c1">1.0</span>);
     <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">c</span>'</span>;
 }));
 
-Loop::<span class="pl-en">addTimer</span>(<span class="pl-c1">1.0</span>, <span class="pl-k">function</span> (): <span class="pl-smi">void</span> {
+<span class="pl-smi">Loop</span>::<span class="pl-en">addTimer</span>(<span class="pl-c1">1.0</span>, <span class="pl-k">function</span> (): <span class="pl-smi">void</span> {
     <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">b</span>'</span>;
 });
 
@@ -585,7 +585,7 @@ the pending delay which in turn would reject the resulting promise.</p>
     <span class="pl-k">echo</span> <span class="pl-s">'<span class="pl-s">b</span>'</span>;
 })();
 
-Loop::<span class="pl-en">addTimer</span>(<span class="pl-c1">2.0</span>, <span class="pl-k">function</span> () <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>promise</span>): <span class="pl-smi">void</span> {
+<span class="pl-smi">Loop</span>::<span class="pl-en">addTimer</span>(<span class="pl-c1">2.0</span>, <span class="pl-k">function</span> () <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>promise</span>): <span class="pl-smi">void</span> {
     <span class="pl-s1"><span class="pl-c1">$</span>promise</span>-&gt;<span class="pl-en">cancel</span>();
 });
 
@@ -603,21 +603,21 @@ like this:</p>
 <span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Async</span>\parallel</span>([
     <span class="pl-k">function</span> () {
         <span class="pl-k">return</span> <span class="pl-k">new</span> <span class="pl-v">Promise</span>(<span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>resolve</span>) {
-            Loop::<span class="pl-en">addTimer</span>(<span class="pl-c1">1</span>, <span class="pl-k">function</span> () <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>resolve</span>) {
+            <span class="pl-smi">Loop</span>::<span class="pl-en">addTimer</span>(<span class="pl-c1">1</span>, <span class="pl-k">function</span> () <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>resolve</span>) {
                 <span class="pl-s1"><span class="pl-c1">$</span>resolve</span>(<span class="pl-s">'<span class="pl-s">Slept for a whole second</span>'</span>);
             });
         });
     },
     <span class="pl-k">function</span> () {
         <span class="pl-k">return</span> <span class="pl-k">new</span> <span class="pl-v">Promise</span>(<span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>resolve</span>) {
-            Loop::<span class="pl-en">addTimer</span>(<span class="pl-c1">1</span>, <span class="pl-k">function</span> () <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>resolve</span>) {
+            <span class="pl-smi">Loop</span>::<span class="pl-en">addTimer</span>(<span class="pl-c1">1</span>, <span class="pl-k">function</span> () <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>resolve</span>) {
                 <span class="pl-s1"><span class="pl-c1">$</span>resolve</span>(<span class="pl-s">'<span class="pl-s">Slept for another whole second</span>'</span>);
             });
         });
     },
     <span class="pl-k">function</span> () {
         <span class="pl-k">return</span> <span class="pl-k">new</span> <span class="pl-v">Promise</span>(<span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>resolve</span>) {
-            Loop::<span class="pl-en">addTimer</span>(<span class="pl-c1">1</span>, <span class="pl-k">function</span> () <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>resolve</span>) {
+            <span class="pl-smi">Loop</span>::<span class="pl-en">addTimer</span>(<span class="pl-c1">1</span>, <span class="pl-k">function</span> () <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>resolve</span>) {
                 <span class="pl-s1"><span class="pl-c1">$</span>resolve</span>(<span class="pl-s">'<span class="pl-s">Slept for yet another whole second</span>'</span>);
             });
         });
@@ -640,21 +640,21 @@ like this:</p>
 <span class="pl-en"><span class="pl-v">React</span>\<span class="pl-v">Async</span>\series</span>([
     <span class="pl-k">function</span> () {
         <span class="pl-k">return</span> <span class="pl-k">new</span> <span class="pl-v">Promise</span>(<span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>resolve</span>) {
-            Loop::<span class="pl-en">addTimer</span>(<span class="pl-c1">1</span>, <span class="pl-k">function</span> () <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>resolve</span>) {
+            <span class="pl-smi">Loop</span>::<span class="pl-en">addTimer</span>(<span class="pl-c1">1</span>, <span class="pl-k">function</span> () <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>resolve</span>) {
                 <span class="pl-s1"><span class="pl-c1">$</span>resolve</span>(<span class="pl-s">'<span class="pl-s">Slept for a whole second</span>'</span>);
             });
         });
     },
     <span class="pl-k">function</span> () {
         <span class="pl-k">return</span> <span class="pl-k">new</span> <span class="pl-v">Promise</span>(<span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>resolve</span>) {
-            Loop::<span class="pl-en">addTimer</span>(<span class="pl-c1">1</span>, <span class="pl-k">function</span> () <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>resolve</span>) {
+            <span class="pl-smi">Loop</span>::<span class="pl-en">addTimer</span>(<span class="pl-c1">1</span>, <span class="pl-k">function</span> () <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>resolve</span>) {
                 <span class="pl-s1"><span class="pl-c1">$</span>resolve</span>(<span class="pl-s">'<span class="pl-s">Slept for another whole second</span>'</span>);
             });
         });
     },
     <span class="pl-k">function</span> () {
         <span class="pl-k">return</span> <span class="pl-k">new</span> <span class="pl-v">Promise</span>(<span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>resolve</span>) {
-            Loop::<span class="pl-en">addTimer</span>(<span class="pl-c1">1</span>, <span class="pl-k">function</span> () <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>resolve</span>) {
+            <span class="pl-smi">Loop</span>::<span class="pl-en">addTimer</span>(<span class="pl-c1">1</span>, <span class="pl-k">function</span> () <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>resolve</span>) {
                 <span class="pl-s1"><span class="pl-c1">$</span>resolve</span>(<span class="pl-s">'<span class="pl-s">Slept for yet another whole second</span>'</span>);
             });
         });
@@ -676,7 +676,7 @@ like this:</p>
 
 <span class="pl-s1"><span class="pl-c1">$</span>addOne</span> = <span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>prev</span> = <span class="pl-c1">0</span>) {
     <span class="pl-k">return</span> <span class="pl-k">new</span> <span class="pl-v">Promise</span>(<span class="pl-k">function</span> (<span class="pl-s1"><span class="pl-c1">$</span>resolve</span>) <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>prev</span>) {
-        Loop::<span class="pl-en">addTimer</span>(<span class="pl-c1">1</span>, <span class="pl-k">function</span> () <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>prev</span>, <span class="pl-s1"><span class="pl-c1">$</span>resolve</span>) {
+        <span class="pl-smi">Loop</span>::<span class="pl-en">addTimer</span>(<span class="pl-c1">1</span>, <span class="pl-k">function</span> () <span class="pl-k">use</span> (<span class="pl-s1"><span class="pl-c1">$</span>prev</span>, <span class="pl-s1"><span class="pl-c1">$</span>resolve</span>) {
             <span class="pl-s1"><span class="pl-c1">$</span>resolve</span>(<span class="pl-s1"><span class="pl-c1">$</span>prev</span> + <span class="pl-c1">1</span>);
         });
     });
